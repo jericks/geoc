@@ -9,9 +9,7 @@ import geoscript.layer.io.CsvReader
 import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.TransformCommand.TransformOptions
-import org.junit.Rule
 import org.junit.Test
-import org.junit.rules.TemporaryFolder
 
 import static org.junit.Assert.assertEquals
 import static org.junit.Assert.assertTrue
@@ -21,9 +19,6 @@ import static org.junit.Assert.assertTrue
  * @author Jared Erickson
  */
 class TransformCommandTest extends BaseTest {
-
-    @Rule
-    public TemporaryFolder folder = new TemporaryFolder()
 
     @Test
     void execute() {

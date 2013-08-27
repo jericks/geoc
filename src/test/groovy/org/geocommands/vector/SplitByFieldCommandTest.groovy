@@ -7,11 +7,10 @@ import geoscript.workspace.Directory
 import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.SplitByFieldCommand.SplitByFieldOptions
-import org.junit.Rule
 import org.junit.Test
-import org.junit.rules.TemporaryFolder
 
-import static org.junit.Assert.*
+import static org.junit.Assert.assertEquals
+import static org.junit.Assert.assertTrue
 
 /**
  * The SplitByFieldCommand Unit Test
@@ -19,17 +18,15 @@ import static org.junit.Assert.*
  */
 class SplitByFieldCommandTest extends BaseTest {
 
-    @Rule
-    public TemporaryFolder folder = new TemporaryFolder()
-
-    @Test void execute() {
+    @Test
+    void execute() {
         SplitByFieldCommand cmd = new SplitByFieldCommand()
         File file = getResource("polygons.properties")
         File directory = folder.newFolder("rows")
         SplitByFieldOptions options = new SplitByFieldOptions(
-            inputWorkspace: file.absolutePath,
-            outputWorkspace: directory.absolutePath,
-            field: "row"
+                inputWorkspace: file.absolutePath,
+                outputWorkspace: directory.absolutePath,
+                field: "row"
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Directory dir = new Directory(directory)
@@ -64,10 +61,11 @@ class SplitByFieldCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((5 5, 5 10, 10 10, 10 5, 5 5)))", f.geom.wkt
     }
 
-    @Test void executeCsv() {
+    @Test
+    void executeCsv() {
         SplitByFieldCommand cmd = new SplitByFieldCommand()
         SplitByFieldOptions options = new SplitByFieldOptions(
-            field: "row"
+                field: "row"
         )
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("polygons.csv"), w)
@@ -85,7 +83,8 @@ csv_row_0
         assertEquals expected, actual
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("polygons.properties")
         File directory = folder.newFolder("rows")
         App.main([

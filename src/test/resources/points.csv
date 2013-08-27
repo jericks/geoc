@@ -1,0 +1,4 @@
+the_geom,distance,name
+POINT (1 1),2,Number 1
+POINT (10 10),1,Number 2
+POINT (2 8),5,Number 3

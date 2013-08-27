@@ -1,0 +1,23 @@
+<kml:kml xmlns:kml="http://earth.google.com/kml/2.1">
+    <kml:Document id="featureCollection">
+        <kml:Placemark id="fid--67d1d218_13de09c96ae_-8000">
+            <kml:name>Number 1</kml:name>
+            <kml:Point>
+                <kml:coordinates>1.0,1.0</kml:coordinates>
+            </kml:Point>
+        </kml:Placemark>
+        <kml:Placemark id="fid--67d1d218_13de09c96ae_-7fff">
+            <kml:name>Number 2</kml:name>
+            <kml:Point>
+                <kml:coordinates>10.0,10.0</kml:coordinates>
+            </kml:Point>
+        </kml:Placemark>
+        <kml:Placemark id="fid--67d1d218_13de09c96ae_-7ffe">
+            <kml:name>Number 3</kml:name>
+            <kml:Point>
+                <kml:coordinates>2.0,8.0</kml:coordinates>
+            </kml:Point>
+        </kml:Placemark>
+    </kml:Document>
+</kml:kml>
+

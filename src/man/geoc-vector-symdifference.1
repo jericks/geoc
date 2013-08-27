@@ -1,0 +1,30 @@
+.TH "geoc-vector-symdifference" "1" "5 May 2013" "version 0.1"
+.SH NAME
+geoc vector symdifference
+.SH DESCRIPTION
+Calculate the symmetric difference between two Layers.
+.SH OPTIONS
+-p --postfix-all: Whether to postfix all field names (true) or not (false). If true, all Fields from the this current Schema will have '1' at the end of their name while the other Schema's Fields will have '2'.
+.PP
+-d --include-duplicates: Whether or not to include duplicate fields names. Defaults to false. If a duplicate is found a '2' will be added.
+.PP
+-m --maxfieldname-length: The maximum new Field name length (mostly to support shapefiles where Field names can't be longer than 10 characters
+.PP
+-f --first-postfix: The postfix for fields from the first Layer
+.PP
+-s --second-postfix: The postfix for fields from the second Layer
+.PP
+-k --other-workspace: The other workspace
+.PP
+-y --other-layer: The other layer
+.PP
+-o --output-workspace: The output workspace
+.PP
+-r --output-layer: The output layer
+.PP
+-i --input-workspace: The input workspace
+.PP
+-l --input-layer: The input layer
+.PP
+--help : Print the help message
+.PP

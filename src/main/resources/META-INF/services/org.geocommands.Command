@@ -74,6 +74,7 @@ org.geocommands.vector.HeatmapCommand
 org.geocommands.vector.BarnesSurfaceCommand
 org.geocommands.vector.RasterValuesCommand
 org.geocommands.vector.SubsetCommand
+org.geocommands.vector.SortCommand
 
 org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand

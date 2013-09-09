@@ -76,6 +76,7 @@ org.geocommands.vector.RasterValuesCommand
 org.geocommands.vector.SubsetCommand
 org.geocommands.vector.SortCommand
 org.geocommands.vector.PageCommand
+org.geocommands.vector.TranslateCommand
 
 org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand

@@ -37,8 +37,8 @@ class UniqueValuesCommandTest extends BaseTest {
         )
         cmd.execute(options, reader, writer)
         String actual = writer.toString()
-        String expected = """1
-0
+        String expected = """0
+1
 """
         assertStringsEqual(expected, actual, true)
     }
@@ -64,8 +64,8 @@ class UniqueValuesCommandTest extends BaseTest {
                 "vector uniquevalues",
                 "-f", "col"
         ], reader.text)
-        String expected = """1
-0
+        String expected = """0
+1
 """
         assertStringsEqual(expected, actual, true)
     }

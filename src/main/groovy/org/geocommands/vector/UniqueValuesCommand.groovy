@@ -32,10 +32,10 @@ class UniqueValuesCommand extends LayerCommand<UniqueValuesOptions> {
             values.add(f[options.field])
         }
         // Sort
-        values.sort()
+        List sortedValues = values.sort()
         // Display
         String NEW_LINE = System.getProperty("line.separator")
-        values.eachWithIndex{v,i ->
+        sortedValues.eachWithIndex{v,i ->
             if (i > 0) writer.append(NEW_LINE)
             writer.append(String.valueOf(v))
         }

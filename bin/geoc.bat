@@ -27,16 +27,13 @@ set JAVA="%JAVA_HOME%\bin\java.exe"
 
 @REM change directory to the lib directory
 set CWD=%CD%
-cd %~dp0../lib
+cd %~dp0
 
 @REM build up the classpath
-set CLASSPATH=;
-FOR /R %%G IN (*.jar) DO (
-     SET CLASSPATH=!CLASSPATH!;%%G
-)
+set CLASSPATH=%CD%\..\lib\*
 
 cd %CWD%
-%JAVA% -cp "%CLASSPATH%" org.geocommands.App %*
+%JAVA% org.geocommands.App %*
 goto end
 
 :error

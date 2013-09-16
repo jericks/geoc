@@ -7,7 +7,7 @@ import org.kohsuke.args4j.Option
  * Layer output Options
  * @author Jared Erickson
  */
-class LayerOutOptions extends Options{
+class LayerOutOptions extends Options {
 
     @Option(name="-o", aliases="--output-workspace",  usage="The output workspace", required = false)
     String outputWorkspace

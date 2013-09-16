@@ -6,7 +6,8 @@ import org.geotools.data.DataStoreFinder
 import org.kohsuke.args4j.Option
 
 /**
- *
+ * List all parameters for the given DataStore
+ * @author Jared Erickson
  */
 class DataStoreParametersCommand extends Command<DataStoreParametersOptions> {
 
@@ -43,7 +44,7 @@ class DataStoreParametersCommand extends Command<DataStoreParametersOptions> {
 
     private static class DataStoreParametersOptions extends Options {
 
-        @Option(name="-n", aliases="--name",  usage="Print the help message", required = true)
+        @Option(name="-n", aliases="--name",  usage="The DataStore name", required = true)
         String name
 
     }

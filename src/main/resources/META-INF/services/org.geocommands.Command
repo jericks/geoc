@@ -6,6 +6,7 @@ org.geocommands.PrjCommand
 
 org.geocommands.vector.DataStoreListCommand
 org.geocommands.vector.DataStoreParametersCommand
+org.geocommands.vector.LayerListCommand
 org.geocommands.vector.CountCommand
 org.geocommands.vector.BufferCommand
 org.geocommands.vector.EnvelopeCommand

@@ -45,7 +45,7 @@ class ToCommandTest extends BaseTest {
             "-f", "csv"
         ],"")
         String actual = output
-        String expected = """"the_geom","distance","name"
+        String expected = """"the_geom:Point","distance:String","name:String"
 "POINT (1 1)","2","Number 1"
 "POINT (10 10)","1","Number 2"
 "POINT (2 8)","5","Number 3"

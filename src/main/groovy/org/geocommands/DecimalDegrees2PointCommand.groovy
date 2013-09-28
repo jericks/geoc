@@ -2,8 +2,6 @@ package org.geocommands
 
 import geoscript.geom.Point
 import geoscript.proj.DecimalDegrees
-import org.geocommands.Command
-import org.geocommands.Options
 import org.kohsuke.args4j.Option
 
 /**

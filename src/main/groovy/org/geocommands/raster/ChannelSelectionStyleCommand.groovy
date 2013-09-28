@@ -2,7 +2,6 @@ package org.geocommands.raster
 
 import geoscript.style.ChannelSelection
 import geoscript.style.ContrastEnhancement
-import geoscript.style.ShadedRelief
 import org.geocommands.Command
 import org.kohsuke.args4j.Option
 
@@ -55,7 +54,7 @@ class ChannelSelectionStyleCommand extends Command<ChannelSelectionStyleOptions>
         if (parts.length > 1) {
             String method = parts[1]
             String gamma = parts.length > 2 ? parts[2] : null
-            map.contrastEnhancement = new ContrastEnhancement(method,gamma)
+            map.contrastEnhancement = new ContrastEnhancement(method, gamma)
         }
         map
     }

@@ -41,10 +41,10 @@ class AddIdFieldCommandTest extends BaseTest {
         Layer layer = getLayerFromCsv(w.toString())
         org.junit.Assert.assertEquals 4, layer.count
         org.junit.Assert.assertTrue layer.schema.has("THE_ID")
-        assertEquals "1", layer.getFeatures("THE_ID=1")[0]["THE_ID"]
-        assertEquals "2", layer.getFeatures("THE_ID=2")[0]["THE_ID"]
-        assertEquals "3", layer.getFeatures("THE_ID=3")[0]["THE_ID"]
-        assertEquals "4", layer.getFeatures("THE_ID=4")[0]["THE_ID"]
+        assertEquals 1, layer.getFeatures("THE_ID=1")[0]["THE_ID"]
+        assertEquals 2, layer.getFeatures("THE_ID=2")[0]["THE_ID"]
+        assertEquals 3, layer.getFeatures("THE_ID=3")[0]["THE_ID"]
+        assertEquals 4, layer.getFeatures("THE_ID=4")[0]["THE_ID"]
     }
 
     @Test void runAsCommandLine() {
@@ -69,9 +69,9 @@ class AddIdFieldCommandTest extends BaseTest {
         Layer layer = getLayerFromCsv(output)
         org.junit.Assert.assertEquals 4, layer.count
         org.junit.Assert.assertTrue layer.schema.has("THE_ID")
-        assertEquals "1", layer.getFeatures("THE_ID=1")[0]["THE_ID"]
-        assertEquals "2", layer.getFeatures("THE_ID=2")[0]["THE_ID"]
-        assertEquals "3", layer.getFeatures("THE_ID=3")[0]["THE_ID"]
-        assertEquals "4", layer.getFeatures("THE_ID=4")[0]["THE_ID"]
+        assertEquals 1, layer.getFeatures("THE_ID=1")[0]["THE_ID"]
+        assertEquals 2, layer.getFeatures("THE_ID=2")[0]["THE_ID"]
+        assertEquals 3, layer.getFeatures("THE_ID=3")[0]["THE_ID"]
+        assertEquals 4, layer.getFeatures("THE_ID=4")[0]["THE_ID"]
     }
 }

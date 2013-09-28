@@ -28,7 +28,6 @@ class ChannelSelectionStyleCommandTest extends BaseTest {
     </sld:LayerFeatureConstraints>
     <sld:UserStyle>
       <sld:Name>Default Styler</sld:Name>
-      <sld:Title/>
       <sld:FeatureTypeStyle>
         <sld:Name>name</sld:Name>
         <sld:Rule>
@@ -73,7 +72,6 @@ class ChannelSelectionStyleCommandTest extends BaseTest {
     </sld:LayerFeatureConstraints>
     <sld:UserStyle>
       <sld:Name>Default Styler</sld:Name>
-      <sld:Title/>
       <sld:FeatureTypeStyle>
         <sld:Name>name</sld:Name>
         <sld:Rule>
@@ -112,7 +110,6 @@ class ChannelSelectionStyleCommandTest extends BaseTest {
     </sld:LayerFeatureConstraints>
     <sld:UserStyle>
       <sld:Name>Default Styler</sld:Name>
-      <sld:Title/>
       <sld:FeatureTypeStyle>
         <sld:Name>name</sld:Name>
         <sld:Rule>

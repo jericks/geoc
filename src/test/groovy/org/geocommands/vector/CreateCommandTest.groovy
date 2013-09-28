@@ -48,7 +48,7 @@ class CreateCommandTest extends BaseTest {
         StringWriter w = new StringWriter()
         cmd.execute(options, new StringReader(""), w)
         Layer layer = getLayerFromCsv(w.toString())
-        assertEquals "csv the_geom: Point, id: String, name: String", layer.schema.toString()
+        assertEquals "csv the_geom: Point(EPSG:4326), id: Integer, name: String", layer.schema.toString()
     }
 
     @Test void runAsCommandLine() {

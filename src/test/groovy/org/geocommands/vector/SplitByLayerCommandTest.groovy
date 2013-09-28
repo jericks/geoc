@@ -62,14 +62,14 @@ class SplitByLayerCommandTest extends BaseTest {
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("polygons.csv"), w)
         assertEquals """csv_1_1
-"the_geom","id","row","col"
+"the_geom:Polygon","id:String","row:String","col:String"
 "POLYGON ((0 0, 0 5, 5 5, 5 0, 0 0))","0","0","0"
 "POLYGON ((5 0, 5 5, 5 0, 5 0))","2","0","1"
 "POLYGON ((0 5, 0 10, 5 10, 5 5, 0 5))","1","1","0"
 "POLYGON ((5 5, 5 10, 5 5, 5 5))","3","1","1"
 
 csv_1_2
-"the_geom","id","row","col"
+"the_geom:Polygon","id:String","row:String","col:String"
 "POLYGON ((5 5, 5 0, 5 5, 5 5))","0","0","0"
 "POLYGON ((5 0, 5 5, 10 5, 10 0, 5 0))","2","0","1"
 "POLYGON ((5 10, 5 5, 5 10, 5 10))","1","1","0"
@@ -113,14 +113,14 @@ csv_1_2
 
         String actual = runApp(["vector splitbylayer", "-s", file1.absolutePath, "-f", "row_col"], readCsv("polygons.csv").text)
         String expected = """csv_1_1
-"the_geom","id","row","col"
+"the_geom:Polygon","id:String","row:String","col:String"
 "POLYGON ((0 0, 0 5, 5 5, 5 0, 0 0))","0","0","0"
 "POLYGON ((5 0, 5 5, 5 0, 5 0))","2","0","1"
 "POLYGON ((0 5, 0 10, 5 10, 5 5, 0 5))","1","1","0"
 "POLYGON ((5 5, 5 10, 5 5, 5 5))","3","1","1"
 
 csv_1_2
-"the_geom","id","row","col"
+"the_geom:Polygon","id:String","row:String","col:String"
 "POLYGON ((5 5, 5 0, 5 5, 5 5))","0","0","0"
 "POLYGON ((5 0, 5 5, 10 5, 10 0, 5 0))","2","0","1"
 "POLYGON ((5 10, 5 5, 5 10, 5 10))","1","1","0"

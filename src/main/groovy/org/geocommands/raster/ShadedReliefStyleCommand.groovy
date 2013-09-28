@@ -1,6 +1,5 @@
 package org.geocommands.raster
 
-import geoscript.style.RasterSymbolizer
 import geoscript.style.ShadedRelief
 import org.geocommands.Command
 import org.kohsuke.args4j.Option

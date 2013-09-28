@@ -2,3 +2,5 @@ examples
 target
 .idea
 geocommands.iml
+src/test/resources/h2.db.trace.db
+src/test/resources/h2.db.*.log.db

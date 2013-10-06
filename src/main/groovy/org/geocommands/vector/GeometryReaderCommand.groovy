@@ -35,20 +35,26 @@ class GeometryReaderCommand extends Command<GeometryReaderOptions> {
 
     void execute(GeometryReaderOptions options, Reader reader, Writer writer) {
         Layer outLayer
+        geoscript.layer.Writer w
         try {
             int i = 0
             if (options.text != null) {
                 reader = new StringReader(options.text)
             }
-            reader.eachLine { line ->
-                if (line.trim().length() > 0) {
-                    def geom = Geometry.fromWKT(line)
-                    if (i == 0) {
-                        outLayer =  getOutputLayer(geom, options)
+            try {
+                reader.eachLine { line ->
+                    if (line.trim().length() > 0) {
+                        def geom = Geometry.fromWKT(line)
+                        if (i == 0) {
+                            outLayer =  getOutputLayer(geom, options)
+                            w = new geoscript.layer.Writer(outLayer)
+                        }
+                        i++
+                        w.add(outLayer.schema.feature([id: i, the_geom: geom]))
                     }
-                    i++
-                    outLayer.add([id: i, the_geom: geom])
                 }
+            } finally {
+                w.close()
             }
             if (outLayer.workspace instanceof Memory) {
                 writer.write(new geoscript.layer.io.CsvWriter().write(outLayer))

@@ -1,5 +1,6 @@
 package org.geocommands.vector
 
+import geoscript.feature.Feature
 import geoscript.layer.Layer
 import org.geocommands.vector.LayerInOtherOutCommand
 import org.geocommands.vector.LayerInOtherOutOptions
@@ -27,11 +28,13 @@ class MergeCommand extends LayerInOtherOutCommand<MergeOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer otherLayer, Layer outLayer, MergeOptions options, Reader reader, Writer writer) throws Exception {
-        inLayer.eachFeature{ f->
-            outLayer.add(f)
-        }
-        otherLayer.eachFeature{ f->
-            outLayer.add(f)
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.eachFeature{Feature f->
+                w.add(f)
+            }
+            otherLayer.eachFeature{Feature f->
+                w.add(f)
+            }
         }
     }
 

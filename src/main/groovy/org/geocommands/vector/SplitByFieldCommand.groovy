@@ -52,15 +52,16 @@ class SplitByFieldCommand extends LayerCommand<SplitByFieldOptions> {
         values.eachWithIndex{ v,i ->
             Layer outLayer = workspace.create("${layer.name}_${field.name}_${v.toString().replaceAll(' ','_')}", layer.schema.fields)
             Filter filter = new Filter("${field.name} = ${quote}${v}${quote}")
-            layer.getFeatures(filter).each{ f->
-                outLayer.add(f)
+            outLayer.withWriter {geoscript.layer.Writer w ->
+                layer.getFeatures(filter).each{ f->
+                    w.add(f)
+                }
             }
             if (workspace instanceof Memory) {
                 if (i > 0) writer.write(NEW_LINE)
                 writer.write(outLayer.name)
                 writer.write(NEW_LINE)
                 writer.write(new geoscript.layer.io.CsvWriter().write(outLayer))
-
             }
         }
     }

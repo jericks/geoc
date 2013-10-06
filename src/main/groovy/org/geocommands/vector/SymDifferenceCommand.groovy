@@ -52,42 +52,35 @@ class SymDifferenceCommand extends LayerInOtherOutCombineSchemasCommand<SymDiffe
             index.insert(geom.bounds, [geom: geom, feature1: null, feature2: f])
         }
 
-        Schema schema = outLayer.schema
-        index.queryAll().each { features ->
-            Geometry geom = features.geom
-            Feature f1 = features.feature1
-            Feature f2 = features.feature2
-            Map attributes = [(schema.geom.name): geom]
-            if (f1) {
-                Map fieldMap = options.fields[0]
-                f1.attributes.each {String k, Object v ->
-                    if (!k.equalsIgnoreCase(inLayer.schema.geom.name) && fieldMap.containsKey(k)) {
-                        attributes[fieldMap[k]] = v
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            Schema schema = outLayer.schema
+            index.queryAll().each { features ->
+                Geometry geom = features.geom
+                Feature f1 = features.feature1
+                Feature f2 = features.feature2
+                Map attributes = [(schema.geom.name): geom]
+                if (f1) {
+                    Map fieldMap = options.fields[0]
+                    f1.attributes.each {String k, Object v ->
+                        if (!k.equalsIgnoreCase(inLayer.schema.geom.name) && fieldMap.containsKey(k)) {
+                            attributes[fieldMap[k]] = v
+                        }
                     }
                 }
-            }
-            if (f2) {
-                Map fieldMap = options.fields[1]
-                f2.attributes.each {String k, Object v ->
-                    if (!k.equalsIgnoreCase(outLayer.schema.geom.name) && fieldMap.containsKey(k)) {
-                        attributes[fieldMap[k]] = v
+                if (f2) {
+                    Map fieldMap = options.fields[1]
+                    f2.attributes.each {String k, Object v ->
+                        if (!k.equalsIgnoreCase(outLayer.schema.geom.name) && fieldMap.containsKey(k)) {
+                            attributes[fieldMap[k]] = v
+                        }
                     }
                 }
+                Feature f = schema.feature(attributes)
+                w.add(f)
             }
-            Feature f = schema.feature(attributes)
-            outLayer.add(f)
         }
     }
 
-    /*@Override
-    protected Schema createOutputSchema(Layer inputLayer, Layer otherLayer, SymDifferenceOptions options) {
-        Map schemaAndFields = inputLayer.schema.addSchema(otherLayer.schema, getOutputLayerName(inputLayer, otherLayer, "symdifference", options),
-            postfixAll: true, maxFieldNameLength: Util.isWorkspaceStringShapefile(options.outputWorkspace) ? 10 : -1)
-        options.fields = schemaAndFields.fields
-        schemaAndFields.schema
-    }*/
-
     static class SymDifferenceOptions extends LayerInOtherOutCombineSchemasOptions {
-        //List fields
     }
 }

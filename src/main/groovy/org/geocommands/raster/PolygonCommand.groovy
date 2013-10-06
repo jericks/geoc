@@ -43,9 +43,12 @@ class PolygonCommand extends RasterToVectorCommand<PolygonOptions>{
             }
         ]
         Layer polygonLayer = raster.getPolygonLayer(polyOptions)
-        layer.add(polygonLayer.cursor.collect{f ->
-            new Feature([the_geom: f.geom, value: f.get("value")], f.id, layer.schema)
-        })
+        layer.withWriter {geoscript.layer.Writer w ->
+            polygonLayer.cursor.collect{f ->
+                def newFeature = layer.schema.feature([the_geom: f.geom, value: f.get("value")], f.id)
+                w.add(newFeature)
+            }
+        }
     }
 
     @Override

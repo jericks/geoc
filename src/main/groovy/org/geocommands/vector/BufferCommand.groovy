@@ -42,20 +42,22 @@ class BufferCommand extends LayerInOutCommand<BufferOptions> {
             capStyle = Geometry.CAP_SQUARE
         }
 
-        inLayer.eachFeature {Feature f ->
-            Map values = [:]
-            f.attributes.each{k,v ->
-                if (v instanceof geoscript.geom.Geometry) {
-                    double d = distance.evaluate(f) as double
-                    Geometry b = options.singleSided ?
-                        v.buffer(d, options.quadrantSegments, capStyle) :
-                        v.singleSidedBuffer(d, options.quadrantSegments, capStyle)
-                    values[k] = b
-                } else {
-                    values[k] = v
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.eachFeature {Feature f ->
+                Map values = [:]
+                f.attributes.each{k,v ->
+                    if (v instanceof geoscript.geom.Geometry) {
+                        double d = distance.evaluate(f) as double
+                        Geometry b = options.singleSided ?
+                            v.buffer(d, options.quadrantSegments, capStyle) :
+                            v.singleSidedBuffer(d, options.quadrantSegments, capStyle)
+                        values[k] = b
+                    } else {
+                        values[k] = v
+                    }
                 }
+                w.add(outLayer.schema.feature(values, f.id))
             }
-            outLayer.add(values)
         }
     }
 

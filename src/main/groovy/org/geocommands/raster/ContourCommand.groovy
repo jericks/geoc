@@ -1,5 +1,6 @@
 package org.geocommands.raster
 
+import geoscript.feature.Feature
 import geoscript.feature.Field
 import geoscript.feature.Schema
 import geoscript.geom.Bounds
@@ -33,7 +34,11 @@ class ContourCommand extends RasterToVectorCommand<ContourOptions> {
     void convertRasterToVector(Raster raster, Layer layer, ContourOptions options, Reader reader, Writer writer) throws Exception {
         Layer contourLayer = raster.contours(options.band, options.levels.size() == 1 ? options.levels[0] : options.levels,
             options.simplify, options.smooth, Bounds.fromString(options.bounds))
-        layer.add(contourLayer.cursor)
+        layer.withWriter {geoscript.layer.Writer w ->
+            contourLayer.cursor.each{Feature f ->
+                w.add(f)
+            }
+        }
     }
 
     @Override

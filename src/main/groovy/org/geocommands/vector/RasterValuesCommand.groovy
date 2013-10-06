@@ -34,17 +34,18 @@ class RasterValuesCommand extends LayerInOutCommand<RasterValuesOptions> {
     void processLayers(Layer inLayer, Layer outLayer, RasterValuesOptions options, Reader reader, Writer writer) throws Exception {
         Raster raster = RasterUtil.getRaster(options.inputRaster, options.inputProjection)
         List values = []
-        inLayer.eachFeature { Feature f ->
-            Point point = f.geom.centroid
-            def value = null
-            Map attributes = f.attributes
-            if (raster.contains(point)) {
-                value = raster.getValue(point, options.band, options.valueFieldType)
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.eachFeature { Feature f ->
+                Point point = f.geom.centroid
+                def value = null
+                Map attributes = f.attributes
+                if (raster.contains(point)) {
+                    value = raster.getValue(point, options.band, options.valueFieldType)
+                }
+                attributes[options.valueFieldName] = value
+                w.add(outLayer.schema.feature(attributes, f.id))
             }
-            attributes[options.valueFieldName] = value
-            values.add(attributes)
         }
-        outLayer.add(values)
     }
 
     @Override

@@ -1,5 +1,6 @@
 package org.geocommands.vector
 
+import geoscript.feature.Feature
 import geoscript.layer.Layer
 import org.kohsuke.args4j.Option
 
@@ -28,7 +29,11 @@ class SubsetCommand extends LayerInOutCommand<SubsetOptions> {
     void processLayers(Layer inLayer, Layer outLayer, SubsetOptions options, Reader reader, Writer writer) throws Exception {
         int start = options.start
         int max = options.max
-        outLayer.add(inLayer.getCursor(options.filter, options.sort, max, start).collect())
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.getCursor(options.filter, options.sort, max, start).each{Feature f ->
+                w.add(f)
+            }
+        }
     }
 
     static class SubsetOptions extends LayerInOutOptions {

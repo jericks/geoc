@@ -29,12 +29,14 @@ class AddIdFieldCommand extends LayerInOutCommand<AddIdFieldOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, AddIdFieldOptions options, Reader reader, Writer writer) throws Exception {
-        int c = options.start
-        inLayer.eachFeature {Feature f ->
-            Map attributes = f.attributes
-            attributes[options.idFieldName] = c
-            outLayer.add(attributes)
-            c++
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            int c = options.start
+            inLayer.eachFeature {Feature f ->
+                Map attributes = f.attributes
+                attributes[options.idFieldName] = c
+                w.add(outLayer.schema.feature(attributes, f.id))
+                c++
+            }
         }
     }
 

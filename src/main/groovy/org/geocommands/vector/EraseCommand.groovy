@@ -54,8 +54,10 @@ class EraseCommand extends LayerInOtherOutCommand<EraseOptions>{
         }
 
         // Add all Features in the spatial index to the output Layer
-        index.queryAll().each{f ->
-            outLayer.add(f)
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            index.queryAll().each{f ->
+                w.add(f)
+            }
         }
     }
 

@@ -30,12 +30,14 @@ class AddXYFieldsCommand extends LayerInOutCommand<AddXYFieldsOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, AddXYFieldsOptions options, Reader reader, Writer writer) throws Exception {
-        inLayer.eachFeature {Feature f ->
-            Point pt = f.geom.centroid
-            Map attributes = f.attributes
-            attributes[options.xFieldName] = pt.x
-            attributes[options.yFieldName] = pt.y
-            outLayer.add(attributes)
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.eachFeature {Feature f ->
+                Point pt = f.geom.centroid
+                Map attributes = f.attributes
+                attributes[options.xFieldName] = pt.x
+                attributes[options.yFieldName] = pt.y
+                w.add(outLayer.schema.feature(attributes, f.id))
+            }
         }
     }
 

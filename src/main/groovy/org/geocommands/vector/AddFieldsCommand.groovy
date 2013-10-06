@@ -29,8 +29,10 @@ class AddFieldsCommand extends LayerInOutCommand<AddFieldsOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, AddFieldsOptions options, Reader reader, Writer writer) throws Exception {
-        inLayer.eachFeature {Feature f ->
-            outLayer.add(f)
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.eachFeature {Feature f ->
+                w.add(f)
+            }
         }
     }
 

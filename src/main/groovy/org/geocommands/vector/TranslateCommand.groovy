@@ -30,12 +30,14 @@ class TranslateCommand extends LayerInOutCommand<TranslateOptions>{
     void processLayers(Layer inLayer, Layer outLayer, TranslateOptions options, Reader reader, Writer writer) throws Exception {
         Expression xExpression = Expression.fromCQL(options.x)
         Expression yExpression = Expression.fromCQL(options.y)
-        outLayer.add(inLayer.cursor.collect{Feature f ->
-            double x = xExpression.evaluate(f)
-            double y = yExpression.evaluate(f)
-            f.geom = f.geom.translate(x,y)
-            f
-        })
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.cursor.collect{Feature f ->
+                double x = xExpression.evaluate(f)
+                double y = yExpression.evaluate(f)
+                f.geom = f.geom.translate(x,y)
+                w.add(f)
+            }
+        }
     }
 
     static class TranslateOptions extends LayerInOutOptions {

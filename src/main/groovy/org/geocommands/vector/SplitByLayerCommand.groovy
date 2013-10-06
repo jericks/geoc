@@ -54,16 +54,18 @@ class SplitByLayerCommand extends LayerCommand<SplitByLayerOptions> {
         splitLayer.eachFeature { f ->
             // Create the new output Layer
             Layer outLayer = workspace.create("${layer.name}_${f.get(field).toString().replaceAll(' ','_')}", layer.schema.fields)
-            // See if the Feature intersects with the Bounds of any Feature in the spatial index
-            index.query(f.bounds).each { layerFeature ->
-                // Make sure it actually intersects the Geometry of a Feature in the spatial index
-                if (f.geom.intersects(layerFeature.geom)) {
-                    // Clip the geometry from the input Layer
-                    Geometry intersection = layerFeature.geom.intersection(f.geom)
-                    // Create a new Feature and add if to the clipped Layer
-                    Map values = layerFeature.attributes
-                    values[outLayer.schema.geom.name] = intersection
-                    outLayer.add(outLayer.schema.feature(values))
+            outLayer.withWriter {geoscript.layer.Writer w ->
+                // See if the Feature intersects with the Bounds of any Feature in the spatial index
+                index.query(f.bounds).each { layerFeature ->
+                    // Make sure it actually intersects the Geometry of a Feature in the spatial index
+                    if (f.geom.intersects(layerFeature.geom)) {
+                        // Clip the geometry from the input Layer
+                        Geometry intersection = layerFeature.geom.intersection(f.geom)
+                        // Create a new Feature and add if to the clipped Layer
+                        Map values = layerFeature.attributes
+                        values[outLayer.schema.geom.name] = intersection
+                        w.add(outLayer.schema.feature(values))
+                    }
                 }
             }
             if (workspace instanceof Memory) {

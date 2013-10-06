@@ -47,16 +47,17 @@ class DissolveIntersectingCommand extends LayerInOutCommand<DissolveIntersecting
         }
 
         String geomFieldName = outLayer.schema.geom.name
-        int i = 0
-        index.queryAll().each { v ->
-            Map values = [:]
-            values[options.idField] = i
-            values[options.countField] = v.count
-            values[geomFieldName] = v.geom
-            outLayer.add(values)
-            i++
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            int i = 0
+            index.queryAll().each { v ->
+                Map values = [:]
+                values[options.idField] = i
+                values[options.countField] = v.count
+                values[geomFieldName] = v.geom
+                w.add(outLayer.schema.feature(values))
+                i++
+            }
         }
-
     }
 
     @Override

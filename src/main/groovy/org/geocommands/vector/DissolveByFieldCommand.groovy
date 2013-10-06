@@ -48,13 +48,15 @@ class DissolveByFieldCommand extends LayerInOutCommand<DissolveByFieldOptions> {
         }
 
         String geomFieldName = outLayer.schema.geom.name
-        values.eachWithIndex { value, i ->
-            Map v = [:]
-            v[idFieldName] = i
-            v[field.name] = value.key
-            v[countFieldName] = value.value.count
-            v[geomFieldName] = value.value.geom
-            outLayer.add(v)
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            values.eachWithIndex { value, i ->
+                Map v = [:]
+                v[idFieldName] = i
+                v[field.name] = value.key
+                v[countFieldName] = value.value.count
+                v[geomFieldName] = value.value.geom
+                w.add(outLayer.schema.feature(v))
+            }
         }
     }
 

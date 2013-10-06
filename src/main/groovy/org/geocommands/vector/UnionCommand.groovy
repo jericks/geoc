@@ -65,31 +65,33 @@ class UnionCommand extends LayerInOtherOutCombineSchemasCommand<UnionOptions>{
         }
 
         // Put all Features in the spatial index into the output Layer
-        Schema schema = outLayer.schema
-        index.queryAll().each { features ->
-            Geometry geom = features.geom
-            Feature f1 = features.feature1
-            Feature f2 = features.feature2
-            Map attributes = [:]
-            attributes[schema.geom.name] = geom
-            if (f1) {
-                Map fieldMap = options.fields[0]
-                f1.attributes.each {String k, Object v ->
-                    if (!k.equalsIgnoreCase(inLayer.schema.geom.name) && fieldMap.containsKey(k)) {
-                        attributes[fieldMap[k]] = v
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            Schema schema = outLayer.schema
+            index.queryAll().each { features ->
+                Geometry geom = features.geom
+                Feature f1 = features.feature1
+                Feature f2 = features.feature2
+                Map attributes = [:]
+                attributes[schema.geom.name] = geom
+                if (f1) {
+                    Map fieldMap = options.fields[0]
+                    f1.attributes.each {String k, Object v ->
+                        if (!k.equalsIgnoreCase(inLayer.schema.geom.name) && fieldMap.containsKey(k)) {
+                            attributes[fieldMap[k]] = v
+                        }
                     }
                 }
-            }
-            if (f2) {
-                Map fieldMap = options.fields[1]
-                f2.attributes.each {String k, Object v ->
-                    if (!k.equalsIgnoreCase(outLayer.schema.geom.name) && fieldMap.containsKey(k)) {
-                        attributes[fieldMap[k]] = v
+                if (f2) {
+                    Map fieldMap = options.fields[1]
+                    f2.attributes.each {String k, Object v ->
+                        if (!k.equalsIgnoreCase(outLayer.schema.geom.name) && fieldMap.containsKey(k)) {
+                            attributes[fieldMap[k]] = v
+                        }
                     }
                 }
+                Feature f = schema.feature(attributes)
+                w.add(f)
             }
-            Feature f = schema.feature(attributes)
-            outLayer.add(f)
         }
     }
 

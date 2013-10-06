@@ -34,16 +34,18 @@ class OctagonalEnvelopesCommand extends LayerInOutCommand<OctagonalEnvelopesOpti
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, OctagonalEnvelopesOptions options, Reader reader, Writer writer) {
-        inLayer.eachFeature {Feature f ->
-            Map values = [:]
-            f.attributes.each{k,v ->
-                if (v instanceof geoscript.geom.Geometry) {
-                    values[k] = v.octagonalEnvelope
-                } else {
-                    values[k] = v
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.eachFeature {Feature f ->
+                Map values = [:]
+                f.attributes.each{k,v ->
+                    if (v instanceof geoscript.geom.Geometry) {
+                        values[k] = v.octagonalEnvelope
+                    } else {
+                        values[k] = v
+                    }
                 }
+                w.add(outLayer.schema.feature(values, f.id))
             }
-            outLayer.add(values)
         }
     }
 

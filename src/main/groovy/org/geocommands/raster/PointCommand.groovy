@@ -31,18 +31,21 @@ class PointCommand extends RasterToVectorCommand<PointOptions>{
     @Override
     void convertRasterToVector(Raster raster, Layer layer, PointOptions options, Reader reader, Writer writer) throws Exception {
         List rasterBands = raster.bands
-        layer.add(raster.pointLayer.cursor.collect{f ->
-            Map values = [:]
-            values["the_geom"] = f.geom
-            rasterBands.eachWithIndex{b, i ->
-                def v = f.get(b.dim.description.toString())
-                if (v instanceof Byte) {
-                    v = (v as Byte).doubleValue()
+        layer.withWriter {geoscript.layer.Writer w ->
+            raster.pointLayer.cursor.collect{f ->
+                Map values = [:]
+                values["the_geom"] = f.geom
+                rasterBands.eachWithIndex{b, i ->
+                    def v = f.get(b.dim.description.toString())
+                    if (v instanceof Byte) {
+                        v = (v as Byte).doubleValue()
+                    }
+                    values["value${i}"] = v as double
                 }
-                values["value${i}"] = v as double
+                def newFeature = layer.schema.feature(values, f.id)
+                w.add(newFeature)
             }
-            new Feature(values, f.id, layer.schema)
-        })
+        }
     }
 
     @Override

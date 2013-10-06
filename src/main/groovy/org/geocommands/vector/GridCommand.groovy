@@ -32,13 +32,13 @@ class GridCommand extends LayerOutCommand<GridOptions> {
     @Override
     Layer createLayer(GridOptions options, Reader reader, Writer writer) throws Exception {
         // Create Layer
-        Workspace w
+        Workspace workspace
         if (!options.outputWorkspace) {
-            w = new Memory()
+            workspace = new Memory()
         } else {
-            w = new Workspace(options.outputWorkspace)
+            workspace = new Workspace(options.outputWorkspace)
         }
-        Layer layer = w.create(getOutputLayerName(options, "grid"), [
+        Layer layer = workspace.create(getOutputLayerName(options, "grid"), [
             new Field("the_geom",options.type.equalsIgnoreCase("point") ? "POINT" : "POLYGON", options.projection),
             new Field("id","int"),
             new Field("row","int"),
@@ -50,28 +50,32 @@ class GridCommand extends LayerOutCommand<GridOptions> {
         Bounds bounds = Geometry.fromString(options.geometry).bounds
         if (options.rows > -1 && options.columns > -1) {
             int id = 0
-            bounds.generateGrid(options.columns, options.rows, options.type, {cell, col, row ->
-                layer.add([
-                    "the_geom": cell,
-                     "id": id,
-                     "col": col,
-                     "row": row,
-                     "col_row": "${col}_${row}"
-                ])
-                id++
-            })
+            layer.withWriter {geoscript.layer.Writer w ->
+                bounds.generateGrid(options.columns, options.rows, options.type, {cell, col, row ->
+                    w.add(layer.schema.feature([
+                        "the_geom": cell,
+                         "id": id,
+                         "col": col,
+                         "row": row,
+                         "col_row": "${col}_${row}"
+                    ]))
+                    id++
+                })
+            }
         } else if (options.cellWidth > -1 && options.cellHeight > -1) {
             int id = 0
-            bounds.generateGrid(options.cellWidth, options.cellHeight, options.type, {cell, col, row ->
-                layer.add([
-                        "the_geom": cell,
-                        "id": id,
-                        "col": col,
-                        "row": row,
-                        "col_row": "${col}_${row}"
-                ])
-                id++
-            })
+            layer.withWriter {geoscript.layer.Writer w ->
+                bounds.generateGrid(options.cellWidth, options.cellHeight, options.type, {cell, col, row ->
+                    w.add(layer.schema.feature([
+                            "the_geom": cell,
+                            "id": id,
+                            "col": col,
+                            "row": row,
+                            "col_row": "${col}_${row}"
+                    ]))
+                    id++
+                })
+            }
         }
 
         layer

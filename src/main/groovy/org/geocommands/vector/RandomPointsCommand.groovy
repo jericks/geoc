@@ -34,13 +34,13 @@ class RandomPointsCommand extends LayerOutCommand<RandomPointsOptions> {
     @Override
     Layer createLayer(RandomPointsOptions options, Reader reader, Writer writer) throws Exception {
         // Create Layer
-        Workspace w
+        Workspace workspace
         if (!options.outputWorkspace) {
-            w = new Memory()
+            workspace = new Memory()
         } else {
-            w = new Workspace(options.outputWorkspace)
+            workspace = new Workspace(options.outputWorkspace)
         }
-        Layer layer = w.create(getOutputLayerName(options,"random_points"), [
+        Layer layer = workspace.create(getOutputLayerName(options,"random_points"), [
             new Field(options.idFieldName,"int"),
             new Field(options.geometryFieldName, "Point", options.projection)
         ])
@@ -54,9 +54,11 @@ class RandomPointsCommand extends LayerOutCommand<RandomPointsOptions> {
             randomPoints = Geometry.createRandomPointsInGrid(geom.bounds, options.number, options.constrainedToCirlce, options.gutterFraction)
         }
 
-        // Add randomly place points
-        randomPoints.geometries.eachWithIndex { Geometry g, int i ->
-            layer.add([(options.idFieldName): i, (options.geometryFieldName): g])
+        // Add randomly placed points
+        layer.withWriter {geoscript.layer.Writer w ->
+            randomPoints.geometries.eachWithIndex { Geometry g, int i ->
+                w.add(layer.schema.feature([(options.idFieldName): i, (options.geometryFieldName): g]))
+            }
         }
 
         layer

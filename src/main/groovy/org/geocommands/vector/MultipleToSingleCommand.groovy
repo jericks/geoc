@@ -34,8 +34,10 @@ class MultipleToSingleCommand extends LayerInOutCommand<MultipleToSingleOptions>
         inLayer.eachFeature {f ->
             flattenGeometries(f.geom, geometries)
         }
-        geometries.each{g ->
-            outLayer.add([g])
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            geometries.each{g ->
+                w.add(outLayer.schema.feature([g]))
+            }
         }
     }
 

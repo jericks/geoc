@@ -27,16 +27,18 @@ class InteriorPointCommand extends LayerInOutCommand<InteriorPointOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, InteriorPointOptions options, Reader reader, Writer writer) {
-        inLayer.eachFeature {Feature f ->
-            Map values = [:]
-            f.attributes.each{k,v ->
-                if (v instanceof geoscript.geom.Geometry) {
-                    values[k] = v.interiorPoint
-                } else {
-                    values[k] = v
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.eachFeature {Feature f ->
+                Map values = [:]
+                f.attributes.each{k,v ->
+                    if (v instanceof geoscript.geom.Geometry) {
+                        values[k] = v.interiorPoint
+                    } else {
+                        values[k] = v
+                    }
                 }
+                w.add(outLayer.schema.feature(values, f.id))
             }
-            outLayer.add(values)
         }
     }
 

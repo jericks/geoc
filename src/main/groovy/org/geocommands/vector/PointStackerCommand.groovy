@@ -48,7 +48,11 @@ class PointStackerCommand extends LayerInOutCommand<PointStackerOptions> {
                 outputBBOX: Bounds.fromString(options.bounds) ?: inLayer.bounds
         ])
         Cursor cursor = results.result
-        outLayer.add(cursor)
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            cursor.each{f ->
+                w.add(f)
+            }
+        }
     }
 
     @Override

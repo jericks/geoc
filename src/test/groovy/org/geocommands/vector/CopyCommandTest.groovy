@@ -4,6 +4,7 @@ import geoscript.feature.Field
 import geoscript.geom.Point
 import geoscript.layer.Layer
 import geoscript.layer.Shapefile
+import geoscript.layer.io.CsvReader
 import geoscript.workspace.H2
 import org.geocommands.App
 import org.geocommands.BaseTest

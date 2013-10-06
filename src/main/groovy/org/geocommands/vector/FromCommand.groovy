@@ -35,11 +35,11 @@ class FromCommand extends LayerOutCommand<FromOptions>{
     Layer createLayer(FromOptions options, Reader reader, Writer writer) throws Exception {
 
         // Get Workspace
-        Workspace w
+        Workspace workspace
         if (!options.outputWorkspace) {
-            w = new Memory()
+            workspace = new Memory()
         } else {
-            w = new Workspace(options.outputWorkspace)
+            workspace = new Workspace(options.outputWorkspace)
         }
 
         // Read in the Layer
@@ -76,9 +76,11 @@ class FromCommand extends LayerOutCommand<FromOptions>{
         }
 
         // Create the output Layer
-        Layer outLayer = w.create(schema)
-        layer.eachFeature {f ->
-            outLayer.add(f)
+        Layer outLayer = workspace.create(schema)
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            layer.eachFeature {f ->
+                w.add(f)
+            }
         }
         outLayer
     }

@@ -1,5 +1,6 @@
 package org.geocommands.vector
 
+import geoscript.feature.Feature
 import geoscript.layer.Layer
 import org.kohsuke.args4j.Option
 
@@ -26,7 +27,11 @@ class SortCommand extends LayerInOutCommand<SortOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, SortOptions options, Reader reader, Writer writer) throws Exception {
-        outLayer.add(inLayer.getCursor(sort: options.sort).collect())
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.getCursor(sort: options.sort).each {Feature f ->
+                w.add(f)
+            }
+        }
     }
 
     static class SortOptions extends LayerInOutOptions {

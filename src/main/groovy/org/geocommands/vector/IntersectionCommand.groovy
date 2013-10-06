@@ -53,26 +53,28 @@ class IntersectionCommand extends LayerInOtherOutCombineSchemasCommand<Intersect
 
         // Only add features from the spatial index that have features from Layer 1 and Layer2
         Schema schema = outLayer.schema
-        index.queryAll().each { features ->
-            Geometry geom = features.geom
-            Feature f1 = features.feature1
-            Feature f2 = features.feature2
-            if (f1 != null && f2 != null) {
-                Map attributes = [(schema.geom.name): geom]
-                Map fieldMap = options.fields[0]
-                f1.attributes.each {String k, Object v ->
-                    if (!k.equalsIgnoreCase(inLayer.schema.geom.name) && fieldMap.containsKey(k)) {
-                        attributes[fieldMap[k]] = v
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            index.queryAll().each { features ->
+                Geometry geom = features.geom
+                Feature f1 = features.feature1
+                Feature f2 = features.feature2
+                if (f1 != null && f2 != null) {
+                    Map attributes = [(schema.geom.name): geom]
+                    Map fieldMap = options.fields[0]
+                    f1.attributes.each {String k, Object v ->
+                        if (!k.equalsIgnoreCase(inLayer.schema.geom.name) && fieldMap.containsKey(k)) {
+                            attributes[fieldMap[k]] = v
+                        }
                     }
-                }
-                fieldMap = options.fields[1]
-                f2.attributes.each {String k, Object v ->
-                    if (!k.equalsIgnoreCase(otherLayer.schema.geom.name) && fieldMap.containsKey(k)) {
-                        attributes[fieldMap[k]] = v
+                    fieldMap = options.fields[1]
+                    f2.attributes.each {String k, Object v ->
+                        if (!k.equalsIgnoreCase(otherLayer.schema.geom.name) && fieldMap.containsKey(k)) {
+                            attributes[fieldMap[k]] = v
+                        }
                     }
+                    Feature f = schema.feature(attributes)
+                    w.add(f)
                 }
-                Feature f = schema.feature(attributes)
-                outLayer.add(f)
             }
         }
         

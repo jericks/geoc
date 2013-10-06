@@ -28,7 +28,11 @@ class PageCommand extends LayerInOutCommand<PageOptions> {
     void processLayers(Layer inLayer, Layer outLayer, PageOptions options, Reader reader, Writer writer) throws Exception {
         int start = options.start
         int max = options.max
-        outLayer.add(inLayer.getCursor(start: start, max: max).collect())
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.getCursor(start: start, max: max).each{f ->
+                w.add(f)
+            }
+        }
     }
 
     static class PageOptions extends LayerInOutOptions {

@@ -29,10 +29,12 @@ class AddAreaFieldCommand extends LayerInOutCommand<AddAreaFieldOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, AddAreaFieldOptions options, Reader reader, Writer writer) throws Exception {
-        inLayer.eachFeature {Feature f ->
-            Map attributes = f.attributes
-            attributes[options.areaFieldName] = f.geom.area
-            outLayer.add(attributes)
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.eachFeature {Feature f ->
+                Map attributes = f.attributes
+                attributes[options.areaFieldName] = f.geom.area
+                w.add(outLayer.schema.feature(attributes, f.id))
+            }
         }
     }
 

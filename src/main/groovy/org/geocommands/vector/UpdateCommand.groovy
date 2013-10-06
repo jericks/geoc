@@ -57,21 +57,23 @@ class UpdateCommand extends LayerInOtherOutCommand<UpdateOptions>{
         }
 
         // Add all Features in the spatial index to the output Layer
-        Schema schema = outLayer.schema
-        index.queryAll().each { features ->
-            Geometry geom = features.geom
-            Feature f1 = features.feature1
-            Map attributes = [(schema.geom.name): geom]
-            if (f1) {
-                f1.attributes.each {k,v ->
-                    String fieldName = k as String
-                    if (!fieldName.equalsIgnoreCase(inLayer.schema.geom.name)) {
-                        attributes[k] = v
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            Schema schema = outLayer.schema
+            index.queryAll().each { features ->
+                Geometry geom = features.geom
+                Feature f1 = features.feature1
+                Map attributes = [(schema.geom.name): geom]
+                if (f1) {
+                    f1.attributes.each {k,v ->
+                        String fieldName = k as String
+                        if (!fieldName.equalsIgnoreCase(inLayer.schema.geom.name)) {
+                            attributes[k] = v
+                        }
                     }
                 }
+                Feature f = schema.feature(attributes)
+                w.add(f)
             }
-            Feature f = schema.feature(attributes)
-            outLayer.add(f)
         }
     }
 

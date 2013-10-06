@@ -38,20 +38,22 @@ class ClipCommand extends LayerInOtherOutCommand<ClipOptions>{
         }
 
         // Iterate through all of the Features in the input Layer
-        inLayer.eachFeature(Filter.intersects(otherLayer.bounds.geometry), { f ->
-            // See if the Feature intersects with the Bounds of any Feature in the spatial index
-            index.query(f.bounds).each { clipFeature ->
-                // Make sure it actually intersects the Geometry of a Feature in the spatial index
-                if (f.geom.intersects(clipFeature.geom)) {
-                    // Clip the geometry from the input Layer
-                    Geometry intersection = f.geom.intersection(clipFeature.geom)
-                    // Create a new Feature and add if to the clipped Layer
-                    Map values = f.attributes
-                    values[f.schema.geom.name] = intersection
-                    outLayer.add(outLayer.schema.feature(values))
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.eachFeature(Filter.intersects(otherLayer.bounds.geometry), { f ->
+                // See if the Feature intersects with the Bounds of any Feature in the spatial index
+                index.query(f.bounds).each { clipFeature ->
+                    // Make sure it actually intersects the Geometry of a Feature in the spatial index
+                    if (f.geom.intersects(clipFeature.geom)) {
+                        // Clip the geometry from the input Layer
+                        Geometry intersection = f.geom.intersection(clipFeature.geom)
+                        // Create a new Feature and add if to the clipped Layer
+                        Map values = f.attributes
+                        values[f.schema.geom.name] = intersection
+                        w.add(outLayer.schema.feature(values))
+                    }
                 }
-            }
-        })
+            })
+        }
     }
 
     @Override

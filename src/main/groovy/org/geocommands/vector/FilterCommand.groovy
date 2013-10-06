@@ -27,13 +27,15 @@ class FilterCommand extends LayerInOutCommand<FilterOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, FilterOptions options, Reader reader, Writer writer) {
-        inLayer.eachFeature(options.filter, {Feature f ->
-            Map values = [:]
-            f.attributes.each{k,v ->
-                values[k] = v
-            }
-            outLayer.add(values)
-        })
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.eachFeature(options.filter, {Feature f ->
+                Map values = [:]
+                f.attributes.each{k,v ->
+                    values[k] = v
+                }
+                w.add(outLayer.schema.feature(values, f.id))
+            })
+        }
     }
 
     static class FilterOptions extends LayerInOutOptions {

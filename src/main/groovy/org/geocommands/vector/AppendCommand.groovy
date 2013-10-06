@@ -32,8 +32,10 @@ class AppendCommand extends LayerCommand<AppendOptions> {
     @Override
     protected void processLayer(Layer layer, AppendOptions options, Reader reader, Writer writer) throws Exception {
         Layer otherLayer = Util.getOtherLayer(options.otherWorkspace, options.otherLayer)
-        otherLayer.eachFeature{ f->
-            layer.add(f)
+        layer.withWriter {geoscript.layer.Writer w ->
+            otherLayer.eachFeature{ f->
+                w.add(f)
+            }
         }
     }
 

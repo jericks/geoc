@@ -29,8 +29,10 @@ class TransformCommand extends LayerInOutCommand<TransformOptions>{
     @Override
     void processLayers(Layer inLayer, Layer outLayer, TransformOptions options, Reader reader, Writer writer) throws Exception {
         Layer transformedLayer = inLayer.transform(outLayer.name, options.definitions)
-        transformedLayer.eachFeature {f ->
-            outLayer.add(f)
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            transformedLayer.eachFeature {f ->
+                w.add(f)
+            }
         }
     }
 

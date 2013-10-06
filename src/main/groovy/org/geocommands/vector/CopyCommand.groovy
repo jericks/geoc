@@ -28,8 +28,10 @@ class CopyCommand extends LayerInOutCommand<CopyOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, CopyOptions options, Reader reader, Writer writer) throws Exception {
-        inLayer.getCursor([filter: options.filter, sort: options.sort, start: options.start, max: options.max, fields: options.fields]).each {f->
-            outLayer.add(f)
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.getCursor([filter: options.filter, sort: options.sort, start: options.start, max: options.max, fields: options.fields]).each {f->
+                w.add(f)
+            }
         }
     }
 

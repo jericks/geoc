@@ -34,17 +34,19 @@ class CoordinatesCommand extends LayerInOutCommand<CoordinatesOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, CoordinatesOptions options, Reader reader, Writer writer) {
-        inLayer.eachFeature {Feature f ->
-            f.geom.coordinates.each{coord ->
-                Map values = [:]
-                f.attributes.each{k,v ->
-                    if (v instanceof geoscript.geom.Geometry) {
-                        values[k] = new Point(coord.x, coord.y)
-                    } else {
-                        values[k] = v
+        outLayer.withWriter {geoscript.layer.Writer w ->
+            inLayer.eachFeature {Feature f ->
+                f.geom.coordinates.each{coord ->
+                    Map values = [:]
+                    f.attributes.each{k,v ->
+                        if (v instanceof geoscript.geom.Geometry) {
+                            values[k] = new Point(coord.x, coord.y)
+                        } else {
+                            values[k] = v
+                        }
                     }
+                    w.add(outLayer.schema.feature(values))
                 }
-                outLayer.add(values)
             }
         }
     }

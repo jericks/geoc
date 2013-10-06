@@ -10,7 +10,7 @@ Key features
 ------------
 1. By default geoc reads and writes vector layers as CSV and raster layers as ASCII grids.
 2. But geoc can read and write to any supported `GeoTools <http://geotools.org>`_ DataStore (Shapefiles, PostGIS, H2) or CoverageStore (GeoTIFF, WorldImage, GTOPO).
-3. Commands are lookup us using Java's Service Provider Interface (SPI) so the framework is extensible.
+3. Commands are looked up using Java's Service Provider Interface (SPI) so the framework is extensible.
 4. Where appropriate, values are expressions (literal, properties, or CQL with functions)
 5. Uses `GeoScript Groovy <http://geoscript.org/>`_ for extremely terse code.
 

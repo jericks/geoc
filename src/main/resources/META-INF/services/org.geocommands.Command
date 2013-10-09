@@ -3,6 +3,7 @@ org.geocommands.OrthodromicDistanceCommand
 org.geocommands.DecimalDegrees2PointCommand
 org.geocommands.Point2DecimalDegreesCommand
 org.geocommands.PrjCommand
+org.geocommands.CssToSldCommand
 
 org.geocommands.vector.DataStoreListCommand
 org.geocommands.vector.DataStoreParametersCommand

@@ -23,8 +23,6 @@ class BaseTest {
     }
 
     void assertStringsEqual(String expected, String actual, boolean trim) {
-        println "Expected: ${expected}"
-        println "Actual  : ${actual}"
         StringReader expectedReader = new StringReader(expected)
         StringReader actualReader = new StringReader(actual)
         List<String> expectedLines = expectedReader.readLines()

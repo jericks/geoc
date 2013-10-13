@@ -52,7 +52,7 @@ class Util {
                     layer = workspace.get(fileName.substring(0, fileName.lastIndexOf(".")))
                 }
             }
-        } else {
+        } else if (reader != null) {
             layer = new CsvReader().read(reader.text)
         }
         layer

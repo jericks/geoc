@@ -85,6 +85,7 @@ org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand
 org.geocommands.raster.CropCommand
 org.geocommands.raster.CropWithGeometryCommand
+org.geocommands.raster.CropWithLayerCommand
 org.geocommands.raster.GetValueCommand
 org.geocommands.raster.ScaleCommand
 org.geocommands.raster.ProjectCommand

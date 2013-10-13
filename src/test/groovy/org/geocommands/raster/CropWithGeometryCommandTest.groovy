@@ -69,7 +69,7 @@ class CropWithGeometryCommandTest extends BaseTest {
         File outFile = createTemporaryFile("alki_cropped", ".tif")
         Geometry geometry = Geometry.fromWKT("POINT (1166476.232632274 823276.6023305996)").buffer(50)
         runApp([
-                "raster crop geometry",
+                "raster crop with geometry",
                 "-i", inFile.absolutePath,
                 "-o", outFile.absolutePath,
                 "-g", geometry.wkt
@@ -90,7 +90,7 @@ class CropWithGeometryCommandTest extends BaseTest {
         StringReader reader = getStringReader("raster.asc")
         Geometry geometry = Geometry.fromWKT("POINT (-174.80000000000004 83.8)").buffer(1.2)
         String result = runApp([
-                "raster crop geometry",
+                "raster crop with geometry",
                 "-g", geometry.wkt
         ], reader.text)
 

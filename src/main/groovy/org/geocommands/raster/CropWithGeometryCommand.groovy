@@ -1,6 +1,5 @@
 package org.geocommands.raster
 
-import geoscript.geom.Bounds
 import geoscript.geom.Geometry
 import geoscript.layer.Raster
 import org.kohsuke.args4j.Option
@@ -13,7 +12,7 @@ class CropWithGeometryCommand extends RasterInOutCommand<CropWithGeometryOptions
 
     @Override
     String getName() {
-        "raster crop geometry"
+        "raster crop with geometry"
     }
 
     @Override
@@ -34,7 +33,7 @@ class CropWithGeometryCommand extends RasterInOutCommand<CropWithGeometryOptions
 
     static class CropWithGeometryOptions extends RasterInOutOptions {
 
-        @Option(name="-g", aliases="--geometry",  usage="The Geometry", required = true)
+        @Option(name = "-g", aliases = "--geometry", usage = "The Geometry", required = true)
         String geometry
 
     }

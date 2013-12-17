@@ -1,6 +1,7 @@
-package org.geocommands
+package org.geocommands.geometry
 
-import org.geocommands.Point2DecimalDegreesCommand.Point2DecimalDegreesOptions
+import org.geocommands.BaseTest
+import org.geocommands.geometry.Point2DecimalDegreesCommand.Point2DecimalDegreesOptions
 import org.junit.Test
 import static org.junit.Assert.*
 
@@ -27,10 +28,10 @@ class Point2DecimalDegreesCommandTest extends BaseTest {
     }
 
     @Test void runAsCommandLine() {
-        String result = runApp(["pt2dd", "-p", "POINT (-122.5256194 47.212022222)", "-t", "ddm"],"")
+        String result = runApp(["geometry pt2dd", "-p", "POINT (-122.5256194 47.212022222)", "-t", "ddm"],"")
         assertEquals "-122\u00B0 31.5372' W, 47\u00B0 12.7213' N", result.trim()
 
-        result = runApp(["pt2dd", "-t", "ddm_char"],"POINT (-122.5256194 47.212022222)")
+        result = runApp(["geometry pt2dd", "-t", "ddm_char"],"POINT (-122.5256194 47.212022222)")
         assertEquals "-122d 31.5372m W, 47d 12.7213m N", result.trim()
     }
 }

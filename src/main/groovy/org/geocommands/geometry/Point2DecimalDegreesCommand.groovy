@@ -1,8 +1,10 @@
-package org.geocommands
+package org.geocommands.geometry
 
 import geoscript.geom.Geometry
 import geoscript.geom.Point
 import geoscript.proj.DecimalDegrees
+import org.geocommands.Command
+import org.geocommands.Options
 import org.kohsuke.args4j.Option
 
 /**
@@ -12,7 +14,7 @@ import org.kohsuke.args4j.Option
 class Point2DecimalDegreesCommand extends Command<Point2DecimalDegreesOptions>{
 
     String getName() {
-        "pt2dd"
+        "geometry pt2dd"
     }
 
     String getDescription() {

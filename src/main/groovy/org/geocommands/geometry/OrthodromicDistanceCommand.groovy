@@ -1,8 +1,10 @@
-package org.geocommands
+package org.geocommands.geometry
 
 import geoscript.geom.Geometry
 import geoscript.geom.Point
 import geoscript.proj.Geodetic
+import org.geocommands.Command
+import org.geocommands.Options
 import org.kohsuke.args4j.Option
 
 /**
@@ -12,7 +14,7 @@ import org.kohsuke.args4j.Option
 class OrthodromicDistanceCommand extends Command<OrthodromicDistanceOptions> {
 
     String getName() {
-        "orthodromicdistance"
+        "geometry orthodromicdistance"
     }
 
     String getDescription() {

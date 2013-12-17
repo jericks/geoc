@@ -1,11 +1,11 @@
 org.geocommands.ListCommand
-org.geocommands.OrthodromicDistanceCommand
-org.geocommands.DecimalDegrees2PointCommand
-org.geocommands.Point2DecimalDegreesCommand
 org.geocommands.PrjCommand
 org.geocommands.CssToSldCommand
 
 org.geocommands.geometry.ConvertCommand
+org.geocommands.geometry.DecimalDegrees2PointCommand
+org.geocommands.geometry.OrthodromicDistanceCommand
+org.geocommands.geometry.Point2DecimalDegreesCommand
 
 org.geocommands.vector.DataStoreListCommand
 org.geocommands.vector.DataStoreParametersCommand

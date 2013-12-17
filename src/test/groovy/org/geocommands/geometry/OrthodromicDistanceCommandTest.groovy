@@ -1,6 +1,7 @@
-package org.geocommands
+package org.geocommands.geometry
 
-import org.geocommands.OrthodromicDistanceCommand.OrthodromicDistanceOptions
+import org.geocommands.BaseTest
+import org.geocommands.geometry.OrthodromicDistanceCommand.OrthodromicDistanceOptions
 import org.junit.Test
 import static org.junit.Assert.*
 
@@ -35,7 +36,7 @@ class OrthodromicDistanceCommandTest extends BaseTest {
 
     @Test void runAsCommandLine() {
         String output = runApp([
-            "orthodromicdistance",
+            "geometry orthodromicdistance",
             "-e", "wgs84",
             "-p", "-86.67 36.12",
             "-t", "-118.40 33.94"
@@ -45,7 +46,7 @@ class OrthodromicDistanceCommandTest extends BaseTest {
 
     @Test void runAsCommandLineWithReader() {
         String output = runApp([
-                "orthodromicdistance",
+                "geometry orthodromicdistance",
                 "-e", "wgs84",
                 "-t", "-118.40 33.94"
         ], "POINT (-86.67 36.12)")

@@ -5,6 +5,8 @@ org.geocommands.Point2DecimalDegreesCommand
 org.geocommands.PrjCommand
 org.geocommands.CssToSldCommand
 
+org.geocommands.geometry.ConvertCommand
+
 org.geocommands.vector.DataStoreListCommand
 org.geocommands.vector.DataStoreParametersCommand
 org.geocommands.vector.LayerListCommand

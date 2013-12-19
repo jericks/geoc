@@ -1,5 +1,7 @@
 package org.geocommands
 
+import org.kohsuke.args4j.Option
+
 /**
  * List all geocommands
  * @author Jared Erickson
@@ -26,10 +28,17 @@ class ListCommand extends Command<ListOptions> {
                builder.append(NEW_LINE)
            }
            builder.append(cmd.name)
+           if (options.showDescriptions) {
+                builder.append(" = ").append(cmd.description)
+           }
        }
        writer.write(builder.toString())
     }
 
     static class ListOptions extends Options {
+
+        @Option(name="-d", aliases="--description", usage="Include the description", required=false)
+        boolean showDescriptions = false
+
     }
 }

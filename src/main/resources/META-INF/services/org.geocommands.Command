@@ -85,6 +85,7 @@ org.geocommands.vector.UniqueValuesCommand
 org.geocommands.vector.ShearCommand
 org.geocommands.vector.RotateCommand
 org.geocommands.vector.ScaleCommand
+org.geocommands.vector.ReflectCommand
 
 org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand

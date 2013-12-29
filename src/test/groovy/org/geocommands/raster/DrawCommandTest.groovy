@@ -20,10 +20,10 @@ class DrawCommandTest extends BaseTest {
         DrawOptions options = new DrawOptions(
                 inputRaster: inFile,
                 file: outFile,
-                type: "jpeg"
+                type: "jpeg",
+                bounds: "1166191.0260847565,822960.0090852415,1167331.8522748263,824226.382066"
         )
         command.execute(options, new StringReader(""), new StringWriter())
-
         assertTrue(outFile.exists())
         assertTrue(outFile.size() > 0)
     }
@@ -42,7 +42,6 @@ class DrawCommandTest extends BaseTest {
                 sldFile: sldFile
         )
         command.execute(options, reader, new StringWriter())
-
         assertTrue(outFile.exists())
         assertTrue(outFile.size() > 0)
     }
@@ -61,7 +60,6 @@ class DrawCommandTest extends BaseTest {
                 "-h", "600",
                 "-s", sldFile.absolutePath
         ], "")
-
         assertTrue(outFile.exists())
         assertTrue(outFile.size() > 0)
     }
@@ -77,7 +75,6 @@ class DrawCommandTest extends BaseTest {
                 "-w", "800",
                 "-h", "600"
         ], reader.text)
-
         assertTrue(outFile.exists())
         assertTrue(outFile.size() > 0)
     }

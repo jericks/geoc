@@ -87,6 +87,12 @@ org.geocommands.vector.RotateCommand
 org.geocommands.vector.ScaleCommand
 org.geocommands.vector.ReflectCommand
 
+org.geocommands.vector.ArcCommand
+org.geocommands.vector.ArcPolygonCommand
+org.geocommands.vector.EllipseCommand
+org.geocommands.vector.RectangleCommand
+org.geocommands.vector.SineStarCommand
+
 org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand
 org.geocommands.raster.CropCommand

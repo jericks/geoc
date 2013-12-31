@@ -86,7 +86,7 @@ org.geocommands.vector.ShearCommand
 org.geocommands.vector.RotateCommand
 org.geocommands.vector.ScaleCommand
 org.geocommands.vector.ReflectCommand
-
+org.geocommands.vector.SmoothCommand
 org.geocommands.vector.ArcCommand
 org.geocommands.vector.ArcPolygonCommand
 org.geocommands.vector.EllipseCommand

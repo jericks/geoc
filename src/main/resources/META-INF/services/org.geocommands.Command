@@ -92,6 +92,7 @@ org.geocommands.vector.ArcPolygonCommand
 org.geocommands.vector.EllipseCommand
 org.geocommands.vector.RectangleCommand
 org.geocommands.vector.SineStarCommand
+org.geocommands.vector.SuperCircleCommand
 
 org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand

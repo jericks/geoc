@@ -35,7 +35,7 @@ class SuperCircleCommand extends ShapeCommand<SuperCircleOptions> {
 
     @Override
     protected Schema createOutputSchema(Layer layer, SuperCircleOptions options) {
-        layer.schema.changeGeometryType("LineString", getOutputLayerName(layer, "arc", options))
+        layer.schema.changeGeometryType("Polygon", getOutputLayerName(layer, "supercirlces", options))
     }
 
     static class SuperCircleOptions extends ShapeOptions {

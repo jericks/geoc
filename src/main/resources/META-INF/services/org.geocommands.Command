@@ -5,6 +5,7 @@ org.geocommands.CssToSldCommand
 org.geocommands.geometry.ConvertCommand
 org.geocommands.geometry.DecimalDegrees2PointCommand
 org.geocommands.geometry.OrthodromicDistanceCommand
+org.geocommands.geometry.PlotCommand
 org.geocommands.geometry.Point2DecimalDegreesCommand
 
 org.geocommands.vector.DataStoreListCommand

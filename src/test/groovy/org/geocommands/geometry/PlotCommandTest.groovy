@@ -8,7 +8,8 @@ import org.junit.Test
 import static org.junit.Assert.assertTrue
 
 /**
- * Created by jericks on 2/17/14.
+ * The PlotCommand Unit Test
+ * @author Jared Erickson
  */
 class PlotCommandTest extends BaseTest {
 

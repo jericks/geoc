@@ -51,10 +51,11 @@ class DivideConstantCommandTest extends BaseTest {
         )
         command.execute(options, reader, writer)
 
-        ArcGrid format = new ArcGrid()
-        Raster outRaster = format.read(new ReaderInputStream(new StringReader(writer.toString())))
+        ArcGrid outFormat = new ArcGrid(new ReaderInputStream(new StringReader(writer.toString())))
+        Raster outRaster = outFormat.read()
         assertNotNull(outRaster)
-        Raster inRaster = format.read(getStringReader("raster.asc").text)
+        ArcGrid inFormat = new ArcGrid(getStringReader("raster.asc").text)
+        Raster inRaster = inFormat.read()
 
         Point pt = new Point(-175.0, 84.6)
         assertEquals(inRaster.getValue(pt, 0) / 2, outRaster.getValue(pt, 0), 1.0)
@@ -92,10 +93,11 @@ class DivideConstantCommandTest extends BaseTest {
                 "-v", "2"
         ], reader.text)
 
-        ArcGrid format = new ArcGrid()
-        Raster outRaster = format.read(new ReaderInputStream(new StringReader(result)))
+        ArcGrid outFormat = new ArcGrid(new ReaderInputStream(new StringReader(result)))
+        Raster outRaster = outFormat.read()
         assertNotNull(outRaster)
-        Raster inRaster = format.read(getStringReader("raster.asc").text)
+        ArcGrid inFormat = new ArcGrid(getStringReader("raster.asc").text)
+        Raster inRaster = inFormat.read()
 
         Point pt = new Point(-175.0, 84.6)
         assertEquals(inRaster.getValue(pt, 0) / 2, outRaster.getValue(pt, 0), 1.0)

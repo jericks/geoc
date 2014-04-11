@@ -23,7 +23,7 @@ class ConvertCommandTest extends BaseTest {
         StringReader reader = new StringReader("POINT (1 2)")
         StringWriter writer = new StringWriter()
         cmd.execute(options, reader, writer)
-        assertEquals("{ \"type\": \"Point\", \"coordinates\": [1.0, 2.0] }", writer.toString())
+        assertEquals("{\"type\":\"Point\",\"coordinates\":[1,2]}", writer.toString())
     }
 
     @Test
@@ -36,7 +36,7 @@ class ConvertCommandTest extends BaseTest {
         StringReader reader = new StringReader("")
         StringWriter writer = new StringWriter()
         cmd.execute(options, reader, writer)
-        assertEquals("{ \"type\": \"Point\", \"coordinates\": [1.0, 2.0] }", writer.toString())
+        assertEquals("{\"type\":\"Point\",\"coordinates\":[1,2]}", writer.toString())
     }
 
     @Test

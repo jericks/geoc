@@ -1,6 +1,8 @@
-package org.geocommands
+package org.geocommands.proj
 
 import geoscript.proj.Projection
+import org.geocommands.Command
+import org.geocommands.Options
 import org.kohsuke.args4j.Option
 
 /**

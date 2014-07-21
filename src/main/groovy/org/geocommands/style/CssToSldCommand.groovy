@@ -1,8 +1,10 @@
-package org.geocommands
+package org.geocommands.style
 
 import geoscript.style.Style
 import geoscript.style.io.CSSReader
 import geoscript.style.io.SLDWriter
+import org.geocommands.Command
+import org.geocommands.Options
 import org.kohsuke.args4j.Option
 
 /**

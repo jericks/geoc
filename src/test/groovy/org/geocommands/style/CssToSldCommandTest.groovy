@@ -1,6 +1,7 @@
-package org.geocommands
+package org.geocommands.style
 
-import org.geocommands.CssToSldCommand.CssToSldOptions
+import org.geocommands.BaseTest
+import org.geocommands.style.CssToSldCommand.CssToSldOptions
 import org.junit.Test
 
 /**

@@ -1,6 +1,7 @@
-package org.geocommands
+package org.geocommands.proj
 
-import org.geocommands.PrjCommand.PrjOptions
+import org.geocommands.BaseTest
+import org.geocommands.proj.PrjCommand.PrjOptions
 import org.junit.Test
 
 /**

@@ -1,6 +1,6 @@
 org.geocommands.ListCommand
-org.geocommands.PrjCommand
-org.geocommands.CssToSldCommand
+org.geocommands.proj.PrjCommand
+org.geocommands.style.CssToSldCommand
 
 org.geocommands.geometry.ConvertCommand
 org.geocommands.geometry.DecimalDegrees2PointCommand

@@ -43,7 +43,7 @@ class ScaleCommand extends RasterInOutCommand<ScaleOptions> {
         @Option(name="-r", aliases="--y-translate",  usage="The y translation", required = false)
         float yTrans = 0
 
-        @Option(name="-l", aliases="--interpolation",  usage="The interpolation method (bicubic, bicubic2, bilinear, nearest)", required = false)
+        @Option(name="-n", aliases="--interpolation",  usage="The interpolation method (bicubic, bicubic2, bilinear, nearest)", required = false)
         String interpolation = "nearest"
 
     }

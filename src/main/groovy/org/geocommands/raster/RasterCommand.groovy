@@ -21,11 +21,11 @@ abstract class RasterCommand<T extends RasterOptions> extends Command<T> {
     abstract T getOptions()
 
     void execute(T options, Reader reader, Writer writer) throws Exception {
-        Raster raster = getInputRaster(options.inputRaster, options, reader)
+        Raster raster = RasterUtil.getInputRaster(options.inputRaster, options, reader)
         try {
             processRaster(raster, options, reader, writer)
             if (shouldWriteRaster()) {
-                new ArcGrid().write(raster, new WriterOutputStream(writer))
+                RasterUtil.writeRaster(raster, writer)
             }
         }
         finally {
@@ -38,21 +38,4 @@ abstract class RasterCommand<T extends RasterOptions> extends Command<T> {
     protected boolean shouldWriteRaster() {
         false
     }
-
-    Raster getInputRaster(String inputRaster, T options, Reader reader) {
-        Raster raster = null
-        Projection proj = options.inputProjection ? new Projection(options.inputProjection) : null
-        if (inputRaster) {
-            Format format = Format.getFormat(new File(inputRaster))
-            raster = format.read(new File(inputRaster), proj)
-        } else {
-            // Assume that Rasters from Standard Input are in EPSG:4326
-            if (!proj) {
-                proj = new Projection("EPSG:4326")
-            }
-            raster = new ArcGrid().read(new ReaderInputStream(reader), proj)
-        }
-        raster
-    }
-
 }

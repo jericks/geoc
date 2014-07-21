@@ -32,8 +32,8 @@ class CropWithGeometryCommandTest extends BaseTest {
         )
         command.execute(options, new StringReader(""), new StringWriter())
 
-        GeoTIFF format = new GeoTIFF()
-        Raster raster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster raster = format.read()
         assertNotNull(raster)
         Bounds bounds = Geometry.fromString(options.geometry).bounds
         assertEquals(bounds.minX, raster.bounds.minX, 1d)
@@ -53,8 +53,8 @@ class CropWithGeometryCommandTest extends BaseTest {
         )
         command.execute(options, reader, writer)
 
-        ArcGrid format = new ArcGrid()
-        Raster raster = format.read(new ReaderInputStream(new StringReader(writer.toString())))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(writer.toString())))
+        Raster raster = format.read()
         assertNotNull(raster)
         Bounds bounds = Geometry.fromString(options.geometry).bounds
         assertEquals(bounds.minX, raster.bounds.minX, 1d)
@@ -75,8 +75,8 @@ class CropWithGeometryCommandTest extends BaseTest {
                 "-g", geometry.wkt
         ], "")
 
-        GeoTIFF format = new GeoTIFF()
-        Raster raster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster raster = format.read()
         assertNotNull(raster)
         Bounds bounds = geometry.bounds
         assertEquals(bounds.minX, raster.bounds.minX, 1d)
@@ -94,8 +94,8 @@ class CropWithGeometryCommandTest extends BaseTest {
                 "-g", geometry.wkt
         ], reader.text)
 
-        ArcGrid format = new ArcGrid()
-        Raster raster = format.read(new ReaderInputStream(new StringReader(result)))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(result)))
+        Raster raster = format.read()
         assertNotNull(raster)
         Bounds bounds = geometry.bounds
         assertEquals(bounds.minX, raster.bounds.minX, 1d)

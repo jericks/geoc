@@ -30,8 +30,8 @@ class ProjectCommandTest extends BaseTest {
         )
         command.execute(options, new StringReader(""), new StringWriter())
 
-        GeoTIFF format = new GeoTIFF()
-        Raster raster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster raster = format.read()
         assertNotNull(raster)
         assertEquals("EPSG:4326", raster.proj.id)
     }
@@ -47,8 +47,8 @@ class ProjectCommandTest extends BaseTest {
         )
         command.execute(options, reader, writer)
 
-        ArcGrid format = new ArcGrid()
-        Raster raster = format.read(new ReaderInputStream(new StringReader(writer.toString())), new Projection("EPSG:2927"))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(writer.toString())))
+        Raster raster = format.read(new Projection("EPSG:2927"))
         assertNotNull(raster)
         assertEquals("EPSG:2927", raster.proj.id)
     }
@@ -64,8 +64,8 @@ class ProjectCommandTest extends BaseTest {
                 "-t", "EPSG:4326"
         ], "")
 
-        GeoTIFF format = new GeoTIFF()
-        Raster raster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster raster = format.read()
         assertNotNull(raster)
         assertEquals("EPSG:4326", raster.proj.id)
     }
@@ -78,8 +78,8 @@ class ProjectCommandTest extends BaseTest {
                 "-t", "EPSG:2927"
         ], reader.text)
 
-        ArcGrid format = new ArcGrid()
-        Raster raster = format.read(new ReaderInputStream(new StringReader(result)), new Projection("EPSG:2927"))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(result)))
+        Raster raster = format.read(new Projection("EPSG:2927"))
         assertNotNull(raster)
         assertEquals("EPSG:2927", raster.proj.id)
     }

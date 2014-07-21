@@ -36,8 +36,8 @@ class MapAlgebraCommandTest extends BaseTest {
         )
         command.execute(options, new StringReader(""), new StringWriter())
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster outRaster = format.read()
         assertNotNull(outRaster)
 
         assertEquals 5, outRaster.eval(new Point(0.5, 0.5))[0], 0.1
@@ -63,8 +63,8 @@ class MapAlgebraCommandTest extends BaseTest {
         )
         command.execute(options, new StringReader(""), new StringWriter())
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster outRaster = format.read()
         assertNotNull(outRaster)
 
         assertEquals 6, outRaster.eval(new Point(0.5, 0.5))[0], 0.1
@@ -87,8 +87,8 @@ class MapAlgebraCommandTest extends BaseTest {
                 "-p", "EPSG:4326",
         ], "")
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster outRaster = format.read()
         assertNotNull(outRaster)
 
         assertEquals 5, outRaster.eval(new Point(0.5, 0.5))[0], 0.1
@@ -111,8 +111,8 @@ class MapAlgebraCommandTest extends BaseTest {
                 "-p", "EPSG:4326",
         ], "")
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster outRaster = format.read()
         assertNotNull(outRaster)
 
         assertEquals 6, outRaster.eval(new Point(0.5, 0.5))[0], 0.1

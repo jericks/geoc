@@ -67,11 +67,11 @@ class ContourCommandTest extends BaseTest {
                 "-i", inFile.absolutePath,
                 "-o", outFile.absolutePath,
                 "-b", "0",
-                "-l","10",
-                "-l","20",
-                "-l","50",
-                "-l","100",
-                "-l","200"
+                "-v","10",
+                "-v","20",
+                "-v","50",
+                "-v","100",
+                "-v","200"
         ], "")
 
         Shapefile shp = new Shapefile(outFile)
@@ -87,10 +87,10 @@ class ContourCommandTest extends BaseTest {
         String result = runApp([
                 "raster contour",
                 "-b", "0",
-                "-l","184",
-                "-l","185",
-                "-l","186",
-                "-l","187"
+                "-v","184",
+                "-v","185",
+                "-v","186",
+                "-v","187"
         ], reader.text)
 
         Layer layer = new CsvReader().read(result)

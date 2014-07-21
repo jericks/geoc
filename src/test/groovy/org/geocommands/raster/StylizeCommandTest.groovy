@@ -31,8 +31,8 @@ class StylizeCommandTest extends BaseTest {
         )
         command.execute(options, new StringReader(""), new StringWriter())
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster outRaster = format.read()
         assertNotNull(outRaster)
 
         Point pt = new Point(-120, 47)
@@ -51,8 +51,8 @@ class StylizeCommandTest extends BaseTest {
         )
         command.execute(options, reader, writer)
 
-        ArcGrid format = new ArcGrid()
-        Raster outRaster = format.read(new ReaderInputStream(new StringReader(writer.toString())))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(writer.toString())))
+        Raster outRaster = format.read()
         assertNotNull(outRaster)
 
         Point pt = new Point(-175.0, 84.6)
@@ -73,8 +73,8 @@ class StylizeCommandTest extends BaseTest {
                 "-s", sldFile.absolutePath
         ], "")
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster outRaster = format.read()
         assertNotNull(outRaster)
 
         Point pt = new Point(-120, 47)
@@ -92,8 +92,8 @@ class StylizeCommandTest extends BaseTest {
                 "-s", sldFile.absolutePath
         ], reader.text)
 
-        ArcGrid format = new ArcGrid()
-        Raster outRaster = format.read(new ReaderInputStream(new StringReader(result)))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(result)))
+        Raster outRaster = format.read()
         assertNotNull(outRaster)
 
         Point pt = new Point(-175.0, 84.6)

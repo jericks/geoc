@@ -30,8 +30,8 @@ class CropWithLayerCommandTest extends BaseTest {
         )
         command.execute(options, new StringReader(""), new StringWriter())
 
-        GeoTIFF format = new GeoTIFF()
-        Raster raster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster raster = format.read()
         assertNotNull(raster)
         // No Data
         [
@@ -65,8 +65,8 @@ class CropWithLayerCommandTest extends BaseTest {
         )
         command.execute(options, reader, writer)
 
-        ArcGrid format = new ArcGrid()
-        Raster raster = format.read(new ReaderInputStream(new StringReader(writer.toString())))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(writer.toString())))
+        Raster raster = format.read()
         assertNotNull(raster)
 
         // No Data
@@ -97,8 +97,8 @@ class CropWithLayerCommandTest extends BaseTest {
                 "-w", layerFile.absolutePath
         ], reader.text)
 
-        ArcGrid format = new ArcGrid()
-        Raster raster = format.read(new ReaderInputStream(new StringReader(result)))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(result)))
+        Raster raster = format.read()
         assertNotNull(raster)
 
         // No Data
@@ -131,8 +131,8 @@ class CropWithLayerCommandTest extends BaseTest {
                 "-w", layerFile.absolutePath
         ], "")
 
-        GeoTIFF format = new GeoTIFF()
-        Raster raster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster raster = format.read()
         assertNotNull(raster)
         // No Data
         [

@@ -54,7 +54,7 @@ class ContourCommand extends RasterToVectorCommand<ContourOptions> {
         @Option(name = "-b", aliases = "--band", usage = "The band", required = false)
         int band = 0
 
-        @Option(name = "-l", aliases = "--level", usage = "A level or interval", required = true)
+        @Option(name = "-v", aliases = "--level", usage = "A level or interval", required = true)
         List<Double> levels
 
         @Option(name = "-s", aliases = "--simplify", usage = "Whether to simplify", required = false)

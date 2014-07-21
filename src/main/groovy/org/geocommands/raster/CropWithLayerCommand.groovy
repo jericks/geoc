@@ -41,7 +41,7 @@ class CropWithLayerCommand extends RasterInOutCommand<CropWithLayerOptions> {
         @Option(name="-w", aliases="--input-workspace",  usage="The input workspace", required = true)
         String inputWorkspace
 
-        @Option(name="-l", aliases="--input-layer",  usage="The input layer", required = false)
+        @Option(name="-y", aliases="--input-layer",  usage="The input layer", required = false)
         String inputLayer
 
     }

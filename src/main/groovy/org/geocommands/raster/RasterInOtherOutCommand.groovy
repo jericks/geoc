@@ -16,7 +16,7 @@ abstract class RasterInOtherOutCommand <T extends RasterInOtherOutOptions> exten
 
     void execute(T options, Reader reader, Writer writer) throws Exception {
         Raster inRaster = RasterUtil.getInputRaster(options.inputRaster, options, reader)
-        Raster otherRaster = RasterUtil.getRaster(options.otherRaster, options.otherProjection ? new Projection(options.otherProjection) : null)
+        Raster otherRaster = RasterUtil.getRaster(options.otherRaster, options.otherRasterName, options.otherProjection ? new Projection(options.otherProjection) : null)
         Raster outRaster
         try {
             outRaster = createOutputRaster(inRaster, otherRaster, options, reader, writer)

@@ -34,8 +34,8 @@ class DivideRastersCommandTest extends BaseTest {
         )
         command.execute(options, new StringReader(""), new StringWriter())
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster outRaster = format.read()
         assertNotNull(outRaster)
 
         assertEquals 5, outRaster.eval(new Point(0.5, 0.5))[0], 0.1
@@ -57,8 +57,8 @@ class DivideRastersCommandTest extends BaseTest {
         )
         command.execute(options, reader, writer)
 
-        ArcGrid format = new ArcGrid()
-        Raster outRaster = format.read(new ReaderInputStream(new StringReader(writer.toString())), new Projection("EPSG:4326"))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(writer.toString())))
+        Raster outRaster = format.read(new Projection("EPSG:4326"))
 
         assertEquals 5, outRaster.eval(new Point(0.5, 0.5))[0], 0.1
         assertEquals 3, outRaster.eval(new Point(1.5, 1.5))[0], 0.1
@@ -80,8 +80,8 @@ class DivideRastersCommandTest extends BaseTest {
                 "-o", outFile.absolutePath
         ], "")
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster outRaster = format.read()
         assertNotNull(outRaster)
 
         assertEquals 5, outRaster.eval(new Point(0.5, 0.5))[0], 0.1
@@ -101,8 +101,8 @@ class DivideRastersCommandTest extends BaseTest {
                 "-j", "EPSG:4326"
         ], reader.text)
 
-        ArcGrid format = new ArcGrid()
-        Raster outRaster = format.read(new ReaderInputStream(new StringReader(result)), new Projection("EPSG:4326"))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(result)))
+        Raster outRaster = format.read(new Projection("EPSG:4326"))
 
         assertEquals 5, outRaster.eval(new Point(0.5, 0.5))[0], 0.1
         assertEquals 3, outRaster.eval(new Point(1.5, 1.5))[0], 0.1

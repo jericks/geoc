@@ -12,6 +12,9 @@ class RasterOptions extends Options {
     @Option(name="-i", aliases="--input-raster",  usage="The input raster", required = false)
     String inputRaster
 
+    @Option(name="-l", aliases="--input-raster-name",  usage="The input raster name", required = false)
+    String inputRasterName
+
     @Option(name="-p", aliases="--input-projection",  usage="The input projection", required = false)
     String inputProjection
 

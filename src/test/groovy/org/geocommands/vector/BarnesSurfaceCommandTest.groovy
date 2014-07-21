@@ -34,8 +34,8 @@ class BarnesSurfaceCommandTest extends BaseTest {
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
 
-        GeoTIFF format = new GeoTIFF()
-        Raster raster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster raster = format.read()
         assertNotNull(raster)
         assertEquals(11.1973, raster.getValue(new Point(0.970705521472, 1.00935582822)), 0.1)
         assertEquals(21.3022, raster.getValue(new Point(3.03849693252, 4.04340490798)), 0.1)
@@ -57,8 +57,8 @@ class BarnesSurfaceCommandTest extends BaseTest {
         )
         cmd.execute(options, reader, writer)
 
-        ArcGrid format = new ArcGrid()
-        Raster raster = format.read(new ReaderInputStream(new StringReader(writer.toString())), new Projection("EPSG:4326"))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(writer.toString())))
+        Raster raster = format.read(new Projection("EPSG:4326"))
         assertNotNull(raster)
         assertEquals(11.1973, raster.getValue(new Point(0.970705521472, 1.00935582822)), 0.1)
         assertEquals(21.3022, raster.getValue(new Point(3.03849693252, 4.04340490798)), 0.1)
@@ -81,8 +81,8 @@ class BarnesSurfaceCommandTest extends BaseTest {
             "-h", "800"
         ],"")
 
-        GeoTIFF format = new GeoTIFF()
-        Raster raster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster raster = format.read()
         assertNotNull(raster)
         assertEquals(11.1973, raster.getValue(new Point(0.970705521472, 1.00935582822)), 0.1)
         assertEquals(21.3022, raster.getValue(new Point(3.03849693252, 4.04340490798)), 0.1)
@@ -102,8 +102,8 @@ class BarnesSurfaceCommandTest extends BaseTest {
                 "-h", "100"
         ],reader.text)
 
-        ArcGrid format = new ArcGrid()
-        Raster raster = format.read(new ReaderInputStream(new StringReader(result)), new Projection("EPSG:4326"))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(result)))
+        Raster raster = format.read(new Projection("EPSG:4326"))
         assertNotNull(raster)
         assertEquals(11.1973, raster.getValue(new Point(0.970705521472, 1.00935582822)), 0.1)
         assertEquals(21.3022, raster.getValue(new Point(3.03849693252, 4.04340490798)), 0.1)

@@ -32,7 +32,7 @@ class RasterValuesCommand extends LayerInOutCommand<RasterValuesOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, RasterValuesOptions options, Reader reader, Writer writer) throws Exception {
-        Raster raster = RasterUtil.getRaster(options.inputRaster, options.inputProjection)
+        Raster raster = RasterUtil.getRaster(options.inputRaster, options.inputRasterName, options.inputProjection)
         List values = []
         outLayer.withWriter {geoscript.layer.Writer w ->
             inLayer.eachFeature { Feature f ->
@@ -66,6 +66,9 @@ class RasterValuesCommand extends LayerInOutCommand<RasterValuesOptions> {
 
         @Option(name = "-s", aliases = "--input-raster", usage = "The input raster", required = true)
         String inputRaster
+
+        @Option(name = "-e", aliases = "--input-raster-name", usage = "The input raster name", required = false)
+        String inputRasterName
 
         @Option(name = "-p", aliases = "--input-projection", usage = "The input projection", required = false)
         String inputProjection

@@ -28,34 +28,45 @@ class RasterUtil {
         Projection proj = options.inputProjection ? new Projection(options.inputProjection) : null
         if (inputRaster) {
             Format format = Format.getFormat(new File(inputRaster))
-            raster = format.read(new File(inputRaster), proj)
+            raster = format.read(options.inputRasterName != null ? options.inputRasterName : "", proj)
         } else {
             // Assume that Rasters from Standard Input are in EPSG:4326
             if (!proj) {
                 proj = new Projection("EPSG:4326")
             }
-            raster = new ArcGrid().read(new ReaderInputStream(reader), proj)
+            Format format = new ArcGrid(new ReaderInputStream(reader))
+            raster = format.read(proj)
         }
         raster
     }
 
     /**
-     * Get a Raster from the input raster string
-     * @param inputRaster The input raster string
+     * Get a Raster from the raster string, name, and projection
+     * @param raster The raster string
+     * @param rasterName The raster name
      * @param proj A Projection (which can be null)
      * @return A Raster
      */
-    static Raster getRaster(String inputRaster, Projection proj) {
-        Format format = Format.getFormat(new File(inputRaster))
-        format.read(new File(inputRaster), proj)
+    static Raster getRaster(String raster, String rasterName, Projection proj) {
+        Format format = Format.getFormat(new File(raster))
+        format.read(rasterName != null ? rasterName : "", proj)
     }
 
+    /**
+     * Write the Raster
+     * @param outRaster The Raster to write
+     * @param outputFormat The output format (geotif, worldimage, png, jpeg, gif, mrsid, sid, argrid, asc or null)
+     * @param outputRaster The output Raster File (can be null)
+     * @param writer The Writer for when the outputRaster is null
+     */
     static void writeRaster(Raster outRaster, String outputFormat, String outputRaster, Writer writer) {
         if (!outputRaster) {
-            new ArcGrid().write(outRaster, new WriterOutputStream(writer))
+            Format format = new ArcGrid(new WriterOutputStream(writer))
+            format.write(outRaster)
         } else {
             File file = new File(outputRaster)
-            Format format
+            Format format = Format.getFormat(file)
+            /*Format format
             if (outputFormat) {
                 outputFormat = outputFormat.toLowerCase()
                 if (outputFormat in ["geotif"]) {
@@ -73,11 +84,26 @@ class RasterUtil {
                 }
             } else {
                 format = Format.getFormat(file.absoluteFile)
-            }
-            format.write(outRaster, file)
+            }*/
+            format.write(outRaster)
         }
     }
 
+    /**
+     * Write the Raster to the Writer using ArcGrid Format
+     * @param outRaster The Raster to write
+     * @param writer The Writer
+     */
+    static void writeRaster(Raster outRaster, Writer writer) {
+        writeRaster(outRaster, null, null, writer)
+    }
+
+    /**
+     * Write the output Raster
+     * @param outRaster The Raster to write
+     * @param options The RasterInOutOptions
+     * @param writer The Writer
+     */
     static void writeRaster(Raster outRaster, RasterInOutOptions options, Writer writer) {
         writeRaster(outRaster, options.outputFormat, options.outputRaster, writer)
     }

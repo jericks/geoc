@@ -31,7 +31,7 @@ class ToCommandTest extends BaseTest {
 
         Format outFormat = Format.getFormat(outFile)
         assertTrue(outFormat instanceof WorldImage)
-        Raster outRaster = outFormat.read(outFile)
+        Raster outRaster = outFormat.read()
         assertNotNull(outRaster)
     }
 
@@ -49,7 +49,7 @@ class ToCommandTest extends BaseTest {
 
         Format outFormat = Format.getFormat(outFile)
         assertTrue(outFormat instanceof GeoTIFF)
-        Raster outRaster = outFormat.read(outFile)
+        Raster outRaster = outFormat.read()
         assertNotNull(outRaster)
     }
 
@@ -66,7 +66,7 @@ class ToCommandTest extends BaseTest {
 
         Format outFormat = Format.getFormat(outFile)
         assertTrue(outFormat instanceof WorldImage)
-        Raster outRaster = outFormat.read(outFile)
+        Raster outRaster = outFormat.read()
         assertNotNull(outRaster)
     }
 
@@ -82,7 +82,7 @@ class ToCommandTest extends BaseTest {
 
         Format outFormat = Format.getFormat(outFile)
         assertTrue(outFormat instanceof GeoTIFF)
-        Raster outRaster = outFormat.read(outFile)
+        Raster outRaster = outFormat.read()
         assertNotNull(outRaster)
     }
 }

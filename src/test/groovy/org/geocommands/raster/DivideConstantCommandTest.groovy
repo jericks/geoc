@@ -30,10 +30,11 @@ class DivideConstantCommandTest extends BaseTest {
         )
         command.execute(options, new StringReader(""), new StringWriter())
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF outFormat = new GeoTIFF(outFile)
+        Raster outRaster = outFormat.read()
         assertNotNull(outRaster)
-        Raster inRaster = format.read(inFile)
+        GeoTIFF inFormat = new GeoTIFF(inFile)
+        Raster inRaster = inFormat.read()
 
         Point pt = new Point(-120, 47)
         assertEquals(inRaster.getValue(pt, 0) / 2, outRaster.getValue(pt, 0), 1.0)
@@ -74,10 +75,11 @@ class DivideConstantCommandTest extends BaseTest {
                 "-v", "2"
         ], "")
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF outFormat = new GeoTIFF(outFile)
+        Raster outRaster = outFormat.read()
         assertNotNull(outRaster)
-        Raster inRaster = format.read(inFile)
+        GeoTIFF inFormat = new GeoTIFF(inFile)
+        Raster inRaster = inFormat.read()
 
         Point pt = new Point(-120, 47)
         assertEquals(inRaster.getValue(pt, 0) / 2, outRaster.getValue(pt, 0), 1.0)

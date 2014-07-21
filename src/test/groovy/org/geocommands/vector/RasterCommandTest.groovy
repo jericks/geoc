@@ -35,8 +35,8 @@ class RasterCommandTest extends BaseTest {
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
 
-        GeoTIFF format = new GeoTIFF()
-        Raster raster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster raster = format.read()
         assertEquals(0, raster.getValue(new Point(2.56868131868, 2.63461538462)), 0.1)
         assertEquals(1, raster.getValue(new Point(2.15659340659, 7.77747252747)), 0.1)
         assertEquals(2, raster.getValue(new Point(6.27747252747, 4.11813186813)), 0.1)
@@ -56,8 +56,8 @@ class RasterCommandTest extends BaseTest {
         cmd.execute(options, reader, writer)
         String str = writer.toString()
 
-        ArcGrid format = new ArcGrid()
-        Raster raster = format.read(new ReaderInputStream(new StringReader(str)), new Projection("EPSG:4326"))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(str)))
+        Raster raster = format.read(new Projection("EPSG:4326"))
         assertEquals(0, raster.getValue(new Point(2.56868131868, 2.63461538462)), 0.1)
         assertEquals(1, raster.getValue(new Point(2.15659340659, 7.77747252747)), 0.1)
         assertEquals(2, raster.getValue(new Point(6.27747252747, 4.11813186813)), 0.1)
@@ -75,8 +75,8 @@ class RasterCommandTest extends BaseTest {
             "-s", "600,600"
         ],"")
 
-        GeoTIFF format = new GeoTIFF()
-        Raster raster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster raster = format.read()
         assertEquals(0, raster.getValue(new Point(2.56868131868, 2.63461538462)), 0.1)
         assertEquals(1, raster.getValue(new Point(2.15659340659, 7.77747252747)), 0.1)
         assertEquals(2, raster.getValue(new Point(6.27747252747, 4.11813186813)), 0.1)
@@ -91,8 +91,8 @@ class RasterCommandTest extends BaseTest {
                 "-s", "600,600"
         ],reader.text)
 
-        ArcGrid format = new ArcGrid()
-        Raster raster = format.read(new ReaderInputStream(new StringReader(result)), new Projection("EPSG:4326"))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(result)))
+        Raster raster = format.read(new Projection("EPSG:4326"))
         assertEquals(0, raster.getValue(new Point(2.56868131868, 2.63461538462)), 0.1)
         assertEquals(1, raster.getValue(new Point(2.15659340659, 7.77747252747)), 0.1)
         assertEquals(2, raster.getValue(new Point(6.27747252747, 4.11813186813)), 0.1)

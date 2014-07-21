@@ -79,7 +79,7 @@ class ScaleCommandTest extends BaseTest {
                 "-y", "3",
                 "-t", "0",
                 "-r", "0",
-                "-l","nearest"
+                "-n","nearest"
         ], "")
 
         GeoTIFF format = new GeoTIFF()
@@ -99,7 +99,7 @@ class ScaleCommandTest extends BaseTest {
                 "-y", "3",
                 "-t", "0",
                 "-r", "0",
-                "-l","nearest"
+                "-n","nearest"
         ], reader.text)
 
         ArcGrid format = new ArcGrid()

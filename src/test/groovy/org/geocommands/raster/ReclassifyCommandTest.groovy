@@ -37,8 +37,8 @@ class ReclassifyCommandTest extends BaseTest {
         )
         command.execute(options, new StringReader(""), new StringWriter())
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster outRaster = format.read()
         assertNotNull(outRaster)
         assertEquals(255, outRaster.getValue(new Point(-22.2352941176, 18.5294117647)), 0.1)
         assertEquals(1, outRaster.getValue(new Point(-90.2887700535, -63.6737967914)), 0.1)
@@ -57,8 +57,8 @@ class ReclassifyCommandTest extends BaseTest {
         )
         command.execute(options, reader, writer)
 
-        ArcGrid format = new ArcGrid()
-        Raster outRaster = format.read(new ReaderInputStream(new StringReader(writer.toString())), new Projection("EPSG:4326"))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(writer.toString())))
+        Raster outRaster = format.read(new Projection("EPSG:4326"))
         assertNotNull(outRaster)
         assertEquals(1, outRaster.getValue(new Point(-174.890659341, 85.6168131868)), 0.1)
         assertEquals(120, outRaster.getValue(new Point(-175.57967033, 82.5779120879)), 0.1)
@@ -76,8 +76,8 @@ class ReclassifyCommandTest extends BaseTest {
                 "-r", "100-256=255"
         ], "")
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster outRaster = format.read()
         assertNotNull(outRaster)
         assertEquals(255, outRaster.getValue(new Point(-22.2352941176, 18.5294117647)), 0.1)
         assertEquals(1, outRaster.getValue(new Point(-90.2887700535, -63.6737967914)), 0.1)
@@ -92,8 +92,8 @@ class ReclassifyCommandTest extends BaseTest {
                 "-r", "185-187=120"
         ], reader.text)
 
-        ArcGrid format = new ArcGrid()
-        Raster outRaster = format.read(new ReaderInputStream(new StringReader(result)), new Projection("EPSG:4326"))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(result)))
+        Raster outRaster = format.read(new Projection("EPSG:4326"))
         assertNotNull(outRaster)
         assertEquals(1, outRaster.getValue(new Point(-174.890659341, 85.6168131868)), 0.1)
         assertEquals(120, outRaster.getValue(new Point(-175.57967033, 82.5779120879)), 0.1)

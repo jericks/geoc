@@ -30,10 +30,11 @@ class SubtractConstantCommandTest extends BaseTest {
         )
         command.execute(options, new StringReader(""), new StringWriter())
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF outFormat = new GeoTIFF(outFile)
+        Raster outRaster = outFormat.read()
         assertNotNull(outRaster)
-        Raster inRaster = format.read(inFile)
+        GeoTIFF inFormat = new GeoTIFF(inFile)
+        Raster inRaster = inFormat.read()
 
         Point pt = new Point(-120, 47)
         assertEquals(inRaster.getValue(pt, 0) - 10, outRaster.getValue(pt, 0), 0.1)
@@ -54,10 +55,11 @@ class SubtractConstantCommandTest extends BaseTest {
         )
         command.execute(options, new StringReader(""), new StringWriter())
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF outFormat = new GeoTIFF(outFile)
+        Raster outRaster = outFormat.read()
         assertNotNull(outRaster)
-        Raster inRaster = format.read(inFile)
+        GeoTIFF inFormat = new GeoTIFF(inFile)
+        Raster inRaster = inFormat.read()
 
         Point pt = new Point(-120, 47)
         assertEquals(255 - inRaster.getValue(pt, 0), outRaster.getValue(pt, 0), 0.1)
@@ -98,10 +100,11 @@ class SubtractConstantCommandTest extends BaseTest {
                 "-v", "10"
         ], "")
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF outFormat = new GeoTIFF(outFile)
+        Raster outRaster = outFormat.read()
         assertNotNull(outRaster)
-        Raster inRaster = format.read(inFile)
+        GeoTIFF inFormat = new GeoTIFF(inFile)
+        Raster inRaster = inFormat.read()
 
         Point pt = new Point(-120, 47)
         assertEquals(inRaster.getValue(pt, 0) - 10, outRaster.getValue(pt, 0), 0.1)
@@ -121,10 +124,11 @@ class SubtractConstantCommandTest extends BaseTest {
                 "-m", "true"
         ], "")
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF outFormat = new GeoTIFF(outFile)
+        Raster outRaster = outFormat.read()
         assertNotNull(outRaster)
-        Raster inRaster = format.read(inFile)
+        GeoTIFF inFormat = new GeoTIFF(inFile)
+        Raster inRaster = inFormat.read()
 
         Point pt = new Point(-120, 47)
         assertEquals(255 - inRaster.getValue(pt, 0), outRaster.getValue(pt, 0), 0.1)

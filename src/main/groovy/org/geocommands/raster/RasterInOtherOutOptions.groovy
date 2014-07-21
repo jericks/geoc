@@ -11,6 +11,9 @@ class RasterInOtherOutOptions extends RasterInOutOptions {
     @Option(name="-k", aliases="--other-raster",  usage="The other raster", required = true)
     String otherRaster
 
+    @Option(name="-y", aliases="--other-raster-name",  usage="The other raster name", required = false)
+    String otherRasterName
+
     @Option(name="-j", aliases="--other-projection",  usage="The other projection", required = false)
     String otherProjection
 }

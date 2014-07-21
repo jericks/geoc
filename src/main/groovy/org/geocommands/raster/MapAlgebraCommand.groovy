@@ -37,7 +37,12 @@ class MapAlgebraCommand extends Command<MapAlgebraOptions> {
         }
         Map<String, Raster> rasters = [:]
         options.rasters.each { k, v ->
-            rasters[k] = RasterUtil.getRaster(v, null)
+            String format = v
+            String name = ""
+            if (format.contains(";")) {
+                name = format.substring(format.lastIndexOf(";"))
+            }
+            rasters[k] = RasterUtil.getRaster(v, name, null)
         }
         MapAlgebra mapAlgebra = new MapAlgebra()
         Raster raster = mapAlgebra.calculate(script, rasters,

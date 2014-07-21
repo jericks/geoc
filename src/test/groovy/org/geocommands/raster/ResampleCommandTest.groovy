@@ -32,8 +32,8 @@ class ResampleCommandTest extends BaseTest {
         )
         command.execute(options, new StringReader(""), new StringWriter())
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster outRaster = format.read()
         assertNotNull(outRaster)
         assertEquals(Bounds.fromString("1166291.0260847565,823060.0090852415,1167431.8522748263,824326.3820666744,EPSG:2927"), outRaster.bounds)
         assertEquals(861, outRaster.size[0])
@@ -52,8 +52,8 @@ class ResampleCommandTest extends BaseTest {
         )
         command.execute(options, reader, writer)
 
-        ArcGrid format = new ArcGrid()
-        Raster outRaster = format.read(new ReaderInputStream(new StringReader(writer.toString())), new Projection("EPSG:4326"))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(writer.toString())))
+        Raster outRaster = format.read(new Projection("EPSG:4326"))
         assertNotNull(outRaster)
         assertEquals(Bounds.fromString("-166.0,71.6,-163.6,74.75,EPSG:4326"), outRaster.bounds)
         assertEquals(16, outRaster.size[0])
@@ -72,8 +72,8 @@ class ResampleCommandTest extends BaseTest {
                 "-s", "861, 944"
         ], "")
 
-        GeoTIFF format = new GeoTIFF()
-        Raster outRaster = format.read(outFile)
+        GeoTIFF format = new GeoTIFF(outFile)
+        Raster outRaster = format.read()
         assertNotNull(outRaster)
         assertEquals(Bounds.fromString("1166291.0260847565,823060.0090852415,1167431.8522748263,824326.3820666744,EPSG:2927"), outRaster.bounds)
         assertEquals(861, outRaster.size[0])
@@ -89,8 +89,8 @@ class ResampleCommandTest extends BaseTest {
                 "-s", "16,21"
         ], reader.text)
 
-        ArcGrid format = new ArcGrid()
-        Raster outRaster = format.read(new ReaderInputStream(new StringReader(result)), new Projection("EPSG:4326"))
+        ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(result)))
+        Raster outRaster = format.read(new Projection("EPSG:4326"))
         assertNotNull(outRaster)
         assertEquals(Bounds.fromString("-166.0,71.6,-163.6,74.75,EPSG:4326"), outRaster.bounds)
         assertEquals(16, outRaster.size[0])

@@ -14,8 +14,6 @@ import static org.junit.Assert.*
  */
 class AppTest extends BaseTest {
 
-    private static final String  NEW_LINE = System.getProperty("line.separator")
-
     @Before
     public void before() throws Exception {
         System.setSecurityManager(new OverrideExitSecurityManager())

@@ -3,6 +3,10 @@ package org.geocommands
 import org.kohsuke.args4j.CmdLineParser
 import java.util.logging.*
 
+/**
+ * The Command line "geoc" application.
+ * @author Jared Erickson
+ */
 class App {
 
     static void main(String[] args) {

@@ -4,7 +4,7 @@ import org.kohsuke.args4j.Argument
 import org.kohsuke.args4j.Option
 
 /**
- * The base Options class that holds the name of the command
+ * The base Options class that holds the name(s) of the command
  * and a help flag.
  * @author Jared Erickson
  */

@@ -15,7 +15,7 @@ class CssToSldCommand extends Command<CssToSldOptions> {
 
     @Override
     String getName() {
-        "css2sld"
+        "style css2sld"
     }
 
     @Override

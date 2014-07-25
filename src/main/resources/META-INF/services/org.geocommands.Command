@@ -1,5 +1,7 @@
 org.geocommands.ListCommand
-org.geocommands.proj.PrjCommand
+
+org.geocommands.proj.WktCommand
+
 org.geocommands.style.CssToSldCommand
 
 org.geocommands.geometry.ConvertCommand

@@ -9,25 +9,25 @@ import org.kohsuke.args4j.Option
  * Create a prj file
  * @author Jared Erickson
  */
-class PrjCommand extends Command<PrjOptions> {
+class WktCommand extends Command<WktOptions> {
 
     @Override
     String getName() {
-        "prj"
+        "proj wkt"
     }
 
     @Override
     String getDescription() {
-        "Create a prj file"
+        "Get the WKT of a Projection"
     }
 
     @Override
-    PrjOptions getOptions() {
-        new PrjOptions()
+    WktOptions getOptions() {
+        new WktOptions()
     }
 
     @Override
-    void execute(PrjOptions options, Reader reader, Writer writer) throws Exception {
+    void execute(WktOptions options, Reader reader, Writer writer) throws Exception {
         Projection proj = new Projection(options.epsg)
         if (options.file) {
             options.file.text = proj.wkt
@@ -36,7 +36,7 @@ class PrjCommand extends Command<PrjOptions> {
         }
     }
 
-    static class PrjOptions extends Options {
+    static class WktOptions extends Options {
 
         @Option(name = "-e", aliases = "--epsg", usage = "The EPSG Projection code", required = true)
         String epsg

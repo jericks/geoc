@@ -78,7 +78,7 @@ class CssToSldCommandTest extends BaseTest {
     @Test
     void runWithStrings() {
         String sld = runApp([
-                "css2sld"
+                "style css2sld"
         ], css)
         assertStringsEqual(sld, sld, true)
     }
@@ -89,7 +89,7 @@ class CssToSldCommandTest extends BaseTest {
         inFile.write(css)
         File outFile = File.createTempFile("points", "sld")
         runApp([
-                "css2sld",
+                "style css2sld",
                 "-i", inFile.absolutePath,
                 "-o", outFile.absolutePath
         ], "")

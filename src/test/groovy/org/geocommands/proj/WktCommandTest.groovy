@@ -1,18 +1,18 @@
 package org.geocommands.proj
 
 import org.geocommands.BaseTest
-import org.geocommands.proj.PrjCommand.PrjOptions
+import org.geocommands.proj.WktCommand.WktOptions
 import org.junit.Test
 
 /**
  * The PrjCommand Unit Test
  * @author Jared Erickson
  */
-class PrjCommandTest extends BaseTest {
+class WktCommandTest extends BaseTest {
 
     @Test void executeToString() {
-        PrjCommand command = new PrjCommand()
-        PrjOptions options = new PrjOptions(
+        WktCommand command = new WktCommand()
+        WktOptions options = new WktOptions(
                 epsg: "EPSG:4326"
         )
         StringWriter writer = new StringWriter()
@@ -33,8 +33,8 @@ class PrjCommandTest extends BaseTest {
 
     @Test void executeToFile() {
         File file = createTemporaryFile("layer","prj")
-        PrjCommand command = new PrjCommand()
-        PrjOptions options = new PrjOptions(
+        WktCommand command = new WktCommand()
+        WktOptions options = new WktOptions(
                 epsg: "EPSG:4326",
                 file: file
         )
@@ -57,7 +57,7 @@ class PrjCommandTest extends BaseTest {
     @Test
     void runAsCommandLineToString() {
         String actual = runApp([
-                "prj",
+                "proj wkt",
                 "-e", "EPSG:4326"
         ], "")
         String expected = """GEOGCS["WGS 84",
@@ -77,7 +77,7 @@ class PrjCommandTest extends BaseTest {
     void runAsCommandLineToFile() {
         File file = createTemporaryFile("layer","prj")
         runApp([
-                "prj",
+                "proj wkt",
                 "-e", "EPSG:4326",
                 "-f", file.absolutePath
         ], "")

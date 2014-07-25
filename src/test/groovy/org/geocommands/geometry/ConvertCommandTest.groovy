@@ -84,6 +84,21 @@ class ConvertCommandTest extends BaseTest {
     }
 
     @Test
+    void runWktToKmlFeature() {
+        String actual = runApp([
+                "geometry convert",
+                "-f", "kml",
+                "-t", "feature"
+        ], "POINT (1 2)").trim()
+        String expected = "<kml:Placemark xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:kml=\"http://earth.google.com/kml/2.1\" id=\"1\">" + NEW_LINE +
+                "<kml:Point>" + NEW_LINE +
+                "<kml:coordinates>1.0,2.0</kml:coordinates>" + NEW_LINE +
+                "</kml:Point>" + NEW_LINE +
+                "</kml:Placemark>"
+        assertEquals(expected, actual)
+    }
+
+    @Test
     void runWktToGmlFeature() {
         String actual = runApp([
                 "geometry convert",
@@ -91,16 +106,18 @@ class ConvertCommandTest extends BaseTest {
                 "-f", "gml",
                 "-t", "feature"
         ], "").trim()
-        String expected = """<gsf:feature xmlns:gsf="http://geoscript.org/feature" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" fid="1">
-<gsf:geom>
-<gml:Point>
-<gml:coord>
-<gml:X>1.0</gml:X>
-<gml:Y>2.0</gml:Y>
-</gml:coord>
-</gml:Point>
-</gsf:geom>
-</gsf:feature>"""
+        String expected = "<gsf:feature xmlns:gsf=\"http://geoscript.org/feature\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:gml=\"http://www.opengis.net/gml\" fid=\"1\">" + NEW_LINE +
+                "<gsf:geom>" + NEW_LINE +
+                "<gml:Point>" + NEW_LINE +
+                "<gml:coord>" + NEW_LINE +
+                "<gml:X>1.0</gml:X>" + NEW_LINE +
+                "<gml:Y>2.0</gml:Y>" + NEW_LINE +
+                "</gml:coord>" + NEW_LINE +
+                "</gml:Point>" + NEW_LINE +
+                "</gsf:geom>" + NEW_LINE +
+                "</gsf:feature>"
+        println actual
+        println expected
         assertStringsEqual(expected, actual, true)
     }
 }

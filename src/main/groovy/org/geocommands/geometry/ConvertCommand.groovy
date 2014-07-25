@@ -60,7 +60,7 @@ class ConvertCommand extends Command<ConvertOptions> {
         } else if (format.equalsIgnoreCase("geojson")) {
             new geoscript.geom.io.GeoJSONWriter()
         } else if (format.equalsIgnoreCase("georss")) {
-            new geoscript.geom.io.GeoRSSWriter(options.formatOptions)
+            new geoscript.geom.io.GeoRSSWriter()
         } else if (format.equalsIgnoreCase("gml2") || format.equalsIgnoreCase("gml")) {
             new geoscript.geom.io.Gml2Writer()
         } else if (format.equalsIgnoreCase("gml3")) {
@@ -69,6 +69,8 @@ class ConvertCommand extends Command<ConvertOptions> {
             new geoscript.geom.io.KmlWriter()
         } else if (format.equalsIgnoreCase("wkb")) {
             new geoscript.geom.io.WkbWriter()
+        } else if (format.equalsIgnoreCase("gpx")) {
+            new geoscript.geom.io.GpxWriter()
         } else {
             throw new IllegalArgumentException("Unknown format '${format}'!")
         }
@@ -79,6 +81,12 @@ class ConvertCommand extends Command<ConvertOptions> {
             new geoscript.feature.io.GeoJSONWriter()
         } else if (format.equalsIgnoreCase("gml")) {
             new geoscript.feature.io.GmlWriter()
+        } else if (format.equalsIgnoreCase("kml")) {
+            new geoscript.feature.io.KmlWriter()
+        } else if (format.equalsIgnoreCase("georss")) {
+            new geoscript.feature.io.GeoRSSWriter()
+        } else if (format.equalsIgnoreCase("gpx")) {
+            new geoscript.feature.io.GpxWriter()
         } else {
             throw new IllegalArgumentException("Unknown format '${format}'!")
         }
@@ -93,6 +101,10 @@ class ConvertCommand extends Command<ConvertOptions> {
             new geoscript.layer.io.GmlWriter()
         } else if (format.equalsIgnoreCase("kml")) {
             new geoscript.layer.io.KmlWriter()
+        } else if (format.equalsIgnoreCase("georss")) {
+            new geoscript.layer.io.GeoRSSWriter()
+        } else if (format.equalsIgnoreCase("gpx")) {
+            new geoscript.layer.io.GpxWriter()
         } else {
             throw new IllegalArgumentException("Unknown format '${format}'!")
         }

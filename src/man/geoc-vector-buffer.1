@@ -1,8 +1,10 @@
-.TH "geoc-vector-buffer" "1" "5 May 2013" "version 0.1"
+.TH "geoc-vector-buffer" "1" "29 July 2014" "version 0.1"
 .SH NAME
 geoc vector buffer
 .SH DESCRIPTION
 Buffer the features of the input Layer and save them to the output Layer
+.SH USAGE
+geoc vector randompoints -n 10 -g "1,1,10,10" | geoc vector buffer -d 10
 .SH OPTIONS
 -d --distance: The buffer distance
 .PP

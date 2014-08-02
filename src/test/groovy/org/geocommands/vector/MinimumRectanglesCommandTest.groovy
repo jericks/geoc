@@ -6,6 +6,7 @@ import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.MinimumRectanglesCommand.MinimumRectanglesOptions
 import org.junit.Test
+
 import static org.junit.Assert.assertEquals
 
 /**
@@ -14,13 +15,14 @@ import static org.junit.Assert.assertEquals
  */
 class MinimumRectanglesCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         MinimumRectanglesCommand cmd = new MinimumRectanglesCommand()
         File file = getResource("polys.properties")
         File shpFile = createTemporaryShapefile("minrects")
         MinimumRectanglesOptions options = new MinimumRectanglesOptions(
-            inputWorkspace: file.absolutePath,
-            outputWorkspace: shpFile
+                inputWorkspace: file.absolutePath,
+                outputWorkspace: shpFile
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
@@ -28,7 +30,8 @@ class MinimumRectanglesCommandTest extends BaseTest {
         assertEquals "MultiPolygon", shp.schema.geom.typ
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         MinimumRectanglesCommand cmd = new MinimumRectanglesCommand()
         MinimumRectanglesOptions options = new MinimumRectanglesOptions()
         StringWriter w = new StringWriter()
@@ -38,13 +41,14 @@ class MinimumRectanglesCommandTest extends BaseTest {
         assertEquals "Polygon", layer.schema.geom.typ
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("polys.properties")
         File shpFile = createTemporaryShapefile("minrects")
         App.main([
-            "vector minrects",
-            "-i", file.absolutePath,
-            "-o", shpFile.absolutePath
+                "vector minrects",
+                "-i", file.absolutePath,
+                "-o", shpFile.absolutePath
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
         assertEquals 3, shp.count

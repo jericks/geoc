@@ -1,7 +1,6 @@
 package org.geocommands.raster
 
 import geoscript.geom.Bounds
-import geoscript.geom.Geometry
 import geoscript.layer.Raster
 import org.kohsuke.args4j.Option
 
@@ -39,10 +38,10 @@ class CropCommand extends RasterInOutCommand<CropOptions> {
 
     static class CropOptions extends RasterInOutOptions {
 
-        @Option(name="-b", aliases="--bound",  usage="The Bounds", required = true)
+        @Option(name = "-b", aliases = "--bound", usage = "The Bounds", required = true)
         String bounds
 
-        @Option(name="-x", aliases="--pixel",  usage="Whether the Bounds is pixel or geographic", required = false)
+        @Option(name = "-x", aliases = "--pixel", usage = "Whether the Bounds is pixel or geographic", required = false)
         boolean pixel
 
     }

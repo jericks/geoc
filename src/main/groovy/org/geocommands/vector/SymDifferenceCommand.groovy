@@ -5,14 +5,12 @@ import geoscript.feature.Schema
 import geoscript.geom.Geometry
 import geoscript.index.Quadtree
 import geoscript.layer.Layer
-import org.geocommands.vector.LayerInOtherOutCombineSchemasCommand
-import org.geocommands.vector.LayerInOtherOutCombineSchemasOptions
 
 /**
  * Calculate the symmetric difference between two Layers..
  * @author Jared Erickson
  */
-class SymDifferenceCommand extends LayerInOtherOutCombineSchemasCommand<SymDifferenceOptions>{
+class SymDifferenceCommand extends LayerInOtherOutCombineSchemasCommand<SymDifferenceOptions> {
 
     @Override
     String getName() {
@@ -41,7 +39,7 @@ class SymDifferenceCommand extends LayerInOtherOutCombineSchemasCommand<SymDiffe
         otherLayer.eachFeature { f ->
             Geometry geom = f.geom
             index.query(f.geom.bounds).each { features ->
-                if(geom.intersects(features.geom)) {
+                if (geom.intersects(features.geom)) {
                     index.remove(features.geom.bounds, features)
                     Geometry difference1 = features.geom.difference(geom)
                     Geometry difference2 = geom.difference(features.geom)
@@ -52,7 +50,7 @@ class SymDifferenceCommand extends LayerInOtherOutCombineSchemasCommand<SymDiffe
             index.insert(geom.bounds, [geom: geom, feature1: null, feature2: f])
         }
 
-        outLayer.withWriter {geoscript.layer.Writer w ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
             Schema schema = outLayer.schema
             index.queryAll().each { features ->
                 Geometry geom = features.geom
@@ -61,7 +59,7 @@ class SymDifferenceCommand extends LayerInOtherOutCombineSchemasCommand<SymDiffe
                 Map attributes = [(schema.geom.name): geom]
                 if (f1) {
                     Map fieldMap = options.fields[0]
-                    f1.attributes.each {String k, Object v ->
+                    f1.attributes.each { String k, Object v ->
                         if (!k.equalsIgnoreCase(inLayer.schema.geom.name) && fieldMap.containsKey(k)) {
                             attributes[fieldMap[k]] = v
                         }
@@ -69,7 +67,7 @@ class SymDifferenceCommand extends LayerInOtherOutCombineSchemasCommand<SymDiffe
                 }
                 if (f2) {
                     Map fieldMap = options.fields[1]
-                    f2.attributes.each {String k, Object v ->
+                    f2.attributes.each { String k, Object v ->
                         if (!k.equalsIgnoreCase(outLayer.schema.geom.name) && fieldMap.containsKey(k)) {
                             attributes[fieldMap[k]] = v
                         }

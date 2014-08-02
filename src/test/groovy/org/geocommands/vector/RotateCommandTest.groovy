@@ -1,7 +1,5 @@
 package org.geocommands.vector
 
-import geoscript.feature.Feature
-import geoscript.filter.Expression
 import geoscript.geom.Geometry
 import geoscript.layer.Layer
 import geoscript.layer.Property

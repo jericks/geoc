@@ -8,6 +8,7 @@ import org.kohsuke.args4j.Option
 
 /**
  * Draw a Layer to an Image, PDF, SVG Document
+ * @author Jared Erickson
  */
 class DrawLayerCommand extends LayerCommand<DrawLayerOptions> {
 

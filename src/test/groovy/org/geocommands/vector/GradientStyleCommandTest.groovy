@@ -12,14 +12,15 @@ import static org.junit.Assert.assertEquals
  */
 class GradientStyleCommandTest extends BaseTest {
 
-    @Test void executeForPointsAndColorBrewer() {
+    @Test
+    void executeForPointsAndColorBrewer() {
         GradientStyleCommand cmd = new GradientStyleCommand()
         File file = getResource("points.properties")
         GradientStyleOptions options = new GradientStyleOptions(
-            inputWorkspace: file.absolutePath,
-            colors: "Greens",
-            field: "distance",
-            number: 3
+                inputWorkspace: file.absolutePath,
+                colors: "Greens",
+                field: "distance",
+                number: 3
         )
         StringWriter writer = new StringWriter()
         cmd.execute(options, new StringReader(""), writer)
@@ -95,14 +96,15 @@ class GradientStyleCommandTest extends BaseTest {
         assertEquals(expected, actual)
     }
 
-    @Test void executeForPolygonsAndColors() {
+    @Test
+    void executeForPolygonsAndColors() {
         GradientStyleCommand cmd = new GradientStyleCommand()
         File file = getResource("polygons.properties")
         GradientStyleOptions options = new GradientStyleOptions(
-            inputWorkspace: file.absolutePath,
-            colors: "green blue",
-            field: "row",
-            number: 2
+                inputWorkspace: file.absolutePath,
+                colors: "green blue",
+                field: "row",
+                number: 2
         )
         StringWriter writer = new StringWriter()
         cmd.execute(options, new StringReader(""), writer)
@@ -168,15 +170,16 @@ class GradientStyleCommandTest extends BaseTest {
         assertEquals(expected, actual)
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("points.properties")
         String output = runApp([
-            "vector gradientstyle",
-            "-i", file.absolutePath,
-            "-c", "Greens",
-            "-n", "3",
-            "-f", "distance"
-        ],"")
+                "vector gradientstyle",
+                "-i", file.absolutePath,
+                "-c", "Greens",
+                "-n", "3",
+                "-f", "distance"
+        ], "")
         String actual = output
         String expected = """<?xml version="1.0" encoding="UTF-8"?>
 <sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml" version="1.0.0">
@@ -250,11 +253,11 @@ class GradientStyleCommandTest extends BaseTest {
         assertEquals(expected, actual)
 
         output = runApp([
-            "vector gradientstyle",
-            "-c", "green blue",
-            "-n", "2",
-            "-f", "row"
-        ],readCsv("polygons.csv").text)
+                "vector gradientstyle",
+                "-c", "green blue",
+                "-n", "2",
+                "-f", "row"
+        ], readCsv("polygons.csv").text)
         actual = output
         expected = """<?xml version="1.0" encoding="UTF-8"?>
 <sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml" version="1.0.0">

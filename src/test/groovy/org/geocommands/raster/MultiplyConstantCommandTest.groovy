@@ -36,10 +36,10 @@ class MultiplyConstantCommandTest extends BaseTest {
         GeoTIFF inFormat = new GeoTIFF(inFile)
         Raster inRaster = inFormat.read()
 
-        Point pt = new Point(-120,47)
-        assertEquals(inRaster.getValue(pt,0) * 1.01, outRaster.getValue(pt,0), 1.0)
-        pt = new Point(120,45)
-        assertEquals(inRaster.getValue(pt,0) * 1.01, outRaster.getValue(pt,0), 1.0)
+        Point pt = new Point(-120, 47)
+        assertEquals(inRaster.getValue(pt, 0) * 1.01, outRaster.getValue(pt, 0), 1.0)
+        pt = new Point(120, 45)
+        assertEquals(inRaster.getValue(pt, 0) * 1.01, outRaster.getValue(pt, 0), 1.0)
     }
 
     @Test
@@ -58,10 +58,10 @@ class MultiplyConstantCommandTest extends BaseTest {
         ArcGrid inFormat = new ArcGrid(getStringReader("raster.asc").text)
         Raster inRaster = inFormat.read()
 
-        Point pt = new Point(-175.0,84.6)
-        assertEquals(inRaster.getValue(pt,0) * 1.01, outRaster.getValue(pt,0), 1.0)
-        pt = new Point(-174.2,85.0)
-        assertEquals(inRaster.getValue(pt,0) * 1.01, outRaster.getValue(pt,0), 1.0)
+        Point pt = new Point(-175.0, 84.6)
+        assertEquals(inRaster.getValue(pt, 0) * 1.01, outRaster.getValue(pt, 0), 1.0)
+        pt = new Point(-174.2, 85.0)
+        assertEquals(inRaster.getValue(pt, 0) * 1.01, outRaster.getValue(pt, 0), 1.0)
     }
 
     @Test
@@ -81,10 +81,10 @@ class MultiplyConstantCommandTest extends BaseTest {
         GeoTIFF inFormat = new GeoTIFF(inFile)
         Raster inRaster = inFormat.read()
 
-        Point pt = new Point(-120,47)
-        assertEquals(inRaster.getValue(pt,0) * 1.01, outRaster.getValue(pt,0), 1.0)
-        pt = new Point(120,45)
-        assertEquals(inRaster.getValue(pt,0) * 1.01, outRaster.getValue(pt,0), 1.0)
+        Point pt = new Point(-120, 47)
+        assertEquals(inRaster.getValue(pt, 0) * 1.01, outRaster.getValue(pt, 0), 1.0)
+        pt = new Point(120, 45)
+        assertEquals(inRaster.getValue(pt, 0) * 1.01, outRaster.getValue(pt, 0), 1.0)
     }
 
     @Test
@@ -102,9 +102,9 @@ class MultiplyConstantCommandTest extends BaseTest {
         ArcGrid inFormat = new ArcGrid(getStringReader("raster.asc").text)
         Raster inRaster = inFormat.read()
 
-        Point pt = new Point(-175.0,84.6)
-        assertEquals(inRaster.getValue(pt,0) * 1.01, outRaster.getValue(pt,0), 1.0)
-        pt = new Point(-174.2,85.0)
-        assertEquals(inRaster.getValue(pt,0) * 1.01, outRaster.getValue(pt,0), 1.0)
+        Point pt = new Point(-175.0, 84.6)
+        assertEquals(inRaster.getValue(pt, 0) * 1.01, outRaster.getValue(pt, 0), 1.0)
+        pt = new Point(-174.2, 85.0)
+        assertEquals(inRaster.getValue(pt, 0) * 1.01, outRaster.getValue(pt, 0), 1.0)
     }
 }

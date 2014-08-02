@@ -4,10 +4,10 @@ import geoscript.layer.Layer
 import geoscript.workspace.Property
 import org.geocommands.App
 import org.geocommands.BaseTest
-
-import static junit.framework.Assert.*
 import org.geocommands.vector.DeleteCommand.DeleteOptions
 import org.junit.Test
+
+import static junit.framework.Assert.assertEquals
 
 /**
  * The DeleteCommand Unit Test
@@ -15,21 +15,23 @@ import org.junit.Test
  */
 class DeleteCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         DeleteCommand cmd = new DeleteCommand()
         File file = getCopiedResource("points.properties")
         Layer layer = new Property(file.parentFile.absolutePath).get(file.name)
         assertEquals 3, layer.count
         DeleteOptions options = new DeleteOptions(
-            inputWorkspace: file.absolutePath,
-            filter: "name = 'Number 1'"
+                inputWorkspace: file.absolutePath,
+                filter: "name = 'Number 1'"
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         layer = new Property(file.parentFile.absolutePath).get(file.name)
         assertEquals 2, layer.count
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         DeleteCommand cmd = new DeleteCommand()
         DeleteOptions options = new DeleteOptions(filter: "name = 'Number 1'")
         StringWriter w = new StringWriter()
@@ -38,19 +40,20 @@ class DeleteCommandTest extends BaseTest {
         assertEquals 2, layer.count
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getCopiedResource("points.properties")
         Layer layer = new Property(file.parentFile).get(file.name)
         assertEquals 3, layer.count
         App.main([
-            "vector delete",
-            "-i", file.absolutePath,
-            "-f", "name = 'Number 1'"
+                "vector delete",
+                "-i", file.absolutePath,
+                "-f", "name = 'Number 1'"
         ] as String[])
         layer = new Property(file.parentFile).get(file.name)
         assertEquals 2, layer.count
 
-        String output = runApp(["vector delete","-f","name = 'Number 1'"], readCsv("points.csv").text)
+        String output = runApp(["vector delete", "-f", "name = 'Number 1'"], readCsv("points.csv").text)
         layer = getLayerFromCsv(output)
         assertEquals 2, layer.count
     }

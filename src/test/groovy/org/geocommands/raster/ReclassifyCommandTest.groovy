@@ -1,14 +1,13 @@
 package org.geocommands.raster
 
-import geoscript.geom.Bounds
 import geoscript.geom.Point
 import geoscript.layer.ArcGrid
 import geoscript.layer.GeoTIFF
 import geoscript.layer.Raster
 import geoscript.proj.Projection
 import org.apache.commons.io.input.ReaderInputStream
-import org.geocommands.raster.ReclassifyCommand.ReclassifyOptions
 import org.geocommands.BaseTest
+import org.geocommands.raster.ReclassifyCommand.ReclassifyOptions
 import org.junit.Test
 
 import static org.junit.Assert.assertEquals
@@ -20,20 +19,18 @@ import static org.junit.Assert.assertNotNull
  */
 class ReclassifyCommandTest extends BaseTest {
 
-    // geoc raster reclassify -i raster.tif -o raster_reclass.tif -r 49-100=1 -r 100-256=255
-
     @Test
     void executeWithFile() {
         File inFile = getResource("raster.tif")
         File outFile = createTemporaryFile("raster", "tif")
         ReclassifyCommand command = new ReclassifyCommand()
         ReclassifyOptions options = new ReclassifyOptions(
-            inputRaster: inFile,
-            outputRaster: outFile,
-            ranges: [
-                "49-100=1",
-                "100-256=255"
-            ]
+                inputRaster: inFile,
+                outputRaster: outFile,
+                ranges: [
+                        "49-100=1",
+                        "100-256=255"
+                ]
         )
         command.execute(options, new StringReader(""), new StringWriter())
 

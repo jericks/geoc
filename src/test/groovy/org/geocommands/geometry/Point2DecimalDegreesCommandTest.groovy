@@ -3,7 +3,8 @@ package org.geocommands.geometry
 import org.geocommands.BaseTest
 import org.geocommands.geometry.Point2DecimalDegreesCommand.Point2DecimalDegreesOptions
 import org.junit.Test
-import static org.junit.Assert.*
+
+import static org.junit.Assert.assertEquals
 
 /**
  * The Point2DecimalDegreesCommand Unit Test
@@ -11,11 +12,12 @@ import static org.junit.Assert.*
  */
 class Point2DecimalDegreesCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         Point2DecimalDegreesCommand cmd = new Point2DecimalDegreesCommand()
         Point2DecimalDegreesOptions options = new Point2DecimalDegreesOptions(
-            point: "POINT (-122.5256194 47.212022222)",
-            outputType: "dms"
+                point: "POINT (-122.5256194 47.212022222)",
+                outputType: "dms"
         )
         StringWriter writer = new StringWriter()
         cmd.execute(options, new StringReader(""), writer)
@@ -27,11 +29,12 @@ class Point2DecimalDegreesCommandTest extends BaseTest {
         assertEquals "-122d 31m 32.2298s W, 47d 12m 43.2800s N", writer.toString()
     }
 
-    @Test void runAsCommandLine() {
-        String result = runApp(["geometry pt2dd", "-p", "POINT (-122.5256194 47.212022222)", "-t", "ddm"],"")
+    @Test
+    void runAsCommandLine() {
+        String result = runApp(["geometry pt2dd", "-p", "POINT (-122.5256194 47.212022222)", "-t", "ddm"], "")
         assertEquals "-122\u00B0 31.5372' W, 47\u00B0 12.7213' N", result.trim()
 
-        result = runApp(["geometry pt2dd", "-t", "ddm_char"],"POINT (-122.5256194 47.212022222)")
+        result = runApp(["geometry pt2dd", "-t", "ddm_char"], "POINT (-122.5256194 47.212022222)")
         assertEquals "-122d 31.5372m W, 47d 12.7213m N", result.trim()
     }
 }

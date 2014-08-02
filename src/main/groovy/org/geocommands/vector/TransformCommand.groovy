@@ -9,7 +9,7 @@ import org.kohsuke.args4j.Option
  * Transform the values of the input Layer using Expression and Functions
  * @author Jared Erickson
  */
-class TransformCommand extends LayerInOutCommand<TransformOptions>{
+class TransformCommand extends LayerInOutCommand<TransformOptions> {
 
     @Override
     String getName() {
@@ -29,8 +29,8 @@ class TransformCommand extends LayerInOutCommand<TransformOptions>{
     @Override
     void processLayers(Layer inLayer, Layer outLayer, TransformOptions options, Reader reader, Writer writer) throws Exception {
         Layer transformedLayer = inLayer.transform(outLayer.name, options.definitions)
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            transformedLayer.eachFeature {f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            transformedLayer.eachFeature { f ->
                 w.add(f)
             }
         }
@@ -51,7 +51,7 @@ class TransformCommand extends LayerInOutCommand<TransformOptions>{
     }
 
     static class TransformOptions extends LayerInOutOptions {
-        @Option(name="-d", aliases="--definition",  usage="A transform definition 'field=expression'", required = true)
-        Map<String,String> definitions
+        @Option(name = "-d", aliases = "--definition", usage = "A transform definition 'field=expression'", required = true)
+        Map<String, String> definitions
     }
 }

@@ -5,8 +5,6 @@ import geoscript.layer.io.CsvWriter
 import geoscript.layer.io.GeoJSONWriter
 import geoscript.layer.io.GmlWriter
 import geoscript.layer.io.KmlWriter
-import org.geocommands.vector.LayerCommand
-import org.geocommands.vector.LayerOptions
 import org.kohsuke.args4j.Option
 
 /**
@@ -48,7 +46,7 @@ class ToCommand extends LayerCommand<ToOptions> {
     }
 
     static class ToOptions extends LayerOptions {
-        @Option(name="-f", aliases="--format",  usage="The string format (CSV, GeoJSON, KML, GML)", required = true)
+        @Option(name = "-f", aliases = "--format", usage = "The string format (CSV, GeoJSON, KML, GML)", required = true)
         String format
     }
 }

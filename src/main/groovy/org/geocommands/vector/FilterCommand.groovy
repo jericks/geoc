@@ -27,10 +27,10 @@ class FilterCommand extends LayerInOutCommand<FilterOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, FilterOptions options, Reader reader, Writer writer) {
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.eachFeature(options.filter, {Feature f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.eachFeature(options.filter, { Feature f ->
                 Map values = [:]
-                f.attributes.each{k,v ->
+                f.attributes.each { k, v ->
                     values[k] = v
                 }
                 w.add(outLayer.schema.feature(values, f.id))
@@ -39,7 +39,7 @@ class FilterCommand extends LayerInOutCommand<FilterOptions> {
     }
 
     static class FilterOptions extends LayerInOutOptions {
-        @Option(name="-f", aliases="--filter",  usage="The CQL Filter", required = true)
+        @Option(name = "-f", aliases = "--filter", usage = "The CQL Filter", required = true)
         String filter
     }
 }

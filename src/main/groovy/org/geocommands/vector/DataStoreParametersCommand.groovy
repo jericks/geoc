@@ -25,7 +25,7 @@ class DataStoreParametersCommand extends Command<DataStoreParametersOptions> {
 
     void execute(DataStoreParametersOptions options, Reader reader, Writer writer) {
 
-        def ds = DataStoreFinder.availableDataStores.find{ds ->
+        def ds = DataStoreFinder.availableDataStores.find { ds ->
             if (ds.displayName.equalsIgnoreCase(options.name)) {
                 return ds
             }
@@ -33,7 +33,7 @@ class DataStoreParametersCommand extends Command<DataStoreParametersOptions> {
 
         String NEW_LINE = System.getProperty("line.separator")
         StringBuilder builder = new StringBuilder()
-        ds.parametersInfo.eachWithIndex{param, i ->
+        ds.parametersInfo.eachWithIndex { param, i ->
             if (i > 0) {
                 builder.append(NEW_LINE)
             }
@@ -44,7 +44,7 @@ class DataStoreParametersCommand extends Command<DataStoreParametersOptions> {
 
     private static class DataStoreParametersOptions extends Options {
 
-        @Option(name="-n", aliases="--name",  usage="The DataStore name", required = true)
+        @Option(name = "-n", aliases = "--name", usage = "The DataStore name", required = true)
         String name
 
     }

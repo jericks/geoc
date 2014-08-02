@@ -10,7 +10,7 @@ import geoscript.layer.Layer
  * Calculate the intersection between two Layers.
  * @author Jared Erickson
  */
-class IntersectionCommand extends LayerInOtherOutCombineSchemasCommand<IntersectionOptions>{
+class IntersectionCommand extends LayerInOtherOutCombineSchemasCommand<IntersectionOptions> {
 
     @Override
     String getName() {
@@ -43,7 +43,7 @@ class IntersectionCommand extends LayerInOtherOutCombineSchemasCommand<Intersect
             // First, check the spatial index
             index.query(f.geom.bounds).each { features ->
                 // Make sure the geometries actually intersect
-                if(f.geom.intersects(features.geom)) {
+                if (f.geom.intersects(features.geom)) {
                     // Calculate and insert the intersection
                     Geometry intersection = features.geom.intersection(f.geom)
                     index.insert(intersection.bounds, [geom: intersection, feature1: features.feature1, feature2: f])
@@ -53,7 +53,7 @@ class IntersectionCommand extends LayerInOtherOutCombineSchemasCommand<Intersect
 
         // Only add features from the spatial index that have features from Layer 1 and Layer2
         Schema schema = outLayer.schema
-        outLayer.withWriter {geoscript.layer.Writer w ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
             index.queryAll().each { features ->
                 Geometry geom = features.geom
                 Feature f1 = features.feature1
@@ -61,13 +61,13 @@ class IntersectionCommand extends LayerInOtherOutCombineSchemasCommand<Intersect
                 if (f1 != null && f2 != null) {
                     Map attributes = [(schema.geom.name): geom]
                     Map fieldMap = options.fields[0]
-                    f1.attributes.each {String k, Object v ->
+                    f1.attributes.each { String k, Object v ->
                         if (!k.equalsIgnoreCase(inLayer.schema.geom.name) && fieldMap.containsKey(k)) {
                             attributes[fieldMap[k]] = v
                         }
                     }
                     fieldMap = options.fields[1]
-                    f2.attributes.each {String k, Object v ->
+                    f2.attributes.each { String k, Object v ->
                         if (!k.equalsIgnoreCase(otherLayer.schema.geom.name) && fieldMap.containsKey(k)) {
                             attributes[fieldMap[k]] = v
                         }
@@ -77,7 +77,7 @@ class IntersectionCommand extends LayerInOtherOutCombineSchemasCommand<Intersect
                 }
             }
         }
-        
+
     }
 
     /*@Override

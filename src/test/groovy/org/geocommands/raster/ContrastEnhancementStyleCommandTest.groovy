@@ -6,6 +6,7 @@ import org.junit.Test
 
 /**
  * The ContrastEnhancementStyleCommand Unit Test
+ * @author Jared Erickson
  */
 class ContrastEnhancementStyleCommandTest extends BaseTest {
 

@@ -34,7 +34,7 @@ class RasterValuesCommand extends LayerInOutCommand<RasterValuesOptions> {
     void processLayers(Layer inLayer, Layer outLayer, RasterValuesOptions options, Reader reader, Writer writer) throws Exception {
         Raster raster = RasterUtil.getRaster(options.inputRaster, options.inputRasterName, options.inputProjection)
         List values = []
-        outLayer.withWriter {geoscript.layer.Writer w ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
             inLayer.eachFeature { Feature f ->
                 Point point = f.geom.centroid
                 def value = null

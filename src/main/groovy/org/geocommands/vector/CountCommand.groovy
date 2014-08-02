@@ -28,13 +28,13 @@ class CountCommand extends LayerCommand<CountOptions> {
             writer.write("${layer.count}")
         } else if (options.type.equalsIgnoreCase("geometries")) {
             int numGeometries = 0
-            layer.eachFeature {Feature f ->
+            layer.eachFeature { Feature f ->
                 numGeometries += f.geom.numGeometries
             }
             writer.write("${numGeometries}")
         } else if (options.type.equalsIgnoreCase("points")) {
             int numPoints = 0
-            layer.eachFeature {Feature f ->
+            layer.eachFeature { Feature f ->
                 numPoints += f.geom.numPoints
             }
             writer.write("${numPoints}")
@@ -43,9 +43,9 @@ class CountCommand extends LayerCommand<CountOptions> {
         }
     }
 
-    static class CountOptions extends LayerOptions{
+    static class CountOptions extends LayerOptions {
 
-        @Option(name="-t", aliases="--type",  usage="Count features, geometries, or points", required = false)
+        @Option(name = "-t", aliases = "--type", usage = "Count features, geometries, or points", required = false)
         String type = "features"
 
     }

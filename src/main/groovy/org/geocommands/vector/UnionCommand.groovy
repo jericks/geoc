@@ -5,14 +5,12 @@ import geoscript.feature.Schema
 import geoscript.geom.Geometry
 import geoscript.index.Quadtree
 import geoscript.layer.Layer
-import org.geocommands.vector.LayerInOtherOutCombineSchemasCommand
-import org.geocommands.vector.LayerInOtherOutCombineSchemasOptions
 
 /**
  * Union one Layer with another.
  * @author Jared Erickson
  */
-class UnionCommand extends LayerInOtherOutCombineSchemasCommand<UnionOptions>{
+class UnionCommand extends LayerInOtherOutCombineSchemasCommand<UnionOptions> {
 
     @Override
     String getName() {
@@ -46,7 +44,7 @@ class UnionCommand extends LayerInOtherOutCombineSchemasCommand<UnionOptions>{
             // Check the spatial index to see if this Feature intersects anything
             index.query(f.geom.bounds).each { features ->
                 // Make sure the Geometries actually intersect
-                if(geom.intersects(features.geom)) {
+                if (geom.intersects(features.geom)) {
                     // Remove the original Feaure
                     index.remove(features.geom.bounds, features)
                     // Calculate the intersection and difference from both sides
@@ -65,7 +63,7 @@ class UnionCommand extends LayerInOtherOutCombineSchemasCommand<UnionOptions>{
         }
 
         // Put all Features in the spatial index into the output Layer
-        outLayer.withWriter {geoscript.layer.Writer w ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
             Schema schema = outLayer.schema
             index.queryAll().each { features ->
                 Geometry geom = features.geom
@@ -75,7 +73,7 @@ class UnionCommand extends LayerInOtherOutCombineSchemasCommand<UnionOptions>{
                 attributes[schema.geom.name] = geom
                 if (f1) {
                     Map fieldMap = options.fields[0]
-                    f1.attributes.each {String k, Object v ->
+                    f1.attributes.each { String k, Object v ->
                         if (!k.equalsIgnoreCase(inLayer.schema.geom.name) && fieldMap.containsKey(k)) {
                             attributes[fieldMap[k]] = v
                         }
@@ -83,7 +81,7 @@ class UnionCommand extends LayerInOtherOutCombineSchemasCommand<UnionOptions>{
                 }
                 if (f2) {
                     Map fieldMap = options.fields[1]
-                    f2.attributes.each {String k, Object v ->
+                    f2.attributes.each { String k, Object v ->
                         if (!k.equalsIgnoreCase(outLayer.schema.geom.name) && fieldMap.containsKey(k)) {
                             attributes[fieldMap[k]] = v
                         }

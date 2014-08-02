@@ -10,7 +10,7 @@ import org.kohsuke.args4j.Option
  * Draw geometry to a plot
  * @author Jared Erickson
  */
-class PlotCommand extends Command<PlotOptions>{
+class PlotCommand extends Command<PlotOptions> {
 
     @Override
     String getName() {

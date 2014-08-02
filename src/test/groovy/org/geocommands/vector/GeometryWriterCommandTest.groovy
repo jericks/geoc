@@ -4,7 +4,7 @@ import org.geocommands.BaseTest
 import org.geocommands.vector.GeometryWriterCommand.GeometryWriterOptions
 import org.junit.Test
 
-import static org.junit.Assert.*
+import static org.junit.Assert.assertEquals
 
 /**
  * The GeometryWriterCommand Unit Test
@@ -12,11 +12,12 @@ import static org.junit.Assert.*
  */
 class GeometryWriterCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         File file = getResource("points.properties")
         GeometryWriterCommand cmd = new GeometryWriterCommand()
         GeometryWriterOptions options = new GeometryWriterOptions(
-            inputWorkspace: file.absolutePath
+                inputWorkspace: file.absolutePath
         )
         StringWriter writer = new StringWriter()
         cmd.execute(options, new StringReader(""), writer)
@@ -27,7 +28,8 @@ POINT (2 8)"""
         assertEquals actual, expected
     }
 
-    @Test void executeCsv() {
+    @Test
+    void executeCsv() {
         GeometryWriterCommand cmd = new GeometryWriterCommand()
         GeometryWriterOptions options = new GeometryWriterOptions()
         StringWriter writer = new StringWriter()
@@ -39,9 +41,10 @@ POINT (2 8)"""
         assertEquals actual, expected
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("points.properties")
-        String actual = runApp(["vector geomw","-i",file.absolutePath], "")
+        String actual = runApp(["vector geomw", "-i", file.absolutePath], "")
         String expected = """POINT (1 1)
 POINT (10 10)
 POINT (2 8)

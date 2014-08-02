@@ -9,10 +9,10 @@ import org.kohsuke.args4j.Option
  */
 class LayerOptions extends Options {
 
-    @Option(name="-i", aliases="--input-workspace",  usage="The input workspace", required = false)
+    @Option(name = "-i", aliases = "--input-workspace", usage = "The input workspace", required = false)
     String inputWorkspace
 
-    @Option(name="-l", aliases="--input-layer",  usage="The input layer", required = false)
+    @Option(name = "-l", aliases = "--input-layer", usage = "The input layer", required = false)
     String inputLayer
 
 }

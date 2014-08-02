@@ -8,7 +8,8 @@ import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.DissolveByFieldCommand.DissolveByFieldOptions
 import org.junit.Test
-import static org.junit.Assert.*
+
+import static org.junit.Assert.assertEquals
 
 /**
  * The DissolveByFieldCommand Unit Test
@@ -16,14 +17,15 @@ import static org.junit.Assert.*
  */
 class DissolveByFieldCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         DissolveByFieldCommand cmd = new DissolveByFieldCommand()
         File file = getResource("polygons.properties")
         File shpFile = createTemporaryShapefile("dissolvebyfield")
         DissolveByFieldOptions options = new DissolveByFieldOptions(
-            inputWorkspace: file.absolutePath,
-            outputWorkspace: shpFile,
-            field: "row"
+                inputWorkspace: file.absolutePath,
+                outputWorkspace: shpFile,
+                field: "row"
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
@@ -39,10 +41,11 @@ class DissolveByFieldCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((0 5, 0 10, 5 10, 10 10, 10 5, 5 5, 0 5)))", f.geom.wkt
     }
 
-    @Test void executeCsv() {
+    @Test
+    void executeCsv() {
         DissolveByFieldCommand cmd = new DissolveByFieldCommand()
         DissolveByFieldOptions options = new DissolveByFieldOptions(
-            field: "row"
+                field: "row"
         )
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("polygons.csv"), w)
@@ -59,14 +62,15 @@ class DissolveByFieldCommandTest extends BaseTest {
         assertEquals "POLYGON ((0 5, 0 10, 5 10, 10 10, 10 5, 5 5, 0 5))", f.geom.wkt
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("polygons.properties")
         File shpFile = createTemporaryShapefile("dissolvebyfield")
         App.main([
-            "vector dissolvebyfield",
-            "-i", file.absolutePath,
-            "-o", shpFile.absolutePath,
-            "-f", "row"
+                "vector dissolvebyfield",
+                "-i", file.absolutePath,
+                "-o", shpFile.absolutePath,
+                "-f", "row"
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
         assertEquals 2, shp.count

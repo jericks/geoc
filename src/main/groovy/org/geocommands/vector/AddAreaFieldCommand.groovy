@@ -29,8 +29,8 @@ class AddAreaFieldCommand extends LayerInOutCommand<AddAreaFieldOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, AddAreaFieldOptions options, Reader reader, Writer writer) throws Exception {
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.eachFeature {Feature f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.eachFeature { Feature f ->
                 Map attributes = f.attributes
                 attributes[options.areaFieldName] = f.geom.area
                 w.add(outLayer.schema.feature(attributes, f.id))
@@ -44,7 +44,7 @@ class AddAreaFieldCommand extends LayerInOutCommand<AddAreaFieldOptions> {
     }
 
     static class AddAreaFieldOptions extends LayerInOutOptions {
-        @Option(name="-f", aliases="--area-fieldname",  usage="The name for the area Field", required = false)
+        @Option(name = "-f", aliases = "--area-fieldname", usage = "The name for the area Field", required = false)
         String areaFieldName = "AREA"
     }
 }

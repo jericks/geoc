@@ -6,7 +6,7 @@ import org.junit.Test
 
 import java.security.Permission
 
-import static org.junit.Assert.*
+import static org.junit.Assert.assertEquals
 
 /**
  * The App Unit Test
@@ -24,31 +24,34 @@ class AppTest extends BaseTest {
         System.setSecurityManager(null)
     }
 
-    @Test void runWithNoCommandName() {
+    @Test
+    void runWithNoCommandName() {
         try {
-            String output = runApp([],"")
+            String output = runApp([], "")
             assertEquals "Please enter a geocommand!${NEW_LINE}Usage: geoc <command> <args>", output
         } catch (OverrideExitException ex) {
         }
     }
 
-    @Test void runWithUnknownCommandName() {
+    @Test
+    void runWithUnknownCommandName() {
         try {
-            String output = runApp(["asdfsa"],"")
+            String output = runApp(["asdfsa"], "")
             assertEquals "Unknown geocommand: 'asdfsa'!\"${NEW_LINE}Usage: geoc <command> <args>", output
         } catch (OverrideExitException ex) {
         }
     }
 
-    @Test void runForHelp() {
+    @Test
+    void runForHelp() {
         try {
-            String output = runApp(["vector centroid","--help"],"")
+            String output = runApp(["vector centroid", "--help"], "")
             assertEquals("geoc vector centroid: Get the centroid of each feature in the input Layer and save them to the output Layer" + NEW_LINE
-                + " --help                      : Print the help message" + NEW_LINE
-                + " -i (--input-workspace) VAL  : The input workspace" + NEW_LINE
-                + " -l (--input-layer) VAL      : The input layer" + NEW_LINE
-                + " -o (--output-workspace) VAL : The output workspace" + NEW_LINE
-                + " -r (--output-layer) VAL     : The output layer" + NEW_LINE, output)
+                    + " --help                      : Print the help message" + NEW_LINE
+                    + " -i (--input-workspace) VAL  : The input workspace" + NEW_LINE
+                    + " -l (--input-layer) VAL      : The input layer" + NEW_LINE
+                    + " -o (--output-workspace) VAL : The output workspace" + NEW_LINE
+                    + " -r (--output-layer) VAL     : The output layer" + NEW_LINE, output)
         } catch (OverrideExitException ex) {
         }
     }

@@ -6,7 +6,7 @@ import org.geocommands.Options
 import org.kohsuke.args4j.Option
 
 /**
- * Create a prj file
+ * Get the WKT of a Projection.  This can be used to create a prj File.
  * @author Jared Erickson
  */
 class WktCommand extends Command<WktOptions> {

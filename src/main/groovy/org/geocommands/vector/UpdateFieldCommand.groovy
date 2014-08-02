@@ -3,12 +3,11 @@ package org.geocommands.vector
 import geoscript.feature.Field
 import geoscript.filter.Expression
 import geoscript.layer.Layer
-import org.geocommands.vector.LayerCommand
-import org.geocommands.vector.LayerOptions
 import org.kohsuke.args4j.Option
 
 /**
  * Update the values of a Layer's Field
+ * @author Jared Erickson
  */
 class UpdateFieldCommand extends LayerCommand<UpdateFieldOptions> {
 
@@ -41,16 +40,16 @@ class UpdateFieldCommand extends LayerCommand<UpdateFieldOptions> {
 
     static class UpdateFieldOptions extends LayerOptions {
 
-        @Option(name="-d", aliases="--field",  usage="The Field name", required = true)
+        @Option(name = "-d", aliases = "--field", usage = "The Field name", required = true)
         String field
 
-        @Option(name="-v", aliases="--value",  usage="The value", required = true)
+        @Option(name = "-v", aliases = "--value", usage = "The value", required = true)
         String value
 
-        @Option(name="-f", aliases="--filter",  usage="The CQL Filter", required = false)
+        @Option(name = "-f", aliases = "--filter", usage = "The CQL Filter", required = false)
         String filter = "INCLUDE"
 
-        @Option(name="-s", aliases="--script",  usage="Whether the value is a script or not", required = false)
+        @Option(name = "-s", aliases = "--script", usage = "Whether the value is a script or not", required = false)
         boolean script
     }
 }

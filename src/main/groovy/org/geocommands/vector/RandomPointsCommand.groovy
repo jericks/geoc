@@ -5,8 +5,6 @@ import geoscript.geom.Geometry
 import geoscript.layer.Layer
 import geoscript.workspace.Memory
 import geoscript.workspace.Workspace
-import org.geocommands.vector.LayerOutCommand
-import org.geocommands.vector.LayerOutOptions
 import org.kohsuke.args4j.Option
 
 /**
@@ -40,9 +38,9 @@ class RandomPointsCommand extends LayerOutCommand<RandomPointsOptions> {
         } else {
             workspace = new Workspace(options.outputWorkspace)
         }
-        Layer layer = workspace.create(getOutputLayerName(options,"random_points"), [
-            new Field(options.idFieldName,"int"),
-            new Field(options.geometryFieldName, "Point", options.projection)
+        Layer layer = workspace.create(getOutputLayerName(options, "random_points"), [
+                new Field(options.idFieldName, "int"),
+                new Field(options.geometryFieldName, "Point", options.projection)
         ])
 
         // Generate random points
@@ -55,7 +53,7 @@ class RandomPointsCommand extends LayerOutCommand<RandomPointsOptions> {
         }
 
         // Add randomly placed points
-        layer.withWriter {geoscript.layer.Writer w ->
+        layer.withWriter { geoscript.layer.Writer w ->
             randomPoints.geometries.eachWithIndex { Geometry g, int i ->
                 w.add(layer.schema.feature([(options.idFieldName): i, (options.geometryFieldName): g]))
             }
@@ -66,28 +64,28 @@ class RandomPointsCommand extends LayerOutCommand<RandomPointsOptions> {
 
     static class RandomPointsOptions extends LayerOutOptions {
 
-        @Option(name="-n", aliases="--number",  usage="The number of points", required = true)
+        @Option(name = "-n", aliases = "--number", usage = "The number of points", required = true)
         int number
 
-        @Option(name="-p", aliases="--projection",  usage="The projection", required = false)
+        @Option(name = "-p", aliases = "--projection", usage = "The projection", required = false)
         String projection = "EPSG:4326"
 
-        @Option(name="-g", aliases="--geometry",  usage="The geometry", required = false)
+        @Option(name = "-g", aliases = "--geometry", usage = "The geometry", required = false)
         String geometry
 
-        @Option(name="-d", aliases="--grid",  usage="Whether to create random points in grid", required = false)
+        @Option(name = "-d", aliases = "--grid", usage = "Whether to create random points in grid", required = false)
         boolean grid
 
-        @Option(name="-c", aliases="--constrained-to-circle",  usage="Whether the points should be constrained to a circle or not", required = false)
+        @Option(name = "-c", aliases = "--constrained-to-circle", usage = "Whether the points should be constrained to a circle or not", required = false)
         boolean constrainedToCircle
 
-        @Option(name="-f", aliases="--gutter-fraction",  usage="The size of the gutter between cells", required = false)
+        @Option(name = "-f", aliases = "--gutter-fraction", usage = "The size of the gutter between cells", required = false)
         double gutterFraction
 
-        @Option(name="-e", aliases="--geom-fieldname",  usage="The geometry field name", required = false)
+        @Option(name = "-e", aliases = "--geom-fieldname", usage = "The geometry field name", required = false)
         String geometryFieldName = "the_geom"
 
-        @Option(name="-u", aliases="--id-fieldname",  usage="The id field name", required = false)
+        @Option(name = "-u", aliases = "--id-fieldname", usage = "The id field name", required = false)
         String idFieldName = "id"
 
     }

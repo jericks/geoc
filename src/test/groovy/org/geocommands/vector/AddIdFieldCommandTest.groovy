@@ -2,11 +2,12 @@ package org.geocommands.vector
 
 import geoscript.layer.Layer
 import geoscript.layer.Shapefile
-import org.geocommands.vector.AddIdFieldCommand.AddIdFieldOptions
 import org.geocommands.App
 import org.geocommands.BaseTest
+import org.geocommands.vector.AddIdFieldCommand.AddIdFieldOptions
 import org.junit.Test
-import static org.junit.Assert.*
+
+import static org.junit.Assert.assertEquals
 
 /**
  * The AddIdFieldCommand UniTest
@@ -14,14 +15,15 @@ import static org.junit.Assert.*
  */
 class AddIdFieldCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         AddIdFieldCommand cmd = new AddIdFieldCommand()
         File file = getResource("polygons.properties")
         File shpFile = createTemporaryShapefile("polygons")
         AddIdFieldOptions options = new AddIdFieldOptions(
-            inputWorkspace: file.absolutePath,
-            outputWorkspace: shpFile,
-            idFieldName: "THE_ID"
+                inputWorkspace: file.absolutePath,
+                outputWorkspace: shpFile,
+                idFieldName: "THE_ID"
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
@@ -33,7 +35,8 @@ class AddIdFieldCommandTest extends BaseTest {
         assertEquals 4, shp.getFeatures("THE_ID=4")[0]["THE_ID"]
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         AddIdFieldCommand cmd = new AddIdFieldCommand()
         AddIdFieldOptions options = new AddIdFieldOptions(idFieldName: "THE_ID")
         StringWriter w = new StringWriter()
@@ -47,15 +50,16 @@ class AddIdFieldCommandTest extends BaseTest {
         assertEquals 4, layer.getFeatures("THE_ID=4")[0]["THE_ID"]
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("polygons.properties")
         File shpFile = createTemporaryShapefile("polygons")
         App.main([
-            "vector addidfield",
-            "-i", file.absolutePath,
-            "-o", shpFile.absolutePath,
-            "-f", "THE_ID",
-            "-s", 100
+                "vector addidfield",
+                "-i", file.absolutePath,
+                "-o", shpFile.absolutePath,
+                "-f", "THE_ID",
+                "-s", 100
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
         org.junit.Assert.assertEquals 4, shp.count
@@ -65,7 +69,7 @@ class AddIdFieldCommandTest extends BaseTest {
         assertEquals 102, shp.getFeatures("THE_ID=102")[0]["THE_ID"]
         assertEquals 103, shp.getFeatures("THE_ID=103")[0]["THE_ID"]
 
-        String output = runApp(["vector addidfield","-f","THE_ID"],readCsv("polygons.csv").text)
+        String output = runApp(["vector addidfield", "-f", "THE_ID"], readCsv("polygons.csv").text)
         Layer layer = getLayerFromCsv(output)
         org.junit.Assert.assertEquals 4, layer.count
         org.junit.Assert.assertTrue layer.schema.has("THE_ID")

@@ -51,9 +51,9 @@ class AddRastersCommandTest extends BaseTest {
         StringWriter writer = new StringWriter()
         AddRastersCommand command = new AddRastersCommand()
         AddRastersOptions options = new AddRastersOptions(
-            inputProjection: "EPSG:4326",
-            otherRaster: otherFile,
-            otherProjection: "EPSG:4326"
+                inputProjection: "EPSG:4326",
+                otherRaster: otherFile,
+                otherProjection: "EPSG:4326"
         )
         command.execute(options, reader, writer)
 

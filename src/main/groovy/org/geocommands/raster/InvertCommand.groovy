@@ -6,7 +6,7 @@ import geoscript.layer.Raster
  * Invert the values of a Raster
  * @author Jared Erickson
  */
-class InvertCommand extends RasterInOutCommand<InvertOptions>{
+class InvertCommand extends RasterInOutCommand<InvertOptions> {
 
     @Override
     String getName() {

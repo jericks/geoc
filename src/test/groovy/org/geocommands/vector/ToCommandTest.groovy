@@ -3,7 +3,9 @@ package org.geocommands.vector
 import org.geocommands.BaseTest
 import org.geocommands.vector.ToCommand.ToOptions
 import org.junit.Test
-import static org.junit.Assert.*
+
+import static org.junit.Assert.assertEquals
+import static org.junit.Assert.assertTrue
 
 /**
  * The ToCommand Unit Test
@@ -11,12 +13,13 @@ import static org.junit.Assert.*
  */
 class ToCommandTest extends BaseTest {
 
-    @Test void executeFromPropertyFileToGeoJson() {
+    @Test
+    void executeFromPropertyFileToGeoJson() {
         ToCommand cmd = new ToCommand()
         File file = getResource("points.properties")
         ToOptions options = new ToOptions(
-            inputWorkspace: file.absolutePath,
-            format: "geojson"
+                inputWorkspace: file.absolutePath,
+                format: "geojson"
         )
         StringWriter writer = new StringWriter()
         cmd.execute(options, new StringReader(""), writer)
@@ -26,10 +29,11 @@ class ToCommandTest extends BaseTest {
     }
 
 
-    @Test void executeFromCsvToKml() {
+    @Test
+    void executeFromCsvToKml() {
         ToCommand cmd = new ToCommand()
         ToOptions options = new ToOptions(
-            format: "kml"
+                format: "kml"
         )
         StringWriter writer = new StringWriter()
         cmd.execute(options, readCsv("points.csv"), writer)
@@ -37,13 +41,14 @@ class ToCommandTest extends BaseTest {
         assertTrue(kml.startsWith("<kml:kml"))
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("points.properties")
         String output = runApp([
-            "vector to",
-            "-i", file.absolutePath,
-            "-f", "csv"
-        ],"")
+                "vector to",
+                "-i", file.absolutePath,
+                "-f", "csv"
+        ], "")
         String actual = output
         String expected = """"the_geom:Point","distance:String","name:String"
 "POINT (1 1)","2","Number 1"
@@ -53,9 +58,9 @@ class ToCommandTest extends BaseTest {
         assertEquals(expected, actual)
 
         output = runApp([
-            "vector to",
-            "-f", "gml"
-        ],readCsv("points.csv").text)
+                "vector to",
+                "-f", "gml"
+        ], readCsv("points.csv").text)
         String gml = output
         assertTrue(gml.startsWith("<wfs:FeatureCollection"))
     }

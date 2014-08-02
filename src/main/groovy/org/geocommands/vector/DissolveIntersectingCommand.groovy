@@ -32,12 +32,12 @@ class DissolveIntersectingCommand extends LayerInOutCommand<DissolveIntersecting
     void processLayers(Layer inLayer, Layer outLayer, DissolveIntersectingOptions options, Reader reader, Writer writer) throws Exception {
 
         Quadtree index = new Quadtree()
-        inLayer.eachFeature { f->
+        inLayer.eachFeature { f ->
             Geometry unionGeom = f.geom
             int count = 1
             index.query(unionGeom.bounds).each { v ->
                 Geometry g = v.geom
-                if(unionGeom.intersects(g)) {
+                if (unionGeom.intersects(g)) {
                     index.remove(g.bounds, v)
                     unionGeom = unionGeom.union(g)
                     count++
@@ -47,7 +47,7 @@ class DissolveIntersectingCommand extends LayerInOutCommand<DissolveIntersecting
         }
 
         String geomFieldName = outLayer.schema.geom.name
-        outLayer.withWriter {geoscript.layer.Writer w ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
             int i = 0
             index.queryAll().each { v ->
                 Map values = [:]
@@ -62,7 +62,7 @@ class DissolveIntersectingCommand extends LayerInOutCommand<DissolveIntersecting
 
     @Override
     protected Schema createOutputSchema(Layer layer, DissolveIntersectingOptions options) {
-        new Schema(getOutputLayerName(layer,"dissolve", options), [
+        new Schema(getOutputLayerName(layer, "dissolve", options), [
                 new Field(options.idField, "int"),
                 new Field(options.countField, "int"),
                 new Field(layer.schema.geom)
@@ -71,11 +71,11 @@ class DissolveIntersectingCommand extends LayerInOutCommand<DissolveIntersecting
 
     static class DissolveIntersectingOptions extends LayerInOutOptions {
 
-        @Option(name="-d", aliases="--id-field",  usage="The id field name", required = false)
+        @Option(name = "-d", aliases = "--id-field", usage = "The id field name", required = false)
         String idField = "id"
 
-        @Option(name="-c", aliases="--count-field",  usage="The count field name", required = false)
-        String countField  = "count"
+        @Option(name = "-c", aliases = "--count-field", usage = "The count field name", required = false)
+        String countField = "count"
 
     }
 }

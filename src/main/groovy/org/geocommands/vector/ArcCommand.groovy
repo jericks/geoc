@@ -42,10 +42,10 @@ class ArcCommand extends ShapeCommand<ArcOptions> {
 
     static class ArcOptions extends ShapeOptions {
 
-        @Option(name="-s", aliases="--start-angle",  usage="The start angle", required = true)
+        @Option(name = "-s", aliases = "--start-angle", usage = "The start angle", required = true)
         double startAngle
 
-        @Option(name="-e", aliases="--end-angle",  usage="The end angle", required = true)
+        @Option(name = "-e", aliases = "--end-angle", usage = "The end angle", required = true)
         double endAngle
 
     }

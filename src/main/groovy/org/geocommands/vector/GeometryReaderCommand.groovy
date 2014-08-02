@@ -1,14 +1,14 @@
 package org.geocommands.vector
 
+import geoscript.feature.Field
+import geoscript.feature.Schema
+import geoscript.geom.Geometry
 import geoscript.layer.Layer
+import geoscript.workspace.Memory
+import geoscript.workspace.Workspace
 import org.geocommands.Command
 import org.geocommands.Options
 import org.kohsuke.args4j.Option
-import geoscript.workspace.Workspace
-import geoscript.workspace.Memory
-import geoscript.feature.Schema
-import geoscript.feature.Field
-import geoscript.geom.Geometry
 
 /**
  * Convert a text stream of WKT geometries to a Layer
@@ -46,7 +46,7 @@ class GeometryReaderCommand extends Command<GeometryReaderOptions> {
                     if (line.trim().length() > 0) {
                         def geom = Geometry.fromWKT(line)
                         if (i == 0) {
-                            outLayer =  getOutputLayer(geom, options)
+                            outLayer = getOutputLayer(geom, options)
                             w = new geoscript.layer.Writer(outLayer)
                         }
                         i++
@@ -72,27 +72,27 @@ class GeometryReaderCommand extends Command<GeometryReaderOptions> {
         } else {
             workspace = new Workspace(options.outputWorkspace)
         }
-        workspace.create(new Schema(getOutputLayerName(options, "geometry"), [new Field("id","int"), new Field("the_geom", geom.geometryType)]))
+        workspace.create(new Schema(getOutputLayerName(options, "geometry"), [new Field("id", "int"), new Field("the_geom", geom.geometryType)]))
     }
 
     protected String getOutputLayerName(GeometryReaderOptions options, String defaultName) {
         String outName = options.outputLayer ? options.outputLayer : defaultName
         if (options.outputWorkspace && (options.outputWorkspace.endsWith(".shp") || options.outputWorkspace.endsWith(".properties"))) {
             String fileName = new File(options.outputWorkspace).name
-            outName = fileName.substring(0, fileName.lastIndexOf(".") )
+            outName = fileName.substring(0, fileName.lastIndexOf("."))
         }
         outName
     }
 
     static class GeometryReaderOptions extends Options {
 
-        @Option(name="-t", aliases="--text",  usage="The text", required = false)
+        @Option(name = "-t", aliases = "--text", usage = "The text", required = false)
         String text
 
-        @Option(name="-o", aliases="--output-workspace",  usage="The output workspace", required = false)
+        @Option(name = "-o", aliases = "--output-workspace", usage = "The output workspace", required = false)
         String outputWorkspace
 
-        @Option(name="-r", aliases="--output-layer",  usage="The output layer", required = false)
+        @Option(name = "-r", aliases = "--output-layer", usage = "The output layer", required = false)
         String outputLayer
 
     }

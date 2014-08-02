@@ -4,14 +4,12 @@ import geoscript.feature.Field
 import geoscript.feature.Schema
 import geoscript.geom.Geometry
 import geoscript.layer.Layer
-import org.geocommands.vector.LayerInOutCommand
-import org.geocommands.vector.LayerInOutOptions
 
 /**
  * Combine all of the geometries in the input Layer into one multipart geometry in the output Layer.
  * @author Jared Erickson
  */
-class MultipleToSingleCommand extends LayerInOutCommand<MultipleToSingleOptions>{
+class MultipleToSingleCommand extends LayerInOutCommand<MultipleToSingleOptions> {
 
     @Override
     String getName() {
@@ -31,11 +29,11 @@ class MultipleToSingleCommand extends LayerInOutCommand<MultipleToSingleOptions>
     @Override
     void processLayers(Layer inLayer, Layer outLayer, MultipleToSingleOptions options, Reader reader, Writer writer) throws Exception {
         List geometries = []
-        inLayer.eachFeature {f ->
+        inLayer.eachFeature { f ->
             flattenGeometries(f.geom, geometries)
         }
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            geometries.each{g ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            geometries.each { g ->
                 w.add(outLayer.schema.feature([g]))
             }
         }
@@ -54,7 +52,7 @@ class MultipleToSingleCommand extends LayerInOutCommand<MultipleToSingleOptions>
     @Override
     protected Schema createOutputSchema(Layer layer, MultipleToSingleOptions options) {
         String geometryType = toSinglePart(layer.schema.geom.typ)
-        new Schema(getOutputLayerName(layer,"single",options), [new Field(layer.schema.geom.name, geometryType, layer.schema.proj)])
+        new Schema(getOutputLayerName(layer, "single", options), [new Field(layer.schema.geom.name, geometryType, layer.schema.proj)])
     }
 
     private String toSinglePart(String geometryType) {

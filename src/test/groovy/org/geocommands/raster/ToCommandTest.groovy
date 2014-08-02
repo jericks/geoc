@@ -1,6 +1,5 @@
 package org.geocommands.raster
 
-import geoscript.geom.Point
 import geoscript.layer.Format
 import geoscript.layer.GeoTIFF
 import geoscript.layer.Raster
@@ -14,6 +13,7 @@ import static org.junit.Assert.assertTrue
 
 /**
  * The ToCommand Unit Test
+ * @author Jared Erickson
  */
 class ToCommandTest extends BaseTest {
 
@@ -23,9 +23,9 @@ class ToCommandTest extends BaseTest {
         File outFile = createTemporaryFile("raster", "png")
         ToCommand command = new ToCommand()
         ToOptions options = new ToOptions(
-            inputRaster: inFile,
-            outputRaster: outFile,
-            outputFormat: "worldimage"
+                inputRaster: inFile,
+                outputRaster: outFile,
+                outputFormat: "worldimage"
         )
         command.execute(options, new StringReader(""), new StringWriter())
 
@@ -42,8 +42,8 @@ class ToCommandTest extends BaseTest {
         File outFile = createTemporaryFile("raster", "tif")
         ToCommand command = new ToCommand()
         ToOptions options = new ToOptions(
-            inputProjection: "EPSG:4326",
-            outputRaster: outFile
+                inputProjection: "EPSG:4326",
+                outputRaster: outFile
         )
         command.execute(options, reader, new StringWriter())
 

@@ -11,7 +11,7 @@ import geoscript.layer.Layer
  * Clip the input Layer by the other Layer to produce the output Layer.
  * @author Jared Erickson
  */
-class ClipCommand extends LayerInOtherOutCommand<ClipOptions>{
+class ClipCommand extends LayerInOtherOutCommand<ClipOptions> {
 
     @Override
     String getName() {
@@ -20,7 +20,7 @@ class ClipCommand extends LayerInOtherOutCommand<ClipOptions>{
 
     @Override
     String getDescription() {
-       "Clip the input Layer by the other Layer to produce the output Layer."
+        "Clip the input Layer by the other Layer to produce the output Layer."
     }
 
     @Override
@@ -38,7 +38,7 @@ class ClipCommand extends LayerInOtherOutCommand<ClipOptions>{
         }
 
         // Iterate through all of the Features in the input Layer
-        outLayer.withWriter {geoscript.layer.Writer w ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
             inLayer.eachFeature(Filter.intersects(otherLayer.bounds.geometry), { f ->
                 // See if the Feature intersects with the Bounds of any Feature in the spatial index
                 index.query(f.bounds).each { clipFeature ->

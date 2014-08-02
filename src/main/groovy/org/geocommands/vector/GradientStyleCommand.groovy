@@ -8,7 +8,7 @@ import org.kohsuke.args4j.Option
  * Create a gradient SLD for the Layer.
  * @author Jared Erickson
  */
-class GradientStyleCommand extends LayerCommand<GradientStyleOptions>{
+class GradientStyleCommand extends LayerCommand<GradientStyleOptions> {
 
     @Override
     String getName() {
@@ -40,19 +40,19 @@ class GradientStyleCommand extends LayerCommand<GradientStyleOptions>{
 
     static class GradientStyleOptions extends LayerOptions {
 
-        @Option(name="-f", aliases="--field",  usage="The field name", required = true)
+        @Option(name = "-f", aliases = "--field", usage = "The field name", required = true)
         String field
 
-        @Option(name="-n", aliases="--number",  usage="The number of categories", required = true)
+        @Option(name = "-n", aliases = "--number", usage = "The number of categories", required = true)
         int number
 
-        @Option(name="-c", aliases="--colors",  usage="The color brewer palette name or a list of colors (space delimited)", required = true)
+        @Option(name = "-c", aliases = "--colors", usage = "The color brewer palette name or a list of colors (space delimited)", required = true)
         String colors
 
-        @Option(name="-m", aliases="--method",  usage="The classification method (Quantile or EqualInterval)", required = false)
+        @Option(name = "-m", aliases = "--method", usage = "The classification method (Quantile or EqualInterval)", required = false)
         String method = "Quantile"
 
-        @Option(name="-e", aliases="--else-mode",  usage="The else mode (ignore, min, max)", required = false)
+        @Option(name = "-e", aliases = "--else-mode", usage = "The else mode (ignore, min, max)", required = false)
         String elseMode = "ignore"
 
     }

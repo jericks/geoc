@@ -7,7 +7,6 @@ import geoscript.geom.Bounds
 import geoscript.geom.Geometry
 import geoscript.geom.Point
 import geoscript.layer.Layer
-import org.kohsuke.args4j.Option
 
 /**
  * Create a shape around the current features of the input Layer
@@ -24,6 +23,7 @@ abstract class ShapeCommand<T extends ShapeOptions> extends LayerInOutCommand<T>
             angle
         }
     }
+
     protected double getAngle(T options) {
         getAngle(options, options.rotation)
     }
@@ -35,8 +35,8 @@ abstract class ShapeCommand<T extends ShapeOptions> extends LayerInOutCommand<T>
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, T options, Reader reader, Writer writer) throws Exception {
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.eachFeature{Feature f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.eachFeature { Feature f ->
                 Geometry geom = options.geometry ? Expression.fromCQL(options.geometry).evaluate(f) : f.geom
                 Bounds bounds
                 if (options.width && options.height) {

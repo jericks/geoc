@@ -40,10 +40,10 @@ class DecimalDegrees2PointCommand extends Command<DecimalDegrees2PointOptions> {
 
     static class DecimalDegrees2PointOptions extends Options {
 
-        @Option(name="-d", aliases="--decimaldegrees",  usage="The decimal degrees", required = false)
+        @Option(name = "-d", aliases = "--decimaldegrees", usage = "The decimal degrees", required = false)
         String decimalDegrees
 
-        @Option(name="-t", aliases="--type",  usage="The output type", required = false)
+        @Option(name = "-t", aliases = "--type", usage = "The output type", required = false)
         String outputType = "XY"
 
     }

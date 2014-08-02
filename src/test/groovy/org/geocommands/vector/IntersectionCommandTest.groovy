@@ -16,17 +16,18 @@ import static org.junit.Assert.assertTrue
  */
 class IntersectionCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         File aFile = getResource("a.properties")
         File bFile = getResource("b.properties")
         File shpFile = createTemporaryShapefile("a_b_intersection")
 
         IntersectionCommand cmd = new IntersectionCommand()
         IntersectionOptions options = new IntersectionOptions(
-            inputWorkspace: aFile.absolutePath,
-            otherWorkspace: bFile.absolutePath,
-            outputWorkspace: shpFile,
-            postfixAll: true
+                inputWorkspace: aFile.absolutePath,
+                otherWorkspace: bFile.absolutePath,
+                outputWorkspace: shpFile,
+                postfixAll: true
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Layer layer = new Shapefile(shpFile)
@@ -46,11 +47,12 @@ class IntersectionCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((120 100, 120 105, 125 105, 125 100, 120 100)))", layer.getFeatures("A1 = 2 AND B2 = 4")[0].geom.wkt
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         IntersectionCommand cmd = new IntersectionCommand()
         IntersectionOptions options = new IntersectionOptions(
-            otherWorkspace: getResource("b.properties").absolutePath,
-            postfixAll: true
+                otherWorkspace: getResource("b.properties").absolutePath,
+                postfixAll: true
         )
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("a.csv"), w)
@@ -70,7 +72,8 @@ class IntersectionCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((120 100, 120 105, 125 105, 125 100, 120 100)))", layer.getFeatures("A1 = 2 AND B2 = 4")[0].geom.wkt
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File aFile = getResource("a.properties")
         File bFile = getResource("b.properties")
         File shpFile = createTemporaryShapefile("a_b_intersection")
@@ -96,7 +99,7 @@ class IntersectionCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((100 105, 100 100, 97 100, 97 105, 100 105)))", layer.getFeatures("A1 = 1 AND B2 = 4")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((120 100, 120 105, 125 105, 125 100, 120 100)))", layer.getFeatures("A1 = 2 AND B2 = 4")[0].geom.wkt
 
-        String output = runApp(["vector intersection","-k", bFile.absolutePath,"-p"],readCsv("a.csv").text)
+        String output = runApp(["vector intersection", "-k", bFile.absolutePath, "-p"], readCsv("a.csv").text)
         layer = getLayerFromCsv(output)
         // Check schema
         assertEquals "csv", layer.name

@@ -28,7 +28,7 @@ class DefaultStyleCommand extends LayerCommand<DefaultStyleOptions> {
 
     @Override
     protected void processLayer(Layer layer, DefaultStyleOptions options, Reader reader, Writer writer) throws Exception {
-        String  sld
+        String sld
         if (options.color) {
             sld = Symbolizer.getDefault(layer.schema.geom.typ, new Color(options.color)).sld
         } else {
@@ -39,7 +39,7 @@ class DefaultStyleCommand extends LayerCommand<DefaultStyleOptions> {
 
     static class DefaultStyleOptions extends LayerOptions {
 
-        @Option(name="-c", aliases="--color",  usage="The base color", required = false)
+        @Option(name = "-c", aliases = "--color", usage = "The base color", required = false)
         String color
 
     }

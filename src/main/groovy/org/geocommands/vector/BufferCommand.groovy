@@ -1,11 +1,11 @@
 package org.geocommands.vector
 
+import geoscript.feature.Feature
+import geoscript.feature.Schema
 import geoscript.filter.Expression
 import geoscript.geom.Geometry
 import geoscript.layer.Layer
-import geoscript.feature.Schema
 import org.kohsuke.args4j.Option
-import geoscript.feature.Feature
 
 /**
  * Buffer the features of the input Layer and save them to the output Layer
@@ -42,15 +42,15 @@ class BufferCommand extends LayerInOutCommand<BufferOptions> {
             capStyle = Geometry.CAP_SQUARE
         }
 
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.eachFeature {Feature f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.eachFeature { Feature f ->
                 Map values = [:]
-                f.attributes.each{k,v ->
+                f.attributes.each { k, v ->
                     if (v instanceof geoscript.geom.Geometry) {
                         double d = distance.evaluate(f) as double
                         Geometry b = options.singleSided ?
-                            v.buffer(d, options.quadrantSegments, capStyle) :
-                            v.singleSidedBuffer(d, options.quadrantSegments, capStyle)
+                                v.buffer(d, options.quadrantSegments, capStyle) :
+                                v.singleSidedBuffer(d, options.quadrantSegments, capStyle)
                         values[k] = b
                     } else {
                         values[k] = v
@@ -68,16 +68,16 @@ class BufferCommand extends LayerInOutCommand<BufferOptions> {
 
     static class BufferOptions extends LayerInOutOptions {
 
-        @Option(name="-d", aliases="--distance",  usage="The buffer distance", required = true)
+        @Option(name = "-d", aliases = "--distance", usage = "The buffer distance", required = true)
         String distance
 
-        @Option(name="-q", aliases="--quadrantsegments",  usage="The number of quadrant segments", required = false)
+        @Option(name = "-q", aliases = "--quadrantsegments", usage = "The number of quadrant segments", required = false)
         int quadrantSegments = 8
 
-        @Option(name="-s", aliases="--singlesided",  usage="Whether buffer should be single sided or not", required = false)
+        @Option(name = "-s", aliases = "--singlesided", usage = "Whether buffer should be single sided or not", required = false)
         boolean singleSided = false
 
-        @Option(name="-c", aliases="--capstyle",  usage="The cap style", required = false)
+        @Option(name = "-c", aliases = "--capstyle", usage = "The cap style", required = false)
         String capStyle = "round"
     }
 }

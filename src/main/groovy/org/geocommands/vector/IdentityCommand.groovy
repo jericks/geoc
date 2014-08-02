@@ -10,7 +10,7 @@ import geoscript.layer.Layer
  * Calculate the identity between one Layer and another Layer.
  * @author Jared Erickson
  */
-class IdentityCommand extends LayerInOtherOutCombineSchemasCommand<IdentityOptions>{
+class IdentityCommand extends LayerInOtherOutCombineSchemasCommand<IdentityOptions> {
 
     @Override
     String getName() {
@@ -43,7 +43,7 @@ class IdentityCommand extends LayerInOtherOutCombineSchemasCommand<IdentityOptio
             // First, check the spatial index
             index.query(f.geom.bounds).each { features ->
                 // Then make sure the geometries actually intersect
-                if(f.geom.intersects(features.geom)) {
+                if (f.geom.intersects(features.geom)) {
                     // Remove the original Feature
                     index.remove(features.geom.bounds, features)
                     // Calculate the intersection the difference
@@ -59,7 +59,7 @@ class IdentityCommand extends LayerInOtherOutCombineSchemasCommand<IdentityOptio
 
         // Put all Features in the spatial index into the output Layer
         Schema schema = outLayer.schema
-        outLayer.withWriter {geoscript.layer.Writer w ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
             index.queryAll().each { features ->
                 Geometry geom = features.geom
                 Feature f1 = features.feature1
@@ -67,7 +67,7 @@ class IdentityCommand extends LayerInOtherOutCombineSchemasCommand<IdentityOptio
                 Map attributes = [(schema.geom.name): geom]
                 if (f1) {
                     Map fieldMap = options.fields[0]
-                    f1.attributes.each {String k, Object v ->
+                    f1.attributes.each { String k, Object v ->
                         if (!k.equalsIgnoreCase(inLayer.schema.geom.name) && fieldMap.containsKey(k)) {
                             attributes[fieldMap[k]] = v
                         }
@@ -75,7 +75,7 @@ class IdentityCommand extends LayerInOtherOutCombineSchemasCommand<IdentityOptio
                 }
                 if (f2) {
                     Map fieldMap = options.fields[1]
-                    f2.attributes.each {String k, Object v ->
+                    f2.attributes.each { String k, Object v ->
                         if (!k.equalsIgnoreCase(outLayer.schema.geom.name) && fieldMap.containsKey(k)) {
                             attributes[fieldMap[k]] = v
                         }

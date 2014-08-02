@@ -2,10 +2,7 @@ package org.geocommands.raster
 
 import geoscript.layer.ArcGrid
 import geoscript.layer.Format
-import geoscript.layer.GeoTIFF
-import geoscript.layer.MrSID
 import geoscript.layer.Raster
-import geoscript.layer.WorldImage
 import geoscript.proj.Projection
 import org.apache.commons.io.input.ReaderInputStream
 import org.apache.commons.io.output.WriterOutputStream
@@ -115,7 +112,7 @@ class RasterUtil {
      */
     static boolean disposeRaster(Raster raster) {
         boolean success = true
-        if (raster)  {
+        if (raster) {
             try {
                 raster.dispose()
             } catch (Exception e) {

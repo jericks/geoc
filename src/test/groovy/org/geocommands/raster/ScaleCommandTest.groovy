@@ -1,6 +1,5 @@
 package org.geocommands.raster
 
-import geoscript.geom.Point
 import geoscript.layer.ArcGrid
 import geoscript.layer.GeoTIFF
 import geoscript.layer.Raster
@@ -9,7 +8,6 @@ import org.geocommands.BaseTest
 import org.geocommands.raster.ScaleCommand.ScaleOptions
 import org.junit.Test
 
-import static org.junit.Assert.assertEquals
 import static org.junit.Assert.assertNotNull
 import static org.junit.Assert.assertTrue
 
@@ -26,13 +24,13 @@ class ScaleCommandTest extends BaseTest {
         println outFile
         ScaleCommand command = new ScaleCommand()
         ScaleOptions options = new ScaleOptions(
-            inputRaster: inFile,
-            outputRaster: outFile,
-            x: 2,
-            y: 3,
-            xTrans: 0,
-            yTrans: 0,
-            interpolation: "nearest"
+                inputRaster: inFile,
+                outputRaster: outFile,
+                x: 2,
+                y: 3,
+                xTrans: 0,
+                yTrans: 0,
+                interpolation: "nearest"
         )
         command.execute(options, new StringReader(""), new StringWriter())
 
@@ -81,7 +79,7 @@ class ScaleCommandTest extends BaseTest {
                 "-y", "3",
                 "-t", "0",
                 "-r", "0",
-                "-n","nearest"
+                "-n", "nearest"
         ], "")
 
         GeoTIFF inFormat = new GeoTIFF(inFile)
@@ -102,7 +100,7 @@ class ScaleCommandTest extends BaseTest {
                 "-y", "3",
                 "-t", "0",
                 "-r", "0",
-                "-n","nearest"
+                "-n", "nearest"
         ], reader.text)
 
         ArcGrid inFormat = new ArcGrid(new ReaderInputStream(getStringReader("raster1.acs")))

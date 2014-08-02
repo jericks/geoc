@@ -5,7 +5,6 @@ import geoscript.layer.Raster
 
 /**
  * A Command to get basic information from a Raster.
- * http://www.gdal.org/gdalinfo.html
  * @author Jared Erickson
  */
 class InfoCommand extends RasterCommand<InfoOptions> {

@@ -6,7 +6,7 @@ import geoscript.layer.Raster
  * Convert a Raster from one format to another
  * @author Jared Erickson
  */
-class ToCommand extends RasterInOutCommand<ToOptions>{
+class ToCommand extends RasterInOutCommand<ToOptions> {
 
     @Override
     String getName() {

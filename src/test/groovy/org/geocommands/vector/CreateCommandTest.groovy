@@ -6,7 +6,9 @@ import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.CreateCommand.CreateOptions
 import org.junit.Test
-import static org.junit.Assert.*
+
+import static org.junit.Assert.assertEquals
+import static org.junit.Assert.assertTrue
 
 /**
  * The CreateCommand Unit Test
@@ -14,16 +16,17 @@ import static org.junit.Assert.*
  */
 class CreateCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         File outFile = createTemporaryShapefile("points")
         CreateCommand cmd = new CreateCommand()
         CreateOptions options = new CreateOptions(
-            fields: [
-                "the_geom": "POINT EPSG:4326",
-                "id": "int",
-                "name": "string"
-            ],
-            outputWorkspace: outFile.absolutePath
+                fields: [
+                        "the_geom": "POINT EPSG:4326",
+                        "id"      : "int",
+                        "name"    : "string"
+                ],
+                outputWorkspace: outFile.absolutePath
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(outFile)
@@ -36,14 +39,15 @@ class CreateCommandTest extends BaseTest {
         assertEquals "String", shp.schema.get("name").typ
     }
 
-    @Test void executeToCsv() {
+    @Test
+    void executeToCsv() {
         CreateCommand cmd = new CreateCommand()
         CreateOptions options = new CreateOptions(
-            fields: [
-                "the_geom": "POINT EPSG:4326",
-                "id": "int",
-                "name": "string"
-            ]
+                fields: [
+                        "the_geom": "POINT EPSG:4326",
+                        "id"      : "int",
+                        "name"    : "string"
+                ]
         )
         StringWriter w = new StringWriter()
         cmd.execute(options, new StringReader(""), w)
@@ -51,14 +55,15 @@ class CreateCommandTest extends BaseTest {
         assertEquals "csv the_geom: Point(EPSG:4326), id: Integer, name: String", layer.schema.toString()
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File shpFile = createTemporaryShapefile("points")
         App.main([
-            "vector create",
-            "-f", "the_geom=POINT EPSG:4326",
-            "-f", "id=int",
-            "-f", "name=String",
-            "-o", shpFile.absolutePath
+                "vector create",
+                "-f", "the_geom=POINT EPSG:4326",
+                "-f", "id=int",
+                "-f", "name=String",
+                "-o", shpFile.absolutePath
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
         assertTrue shp.schema.has("the_geom")

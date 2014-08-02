@@ -4,8 +4,6 @@ import geoscript.feature.Field
 import geoscript.feature.Schema
 import geoscript.geom.GeometryCollection
 import geoscript.layer.Layer
-import org.geocommands.vector.LayerInOutCommand
-import org.geocommands.vector.LayerInOutOptions
 
 /**
  * Calculate the octagonal envelope of the input Layer and save it to the output Layer
@@ -35,7 +33,7 @@ class OctagonalEnvelopeCommand extends LayerInOutCommand<OctagonalEnvelopeOption
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, OctagonalEnvelopeOptions options, Reader reader, Writer writer) {
-        def geoms = new GeometryCollection(inLayer.collectFromFeature {f ->
+        def geoms = new GeometryCollection(inLayer.collectFromFeature { f ->
             f.geom
         })
         outLayer.add([geoms.octagonalEnvelope])

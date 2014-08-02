@@ -1,6 +1,5 @@
 package org.geocommands.raster
 
-import geoscript.style.ChannelSelection
 import geoscript.style.ContrastEnhancement
 import org.geocommands.Command
 import org.kohsuke.args4j.Option
@@ -9,7 +8,7 @@ import org.kohsuke.args4j.Option
  * Create a contrast enhancement Raster SLD
  * @author Jared Erickson
  */
-class ContrastEnhancementStyleCommand extends Command<ContrastEnhancementStyleOptions>{
+class ContrastEnhancementStyleCommand extends Command<ContrastEnhancementStyleOptions> {
 
     @Override
     String getName() {

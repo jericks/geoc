@@ -28,14 +28,14 @@ class UniqueValuesCommand extends LayerCommand<UniqueValuesOptions> {
     protected void processLayer(Layer layer, UniqueValuesOptions options, Reader reader, Writer writer) throws Exception {
         // Collect
         Set values = []
-        layer.eachFeature {f ->
+        layer.eachFeature { f ->
             values.add(f[options.field])
         }
         // Sort
         List sortedValues = values.sort()
         // Display
         String NEW_LINE = System.getProperty("line.separator")
-        sortedValues.eachWithIndex{v,i ->
+        sortedValues.eachWithIndex { v, i ->
             if (i > 0) writer.append(NEW_LINE)
             writer.append(String.valueOf(v))
         }
@@ -43,7 +43,7 @@ class UniqueValuesCommand extends LayerCommand<UniqueValuesOptions> {
 
     static class UniqueValuesOptions extends LayerOptions {
 
-        @Option(name="-f", aliases="--field",  usage="The field name", required = true)
+        @Option(name = "-f", aliases = "--field", usage = "The field name", required = true)
         String field
 
     }

@@ -5,7 +5,8 @@ import geoscript.feature.Schema
 import geoscript.layer.Layer
 
 /**
- *
+ * Calculate the envelope of each feature in the input Layer and save them to the output Layer
+ * @author Jared Erickson
  */
 class EnvelopesCommand extends LayerInOutCommand<EnvelopesOptions> {
 
@@ -31,10 +32,10 @@ class EnvelopesCommand extends LayerInOutCommand<EnvelopesOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, EnvelopesOptions options, Reader reader, Writer writer) {
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.eachFeature {Feature f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.eachFeature { Feature f ->
                 Map values = [:]
-                f.attributes.each{k,v ->
+                f.attributes.each { k, v ->
                     if (v instanceof geoscript.geom.Geometry) {
                         values[k] = v.bounds.geometry
                     } else {

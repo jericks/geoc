@@ -7,8 +7,6 @@ import geoscript.index.SpatialIndex
 import geoscript.layer.Layer
 import geoscript.workspace.Memory
 import geoscript.workspace.Workspace
-import org.geocommands.vector.LayerCommand
-import org.geocommands.vector.LayerOptions
 import org.kohsuke.args4j.Option
 
 /**
@@ -53,8 +51,8 @@ class SplitByLayerCommand extends LayerCommand<SplitByLayerOptions> {
         int i = 0
         splitLayer.eachFeature { f ->
             // Create the new output Layer
-            Layer outLayer = workspace.create("${layer.name}_${f.get(field).toString().replaceAll(' ','_')}", layer.schema.fields)
-            outLayer.withWriter {geoscript.layer.Writer w ->
+            Layer outLayer = workspace.create("${layer.name}_${f.get(field).toString().replaceAll(' ', '_')}", layer.schema.fields)
+            outLayer.withWriter { geoscript.layer.Writer w ->
                 // See if the Feature intersects with the Bounds of any Feature in the spatial index
                 index.query(f.bounds).each { layerFeature ->
                     // Make sure it actually intersects the Geometry of a Feature in the spatial index
@@ -97,16 +95,16 @@ class SplitByLayerCommand extends LayerCommand<SplitByLayerOptions> {
 
     static class SplitByLayerOptions extends LayerOptions {
 
-        @Option(name="-s", aliases="--split-workspace",  usage="The input workspace", required = true)
+        @Option(name = "-s", aliases = "--split-workspace", usage = "The input workspace", required = true)
         String splitWorkspace
 
-        @Option(name="-p", aliases="--split-layer",  usage="The input layer", required = false)
+        @Option(name = "-p", aliases = "--split-layer", usage = "The input layer", required = false)
         String splitLayer
 
-        @Option(name="-f", aliases="--field",  usage="The field name", required = true)
+        @Option(name = "-f", aliases = "--field", usage = "The field name", required = true)
         String field
 
-        @Option(name="-o", aliases="--output-workspace",  usage="The output workspace", required = false)
+        @Option(name = "-o", aliases = "--output-workspace", usage = "The output workspace", required = false)
         String outputWorkspace
 
     }

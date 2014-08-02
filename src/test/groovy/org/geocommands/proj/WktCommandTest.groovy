@@ -10,7 +10,8 @@ import org.junit.Test
  */
 class WktCommandTest extends BaseTest {
 
-    @Test void executeToString() {
+    @Test
+    void executeToString() {
         WktCommand command = new WktCommand()
         WktOptions options = new WktOptions(
                 epsg: "EPSG:4326"
@@ -31,8 +32,9 @@ class WktCommandTest extends BaseTest {
         assertStringsEqual(expected, actual, true)
     }
 
-    @Test void executeToFile() {
-        File file = createTemporaryFile("layer","prj")
+    @Test
+    void executeToFile() {
+        File file = createTemporaryFile("layer", "prj")
         WktCommand command = new WktCommand()
         WktOptions options = new WktOptions(
                 epsg: "EPSG:4326",
@@ -75,7 +77,7 @@ class WktCommandTest extends BaseTest {
 
     @Test
     void runAsCommandLineToFile() {
-        File file = createTemporaryFile("layer","prj")
+        File file = createTemporaryFile("layer", "prj")
         runApp([
                 "proj wkt",
                 "-e", "EPSG:4326",

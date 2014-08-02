@@ -5,7 +5,8 @@ import geoscript.layer.Shapefile
 import org.geocommands.BaseTest
 import org.geocommands.vector.MultipleToSingleCommand.MultipleToSingleOptions
 import org.junit.Test
-import static org.junit.Assert.*
+
+import static org.junit.Assert.assertEquals
 
 /**
  * The MultipleToSingleCommand Unit Test
@@ -13,13 +14,14 @@ import static org.junit.Assert.*
  */
 class MultipleToSingleCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         MultipleToSingleCommand cmd = new MultipleToSingleCommand()
         File file = getResource("multi.properties")
         File shpFile = createTemporaryShapefile("single")
         MultipleToSingleOptions options = new MultipleToSingleOptions(
-            inputWorkspace: file.absolutePath,
-            outputWorkspace: shpFile
+                inputWorkspace: file.absolutePath,
+                outputWorkspace: shpFile
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
@@ -27,7 +29,8 @@ class MultipleToSingleCommandTest extends BaseTest {
         assertEquals "Point", shp.schema.geom.typ
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         MultipleToSingleCommand cmd = new MultipleToSingleCommand()
         MultipleToSingleOptions options = new MultipleToSingleOptions()
         StringWriter w = new StringWriter()
@@ -37,14 +40,15 @@ class MultipleToSingleCommandTest extends BaseTest {
         assertEquals "Point", layer.schema.geom.typ
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("points.properties")
         File shpFile = createTemporaryShapefile("single")
         String output = runApp([
-            "vector multiple2single",
-            "-i", file.absolutePath,
-            "-o", shpFile.absolutePath
-        ],"")
+                "vector multiple2single",
+                "-i", file.absolutePath,
+                "-o", shpFile.absolutePath
+        ], "")
         Shapefile shp = new Shapefile(shpFile)
         assertEquals 3, shp.count
         assertEquals "Point", shp.schema.geom.typ

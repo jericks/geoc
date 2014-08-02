@@ -8,10 +8,10 @@ import org.kohsuke.args4j.Option
  */
 class LayerInOtherOutOptions extends LayerInOutOptions {
 
-    @Option(name="-k", aliases="--other-workspace",  usage="The other workspace", required = true)
+    @Option(name = "-k", aliases = "--other-workspace", usage = "The other workspace", required = true)
     String otherWorkspace
 
-    @Option(name="-y", aliases="--other-layer",  usage="The other layer", required = false)
+    @Option(name = "-y", aliases = "--other-layer", usage = "The other layer", required = false)
     String otherLayer
 
 }

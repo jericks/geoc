@@ -7,7 +7,7 @@ import org.kohsuke.args4j.Option
  * Multiply a constant value to a Raster
  * @author Jared Erickson
  */
-class MultiplyConstantCommand  extends RasterInOutCommand <MultiplyConstantOptions> {
+class MultiplyConstantCommand extends RasterInOutCommand<MultiplyConstantOptions> {
 
     @Override
     String getName() {
@@ -30,7 +30,7 @@ class MultiplyConstantCommand  extends RasterInOutCommand <MultiplyConstantOptio
     }
 
     static class MultiplyConstantOptions extends RasterInOutOptions {
-        @Option(name="-v", aliases="--value",  usage="The value", required = true)
+        @Option(name = "-v", aliases = "--value", usage = "The value", required = true)
         List<Double> values
     }
 }

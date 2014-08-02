@@ -3,9 +3,6 @@ package org.geocommands.vector
 import geoscript.feature.Feature
 import geoscript.filter.Expression
 import geoscript.geom.Geometry
-import geoscript.geom.GeometryCollection
-import geoscript.geom.Point
-import geoscript.geom.Polygon
 import geoscript.layer.Layer
 import geoscript.layer.Property
 import geoscript.layer.Shapefile
@@ -67,7 +64,7 @@ class ShearCommandTest extends BaseTest {
             Feature outFeature = outFeatures[i]
             double x = Expression.fromCQL("parseDouble(distance)").evaluate(inFeature) as double
             double y = Expression.fromCQL("parseDouble(distance) * 2").evaluate(inFeature) as double
-            assertEquals inFeature.geom.shear(x,y), outFeature.geom
+            assertEquals inFeature.geom.shear(x, y), outFeature.geom
         }
     }
 
@@ -113,7 +110,7 @@ class ShearCommandTest extends BaseTest {
             Feature outFeature = outFeatures[i]
             double x = Expression.fromCQL("parseDouble(distance)").evaluate(inFeature) as double
             double y = Expression.fromCQL("parseDouble(distance) * 2").evaluate(inFeature) as double
-            assertEquals inFeature.geom.shear(x,y), outFeature.geom
+            assertEquals inFeature.geom.shear(x, y), outFeature.geom
         }
     }
 }

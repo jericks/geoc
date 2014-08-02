@@ -6,7 +6,8 @@ import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.EnvelopesCommand.EnvelopesOptions
 import org.junit.Test
-import static org.junit.Assert.*
+
+import static org.junit.Assert.assertEquals
 
 /**
  * The EnvelopesCommand Unit Test
@@ -14,47 +15,50 @@ import static org.junit.Assert.*
  */
 class EnvelopesCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         EnvelopesCommand cmd = new EnvelopesCommand()
         File file = getResource("polygons.properties")
         File shpFile = createTemporaryShapefile("envelopes")
         EnvelopesOptions options = new EnvelopesOptions(
-            inputWorkspace: file.absolutePath,
-            outputWorkspace: shpFile
+                inputWorkspace: file.absolutePath,
+                outputWorkspace: shpFile
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
         assertEquals 4, shp.count
-        shp.eachFeature {f->
+        shp.eachFeature { f ->
             assertEquals 5, f.geom.numPoints
         }
         assertEquals "MultiPolygon", shp.schema.geom.typ
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         EnvelopesCommand cmd = new EnvelopesCommand()
         EnvelopesOptions options = new EnvelopesOptions()
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("polygons.csv"), w)
         Layer layer = getLayerFromCsv(w.toString())
         assertEquals 4, layer.count
-        layer.eachFeature {f->
+        layer.eachFeature { f ->
             assertEquals 5, f.geom.numPoints
         }
         assertEquals "Polygon", layer.schema.geom.typ
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("polygons.properties")
         File shpFile = createTemporaryShapefile("envelopes")
         App.main([
-            "vector envelopes",
-            "-i", file.absolutePath,
-            "-o", shpFile.absolutePath
+                "vector envelopes",
+                "-i", file.absolutePath,
+                "-o", shpFile.absolutePath
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
         assertEquals 4, shp.count
-        shp.eachFeature {f->
+        shp.eachFeature { f ->
             assertEquals 5, f.geom.numPoints
         }
         assertEquals "MultiPolygon", shp.schema.geom.typ
@@ -62,7 +66,7 @@ class EnvelopesCommandTest extends BaseTest {
         String output = runApp(["vector envelopes"], readCsv("polygons.csv").text)
         Layer layer = getLayerFromCsv(output)
         assertEquals 4, layer.count
-        layer.eachFeature {f->
+        layer.eachFeature { f ->
             assertEquals 5, f.geom.numPoints
         }
         assertEquals "Polygon", layer.schema.geom.typ

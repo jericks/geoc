@@ -1,12 +1,13 @@
 package org.geocommands.vector
 
-import geoscript.workspace.Property
 import geoscript.layer.Layer
+import geoscript.workspace.Property
 import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.UpdateFieldCommand.UpdateFieldOptions
 import org.junit.Test
-import static org.junit.Assert.*
+
+import static org.junit.Assert.assertEquals
 
 /**
  * The UpdateFieldCommand Unit Test
@@ -14,15 +15,15 @@ import static org.junit.Assert.*
  */
 class UpdateFieldCommandTest extends BaseTest {
 
-
-    @Test void execute() {
+    @Test
+    void execute() {
         UpdateFieldCommand cmd = new UpdateFieldCommand()
         File file = getCopiedResource("points.properties")
         UpdateFieldOptions options = new UpdateFieldOptions(
-            inputWorkspace: file.absolutePath,
-            field: "name",
-            value: "return 'Point ' + f.get('name').split(' ')[1]",
-            script: true
+                inputWorkspace: file.absolutePath,
+                field: "name",
+                value: "return 'Point ' + f.get('name').split(' ')[1]",
+                script: true
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Layer layer = new Property(file.parentFile).get(file.name)
@@ -30,14 +31,14 @@ class UpdateFieldCommandTest extends BaseTest {
         assertEquals 1, layer.count("name = 'Point 1'")
         assertEquals 1, layer.count("name = 'Point 2'")
         assertEquals 1, layer.count("name = 'Point 3'")
-
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         UpdateFieldCommand cmd = new UpdateFieldCommand()
         UpdateFieldOptions options = new UpdateFieldOptions(
-            field: "distance",
-            value: "10",
+                field: "distance",
+                value: "10",
         )
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("points.csv"), w)
@@ -47,13 +48,14 @@ class UpdateFieldCommandTest extends BaseTest {
         assertEquals 3, layer.count("distance = '10'")
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getCopiedResource("points.properties")
         App.main([
-            "vector updatefield",
-            "-i", file.absolutePath,
-            "-d", "name",
-            "-v", "distance"
+                "vector updatefield",
+                "-i", file.absolutePath,
+                "-d", "name",
+                "-v", "distance"
         ] as String[])
         Layer layer = new Property(file.parentFile).get(file.name)
         assertEquals 3, layer.count

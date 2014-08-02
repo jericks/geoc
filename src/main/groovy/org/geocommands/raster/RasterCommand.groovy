@@ -1,11 +1,6 @@
 package org.geocommands.raster
 
-import geoscript.layer.ArcGrid
-import geoscript.layer.Format
 import geoscript.layer.Raster
-import geoscript.proj.Projection
-import org.apache.commons.io.input.ReaderInputStream
-import org.apache.commons.io.output.WriterOutputStream
 import org.geocommands.Command
 
 /**

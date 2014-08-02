@@ -31,19 +31,19 @@ class ScaleCommand extends RasterInOutCommand<ScaleOptions> {
 
     static class ScaleOptions extends RasterInOutOptions {
 
-        @Option(name="-x", aliases="--x-scale",  usage="The scale factor along the x axis", required = true)
+        @Option(name = "-x", aliases = "--x-scale", usage = "The scale factor along the x axis", required = true)
         float x
 
-        @Option(name="-y", aliases="--y-scale",  usage="The scale factor along the y axis", required = true)
+        @Option(name = "-y", aliases = "--y-scale", usage = "The scale factor along the y axis", required = true)
         float y
 
-        @Option(name="-t", aliases="--x-translate",  usage="The x translation", required = false)
+        @Option(name = "-t", aliases = "--x-translate", usage = "The x translation", required = false)
         float xTrans = 0
 
-        @Option(name="-r", aliases="--y-translate",  usage="The y translation", required = false)
+        @Option(name = "-r", aliases = "--y-translate", usage = "The y translation", required = false)
         float yTrans = 0
 
-        @Option(name="-n", aliases="--interpolation",  usage="The interpolation method (bicubic, bicubic2, bilinear, nearest)", required = false)
+        @Option(name = "-n", aliases = "--interpolation", usage = "The interpolation method (bicubic, bicubic2, bilinear, nearest)", required = false)
         String interpolation = "nearest"
 
     }

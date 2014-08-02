@@ -83,9 +83,9 @@ class SubtractConstantCommandTest extends BaseTest {
         ArcGrid inFormat = new ArcGrid(getStringReader("raster.asc").text)
         Raster inRaster = inFormat.read()
 
-        Point pt = new Point(-175.0,84.6)
+        Point pt = new Point(-175.0, 84.6)
         assertEquals(inRaster.getValue(pt, 0) - 10, outRaster.getValue(pt, 0), 0.1)
-        pt = new Point(-174.2,85.0)
+        pt = new Point(-174.2, 85.0)
         assertEquals(inRaster.getValue(pt, 0) - 10, outRaster.getValue(pt, 0), 0.1)
     }
 
@@ -151,9 +151,9 @@ class SubtractConstantCommandTest extends BaseTest {
         ArcGrid inFormat = new ArcGrid(getStringReader("raster.asc").text)
         Raster inRaster = inFormat.read()
 
-        Point pt = new Point(-175.0,84.6)
+        Point pt = new Point(-175.0, 84.6)
         assertEquals(inRaster.getValue(pt, 0) - 10, outRaster.getValue(pt, 0), 0.1)
-        pt = new Point(-174.2,85.0)
+        pt = new Point(-174.2, 85.0)
         assertEquals(inRaster.getValue(pt, 0) - 10, outRaster.getValue(pt, 0), 0.1)
     }
 }

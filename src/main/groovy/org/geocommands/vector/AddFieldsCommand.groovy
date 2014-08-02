@@ -29,8 +29,8 @@ class AddFieldsCommand extends LayerInOutCommand<AddFieldsOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, AddFieldsOptions options, Reader reader, Writer writer) throws Exception {
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.eachFeature {Feature f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.eachFeature { Feature f ->
                 w.add(f)
             }
         }
@@ -52,8 +52,8 @@ class AddFieldsCommand extends LayerInOutCommand<AddFieldsOptions> {
 
     static class AddFieldsOptions extends LayerInOutOptions {
 
-        @Option(name="-f", aliases="--field",  usage="A Field in the format 'name=type'", required = true)
-        Map<String,String> fields
+        @Option(name = "-f", aliases = "--field", usage = "A Field in the format 'name=type'", required = true)
+        Map<String, String> fields
 
     }
 }

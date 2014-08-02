@@ -53,10 +53,10 @@ class CssToSldCommand extends Command<CssToSldOptions> {
 
     static class CssToSldOptions extends Options {
 
-        @Option(name="-i", aliases="--input",  usage="The input file or url", required = false)
+        @Option(name = "-i", aliases = "--input", usage = "The input file or url", required = false)
         String input
 
-        @Option(name="-o", aliases="--output",  usage="The output file", required = false)
+        @Option(name = "-o", aliases = "--output", usage = "The output file", required = false)
         String output
 
     }

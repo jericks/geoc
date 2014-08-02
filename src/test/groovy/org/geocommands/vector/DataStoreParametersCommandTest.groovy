@@ -3,7 +3,8 @@ package org.geocommands.vector
 import org.geocommands.BaseTest
 import org.geocommands.vector.DataStoreParametersCommand.DataStoreParametersOptions
 import org.junit.Test
-import static org.junit.Assert.*
+
+import static org.junit.Assert.assertEquals
 
 /**
  * The DataStoreParametersCommand Unit Test
@@ -11,7 +12,8 @@ import static org.junit.Assert.*
  */
 class DataStoreParametersCommandTest extends BaseTest {
 
-    @Test void executeToCsv() {
+    @Test
+    void executeToCsv() {
         DataStoreParametersCommand cmd = new DataStoreParametersCommand()
         DataStoreParametersOptions options = new DataStoreParametersOptions(name: "Shapefile")
         StringWriter w = new StringWriter()
@@ -29,8 +31,9 @@ fstype""", w.toString()
 
     }
 
-    @Test void runAsCommandLine() {
-        String str = runApp(["vector datastoreparams","-n","Shapefile"],"")
+    @Test
+    void runAsCommandLine() {
+        String str = runApp(["vector datastoreparams", "-n", "Shapefile"], "")
         assertEquals """url
 namespace
 enable spatial index

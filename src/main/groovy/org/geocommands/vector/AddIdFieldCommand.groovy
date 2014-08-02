@@ -29,9 +29,9 @@ class AddIdFieldCommand extends LayerInOutCommand<AddIdFieldOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, AddIdFieldOptions options, Reader reader, Writer writer) throws Exception {
-        outLayer.withWriter {geoscript.layer.Writer w ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
             int c = options.start
-            inLayer.eachFeature {Feature f ->
+            inLayer.eachFeature { Feature f ->
                 Map attributes = f.attributes
                 attributes[options.idFieldName] = c
                 w.add(outLayer.schema.feature(attributes, f.id))
@@ -47,10 +47,10 @@ class AddIdFieldCommand extends LayerInOutCommand<AddIdFieldOptions> {
 
     static class AddIdFieldOptions extends LayerInOutOptions {
 
-        @Option(name="-f", aliases="--id-fieldname",  usage="The name for the ID Field", required = false)
+        @Option(name = "-f", aliases = "--id-fieldname", usage = "The name for the ID Field", required = false)
         String idFieldName = "ID"
 
-        @Option(name="-s", aliases="--start",  usage="The number of start at", required = false)
+        @Option(name = "-s", aliases = "--start", usage = "The number of start at", required = false)
         int start = 1
 
     }

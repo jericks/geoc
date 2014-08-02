@@ -13,6 +13,7 @@ import static org.junit.Assert.assertTrue
 
 /**
  * The SplitByCommand Unit Test
+ * @author Jared Erickson
  */
 class SplitByLayerCommandTest extends BaseTest {
 

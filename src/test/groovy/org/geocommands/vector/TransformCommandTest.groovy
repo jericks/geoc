@@ -30,7 +30,7 @@ class TransformCommandTest extends BaseTest {
                 outputWorkspace: shpFile.absolutePath,
                 definitions: [
                         the_geom: "buffer(the_geom, 10)",
-                        name: "strToUpperCase(name)",
+                        name    : "strToUpperCase(name)",
                         distance: "distance * 10"
                 ]
         )
@@ -62,7 +62,7 @@ class TransformCommandTest extends BaseTest {
         TransformOptions options = new TransformOptions(
                 definitions: [
                         the_geom: "buffer(the_geom, 10)",
-                        name: "strToUpperCase(name)",
+                        name    : "strToUpperCase(name)",
                         distance: "distance * 10"
                 ]
         )

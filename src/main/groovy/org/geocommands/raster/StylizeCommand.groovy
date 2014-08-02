@@ -6,8 +6,9 @@ import org.kohsuke.args4j.Option
 
 /**
  * Create a new Raster by baking the style into an existing Raster
+ * @author Jared Erickson
  */
-class StylizeCommand extends RasterInOutCommand<StylizeOptions>{
+class StylizeCommand extends RasterInOutCommand<StylizeOptions> {
 
     @Override
     String getName() {
@@ -30,7 +31,7 @@ class StylizeCommand extends RasterInOutCommand<StylizeOptions>{
     }
 
     static class StylizeOptions extends RasterInOutOptions {
-        @Option(name="-s", aliases="--style",  usage="The SLD style file", required = true)
+        @Option(name = "-s", aliases = "--style", usage = "The SLD style file", required = true)
         File sld
     }
 }

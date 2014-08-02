@@ -1,9 +1,10 @@
 package org.geocommands.vector
 
 import org.geocommands.BaseTest
-import org.junit.Test
 import org.geocommands.vector.UniqueValuesStyleCommand.UniqueValuesStyleOptions
-import static org.junit.Assert.*
+import org.junit.Test
+
+import static org.junit.Assert.assertEquals
 
 /**
  * The UniqueValuesStyleCommand Unit Test
@@ -155,13 +156,14 @@ class UniqueValuesStyleCommandTest extends BaseTest {
   </sld:UserLayer>
 </sld:StyledLayerDescriptor>"""
 
-    @Test void execute() {
+    @Test
+    void execute() {
         UniqueValuesStyleCommand cmd = new UniqueValuesStyleCommand()
         File file = getResource("points.properties")
         UniqueValuesStyleOptions options = new UniqueValuesStyleOptions(
-            inputWorkspace: file.absolutePath,
-            field: "name",
-            colors: "Greens"
+                inputWorkspace: file.absolutePath,
+                field: "name",
+                colors: "Greens"
         )
         StringWriter writer = new StringWriter()
         cmd.execute(options, new StringReader(""), writer)
@@ -171,12 +173,13 @@ class UniqueValuesStyleCommandTest extends BaseTest {
     }
 
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         UniqueValuesStyleCommand cmd = new UniqueValuesStyleCommand()
         File file = getResource("polygons.properties")
         UniqueValuesStyleOptions options = new UniqueValuesStyleOptions(
-            field: "name",
-            colors: "wheat yellow blue"
+                field: "name",
+                colors: "wheat yellow blue"
         )
         StringWriter writer = new StringWriter()
         cmd.execute(options, readCsv("points.csv"), writer)
@@ -185,26 +188,27 @@ class UniqueValuesStyleCommandTest extends BaseTest {
         assertEquals(expected, actual)
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("points.properties")
         String output = runApp([
-            "vector uniquevaluesstyle",
-            "-i", file.absolutePath,
-            "-f", "name",
-            "-c", "Greens"
-        ],"")
+                "vector uniquevaluesstyle",
+                "-i", file.absolutePath,
+                "-f", "name",
+                "-c", "Greens"
+        ], "")
         String actual = output
         String expected = greensSld + System.getProperty("line.separator")
         assertEquals(expected, actual)
 
         output = runApp([
-            "vector uniquevaluesstyle",
-            "-f", "name",
-            "-c", "wheat yellow blue"
-        ],readCsv("points.csv").text)
+                "vector uniquevaluesstyle",
+                "-f", "name",
+                "-c", "wheat yellow blue"
+        ], readCsv("points.csv").text)
         actual = output
         expected = threeColorsSld + System.getProperty("line.separator")
         assertEquals(expected, actual)
     }
-    
+
 }

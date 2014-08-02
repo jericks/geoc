@@ -9,7 +9,7 @@ import org.kohsuke.args4j.Option
  * Translate or move Features in a Layer.
  * @author Jared Erickson
  */
-class TranslateCommand extends LayerInOutCommand<TranslateOptions>{
+class TranslateCommand extends LayerInOutCommand<TranslateOptions> {
 
     @Override
     String getName() {
@@ -30,11 +30,11 @@ class TranslateCommand extends LayerInOutCommand<TranslateOptions>{
     void processLayers(Layer inLayer, Layer outLayer, TranslateOptions options, Reader reader, Writer writer) throws Exception {
         Expression xExpression = Expression.fromCQL(options.x)
         Expression yExpression = Expression.fromCQL(options.y)
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.cursor.collect{Feature f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.cursor.collect { Feature f ->
                 double x = xExpression.evaluate(f)
                 double y = yExpression.evaluate(f)
-                f.geom = f.geom.translate(x,y)
+                f.geom = f.geom.translate(x, y)
                 w.add(f)
             }
         }
@@ -42,10 +42,10 @@ class TranslateCommand extends LayerInOutCommand<TranslateOptions>{
 
     static class TranslateOptions extends LayerInOutOptions {
 
-        @Option(name="-x", aliases="--x-distance",  usage="The x distance", required = true)
+        @Option(name = "-x", aliases = "--x-distance", usage = "The x distance", required = true)
         String x
 
-        @Option(name="-y", aliases="--y-distance",  usage="The y distance", required = true)
+        @Option(name = "-y", aliases = "--y-distance", usage = "The y distance", required = true)
         String y
 
     }

@@ -3,8 +3,6 @@ package org.geocommands.vector
 import geoscript.feature.Schema
 import geoscript.layer.Layer
 import geoscript.proj.Projection
-import org.geocommands.vector.LayerInOutCommand
-import org.geocommands.vector.LayerInOutOptions
 import org.kohsuke.args4j.Option
 
 /**
@@ -41,14 +39,14 @@ class ProjectCommand extends LayerInOutCommand<ProjectOptions> {
 
     @Override
     protected Schema createOutputSchema(Layer layer, ProjectOptions options) {
-        layer.schema.reproject(options.targetProjection, getOutputLayerName(layer, options.targetProjection.replace(":","_"), options))
+        layer.schema.reproject(options.targetProjection, getOutputLayerName(layer, options.targetProjection.replace(":", "_"), options))
     }
 
     static class ProjectOptions extends LayerInOutOptions {
-        @Option(name="-s", aliases="--source-projection",  usage="The source projection", required = false)
+        @Option(name = "-s", aliases = "--source-projection", usage = "The source projection", required = false)
         String sourceProjection
 
-        @Option(name="-t", aliases="--target-projection",  usage="The target projection", required = true)
+        @Option(name = "-t", aliases = "--target-projection", usage = "The target projection", required = true)
         String targetProjection
     }
 }

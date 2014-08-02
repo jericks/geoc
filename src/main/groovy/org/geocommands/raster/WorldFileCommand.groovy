@@ -30,7 +30,7 @@ class WorldFileCommand extends Command<WorldFileOptions> {
     @Override
     void execute(WorldFileOptions options, Reader reader, Writer writer) throws Exception {
         Bounds bounds = Bounds.fromString(options.bounds)
-        List size = options.size.split(",").collect{ it as double}
+        List size = options.size.split(",").collect { it as double }
         File file = options.file
         boolean shouldUseWriter = false
         if (!options.file) {

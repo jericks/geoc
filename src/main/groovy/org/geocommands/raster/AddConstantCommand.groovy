@@ -5,8 +5,9 @@ import org.kohsuke.args4j.Option
 
 /**
  * Add a constant value to a Raster
+ * @author Jared Erickson
  */
-class AddConstantCommand extends RasterInOutCommand <AddConstantOptions> {
+class AddConstantCommand extends RasterInOutCommand<AddConstantOptions> {
 
     @Override
     String getName() {
@@ -29,7 +30,7 @@ class AddConstantCommand extends RasterInOutCommand <AddConstantOptions> {
     }
 
     static class AddConstantOptions extends RasterInOutOptions {
-        @Option(name="-v", aliases="--value",  usage="The value", required = true)
+        @Option(name = "-v", aliases = "--value", usage = "The value", required = true)
         List<Double> values
     }
 }

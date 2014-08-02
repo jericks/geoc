@@ -3,7 +3,8 @@ package org.geocommands.vector
 import org.geocommands.BaseTest
 import org.geocommands.vector.DefaultStyleCommand.DefaultStyleOptions
 import org.junit.Test
-import static org.junit.Assert.*
+
+import static org.junit.Assert.assertEquals
 
 /**
  * The DefaultStyleCommand Unit Test
@@ -39,12 +40,13 @@ class DefaultStyleCommandTest extends BaseTest {
   </sld:UserLayer>
 </sld:StyledLayerDescriptor>"""
 
-    @Test void execute() {
+    @Test
+    void execute() {
         DefaultStyleCommand cmd = new DefaultStyleCommand()
         File file = getResource("points.properties")
         DefaultStyleOptions options = new DefaultStyleOptions(
-            inputWorkspace: file.absolutePath,
-            color: "wheat"
+                inputWorkspace: file.absolutePath,
+                color: "wheat"
         )
         StringWriter writer = new StringWriter()
         cmd.execute(options, new StringReader(""), writer)
@@ -54,11 +56,12 @@ class DefaultStyleCommandTest extends BaseTest {
     }
 
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         DefaultStyleCommand cmd = new DefaultStyleCommand()
         File file = getResource("polygons.properties")
         DefaultStyleOptions options = new DefaultStyleOptions(
-            color: "wheat"
+                color: "wheat"
         )
         StringWriter writer = new StringWriter()
         cmd.execute(options, readCsv("points.csv"), writer)
@@ -67,21 +70,22 @@ class DefaultStyleCommandTest extends BaseTest {
         assertEquals(expected, actual)
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("points.properties")
         String output = runApp([
-            "vector defaultstyle",
-            "-i", file.absolutePath,
-            "-c", "wheat"
-        ],"")
+                "vector defaultstyle",
+                "-i", file.absolutePath,
+                "-c", "wheat"
+        ], "")
         String actual = output
         String expected = sld + System.getProperty("line.separator")
         assertEquals(expected, actual)
 
         output = runApp([
-            "vector defaultstyle",
-            "-c", "wheat"
-        ],readCsv("points.csv").text)
+                "vector defaultstyle",
+                "-c", "wheat"
+        ], readCsv("points.csv").text)
         actual = output
         expected = sld + System.getProperty("line.separator")
         assertEquals(expected, actual)

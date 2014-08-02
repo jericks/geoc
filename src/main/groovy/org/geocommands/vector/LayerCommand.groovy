@@ -1,9 +1,9 @@
 package org.geocommands.vector
 
-import geoscript.workspace.Memory
-import geoscript.workspace.Workspace
 import geoscript.layer.Layer
 import geoscript.layer.io.CsvReader
+import geoscript.workspace.Memory
+import geoscript.workspace.Workspace
 import org.geocommands.Command
 
 /**
@@ -13,7 +13,9 @@ import org.geocommands.Command
 abstract class LayerCommand<T extends LayerOptions> extends Command<T> {
 
     abstract String getName()
+
     abstract String getDescription()
+
     abstract T getOptions()
 
     void execute(T options, Reader reader, Writer writer) throws Exception {

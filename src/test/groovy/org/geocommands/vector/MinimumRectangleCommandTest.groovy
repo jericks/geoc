@@ -15,13 +15,14 @@ import static org.junit.Assert.assertEquals
  */
 class MinimumRectangleCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         MinimumRectangleCommand cmd = new MinimumRectangleCommand()
         File file = getResource("points.properties")
         File shpFile = createTemporaryShapefile("minrect")
         MinimumRectangleOptions options = new MinimumRectangleOptions(
-            inputWorkspace: file.absolutePath,
-            outputWorkspace: shpFile
+                inputWorkspace: file.absolutePath,
+                outputWorkspace: shpFile
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
@@ -29,7 +30,8 @@ class MinimumRectangleCommandTest extends BaseTest {
         assertEquals "MultiPolygon", shp.schema.geom.typ
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         MinimumRectangleCommand cmd = new MinimumRectangleCommand()
         MinimumRectangleOptions options = new MinimumRectangleOptions()
         StringWriter w = new StringWriter()
@@ -39,13 +41,14 @@ class MinimumRectangleCommandTest extends BaseTest {
         assertEquals "Polygon", layer.schema.geom.typ
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("points.properties")
         File shpFile = createTemporaryShapefile("minrect")
         App.main([
-            "vector minrect",
-            "-i", file.absolutePath,
-            "-o", shpFile.absolutePath
+                "vector minrect",
+                "-i", file.absolutePath,
+                "-o", shpFile.absolutePath
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
         assertEquals 1, shp.count

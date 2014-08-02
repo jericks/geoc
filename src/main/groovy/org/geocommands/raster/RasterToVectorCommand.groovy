@@ -15,7 +15,9 @@ import org.geocommands.vector.Util
 abstract class RasterToVectorCommand<T extends RasterToVectorOptions> extends RasterCommand<T> {
 
     abstract String getName()
+
     abstract String getDescription()
+
     abstract T getOptions()
 
     abstract void convertRasterToVector(Raster raster, Layer layer, T options, Reader reader, Writer writer) throws Exception
@@ -34,7 +36,7 @@ abstract class RasterToVectorCommand<T extends RasterToVectorOptions> extends Ra
     }
 
     protected Schema createOutputSchema(Raster raster, T options) {
-        new Schema(Util.getOutputLayerName(options.outputWorkspace, options.outputLayer, name.replaceAll(" ","_")), [new Field("the_geom", "polygon")])
+        new Schema(Util.getOutputLayerName(options.outputWorkspace, options.outputLayer, name.replaceAll(" ", "_")), [new Field("the_geom", "polygon")])
     }
 
     Layer getOutputLayer(Raster raster, T options) {

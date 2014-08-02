@@ -7,7 +7,7 @@ import org.kohsuke.args4j.Option
  * Add a Feature to an existing Layer
  * @author Jared Erickson
  */
-class AddCommand extends LayerCommand<AddOptions>{
+class AddCommand extends LayerCommand<AddOptions> {
 
     @Override
     String getName() {
@@ -35,7 +35,7 @@ class AddCommand extends LayerCommand<AddOptions>{
     }
 
     static class AddOptions extends LayerOptions {
-        @Option(name="-v", aliases="--value",  usage="A value 'field=value'", required = true)
-        Map<String,String> values
+        @Option(name = "-v", aliases = "--value", usage = "A value 'field=value'", required = true)
+        Map<String, String> values
     }
 }

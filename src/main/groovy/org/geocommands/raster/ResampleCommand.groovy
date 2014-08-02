@@ -1,7 +1,6 @@
 package org.geocommands.raster
 
 import geoscript.geom.Bounds
-import geoscript.geom.Geometry
 import geoscript.layer.Raster
 import org.kohsuke.args4j.Option
 
@@ -9,7 +8,7 @@ import org.kohsuke.args4j.Option
  * Resample a Raster
  * @author Jared Erickson
  */
-class ResampleCommand extends RasterInOutCommand<ResampleOptions>{
+class ResampleCommand extends RasterInOutCommand<ResampleOptions> {
 
     @Override
     String getName() {
@@ -36,17 +35,19 @@ class ResampleCommand extends RasterInOutCommand<ResampleOptions>{
             }
         }
         if (options.size) {
-            resampleOptions.size = (options.size.contains(",") ? options.size.split(",") : options.size.split(" ")).collect{it as int}
+            resampleOptions.size = (options.size.contains(",") ? options.size.split(",") : options.size.split(" ")).collect {
+                it as int
+            }
         }
         inRaster.resample(resampleOptions)
     }
 
     static class ResampleOptions extends RasterInOutOptions {
 
-        @Option(name="-b", aliases="--bounds",  usage="The bounding box", required = false)
+        @Option(name = "-b", aliases = "--bounds", usage = "The bounding box", required = false)
         String bounds
 
-        @Option(name="-s", aliases="--size",  usage="The output size", required = false)
+        @Option(name = "-s", aliases = "--size", usage = "The output size", required = false)
         String size
     }
 }

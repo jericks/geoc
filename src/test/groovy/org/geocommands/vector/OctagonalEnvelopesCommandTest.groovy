@@ -15,13 +15,14 @@ import static org.junit.Assert.assertEquals
  */
 class OctagonalEnvelopesCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         OctagonalEnvelopesCommand cmd = new OctagonalEnvelopesCommand()
         File file = getResource("polys.properties")
         File shpFile = createTemporaryShapefile("octagonalenvelopes")
         OctagonalEnvelopesOptions options = new OctagonalEnvelopesOptions(
-            inputWorkspace: file.absolutePath,
-            outputWorkspace: shpFile
+                inputWorkspace: file.absolutePath,
+                outputWorkspace: shpFile
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
@@ -29,7 +30,8 @@ class OctagonalEnvelopesCommandTest extends BaseTest {
         assertEquals "MultiPolygon", shp.schema.geom.typ
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         OctagonalEnvelopesCommand cmd = new OctagonalEnvelopesCommand()
         OctagonalEnvelopesOptions options = new OctagonalEnvelopesOptions()
         StringWriter w = new StringWriter()
@@ -39,13 +41,14 @@ class OctagonalEnvelopesCommandTest extends BaseTest {
         assertEquals "Polygon", layer.schema.geom.typ
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("polys.properties")
         File shpFile = createTemporaryShapefile("octagonalenvelopes")
         App.main([
-            "vector octagonalenvelopes",
-            "-i", file.absolutePath,
-            "-o", shpFile.absolutePath
+                "vector octagonalenvelopes",
+                "-i", file.absolutePath,
+                "-o", shpFile.absolutePath
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
         assertEquals 3, shp.count

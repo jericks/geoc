@@ -15,13 +15,14 @@ import static org.junit.Assert.assertEquals
  */
 class DelaunayDiagramCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         DelaunayDiagramCommand cmd = new DelaunayDiagramCommand()
         File file = getResource("points50.properties")
         File shpFile = createTemporaryShapefile("delaunay")
         DelaunayDiagramOptions options = new DelaunayDiagramOptions(
-            inputWorkspace: file.absolutePath,
-            outputWorkspace: shpFile
+                inputWorkspace: file.absolutePath,
+                outputWorkspace: shpFile
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
@@ -30,7 +31,8 @@ class DelaunayDiagramCommandTest extends BaseTest {
         assertEquals "MultiPolygon", shp.schema.geom.typ
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         DelaunayDiagramCommand cmd = new DelaunayDiagramCommand()
         DelaunayDiagramOptions options = new DelaunayDiagramOptions()
         StringWriter w = new StringWriter()
@@ -41,13 +43,14 @@ class DelaunayDiagramCommandTest extends BaseTest {
         assertEquals "MultiPolygon", layer.schema.geom.typ
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("points50.properties")
         File shpFile = createTemporaryShapefile("delaunay")
         App.main([
-            "vector delaunay",
-            "-i", file.absolutePath,
-            "-o", shpFile.absolutePath
+                "vector delaunay",
+                "-i", file.absolutePath,
+                "-o", shpFile.absolutePath
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
         assertEquals 1, shp.count

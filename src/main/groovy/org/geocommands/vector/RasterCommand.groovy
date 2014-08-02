@@ -28,10 +28,10 @@ class RasterCommand extends VectorToRasterCommand<RasterOptions> {
 
     @Override
     Raster createRaster(Layer layer, RasterOptions options, Reader reader, Writer writer) {
-        List gridSize = options.gridSize.split(",").collect{it as int}
+        List gridSize = options.gridSize.split(",").collect { it as int }
         Bounds bounds = Bounds.fromString(options.bounds)
         if (!bounds) {
-             bounds = layer.bounds
+            bounds = layer.bounds
         }
         String rasterName = options.rasterName ?: "${layer.name}_raster"
         layer.getRaster(options.field, gridSize, bounds, rasterName)
@@ -39,16 +39,16 @@ class RasterCommand extends VectorToRasterCommand<RasterOptions> {
 
     static class RasterOptions extends VectorToRasterOptions {
 
-        @Option(name="-d", aliases="--field",  usage="The field name with value", required = true)
+        @Option(name = "-d", aliases = "--field", usage = "The field name with value", required = true)
         String field
 
-        @Option(name="-s", aliases="--grid-size",  usage="The grid size", required = true)
+        @Option(name = "-s", aliases = "--grid-size", usage = "The grid size", required = true)
         String gridSize
 
-        @Option(name="-b", aliases="--bounds",  usage="The bounds", required = false)
+        @Option(name = "-b", aliases = "--bounds", usage = "The bounds", required = false)
         String bounds
 
-        @Option(name="-n", aliases="--raster-name",  usage="The raster name", required = false)
+        @Option(name = "-n", aliases = "--raster-name", usage = "The raster name", required = false)
         String rasterName
     }
 }

@@ -6,7 +6,8 @@ import geoscript.geom.GeometryCollection
 import geoscript.layer.Layer
 
 /**
- *
+ * Calculate the convex hull of the input Layer and save it to the output Layer
+ * @author Jared Erickson
  */
 class ConvexHullCommand extends LayerInOutCommand<LayerInOutOptions> {
 

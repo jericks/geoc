@@ -33,9 +33,9 @@ class ContourCommand extends RasterToVectorCommand<ContourOptions> {
     @Override
     void convertRasterToVector(Raster raster, Layer layer, ContourOptions options, Reader reader, Writer writer) throws Exception {
         Layer contourLayer = raster.contours(options.band, options.levels.size() == 1 ? options.levels[0] : options.levels,
-            options.simplify, options.smooth, Bounds.fromString(options.bounds))
-        layer.withWriter {geoscript.layer.Writer w ->
-            contourLayer.cursor.each{Feature f ->
+                options.simplify, options.smooth, Bounds.fromString(options.bounds))
+        layer.withWriter { geoscript.layer.Writer w ->
+            contourLayer.cursor.each { Feature f ->
                 w.add(f)
             }
         }
@@ -43,9 +43,9 @@ class ContourCommand extends RasterToVectorCommand<ContourOptions> {
 
     @Override
     protected Schema createOutputSchema(Raster raster, ContourOptions options) {
-        new Schema(Util.getOutputLayerName(options.outputWorkspace, options.outputLayer, name.replaceAll(" ","_")), [
-            new Field("the_geom", "LineString"),
-            new Field("value", "double")
+        new Schema(Util.getOutputLayerName(options.outputWorkspace, options.outputLayer, name.replaceAll(" ", "_")), [
+                new Field("the_geom", "LineString"),
+                new Field("value", "double")
         ])
     }
 

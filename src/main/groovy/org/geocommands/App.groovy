@@ -1,7 +1,10 @@
 package org.geocommands
 
 import org.kohsuke.args4j.CmdLineParser
-import java.util.logging.*
+
+import java.util.logging.Level
+import java.util.logging.LogManager
+import java.util.logging.Logger
 
 /**
  * The Command line "geoc" application.
@@ -35,7 +38,7 @@ class App {
         }.join(" ")
 
         // Lookup the Command by name
-        Command command = ServiceLoader.load(Command.class).find {cmd ->
+        Command command = ServiceLoader.load(Command.class).find { cmd ->
             if (cmd.name.equalsIgnoreCase(name)) {
                 return cmd
             }
@@ -66,7 +69,7 @@ class App {
                 Writer writer = new StringWriter()
                 command.execute(options, reader, writer)
                 writer.flush()
-                String output = ((StringWriter)writer).getBuffer().toString()
+                String output = ((StringWriter) writer).getBuffer().toString()
                 if (!output.isEmpty()) {
                     System.out.println(output)
                 }

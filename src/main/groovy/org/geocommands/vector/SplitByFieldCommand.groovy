@@ -5,8 +5,6 @@ import geoscript.filter.Filter
 import geoscript.layer.Layer
 import geoscript.workspace.Memory
 import geoscript.workspace.Workspace
-import org.geocommands.vector.LayerCommand
-import org.geocommands.vector.LayerOptions
 import org.kohsuke.args4j.Option
 
 /**
@@ -39,7 +37,7 @@ class SplitByFieldCommand extends LayerCommand<SplitByFieldOptions> {
 
         // Get unique values
         Set values = []
-        layer.eachFeature{ f ->
+        layer.eachFeature { f ->
             values.add(f.get(field))
         }
 
@@ -49,11 +47,11 @@ class SplitByFieldCommand extends LayerCommand<SplitByFieldOptions> {
         String quote = field.typ.equalsIgnoreCase("String") ? "'" : ""
 
         // For each unique value create a Layer and add Features
-        values.eachWithIndex{ v,i ->
-            Layer outLayer = workspace.create("${layer.name}_${field.name}_${v.toString().replaceAll(' ','_')}", layer.schema.fields)
+        values.eachWithIndex { v, i ->
+            Layer outLayer = workspace.create("${layer.name}_${field.name}_${v.toString().replaceAll(' ', '_')}", layer.schema.fields)
             Filter filter = new Filter("${field.name} = ${quote}${v}${quote}")
-            outLayer.withWriter {geoscript.layer.Writer w ->
-                layer.getFeatures(filter).each{ f->
+            outLayer.withWriter { geoscript.layer.Writer w ->
+                layer.getFeatures(filter).each { f ->
                     w.add(f)
                 }
             }
@@ -68,10 +66,10 @@ class SplitByFieldCommand extends LayerCommand<SplitByFieldOptions> {
 
     static class SplitByFieldOptions extends LayerOptions {
 
-        @Option(name="-f", aliases="--field",  usage="The field name", required = true)
+        @Option(name = "-f", aliases = "--field", usage = "The field name", required = true)
         String field
 
-        @Option(name="-o", aliases="--output-workspace",  usage="The output workspace", required = false)
+        @Option(name = "-o", aliases = "--output-workspace", usage = "The output workspace", required = false)
         String outputWorkspace
 
     }

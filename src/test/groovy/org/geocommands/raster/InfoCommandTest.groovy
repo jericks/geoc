@@ -4,8 +4,6 @@ import org.geocommands.BaseTest
 import org.geocommands.raster.InfoCommand.InfoOptions
 import org.junit.Test
 
-import static org.junit.Assert.assertEquals
-
 /**
  * The InfoCommand Unit Test
  * @author Jared Erickson

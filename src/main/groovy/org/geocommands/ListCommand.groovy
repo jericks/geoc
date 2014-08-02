@@ -17,27 +17,27 @@ class ListCommand extends Command<ListOptions> {
     }
 
     ListOptions getOptions() {
-       new ListOptions()
+        new ListOptions()
     }
 
     void execute(ListOptions options, Reader reader, Writer writer) {
-       String NEW_LINE = System.getProperty("line.separator")
-       StringBuilder builder = new StringBuilder()
-       ServiceLoader.load(Command.class).iterator().sort { it.name }.eachWithIndex{cmd,i ->
-           if (i > 0) {
-               builder.append(NEW_LINE)
-           }
-           builder.append(cmd.name)
-           if (options.showDescriptions) {
+        String NEW_LINE = System.getProperty("line.separator")
+        StringBuilder builder = new StringBuilder()
+        ServiceLoader.load(Command.class).iterator().sort { it.name }.eachWithIndex { cmd, i ->
+            if (i > 0) {
+                builder.append(NEW_LINE)
+            }
+            builder.append(cmd.name)
+            if (options.showDescriptions) {
                 builder.append(" = ").append(cmd.description)
-           }
-       }
-       writer.write(builder.toString())
+            }
+        }
+        writer.write(builder.toString())
     }
 
     static class ListOptions extends Options {
 
-        @Option(name="-d", aliases="--description", usage="Include the description", required=false)
+        @Option(name = "-d", aliases = "--description", usage = "Include the description", required = false)
         boolean showDescriptions = false
 
     }

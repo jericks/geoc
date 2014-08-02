@@ -2,8 +2,6 @@ package org.geocommands.vector
 
 import geoscript.feature.Feature
 import geoscript.layer.Layer
-import org.geocommands.vector.LayerInOtherOutCommand
-import org.geocommands.vector.LayerInOtherOutOptions
 
 /**
  * Merge two Layers together to create a new Layer
@@ -28,11 +26,11 @@ class MergeCommand extends LayerInOtherOutCommand<MergeOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer otherLayer, Layer outLayer, MergeOptions options, Reader reader, Writer writer) throws Exception {
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.eachFeature{Feature f->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.eachFeature { Feature f ->
                 w.add(f)
             }
-            otherLayer.eachFeature{Feature f->
+            otherLayer.eachFeature { Feature f ->
                 w.add(f)
             }
         }

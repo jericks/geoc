@@ -25,7 +25,7 @@ class DataStoreListCommand extends Command<DataStoreListOptions> {
     void execute(DataStoreListOptions options, Reader reader, Writer writer) {
         String NEW_LINE = System.getProperty("line.separator")
         StringBuilder builder = new StringBuilder()
-        DataStoreFinder.availableDataStores.eachWithIndex{ds, i ->
+        DataStoreFinder.availableDataStores.eachWithIndex { ds, i ->
             if (i > 0) {
                 builder.append(NEW_LINE)
             }

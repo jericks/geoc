@@ -12,11 +12,12 @@ import static org.junit.Assert.*
  */
 class DecimalDegrees2PointCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         DecimalDegrees2PointCommand cmd = new DecimalDegrees2PointCommand()
         DecimalDegrees2PointCommand.DecimalDegrees2PointOptions options = new DecimalDegrees2PointCommand.DecimalDegrees2PointOptions(
-            decimalDegrees: """122\u00B0 31' 32.23\" W, 47\u00B0 12' 43.28\" N""",
-            outputType: "xy"
+                decimalDegrees: """122\u00B0 31' 32.23\" W, 47\u00B0 12' 43.28\" N""",
+                outputType: "xy"
         )
         StringWriter writer = new StringWriter()
         cmd.execute(options, new StringReader(""), writer)
@@ -32,8 +33,9 @@ class DecimalDegrees2PointCommandTest extends BaseTest {
         assertEquals(47.212022222, point.y, 0.001)
     }
 
-    @Test void runAsCommandLine() {
-        String result = runApp(["geometry dd2pt", "-d", """122\u00B0 31' 32.23\" W, 47\u00B0 12' 43.28\" N"""],"")
+    @Test
+    void runAsCommandLine() {
+        String result = runApp(["geometry dd2pt", "-d", """122\u00B0 31' 32.23\" W, 47\u00B0 12' 43.28\" N"""], "")
         List results = result.split(",")
         assertEquals(-122.5256194, results[0] as double, 0.001)
         assertEquals(47.212022222, results[1] as double, 0.001)

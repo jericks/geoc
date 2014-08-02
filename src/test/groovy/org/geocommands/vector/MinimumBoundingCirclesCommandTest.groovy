@@ -15,13 +15,14 @@ import static org.junit.Assert.assertEquals
  */
 class MinimumBoundingCirclesCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         MinimumBoundingCirclesCommand cmd = new MinimumBoundingCirclesCommand()
         File file = getResource("polygons.properties")
         File shpFile = createTemporaryShapefile("envelopes")
         MinimumBoundingCirclesOptions options = new MinimumBoundingCirclesOptions(
-            inputWorkspace: file.absolutePath,
-            outputWorkspace: shpFile
+                inputWorkspace: file.absolutePath,
+                outputWorkspace: shpFile
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
@@ -29,7 +30,8 @@ class MinimumBoundingCirclesCommandTest extends BaseTest {
         assertEquals "MultiPolygon", shp.schema.geom.typ
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         MinimumBoundingCirclesCommand cmd = new MinimumBoundingCirclesCommand()
         MinimumBoundingCirclesOptions options = new MinimumBoundingCirclesOptions()
         StringWriter w = new StringWriter()
@@ -39,13 +41,14 @@ class MinimumBoundingCirclesCommandTest extends BaseTest {
         assertEquals "Polygon", layer.schema.geom.typ
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("polygons.properties")
         File shpFile = createTemporaryShapefile("envelopes")
         App.main([
-            "vector mincircles",
-            "-i", file.absolutePath,
-            "-o", shpFile.absolutePath
+                "vector mincircles",
+                "-i", file.absolutePath,
+                "-o", shpFile.absolutePath
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
         assertEquals 4, shp.count

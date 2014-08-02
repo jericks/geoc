@@ -9,7 +9,7 @@ import org.kohsuke.args4j.Option
  * Shear Features in a Layer.
  * @author Jared Erickson
  */
-class ShearCommand extends LayerInOutCommand<ShearOptions>{
+class ShearCommand extends LayerInOutCommand<ShearOptions> {
 
     @Override
     String getName() {
@@ -30,11 +30,11 @@ class ShearCommand extends LayerInOutCommand<ShearOptions>{
     void processLayers(Layer inLayer, Layer outLayer, ShearOptions options, Reader reader, Writer writer) throws Exception {
         Expression xExpression = Expression.fromCQL(options.x)
         Expression yExpression = Expression.fromCQL(options.y)
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.cursor.collect{Feature f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.cursor.collect { Feature f ->
                 double x = xExpression.evaluate(f)
                 double y = yExpression.evaluate(f)
-                f.geom = f.geom.shear(x,y)
+                f.geom = f.geom.shear(x, y)
                 w.add(f)
             }
         }
@@ -42,10 +42,10 @@ class ShearCommand extends LayerInOutCommand<ShearOptions>{
 
     static class ShearOptions extends LayerInOutOptions {
 
-        @Option(name="-x", aliases="--x-distance",  usage="The x distance", required = true)
+        @Option(name = "-x", aliases = "--x-distance", usage = "The x distance", required = true)
         String x
 
-        @Option(name="-y", aliases="--y-distance",  usage="The y distance", required = true)
+        @Option(name = "-y", aliases = "--y-distance", usage = "The y distance", required = true)
         String y
 
     }

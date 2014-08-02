@@ -41,15 +41,15 @@ class PointStackerCommand extends LayerInOutCommand<PointStackerOptions> {
         }
         Process process = new Process("vec:PointStacker")
         Map results = process.execute([
-                data: inLayer,
-                cellSize: options.cellSize,
-                outputWidth: options.width,
+                data        : inLayer,
+                cellSize    : options.cellSize,
+                outputWidth : options.width,
                 outputHeight: options.height,
-                outputBBOX: Bounds.fromString(options.bounds) ?: inLayer.bounds
+                outputBBOX  : Bounds.fromString(options.bounds) ?: inLayer.bounds
         ])
         Cursor cursor = results.result
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            cursor.each{f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            cursor.each { f ->
                 w.add(f)
             }
         }

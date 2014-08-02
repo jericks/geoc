@@ -6,8 +6,8 @@ import geoscript.layer.ArcGrid
 import geoscript.layer.GeoTIFF
 import geoscript.layer.Raster
 import org.apache.commons.io.input.ReaderInputStream
-import org.geocommands.raster.CropWithGeometryCommand.CropWithGeometryOptions
 import org.geocommands.BaseTest
+import org.geocommands.raster.CropWithGeometryCommand.CropWithGeometryOptions
 import org.junit.Test
 
 import static org.junit.Assert.assertEquals

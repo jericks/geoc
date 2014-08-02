@@ -3,11 +3,12 @@ package org.geocommands.vector
 import geoscript.feature.Feature
 import geoscript.layer.Layer
 import geoscript.workspace.Property
-import org.geocommands.vector.AddCommand.AddOptions
 import org.geocommands.App
 import org.geocommands.BaseTest
+import org.geocommands.vector.AddCommand.AddOptions
 import org.junit.Test
-import static org.junit.Assert.*
+
+import static org.junit.Assert.assertEquals
 
 /**
  * The AddCommand UnitTest
@@ -15,18 +16,19 @@ import static org.junit.Assert.*
  */
 class AddCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         AddCommand cmd = new AddCommand()
         File file = getCopiedResource("points.properties")
         Layer layer = new Property(file.parentFile).get(file.name)
         assertEquals 3, layer.count
         AddOptions options = new AddOptions(
-            inputWorkspace: file.absolutePath,
-            values: [
-               the_geom: "POINT (3 3)",
-               distance: 3,
-               name: "Number 4"
-            ]
+                inputWorkspace: file.absolutePath,
+                values: [
+                        the_geom: "POINT (3 3)",
+                        distance: 3,
+                        name    : "Number 4"
+                ]
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         layer = new Property(file.parentFile).get(file.name)
@@ -37,12 +39,13 @@ class AddCommandTest extends BaseTest {
         assertEquals f['name'], "Number 4"
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         AddCommand cmd = new AddCommand()
         AddOptions options = new AddOptions(values: [
-            the_geom: "POINT (3 3)",
-            distance: 3,
-            name: "Number 4"
+                the_geom: "POINT (3 3)",
+                distance: 3,
+                name    : "Number 4"
         ])
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("points.csv"), w)
@@ -54,16 +57,17 @@ class AddCommandTest extends BaseTest {
         assertEquals f['name'], "Number 4"
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getCopiedResource("points.properties")
         Layer layer = new Property(file.parentFile).get(file.name)
         assertEquals 3, layer.count
         App.main([
-            "vector add",
-            "-i", file.absolutePath,
-            "-v", "the_geom=POINT (3 3)",
-            "-v", "distance=3",
-            "-v", "name=Number 4"
+                "vector add",
+                "-i", file.absolutePath,
+                "-v", "the_geom=POINT (3 3)",
+                "-v", "distance=3",
+                "-v", "name=Number 4"
         ] as String[])
         layer = new Property(file.parentFile).get(file.name)
         assertEquals 4, layer.count
@@ -73,10 +77,10 @@ class AddCommandTest extends BaseTest {
         assertEquals f['name'], "Number 4"
 
         String output = runApp(["vector add",
-            "-v", "the_geom=POINT (3 3)",
-            "-v", "distance=3",
-            "-v", "name=Number 4"
-        ],readCsv("points.csv").text)
+                                "-v", "the_geom=POINT (3 3)",
+                                "-v", "distance=3",
+                                "-v", "name=Number 4"
+        ], readCsv("points.csv").text)
         layer = getLayerFromCsv(output)
         assertEquals 4, layer.count
         f = layer.getFeatures("name = 'Number 4'")[0]

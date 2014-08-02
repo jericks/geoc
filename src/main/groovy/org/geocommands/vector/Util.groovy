@@ -20,8 +20,8 @@ class Util {
      */
     static boolean isWorkspaceStringShapefile(String workspaceStr) {
         if (workspaceStr != null && (workspaceStr.endsWith(".shp")
-            || workspaceStr.trim().startsWith("url=")
-            || workspaceStr.indexOf("=") == -1 && new File(workspaceStr).isDirectory())
+                || workspaceStr.trim().startsWith("url=")
+                || workspaceStr.indexOf("=") == -1 && new File(workspaceStr).isDirectory())
         ) {
             return true
         } else {
@@ -59,7 +59,7 @@ class Util {
     }
 
     static Layer getOutputLayer(Layer inputLayer, String outputWorkspace, String outputLayer,
-        Closure createOutputSchema = {Layer layer, String outLayer -> new Schema(outLayer ? outLayer : layer.name, layer.schema.fields)}) {
+                                Closure createOutputSchema = { Layer layer, String outLayer -> new Schema(outLayer ? outLayer : layer.name, layer.schema.fields) }) {
         Workspace workspace
         if (!outputWorkspace) {
             workspace = new Memory()
@@ -89,7 +89,7 @@ class Util {
         String outName = outputLayer ? outputLayer : defaultName
         if (outputWorkspace && (outputWorkspace.endsWith(".shp") || outputWorkspace.endsWith(".properties"))) {
             String fileName = new File(outputWorkspace).name
-            outName = fileName.substring(0, fileName.lastIndexOf(".") )
+            outName = fileName.substring(0, fileName.lastIndexOf("."))
         }
         outName
     }

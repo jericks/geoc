@@ -16,17 +16,18 @@ import static org.junit.Assert.assertTrue
  */
 class SymDifferenceCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         File aFile = getResource("a.properties")
         File bFile = getResource("b.properties")
         File shpFile = createTemporaryShapefile("a_b_symdifference")
 
         SymDifferenceCommand cmd = new SymDifferenceCommand()
         SymDifferenceOptions options = new SymDifferenceOptions(
-            inputWorkspace: aFile.absolutePath,
-            otherWorkspace: bFile.absolutePath,
-            outputWorkspace: shpFile,
-            postfixAll: true
+                inputWorkspace: aFile.absolutePath,
+                otherWorkspace: bFile.absolutePath,
+                outputWorkspace: shpFile,
+                postfixAll: true
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Layer layer = new Shapefile(shpFile)
@@ -42,17 +43,18 @@ class SymDifferenceCommandTest extends BaseTest {
         assertEquals 1, layer.count("A1 = 2 AND B2 IS NULL")
         assertEquals 1, layer.count("A1 IS NULL AND B2 = 3")
         assertEquals 1, layer.count("A1 IS NULL AND B2 = 4")
-        assertEquals "MULTIPOLYGON (((90 105, 90 110, 100 110, 100 105, 97 105, 97 100, 95 100, 95 105, 90 105)))",layer.getFeatures("A1 = 1 AND B2 IS NULL")[0].geom.wkt
+        assertEquals "MULTIPOLYGON (((90 105, 90 110, 100 110, 100 105, 97 105, 97 100, 95 100, 95 105, 90 105)))", layer.getFeatures("A1 = 1 AND B2 IS NULL")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((120 105, 120 110, 130 110, 130 100, 125 100, 125 105, 120 105)))", layer.getFeatures("A1 = 2 AND B2 IS NULL")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((85 95, 85 105, 90 105, 90 100, 95 100, 95 95, 85 95)))", layer.getFeatures("A1 IS NULL AND B2 = 3")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((97 95, 97 100, 100 100, 100 105, 120 105, 120 100, 125 100, 125 95, 97 95)))", layer.getFeatures("A1 IS NULL AND B2 = 4")[0].geom.wkt
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         SymDifferenceCommand cmd = new SymDifferenceCommand()
         SymDifferenceOptions options = new SymDifferenceOptions(
-            otherWorkspace: getResource("b.properties").absolutePath,
-            postfixAll: true
+                otherWorkspace: getResource("b.properties").absolutePath,
+                postfixAll: true
         )
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("a.csv"), w)
@@ -68,13 +70,14 @@ class SymDifferenceCommandTest extends BaseTest {
         assertEquals 1, layer.count("A1 = 2 AND B2 = ''")
         assertEquals 1, layer.count("A1 = '' AND B2 = 3")
         assertEquals 1, layer.count("A1 = '' AND B2 = 4")
-        assertEquals "MULTIPOLYGON (((90 105, 90 110, 100 110, 100 105, 97 105, 97 100, 95 100, 95 105, 90 105)))",layer.getFeatures("A1 = 1 AND B2 = ''")[0].geom.wkt
+        assertEquals "MULTIPOLYGON (((90 105, 90 110, 100 110, 100 105, 97 105, 97 100, 95 100, 95 105, 90 105)))", layer.getFeatures("A1 = 1 AND B2 = ''")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((120 105, 120 110, 130 110, 130 100, 125 100, 125 105, 120 105)))", layer.getFeatures("A1 = 2 AND B2 = ''")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((85 95, 85 105, 90 105, 90 100, 95 100, 95 95, 85 95)))", layer.getFeatures("A1 = '' AND B2 = 3")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((97 95, 97 100, 100 100, 100 105, 120 105, 120 100, 125 100, 125 95, 97 95)))", layer.getFeatures("A1 = '' AND B2 = 4")[0].geom.wkt
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File aFile = getResource("a.properties")
         File bFile = getResource("b.properties")
         File shpFile = createTemporaryShapefile("a_b_symdifference")
@@ -97,12 +100,12 @@ class SymDifferenceCommandTest extends BaseTest {
         assertEquals 1, layer.count("A1 = 2 AND B2 IS NULL")
         assertEquals 1, layer.count("A1 IS NULL AND B2 = 3")
         assertEquals 1, layer.count("A1 IS NULL AND B2 = 4")
-        assertEquals "MULTIPOLYGON (((90 105, 90 110, 100 110, 100 105, 97 105, 97 100, 95 100, 95 105, 90 105)))",layer.getFeatures("A1 = 1 AND B2 IS NULL")[0].geom.wkt
+        assertEquals "MULTIPOLYGON (((90 105, 90 110, 100 110, 100 105, 97 105, 97 100, 95 100, 95 105, 90 105)))", layer.getFeatures("A1 = 1 AND B2 IS NULL")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((120 105, 120 110, 130 110, 130 100, 125 100, 125 105, 120 105)))", layer.getFeatures("A1 = 2 AND B2 IS NULL")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((85 95, 85 105, 90 105, 90 100, 95 100, 95 95, 85 95)))", layer.getFeatures("A1 IS NULL AND B2 = 3")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((97 95, 97 100, 100 100, 100 105, 120 105, 120 100, 125 100, 125 95, 97 95)))", layer.getFeatures("A1 IS NULL AND B2 = 4")[0].geom.wkt
 
-        String output = runApp(["vector symdifference","-k", bFile.absolutePath,"-p"],readCsv("a.csv").text)
+        String output = runApp(["vector symdifference", "-k", bFile.absolutePath, "-p"], readCsv("a.csv").text)
         layer = getLayerFromCsv(output)
         // Check schema
         assertEquals "csv", layer.name
@@ -115,7 +118,7 @@ class SymDifferenceCommandTest extends BaseTest {
         assertEquals 1, layer.count("A1 = 2 AND B2 = ''")
         assertEquals 1, layer.count("A1 = '' AND B2 = 3")
         assertEquals 1, layer.count("A1 = '' AND B2 = 4")
-        assertEquals "MULTIPOLYGON (((90 105, 90 110, 100 110, 100 105, 97 105, 97 100, 95 100, 95 105, 90 105)))",layer.getFeatures("A1 = 1 AND B2 = ''")[0].geom.wkt
+        assertEquals "MULTIPOLYGON (((90 105, 90 110, 100 110, 100 105, 97 105, 97 100, 95 100, 95 105, 90 105)))", layer.getFeatures("A1 = 1 AND B2 = ''")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((120 105, 120 110, 130 110, 130 100, 125 100, 125 105, 120 105)))", layer.getFeatures("A1 = 2 AND B2 = ''")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((85 95, 85 105, 90 105, 90 100, 95 100, 95 95, 85 95)))", layer.getFeatures("A1 = '' AND B2 = 3")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((97 95, 97 100, 100 100, 100 105, 120 105, 120 100, 125 100, 125 95, 97 95)))", layer.getFeatures("A1 = '' AND B2 = 4")[0].geom.wkt

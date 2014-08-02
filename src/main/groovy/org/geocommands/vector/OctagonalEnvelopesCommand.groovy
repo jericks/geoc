@@ -3,8 +3,6 @@ package org.geocommands.vector
 import geoscript.feature.Feature
 import geoscript.feature.Schema
 import geoscript.layer.Layer
-import org.geocommands.vector.LayerInOutCommand
-import org.geocommands.vector.LayerInOutOptions
 
 /**
  * Calculate the octagonal envelope of each feature in the input Layer and save them to the output Layer
@@ -34,10 +32,10 @@ class OctagonalEnvelopesCommand extends LayerInOutCommand<OctagonalEnvelopesOpti
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, OctagonalEnvelopesOptions options, Reader reader, Writer writer) {
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.eachFeature {Feature f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.eachFeature { Feature f ->
                 Map values = [:]
-                f.attributes.each{k,v ->
+                f.attributes.each { k, v ->
                     if (v instanceof geoscript.geom.Geometry) {
                         values[k] = v.octagonalEnvelope
                     } else {

@@ -28,8 +28,8 @@ class PageCommand extends LayerInOutCommand<PageOptions> {
     void processLayers(Layer inLayer, Layer outLayer, PageOptions options, Reader reader, Writer writer) throws Exception {
         int start = options.start
         int max = options.max
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.getCursor(start: start, max: max).each{f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.getCursor(start: start, max: max).each { f ->
                 w.add(f)
             }
         }
@@ -37,10 +37,10 @@ class PageCommand extends LayerInOutCommand<PageOptions> {
 
     static class PageOptions extends LayerInOutOptions {
 
-        @Option(name="-m", aliases="--max",  usage="The maximum number of Features to include", required = false)
+        @Option(name = "-m", aliases = "--max", usage = "The maximum number of Features to include", required = false)
         int max = -1
 
-        @Option(name="-t", aliases="--start",  usage="The index of the Feature to start at", required = false)
+        @Option(name = "-t", aliases = "--start", usage = "The index of the Feature to start at", required = false)
         int start = -1
 
     }

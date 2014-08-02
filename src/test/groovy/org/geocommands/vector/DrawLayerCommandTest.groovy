@@ -1,6 +1,5 @@
 package org.geocommands.vector
 
-import geoscript.layer.Property
 import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.DrawLayerCommand.DrawLayerOptions
@@ -18,7 +17,7 @@ class DrawLayerCommandTest extends BaseTest {
         DefaultStyleCommand cmd = new DefaultStyleCommand()
         DefaultStyleCommand.DefaultStyleOptions options = new DefaultStyleCommand.DefaultStyleOptions(inputWorkspace: layerFile)
         String sld = cmd.execute(options)
-        File file = File.createTempFile("style",".sld")
+        File file = File.createTempFile("style", ".sld")
         file.write(sld)
         file
     }

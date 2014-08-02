@@ -37,7 +37,7 @@ class GetValueCommand extends RasterCommand<GetValueOptions> {
             values = [values[options.band - 1]]
         }
         String NEW_LINE = System.getProperty("line.separator")
-        values.each {value ->
+        values.each { value ->
             writer.write("${value}")
             writer.write(NEW_LINE)
         }
@@ -45,16 +45,16 @@ class GetValueCommand extends RasterCommand<GetValueOptions> {
 
     static class GetValueOptions extends RasterOptions {
 
-        @Option(name="-x", aliases="--x-coordinate",  usage="The x coordinate", required = true)
+        @Option(name = "-x", aliases = "--x-coordinate", usage = "The x coordinate", required = true)
         double x
 
-        @Option(name="-y", aliases="--y-coordinate",  usage="The y coordinate", required = true)
+        @Option(name = "-y", aliases = "--y-coordinate", usage = "The y coordinate", required = true)
         double y
 
-        @Option(name="-t", aliases="--type",  usage="The type can be point or pixel", required = false)
+        @Option(name = "-t", aliases = "--type", usage = "The type can be point or pixel", required = false)
         String type = "point"
 
-        @Option(name="-b", aliases="--band",  usage="The band to get a value from", required = false)
+        @Option(name = "-b", aliases = "--band", usage = "The band to get a value from", required = false)
         int band = -1
 
     }

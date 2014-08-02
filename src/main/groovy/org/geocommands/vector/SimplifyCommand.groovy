@@ -34,10 +34,10 @@ class SimplifyCommand extends TransformGeometryCommand<SimplifyOptions> {
     }
 
     static class SimplifyOptions extends LayerInOutOptions {
-        @Option(name="-a", aliases="--algorithm",  usage="The simplify algorithm (DouglasPeucker - dp or TopologyPreserving - tp)", required = false)
+        @Option(name = "-a", aliases = "--algorithm", usage = "The simplify algorithm (DouglasPeucker - dp or TopologyPreserving - tp)", required = false)
         String algorithm = "TopologyPreserving"
 
-        @Option(name="-d", aliases="--distance",  usage="The distance tolerance", required = true)
+        @Option(name = "-d", aliases = "--distance", usage = "The distance tolerance", required = true)
         double distanceTolerance
     }
 }

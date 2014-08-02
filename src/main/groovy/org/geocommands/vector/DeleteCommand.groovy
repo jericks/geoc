@@ -35,7 +35,7 @@ class DeleteCommand extends LayerCommand<DeleteOptions> {
     }
 
     static class DeleteOptions extends LayerOptions {
-        @Option(name="-f", aliases="--filter",  usage="The CQL Filter", required = true)
+        @Option(name = "-f", aliases = "--filter", usage = "The CQL Filter", required = true)
         String filter
     }
 }

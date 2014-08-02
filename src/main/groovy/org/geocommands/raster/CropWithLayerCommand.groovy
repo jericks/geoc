@@ -1,6 +1,5 @@
 package org.geocommands.raster
 
-import geoscript.geom.Bounds
 import geoscript.geom.Geometry
 import geoscript.geom.GeometryCollection
 import geoscript.layer.Layer
@@ -32,16 +31,16 @@ class CropWithLayerCommand extends RasterInOutCommand<CropWithLayerOptions> {
     @Override
     Raster createOutputRaster(Raster inRaster, CropWithLayerOptions options, Reader reader, Writer writer) throws Exception {
         Layer layer = Util.getInputLayer(options.inputWorkspace, options.inputLayer, null)
-        Geometry geometry = new GeometryCollection(layer.collectFromFeature {f -> f.geom})
+        Geometry geometry = new GeometryCollection(layer.collectFromFeature { f -> f.geom })
         inRaster.crop(geometry)
     }
 
     static class CropWithLayerOptions extends RasterInOutOptions {
 
-        @Option(name="-w", aliases="--input-workspace",  usage="The input workspace", required = true)
+        @Option(name = "-w", aliases = "--input-workspace", usage = "The input workspace", required = true)
         String inputWorkspace
 
-        @Option(name="-y", aliases="--input-layer",  usage="The input layer", required = false)
+        @Option(name = "-y", aliases = "--input-layer", usage = "The input layer", required = false)
         String inputLayer
 
     }

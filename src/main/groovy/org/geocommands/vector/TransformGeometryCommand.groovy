@@ -3,8 +3,6 @@ package org.geocommands.vector
 import geoscript.feature.Feature
 import geoscript.geom.Geometry
 import geoscript.layer.Layer
-import org.geocommands.vector.LayerInOutCommand
-import org.geocommands.vector.LayerInOutOptions
 
 /**
  * An abstract LayerInOutCommand that simply transforms the Geometry.
@@ -13,17 +11,19 @@ import org.geocommands.vector.LayerInOutOptions
 abstract class TransformGeometryCommand<T extends LayerInOutOptions> extends LayerInOutCommand<T> {
 
     abstract String getName()
+
     abstract String getDescription()
+
     abstract T getOptions()
 
     abstract Geometry transformGeometry(Geometry geometry, T options)
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, T options, Reader reader, Writer writer) {
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.eachFeature {Feature f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.eachFeature { Feature f ->
                 Map values = [:]
-                f.attributes.each{k,v ->
+                f.attributes.each { k, v ->
                     if (v instanceof geoscript.geom.Geometry) {
                         values[k] = transformGeometry(v, options)
                     } else {

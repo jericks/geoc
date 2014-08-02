@@ -9,7 +9,7 @@ import geoscript.layer.Layer
  * Erase features from one Layer based on another Layer.
  * @author Jared Erickson
  */
-class EraseCommand extends LayerInOtherOutCommand<EraseOptions>{
+class EraseCommand extends LayerInOtherOutCommand<EraseOptions> {
 
     @Override
     String getName() {
@@ -41,7 +41,7 @@ class EraseCommand extends LayerInOtherOutCommand<EraseOptions>{
             // First check the spatial index
             index.query(f2.geom.bounds).each { f1 ->
                 // Then make sure the geometries actually intersect
-                if(f1.geom.intersects(f2.geom)) {
+                if (f1.geom.intersects(f2.geom)) {
                     // Remove the original Feature
                     index.remove(f1.geom.bounds, f1)
                     // Calculate the difference
@@ -54,8 +54,8 @@ class EraseCommand extends LayerInOtherOutCommand<EraseOptions>{
         }
 
         // Add all Features in the spatial index to the output Layer
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            index.queryAll().each{f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            index.queryAll().each { f ->
                 w.add(f)
             }
         }

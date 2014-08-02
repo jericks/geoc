@@ -5,14 +5,12 @@ import geoscript.feature.Schema
 import geoscript.geom.Geometry
 import geoscript.index.Quadtree
 import geoscript.layer.Layer
-import org.geocommands.vector.LayerInOtherOutCommand
-import org.geocommands.vector.LayerInOtherOutOptions
 
 /**
  * Update one Layer with another.
  * @author Jared Erickson
  */
-class UpdateCommand extends LayerInOtherOutCommand<UpdateOptions>{
+class UpdateCommand extends LayerInOtherOutCommand<UpdateOptions> {
 
     @Override
     String getName() {
@@ -47,7 +45,7 @@ class UpdateCommand extends LayerInOtherOutCommand<UpdateOptions>{
             // First check the spatial index
             index.query(geom.bounds).each { features ->
                 // Then make sure the geometries actually intersect
-                if(geom.intersects(features.geom)) {
+                if (geom.intersects(features.geom)) {
                     // Calculate the difference
                     geom = geom.difference(features.geom)
                 }
@@ -57,14 +55,14 @@ class UpdateCommand extends LayerInOtherOutCommand<UpdateOptions>{
         }
 
         // Add all Features in the spatial index to the output Layer
-        outLayer.withWriter {geoscript.layer.Writer w ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
             Schema schema = outLayer.schema
             index.queryAll().each { features ->
                 Geometry geom = features.geom
                 Feature f1 = features.feature1
                 Map attributes = [(schema.geom.name): geom]
                 if (f1) {
-                    f1.attributes.each {k,v ->
+                    f1.attributes.each { k, v ->
                         String fieldName = k as String
                         if (!fieldName.equalsIgnoreCase(inLayer.schema.geom.name)) {
                             attributes[k] = v

@@ -14,13 +14,14 @@ import org.junit.Test
  */
 class RandomPointsCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         File shpFile = createTemporaryShapefile("randompoints")
         RandomPointsCommand cmd = new RandomPointsCommand()
         RandomPointsOptions options = new RandomPointsOptions(
-            outputWorkspace: shpFile.absolutePath,
-            number: 50,
-            geometry: "0 0 100 100"
+                outputWorkspace: shpFile.absolutePath,
+                number: 50,
+                geometry: "0 0 100 100"
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
@@ -28,35 +29,37 @@ class RandomPointsCommandTest extends BaseTest {
         org.junit.Assert.assertEquals "Point", shp.schema.geom.typ
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         RandomPointsCommand cmd = new RandomPointsCommand()
         RandomPointsOptions options = new RandomPointsOptions(
-            number: 50,
-            geometry: "0 0 100 100"
+                number: 50,
+                geometry: "0 0 100 100"
         )
         StringWriter w = new StringWriter()
         cmd.execute(options, new StringReader(""), w)
         Layer layer = getLayerFromCsv(w.toString())
         org.junit.Assert.assertEquals 50, layer.count
-        layer.eachFeature { org.junit.Assert.assertTrue it.geom instanceof Point}
+        layer.eachFeature { org.junit.Assert.assertTrue it.geom instanceof Point }
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File shpFile = createTemporaryShapefile("randompoints")
         App.main([
-            "vector randompoints",
-            "-n", 50,
-            "-g", "0 0 100 100",
-            "-o", shpFile.absolutePath
+                "vector randompoints",
+                "-n", 50,
+                "-g", "0 0 100 100",
+                "-o", shpFile.absolutePath
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
         org.junit.Assert.assertEquals 50, shp.count
         org.junit.Assert.assertEquals "Point", shp.schema.geom.typ
 
-        String output = runApp(["vector randompoints","-n","50"],"POLYGON ((90 90, 90 110, 110 110, 110 90, 90 90))")
+        String output = runApp(["vector randompoints", "-n", "50"], "POLYGON ((90 90, 90 110, 110 110, 110 90, 90 90))")
         Layer layer = getLayerFromCsv(output)
         org.junit.Assert.assertEquals 50, layer.count
-        layer.eachFeature { org.junit.Assert.assertTrue it.geom instanceof Point}
+        layer.eachFeature { org.junit.Assert.assertTrue it.geom instanceof Point }
     }
 
 }

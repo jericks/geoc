@@ -35,7 +35,7 @@ class DissolveByFieldCommand extends LayerInOutCommand<DissolveByFieldOptions> {
         String countFieldName = options.countField
 
         Map<Object, Geometry> values = [:]
-        inLayer.eachFeature { f->
+        inLayer.eachFeature { f ->
             Object value = f.get(field.name)
             if (!values.containsKey(value)) {
                 values.put(value, [geom: f.geom, count: 1])
@@ -48,7 +48,7 @@ class DissolveByFieldCommand extends LayerInOutCommand<DissolveByFieldOptions> {
         }
 
         String geomFieldName = outLayer.schema.geom.name
-        outLayer.withWriter {geoscript.layer.Writer w ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
             values.eachWithIndex { value, i ->
                 Map v = [:]
                 v[idFieldName] = i
@@ -63,7 +63,7 @@ class DissolveByFieldCommand extends LayerInOutCommand<DissolveByFieldOptions> {
     @Override
     protected Schema createOutputSchema(Layer layer, DissolveByFieldOptions options) {
         Field fld = layer.schema.get(options.field)
-        new Schema(getOutputLayerName(layer,"dissolve", options), [
+        new Schema(getOutputLayerName(layer, "dissolve", options), [
                 new Field(options.idField, "int"),
                 new Field(options.countField, "int"),
                 new Field(fld.name, fld.typ),
@@ -73,14 +73,14 @@ class DissolveByFieldCommand extends LayerInOutCommand<DissolveByFieldOptions> {
 
     static class DissolveByFieldOptions extends LayerInOutOptions {
 
-        @Option(name="-f", aliases="--field",  usage="The field name", required = true)
+        @Option(name = "-f", aliases = "--field", usage = "The field name", required = true)
         String field
 
-        @Option(name="-d", aliases="--id-field",  usage="The id field name", required = false)
+        @Option(name = "-d", aliases = "--id-field", usage = "The id field name", required = false)
         String idField = "id"
 
-        @Option(name="-c", aliases="--count-field",  usage="The count field name", required = false)
-        String countField  = "count"
+        @Option(name = "-c", aliases = "--count-field", usage = "The count field name", required = false)
+        String countField = "count"
 
     }
 }

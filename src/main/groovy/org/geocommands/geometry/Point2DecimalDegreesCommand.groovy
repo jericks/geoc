@@ -11,7 +11,7 @@ import org.kohsuke.args4j.Option
  * Format a Point in Decimal Degrees.
  * @author Jared Erickson
  */
-class Point2DecimalDegreesCommand extends Command<Point2DecimalDegreesOptions>{
+class Point2DecimalDegreesCommand extends Command<Point2DecimalDegreesOptions> {
 
     String getName() {
         "geometry pt2dd"
@@ -43,10 +43,10 @@ class Point2DecimalDegreesCommand extends Command<Point2DecimalDegreesOptions>{
 
     static class Point2DecimalDegreesOptions extends Options {
 
-        @Option(name="-p", aliases="--point",  usage="The Point", required = false)
+        @Option(name = "-p", aliases = "--point", usage = "The Point", required = false)
         String point
 
-        @Option(name="-t", aliases="--type",  usage="The output type", required = false)
+        @Option(name = "-t", aliases = "--type", usage = "The output type", required = false)
         String outputType = "dms"
     }
 }

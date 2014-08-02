@@ -7,7 +7,8 @@ import org.geocommands.BaseTest
 import org.geocommands.vector.IdentityCommand.IdentityOptions
 import org.junit.Test
 
-import static org.junit.Assert.*
+import static org.junit.Assert.assertEquals
+import static org.junit.Assert.assertTrue
 
 /**
  * The IdentityCommand Unit Test
@@ -15,17 +16,18 @@ import static org.junit.Assert.*
  */
 class IdentityCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         File aFile = getResource("a.properties")
         File bFile = getResource("b.properties")
         File shpFile = createTemporaryShapefile("a_b_identity")
 
         IdentityCommand cmd = new IdentityCommand()
         IdentityOptions options = new IdentityOptions(
-            inputWorkspace: aFile.absolutePath,
-            otherWorkspace: bFile.absolutePath,
-            outputWorkspace: shpFile,
-            postfixAll: true
+                inputWorkspace: aFile.absolutePath,
+                otherWorkspace: bFile.absolutePath,
+                outputWorkspace: shpFile,
+                postfixAll: true
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Layer layer = new Shapefile(shpFile)
@@ -49,11 +51,12 @@ class IdentityCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((120 105, 120 110, 130 110, 130 100, 125 100, 125 105, 120 105)))", layer.getFeatures("A1 = 2 AND B2 IS NULL")[0].geom.wkt
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         IdentityCommand cmd = new IdentityCommand()
         IdentityOptions options = new IdentityOptions(
-            otherWorkspace: getResource("b.properties").absolutePath,
-            postfixAll: true
+                otherWorkspace: getResource("b.properties").absolutePath,
+                postfixAll: true
         )
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("a.csv"), w)
@@ -77,7 +80,8 @@ class IdentityCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((120 105, 120 110, 130 110, 130 100, 125 100, 125 105, 120 105)))", layer.getFeatures("A1 = 2 AND B2 = ''")[0].geom.wkt
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File aFile = getResource("a.properties")
         File bFile = getResource("b.properties")
         File shpFile = createTemporaryShapefile("a_b_identity")
@@ -107,7 +111,7 @@ class IdentityCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((120 100, 120 105, 125 105, 125 100, 120 100)))", layer.getFeatures("A1 = 2 AND B2 = 4")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((120 105, 120 110, 130 110, 130 100, 125 100, 125 105, 120 105)))", layer.getFeatures("A1 = 2 AND B2 IS NULL")[0].geom.wkt
 
-        String output = runApp(["vector identity","-k", bFile.absolutePath, "--postfix-all"],readCsv("a.csv").text)
+        String output = runApp(["vector identity", "-k", bFile.absolutePath, "--postfix-all"], readCsv("a.csv").text)
         layer = getLayerFromCsv(output)
         // Check schema
         assertEquals "csv", layer.name

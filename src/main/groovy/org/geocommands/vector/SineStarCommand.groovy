@@ -33,10 +33,10 @@ class SineStarCommand extends ShapeCommand<SineStarOptions> {
 
     static class SineStarOptions extends ShapeOptions {
 
-        @Option(name="-n", aliases="--number-of-arms",  usage="The number of arms", required = true)
+        @Option(name = "-n", aliases = "--number-of-arms", usage = "The number of arms", required = true)
         int numberOfArms
 
-        @Option(name="-e", aliases="--arm-length-ratio",  usage="The arm length ratio", required = true)
+        @Option(name = "-e", aliases = "--arm-length-ratio", usage = "The arm length ratio", required = true)
         double armLengthRatio
 
     }

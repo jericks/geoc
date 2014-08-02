@@ -15,16 +15,17 @@ import static org.junit.Assert.*
  */
 class UpdateCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         File aFile = getResource("a.properties")
         File bFile = getResource("b.properties")
         File shpFile = createTemporaryShapefile("a_b_update")
 
         UpdateCommand cmd = new UpdateCommand()
         UpdateOptions options = new UpdateOptions(
-            inputWorkspace: aFile.absolutePath,
-            otherWorkspace: bFile.absolutePath,
-            outputWorkspace: shpFile
+                inputWorkspace: aFile.absolutePath,
+                otherWorkspace: bFile.absolutePath,
+                outputWorkspace: shpFile
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Layer layer = new Shapefile(shpFile)
@@ -44,10 +45,11 @@ class UpdateCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((97 95, 97 105, 125 105, 125 95, 97 95)))", layer.getFeatures("A IS NULL")[1].geom.wkt
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         UpdateCommand cmd = new UpdateCommand()
         UpdateOptions options = new UpdateOptions(
-            otherWorkspace: getResource("b.properties").absolutePath
+                otherWorkspace: getResource("b.properties").absolutePath
         )
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("a.csv"), w)
@@ -68,7 +70,8 @@ class UpdateCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((97 95, 97 105, 125 105, 125 95, 97 95)))", layer.getFeatures("A = ''")[1].geom.wkt
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File aFile = getResource("a.properties")
         File bFile = getResource("b.properties")
         File shpFile = createTemporaryShapefile("a_b_update")
@@ -93,7 +96,7 @@ class UpdateCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((85 95, 85 105, 95 105, 95 95, 85 95)))", layer.getFeatures("A IS NULL")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((97 95, 97 105, 125 105, 125 95, 97 95)))", layer.getFeatures("A IS NULL")[1].geom.wkt
 
-        String output = runApp(["vector update","-k", bFile.absolutePath],readCsv("a.csv").text)
+        String output = runApp(["vector update", "-k", bFile.absolutePath], readCsv("a.csv").text)
         layer = getLayerFromCsv(output)
         // Check schema
         assertTrue layer.schema.has("A")

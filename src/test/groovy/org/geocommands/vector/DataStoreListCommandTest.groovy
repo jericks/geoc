@@ -3,7 +3,8 @@ package org.geocommands.vector
 import org.geocommands.BaseTest
 import org.geocommands.vector.DataStoreListCommand.DataStoreListOptions
 import org.junit.Test
-import static org.junit.Assert.*
+
+import static org.junit.Assert.assertTrue
 
 /**
  * The DataStoreListCommand Unit Test
@@ -11,7 +12,8 @@ import static org.junit.Assert.*
  */
 class DataStoreListCommandTest extends BaseTest {
 
-    @Test void executeToCsv() {
+    @Test
+    void executeToCsv() {
         DataStoreListCommand cmd = new DataStoreListCommand()
         DataStoreListOptions options = new DataStoreListOptions()
         StringWriter w = new StringWriter()
@@ -22,8 +24,9 @@ class DataStoreListCommandTest extends BaseTest {
         assertTrue str.contains("Shapefile")
     }
 
-    @Test void runAsCommandLine() {
-        String str = runApp(["vector datastorelist"],"")
+    @Test
+    void runAsCommandLine() {
+        String str = runApp(["vector datastorelist"], "")
         assertTrue str.contains("H2")
         assertTrue str.contains("PostGIS")
         assertTrue str.contains("Shapefile")

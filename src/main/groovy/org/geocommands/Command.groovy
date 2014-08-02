@@ -2,9 +2,9 @@ package org.geocommands
 
 /**
  * The Abstract class for all Commands
- * @param < T > The Options
+ * @param < T >  The Options
  */
-abstract class Command<T extends Options>  {
+abstract class Command<T extends Options> {
 
     /**
      * Get the name of the command

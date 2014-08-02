@@ -8,10 +8,12 @@ import org.geocommands.Command
  * A base class for Raster Commands that read in two Raster and write a Raster.
  * @author Jared Erickson
  */
-abstract class RasterInOtherOutCommand <T extends RasterInOtherOutOptions> extends Command<T> {
+abstract class RasterInOtherOutCommand<T extends RasterInOtherOutOptions> extends Command<T> {
 
     abstract String getName()
+
     abstract String getDescription()
+
     abstract T getOptions()
 
     void execute(T options, Reader reader, Writer writer) throws Exception {

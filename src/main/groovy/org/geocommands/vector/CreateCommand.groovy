@@ -11,7 +11,7 @@ import org.kohsuke.args4j.Option
  * Create a new Layer
  * @author Jared Erickson
  */
-class CreateCommand extends LayerOutCommand<CreateOptions>{
+class CreateCommand extends LayerOutCommand<CreateOptions> {
 
     @Override
     String getName() {
@@ -52,7 +52,7 @@ class CreateCommand extends LayerOutCommand<CreateOptions>{
         }
 
         // Create Schema
-        Schema schema = new Schema(getOutputLayerName(options,"layer"), fields)
+        Schema schema = new Schema(getOutputLayerName(options, "layer"), fields)
 
         // Create Layer
         Layer layer = w.create(schema)
@@ -61,8 +61,8 @@ class CreateCommand extends LayerOutCommand<CreateOptions>{
 
     static class CreateOptions extends LayerOutOptions {
 
-        @Option(name="-f", aliases="--field",  usage="A Field in the format 'name=type'", required = true)
-        Map<String,String> fields
+        @Option(name = "-f", aliases = "--field", usage = "A Field in the format 'name=type'", required = true)
+        Map<String, String> fields
 
     }
 }

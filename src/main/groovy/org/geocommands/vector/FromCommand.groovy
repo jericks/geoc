@@ -14,7 +14,7 @@ import org.kohsuke.args4j.Option
  * Create a Layer from a string of KML, CSV, GML, or GeoJSON
  * @author Jared Erickson
  */
-class FromCommand extends LayerOutCommand<FromOptions>{
+class FromCommand extends LayerOutCommand<FromOptions> {
 
     @Override
     String getName() {
@@ -63,12 +63,12 @@ class FromCommand extends LayerOutCommand<FromOptions>{
         // The KmlReader includes a lot of Fields we don't want
         if (options.format.equalsIgnoreCase("kml")) {
             fields = [
-                layer.schema.get("Geometry"),
-                layer.schema.get("name"),
-                layer.schema.get("description"),
+                    layer.schema.get("Geometry"),
+                    layer.schema.get("name"),
+                    layer.schema.get("description"),
             ]
         }
-        Schema schema = new Schema(getOutputLayerName(options,"layer"), fields)
+        Schema schema = new Schema(getOutputLayerName(options, "layer"), fields)
 
         // Change the Geometry Type if necessary (shapefiles can't have geometry Field types)
         if (options.geometryType != null && !schema.geom.typ.equalsIgnoreCase(options.geometryType)) {
@@ -77,8 +77,8 @@ class FromCommand extends LayerOutCommand<FromOptions>{
 
         // Create the output Layer
         Layer outLayer = workspace.create(schema)
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            layer.eachFeature {f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            layer.eachFeature { f ->
                 w.add(f)
             }
         }
@@ -87,13 +87,13 @@ class FromCommand extends LayerOutCommand<FromOptions>{
 
     static class FromOptions extends LayerOutOptions {
 
-        @Option(name="-t", aliases="--text",  usage="The text", required = false)
+        @Option(name = "-t", aliases = "--text", usage = "The text", required = false)
         String text
 
-        @Option(name="-f", aliases="--format",  usage="The string format (CSV, GeoJSON, KML, GML)", required = true)
+        @Option(name = "-f", aliases = "--format", usage = "The string format (CSV, GeoJSON, KML, GML)", required = true)
         String format
 
-        @Option(name="-g", aliases="--geometry-type",  usage="The geometry type", required = false)
+        @Option(name = "-g", aliases = "--geometry-type", usage = "The geometry type", required = false)
         String geometryType
 
     }

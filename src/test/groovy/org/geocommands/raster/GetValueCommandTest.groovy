@@ -1,16 +1,10 @@
 package org.geocommands.raster
 
-import geoscript.geom.Point
-import geoscript.layer.ArcGrid
-import geoscript.layer.GeoTIFF
-import geoscript.layer.Raster
-import org.apache.commons.io.input.ReaderInputStream
-import org.geocommands.raster.GetValueCommand.GetValueOptions
 import org.geocommands.BaseTest
+import org.geocommands.raster.GetValueCommand.GetValueOptions
 import org.junit.Test
 
 import static org.junit.Assert.assertEquals
-import static org.junit.Assert.assertNotNull
 
 /**
  * The GetValueCommand Unit Test

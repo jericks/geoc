@@ -1,9 +1,9 @@
 package org.geocommands.vector
 
-import geoscript.layer.Layer
-import geoscript.feature.Schema
 import geoscript.feature.Feature
+import geoscript.feature.Schema
 import geoscript.geom.Point
+import geoscript.layer.Layer
 
 /**
  * Extract all of the Coordinates from the input Layer and save them to
@@ -34,11 +34,11 @@ class CoordinatesCommand extends LayerInOutCommand<CoordinatesOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, CoordinatesOptions options, Reader reader, Writer writer) {
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.eachFeature {Feature f ->
-                f.geom.coordinates.each{coord ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.eachFeature { Feature f ->
+                f.geom.coordinates.each { coord ->
                     Map values = [:]
-                    f.attributes.each{k,v ->
+                    f.attributes.each { k, v ->
                         if (v instanceof geoscript.geom.Geometry) {
                             values[k] = new Point(coord.x, coord.y)
                         } else {

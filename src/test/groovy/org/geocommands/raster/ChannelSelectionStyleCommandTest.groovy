@@ -1,8 +1,7 @@
 package org.geocommands.raster
 
-import junit.framework.Assert
-import org.geocommands.raster.ChannelSelectionStyleCommand.ChannelSelectionStyleOptions
 import org.geocommands.BaseTest
+import org.geocommands.raster.ChannelSelectionStyleCommand.ChannelSelectionStyleOptions
 import org.junit.Test
 
 /**
@@ -11,7 +10,8 @@ import org.junit.Test
  */
 class ChannelSelectionStyleCommandTest extends BaseTest {
 
-    @Test void executeRGB() {
+    @Test
+    void executeRGB() {
         ChannelSelectionStyleCommand command = new ChannelSelectionStyleCommand()
         ChannelSelectionStyleOptions options = new ChannelSelectionStyleOptions(
                 red: "red",
@@ -57,10 +57,11 @@ class ChannelSelectionStyleCommandTest extends BaseTest {
         assertStringsEqual(expected, actual)
     }
 
-    @Test void executeGray() {
+    @Test
+    void executeGray() {
         ChannelSelectionStyleCommand command = new ChannelSelectionStyleCommand()
         ChannelSelectionStyleOptions options = new ChannelSelectionStyleOptions(
-               gray: "gray"
+                gray: "gray"
         )
         StringWriter writer = new StringWriter()
         command.execute(options, new StringReader(""), writer)
@@ -95,12 +96,13 @@ class ChannelSelectionStyleCommandTest extends BaseTest {
         assertStringsEqual(expected, actual)
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         String actual = runApp([
-            "raster style channel selection",
-            "-r","red,histogram,0.5",
-            "-g","green,normalize,0.25",
-            "-b","green,histogram,0.33",
+                "raster style channel selection",
+                "-r", "red,histogram,0.5",
+                "-g", "green,normalize,0.25",
+                "-b", "green,histogram,0.33",
         ], "").trim()
         String expected = """<?xml version="1.0" encoding="UTF-8"?>
 <sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml" version="1.0.0">

@@ -30,7 +30,7 @@ class DensifyCommand extends TransformGeometryCommand<DensifyOptions> {
     }
 
     static class DensifyOptions extends LayerInOutOptions {
-        @Option(name="-d", aliases="--distance",  usage="The distance tolerance", required = true)
+        @Option(name = "-d", aliases = "--distance", usage = "The distance tolerance", required = true)
         double distanceTolerance
     }
 }

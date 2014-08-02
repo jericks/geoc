@@ -6,7 +6,8 @@ import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.VoronoiDiagramCommand.VoronoiDiagramOptions
 import org.junit.Test
-import static org.junit.Assert.*
+
+import static org.junit.Assert.assertEquals
 
 /**
  * The VoronoiDiagramCommand Unit Test
@@ -14,13 +15,14 @@ import static org.junit.Assert.*
  */
 class VoronoiDiagramCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         VoronoiDiagramCommand cmd = new VoronoiDiagramCommand()
         File file = getResource("points.properties")
         File shpFile = createTemporaryShapefile("voronoi")
         VoronoiDiagramOptions options = new VoronoiDiagramOptions(
-            inputWorkspace: file.absolutePath,
-            outputWorkspace: shpFile
+                inputWorkspace: file.absolutePath,
+                outputWorkspace: shpFile
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
@@ -29,7 +31,8 @@ class VoronoiDiagramCommandTest extends BaseTest {
         assertEquals "MultiPolygon", shp.schema.geom.typ
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         VoronoiDiagramCommand cmd = new VoronoiDiagramCommand()
         VoronoiDiagramOptions options = new VoronoiDiagramOptions()
         StringWriter w = new StringWriter()
@@ -40,13 +43,14 @@ class VoronoiDiagramCommandTest extends BaseTest {
         assertEquals "MultiPolygon", layer.schema.geom.typ
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("points.properties")
         File shpFile = createTemporaryShapefile("voronoi")
         App.main([
-            "vector voronoi",
-            "-i", file.absolutePath,
-            "-o", shpFile.absolutePath
+                "vector voronoi",
+                "-i", file.absolutePath,
+                "-o", shpFile.absolutePath
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
         assertEquals 1, shp.count

@@ -13,7 +13,7 @@ class Options {
     @Argument(index = 0, required = true)
     List<String> names = []
 
-    @Option(name="--help", usage="Print the help message", required = false)
+    @Option(name = "--help", usage = "Print the help message", required = false)
     boolean help
 
     String getName() {

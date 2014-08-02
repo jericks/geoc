@@ -29,8 +29,8 @@ class AddLengthFieldCommand extends LayerInOutCommand<AddLengthFieldOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, AddLengthFieldOptions options, Reader reader, Writer writer) throws Exception {
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.eachFeature {Feature f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.eachFeature { Feature f ->
                 Map attributes = f.attributes
                 attributes[options.lengthFieldName] = f.geom.length
                 outLayer.add(outLayer.schema.feature(attributes, f.id))
@@ -45,7 +45,7 @@ class AddLengthFieldCommand extends LayerInOutCommand<AddLengthFieldOptions> {
 
     static class AddLengthFieldOptions extends LayerInOutOptions {
 
-        @Option(name="-f", aliases="--length-fieldname",  usage="The name for the length Field", required = false)
+        @Option(name = "-f", aliases = "--length-fieldname", usage = "The name for the length Field", required = false)
         String lengthFieldName = "LENGTH"
 
     }

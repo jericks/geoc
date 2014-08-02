@@ -6,9 +6,7 @@ import org.geocommands.App
 import org.geocommands.BaseTest
 import org.junit.Test
 
-import static org.junit.Assert.assertEquals
-import static org.junit.Assert.assertFalse
-import static org.junit.Assert.assertTrue
+import static org.junit.Assert.*
 
 /**
  * The ClipCommand Unit Test
@@ -16,16 +14,17 @@ import static org.junit.Assert.assertTrue
  */
 class ClipCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         File aFile = getResource("a.properties")
         File bFile = getResource("b.properties")
         File shpFile = createTemporaryShapefile("a_b_clip")
 
         ClipCommand cmd = new ClipCommand()
         ClipCommand.ClipOptions options = new ClipCommand.ClipOptions(
-            inputWorkspace: aFile.absolutePath,
-            otherWorkspace: bFile.absolutePath,
-            outputWorkspace: shpFile
+                inputWorkspace: aFile.absolutePath,
+                otherWorkspace: bFile.absolutePath,
+                outputWorkspace: shpFile
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Layer layer = new Shapefile(shpFile)
@@ -43,10 +42,11 @@ class ClipCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((120 100, 120 105, 125 105, 125 100, 120 100)))", layer.getFeatures("A = 2")[0].geom.wkt
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         ClipCommand cmd = new ClipCommand()
         ClipCommand.ClipOptions options = new ClipCommand.ClipOptions(
-            otherWorkspace: getResource("b.properties").absolutePath
+                otherWorkspace: getResource("b.properties").absolutePath
         )
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("a.csv"), w)
@@ -65,7 +65,8 @@ class ClipCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((120 100, 120 105, 125 105, 125 100, 120 100)))", layer.getFeatures("A = 2")[0].geom.wkt
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File aFile = getResource("a.properties")
         File bFile = getResource("b.properties")
         File shpFile = createTemporaryShapefile("a_b_clip")
@@ -88,7 +89,7 @@ class ClipCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((100 105, 100 100, 97 100, 97 105, 100 105)))", layer.getFeatures("A = 1")[1].geom.wkt
         assertEquals "MULTIPOLYGON (((120 100, 120 105, 125 105, 125 100, 120 100)))", layer.getFeatures("A = 2")[0].geom.wkt
 
-        String output = runApp(["vector clip","-k", bFile.absolutePath],readCsv("a.csv").text)
+        String output = runApp(["vector clip", "-k", bFile.absolutePath], readCsv("a.csv").text)
         layer = getLayerFromCsv(output)
         // Check schema
         assertTrue layer.schema.has("A")

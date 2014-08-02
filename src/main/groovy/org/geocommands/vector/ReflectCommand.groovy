@@ -9,7 +9,7 @@ import org.kohsuke.args4j.Option
  * Reflect Features in a Layer.
  * @author Jared Erickson
  */
-class ReflectCommand extends LayerInOutCommand<ReflectOptions>{
+class ReflectCommand extends LayerInOutCommand<ReflectOptions> {
 
     @Override
     String getName() {
@@ -32,8 +32,8 @@ class ReflectCommand extends LayerInOutCommand<ReflectOptions>{
         Expression y1Expression = Expression.fromCQL(options.y1)
         Expression x2Expression = options.x2 ? Expression.fromCQL(options.x2) : null
         Expression y2Expression = options.y2 ? Expression.fromCQL(options.y2) : null
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.cursor.collect{Feature f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.cursor.collect { Feature f ->
                 double x1 = x1Expression.evaluate(f) as double
                 double y1 = y1Expression.evaluate(f) as double
                 if (x2Expression && y2Expression) {
@@ -50,16 +50,16 @@ class ReflectCommand extends LayerInOutCommand<ReflectOptions>{
 
     static class ReflectOptions extends LayerInOutOptions {
 
-        @Option(name="-x", aliases="--x1-distance",  usage="The x1 distance", required = true)
+        @Option(name = "-x", aliases = "--x1-distance", usage = "The x1 distance", required = true)
         String x1
 
-        @Option(name="-y", aliases="--y1-distance",  usage="The y1 distance", required = true)
+        @Option(name = "-y", aliases = "--y1-distance", usage = "The y1 distance", required = true)
         String y1
 
-        @Option(name="-c", aliases="--x2-distance",  usage="The x2 distance", required = false)
+        @Option(name = "-c", aliases = "--x2-distance", usage = "The x2 distance", required = false)
         String x2
 
-        @Option(name="-d", aliases="--y2-distance",  usage="The y2 distance", required = false)
+        @Option(name = "-d", aliases = "--y2-distance", usage = "The y2 distance", required = false)
         String y2
 
     }

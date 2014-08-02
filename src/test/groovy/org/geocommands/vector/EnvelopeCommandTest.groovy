@@ -6,7 +6,8 @@ import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.EnvelopeCommand.EnvelopeOptions
 import org.junit.Test
-import static org.junit.Assert.*
+
+import static org.junit.Assert.assertEquals
 
 /**
  * The EnvelopeCommand Unit Test
@@ -14,13 +15,14 @@ import static org.junit.Assert.*
  */
 class EnvelopeCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         EnvelopeCommand cmd = new EnvelopeCommand()
         File file = getResource("points.properties")
         File shpFile = createTemporaryShapefile("envelope")
         EnvelopeOptions options = new EnvelopeOptions(
-            inputWorkspace: file.absolutePath,
-            outputWorkspace: shpFile
+                inputWorkspace: file.absolutePath,
+                outputWorkspace: shpFile
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
@@ -29,7 +31,8 @@ class EnvelopeCommandTest extends BaseTest {
         assertEquals "MultiPolygon", shp.schema.geom.typ
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         EnvelopeCommand cmd = new EnvelopeCommand()
         EnvelopeOptions options = new EnvelopeOptions()
         StringWriter w = new StringWriter()
@@ -40,13 +43,14 @@ class EnvelopeCommandTest extends BaseTest {
         assertEquals "Polygon", layer.schema.geom.typ
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("points.properties")
         File shpFile = createTemporaryShapefile("envelope")
         App.main([
-            "vector envelope",
-            "-i", file.absolutePath,
-            "-o", shpFile.absolutePath
+                "vector envelope",
+                "-i", file.absolutePath,
+                "-o", shpFile.absolutePath
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
         assertEquals 1, shp.count

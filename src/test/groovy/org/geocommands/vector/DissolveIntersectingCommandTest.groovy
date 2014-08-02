@@ -7,7 +7,8 @@ import org.geocommands.BaseTest
 import org.geocommands.vector.DissolveIntersectingCommand.DissolveIntersectingOptions
 import org.junit.Test
 
-import static org.junit.Assert.*
+import static org.junit.Assert.assertEquals
+import static org.junit.Assert.assertTrue
 
 /**
  * The DissolveIntersectingCommand Unit Test
@@ -15,13 +16,14 @@ import static org.junit.Assert.*
  */
 class DissolveIntersectingCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         File file = getResource("overlapping.properties")
         File shpFile = createTemporaryShapefile("dissolve")
         DissolveIntersectingCommand cmd = new DissolveIntersectingCommand()
         DissolveIntersectingOptions options = new DissolveIntersectingOptions(
-            inputWorkspace: file.absolutePath,
-            outputWorkspace: shpFile
+                inputWorkspace: file.absolutePath,
+                outputWorkspace: shpFile
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
@@ -31,7 +33,8 @@ class DissolveIntersectingCommandTest extends BaseTest {
         assertEquals 3, shp.count("count = 1")
     }
 
-    @Test void executeCsv() {
+    @Test
+    void executeCsv() {
         DissolveIntersectingCommand cmd = new DissolveIntersectingCommand()
         DissolveIntersectingOptions options = new DissolveIntersectingOptions()
         StringWriter w = new StringWriter()
@@ -43,13 +46,14 @@ class DissolveIntersectingCommandTest extends BaseTest {
         assertEquals 3, layer.count("count = 1")
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("overlapping.properties")
         File shpFile = createTemporaryShapefile("dissolve")
         App.main([
-            "vector dissolveintersecting",
-            "-i", file.absolutePath,
-            "-o", shpFile.absolutePath
+                "vector dissolveintersecting",
+                "-i", file.absolutePath,
+                "-o", shpFile.absolutePath
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
         assertTrue shp.schema.has("id")

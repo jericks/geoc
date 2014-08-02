@@ -1,11 +1,8 @@
 package org.geocommands.raster
 
 import geoscript.geom.Point
-import geoscript.layer.ArcGrid
 import geoscript.layer.GeoTIFF
 import geoscript.layer.Raster
-import geoscript.proj.Projection
-import org.apache.commons.io.input.ReaderInputStream
 import org.geocommands.BaseTest
 import org.geocommands.raster.MapAlgebraCommand.MapAlgebraOptions
 import org.junit.Test

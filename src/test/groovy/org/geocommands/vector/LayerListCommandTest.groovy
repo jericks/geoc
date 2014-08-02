@@ -1,7 +1,7 @@
 package org.geocommands.vector
 
-import org.geocommands.vector.LayerListCommand.LayerListOptions
 import org.geocommands.BaseTest
+import org.geocommands.vector.LayerListCommand.LayerListOptions
 import org.junit.Test
 
 /**
@@ -10,10 +10,11 @@ import org.junit.Test
  */
 class LayerListCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         LayerListCommand cmd = new LayerListCommand()
         LayerListOptions options = new LayerListOptions(
-            inputWorkspace: "dbtype=h2 database=src/test/resources/h2.db"
+                inputWorkspace: "dbtype=h2 database=src/test/resources/h2.db"
         )
         StringWriter writer = new StringWriter()
         cmd.execute(options, new StringReader(""), writer)
@@ -21,11 +22,12 @@ class LayerListCommandTest extends BaseTest {
 polygons""", writer.toString())
     }
 
-    @Test void run() {
+    @Test
+    void run() {
         String result = runApp([
                 "vector list layers",
                 "-i", "dbtype=h2 database=src/test/resources/h2.db"
-        ],"")
+        ], "")
         assertStringsEqual("""points
 polygons""", result)
     }

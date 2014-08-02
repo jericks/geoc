@@ -3,18 +3,14 @@ package org.geocommands.vector
 import geoscript.geom.Point
 import geoscript.layer.ArcGrid
 import geoscript.layer.GeoTIFF
-import geoscript.layer.Layer
-import geoscript.layer.Shapefile
 import geoscript.layer.Raster
 import geoscript.proj.Projection
 import org.apache.commons.io.input.ReaderInputStream
-import org.geocommands.App
-import org.geocommands.vector.RasterCommand.RasterOptions
 import org.geocommands.BaseTest
+import org.geocommands.vector.RasterCommand.RasterOptions
 import org.junit.Test
 
 import static org.junit.Assert.assertEquals
-import static org.junit.Assert.assertFalse
 
 /**
  * The RasterCommand Unit Test
@@ -25,7 +21,7 @@ class RasterCommandTest extends BaseTest {
     @Test
     void executeWithFiles() {
         File inFile = getResource("polygons.properties")
-        File outFile = createTemporaryFile("raster","tif")
+        File outFile = createTemporaryFile("raster", "tif")
         RasterCommand cmd = new RasterCommand()
         RasterOptions options = new RasterOptions(
                 inputWorkspace: inFile.absolutePath,
@@ -64,16 +60,17 @@ class RasterCommandTest extends BaseTest {
         assertEquals(3, raster.getValue(new Point(8.53571428571, 9.01373626374)), 0.1)
     }
 
-    @Test void runAsCommandLineWithFiles() {
+    @Test
+    void runAsCommandLineWithFiles() {
         File inFile = getResource("polygons.properties")
-        File outFile = createTemporaryFile("raster","tif")
+        File outFile = createTemporaryFile("raster", "tif")
         runApp([
-            "vector raster",
-            "-i", inFile.absolutePath,
-            "-o", outFile.absolutePath,
-            "-d", "id",
-            "-s", "600,600"
-        ],"")
+                "vector raster",
+                "-i", inFile.absolutePath,
+                "-o", outFile.absolutePath,
+                "-d", "id",
+                "-s", "600,600"
+        ], "")
 
         GeoTIFF format = new GeoTIFF(outFile)
         Raster raster = format.read()
@@ -83,13 +80,14 @@ class RasterCommandTest extends BaseTest {
         assertEquals(3, raster.getValue(new Point(8.53571428571, 9.01373626374)), 0.1)
     }
 
-    @Test void runAsCommandLineWithStrings() {
+    @Test
+    void runAsCommandLineWithStrings() {
         StringReader reader = getStringReader("polygons.csv")
         String result = runApp([
                 "vector raster",
                 "-d", "id",
                 "-s", "600,600"
-        ],reader.text)
+        ], reader.text)
 
         ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(result)))
         Raster raster = format.read(new Projection("EPSG:4326"))

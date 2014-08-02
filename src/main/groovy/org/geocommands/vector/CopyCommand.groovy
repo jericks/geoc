@@ -28,8 +28,8 @@ class CopyCommand extends LayerInOutCommand<CopyOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, CopyOptions options, Reader reader, Writer writer) throws Exception {
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.getCursor([filter: options.filter, sort: options.sort, start: options.start, max: options.max, fields: options.fields]).each {f->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.getCursor([filter: options.filter, sort: options.sort, start: options.start, max: options.max, fields: options.fields]).each { f ->
                 w.add(f)
             }
         }
@@ -40,8 +40,8 @@ class CopyCommand extends LayerInOutCommand<CopyOptions> {
         List fields = layer.schema.fields
         if (options.fields.size() > 0) {
             fields = [layer.schema.geom]
-            options.fields.each {name ->
-                if (layer.schema.has(name) && !fields.find {Field fld -> fld.name.equalsIgnoreCase(name)}) {
+            options.fields.each { name ->
+                if (layer.schema.has(name) && !fields.find { Field fld -> fld.name.equalsIgnoreCase(name) }) {
                     fields.add(layer.schema.get(name))
                 }
             }
@@ -51,19 +51,19 @@ class CopyCommand extends LayerInOutCommand<CopyOptions> {
 
     static class CopyOptions extends LayerInOutOptions {
 
-        @Option(name="-f", aliases="--filter",  usage="The CQL Filter", required = false)
+        @Option(name = "-f", aliases = "--filter", usage = "The CQL Filter", required = false)
         String filter = null
 
-        @Option(name="-s", aliases="--sort",  usage="The sort Field", required = false)
+        @Option(name = "-s", aliases = "--sort", usage = "The sort Field", required = false)
         List<String> sort = []
 
-        @Option(name="-t", aliases="--start",  usage="The start index", required = false)
+        @Option(name = "-t", aliases = "--start", usage = "The start index", required = false)
         int start = -1
 
-        @Option(name="-m", aliases="--max",  usage="The max number of Features", required = false)
+        @Option(name = "-m", aliases = "--max", usage = "The max number of Features", required = false)
         int max = -1
 
-        @Option(name="-d", aliases="--field",  usage="The sub Field", required = false)
+        @Option(name = "-d", aliases = "--field", usage = "The sub Field", required = false)
         List<String> fields = []
 
     }

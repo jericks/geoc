@@ -11,7 +11,9 @@ import org.geocommands.Command
 abstract class LayerOutCommand<T extends LayerOutOptions> extends Command<T> {
 
     abstract String getName()
+
     abstract String getDescription()
+
     abstract T getOptions()
 
     abstract Layer createLayer(T options, Reader reader, Writer writer) throws Exception
@@ -32,7 +34,7 @@ abstract class LayerOutCommand<T extends LayerOutOptions> extends Command<T> {
         String outName = options.outputLayer ? options.outputLayer : defaultName
         if (options.outputWorkspace && (options.outputWorkspace.endsWith(".shp") || options.outputWorkspace.endsWith(".properties"))) {
             String fileName = new File(options.outputWorkspace).name
-            outName = fileName.substring(0, fileName.lastIndexOf(".") )
+            outName = fileName.substring(0, fileName.lastIndexOf("."))
         }
         outName
     }

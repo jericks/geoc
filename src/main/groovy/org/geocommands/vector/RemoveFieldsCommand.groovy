@@ -3,8 +3,6 @@ package org.geocommands.vector
 import geoscript.feature.Feature
 import geoscript.feature.Schema
 import geoscript.layer.Layer
-import org.geocommands.vector.LayerInOutCommand
-import org.geocommands.vector.LayerInOutOptions
 import org.kohsuke.args4j.Option
 
 /**
@@ -30,8 +28,8 @@ class RemoveFieldsCommand extends LayerInOutCommand<RemoveFieldsOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, RemoveFieldsOptions options, Reader reader, Writer writer) throws Exception {
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.eachFeature {Feature f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.eachFeature { Feature f ->
                 w.add(f)
             }
         }
@@ -46,7 +44,7 @@ class RemoveFieldsCommand extends LayerInOutCommand<RemoveFieldsOptions> {
 
     static class RemoveFieldsOptions extends LayerInOutOptions {
 
-        @Option(name="-f", aliases="--field",  usage="A Field name", required = true)
+        @Option(name = "-f", aliases = "--field", usage = "A Field name", required = true)
         List<String> fields
 
     }

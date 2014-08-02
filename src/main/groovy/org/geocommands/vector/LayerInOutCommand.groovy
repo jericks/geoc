@@ -1,17 +1,20 @@
 package org.geocommands.vector
 
-import geoscript.layer.Layer
 import geoscript.feature.Schema
-import geoscript.workspace.Workspace
+import geoscript.layer.Layer
 import geoscript.workspace.Memory
+import geoscript.workspace.Workspace
 
 /**
- *
+ * A base class for Vector Commands that read in a Layer and then write out a Layer.
+ * @author Jared Erickson
  */
 abstract class LayerInOutCommand<T extends LayerInOutOptions> extends LayerCommand<T> {
 
     abstract String getName()
+
     abstract String getDescription()
+
     abstract T getOptions()
 
     abstract void processLayers(Layer inLayer, Layer outLayer, T options, Reader reader, Writer writer) throws Exception;
@@ -37,9 +40,9 @@ abstract class LayerInOutCommand<T extends LayerInOutOptions> extends LayerComma
     protected String getOutputLayerName(Layer layer, String postfix, T options) {
         String outName = options.outputLayer ? options.outputLayer : layer.name + "_" + postfix
         if (options.outputWorkspace &&
-            (options.outputWorkspace.endsWith(".shp") || options.outputWorkspace.endsWith(".properties"))) {
+                (options.outputWorkspace.endsWith(".shp") || options.outputWorkspace.endsWith(".properties"))) {
             String fileName = new File(options.outputWorkspace).name
-            outName = fileName.substring(0, fileName.lastIndexOf(".") )
+            outName = fileName.substring(0, fileName.lastIndexOf("."))
         }
         outName
     }

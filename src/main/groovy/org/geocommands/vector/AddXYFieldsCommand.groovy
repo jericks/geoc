@@ -30,8 +30,8 @@ class AddXYFieldsCommand extends LayerInOutCommand<AddXYFieldsOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, AddXYFieldsOptions options, Reader reader, Writer writer) throws Exception {
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.eachFeature {Feature f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.eachFeature { Feature f ->
                 Point pt = f.geom.centroid
                 Map attributes = f.attributes
                 attributes[options.xFieldName] = pt.x
@@ -44,17 +44,17 @@ class AddXYFieldsCommand extends LayerInOutCommand<AddXYFieldsOptions> {
     @Override
     protected Schema createOutputSchema(Layer layer, AddXYFieldsOptions options) {
         layer.schema.addFields([
-            new Field(options.xFieldName, "double"),
-            new Field(options.yFieldName, "double")
+                new Field(options.xFieldName, "double"),
+                new Field(options.yFieldName, "double")
         ], getOutputLayerName(layer, "xyfield", options))
     }
 
     static class AddXYFieldsOptions extends LayerInOutOptions {
 
-        @Option(name="-x", aliases="--x-fieldname",  usage="The name for the X Field", required = false)
+        @Option(name = "-x", aliases = "--x-fieldname", usage = "The name for the X Field", required = false)
         String xFieldName = "X"
 
-        @Option(name="-y", aliases="--y-fieldname",  usage="The name for the Y Field", required = false)
+        @Option(name = "-y", aliases = "--y-fieldname", usage = "The name for the Y Field", required = false)
         String yFieldName = "Y"
 
     }

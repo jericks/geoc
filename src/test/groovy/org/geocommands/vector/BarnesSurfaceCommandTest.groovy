@@ -6,8 +6,8 @@ import geoscript.layer.GeoTIFF
 import geoscript.layer.Raster
 import geoscript.proj.Projection
 import org.apache.commons.io.input.ReaderInputStream
-import org.geocommands.vector.BarnesSurfaceCommand.BarnesSurfaceOptions
 import org.geocommands.BaseTest
+import org.geocommands.vector.BarnesSurfaceCommand.BarnesSurfaceOptions
 import org.junit.Test
 
 import static org.junit.Assert.assertEquals
@@ -71,15 +71,15 @@ class BarnesSurfaceCommandTest extends BaseTest {
         File inFile = getResource("point_grid.properties")
         File outFile = createTemporaryFile("barnes", "tif")
         runApp([
-            "vector barnessurface",
-            "-i", inFile.absolutePath,
-            "-o", outFile.absolutePath,
-            "-s", "1",
-            "-v", "value",
-            "-m", "1",
-            "-w", "800",
-            "-h", "800"
-        ],"")
+                "vector barnessurface",
+                "-i", inFile.absolutePath,
+                "-o", outFile.absolutePath,
+                "-s", "1",
+                "-v", "value",
+                "-m", "1",
+                "-w", "800",
+                "-h", "800"
+        ], "")
 
         GeoTIFF format = new GeoTIFF(outFile)
         Raster raster = format.read()
@@ -100,7 +100,7 @@ class BarnesSurfaceCommandTest extends BaseTest {
                 "-m", "1",
                 "-w", "100",
                 "-h", "100"
-        ],reader.text)
+        ], reader.text)
 
         ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(result)))
         Raster raster = format.read(new Projection("EPSG:4326"))

@@ -39,7 +39,7 @@ class InfoCommand extends LayerCommand<InfoOptions> {
         writer.write("Feature Count: ${layer.count}")
         writer.write(NEW_LINE)
         writer.write("Fields:")
-        layer.schema.fields.each {fld ->
+        layer.schema.fields.each { fld ->
             writer.write(NEW_LINE)
             writer.write("${fld.name}: ${fld.typ}")
         }

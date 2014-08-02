@@ -33,12 +33,12 @@ class DelaunayDiagramCommand extends LayerInOutCommand<DelaunayDiagramOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, DelaunayDiagramOptions options, Reader reader, Writer writer) {
-        def geoms = new GeometryCollection(inLayer.collectFromFeature {f ->
+        def geoms = new GeometryCollection(inLayer.collectFromFeature { f ->
             f.geom
         })
         outLayer.add([geoms.delaunayTriangleDiagram])
     }
 
-    static class DelaunayDiagramOptions extends LayerInOutOptions{
+    static class DelaunayDiagramOptions extends LayerInOutOptions {
     }
 }

@@ -1,13 +1,12 @@
 package org.geocommands.raster
 
-import geoscript.geom.Bounds
 import geoscript.geom.Point
 import geoscript.layer.ArcGrid
 import geoscript.layer.GeoTIFF
 import geoscript.layer.Raster
 import org.apache.commons.io.input.ReaderInputStream
-import org.geocommands.raster.AddConstantCommand.AddConstantOptions
 import org.geocommands.BaseTest
+import org.geocommands.raster.AddConstantCommand.AddConstantOptions
 import org.junit.Test
 
 import static org.junit.Assert.assertEquals
@@ -37,10 +36,10 @@ class AddConstantCommandTest extends BaseTest {
         GeoTIFF inFormat = new GeoTIFF(inFile)
         Raster inRaster = inFormat.read()
 
-        Point pt = new Point(-120,47)
-        assertEquals(inRaster.getValue(pt,0) + 10, outRaster.getValue(pt,0), 0.1)
-        pt = new Point(120,45)
-        assertEquals(inRaster.getValue(pt,0) + 10, outRaster.getValue(pt,0), 0.1)
+        Point pt = new Point(-120, 47)
+        assertEquals(inRaster.getValue(pt, 0) + 10, outRaster.getValue(pt, 0), 0.1)
+        pt = new Point(120, 45)
+        assertEquals(inRaster.getValue(pt, 0) + 10, outRaster.getValue(pt, 0), 0.1)
     }
 
     @Test
@@ -59,10 +58,10 @@ class AddConstantCommandTest extends BaseTest {
         ArcGrid inFormat = new ArcGrid(getStringReader("raster.asc").text)
         Raster inRaster = inFormat.read()
 
-        Point pt = new Point(-175.0,84.6)
-        assertEquals(inRaster.getValue(pt,0) + 10, outRaster.getValue(pt,0), 0.1)
-        pt = new Point(-174.2,85.0)
-        assertEquals(inRaster.getValue(pt,0) + 10, outRaster.getValue(pt,0), 0.1)
+        Point pt = new Point(-175.0, 84.6)
+        assertEquals(inRaster.getValue(pt, 0) + 10, outRaster.getValue(pt, 0), 0.1)
+        pt = new Point(-174.2, 85.0)
+        assertEquals(inRaster.getValue(pt, 0) + 10, outRaster.getValue(pt, 0), 0.1)
     }
 
     @Test
@@ -82,10 +81,10 @@ class AddConstantCommandTest extends BaseTest {
         GeoTIFF inFormat = new GeoTIFF(inFile)
         Raster inRaster = inFormat.read()
 
-        Point pt = new Point(-120,47)
-        assertEquals(inRaster.getValue(pt,0) + 10, outRaster.getValue(pt,0), 0.1)
-        pt = new Point(120,45)
-        assertEquals(inRaster.getValue(pt,0) + 10, outRaster.getValue(pt,0), 0.1)
+        Point pt = new Point(-120, 47)
+        assertEquals(inRaster.getValue(pt, 0) + 10, outRaster.getValue(pt, 0), 0.1)
+        pt = new Point(120, 45)
+        assertEquals(inRaster.getValue(pt, 0) + 10, outRaster.getValue(pt, 0), 0.1)
     }
 
     @Test
@@ -102,9 +101,9 @@ class AddConstantCommandTest extends BaseTest {
         ArcGrid inFormat = new ArcGrid(getStringReader("raster.asc").text)
         Raster inRaster = inFormat.read()
 
-        Point pt = new Point(-175.0,84.6)
-        assertEquals(inRaster.getValue(pt,0) + 10, outRaster.getValue(pt,0), 0.1)
-        pt = new Point(-174.2,85.0)
-        assertEquals(inRaster.getValue(pt,0) + 10, outRaster.getValue(pt,0), 0.1)
+        Point pt = new Point(-175.0, 84.6)
+        assertEquals(inRaster.getValue(pt, 0) + 10, outRaster.getValue(pt, 0), 0.1)
+        pt = new Point(-174.2, 85.0)
+        assertEquals(inRaster.getValue(pt, 0) + 10, outRaster.getValue(pt, 0), 0.1)
     }
 }

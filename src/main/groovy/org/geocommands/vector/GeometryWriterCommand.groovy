@@ -28,7 +28,7 @@ class GeometryWriterCommand extends LayerCommand<GeometryWriterOptions> {
     @Override
     protected void processLayer(Layer layer, GeometryWriterOptions options, Reader reader, Writer writer) {
         boolean first = true
-        layer.eachFeature {f ->
+        layer.eachFeature { f ->
             if (!first) {
                 writer.write(NEW_LINE)
             }

@@ -6,7 +6,8 @@ import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.DensifyCommand.DensifyOptions
 import org.junit.Test
-import static org.junit.Assert.*
+
+import static org.junit.Assert.assertEquals
 
 /**
  * The DensifyCommand Unit Test
@@ -14,14 +15,15 @@ import static org.junit.Assert.*
  */
 class DensifyCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         DensifyCommand cmd = new DensifyCommand()
         File file = getResource("polygons.properties")
         File shpFile = createTemporaryShapefile("densify")
         DensifyOptions options = new DensifyOptions(
-            inputWorkspace: file.absolutePath,
-            outputWorkspace: shpFile,
-            distanceTolerance: 2
+                inputWorkspace: file.absolutePath,
+                outputWorkspace: shpFile,
+                distanceTolerance: 2
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
@@ -33,7 +35,8 @@ class DensifyCommandTest extends BaseTest {
 
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         DensifyCommand cmd = new DensifyCommand()
         DensifyOptions options = new DensifyOptions(distanceTolerance: 3)
         StringWriter w = new StringWriter()
@@ -46,14 +49,15 @@ class DensifyCommandTest extends BaseTest {
         assertEquals 9, layer.features[3].geom.numPoints
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file = getResource("polygons.properties")
         File shpFile = createTemporaryShapefile("densify")
         App.main([
-            "vector densify",
-            "-i", file.absolutePath,
-            "-o", shpFile.absolutePath,
-            "-d", 2
+                "vector densify",
+                "-i", file.absolutePath,
+                "-o", shpFile.absolutePath,
+                "-d", 2
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
         assertEquals 4, shp.count

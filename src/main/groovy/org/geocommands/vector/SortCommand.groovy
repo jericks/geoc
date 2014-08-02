@@ -27,8 +27,8 @@ class SortCommand extends LayerInOutCommand<SortOptions> {
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, SortOptions options, Reader reader, Writer writer) throws Exception {
-        outLayer.withWriter {geoscript.layer.Writer w ->
-            inLayer.getCursor(sort: options.sort).each {Feature f ->
+        outLayer.withWriter { geoscript.layer.Writer w ->
+            inLayer.getCursor(sort: options.sort).each { Feature f ->
                 w.add(f)
             }
         }
@@ -36,7 +36,7 @@ class SortCommand extends LayerInOutCommand<SortOptions> {
 
     static class SortOptions extends LayerInOutOptions {
 
-        @Option(name="-s", aliases="--sort",  usage="The sort field", required = true)
+        @Option(name = "-s", aliases = "--sort", usage = "The sort field", required = true)
         List<String> sort
 
     }

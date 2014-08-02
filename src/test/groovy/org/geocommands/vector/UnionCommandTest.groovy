@@ -16,17 +16,18 @@ import static org.junit.Assert.assertTrue
  */
 class UnionCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         File aFile = getResource("a.properties")
         File bFile = getResource("b.properties")
         File shpFile = createTemporaryShapefile("a_b_union")
 
         UnionCommand cmd = new UnionCommand()
         UnionOptions options = new UnionOptions(
-            inputWorkspace: aFile.absolutePath,
-            otherWorkspace: bFile.absolutePath,
-            outputWorkspace: shpFile,
-            postfixAll: true
+                inputWorkspace: aFile.absolutePath,
+                otherWorkspace: bFile.absolutePath,
+                outputWorkspace: shpFile,
+                postfixAll: true
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Layer layer = new Shapefile(shpFile)
@@ -53,11 +54,12 @@ class UnionCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((97 95, 97 100, 100 100, 100 105, 120 105, 120 100, 125 100, 125 95, 97 95)))", layer.getFeatures("A1 IS NULL AND B2 = 4")[0].geom.wkt
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         UnionCommand cmd = new UnionCommand()
         UnionOptions options = new UnionOptions(
-            otherWorkspace: getResource("b.properties").absolutePath,
-            postfixAll: true
+                otherWorkspace: getResource("b.properties").absolutePath,
+                postfixAll: true
         )
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("a.csv"), w)
@@ -85,7 +87,8 @@ class UnionCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((97 95, 97 100, 100 100, 100 105, 120 105, 120 100, 125 100, 125 95, 97 95)))", layer.getFeatures("A1 = '' AND B2 = 4")[0].geom.wkt
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File aFile = getResource("a.properties")
         File bFile = getResource("b.properties")
         File shpFile = createTemporaryShapefile("a_b_union")
@@ -119,7 +122,7 @@ class UnionCommandTest extends BaseTest {
         assertEquals "MULTIPOLYGON (((85 95, 85 105, 90 105, 90 100, 95 100, 95 95, 85 95)))", layer.getFeatures("A1 IS NULL AND B2 = 3")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((97 95, 97 100, 100 100, 100 105, 120 105, 120 100, 125 100, 125 95, 97 95)))", layer.getFeatures("A1 IS NULL AND B2 = 4")[0].geom.wkt
 
-        String output = runApp(["vector union","-k", bFile.absolutePath, "-p"],readCsv("a.csv").text)
+        String output = runApp(["vector union", "-k", bFile.absolutePath, "-p"], readCsv("a.csv").text)
         layer = getLayerFromCsv(output)
         // Check schema
         assertEquals "csv", layer.name

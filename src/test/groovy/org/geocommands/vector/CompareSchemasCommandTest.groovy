@@ -1,9 +1,10 @@
 package org.geocommands.vector
 
 import org.geocommands.BaseTest
-import org.junit.Test
-import static org.junit.Assert.*
 import org.geocommands.vector.CompareSchemasCommand.CompareSchemasOptions
+import org.junit.Test
+
+import static org.junit.Assert.assertEquals
 
 /**
  * The CompareSchemaCommand Unit Test
@@ -11,16 +12,17 @@ import org.geocommands.vector.CompareSchemasCommand.CompareSchemasOptions
  */
 class CompareSchemasCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         CompareSchemasCommand cmd = new CompareSchemasCommand()
         File file1 = getResource("points.properties")
         File file2 = getResource("polygons.properties")
 
         // Regular
         CompareSchemasOptions options = new CompareSchemasOptions(
-            inputWorkspace: file1.absolutePath,
-            otherWorkspace: file2.absolutePath,
-            prettyPrint: false
+                inputWorkspace: file1.absolutePath,
+                otherWorkspace: file2.absolutePath,
+                prettyPrint: false
         )
         StringWriter writer = new StringWriter()
         cmd.execute(options, new StringReader(""), writer)
@@ -37,9 +39,9 @@ col,Integer,false,true"""
 
         // Pretty print
         options = new CompareSchemasOptions(
-            inputWorkspace: file1.absolutePath,
-            otherWorkspace: file2.absolutePath,
-            prettyPrint: true
+                inputWorkspace: file1.absolutePath,
+                otherWorkspace: file2.absolutePath,
+                prettyPrint: true
         )
         writer = new StringWriter()
         cmd.execute(options, new StringReader(""), writer)
@@ -58,12 +60,13 @@ col,Integer,false,true"""
         assertEquals(expected, actual)
     }
 
-    @Test void executeWithCsv() {
+    @Test
+    void executeWithCsv() {
         CompareSchemasCommand cmd = new CompareSchemasCommand()
         File file = getResource("polygons.properties")
         CompareSchemasOptions options = new CompareSchemasOptions(
-            otherWorkspace: file.absolutePath,
-            prettyPrint: false
+                otherWorkspace: file.absolutePath,
+                prettyPrint: false
         )
         StringWriter writer = new StringWriter()
         cmd.execute(options, readCsv("points.csv"), writer)
@@ -79,14 +82,15 @@ col,Integer,false,true"""
         assertEquals(expected, actual)
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         File file1 = getResource("points.properties")
         File file2 = getResource("polygons.properties")
         String output = runApp([
-            "vector compareschemas",
-            "-i", file1.absolutePath,
-            "-k", file2.absolutePath
-        ],"")
+                "vector compareschemas",
+                "-i", file1.absolutePath,
+                "-k", file2.absolutePath
+        ], "")
         String actual = output
         String expected = """Name,Type,points,polygons
 the_geom,Point,true,false
@@ -103,7 +107,7 @@ col,Integer,false,true
                 "vector compareschemas",
                 "-k", file2.absolutePath,
                 "-p"
-        ],readCsv("points.csv").text)
+        ], readCsv("points.csv").text)
         actual = output
         expected = """-----------------------------------------
 | Name     | Type    | csv   | polygons |

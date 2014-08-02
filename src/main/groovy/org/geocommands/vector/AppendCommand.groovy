@@ -32,8 +32,8 @@ class AppendCommand extends LayerCommand<AppendOptions> {
     @Override
     protected void processLayer(Layer layer, AppendOptions options, Reader reader, Writer writer) throws Exception {
         Layer otherLayer = Util.getOtherLayer(options.otherWorkspace, options.otherLayer)
-        layer.withWriter {geoscript.layer.Writer w ->
-            otherLayer.eachFeature{ f->
+        layer.withWriter { geoscript.layer.Writer w ->
+            otherLayer.eachFeature { f ->
                 w.add(f)
             }
         }
@@ -41,10 +41,10 @@ class AppendCommand extends LayerCommand<AppendOptions> {
 
     static class AppendOptions extends LayerOptions {
 
-        @Option(name="-k", aliases="--other-workspace",  usage="The other workspace", required = true)
+        @Option(name = "-k", aliases = "--other-workspace", usage = "The other workspace", required = true)
         String otherWorkspace
 
-        @Option(name="-y", aliases="--other-layer",  usage="The other layer", required = false)
+        @Option(name = "-y", aliases = "--other-layer", usage = "The other layer", required = false)
         String otherLayer
 
     }

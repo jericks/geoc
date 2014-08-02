@@ -1,8 +1,8 @@
 package org.geocommands.vector
 
-import geoscript.layer.Layer
-import geoscript.feature.Schema
 import geoscript.feature.Field
+import geoscript.feature.Schema
+import geoscript.layer.Layer
 
 /**
  * Get the bounding envelope of all the features of the input Layer and save it to the output Layer
@@ -32,7 +32,7 @@ class EnvelopeCommand extends LayerInOutCommand<EnvelopeOptions> {
 
     @Override
     protected Schema createOutputSchema(Layer layer, EnvelopeOptions options) {
-        new Schema(getOutputLayerName(layer, "envelope", options), [new Field("the_geom","Polygon", layer.schema.proj)])
+        new Schema(getOutputLayerName(layer, "envelope", options), [new Field("the_geom", "Polygon", layer.schema.proj)])
     }
 
     static class EnvelopeOptions extends LayerInOutOptions {

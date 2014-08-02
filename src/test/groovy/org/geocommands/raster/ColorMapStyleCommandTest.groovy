@@ -1,6 +1,5 @@
 package org.geocommands.raster
 
-import org.geocommands.raster.ColorMapStyleCommand.ColorMapStyleOptions
 import org.geocommands.BaseTest
 import org.junit.Test
 
@@ -9,10 +8,11 @@ import org.junit.Test
  */
 class ColorMapStyleCommandTest extends BaseTest {
 
-    @Test void execute() {
+    @Test
+    void execute() {
         ColorMapStyleCommand command = new ColorMapStyleCommand()
         ColorMapStyleCommand.ColorMapStyleOptions options = new ColorMapStyleCommand.ColorMapStyleOptions(
-                values: ["10=red","50=blue","100=wheat","250=white"],
+                values: ["10=red", "50=blue", "100=wheat", "250=white"],
                 type: "ramp",
                 extended: false
         )
@@ -50,7 +50,8 @@ class ColorMapStyleCommandTest extends BaseTest {
         assertStringsEqual(expected, actual)
     }
 
-    @Test void runAsCommandLine() {
+    @Test
+    void runAsCommandLine() {
         String actual = runApp([
                 "raster style colormap",
                 "-v", "10=red",

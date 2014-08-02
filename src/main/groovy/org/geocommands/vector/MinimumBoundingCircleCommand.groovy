@@ -1,11 +1,9 @@
 package org.geocommands.vector
 
-import geoscript.layer.Layer
+import geoscript.feature.Field
 import geoscript.feature.Schema
 import geoscript.geom.GeometryCollection
-import geoscript.feature.Field
-import org.geocommands.vector.LayerInOutCommand
-import org.geocommands.vector.LayerInOutOptions
+import geoscript.layer.Layer
 
 /**
  * Calculate the minimum bounding circle of the input Layer and save them to the output Layer
@@ -35,7 +33,7 @@ class MinimumBoundingCircleCommand extends LayerInOutCommand<MinimumBoundingCirc
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, MinimumBoundingCircleOptions options, Reader reader, Writer writer) {
-        def geoms = new GeometryCollection(inLayer.collectFromFeature {f ->
+        def geoms = new GeometryCollection(inLayer.collectFromFeature { f ->
             f.geom
         })
         outLayer.add([geoms.minimumBoundingCircle])

@@ -4,11 +4,10 @@ import geoscript.feature.Field
 import geoscript.feature.Schema
 import geoscript.geom.GeometryCollection
 import geoscript.layer.Layer
-import org.geocommands.vector.LayerInOutCommand
-import org.geocommands.vector.LayerInOutOptions
 
 /**
- *
+ * Calculate the minimum rectangle of the input Layer and save it to the output Layer
+ * @author Jared Erickson
  */
 class MinimumRectangleCommand extends LayerInOutCommand<MinimumRectangleOptions> {
 
@@ -34,7 +33,7 @@ class MinimumRectangleCommand extends LayerInOutCommand<MinimumRectangleOptions>
 
     @Override
     void processLayers(Layer inLayer, Layer outLayer, MinimumRectangleOptions options, Reader reader, Writer writer) {
-        def geoms = new GeometryCollection(inLayer.collectFromFeature {f ->
+        def geoms = new GeometryCollection(inLayer.collectFromFeature { f ->
             f.geom
         })
         outLayer.add([geoms.minimumRectangle])

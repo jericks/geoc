@@ -14,7 +14,9 @@ import org.geocommands.Command
 abstract class LayerInOtherOutCommand<T extends LayerInOtherOutOptions> extends Command<T> {
 
     abstract String getName()
+
     abstract String getDescription()
+
     abstract T getOptions()
 
     void execute(T options, Reader reader, Writer writer) throws Exception {
@@ -68,15 +70,15 @@ abstract class LayerInOtherOutCommand<T extends LayerInOtherOutOptions> extends 
 
     protected Schema createOutputSchema(Layer inputLayer, Layer otherLayer, T options) {
         inputLayer.schema.addSchema(otherLayer.schema, getOutputLayerName(inputLayer, otherLayer, name, options),
-            postfixAll: true, maxFieldNameLength: Util.isWorkspaceStringShapefile(options.outputWorkspace) ? 10 : -1).schema
+                postfixAll: true, maxFieldNameLength: Util.isWorkspaceStringShapefile(options.outputWorkspace) ? 10 : -1).schema
     }
 
     protected String getOutputLayerName(Layer inputLayer, Layer otherLayer, String postfix, T options) {
         String outName = options.outputLayer ? options.outputLayer : "${inputLayer.name}_${otherLayer.name}_${postfix}"
         if (options.outputWorkspace &&
-            (options.outputWorkspace.endsWith(".shp") || options.outputWorkspace.endsWith(".properties"))) {
+                (options.outputWorkspace.endsWith(".shp") || options.outputWorkspace.endsWith(".properties"))) {
             String fileName = new File(options.outputWorkspace).name
-            outName = fileName.substring(0, fileName.lastIndexOf(".") )
+            outName = fileName.substring(0, fileName.lastIndexOf("."))
         }
         outName
     }

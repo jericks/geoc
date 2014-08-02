@@ -3,8 +3,8 @@ package org.geocommands.raster
 import geoscript.layer.Layer
 import geoscript.layer.Shapefile
 import geoscript.layer.io.CsvReader
-import org.geocommands.raster.PointCommand.PointOptions
 import org.geocommands.BaseTest
+import org.geocommands.raster.PointCommand.PointOptions
 import org.junit.Test
 
 import static org.junit.Assert.assertTrue

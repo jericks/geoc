@@ -2,6 +2,8 @@ package org.geocommands.vector
 
 import geoscript.geom.Bounds
 import geoscript.layer.Layer
+import geoscript.layer.OSM
+import geoscript.layer.Shapefile
 import geoscript.style.io.CSSReader
 import geoscript.style.io.SLDReader
 import org.kohsuke.args4j.Option
@@ -36,8 +38,12 @@ class DrawLayerCommand extends LayerCommand<DrawLayerOptions> {
                 layer.style = new CSSReader().read(options.sldFile)
             }
         }
+        List layers = [layer]
+        if (options.baseMap) {
+            org.geocommands.Util.addBasemap(options.baseMap, layers)
+        }
         geoscript.render.Map map = new geoscript.render.Map(
-                layers: [layer],
+                layers: layers,
                 type: options.type,
                 width: options.width,
                 height: options.height,
@@ -45,6 +51,8 @@ class DrawLayerCommand extends LayerCommand<DrawLayerOptions> {
         )
         map.render(options.file ? options.file : new File("${['pdf', 'svg'].contains(options.type) ? "document" : "image"}.${options.type}"))
     }
+
+
 
     private static class DrawLayerOptions extends LayerOptions {
 
@@ -65,6 +73,9 @@ class DrawLayerCommand extends LayerCommand<DrawLayerOptions> {
 
         @Option(name = "-b", aliases = "--bounds", usage = "The bounds", required = false)
         String bounds
+
+        @Option(name = "-m", aliases = "--base-map", usage = "The base map (can be a OSM tile set, shapefile, or Groovy script that returns Layers)", required = false)
+        String baseMap
     }
 
 }

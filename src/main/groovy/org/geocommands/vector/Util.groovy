@@ -8,7 +8,7 @@ import geoscript.workspace.Memory
 import geoscript.workspace.Workspace
 
 /**
- * Layer Utilities
+ * A suite of Vector Utilities
  * @author Jared Erickson
  */
 class Util {
@@ -29,6 +29,15 @@ class Util {
         }
     }
 
+    /**
+     * Check the Schema for valid Geometry type.  If the output Workspace is
+     * a Shapefile, it can't be GEOMETRY or GEOMETRYCOLLECTION so change it to
+     * the first Feature's Geometry type
+     * @param schema The Schema
+     * @param inLayer The input Layer
+     * @param outputWorkspace The output Workspace
+     * @return A Schema
+     */
     static Schema checkSchema(Schema schema, Layer inLayer, String outputWorkspace) {
         if ((inLayer.schema.geom.typ.equalsIgnoreCase("Geometry")
                 || inLayer.schema.geom.typ.equalsIgnoreCase("GeometryCollection"))
@@ -38,6 +47,13 @@ class Util {
         schema
     }
 
+    /**
+     * Get the input Layer from a Workspace string and layer name of from the Reader
+     * @param workspaceStr The Workspace String
+     * @param layerName The Layer name
+     * @param reader The Reader
+     * @return A Layer
+     */
     static Layer getInputLayer(String workspaceStr, String layerName, Reader reader) {
         Layer layer = null
         if (workspaceStr) {
@@ -58,8 +74,19 @@ class Util {
         layer
     }
 
-    static Layer getOutputLayer(Layer inputLayer, String outputWorkspace, String outputLayer,
-                                Closure createOutputSchema = { Layer layer, String outLayer -> new Schema(outLayer ? outLayer : layer.name, layer.schema.fields) }) {
+    /**
+     * Get the output Layer from the input Layer, output Workspace string, output Layer name.  The last parameter is a
+     * Closure that creates the output Schema given the input Layer and output Layer.
+     * @param inputLayer The input Layer
+     * @param outputWorkspace The output Workspace String
+     * @param outputLayer The output Layer name
+     * @param createOutputSchema The Closure that creates the output Schema.  THe input Layer and output Layer name are passed
+     * in as arguments.
+     * @return
+     */
+    static Layer getOutputLayer(Layer inputLayer, String outputWorkspace, String outputLayer, Closure createOutputSchema = {
+        Layer layer, String outLayer -> new Schema(outLayer ? outLayer : layer.name, layer.schema.fields) }
+    ) {
         Workspace workspace
         if (!outputWorkspace) {
             workspace = new Memory()
@@ -69,6 +96,12 @@ class Util {
         workspace.create(createOutputSchema.call(inputLayer, outputLayer))
     }
 
+    /**
+     * Get the other Layer from the Workspace string and Layer name
+     * @param workspaceStr The Workspace string
+     * @param layerName The layer name
+     * @return A Layer
+     */
     static Layer getOtherLayer(String workspaceStr, String layerName) {
         Layer layer = null
         Workspace workspace = new Workspace(workspaceStr)
@@ -85,6 +118,13 @@ class Util {
         layer
     }
 
+    /**
+     * Get the output Layer name from the output Workspace string, output layer name, and a default name
+     * @param outputWorkspace The output workspace string
+     * @param outputLayer The output layer name
+     * @param defaultName THe default layer name
+     * @return
+     */
     static String getOutputLayerName(String outputWorkspace, String outputLayer, String defaultName) {
         String outName = outputLayer ? outputLayer : defaultName
         if (outputWorkspace && (outputWorkspace.endsWith(".shp") || outputWorkspace.endsWith(".properties"))) {

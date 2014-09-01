@@ -36,8 +36,12 @@ class DrawCommand extends RasterCommand<DrawOptions> {
                 raster.style = new CSSReader().read(options.sldFile)
             }
         }
+        List layers = [raster]
+        if (options.baseMap) {
+            org.geocommands.Util.addBasemap(options.baseMap, layers)
+        }
         geoscript.render.Map map = new geoscript.render.Map(
-                layers: [raster],
+                layers: layers,
                 type: options.type,
                 width: options.width,
                 height: options.height,
@@ -64,5 +68,8 @@ class DrawCommand extends RasterCommand<DrawOptions> {
 
         @Option(name = "-b", aliases = "--bounds", usage = "The bounds", required = false)
         String bounds
+
+        @Option(name = "-m", aliases = "--base-map", usage = "The base map (can be a OSM tile set, shapefile, or Groovy script that returns Layers)", required = false)
+        String baseMap
     }
 }

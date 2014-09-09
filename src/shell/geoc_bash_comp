@@ -50,6 +50,8 @@ _geoc()
         if [[ "raster add constant" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' constant'))
         fi
+    elif [[ "$line" == *"geoc raster animatedgif "* ]]; then
+        COMPREPLY=($(compgen -W '--help -d --delay -f --file -o --output-file -r --repeat' -- $cur))
     elif [[ "$line" == *"geoc raster contour "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --band -i --input-raster -l --input-raster-name -m --smooth -n --bounds -o --output-workspace -p --input-projection -r --output-layer -s --simplify -v --level' -- $cur))
     elif [[ "$line" == *"geoc raster crop with geometry "* ]]; then
@@ -80,7 +82,7 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' constant'))
         fi
     elif [[ "$line" == *"geoc raster draw "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -f --file -h --height -i --input-raster -l --input-raster-name -p --input-projection -s --sld-file -t --type -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help -b --bounds -f --file -h --height -i --input-raster -l --input-raster-name -m --base-map -p --input-projection -s --sld-file -t --type -w --width' -- $cur))
     elif [[ "$line" == *"geoc raster envelope "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-raster -l --input-raster-name -o --output-workspace -p --input-projection -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc raster get value "* ]]; then
@@ -172,10 +174,13 @@ _geoc()
     elif [[ "$line" == *"geoc raster worldfile "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --bounds -f --file -s --size' -- $cur))
     elif [[ "$line" == *"geoc raster " ]]; then
-        COMPREPLY=($(compgen -W ' get  style  divide  reclassify  envelope  crop  worldfile  project  contour  multiply  mapalgebra  point  stylize  add  polygon  scale  subtract  to  resample  info  draw  invert'))
+        COMPREPLY=($(compgen -W ' get  style  divide  reclassify  animatedgif  envelope  crop  worldfile  project  contour  multiply  mapalgebra  point  stylize  add  polygon  scale  subtract  to  resample  info  draw  invert'))
     elif [[ "$line" == *"geoc raster"[[:space:]][[:alpha:]]* ]]; then
         if [[ "raster add" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' add'))
+        fi
+        if [[ "raster animatedgif" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' animatedgif'))
         fi
         if [[ "raster contour" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' contour'))
@@ -305,7 +310,7 @@ _geoc()
     elif [[ "$line" == *"geoc vector dissolveintersecting "* ]]; then
         COMPREPLY=($(compgen -W '--help -c --count-field -d --id-field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector draw "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -f --file -h --height -i --input-workspace -l --input-layer -s --sld-file -t --type -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help -b --bounds -f --file -h --height -i --input-workspace -l --input-layer -m --base-map -s --sld-file -t --type -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector ellipse "* ]]; then
         COMPREPLY=($(compgen -W '--help -a --rotation -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -u --unit -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector envelope "* ]]; then

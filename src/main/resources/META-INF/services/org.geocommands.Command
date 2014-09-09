@@ -130,3 +130,4 @@ org.geocommands.raster.ShadedReliefStyleCommand
 org.geocommands.raster.ChannelSelectionStyleCommand
 org.geocommands.raster.ContrastEnhancementStyleCommand
 org.geocommands.raster.ColorMapStyleCommand
+org.geocommands.raster.AnimatedGIFCommand

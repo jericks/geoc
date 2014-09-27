@@ -97,6 +97,7 @@ org.geocommands.vector.RectangleCommand
 org.geocommands.vector.SineStarCommand
 org.geocommands.vector.SuperCircleCommand
 org.geocommands.vector.SquircleCommand
+org.geocommands.vector.DatabaseSelectCommand
 
 org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand

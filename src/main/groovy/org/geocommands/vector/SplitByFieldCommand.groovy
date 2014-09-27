@@ -33,7 +33,7 @@ class SplitByFieldCommand extends LayerCommand<SplitByFieldOptions> {
 
         Field field = layer.schema.get(options.field)
 
-        Workspace workspace = options.outputWorkspace ? new Workspace(options.outputWorkspace) : new Memory()
+        Workspace workspace = options.outputWorkspace ? Workspace.getWorkspace(options.outputWorkspace) : new Memory()
 
         // Get unique values
         Set values = []

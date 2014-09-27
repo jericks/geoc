@@ -37,7 +37,7 @@ class SplitByLayerCommand extends LayerCommand<SplitByLayerOptions> {
 
         Field field = splitLayer.schema.get(options.field)
 
-        Workspace workspace = options.outputWorkspace ? new Workspace(options.outputWorkspace) : new Memory()
+        Workspace workspace = options.outputWorkspace ? Workspace.getWorkspace(options.outputWorkspace) : new Memory()
 
         String NEW_LINE = System.getProperty("line.separator")
 
@@ -79,7 +79,7 @@ class SplitByLayerCommand extends LayerCommand<SplitByLayerOptions> {
 
     private Layer getSplitLayer(String workspaceStr, String layerName) {
         Layer layer = null
-        Workspace workspace = new Workspace(workspaceStr)
+        Workspace workspace = Workspace.getWorkspace(workspaceStr)
         if (layerName) {
             layer = workspace.get(layerName)
         } else {

@@ -28,7 +28,7 @@ class LayerListCommand extends Command<LayerListOptions> {
 
     @Override
     void execute(LayerListOptions options, Reader reader, Writer writer) throws Exception {
-        Workspace workspace = new Workspace(options.inputWorkspace)
+        Workspace workspace = Workspace.getWorkspace(options.inputWorkspace)
         String NEW_LINE = System.getProperty("line.separator")
         StringBuilder builder = new StringBuilder()
         workspace.names.eachWithIndex { String name, int i ->

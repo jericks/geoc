@@ -52,7 +52,7 @@ abstract class LayerInOutCommand<T extends LayerInOutOptions> extends LayerComma
         if (!options.outputWorkspace) {
             workspace = new Memory()
         } else {
-            workspace = new Workspace(options.outputWorkspace)
+            workspace = Workspace.getWorkspace(options.outputWorkspace)
         }
         workspace.create(Util.checkSchema(createOutputSchema(inputLayer, options), inputLayer, options.outputWorkspace))
     }

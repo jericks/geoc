@@ -44,7 +44,7 @@ abstract class RasterToVectorCommand<T extends RasterToVectorOptions> extends Ra
         if (!options.outputWorkspace) {
             workspace = new Memory()
         } else {
-            workspace = new Workspace(options.outputWorkspace)
+            workspace = Workspace.getWorkspace(options.outputWorkspace)
         }
         workspace.create(createOutputSchema(raster, options))
     }

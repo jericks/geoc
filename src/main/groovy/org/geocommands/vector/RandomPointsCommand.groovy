@@ -36,7 +36,7 @@ class RandomPointsCommand extends LayerOutCommand<RandomPointsOptions> {
         if (!options.outputWorkspace) {
             workspace = new Memory()
         } else {
-            workspace = new Workspace(options.outputWorkspace)
+            workspace = Workspace.getWorkspace(options.outputWorkspace)
         }
         Layer layer = workspace.create(getOutputLayerName(options, "random_points"), [
                 new Field(options.idFieldName, "int"),

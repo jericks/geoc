@@ -35,7 +35,7 @@ class CreateCommand extends LayerOutCommand<CreateOptions> {
         if (!options.outputWorkspace) {
             w = new Memory()
         } else {
-            w = new Workspace(options.outputWorkspace)
+            w = Workspace.getWorkspace(options.outputWorkspace)
         }
 
         // Get Fields

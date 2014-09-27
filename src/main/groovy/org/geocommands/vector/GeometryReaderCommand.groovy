@@ -70,7 +70,7 @@ class GeometryReaderCommand extends Command<GeometryReaderOptions> {
         if (!options.outputWorkspace) {
             workspace = new Memory()
         } else {
-            workspace = new Workspace(options.outputWorkspace)
+            workspace = Workspace.getWorkspace(options.outputWorkspace)
         }
         workspace.create(new Schema(getOutputLayerName(options, "geometry"), [new Field("id", "int"), new Field("the_geom", geom.geometryType)]))
     }

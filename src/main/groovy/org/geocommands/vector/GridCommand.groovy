@@ -36,7 +36,7 @@ class GridCommand extends LayerOutCommand<GridOptions> {
         if (!options.outputWorkspace) {
             workspace = new Memory()
         } else {
-            workspace = new Workspace(options.outputWorkspace)
+            workspace = Workspace.getWorkspace(options.outputWorkspace)
         }
         Layer layer = workspace.create(getOutputLayerName(options, "grid"), [
                 new Field("the_geom", options.type.equalsIgnoreCase("point") ? "POINT" : "POLYGON", options.projection),

@@ -57,7 +57,7 @@ class Util {
     static Layer getInputLayer(String workspaceStr, String layerName, Reader reader) {
         Layer layer = null
         if (workspaceStr) {
-            Workspace workspace = new Workspace(workspaceStr)
+            Workspace workspace = Workspace.getWorkspace(workspaceStr)
             if (layerName) {
                 layer = workspace.get(layerName)
             } else {
@@ -91,7 +91,7 @@ class Util {
         if (!outputWorkspace) {
             workspace = new Memory()
         } else {
-            workspace = new Workspace(outputWorkspace)
+            workspace = Workspace.getWorkspace(outputWorkspace)
         }
         workspace.create(createOutputSchema.call(inputLayer, outputLayer))
     }
@@ -104,7 +104,7 @@ class Util {
      */
     static Layer getOtherLayer(String workspaceStr, String layerName) {
         Layer layer = null
-        Workspace workspace = new Workspace(workspaceStr)
+        Workspace workspace = Workspace.getWorkspace(workspaceStr)
         if (layerName) {
             layer = workspace.get(layerName)
         } else {
@@ -144,7 +144,7 @@ class Util {
         if (!workspace) {
             new Memory()
         } else {
-            new Workspace(workspace)
+            Workspace.getWorkspace(workspace)
         }
     }
 

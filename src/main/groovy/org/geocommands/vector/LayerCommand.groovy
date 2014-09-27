@@ -40,7 +40,7 @@ abstract class LayerCommand<T extends LayerOptions> extends Command<T> {
     Layer getInputLayer(String workspaceStr, String layerName, Reader reader) {
         Layer layer = null
         if (workspaceStr) {
-            Workspace workspace = new Workspace(workspaceStr)
+            Workspace workspace = Workspace.getWorkspace(workspaceStr)
             if (layerName) {
                 layer = workspace.get(layerName)
             } else {

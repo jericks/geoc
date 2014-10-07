@@ -12,7 +12,7 @@ Key features
 2. By default geoc reads and writes vector layers as CSV and raster layers as ASCII grids.
 3. But geoc can read and write to any supported `GeoTools <http://geotools.org>`_ DataStore (Shapefiles, PostGIS, H2) or CoverageStore (GeoTIFF, WorldImage, GTOPO).
 4. Commands are looked up using Java's Service Provider Interface (SPI) so the framework is extensible.
-5. Where appropriate, values are expressions (literal, properties, or CQL with functions)
+5. Where appropriate, values are expressions (literals, properties, or CQL with functions)
 6. Uses `GeoScript Groovy <http://geoscript.org/>`_ for extremely terse code.
 
 Examples
@@ -20,23 +20,23 @@ Examples
 
 List commands::
 
-    geoc list
+    >>> geoc list
 
 Count features in a CSV layer::
 
-    cat states.csv | geoc vector count
+    >>> cat states.csv | geoc vector count
 
 Buffer feature from a shapefile::
 
-    geoc vector buffer -i earthquakes.shp -o earthquake_buffers.shp
+    >>> geoc vector buffer -i earthquakes.shp -o earthquake_buffers.shp
 
 Get the envelope of a layer and then calculate the buffer::
 
-    cat states.csv | geoc vector envelope | geoc vector buffer -d 0.1   
+    >>> cat states.csv | geoc vector envelope | geoc vector buffer -d 0.1   
 
 Crop a raster::
 
-    geoc raster crop -i raster.tif -b "-120,-40,120,40" -o raster_croped.tif
+    >>> geoc raster crop -i raster.tif -b "-120,-40,120,40" -o raster_croped.tif
 
 Data Sources
 ------------
@@ -56,11 +56,64 @@ Here are some examples:
 
 Here is a longer example that create 100 random points in a GeoPackage database, get's metadata of that layer, and then finally converts the layer to CSV:::
 
-    geoc vector randompoints -g "0 0 10 10" -n 100 -o test.gpkg -r points100
+    >>> geoc vector randompoints -g "0 0 10 10" -n 100 -o test.gpkg -r points100
 
-    geoc vector info -i test.gpkg -l points100
+    >>> geoc vector info -i test.gpkg -l points100
 
-    geoc vector to -i test.gpkg -f csv
+    >>> geoc vector to -i test.gpkg -f csv
+
+Installation
+------------
+Just download the latest `release <https://github.com/jericks/geoc/release>_` and put the geoc/bin directory on your path. geoc also requires Java 7.
+
+Getting Help
+------------
+Each command contains a --help option::
+
+    >>> geoc vector buffer --help
+    geoc vector buffer: Buffer the features of the input Layer and save them to the output Layer
+    --help                      : Print the help message
+    -c (--capstyle) VAL         : The cap style
+    -d (--distance) VAL         : The buffer distance
+    -i (--input-workspace) VAL  : The input workspace
+    -l (--input-layer) VAL      : The input layer
+    -o (--output-workspace) VAL : The output workspace
+    -q (--quadrantsegments) N   : The number of quadrant segments
+    -r (--output-layer) VAL     : The output layer
+    -s (--singlesided)          : Whether buffer should be single sided or not
+
+There is also a man page for each subcommand::
+
+    >>> man geoc-vector-buffer
+    geoc-vector-buffer(1)                                    geoc-vector-buffer(1)
+
+    NAME
+           geoc vector buffer
+
+    DESCRIPTION
+           Buffer  the  features  of  the  input Layer and save them to the output
+           Layer
+
+    USAGE
+           geoc vector randompoints -n 10 -g "1,1,10,10" | geoc vector  buffer  -d
+           10
+
+    OPTIONS
+           -d --distance: The buffer distance
+
+           -q --quadrantsegments: The number of quadrant segments
+
+           -s --singlesided: Whether buffer should be single sided or not
+
+           -c --capstyle: The cap style
+
+           -o --output-workspace: The output workspace
+
+Finally, there is a bash completion script which makes using geoc with bash much easier.
+
+Install it is your .bash_profile::
+    
+    source /Users/You/geoc/shell/geoc_bash_comp
 
 Build
 -----

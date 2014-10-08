@@ -169,7 +169,7 @@ class UniqueValuesStyleCommandTest extends BaseTest {
         cmd.execute(options, new StringReader(""), writer)
         String actual = writer.toString()
         String expected = greensSld
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
     }
 
 
@@ -185,7 +185,7 @@ class UniqueValuesStyleCommandTest extends BaseTest {
         cmd.execute(options, readCsv("points.csv"), writer)
         String actual = writer.toString()
         String expected = threeColorsSld
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
     }
 
     @Test
@@ -199,7 +199,7 @@ class UniqueValuesStyleCommandTest extends BaseTest {
         ], "")
         String actual = output
         String expected = greensSld + System.getProperty("line.separator")
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
 
         output = runApp([
                 "vector uniquevaluesstyle",
@@ -208,7 +208,7 @@ class UniqueValuesStyleCommandTest extends BaseTest {
         ], readCsv("points.csv").text)
         actual = output
         expected = threeColorsSld + System.getProperty("line.separator")
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
     }
 
 }

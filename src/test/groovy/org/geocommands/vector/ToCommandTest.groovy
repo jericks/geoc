@@ -55,7 +55,7 @@ class ToCommandTest extends BaseTest {
 "POINT (10 10)","1","Number 2"
 "POINT (2 8)","5","Number 3"
 """
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
 
         output = runApp([
                 "vector to",

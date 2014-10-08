@@ -25,7 +25,7 @@ class GeometryWriterCommandTest extends BaseTest {
         String expected = """POINT (1 1)
 POINT (10 10)
 POINT (2 8)"""
-        assertEquals actual, expected
+        assertStringsEqual actual, expected
     }
 
     @Test
@@ -38,7 +38,7 @@ POINT (2 8)"""
         String expected = """POINT (1 1)
 POINT (10 10)
 POINT (2 8)"""
-        assertEquals actual, expected
+        assertStringsEqual actual, expected
     }
 
     @Test
@@ -49,13 +49,13 @@ POINT (2 8)"""
 POINT (10 10)
 POINT (2 8)
 """
-        assertEquals actual, expected
+        assertStringsEqual actual, expected
 
         actual = runApp(["vector geomw"], readCsv("points.csv").text)
         expected = """POINT (1 1)
 POINT (10 10)
 POINT (2 8)
 """
-        assertEquals actual, expected
+        assertStringsEqual actual, expected
     }
 }

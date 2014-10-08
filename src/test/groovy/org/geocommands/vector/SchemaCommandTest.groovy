@@ -29,7 +29,7 @@ class SchemaCommandTest extends BaseTest {
 the_geom,Point
 distance,String
 name,String"""
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
 
         // Pretty print
         options = new SchemaOptions(
@@ -46,7 +46,7 @@ name,String"""
 | distance | String |
 | name     | String |
 ---------------------"""
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
     }
 
     @Test
@@ -63,7 +63,7 @@ name,String"""
 the_geom,Point
 distance,String
 name,String"""
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
     }
 
     @Test
@@ -79,7 +79,7 @@ the_geom,Point
 distance,String
 name,String
 """
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
 
         output = runApp([
                 "vector schema",
@@ -94,7 +94,7 @@ name,String
 | name     | String |
 ---------------------
 """
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
 
     }
 

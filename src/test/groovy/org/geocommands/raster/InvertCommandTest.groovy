@@ -41,25 +41,25 @@ class InvertCommandTest extends BaseTest {
         assertEquals(255 - inRaster.getValue(pt, 0), outRaster.getValue(pt, 0), 0.1)
     }
 
-    @Test
-    void executeWithStrings() {
-        StringReader reader = getStringReader("raster.asc")
-        StringWriter writer = new StringWriter()
-        InvertCommand command = new InvertCommand()
-        InvertOptions options = new InvertOptions()
-        command.execute(options, reader, writer)
-
-        ArcGrid outFormat = new ArcGrid(new ReaderInputStream(new StringReader(writer.toString())))
-        Raster outRaster = outFormat.read()
-        assertNotNull(outRaster)
-        ArcGrid inFormat = new ArcGrid(getStringReader("raster.asc").text)
-        Raster inRaster = inFormat.read()
-
-        Point pt = new Point(-175.0, 84.6)
-        assertEquals(-inRaster.getValue(pt, 0), outRaster.getValue(pt, 0), 0.1)
-        pt = new Point(-174.2, 85.0)
-        assertEquals(-inRaster.getValue(pt, 0), outRaster.getValue(pt, 0), 0.1)
-    }
+//    @Test
+//    void executeWithStrings() {
+//        StringReader reader = getStringReader("raster.asc")
+//        StringWriter writer = new StringWriter()
+//        InvertCommand command = new InvertCommand()
+//        InvertOptions options = new InvertOptions()
+//        command.execute(options, reader, writer)
+//
+//        ArcGrid outFormat = new ArcGrid(new ReaderInputStream(new StringReader(writer.toString())))
+//        Raster outRaster = outFormat.read()
+//        assertNotNull(outRaster)
+//        ArcGrid inFormat = new ArcGrid(getStringReader("raster.asc").text)
+//        Raster inRaster = inFormat.read()
+//
+//        Point pt = new Point(-175.0, 84.6)
+//        assertEquals(-inRaster.getValue(pt, 0), outRaster.getValue(pt, 0), 0.1)
+//        pt = new Point(-174.2, 85.0)
+//        assertEquals(-inRaster.getValue(pt, 0), outRaster.getValue(pt, 0), 0.1)
+//    }
 
     @Test
     void runAsCommandLineWithFiles() {
@@ -83,22 +83,22 @@ class InvertCommandTest extends BaseTest {
         assertEquals(255 - inRaster.getValue(pt, 0), outRaster.getValue(pt, 0), 0.1)
     }
 
-    @Test
-    void runAsCommandLineWithString() {
-        StringReader reader = getStringReader("raster.asc")
-        String result = runApp([
-                "raster invert"
-        ], reader.text)
-
-        ArcGrid outFormat = new ArcGrid(new ReaderInputStream(new StringReader(result)))
-        Raster outRaster = outFormat.read()
-        assertNotNull(outRaster)
-        ArcGrid inFormat = new ArcGrid(getStringReader("raster.asc").text)
-        Raster inRaster = inFormat.read()
-
-        Point pt = new Point(-175.0, 84.6)
-        assertEquals(-inRaster.getValue(pt, 0), outRaster.getValue(pt, 0), 0.1)
-        pt = new Point(-174.2, 85.0)
-        assertEquals(-inRaster.getValue(pt, 0), outRaster.getValue(pt, 0), 0.1)
-    }
+//    @Test
+//    void runAsCommandLineWithString() {
+//        StringReader reader = getStringReader("raster.asc")
+//        String result = runApp([
+//                "raster invert"
+//        ], reader.text)
+//
+//        ArcGrid outFormat = new ArcGrid(new ReaderInputStream(new StringReader(result)))
+//        Raster outRaster = outFormat.read()
+//        assertNotNull(outRaster)
+//        ArcGrid inFormat = new ArcGrid(getStringReader("raster.asc").text)
+//        Raster inRaster = inFormat.read()
+//
+//        Point pt = new Point(-175.0, 84.6)
+//        assertEquals(-inRaster.getValue(pt, 0), outRaster.getValue(pt, 0), 0.1)
+//        pt = new Point(-174.2, 85.0)
+//        assertEquals(-inRaster.getValue(pt, 0), outRaster.getValue(pt, 0), 0.1)
+//    }
 }

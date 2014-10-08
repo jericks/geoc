@@ -62,7 +62,7 @@ class SplitByLayerCommandTest extends BaseTest {
         )
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("polygons.csv"), w)
-        assertEquals """csv_1_1
+        assertStringsEqual """csv_1_1
 "the_geom:Polygon","id:String","row:String","col:String"
 "POLYGON ((0 0, 0 5, 5 5, 5 0, 0 0))","0","0","0"
 "POLYGON ((5 0, 5 5, 5 0, 5 0))","2","0","1"
@@ -128,7 +128,7 @@ csv_1_2
 "POLYGON ((5 5, 5 10, 10 10, 10 5, 5 5))","3","1","1"
 
 """
-        assertEquals expected, actual
+        assertStringsEqual expected, actual
     }
 
 }

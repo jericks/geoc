@@ -93,7 +93,7 @@ class GradientStyleCommandTest extends BaseTest {
     </sld:UserStyle>
   </sld:UserLayer>
 </sld:StyledLayerDescriptor>"""
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
     }
 
     @Test
@@ -167,7 +167,7 @@ class GradientStyleCommandTest extends BaseTest {
     </sld:UserStyle>
   </sld:UserLayer>
 </sld:StyledLayerDescriptor>"""
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
     }
 
     @Test
@@ -250,7 +250,7 @@ class GradientStyleCommandTest extends BaseTest {
   </sld:UserLayer>
 </sld:StyledLayerDescriptor>
 """
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
 
         output = runApp([
                 "vector gradientstyle",
@@ -306,6 +306,6 @@ class GradientStyleCommandTest extends BaseTest {
   </sld:UserLayer>
 </sld:StyledLayerDescriptor>
 """
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
     }
 }

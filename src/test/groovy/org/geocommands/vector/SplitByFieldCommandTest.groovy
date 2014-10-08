@@ -80,7 +80,7 @@ csv_row_0
 "POLYGON ((0 0, 0 5, 5 5, 5 0, 0 0))","0","0","0"
 "POLYGON ((5 0, 5 5, 10 5, 10 0, 5 0))","2","0","1"
 """
-        assertEquals expected, actual
+        assertStringsEqual expected, actual
     }
 
     @Test
@@ -136,6 +136,6 @@ csv_row_0
 "POLYGON ((5 0, 5 5, 10 5, 10 0, 5 0))","2","0","1"
 
 """
-        assertEquals expected, actual
+        assertStringsEqual expected, actual
     }
 }

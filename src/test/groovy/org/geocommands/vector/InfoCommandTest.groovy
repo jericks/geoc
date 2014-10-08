@@ -19,7 +19,7 @@ class InfoCommandTest extends BaseTest {
         InfoOptions options = new InfoOptions(inputWorkspace: file.getAbsolutePath())
         StringWriter w = new StringWriter()
         cmd.execute(options, new StringReader(""), w)
-        assertEquals """Name: points
+        assertStringsEqual """Name: points
 Geometry: Point
 Extent: 1.0, 1.0, 10.0, 10.0
 Projection ID: Unknown
@@ -38,7 +38,7 @@ name: String""", w.toString()
         InfoOptions options = new InfoOptions()
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("points.csv"), w)
-        assertEquals """Name: csv
+        assertStringsEqual """Name: csv
 Geometry: Point
 Extent: 1.0, 1.0, 10.0, 10.0
 Projection ID: Unknown
@@ -54,7 +54,7 @@ name: String""", w.toString()
     @Test
     void runAsCommandLine() {
         String str = runApp(["vector info"], readCsv("points.csv").text)
-        assertEquals """Name: csv
+        assertStringsEqual """Name: csv
 Geometry: Point
 Extent: 1.0, 1.0, 10.0, 10.0
 Projection ID: Unknown
@@ -68,7 +68,7 @@ name: String
 
         File file = getResource("points.properties")
         str = runApp(["vector info", "-i", file.absolutePath], "")
-        assertEquals """Name: points
+        assertStringsEqual """Name: points
 Geometry: Point
 Extent: 1.0, 1.0, 10.0, 10.0
 Projection ID: Unknown

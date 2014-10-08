@@ -35,7 +35,7 @@ the_geom,Polygon,false,true
 id,Integer,false,true
 row,Integer,false,true
 col,Integer,false,true"""
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
 
         // Pretty print
         options = new CompareSchemasOptions(
@@ -57,7 +57,7 @@ col,Integer,false,true"""
 | row      | Integer | false  | true     |
 | col      | Integer | false  | true     |
 ------------------------------------------"""
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
     }
 
     @Test
@@ -79,7 +79,7 @@ the_geom,Polygon,false,true
 id,Integer,false,true
 row,Integer,false,true
 col,Integer,false,true"""
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
     }
 
     @Test
@@ -101,7 +101,7 @@ id,Integer,false,true
 row,Integer,false,true
 col,Integer,false,true
 """
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
 
         output = runApp([
                 "vector compareschemas",
@@ -121,7 +121,7 @@ col,Integer,false,true
 | col      | Integer | false | true     |
 -----------------------------------------
 """
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
 
     }
 

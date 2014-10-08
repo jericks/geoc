@@ -52,14 +52,13 @@ class DefaultStyleCommandTest extends BaseTest {
         cmd.execute(options, new StringReader(""), writer)
         String actual = writer.toString()
         String expected = sld
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
     }
 
 
     @Test
     void executeWithCsv() {
         DefaultStyleCommand cmd = new DefaultStyleCommand()
-        File file = getResource("polygons.properties")
         DefaultStyleOptions options = new DefaultStyleOptions(
                 color: "wheat"
         )
@@ -67,7 +66,7 @@ class DefaultStyleCommandTest extends BaseTest {
         cmd.execute(options, readCsv("points.csv"), writer)
         String actual = writer.toString()
         String expected = sld
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
     }
 
     @Test
@@ -80,7 +79,7 @@ class DefaultStyleCommandTest extends BaseTest {
         ], "")
         String actual = output
         String expected = sld + System.getProperty("line.separator")
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
 
         output = runApp([
                 "vector defaultstyle",

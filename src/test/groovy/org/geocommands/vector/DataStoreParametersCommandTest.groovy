@@ -18,7 +18,7 @@ class DataStoreParametersCommandTest extends BaseTest {
         DataStoreParametersOptions options = new DataStoreParametersOptions(name: "Shapefile")
         StringWriter w = new StringWriter()
         cmd.execute(options, new StringReader(""), w)
-        assertEquals """url
+        assertStringsEqual """url
 namespace
 enable spatial index
 create spatial index
@@ -34,7 +34,7 @@ fstype""", w.toString()
     @Test
     void runAsCommandLine() {
         String str = runApp(["vector datastoreparams", "-n", "Shapefile"], "")
-        assertEquals """url
+        assertStringsEqual """url
 namespace
 enable spatial index
 create spatial index

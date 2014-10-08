@@ -87,6 +87,6 @@ class DefaultStyleCommandTest extends BaseTest {
         ], readCsv("points.csv").text)
         actual = output
         expected = sld + System.getProperty("line.separator")
-        assertEquals(expected, actual)
+        assertStringsEqual(expected, actual)
     }
 }

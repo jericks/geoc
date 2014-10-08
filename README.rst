@@ -64,7 +64,7 @@ Here is a longer example that create 100 random points in a GeoPackage database,
 
 Installation
 ------------
-Just download the latest `release <https://github.com/jericks/geoc/release>`_ and put the geoc/bin directory on your path. geoc also requires Java 7.
+Just download the latest `release <https://github.com/jericks/geoc/releases>`_ and put the geoc/bin directory on your path. geoc also requires Java 7.
 
 Getting Help
 ------------

@@ -77,4 +77,19 @@ class Util {
 
     }
 
+    /**
+     * Execute a Groovy Script
+     * @param script The Groovy Script
+     * @param args A Map of variables to provide the script
+     * @return A value
+     */
+    static Object evaluateScript(String script, Map<String,Object> args) {
+        Binding binding = new Binding()
+        args.each{String key, Object value ->
+            binding.setVariable(key, value)
+        }
+        GroovyShell shell = new GroovyShell(binding)
+        shell.evaluate(script)
+    }
+
 }

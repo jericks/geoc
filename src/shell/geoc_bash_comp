@@ -335,7 +335,7 @@ _geoc()
     elif [[ "$line" == *"geoc vector filter "* ]]; then
         COMPREPLY=($(compgen -W '--help -f --filter -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector from "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --format -g --geometry-type -o --output-workspace -r --output-layer -t --text' -- $cur))
+        COMPREPLY=($(compgen -W '--help -f --format -g --geometry-type -o --output-workspace -p --format-options -r --output-layer -t --text' -- $cur))
     elif [[ "$line" == *"geoc vector geomr "* ]]; then
         COMPREPLY=($(compgen -W '--help -o --output-workspace -r --output-layer -t --text' -- $cur))
     elif [[ "$line" == *"geoc vector geomw "* ]]; then
@@ -431,7 +431,7 @@ _geoc()
     elif [[ "$line" == *"geoc vector symdifference "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --include-duplicates -f --first-postfix -i --input-workspace -k --other-workspace -l --input-layer -m --maxfieldname-length -o --output-workspace -p --postfix-all -r --output-layer -s --second-postfix -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector to "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --format -i --input-workspace -l --input-layer -o --format-options' -- $cur))
+        COMPREPLY=($(compgen -W '--help -f --format -i --input-workspace -l --input-layer -p --format-options' -- $cur))
     elif [[ "$line" == *"geoc vector transform "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --definition -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector translate "* ]]; then

@@ -69,9 +69,9 @@ class ToCommandTest extends BaseTest {
         String actual = runApp([
                 "vector to",
                 "-f", "csv",
-                "-o", "type=XY",
-                "-o", "xColumn=x",
-                "-o", "yColumn=y"
+                "-p", "type=XY",
+                "-p", "xColumn=x",
+                "-p", "yColumn=y"
         ], readCsv("points.csv").text)
         String expected = """"x","y","distance","name"
 "1.0","1.0","2","Number 1"
@@ -85,9 +85,9 @@ class ToCommandTest extends BaseTest {
         String actual = runApp([
                 "vector to",
                 "-f", "csv",
-                "-o", "type=XY",
-                "-o", "separator=|",
-                "-o", "encodeFieldType=true"
+                "-p", "type=XY",
+                "-p", "separator=|",
+                "-p", "encodeFieldType=true"
         ], readCsv("points.csv").text)
         String expected = """"the_geom:Point"|"distance:String"|"name:String"
 "1.0,1.0"|"2"|"Number 1"
@@ -109,10 +109,10 @@ class ToCommandTest extends BaseTest {
         String actual = runApp([
                 "vector to",
                 "-f", "georss",
-                "-o", "feedType=rss",
-                "-o", "itemTitle=f['name']",
-                "-o", "itemDescription=f['name'] + ' is ' + f['distance'] + ' miles away'",
-                "-o", "itemDate='11/14/1980'"
+                "-p", "feedType=rss",
+                "-p", "itemTitle=f['name']",
+                "-p", "itemDescription=f['name'] + ' is ' + f['distance'] + ' miles away'",
+                "-p", "itemDate='11/14/1980'"
         ], readCsv("points.csv").text)
         assertTrue actual.contains("<rss xmlns:georss=\"http://www.georss.org/georss\" version=\"2.0\">")
     }
@@ -121,8 +121,8 @@ class ToCommandTest extends BaseTest {
         String actual = runApp([
                 "vector to",
                 "-f", "gml",
-                "-o", "version=3",
-                "-o", "format=false"
+                "-p", "version=3",
+                "-p", "format=false"
         ], readCsv("points.csv").text)
         assertTrue actual.startsWith("<wfs:FeatureCollection")
     }
@@ -131,9 +131,9 @@ class ToCommandTest extends BaseTest {
         String actual = runApp([
                 "vector to",
                 "-f", "gpx",
-                "-o", "version=1.1",
-                "-o", "includeAttributes=true",
-                "-o", "name=f['name']"
+                "-p", "version=1.1",
+                "-p", "includeAttributes=true",
+                "-p", "name=f['name']"
         ], readCsv("points.csv").text)
         assertTrue actual.contains("<gpx xmlns:ogr=\"http://www.gdal.org/ogr/\" xmlns=\"http://www.topografix.com/GPX/1/1\" version=\"1.1\" creator=\"geoscript\">")
     }

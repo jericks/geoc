@@ -4,7 +4,9 @@ import geoscript.feature.Schema
 import geoscript.layer.Layer
 import geoscript.layer.io.CsvReader
 import geoscript.layer.io.GeoJSONReader
+import geoscript.layer.io.GeoRSSReader
 import geoscript.layer.io.GmlReader
+import geoscript.layer.io.GpxReader
 import geoscript.layer.io.KmlReader
 import geoscript.workspace.Memory
 import geoscript.workspace.Workspace
@@ -45,18 +47,34 @@ class FromCommand extends LayerOutCommand<FromOptions> {
         // Read in the Layer
         geoscript.layer.io.Reader layerReader
         if (options.format.equalsIgnoreCase("csv")) {
-            layerReader = new CsvReader()
+            CsvReader.Type type = CsvReader.Type.valueOf(options.formatOptions.get("type","WKT"))
+            String xColumn = options.formatOptions.get("xColumn")
+            String yColumn = options.formatOptions.get("yColumn")
+            String column = options.formatOptions.get("column")
+            if (xColumn != null && yColumn != null) {
+                layerReader = new CsvReader(options.formatOptions, xColumn, yColumn, type)
+            } else if (column) {
+                layerReader = new CsvReader(options.formatOptions, column, type)
+            } else {
+                layerReader = new CsvReader(options.formatOptions, type)
+            }
         } else if (options.format.equalsIgnoreCase("geojson")) {
             layerReader = new GeoJSONReader()
+        } else if (options.format.equalsIgnoreCase("georss")) {
+            layerReader = new GeoRSSReader()
         } else if (options.format.equalsIgnoreCase("gml")) {
             layerReader = new GmlReader()
+        } else if (options.format.equalsIgnoreCase("gpx")) {
+            GpxReader.Type type = GpxReader.Type.valueOf(options.formatOptions.get("type", "WayPointsRoutesTracks"))
+            options.formatOptions.type = type
+            layerReader = new GpxReader(options.formatOptions)
         } else if (options.format.equalsIgnoreCase("kml")) {
             layerReader = new KmlReader()
         } else {
             throw new Exception("Unknown ${options.format} format!")
         }
         String text = options.text ?: reader.text
-        Layer layer = layerReader.read(text)
+        Layer layer = layerReader.read(options.formatOptions, text)
 
         // Create output Schema
         List fields = layer.schema.fields
@@ -96,5 +114,7 @@ class FromCommand extends LayerOutCommand<FromOptions> {
         @Option(name = "-g", aliases = "--geometry-type", usage = "The geometry type", required = false)
         String geometryType
 
+        @Option(name = "-p", aliases = "--format-options", usage = "A format options 'key=value'", required = false)
+        Map<String, String> formatOptions = [:]
     }
 }

@@ -80,4 +80,25 @@ class FromCommandTest extends BaseTest {
             assertNotNull f.geom
         }
     }
+
+    @Test void runCsv() {
+        String actual = runApp([
+                "vector from",
+                "-f", "csv",
+                "-p", "type=XY",
+                "-p", "xColumn=x",
+                "-p", "yColumn=y"
+        ], """"x","y","distance","name"
+"1.0","1.0","2","Number 1"
+"10.0","10.0","1","Number 2"
+"2.0","8.0","5","Number 3"
+""")
+        String expected = """"x:String","y:String","distance:String","name:String","geom:Point"
+"1.0","1.0","2","Number 1","POINT (1 1)"
+"10.0","10.0","1","Number 2","POINT (10 10)"
+"2.0","8.0","5","Number 3","POINT (2 8)"
+
+"""
+        assertStringsEqual actual, expected
+    }
 }

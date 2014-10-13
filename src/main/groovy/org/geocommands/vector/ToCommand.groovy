@@ -90,7 +90,7 @@ class ToCommand extends LayerCommand<ToOptions> {
         @Option(name = "-f", aliases = "--format", usage = "The string format (CSV, GeoJSON, KML, GML)", required = true)
         String format
 
-        @Option(name = "-o", aliases = "--format-options", usage = "A format options 'key=value'", required = false)
+        @Option(name = "-p", aliases = "--format-options", usage = "A format options 'key=value'", required = false)
         Map<String, String> formatOptions = [:]
     }
 

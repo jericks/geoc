@@ -289,8 +289,14 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector copy "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --field -f --filter -i --input-workspace -l --input-layer -m --max -o --output-workspace -r --output-layer -s --sort -t --start' -- $cur))
-    elif [[ "$line" == *"geoc vector count "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -t --type' -- $cur))
+    elif [[ "$line" == *"geoc vector count featuresInfeature "* ]]; then
+        COMPREPLY=($(compgen -W '--help -f --count-fieldname -i --input-workspace -k --other-workspace -l --input-layer -o --output-workspace -r --output-layer -y --other-layer' -- $cur))
+    elif [[ "$line" == *"geoc vector count " ]]; then
+        COMPREPLY=($(compgen -W ' featuresInfeature'))
+    elif [[ "$line" == *"geoc vector count"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "vector count featuresInfeature" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' featuresInfeature'))
+        fi
     elif [[ "$line" == *"geoc vector create "* ]]; then
         COMPREPLY=($(compgen -W '--help -f --field -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector database select "* ]]; then

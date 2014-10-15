@@ -1,0 +1,28 @@
+.TH "geoc-vector-count-featuresInfeature" "1" "14 October 2014" "version 0.1"
+.SH NAME
+geoc vector count featuresInfeature
+.SH DESCRIPTION
+Count the number of features in a feature
+.SH USAGE
+geoc vector grid -g "0,0,10,10" -x 10 -y 10 -o grid.shp
+
+geoc vector randompoints -g "0 0 10 10" -n 100 -o points.shp
+
+geoc vector count featuresinfeature -i grid.shp -k points.shp -o grid_count.shp
+.SH OPTIONS
+-f --count-fieldname: The name for the count Field
+.PP
+-k --other-workspace: The other workspace
+.PP
+-y --other-layer: The other layer
+.PP
+-o --output-workspace: The output workspace
+.PP
+-r --output-layer: The output layer
+.PP
+-i --input-workspace: The input workspace
+.PP
+-l --input-layer: The input layer
+.PP
+--help : Print the help message
+.PP

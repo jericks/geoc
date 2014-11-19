@@ -50,7 +50,7 @@ class Util {
                     "http://otile4.mqcdn.com/tiles/1.0.0/map"
             ])
             layers.add(0, osm)
-        } else if (basemap.equalsIgnoreCase("mapquest-satelite")) {
+        } else if (basemap.equalsIgnoreCase("mapquest-satellite")) {
             OSM osm = new OSM("MapQuest Satellite Map", [
                     "http://otile1.mqcdn.com/tiles/1.0.0/sat",
                     "http://otile2.mqcdn.com/tiles/1.0.0/sat",

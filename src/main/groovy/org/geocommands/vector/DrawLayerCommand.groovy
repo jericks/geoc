@@ -52,8 +52,6 @@ class DrawLayerCommand extends LayerCommand<DrawLayerOptions> {
         map.render(options.file ? options.file : new File("${['pdf', 'svg'].contains(options.type) ? "document" : "image"}.${options.type}"))
     }
 
-
-
     private static class DrawLayerOptions extends LayerOptions {
 
         @Option(name = "-f", aliases = "--file", usage = "The output file", required = false)
@@ -74,7 +72,7 @@ class DrawLayerCommand extends LayerCommand<DrawLayerOptions> {
         @Option(name = "-b", aliases = "--bounds", usage = "The bounds", required = false)
         String bounds
 
-        @Option(name = "-m", aliases = "--base-map", usage = "The base map (can be a OSM tile set, shapefile, or Groovy script that returns Layers)", required = false)
+        @Option(name = "-m", aliases = "--base-map", usage = "The base map (can be a OSM tile set like stamen-toner, stamen-toner-lite, stamen-watercolor, mapquest-street, mapquest-satellite, shapefile, or Groovy script that returns Layers)", required = false)
         String baseMap
     }
 

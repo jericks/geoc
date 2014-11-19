@@ -100,6 +100,7 @@ org.geocommands.vector.SquircleCommand
 org.geocommands.vector.DatabaseSelectCommand
 org.geocommands.vector.DatabaseSqlCommand
 org.geocommands.vector.CountFeaturesInFeatureCommand
+org.geocommands.vector.SnapPointsToLinesCommand
 
 org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand

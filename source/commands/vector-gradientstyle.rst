@@ -1,0 +1,28 @@
+vector gradientstyle
+====================
+
+**Name**:
+
+geom vector gradientstyle
+
+**Description**:
+
+Create a gradient SLD for the Layer.
+
+**Arguments**:
+
+   * -f --field: The field name
+
+   * -n --number: The number of categories
+
+   * -c --colors: The color brewer palette name or a list of colors (space delimited)
+
+   * -m --method: The classification method (Quantile or EqualInterval)
+
+   * -e --else-mode: The else mode (ignore, min, max)
+
+   * -i --input-workspace: The input workspace
+
+   * -l --input-layer: The input layer
+
+   * --help : Print the help message

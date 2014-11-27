@@ -1,0 +1,26 @@
+vector count
+============
+
+**Name**:
+
+geom vector count
+
+**Description**:
+
+Count the features, geometries, or points in a Layer
+
+**Arguments**:
+
+   * -t --type: Count features, geometries, or points
+
+   * -i --input-workspace: The input workspace
+
+   * -l --input-layer: The input layer
+
+   * --help : Print the help message
+
+
+
+**Example**::
+
+    null

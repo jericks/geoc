@@ -1,0 +1,48 @@
+vector barnessurface
+====================
+
+**Name**:
+
+geom vector barnessurface
+
+**Description**:
+
+Create a barnes surface of the features from the input layer
+
+**Arguments**:
+
+   * -v --value-field: The name of the value field
+
+   * -d --data-limit: The maximum number of features to process
+
+   * -s --scale: The interpolation length
+
+   * -c --convergence: The refinement factor
+
+   * -p --passes: The number of passes
+
+   * -m --min-observations: The minimum number of observations to be a grid cell
+
+   * -x --max-observation-distance: The max distance for an observation to be a grid cell
+
+   * -n --no-data: The no data value
+
+   * -e --pixels-per-cell: The resolution of the computed grid
+
+   * -q --query-buffer: The query buffer
+
+   * -b --bounds: The output bounds
+
+   * -w --width: The output width
+
+   * -h --height: The output height
+
+   * -i --input-workspace: The input workspace
+
+   * -l --input-layer: The input layer
+
+   * -o --output-raster: The output raster
+
+   * -f --output-raster-format: The output raster format
+
+   * --help : Print the help message

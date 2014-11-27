@@ -1,0 +1,26 @@
+vector page
+===========
+
+**Name**:
+
+geom vector page
+
+**Description**:
+
+Page through Feature in the input Layer
+
+**Arguments**:
+
+   * -m --max: The maximum number of Features to include
+
+   * -t --start: The index of the Feature to start at
+
+   * -o --output-workspace: The output workspace
+
+   * -r --output-layer: The output layer
+
+   * -i --input-workspace: The input workspace
+
+   * -l --input-layer: The input layer
+
+   * --help : Print the help message

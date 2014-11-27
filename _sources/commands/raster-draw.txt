@@ -1,0 +1,34 @@
+raster draw
+===========
+
+**Name**:
+
+geom raster draw
+
+**Description**:
+
+Draw a Raster to an image
+
+**Arguments**:
+
+   * -f --file: The output file
+
+   * -t --type: The type of document
+
+   * -w --width: The width
+
+   * -h --height: The height
+
+   * -s --sld-file: The sld file
+
+   * -b --bounds: The bounds
+
+   * -m --base-map: The base map (can be a OSM tile set, shapefile, or Groovy script that returns Layers)
+
+   * -i --input-raster: The input raster
+
+   * -l --input-raster-name: The input raster name
+
+   * -p --input-projection: The input projection
+
+   * --help : Print the help message

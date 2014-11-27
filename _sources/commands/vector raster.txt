@@ -1,0 +1,36 @@
+vector raster
+=============
+
+**Name**:
+
+geom vector raster
+
+**Description**:
+
+Convert a vector Layer to a Raster
+
+**Arguments**:
+
+   * -d --field: The field name with value
+
+   * -s --grid-size: The grid size
+
+   * -b --bounds: The bounds
+
+   * -n --raster-name: The raster name
+
+   * -i --input-workspace: The input workspace
+
+   * -l --input-layer: The input layer
+
+   * -o --output-raster: The output raster
+
+   * -f --output-raster-format: The output raster format
+
+   * --help : Print the help message
+
+
+
+**Example**::
+
+    null

@@ -1,0 +1,36 @@
+vector subset
+=============
+
+**Name**:
+
+geom vector subset
+
+**Description**:
+
+Extract a subset of Features from the input Layer
+
+**Arguments**:
+
+   * -f --filter: The CQL Filter
+
+   * -s --sort: The sort field
+
+   * -m --max: The maximum number of Features to include
+
+   * -t --start: The index of the Feature to start at
+
+   * -o --output-workspace: The output workspace
+
+   * -r --output-layer: The output layer
+
+   * -i --input-workspace: The input workspace
+
+   * -l --input-layer: The input layer
+
+   * --help : Print the help message
+
+
+
+**Example**::
+
+    null

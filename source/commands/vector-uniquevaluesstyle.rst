@@ -1,0 +1,22 @@
+vector uniquevaluesstyle
+========================
+
+**Name**:
+
+geom vector uniquevaluesstyle
+
+**Description**:
+
+Create an SLD document where each unique value in the Layer is a rule.
+
+**Arguments**:
+
+   * -f --field: The field name
+
+   * -c --colors: The color brewer palette name or a list of colors (space delimited)
+
+   * -i --input-workspace: The input workspace
+
+   * -l --input-layer: The input layer
+
+   * --help : Print the help message

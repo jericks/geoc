@@ -21,7 +21,8 @@ Contents:
    datasources.rst
    examples.rst
    commands.rst
-
+   build.rst
+   help.rst
 
 Indices and tables
 ==================

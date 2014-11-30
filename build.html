@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -8,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; geoc 0.2 documentation</title>
+  <title>Build &mdash; geoc 0.2 documentation</title>
   
 
   
@@ -29,7 +28,9 @@
   
 
   
-    <link rel="top" title="geoc 0.2 documentation" href="index.html"/> 
+    <link rel="top" title="geoc 0.2 documentation" href="index.html"/>
+        <link rel="next" title="Help" href="help.html"/>
+        <link rel="prev" title="raster animatedgif" href="commands/raster-animatedgif.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -56,7 +57,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="keyfeatures.html">Key Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasources.html">Data Sources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
@@ -195,7 +196,7 @@
 <li class="toctree-l2"><a class="reference internal" href="commands/raster-animatedgif.html">raster animatedgif</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="build.html">Build</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
 </ul>
 
@@ -220,8 +221,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li></li>
+    <li>Build</li>
       <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/build.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -229,16 +232,32 @@
 </div>
           <div role="main">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="build">
+<h1>Build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h1>
+<p>Building geoc is very easy but you will need Java 7 and Maven 3.</p>
+<p>Check it out:</p>
+<div class="highlight-python"><div class="highlight"><pre>git checkout https://github.com/jericks/geoc.git
+</pre></div>
+</div>
+<p>Build it:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd geoc
+mvn clean install
+</pre></div>
+</div>
 </div>
 
 
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="help.html" class="btn btn-neutral float-right" title="Help"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="commands/raster-animatedgif.html" class="btn btn-neutral" title="raster animatedgif"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

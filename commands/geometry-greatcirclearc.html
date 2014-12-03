@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector append &mdash; geoc 0.2 documentation</title>
+  <title>geometry greatcirclearc &mdash; geoc 0.2 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.2 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector merge" href="vector-merge.html"/>
-        <link rel="prev" title="vector dissolveintersecting" href="vector-dissolveintersecting.html"/> 
+        <link rel="next" title="geometry orthodromicdistance" href="geometry-orthodromicdistance.html"/>
+        <link rel="prev" title="geometry dd2pt" href="geometry-dd2pt.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -68,7 +68,7 @@
 <li class="toctree-l2"><a class="reference internal" href="style-css2sld.html">style css2sld</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-convert.html">geometry convert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-dd2pt.html">geometry dd2pt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geometry-greatcirclearc.html">geometry greatcirclearc</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">geometry greatcirclearc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-orthodromicdistance.html">geometry orthodromicdistance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-plot.html">geometry plot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-pt2dd.html">geometry pt2dd</a></li>
@@ -123,7 +123,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-splitbylayer.html">vector splitbylayer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-dissolvebyfield.html">vector dissolvebyfield</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-dissolveintersecting.html">vector dissolveintersecting</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector append</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-append.html">vector append</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-merge.html">vector merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-clip.html">vector clip</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-union.html">vector union</a></li>
@@ -225,10 +225,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector append</li>
+    <li>geometry greatcirclearc</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-append.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/geometry-greatcirclearc.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -236,22 +236,26 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-append">
-<h1>vector append<a class="headerlink" href="#vector-append" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="geometry-greatcirclearc">
+<h1>geometry greatcirclearc<a class="headerlink" href="#geometry-greatcirclearc" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geom vector append</p>
+<p>geom geometry greatcirclearc</p>
 <p><strong>Description</strong>:</p>
-<p>Append the Features from an other Layer to the input Layer</p>
+<p>Calculate the orthodromic distance between two points.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-k &#8211;other-workspace: The other workspace</li>
-<li>-y &#8211;other-layer: The other layer</li>
-<li>-i &#8211;input-workspace: The input workspace</li>
-<li>-l &#8211;input-layer: The input layer</li>
+<li>-e &#8211;ellipsoid: The ellipsoid</li>
+<li>-p &#8211;start-point: The start point</li>
+<li>-t &#8211;end-point: The end point</li>
+<li>-n &#8211;num-points: The number of points</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
+<p><strong>Example</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>geoc geometry greatcirclearc -p &quot;POINT (-122 48)&quot; -t &quot;POINT (-77 39)&quot;
+</pre></div>
+</div>
 </div>
 
 
@@ -260,10 +264,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-merge.html" class="btn btn-neutral float-right" title="vector merge"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="geometry-orthodromicdistance.html" class="btn btn-neutral float-right" title="geometry orthodromicdistance"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-dissolveintersecting.html" class="btn btn-neutral" title="vector dissolveintersecting"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="geometry-dd2pt.html" class="btn btn-neutral" title="geometry dd2pt"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

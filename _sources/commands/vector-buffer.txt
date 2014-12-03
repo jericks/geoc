@@ -3,7 +3,7 @@ vector buffer
 
 **Name**:
 
-geom vector buffer
+geoc vector buffer
 
 **Description**:
 

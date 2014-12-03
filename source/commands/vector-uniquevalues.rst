@@ -3,7 +3,7 @@ vector uniquevalues
 
 **Name**:
 
-geom vector uniquevalues
+geoc vector uniquevalues
 
 **Description**:
 

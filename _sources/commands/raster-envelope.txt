@@ -3,7 +3,7 @@ raster envelope
 
 **Name**:
 
-geom raster envelope
+geoc raster envelope
 
 **Description**:
 

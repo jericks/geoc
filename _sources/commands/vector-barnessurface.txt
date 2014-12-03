@@ -3,7 +3,7 @@ vector barnessurface
 
 **Name**:
 
-geom vector barnessurface
+geoc vector barnessurface
 
 **Description**:
 

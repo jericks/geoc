@@ -3,7 +3,7 @@ vector supercircle
 
 **Name**:
 
-geom vector supercircle
+geoc vector supercircle
 
 **Description**:
 

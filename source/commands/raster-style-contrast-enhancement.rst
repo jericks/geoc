@@ -3,7 +3,7 @@ raster style contrast enhancement
 
 **Name**:
 
-geom raster style contrast enhancement
+geoc raster style contrast enhancement
 
 **Description**:
 

@@ -3,7 +3,7 @@ vector heatmap
 
 **Name**:
 
-geom vector heatmap
+geoc vector heatmap
 
 **Description**:
 

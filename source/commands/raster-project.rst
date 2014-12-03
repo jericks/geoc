@@ -3,7 +3,7 @@ raster project
 
 **Name**:
 
-geom raster project
+geoc raster project
 
 **Description**:
 

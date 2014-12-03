@@ -3,7 +3,7 @@ raster contour
 
 **Name**:
 
-geom raster contour
+geoc raster contour
 
 **Description**:
 

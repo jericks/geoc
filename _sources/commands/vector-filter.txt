@@ -3,7 +3,7 @@ vector filter
 
 **Name**:
 
-geom vector filter
+geoc vector filter
 
 **Description**:
 

@@ -3,7 +3,7 @@ vector pointstacker
 
 **Name**:
 
-geom vector pointstacker
+geoc vector pointstacker
 
 **Description**:
 

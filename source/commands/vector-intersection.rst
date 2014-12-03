@@ -3,7 +3,7 @@ vector intersection
 
 **Name**:
 
-geom vector intersection
+geoc vector intersection
 
 **Description**:
 

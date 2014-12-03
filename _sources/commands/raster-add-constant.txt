@@ -3,7 +3,7 @@ raster add constant
 
 **Name**:
 
-geom raster add constant
+geoc raster add constant
 
 **Description**:
 

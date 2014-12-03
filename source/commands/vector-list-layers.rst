@@ -3,7 +3,7 @@ vector list layers
 
 **Name**:
 
-geom vector list layers
+geoc vector list layers
 
 **Description**:
 

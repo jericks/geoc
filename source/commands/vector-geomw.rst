@@ -3,7 +3,7 @@ vector geomw
 
 **Name**:
 
-geom vector geomw
+geoc vector geomw
 
 **Description**:
 

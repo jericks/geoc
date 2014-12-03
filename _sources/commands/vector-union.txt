@@ -3,7 +3,7 @@ vector union
 
 **Name**:
 
-geom vector union
+geoc vector union
 
 **Description**:
 

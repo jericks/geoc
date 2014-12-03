@@ -3,7 +3,7 @@ vector page
 
 **Name**:
 
-geom vector page
+geoc vector page
 
 **Description**:
 

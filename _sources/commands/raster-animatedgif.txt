@@ -3,7 +3,7 @@ raster animatedgif
 
 **Name**:
 
-geom raster animatedgif
+geoc raster animatedgif
 
 **Description**:
 

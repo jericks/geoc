@@ -3,7 +3,7 @@ vector translate
 
 **Name**:
 
-geom vector translate
+geoc vector translate
 
 **Description**:
 

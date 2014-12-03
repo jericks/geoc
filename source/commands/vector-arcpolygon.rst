@@ -3,7 +3,7 @@ vector arcpolygon
 
 **Name**:
 
-geom vector arcpolygon
+geoc vector arcpolygon
 
 **Description**:
 

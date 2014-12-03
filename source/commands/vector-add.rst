@@ -3,7 +3,7 @@ vector add
 
 **Name**:
 
-geom vector add
+geoc vector add
 
 **Description**:
 

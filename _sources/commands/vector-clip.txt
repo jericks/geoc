@@ -3,7 +3,7 @@ vector clip
 
 **Name**:
 
-geom vector clip
+geoc vector clip
 
 **Description**:
 

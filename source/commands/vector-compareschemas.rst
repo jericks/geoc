@@ -3,7 +3,7 @@ vector compareschemas
 
 **Name**:
 
-geom vector compareschemas
+geoc vector compareschemas
 
 **Description**:
 

@@ -3,7 +3,7 @@ raster mapalgebra
 
 **Name**:
 
-geom raster mapalgebra
+geoc raster mapalgebra
 
 **Description**:
 

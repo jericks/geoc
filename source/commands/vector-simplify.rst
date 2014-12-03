@@ -3,7 +3,7 @@ vector simplify
 
 **Name**:
 
-geom vector simplify
+geoc vector simplify
 
 **Description**:
 

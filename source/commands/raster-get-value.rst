@@ -3,7 +3,7 @@ raster get value
 
 **Name**:
 
-geom raster get value
+geoc raster get value
 
 **Description**:
 

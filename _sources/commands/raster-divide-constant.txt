@@ -3,7 +3,7 @@ raster divide constant
 
 **Name**:
 
-geom raster divide constant
+geoc raster divide constant
 
 **Description**:
 

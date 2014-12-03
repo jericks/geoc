@@ -3,7 +3,7 @@ vector project
 
 **Name**:
 
-geom vector project
+geoc vector project
 
 **Description**:
 

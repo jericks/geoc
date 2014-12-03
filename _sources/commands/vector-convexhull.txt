@@ -3,7 +3,7 @@ vector convexhull
 
 **Name**:
 
-geom vector convexhull
+geoc vector convexhull
 
 **Description**:
 

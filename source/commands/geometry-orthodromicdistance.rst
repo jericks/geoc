@@ -3,7 +3,7 @@ geometry orthodromicdistance
 
 **Name**:
 
-geom geometry orthodromicdistance
+geoc geometry orthodromicdistance
 
 **Description**:
 

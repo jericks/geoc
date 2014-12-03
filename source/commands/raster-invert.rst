@@ -3,7 +3,7 @@ raster invert
 
 **Name**:
 
-geom raster invert
+geoc raster invert
 
 **Description**:
 

@@ -3,7 +3,7 @@ vector scale
 
 **Name**:
 
-geom vector scale
+geoc vector scale
 
 **Description**:
 

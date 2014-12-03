@@ -3,7 +3,7 @@ vector snap points2lines
 
 **Name**:
 
-geom vector snap points2lines
+geoc vector snap points2lines
 
 **Description**:
 

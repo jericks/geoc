@@ -3,7 +3,7 @@ raster scale
 
 **Name**:
 
-geom raster scale
+geoc raster scale
 
 **Description**:
 

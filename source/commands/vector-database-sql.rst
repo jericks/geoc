@@ -3,7 +3,7 @@ vector database sql
 
 **Name**:
 
-geom vector database sql
+geoc vector database sql
 
 **Description**:
 

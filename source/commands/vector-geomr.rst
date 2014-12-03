@@ -3,7 +3,7 @@ vector geomr
 
 **Name**:
 
-geom vector geomr
+geoc vector geomr
 
 **Description**:
 

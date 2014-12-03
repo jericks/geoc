@@ -3,7 +3,7 @@ raster add
 
 **Name**:
 
-geom raster add
+geoc raster add
 
 **Description**:
 

@@ -3,7 +3,7 @@ vector addareafield
 
 **Name**:
 
-geom vector addareafield
+geoc vector addareafield
 
 **Description**:
 

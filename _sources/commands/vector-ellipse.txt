@@ -3,7 +3,7 @@ vector ellipse
 
 **Name**:
 
-geom vector ellipse
+geoc vector ellipse
 
 **Description**:
 

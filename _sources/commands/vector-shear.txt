@@ -3,7 +3,7 @@ vector shear
 
 **Name**:
 
-geom vector shear
+geoc vector shear
 
 **Description**:
 

@@ -3,7 +3,7 @@ vector splitbylayer
 
 **Name**:
 
-geom vector splitbylayer
+geoc vector splitbylayer
 
 **Description**:
 

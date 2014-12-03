@@ -3,7 +3,7 @@ vector dissolveintersecting
 
 **Name**:
 
-geom vector dissolveintersecting
+geoc vector dissolveintersecting
 
 **Description**:
 

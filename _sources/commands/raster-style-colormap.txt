@@ -3,7 +3,7 @@ raster style colormap
 
 **Name**:
 
-geom raster style colormap
+geoc raster style colormap
 
 **Description**:
 

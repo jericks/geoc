@@ -3,7 +3,7 @@ vector mincircles
 
 **Name**:
 
-geom vector mincircles
+geoc vector mincircles
 
 **Description**:
 

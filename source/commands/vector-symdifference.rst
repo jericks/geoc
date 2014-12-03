@@ -3,7 +3,7 @@ vector symdifference
 
 **Name**:
 
-geom vector symdifference
+geoc vector symdifference
 
 **Description**:
 

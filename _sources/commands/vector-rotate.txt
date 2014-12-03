@@ -3,7 +3,7 @@ vector rotate
 
 **Name**:
 
-geom vector rotate
+geoc vector rotate
 
 **Description**:
 

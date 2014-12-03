@@ -3,7 +3,7 @@ vector count
 
 **Name**:
 
-geom vector count
+geoc vector count
 
 **Description**:
 

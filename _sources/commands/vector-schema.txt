@@ -3,7 +3,7 @@ vector schema
 
 **Name**:
 
-geom vector schema
+geoc vector schema
 
 **Description**:
 

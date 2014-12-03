@@ -3,7 +3,7 @@ raster style channel selection
 
 **Name**:
 
-geom raster style channel selection
+geoc raster style channel selection
 
 **Description**:
 

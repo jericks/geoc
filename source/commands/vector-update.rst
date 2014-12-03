@@ -3,7 +3,7 @@ vector update
 
 **Name**:
 
-geom vector update
+geoc vector update
 
 **Description**:
 

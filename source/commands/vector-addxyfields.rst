@@ -3,7 +3,7 @@ vector addxyfields
 
 **Name**:
 
-geom vector addxyfields
+geoc vector addxyfields
 
 **Description**:
 

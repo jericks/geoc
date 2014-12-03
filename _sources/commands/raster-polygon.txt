@@ -3,7 +3,7 @@ raster polygon
 
 **Name**:
 
-geom raster polygon
+geoc raster polygon
 
 **Description**:
 

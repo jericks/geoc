@@ -3,7 +3,7 @@ vector identity
 
 **Name**:
 
-geom vector identity
+geoc vector identity
 
 **Description**:
 

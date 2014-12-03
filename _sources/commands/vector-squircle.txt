@@ -3,7 +3,7 @@ vector squircle
 
 **Name**:
 
-geom vector squircle
+geoc vector squircle
 
 **Description**:
 

@@ -3,7 +3,7 @@ vector octagonalenvelope
 
 **Name**:
 
-geom vector octagonalenvelope
+geoc vector octagonalenvelope
 
 **Description**:
 

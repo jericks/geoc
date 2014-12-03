@@ -3,7 +3,7 @@ vector removefields
 
 **Name**:
 
-geom vector removefields
+geoc vector removefields
 
 **Description**:
 

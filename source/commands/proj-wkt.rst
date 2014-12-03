@@ -3,7 +3,7 @@ proj wkt
 
 **Name**:
 
-geom proj wkt
+geoc proj wkt
 
 **Description**:
 

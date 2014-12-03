@@ -3,7 +3,7 @@ vector single2multiple
 
 **Name**:
 
-geom vector single2multiple
+geoc vector single2multiple
 
 **Description**:
 

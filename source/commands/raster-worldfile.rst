@@ -3,7 +3,7 @@ raster worldfile
 
 **Name**:
 
-geom raster worldfile
+geoc raster worldfile
 
 **Description**:
 

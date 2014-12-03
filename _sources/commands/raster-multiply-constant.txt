@@ -3,7 +3,7 @@ raster multiply constant
 
 **Name**:
 
-geom raster multiply constant
+geoc raster multiply constant
 
 **Description**:
 

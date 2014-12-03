@@ -3,7 +3,7 @@ vector database select
 
 **Name**:
 
-geom vector database select
+geoc vector database select
 
 **Description**:
 

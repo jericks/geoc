@@ -3,7 +3,7 @@ vector randompoints
 
 **Name**:
 
-geom vector randompoints
+geoc vector randompoints
 
 **Description**:
 

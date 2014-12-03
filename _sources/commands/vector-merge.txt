@@ -3,7 +3,7 @@ vector merge
 
 **Name**:
 
-geom vector merge
+geoc vector merge
 
 **Description**:
 

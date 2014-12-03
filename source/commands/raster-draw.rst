@@ -3,7 +3,7 @@ raster draw
 
 **Name**:
 
-geom raster draw
+geoc raster draw
 
 **Description**:
 

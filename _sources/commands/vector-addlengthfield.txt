@@ -3,7 +3,7 @@ vector addlengthfield
 
 **Name**:
 
-geom vector addlengthfield
+geoc vector addlengthfield
 
 **Description**:
 

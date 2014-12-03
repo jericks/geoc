@@ -3,7 +3,7 @@ vector sinestar
 
 **Name**:
 
-geom vector sinestar
+geoc vector sinestar
 
 **Description**:
 

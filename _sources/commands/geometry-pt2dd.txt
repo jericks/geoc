@@ -3,7 +3,7 @@ geometry pt2dd
 
 **Name**:
 
-geom geometry pt2dd
+geoc geometry pt2dd
 
 **Description**:
 

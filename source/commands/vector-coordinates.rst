@@ -3,7 +3,7 @@ vector coordinates
 
 **Name**:
 
-geom vector coordinates
+geoc vector coordinates
 
 **Description**:
 

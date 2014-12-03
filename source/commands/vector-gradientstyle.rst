@@ -3,7 +3,7 @@ vector gradientstyle
 
 **Name**:
 
-geom vector gradientstyle
+geoc vector gradientstyle
 
 **Description**:
 

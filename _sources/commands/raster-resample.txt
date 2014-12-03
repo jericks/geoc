@@ -3,7 +3,7 @@ raster resample
 
 **Name**:
 
-geom raster resample
+geoc raster resample
 
 **Description**:
 

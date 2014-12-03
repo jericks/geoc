@@ -3,7 +3,7 @@ vector validity
 
 **Name**:
 
-geom vector validity
+geoc vector validity
 
 **Description**:
 

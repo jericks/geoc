@@ -3,7 +3,7 @@ raster info
 
 **Name**:
 
-geom raster info
+geoc raster info
 
 **Description**:
 

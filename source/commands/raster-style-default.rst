@@ -3,7 +3,7 @@ raster style default
 
 **Name**:
 
-geom raster style default
+geoc raster style default
 
 **Description**:
 

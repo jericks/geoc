@@ -3,7 +3,7 @@ geometry plot
 
 **Name**:
 
-geom geometry plot
+geoc geometry plot
 
 **Description**:
 

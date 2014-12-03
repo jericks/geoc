@@ -3,7 +3,7 @@ vector interiorpoint
 
 **Name**:
 
-geom vector interiorpoint
+geoc vector interiorpoint
 
 **Description**:
 

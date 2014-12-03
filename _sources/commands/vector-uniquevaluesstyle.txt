@@ -3,7 +3,7 @@ vector uniquevaluesstyle
 
 **Name**:
 
-geom vector uniquevaluesstyle
+geoc vector uniquevaluesstyle
 
 **Description**:
 

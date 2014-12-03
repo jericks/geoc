@@ -3,7 +3,7 @@ vector subset
 
 **Name**:
 
-geom vector subset
+geoc vector subset
 
 **Description**:
 

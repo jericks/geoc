@@ -3,7 +3,7 @@ vector splitbyfield
 
 **Name**:
 
-geom vector splitbyfield
+geoc vector splitbyfield
 
 **Description**:
 

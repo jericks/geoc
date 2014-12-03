@@ -3,7 +3,7 @@ raster to
 
 **Name**:
 
-geom raster to
+geoc raster to
 
 **Description**:
 

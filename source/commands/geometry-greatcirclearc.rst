@@ -3,7 +3,7 @@ geometry greatcirclearc
 
 **Name**:
 
-geom geometry greatcirclearc
+geoc geometry greatcirclearc
 
 **Description**:
 

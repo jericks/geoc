@@ -3,7 +3,7 @@ style css2sld
 
 **Name**:
 
-geom style css2sld
+geoc style css2sld
 
 **Description**:
 

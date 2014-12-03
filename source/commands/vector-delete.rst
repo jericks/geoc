@@ -3,7 +3,7 @@ vector delete
 
 **Name**:
 
-geom vector delete
+geoc vector delete
 
 **Description**:
 

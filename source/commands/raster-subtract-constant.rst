@@ -3,7 +3,7 @@ raster subtract constant
 
 **Name**:
 
-geom raster subtract constant
+geoc raster subtract constant
 
 **Description**:
 

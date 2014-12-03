@@ -3,7 +3,7 @@ raster stylize
 
 **Name**:
 
-geom raster stylize
+geoc raster stylize
 
 **Description**:
 

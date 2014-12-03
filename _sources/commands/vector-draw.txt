@@ -3,7 +3,7 @@ vector draw
 
 **Name**:
 
-geom vector draw
+geoc vector draw
 
 **Description**:
 

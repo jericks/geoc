@@ -3,7 +3,7 @@ raster reclassify
 
 **Name**:
 
-geom raster reclassify
+geoc raster reclassify
 
 **Description**:
 

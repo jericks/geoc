@@ -3,7 +3,7 @@ vector datastoreparams
 
 **Name**:
 
-geom vector datastoreparams
+geoc vector datastoreparams
 
 **Description**:
 

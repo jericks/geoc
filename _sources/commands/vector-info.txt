@@ -3,7 +3,7 @@ vector info
 
 **Name**:
 
-geom vector info
+geoc vector info
 
 **Description**:
 

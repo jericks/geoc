@@ -3,7 +3,7 @@ vector densify
 
 **Name**:
 
-geom vector densify
+geoc vector densify
 
 **Description**:
 

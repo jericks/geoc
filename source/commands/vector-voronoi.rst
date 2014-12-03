@@ -3,7 +3,7 @@ vector voronoi
 
 **Name**:
 
-geom vector voronoi
+geoc vector voronoi
 
 **Description**:
 

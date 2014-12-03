@@ -3,7 +3,7 @@ vector arc
 
 **Name**:
 
-geom vector arc
+geoc vector arc
 
 **Description**:
 

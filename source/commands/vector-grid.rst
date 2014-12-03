@@ -3,7 +3,7 @@ vector grid
 
 **Name**:
 
-geom vector grid
+geoc vector grid
 
 **Description**:
 

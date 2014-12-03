@@ -3,7 +3,7 @@ vector dissolvebyfield
 
 **Name**:
 
-geom vector dissolvebyfield
+geoc vector dissolvebyfield
 
 **Description**:
 

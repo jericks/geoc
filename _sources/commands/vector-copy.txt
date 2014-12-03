@@ -3,7 +3,7 @@ vector copy
 
 **Name**:
 
-geom vector copy
+geoc vector copy
 
 **Description**:
 

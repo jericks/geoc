@@ -3,7 +3,7 @@ vector minrects
 
 **Name**:
 
-geom vector minrects
+geoc vector minrects
 
 **Description**:
 

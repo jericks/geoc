@@ -3,7 +3,7 @@ raster crop
 
 **Name**:
 
-geom raster crop
+geoc raster crop
 
 **Description**:
 

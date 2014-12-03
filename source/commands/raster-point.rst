@@ -3,7 +3,7 @@ raster point
 
 **Name**:
 
-geom raster point
+geoc raster point
 
 **Description**:
 

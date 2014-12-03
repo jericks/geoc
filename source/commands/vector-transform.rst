@@ -3,7 +3,7 @@ vector transform
 
 **Name**:
 
-geom vector transform
+geoc vector transform
 
 **Description**:
 

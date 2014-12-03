@@ -3,7 +3,7 @@ vector count featuresInfeature
 
 **Name**:
 
-geom vector count featuresInfeature
+geoc vector count featuresInfeature
 
 **Description**:
 

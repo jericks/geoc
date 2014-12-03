@@ -3,7 +3,7 @@ vector datastorelist
 
 **Name**:
 
-geom vector datastorelist
+geoc vector datastorelist
 
 **Description**:
 

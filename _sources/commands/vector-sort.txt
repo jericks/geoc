@@ -3,7 +3,7 @@ vector sort
 
 **Name**:
 
-geom vector sort
+geoc vector sort
 
 **Description**:
 

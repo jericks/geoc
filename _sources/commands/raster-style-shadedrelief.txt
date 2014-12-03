@@ -3,7 +3,7 @@ raster style shadedrelief
 
 **Name**:
 
-geom raster style shadedrelief
+geoc raster style shadedrelief
 
 **Description**:
 

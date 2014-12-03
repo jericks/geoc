@@ -3,7 +3,7 @@ vector addidfield
 
 **Name**:
 
-geom vector addidfield
+geoc vector addidfield
 
 **Description**:
 

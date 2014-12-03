@@ -3,7 +3,7 @@ vector defaultstyle
 
 **Name**:
 
-geom vector defaultstyle
+geoc vector defaultstyle
 
 **Description**:
 

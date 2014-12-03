@@ -3,7 +3,7 @@ vector raster
 
 **Name**:
 
-geom vector raster
+geoc vector raster
 
 **Description**:
 

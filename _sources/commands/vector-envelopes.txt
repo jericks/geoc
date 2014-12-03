@@ -3,7 +3,7 @@ vector envelopes
 
 **Name**:
 
-geom vector envelopes
+geoc vector envelopes
 
 **Description**:
 

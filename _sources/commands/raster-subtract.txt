@@ -3,7 +3,7 @@ raster subtract
 
 **Name**:
 
-geom raster subtract
+geoc raster subtract
 
 **Description**:
 

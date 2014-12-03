@@ -3,7 +3,7 @@ vector centroid
 
 **Name**:
 
-geom vector centroid
+geoc vector centroid
 
 **Description**:
 

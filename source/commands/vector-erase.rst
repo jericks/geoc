@@ -3,7 +3,7 @@ vector erase
 
 **Name**:
 
-geom vector erase
+geoc vector erase
 
 **Description**:
 

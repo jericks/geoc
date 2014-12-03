@@ -3,7 +3,7 @@ vector rectangle
 
 **Name**:
 
-geom vector rectangle
+geoc vector rectangle
 
 **Description**:
 

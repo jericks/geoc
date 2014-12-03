@@ -3,7 +3,7 @@ vector delaunay
 
 **Name**:
 
-geom vector delaunay
+geoc vector delaunay
 
 **Description**:
 

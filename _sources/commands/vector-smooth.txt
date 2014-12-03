@@ -3,7 +3,7 @@ vector smooth
 
 **Name**:
 
-geom vector smooth
+geoc vector smooth
 
 **Description**:
 

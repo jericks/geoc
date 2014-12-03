@@ -3,7 +3,7 @@ raster crop with geometry
 
 **Name**:
 
-geom raster crop with geometry
+geoc raster crop with geometry
 
 **Description**:
 

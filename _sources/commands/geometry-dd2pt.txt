@@ -16,3 +16,9 @@ Convert a decimal degrees formatted string into a Point
    * -t --type: The output type
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc geometry dd2pt -d "122d 19m 59.0016s W, 47d 36m 34.9992s N"

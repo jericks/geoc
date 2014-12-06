@@ -16,3 +16,9 @@ Convert CSS to SLD
    * -o --output: The output file
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc style css2sld -i states.css -o states.sld

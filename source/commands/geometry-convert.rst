@@ -20,3 +20,9 @@ Convert a geometry from one format to another
    * -t --type: The output type (geometry, feature, layer)
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc geometry convert -i "POINT (-122 48)" -f geojson

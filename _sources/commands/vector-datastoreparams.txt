@@ -14,3 +14,9 @@ List all parameters for the given DataStore
    * -n --name: The DataStore name
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector datastoreparams -n PostGIS

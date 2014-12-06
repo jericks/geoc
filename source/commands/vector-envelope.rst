@@ -20,3 +20,9 @@ Get the bounding envelope of all the features of the input Layer and save it to 
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector envelope -i states.shp -o states_envelope.shp

@@ -12,3 +12,9 @@ List all available DataStores
 **Arguments**:
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector datastorelist

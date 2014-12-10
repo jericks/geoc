@@ -1,8 +1,10 @@
-.TH "geoc-vector-geomr" "1" "29 July 2014" "version 0.1"
+.TH "geoc-vector-geomr" "1" "9 December 2014" "version 0.1"
 .SH NAME
 geoc vector geomr
 .SH DESCRIPTION
 Convert a text stream of WKT geometries to a Layer
+.SH USAGE
+echo "POINT (1 1)" | geom buffer -d 100 | geom random -n 100 | geom dump | geoc vector geomr
 .SH OPTIONS
 -t --text: The text
 .PP

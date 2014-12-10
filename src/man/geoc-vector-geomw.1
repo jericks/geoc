@@ -1,8 +1,10 @@
-.TH "geoc-vector-geomw" "1" "29 July 2014" "version 0.1"
+.TH "geoc-vector-geomw" "1" "9 December 2014" "version 0.1"
 .SH NAME
 geoc vector geomw
 .SH DESCRIPTION
 Convert the input layer to a text stream of WKT geometries that can be read by the geom commands
+.SH USAGE
+geoc vector geomw -i states.shp | geom combine | geom draw && open image.png
 .SH OPTIONS
 -i --input-workspace: The input workspace
 .PP

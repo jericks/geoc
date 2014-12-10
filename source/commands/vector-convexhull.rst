@@ -20,3 +20,9 @@ Calculate the convex hull of the input Layer and save it to the output Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector convexhull -i states.shp -o state_convexhull.shp

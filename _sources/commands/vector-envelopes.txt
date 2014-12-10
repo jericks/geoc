@@ -20,3 +20,9 @@ Calculate the envelope of each feature in the input Layer and save them to the o
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector envelopes -i states.shp -o state_envelopes.shp

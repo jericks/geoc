@@ -18,3 +18,9 @@ Convert a text stream of WKT geometries to a Layer
    * -r --output-layer: The output layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    echo "POINT (1 1)" | geom buffer -d 100 | geom random -n 100 | geom dump | geoc vector geomr

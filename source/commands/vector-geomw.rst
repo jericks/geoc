@@ -16,3 +16,9 @@ Convert the input layer to a text stream of WKT geometries that can be read by t
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector geomw -i states.shp | geom combine | geom draw && open image.png

@@ -20,3 +20,9 @@ Calculate the minimum bounding circles of each feature in the input Layer and sa
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector mincircles -i states.shp -o state_mincircles.shp

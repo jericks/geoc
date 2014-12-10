@@ -20,3 +20,9 @@ Calculate a voronoi diagram of the input Layer and save it to the output Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector voronoi -i states.shp -o states_voronoi.shp

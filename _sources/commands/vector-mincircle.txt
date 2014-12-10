@@ -20,3 +20,9 @@ Calculate the minimum bounding circle of the input Layer and save them to the ou
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector mincircle -i states.shp -o state_mincircle.shp

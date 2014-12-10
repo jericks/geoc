@@ -20,3 +20,9 @@ Get the centroid of each feature in the input Layer and save them to the output 
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector centroid -i states.shp -o state_centroids.shp

@@ -20,3 +20,9 @@ Calculate the minimum rectangle of the input Layer and save it to the output Lay
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector minrect -i states.shp -o state_minrect.shp

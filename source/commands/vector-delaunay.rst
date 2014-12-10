@@ -20,3 +20,9 @@ Calculate a delaunay triangle diagram of the input Layer and save it to the outp
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector delaunay -i states.shp -o states_delaunay.shp

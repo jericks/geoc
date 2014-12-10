@@ -20,3 +20,9 @@ Calculate the octagonal envelope of the input Layer and save it to the output La
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector octagonalenvelope -i states.shp -o state_octagonalenvelope.shp

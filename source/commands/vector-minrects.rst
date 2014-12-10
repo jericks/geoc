@@ -20,3 +20,9 @@ Calculate the minimum rectangle of each feature in the input Layer and save them
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector minrects -i states.shp -o state_minrects.shp

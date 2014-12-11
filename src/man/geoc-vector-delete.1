@@ -1,8 +1,10 @@
-.TH "geoc-vector-delete" "1" "29 July 2014" "version 0.1"
+.TH "geoc-vector-delete" "1" "10 December 2014" "version 0.1"
 .SH NAME
 geoc vector delete
 .SH DESCRIPTION
 Delete features from a Layer in place
+.SH USAGE
+geoc vector delete -i states.shp -f "STATE_NAME = 'Washington'" -i states_no_wash.shp
 .SH OPTIONS
 -f --filter: The CQL Filter
 .PP

@@ -1,8 +1,10 @@
-.TH "geoc-vector-simplify" "1" "29 July 2014" "version 0.1"
+.TH "geoc-vector-simplify" "1" "10 December 2014" "version 0.1"
 .SH NAME
 geoc vector simplify
 .SH DESCRIPTION
 Simplify the features of the input Layer and save them to the output Layer
+.SH USAGE
+geoc vector simplify -i states.shp -o states_simplified -a DouglasPeucker -d 100
 .SH OPTIONS
 -a --algorithm: The simplify algorithm (DouglasPeucker - dp or TopologyPreserving - tp)
 .PP

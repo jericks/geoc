@@ -1,8 +1,10 @@
-.TH "geoc-vector-filter" "1" "29 July 2014" "version 0.1"
+.TH "geoc-vector-filter" "1" "10 December 2014" "version 0.1"
 .SH NAME
 geoc vector filter
 .SH DESCRIPTION
 Filter features from the input Layer and save them to the output Layer
+.SH USAGE
+geoc vector filter -i states.shp -f "STATE_POP > 1000000" -o states_largepop.shp
 .SH OPTIONS
 -f --filter: The CQL Filter
 .PP

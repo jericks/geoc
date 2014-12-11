@@ -1,8 +1,10 @@
-.TH "geoc-vector-updatefield" "1" "29 July 2014" "version 0.1"
+.TH "geoc-vector-updatefield" "1" "10 December 2014" "version 0.1"
 .SH NAME
 geoc vector updatefield
 .SH DESCRIPTION
 Update the values of a Layer's Field
+.SH USAGE
+geoc vector updatefield -i states_xy.shp -f INCLUDE -s -v "return f.geom.centroid.x" -d x
 .SH OPTIONS
 -d --field: The Field name
 .PP

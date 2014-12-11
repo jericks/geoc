@@ -24,3 +24,9 @@ Simplify the features of the input Layer and save them to the output Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector simplify -i states.shp -o states_simplified -a DouglasPeucker -d 100

@@ -22,3 +22,9 @@ Filter features from the input Layer and save them to the output Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector filter -i states.shp -f "STATE_POP > 1000000" -o states_largepop.shp

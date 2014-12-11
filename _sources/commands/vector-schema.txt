@@ -18,3 +18,9 @@ Get the Layer's schema
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector schema -i states.shp -p

@@ -20,3 +20,9 @@ Extract coordinates from the input Layer and save them to the output Layer.
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector coordinates -i states.shp -o states_coordinates.shp

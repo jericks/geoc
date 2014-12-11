@@ -24,3 +24,9 @@ Update the values of a Layer's Field
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector updatefield -i states_xy.shp -f INCLUDE -s -v "return f.geom.centroid.x" -d x

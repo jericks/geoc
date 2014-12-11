@@ -30,3 +30,9 @@ Copy the input Layer to the output Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector copy -i states.shp -o states.gpkg -r states

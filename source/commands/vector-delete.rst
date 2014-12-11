@@ -18,3 +18,9 @@ Delete features from a Layer in place
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector delete -i states.shp -f "STATE_NAME = 'Washington'" -i states_no_wash.shp

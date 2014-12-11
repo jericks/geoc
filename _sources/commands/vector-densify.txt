@@ -22,3 +22,9 @@ Densify the features of the input Layer and save them to the output Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector densify -i states.shp -o states_densified -d 10

@@ -24,3 +24,9 @@ Project the input Layer to another Projection and save it as the output Layer.
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector project -i states.shp -o states_2927.shp -t "EPSG:2927"

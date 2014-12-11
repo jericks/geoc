@@ -37,4 +37,4 @@ Create a new Layer with randomly placed points
 
 **Example**::
 
-    geoc vector randompoints -n 10 -g "1,1,10,10"
+    geoc vector randompoints -n 10 -g "0,0,10,10" -o "dbtype=h2 database=h2.db" -r points

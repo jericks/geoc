@@ -24,3 +24,9 @@ Create a Layer from a string of KML, CSV, GML, or GeoJSON
    * -r --output-layer: The output layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    curl -s http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson | geoc vector from -f geojson

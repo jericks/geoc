@@ -18,3 +18,9 @@ Create a new Layer
    * -r --output-layer: The output layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector create -o mypoints.shp -f "the_geom=POINT EPSG:4326" -f "id=int" -f "name=string"

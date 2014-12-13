@@ -22,3 +22,9 @@ Add one or more Fields to the input Layer to create the output Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector addfields -i states.shp -o states_xy.shp -f x=double -f y=double

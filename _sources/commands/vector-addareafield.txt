@@ -22,3 +22,9 @@ Add an area Field
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector addareafield -i states.shp -o states_area.shp -f area

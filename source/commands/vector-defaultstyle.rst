@@ -18,3 +18,9 @@ Get the default style for the Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector defaultstyle zones.shp

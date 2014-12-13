@@ -26,3 +26,9 @@ Create a gradient SLD for the Layer.
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector gradientstyle -i states.shp -f SAMP_POP -n 6 -c greens

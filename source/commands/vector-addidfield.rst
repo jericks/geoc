@@ -24,3 +24,9 @@ Add an ID Field
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector addidfield -i states.shp -o states_id.shp -f ID -s 1

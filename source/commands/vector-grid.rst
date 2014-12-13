@@ -30,3 +30,9 @@ Create a vector grid
    * -r --output-layer: The output layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector grid -g "0,0,10,10" -x 4 -y 4

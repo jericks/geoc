@@ -20,3 +20,9 @@ Write a Layer to a String format (CSV, GeoJSON, KML, GML)
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector to -i alki_points.properties -f csv > alki_points.csv

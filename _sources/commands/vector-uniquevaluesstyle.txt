@@ -20,3 +20,9 @@ Create an SLD document where each unique value in the Layer is a rule.
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector uniquevaluesstyle -i states.shp -f STATE_ABBR -c "Greens"

@@ -22,3 +22,9 @@ Remove one or more Fields from the input Layer to create the output Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector removefields -i states.shp -o states_temp.shp -f description -f name -f boundedBy

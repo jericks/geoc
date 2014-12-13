@@ -1,8 +1,10 @@
-.TH "geoc-vector-removefields" "1" "29 July 2014" "version 0.1"
+.TH "geoc-vector-removefields" "1" "12 December 2014" "version 0.1"
 .SH NAME
 geoc vector removefields
 .SH DESCRIPTION
 Remove one or more Fields from the input Layer to create the output Layer
+.SH USAGE
+geoc vector removefields -i states.shp -o states_temp.shp -f description -f name -f boundedBy
 .SH OPTIONS
 -f --field: A Field name
 .PP

@@ -1,8 +1,10 @@
-.TH "geoc-vector-addfields" "1" "29 July 2014" "version 0.1"
+.TH "geoc-vector-addfields" "1" "12 December 2014" "version 0.1"
 .SH NAME
 geoc vector addfields
 .SH DESCRIPTION
 Add one or more Fields to the input Layer to create the output Layer
+.SH USAGE
+geoc vector addfields -i states.shp -o states_xy.shp -f x=double -f y=double
 .SH OPTIONS
 -f --field: A Field in the format 'name=type'
 .PP

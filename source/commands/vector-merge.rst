@@ -24,3 +24,9 @@ Merge two Layers together to create a new Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector merge -i states_SUB_REGION_Pacific.shp -k states_SUB_REGION_Mtn.shp -o states_west.shp

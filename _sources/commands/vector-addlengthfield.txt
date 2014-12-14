@@ -22,3 +22,9 @@ Add an length/perimeter Field
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector addlengthfield -i roads.shp -o roads_len.shp -f LENGTH

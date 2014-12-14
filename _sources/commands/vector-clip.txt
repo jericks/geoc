@@ -24,3 +24,9 @@ Clip the input Layer by the other Layer to produce the output Layer.
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector clip -i states.shp -k area_of_interest.shp -o states_clipped.shp

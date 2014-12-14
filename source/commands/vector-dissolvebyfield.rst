@@ -26,3 +26,9 @@ Dissolve the Features of a Layer by a Field.
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector dissolvebyfield -i states.shp -o states_subregions.shp -f SUB_REGION

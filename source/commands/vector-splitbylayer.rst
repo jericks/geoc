@@ -24,3 +24,9 @@ Split a Layer into separate Layers based on the Feature from another Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector splitbylayer -i states.shp -s states_grid.shp -o statesgrid -f col_row

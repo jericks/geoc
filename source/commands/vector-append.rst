@@ -20,3 +20,9 @@ Append the Features from an other Layer to the input Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector append -i points.shp -k locations.shp

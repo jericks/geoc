@@ -24,3 +24,9 @@ Add a XY Fields
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector addxyfields -i points.shp -o points_xy.shp -x X_COL -y Y_COL

@@ -24,3 +24,9 @@ Dissolve the intersecting Features of a Layer.
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector dissolveintersecting -i polys -o polys_dissolved -d ID -c COUNT

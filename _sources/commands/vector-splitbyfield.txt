@@ -20,3 +20,9 @@ Split a Layer into separate Layers based on values from a Field
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector splitbyfield -i states.shp -o state_regions -f SUB_REGION

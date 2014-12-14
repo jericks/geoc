@@ -1,8 +1,10 @@
-.TH "geoc-vector-splitbylayer" "1" "29 July 2014" "version 0.1"
+.TH "geoc-vector-splitbylayer" "1" "14 December 2014" "version 0.1"
 .SH NAME
 geoc vector splitbylayer
 .SH DESCRIPTION
 Split a Layer into separate Layers based on the Feature from another Layer
+.SH USAGE
+geoc vector splitbylayer -i states.shp -s states_grid.shp -o statesgrid -f col_row
 .SH OPTIONS
 -s --split-workspace: The input workspace
 .PP

@@ -304,13 +304,24 @@ _geoc()
         fi
     elif [[ "$line" == *"geoc vector create "* ]]; then
         COMPREPLY=($(compgen -W '--help -f --field -o --output-workspace -r --output-layer' -- $cur))
+    elif [[ "$line" == *"geoc vector database index create "* ]]; then
+        COMPREPLY=($(compgen -W '--help -f --field -i --index-name -l --layer-name -u --unique -w --database-workspace' -- $cur))
+    elif [[ "$line" == *"geoc vector database index " ]]; then
+        COMPREPLY=($(compgen -W ' create'))
+    elif [[ "$line" == *"geoc vector database index"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "vector database index create" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' create'))
+        fi
     elif [[ "$line" == *"geoc vector database select "* ]]; then
         COMPREPLY=($(compgen -W '--help -g --geometry-field -l --layer-name -o --output-workspace -p --primary-key-field -r --output-layer -s --sql -w --database-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector database sql "* ]]; then
         COMPREPLY=($(compgen -W '--help -s --sql -w --database-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector database " ]]; then
-        COMPREPLY=($(compgen -W ' sql  select'))
+        COMPREPLY=($(compgen -W ' sql  index  select'))
     elif [[ "$line" == *"geoc vector database"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "vector database index" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' index'))
+        fi
         if [[ "vector database select" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' select'))
         fi

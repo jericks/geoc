@@ -18,3 +18,9 @@ Check whether geometry in a Layer is valid or not
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    cat invalid.csv | geoc vector validity

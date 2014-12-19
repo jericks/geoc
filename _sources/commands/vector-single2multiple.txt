@@ -20,3 +20,9 @@ Combine all of the geometries in the input Layer into one multipart geometry in 
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    cat points.csv | geoc vector single2multiple -o multi.properties

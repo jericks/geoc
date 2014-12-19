@@ -34,3 +34,9 @@ Calculate the identity between one Layer and another Layer.
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector identity -i states.shp -k clip_layer.shp -o states_identity.shp

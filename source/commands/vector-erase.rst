@@ -24,3 +24,9 @@ Erase features from one Layer based on another Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector erase -i states.shp -k clip_layer.shp -o states_erase.shp

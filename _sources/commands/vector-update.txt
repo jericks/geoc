@@ -24,3 +24,9 @@ Update one Layer with another Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector update -i states.shp -k clip_layer.shp -o states_update.shp

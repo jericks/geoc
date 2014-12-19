@@ -30,3 +30,9 @@ Group nearby points together
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector poinstacker -i earthquakes.shp -o stacked_quakes.shp -c 5 -w 800 -h 600

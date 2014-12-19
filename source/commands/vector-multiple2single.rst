@@ -20,3 +20,9 @@ Convert multipart geometries in the input Layer into single geometries in the ou
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector multiple2single -i multi.properties

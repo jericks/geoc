@@ -34,3 +34,9 @@ Calculate the intersection between two Layers
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector intersection -i states.shp -k clip_layer.shp -o states_intersection.shp

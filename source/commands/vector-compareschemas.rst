@@ -22,3 +22,9 @@ Compare Schemas from two Layers
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector compareschemas -i states.shp -k states_xy.shp

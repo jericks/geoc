@@ -103,6 +103,7 @@ org.geocommands.vector.DatabaseSqlCommand
 org.geocommands.vector.CountFeaturesInFeatureCommand
 org.geocommands.vector.SnapPointsToLinesCommand
 org.geocommands.vector.DatabaseCreateIndexCommand
+org.geocommands.vector.DatabaseListIndexCommand
 
 org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand

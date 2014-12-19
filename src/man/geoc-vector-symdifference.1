@@ -1,8 +1,10 @@
-.TH "geoc-vector-symdifference" "1" "29 July 2014" "version 0.1"
+.TH "geoc-vector-symdifference" "1" "18 December 2014" "version 0.1"
 .SH NAME
 geoc vector symdifference
 .SH DESCRIPTION
 Calculate the symmetric difference between two Layers.
+.SH USAGE
+geoc vector symdifference -i states.shp -k clip_layer.shp -o states_symdifference.shp
 .SH OPTIONS
 -p --postfix-all: Whether to postfix all field names (true) or not (false). If true, all Fields from the this current Schema will have '1' at the end of their name while the other Schema's Fields will have '2'.
 .PP

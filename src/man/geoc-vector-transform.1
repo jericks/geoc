@@ -1,8 +1,10 @@
-.TH "geoc-vector-transform" "1" "29 July 2014" "version 0.1"
+.TH "geoc-vector-transform" "1" "18 December 2014" "version 0.1"
 .SH NAME
 geoc vector transform
 .SH DESCRIPTION
 Transform the values of the input Layer using Expression and Functions
+.SH USAGE
+geoc vector transform -i point.properties -i points_transformed.shp -d "the_geom=buffer(the_geom,10)" -d "name=strToUpperCase(name)" -d "distance=distance * 10"
 .SH OPTIONS
 -d --definition: A transform definition 'field=expression'
 .PP

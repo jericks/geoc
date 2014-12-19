@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector datastorelist &mdash; geoc 0.2 documentation</title>
+  <title>vector database index list &mdash; geoc 0.2 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.2 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector datastoreparams" href="vector-datastoreparams.html"/>
-        <link rel="prev" title="geometry pt2dd" href="geometry-pt2dd.html"/> 
+        <link rel="next" title="vector count featuresInfeature" href="vector-count-featuresInfeature.html"/>
+        <link rel="prev" title="vector database index create" href="vector-database-index-create.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -72,7 +72,7 @@
 <li class="toctree-l2"><a class="reference internal" href="geometry-orthodromicdistance.html">geometry orthodromicdistance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-plot.html">geometry plot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-pt2dd.html">geometry pt2dd</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector datastorelist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-datastorelist.html">vector datastorelist</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-datastoreparams.html">vector datastoreparams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-list-layers.html">vector list layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-count.html">vector count</a></li>
@@ -162,7 +162,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-database-select.html">vector database select</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-database-sql.html">vector database sql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-database-index-create.html">vector database index create</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vector-database-index-list.html">vector database index list</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">vector database index list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-count-featuresInfeature.html">vector count featuresInfeature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-snap-points2lines.html">vector snap points2lines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-info.html">raster info</a></li>
@@ -227,10 +227,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector datastorelist</li>
+    <li>vector database index list</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-datastorelist.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/vector-database-index-list.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -238,20 +238,23 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-datastorelist">
-<h1>vector datastorelist<a class="headerlink" href="#vector-datastorelist" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="vector-database-index-list">
+<h1>vector database index list<a class="headerlink" href="#vector-database-index-list" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector datastorelist</p>
+<p>geoc vector database index list</p>
 <p><strong>Description</strong>:</p>
-<p>List all available DataStores</p>
+<p>List database indices</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
+<li>-w &#8211;database-workspace: The input workspace</li>
+<li>-l &#8211;layer-name: The input workspace</li>
+<li>-p &#8211;pretty-print: Whether to pretty print the output</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc vector datastorelist
+<div class="highlight-python"><div class="highlight"><pre>geoc vector database index list -w points.db -l points50 -p
 </pre></div>
 </div>
 </div>
@@ -262,10 +265,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-datastoreparams.html" class="btn btn-neutral float-right" title="vector datastoreparams"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="vector-count-featuresInfeature.html" class="btn btn-neutral float-right" title="vector count featuresInfeature"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="geometry-pt2dd.html" class="btn btn-neutral" title="geometry pt2dd"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vector-database-index-create.html" class="btn btn-neutral" title="vector database index create"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

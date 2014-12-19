@@ -27,4 +27,4 @@ Create a database index
 
 **Example**::
 
-    geoc vector database index create -w points.db-i geom_index -l points50 -f the_geom
+    geoc vector database index create -w points.db -i geom_index -l points50 -f the_geom

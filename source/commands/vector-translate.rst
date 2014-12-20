@@ -24,3 +24,9 @@ Translate or move Feature in a Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector translate -i points.properties -i points_transolate.shp -x 5 -y 10

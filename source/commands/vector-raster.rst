@@ -28,3 +28,9 @@ Convert a vector Layer to a Raster
    * -f --output-raster-format: The output raster format
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector raster -i states.shp -o states.tif -d population -s 600,600

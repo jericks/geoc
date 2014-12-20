@@ -28,3 +28,9 @@ Extract a subset of Features from the input Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector subset -i earthquakes.shp -s "date ASC" -s "title ASC" -t 5 -m 10 -o ten_earthquakes.shp

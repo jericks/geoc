@@ -36,3 +36,9 @@ Create a sinestar shape around each feature of the input Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector sinestar -i states.shp -o states_sinestar.shp -n 10 -e 0.75 -p 100

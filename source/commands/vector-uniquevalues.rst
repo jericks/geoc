@@ -18,3 +18,9 @@ List the unique values in a Layer's Field
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    $ cat states.csv | geoc vector uniquevalues -f SUB_REGION

@@ -32,3 +32,9 @@ Create a heatmap of the input layer
    * -f --output-raster-format: The output raster format
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector heatmap -i earthquakes.properties -o heatmap.tif -r 50 -w 800 -h 800

@@ -32,3 +32,9 @@ Create a ellipse shape around each feature of the input Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector ellipse -i states.shp -o states_ellipse.shp -g "centroid(geom)" -w 10000 -h 20000

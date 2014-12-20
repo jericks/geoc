@@ -32,3 +32,9 @@ Create a rectangle shape around each feature of the input Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector rectangle -i states.shp -o states_rects.shp -g "centroid(geom)" -w 10000 -h 20000

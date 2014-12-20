@@ -34,3 +34,9 @@ Create a super circle shape around each feature of the input Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector supercircle -i polys.properties -o supercircles.shp -p 40 -e 0.4

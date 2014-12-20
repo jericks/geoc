@@ -24,3 +24,9 @@ Page through Feature in the input Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    cat states.csv | geoc vector page -t 0 -m 2

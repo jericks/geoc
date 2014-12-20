@@ -32,3 +32,9 @@ Create a squircle shape around each feature of the input Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector squircle -i polys.properties -o squircles.shp -p 40

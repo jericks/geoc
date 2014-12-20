@@ -22,3 +22,9 @@ Smooth the features of the input Layer and save them to the output Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector smooth -i jagged.shp -o smooth.shp -f 0.25

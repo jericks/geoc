@@ -28,3 +28,9 @@ Reflect Features in a Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector reflect -i polys.properties -o reflected_polys.shp -x 5 -y 5

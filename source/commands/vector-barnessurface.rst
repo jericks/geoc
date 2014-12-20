@@ -46,3 +46,9 @@ Create a barnes surface of the features from the input layer
    * -f --output-raster-format: The output raster format
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector barnessurface -i point_grid.properties -o barnes.tif -s 1 -v value -m 1 -w 800 -h 800

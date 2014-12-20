@@ -24,3 +24,9 @@ Shear Features in a Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector shear -i points.properties -o points_sheared.shp -x 5 -y 10

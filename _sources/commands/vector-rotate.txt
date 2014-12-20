@@ -30,3 +30,9 @@ Rotate Features in a Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector rotate -i polys.properties -o rotated_polys.shp -t 0.785 -x "getX(centroid(geom))" -y "getY(centroid(geom))"

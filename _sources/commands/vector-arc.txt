@@ -36,3 +36,9 @@ Create a arc shape around each feature of the input Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector arc -i states.shp -o states_arc.shp -p 100 -s 45 -e 90

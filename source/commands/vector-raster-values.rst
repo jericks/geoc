@@ -32,3 +32,9 @@ Get value from a Raster for each Feature's geometry
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector raster values -i points.shp -s raster.tif -o points_values.shp

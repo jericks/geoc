@@ -28,3 +28,9 @@ Scale Feature in a Layer
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector scale -i polys.properties -o scaled_polys.shp -x 5 -y 5 -c "getX(centroid(geom))" -d "getY(centroid(geom))"

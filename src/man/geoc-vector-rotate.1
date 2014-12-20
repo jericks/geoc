@@ -1,8 +1,10 @@
-.TH "geoc-vector-rotate" "1" "29 July 2014" "version 0.1"
+.TH "geoc-vector-rotate" "1" "20 December 2014" "version 0.1"
 .SH NAME
 geoc vector rotate
 .SH DESCRIPTION
 Rotate Features in a Layer
+.SH USAGE
+geoc vector rotate -i polys.properties -o rotated_polys.shp -t 0.785 -x "getX(centroid(geom))" -y "getY(centroid(geom))"
 .SH OPTIONS
 -t --theta: The angle of rotation in radians
 .PP

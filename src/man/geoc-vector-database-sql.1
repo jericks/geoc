@@ -1,8 +1,10 @@
-.TH "geoc-vector-database-sql" "1" "27 September 2014" "version 0.1"
+.TH "geoc-vector-database-sql" "1" "20 December 2014" "version 0.1"
 .SH NAME
 geoc vector database sql
 .SH DESCRIPTION
 Execute SQL commands against a Database Workspace
+.SH USAGE
+geoc vector database sql -w h2.db -s "insert into "points" ("id", "the_geom", "name") values (1, ST_GeomFromText('POINT(1 1)', 4326), 'point 1')"
 .SH OPTIONS
 -w --database-workspace: The input workspace
 .PP

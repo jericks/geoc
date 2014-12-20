@@ -1,8 +1,10 @@
-.TH "geoc-vector-scale" "1" "29 July 2014" "version 0.1"
+.TH "geoc-vector-scale" "1" "20 December 2014" "version 0.1"
 .SH NAME
 geoc vector scale
 .SH DESCRIPTION
 Scale Feature in a Layer
+.SH USAGE
+geoc vector scale -i polys.properties -o scaled_polys.shp -x 5 -y 5 -c "getX(centroid(geom))" -d "getY(centroid(geom))"
 .SH OPTIONS
 -x --x-distance: The x distance
 .PP

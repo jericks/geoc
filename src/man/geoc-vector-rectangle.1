@@ -1,8 +1,10 @@
-.TH "geoc-vector-rectangle" "1" "29 July 2014" "version 0.1"
+.TH "geoc-vector-rectangle" "1" "20 December 2014" "version 0.1"
 .SH NAME
 geoc vector rectangle
 .SH DESCRIPTION
 Create a rectangle shape around each feature of the input Layer
+.SH USAGE
+geoc vector rectangle -i states.shp -o states_rects.shp -g "centroid(geom)" -w 10000 -h 20000
 .SH OPTIONS
 -g --geometry: The geometry expression
 .PP

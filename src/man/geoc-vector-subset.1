@@ -1,8 +1,10 @@
-.TH "geoc-vector-subset" "1" "29 July 2014" "version 0.1"
+.TH "geoc-vector-subset" "1" "20 December 2014" "version 0.1"
 .SH NAME
 geoc vector subset
 .SH DESCRIPTION
 Extract a subset of Features from the input Layer
+.SH USAGE
+geoc vector subset -i earthquakes.shp -s "date ASC" -s "title ASC" -t 5 -m 10 -o ten_earthquakes.shp
 .SH OPTIONS
 -f --filter: The CQL Filter
 .PP

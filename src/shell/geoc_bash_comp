@@ -306,13 +306,18 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -f --field -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector database index create "* ]]; then
         COMPREPLY=($(compgen -W '--help -f --field -i --index-name -l --layer-name -u --unique -w --database-workspace' -- $cur))
+    elif [[ "$line" == *"geoc vector database index delete "* ]]; then
+        COMPREPLY=($(compgen -W '--help -i --index-name -l --layer-name -w --database-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector database index list "* ]]; then
         COMPREPLY=($(compgen -W '--help -l --layer-name -p --pretty-print -w --database-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector database index " ]]; then
-        COMPREPLY=($(compgen -W ' create  list'))
+        COMPREPLY=($(compgen -W ' create  list  delete'))
     elif [[ "$line" == *"geoc vector database index"[[:space:]][[:alpha:]]* ]]; then
         if [[ "vector database index create" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' create'))
+        fi
+        if [[ "vector database index delete" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' delete'))
         fi
         if [[ "vector database index list" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' list'))

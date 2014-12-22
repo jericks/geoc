@@ -102,6 +102,7 @@ Commands
     commands/vector-database-sql.rst
     commands/vector-database-index-create.rst
     commands/vector-database-index-list.rst
+    commands/vector-database-index-delete.rst
     commands/vector-count-featuresInfeature.rst
     commands/vector-snap-points2lines.rst
     commands/raster-info.rst

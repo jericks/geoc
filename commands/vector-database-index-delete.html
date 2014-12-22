@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>raster crop &mdash; geoc 0.2 documentation</title>
+  <title>vector database index delete &mdash; geoc 0.2 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.2 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="raster crop with geometry" href="raster-crop-with-geometry.html"/>
-        <link rel="prev" title="raster draw" href="raster-draw.html"/> 
+        <link rel="next" title="vector count featuresInfeature" href="vector-count-featuresInfeature.html"/>
+        <link rel="prev" title="vector database index list" href="vector-database-index-list.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -163,12 +163,12 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-database-sql.html">vector database sql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-database-index-create.html">vector database index create</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-database-index-list.html">vector database index list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vector-database-index-delete.html">vector database index delete</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">vector database index delete</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-count-featuresInfeature.html">vector count featuresInfeature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-snap-points2lines.html">vector snap points2lines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-info.html">raster info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-draw.html">raster draw</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">raster crop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-crop.html">raster crop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-crop-with-geometry.html">raster crop with geometry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-crop-with-layer.html">raster crop with layer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-get-value.html">raster get value</a></li>
@@ -228,10 +228,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>raster crop</li>
+    <li>vector database index delete</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/raster-crop.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/vector-database-index-delete.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -239,25 +239,25 @@
 </div>
           <div role="main">
             
-  <div class="section" id="raster-crop">
-<h1>raster crop<a class="headerlink" href="#raster-crop" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="vector-database-index-delete">
+<h1>vector database index delete<a class="headerlink" href="#vector-database-index-delete" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc raster crop</p>
+<p>geoc vector database index delete</p>
 <p><strong>Description</strong>:</p>
-<p>Crop a Raster</p>
+<p>Delete a database index</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-b &#8211;bound: The Bounds</li>
-<li>-x &#8211;pixel: Whether the Bounds is pixel or geographic</li>
-<li>-o &#8211;output-raster: The output raster</li>
-<li>-f &#8211;output-raster-format: The output raster format</li>
-<li>-i &#8211;input-raster: The input raster</li>
-<li>-l &#8211;input-raster-name: The input raster name</li>
-<li>-p &#8211;input-projection: The input projection</li>
+<li>-w &#8211;database-workspace: The input workspace</li>
+<li>-l &#8211;layer-name: The input workspace</li>
+<li>-i &#8211;index-name: The input workspace</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
+<p><strong>Example</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>geoc vector database index delete -w points.db -l points50 -i geom_index
+</pre></div>
+</div>
 </div>
 
 
@@ -266,10 +266,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="raster-crop-with-geometry.html" class="btn btn-neutral float-right" title="raster crop with geometry"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="vector-count-featuresInfeature.html" class="btn btn-neutral float-right" title="vector count featuresInfeature"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="raster-draw.html" class="btn btn-neutral" title="raster draw"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vector-database-index-list.html" class="btn btn-neutral" title="vector database index list"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

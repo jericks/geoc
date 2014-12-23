@@ -1,8 +1,10 @@
-.TH "geoc-raster-mapalgebra" "1" "29 July 2014" "version 0.1"
+.TH "geoc-raster-mapalgebra" "1" "22 December 2014" "version 0.1"
 .SH NAME
 geoc raster mapalgebra
 .SH DESCRIPTION
 Perform map algebra
+.SH USAGE
+geoc raster mapalgebra -s "dest = r1 * r2" -r "r1=raster1.acs" -r "r2=raster2.acs" -o raster_add.tif -p "EPSG:4326"
 .SH OPTIONS
 -s --script: The map algebra (jiffle) script
 .PP

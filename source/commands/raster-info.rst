@@ -18,3 +18,9 @@ Get information about a Raster
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster info -i raster.tif

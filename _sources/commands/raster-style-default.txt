@@ -14,3 +14,9 @@ Create a simple Raster SLD
    * -o --opacity: The opacity
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster style default

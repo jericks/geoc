@@ -22,3 +22,9 @@ Invert the values of a Raster
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster invert -i raster.tif -o raster_inv.tif

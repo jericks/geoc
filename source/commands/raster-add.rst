@@ -28,3 +28,9 @@ Add two Rasters together
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster add -i raster1.acs -p "EPSG:4326" -k raster2.acs -j "EPSG:4326" -o raster_add.tif

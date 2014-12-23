@@ -22,3 +22,9 @@ Create a channel selection Raster SLD
    * -o --opacity: The opacity
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster style channel selection -r "red,histogram,0.5" -g "green,normalize,0.25" -b "green,histogram,0.33"

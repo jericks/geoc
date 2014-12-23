@@ -18,3 +18,9 @@ Create a Raster world file
    * -f --file: The world file
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster worldfile -b 0,0,10,10 -s 5,5 -f test.pgw

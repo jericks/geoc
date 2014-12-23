@@ -26,3 +26,9 @@ Get the cell value from a Raster
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster get value -i alki.tif -x 5 -y 5 -t pixel

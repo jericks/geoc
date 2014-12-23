@@ -28,3 +28,9 @@ Snap points to their nearest line
    * -l --input-layer: The input layer
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc vector snap points2lines -i points.shp -k lines.shp -o snapped.shp -d 2

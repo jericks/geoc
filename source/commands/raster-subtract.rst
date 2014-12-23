@@ -28,3 +28,9 @@ Subtract one Raster from another Raster
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster substract -i raster1.acs -p "EPSG:4326" -k raster2.acs -j "EPSG:4326" -o raster_subtracted.tif

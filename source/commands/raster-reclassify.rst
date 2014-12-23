@@ -28,3 +28,9 @@ Reclassify a Raster
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster reclassify -i raster.tif -o raster_reclass.tif -r 49-100=1 -r 100-256=255

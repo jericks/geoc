@@ -22,3 +22,9 @@ Get the Envelope of a Raster as a Vector Layer
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster envelope -i raster.tif

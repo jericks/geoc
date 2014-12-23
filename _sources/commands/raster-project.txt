@@ -24,3 +24,9 @@ Project a Raster
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster project -i raster.tif -o raster_4326.tif -t EPSG:4326

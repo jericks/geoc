@@ -24,3 +24,9 @@ Multiply a constant value to a Raster
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster multiply constant -i raster.tif -o raster_mul_2.tif -v 2

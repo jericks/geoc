@@ -26,3 +26,9 @@ Crop a Raster
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster crop -i raster.tif -b "-120,-40,120,40" -o raster_croped.tif

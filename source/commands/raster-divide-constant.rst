@@ -24,3 +24,9 @@ Divide a constant value to a Raster
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster divide constant -i raster.tif -o raster_div_2.tif -v 2

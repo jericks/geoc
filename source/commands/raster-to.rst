@@ -22,3 +22,9 @@ Convert a Raster from one format to another
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster to -i raster.tif -o raster.png -f worldimage

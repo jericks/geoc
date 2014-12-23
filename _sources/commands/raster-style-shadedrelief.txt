@@ -18,3 +18,9 @@ Create a shaded relief Raster SLD
    * -o --opacity: The opacity
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster style shadedrelief -r 65 -b -o 0.85

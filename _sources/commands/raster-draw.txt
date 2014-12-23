@@ -32,3 +32,9 @@ Draw a Raster to an image
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster draw -i raster.tif -f map.png

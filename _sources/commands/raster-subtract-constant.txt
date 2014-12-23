@@ -26,3 +26,9 @@ Substract a constant value to a Raster
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster subtract constant -i raster.tif -v 50 -o raster_minus_50.tif

@@ -24,3 +24,9 @@ Crop a Raster with a Geometry
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster crop with geometry -i alki.gif -o alki_cropped.tif -g "`geom buffer -g "POINT (1166476.232632274 823276.6023305996)" -d 50`"

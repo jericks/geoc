@@ -24,3 +24,9 @@ Add a constant value to a Raster
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster add constant -i raster.tif -v 100 -o raster_add_100.tif

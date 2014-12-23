@@ -20,3 +20,9 @@ Create an animated GIF from a list of GIFs.
    * -r --repeat: Whether to repeat the animation or not
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster animatedgif -f image1.gif -f image2.gif -f image2.gif -o animated.gif -d 450 -r

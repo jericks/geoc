@@ -26,3 +26,9 @@ Crop a Raster using the geometry from a Layer
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster crop with layer -i alki.tif -o alki_cropped.tif -w poly.shp

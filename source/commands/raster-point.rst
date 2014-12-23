@@ -22,3 +22,9 @@ Convert a Raster to a Point Vector Layer
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster point -i raster.tif -o points.shp

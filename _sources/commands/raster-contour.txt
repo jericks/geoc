@@ -32,3 +32,9 @@ Create contours from a Raster
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster contour -i raster.tif -o contours.shp -l 10 -s -m

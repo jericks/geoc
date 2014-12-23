@@ -24,3 +24,9 @@ Create a new Raster by baking the style into an existing Raster
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster stylize -i raster.tif -o raster_stylized.tif -s raster_colormap.sld

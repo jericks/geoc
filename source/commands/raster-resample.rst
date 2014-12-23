@@ -26,3 +26,9 @@ Resample a Raster
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster resample -i alki.tif -s "200,400" -o alki_resized.tif

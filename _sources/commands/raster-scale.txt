@@ -32,3 +32,9 @@ Scale a Raster
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster scale -i raster.tif -x 2 -y 3 -o raster_scaled.tif

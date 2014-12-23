@@ -32,3 +32,9 @@ Convert a Raster to a Polygon Vector Layer
    * -p --input-projection: The input projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster polygon -i raster.tif -o polygons.shp

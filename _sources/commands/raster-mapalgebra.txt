@@ -28,3 +28,9 @@ Perform map algebra
    * -p --output-raster-projection: The output raster projection
 
    * --help : Print the help message
+
+
+
+**Example**::
+
+    geoc raster mapalgebra -s "dest = r1 * r2" -r "r1=raster1.acs" -r "r2=raster2.acs" -o raster_add.tif -p "EPSG:4326"

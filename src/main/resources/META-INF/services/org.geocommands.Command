@@ -1,6 +1,7 @@
 org.geocommands.ListCommand
 
 org.geocommands.proj.WktCommand
+org.geocommands.proj.EnvelopeCommand
 
 org.geocommands.style.CssToSldCommand
 

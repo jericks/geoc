@@ -4,6 +4,8 @@ Commands
 .. toctree::
     commands/list.rst
     commands/proj-wkt.rst
+    commands/proj-envelope.rst
+    commands/proj-envelope.rest
     commands/style-css2sld.rst
     commands/geometry-convert.rst
     commands/geometry-dd2pt.rst

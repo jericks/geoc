@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector draw &mdash; geoc 0.2 documentation</title>
+  <title>proj envelope &mdash; geoc 0.2 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.2 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector voronoi" href="vector-voronoi.html"/>
-        <link rel="prev" title="vector octagonalenvelopes" href="vector-octagonalenvelopes.html"/> 
+        <link rel="next" title="style css2sld" href="style-css2sld.html"/>
+        <link rel="prev" title="proj wkt" href="proj-wkt.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -65,7 +65,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../commands.html">Commands</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="list.html">list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="proj-wkt.html">proj wkt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="proj-envelope.html">proj envelope</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">proj envelope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="style-css2sld.html">style css2sld</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-convert.html">geometry convert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-dd2pt.html">geometry dd2pt</a></li>
@@ -90,7 +90,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-minrects.html">vector minrects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-octagonalenvelope.html">vector octagonalenvelope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-octagonalenvelopes.html">vector octagonalenvelopes</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector draw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-draw.html">vector draw</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-voronoi.html">vector voronoi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-delaunay.html">vector delaunay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-geomw.html">vector geomw</a></li>
@@ -229,10 +229,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector draw</li>
+    <li>proj envelope</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-draw.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/proj-envelope.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -240,29 +240,24 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-draw">
-<h1>vector draw<a class="headerlink" href="#vector-draw" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="proj-envelope">
+<h1>proj envelope<a class="headerlink" href="#proj-envelope" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector draw</p>
+<p>geoc proj envelope</p>
 <p><strong>Description</strong>:</p>
-<p>Draw a Layer to an Image, PDF, or SVG Document</p>
+<p>Get a Projection&#8217;s envelope</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-f &#8211;file: The output file</li>
-<li>-t &#8211;type: The type of document</li>
-<li>-w &#8211;width: The width</li>
-<li>-h &#8211;height: The height</li>
-<li>-s &#8211;sld-file: The sld file</li>
-<li>-b &#8211;bounds: The bounds</li>
-<li>-m &#8211;base-map: The base map (can be a OSM tile set like stamen-toner, stamen-toner-lite, stamen-watercolor, mapquest-street, mapquest-satellite, shapefile, or Groovy script that returns Layers)</li>
-<li>-i &#8211;input-workspace: The input workspace</li>
-<li>-l &#8211;input-layer: The input layer</li>
+<li>-e &#8211;epsg: The EPSG Projection code</li>
+<li>-g &#8211;geo-bounds: The flag for whether to use geo bounds or not</li>
+<li>-o &#8211;output-workspace: The output workspace</li>
+<li>-r &#8211;output-layer: The output layer</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc vector draw -i states.shp -f image.png -w 600 -h 400 &amp;&amp; open image.png
+<div class="highlight-python"><div class="highlight"><pre>geoc proj envelope -e EPSG:2927
 </pre></div>
 </div>
 </div>
@@ -273,10 +268,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-voronoi.html" class="btn btn-neutral float-right" title="vector voronoi"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="style-css2sld.html" class="btn btn-neutral float-right" title="style css2sld"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-octagonalenvelopes.html" class="btn btn-neutral" title="vector octagonalenvelopes"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="proj-wkt.html" class="btn btn-neutral" title="proj wkt"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

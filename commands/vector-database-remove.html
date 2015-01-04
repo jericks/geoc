@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector schema &mdash; geoc 0.2 documentation</title>
+  <title>vector database remove &mdash; geoc 0.2 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.2 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector updatefield" href="vector-updatefield.html"/>
-        <link rel="prev" title="vector delete" href="vector-delete.html"/> 
+        <link rel="next" title="vector count featuresInfeature" href="vector-count-featuresInfeature.html"/>
+        <link rel="prev" title="vector database index delete" href="vector-database-index-delete.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -100,7 +100,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-densify.html">vector densify</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-filter.html">vector filter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-delete.html">vector delete</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-schema.html">vector schema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-updatefield.html">vector updatefield</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-project.html">vector project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-copy.html">vector copy</a></li>
@@ -165,7 +165,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-database-index-create.html">vector database index create</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-database-index-list.html">vector database index list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-database-index-delete.html">vector database index delete</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vector-database-remove.html">vector database remove</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">vector database remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-count-featuresInfeature.html">vector count featuresInfeature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-snap-points2lines.html">vector snap points2lines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-info.html">raster info</a></li>
@@ -230,10 +230,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector schema</li>
+    <li>vector database remove</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-schema.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/vector-database-remove.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -241,23 +241,22 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-schema">
-<h1>vector schema<a class="headerlink" href="#vector-schema" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="vector-database-remove">
+<h1>vector database remove<a class="headerlink" href="#vector-database-remove" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector schema</p>
+<p>geoc vector database remove</p>
 <p><strong>Description</strong>:</p>
-<p>Get the Layer&#8217;s schema</p>
+<p>Remove a Layer from a Database</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-p &#8211;pretty-print: Whether to pretty print the output</li>
-<li>-i &#8211;input-workspace: The input workspace</li>
-<li>-l &#8211;input-layer: The input layer</li>
+<li>-w &#8211;database-workspace: The input workspace</li>
+<li>-l &#8211;layer-name: The input workspace</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc vector schema -i states.shp -p
+<div class="highlight-python"><div class="highlight"><pre>geoc vector database remove -w points.db -l points50
 </pre></div>
 </div>
 </div>
@@ -268,10 +267,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-updatefield.html" class="btn btn-neutral float-right" title="vector updatefield"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="vector-count-featuresInfeature.html" class="btn btn-neutral float-right" title="vector count featuresInfeature"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-delete.html" class="btn btn-neutral" title="vector delete"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vector-database-index-delete.html" class="btn btn-neutral" title="vector database index delete"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

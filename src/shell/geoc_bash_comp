@@ -327,15 +327,20 @@ _geoc()
         if [[ "vector database index list" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' list'))
         fi
+    elif [[ "$line" == *"geoc vector database remove "* ]]; then
+        COMPREPLY=($(compgen -W '--help -l --layer-name -w --database-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector database select "* ]]; then
         COMPREPLY=($(compgen -W '--help -g --geometry-field -l --layer-name -o --output-workspace -p --primary-key-field -r --output-layer -s --sql -w --database-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector database sql "* ]]; then
         COMPREPLY=($(compgen -W '--help -s --sql -w --database-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector database " ]]; then
-        COMPREPLY=($(compgen -W ' sql  index  select'))
+        COMPREPLY=($(compgen -W ' sql  remove  index  select'))
     elif [[ "$line" == *"geoc vector database"[[:space:]][[:alpha:]]* ]]; then
         if [[ "vector database index" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' index'))
+        fi
+        if [[ "vector database remove" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' remove'))
         fi
         if [[ "vector database select" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' select'))

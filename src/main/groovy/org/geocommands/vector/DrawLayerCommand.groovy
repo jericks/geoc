@@ -47,7 +47,8 @@ class DrawLayerCommand extends LayerCommand<DrawLayerOptions> {
                 type: options.type,
                 width: options.width,
                 height: options.height,
-                bounds: options.bounds ? Bounds.fromString(options.bounds) : layer.bounds
+                bounds: options.bounds ? Bounds.fromString(options.bounds) : layer.bounds,
+                backgroundColor: options.backgroundColor
         )
         map.render(options.file ? options.file : new File("${['pdf', 'svg'].contains(options.type) ? "document" : "image"}.${options.type}"))
     }
@@ -74,6 +75,9 @@ class DrawLayerCommand extends LayerCommand<DrawLayerOptions> {
 
         @Option(name = "-m", aliases = "--base-map", usage = "The base map (can be a OSM tile set like stamen-toner, stamen-toner-lite, stamen-watercolor, mapquest-street, mapquest-satellite, shapefile, or Groovy script that returns Layers)", required = false)
         String baseMap
+
+        @Option(name = "-g", aliases = "--background-color", usage = "The background color", required = false)
+        String backgroundColor
     }
 
 }

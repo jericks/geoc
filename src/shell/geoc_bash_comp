@@ -365,7 +365,7 @@ _geoc()
     elif [[ "$line" == *"geoc vector dissolveintersecting "* ]]; then
         COMPREPLY=($(compgen -W '--help -c --count-field -d --id-field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector draw "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -f --file -h --height -i --input-workspace -l --input-layer -m --base-map -s --sld-file -t --type -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help -b --bounds -f --file -g --background-color -h --height -i --input-workspace -l --input-layer -m --base-map -s --sld-file -t --type -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector ellipse "* ]]; then
         COMPREPLY=($(compgen -W '--help -a --rotation -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -u --unit -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector envelope "* ]]; then

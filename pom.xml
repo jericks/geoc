@@ -4,7 +4,7 @@
     <groupId>org.geocommands</groupId>
     <artifactId>geocommands</artifactId>
     <packaging>jar</packaging>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.2</version>
     <name>GeoCommands</name>
     <description>A collection of geospatial command line applications</description>
     <repositories>

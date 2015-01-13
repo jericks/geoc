@@ -29,4 +29,4 @@ Simplify the features of the input Layer and save them to the output Layer
 
 **Example**::
 
-    geoc vector simplify -i states.shp -o states_simplified -a DouglasPeucker -d 100
+    geoc vector simplify -i states.shp -o states_simplified.shp -a DouglasPeucker -d 100

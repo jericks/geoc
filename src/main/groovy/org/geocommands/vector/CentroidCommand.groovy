@@ -5,7 +5,8 @@ import geoscript.feature.Schema
 import geoscript.layer.Layer
 
 /**
- *
+ * A Command to get the centroid of each feature in the input Layer and save them to the output Layer.
+ * @author Jared Erickson
  */
 class CentroidCommand extends LayerInOutCommand<CentroidOptions> {
 

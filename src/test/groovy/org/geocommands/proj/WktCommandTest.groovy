@@ -33,6 +33,30 @@ class WktCommandTest extends BaseTest {
     }
 
     @Test
+    void executeToStringWithCitationAndIndentation() {
+        WktCommand command = new WktCommand()
+        WktOptions options = new WktOptions(
+                epsg: "EPSG:4326",
+                citation: "esri",
+                indentation: 3
+        )
+        StringWriter writer = new StringWriter()
+        command.execute(options, new StringReader(""), writer)
+        String expected = """GEOGCS["WGS 84",
+   DATUM["D_WGS_1984",
+      SPHEROID["D_WGS_1984", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]],
+      AUTHORITY["EPSG","6326"]],
+   PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]],
+   UNIT["Degree", 0.017453292519943295],
+   AXIS["Geodetic longitude", EAST],
+   AXIS["Geodetic latitude", NORTH],
+   AUTHORITY["EPSG","4326"]]
+"""
+        String actual = writer.toString()
+        assertStringsEqual(expected, actual, true)
+    }
+
+    @Test
     void executeToFile() {
         File file = createTemporaryFile("layer", "prj")
         WktCommand command = new WktCommand()

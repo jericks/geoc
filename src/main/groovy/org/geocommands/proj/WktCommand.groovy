@@ -29,10 +29,11 @@ class WktCommand extends Command<WktOptions> {
     @Override
     void execute(WktOptions options, Reader reader, Writer writer) throws Exception {
         Projection proj = new Projection(options.epsg)
+        String wkt = proj.getWkt(options.citation, options.indentation)
         if (options.file) {
-            options.file.text = proj.wkt
+            options.file.text = wkt
         } else {
-            writer.write(proj.wkt)
+            writer.write(wkt)
         }
     }
 
@@ -43,6 +44,12 @@ class WktCommand extends Command<WktOptions> {
 
         @Option(name = "-f", aliases = "--file", usage = "The output File", required = false)
         File file
+
+        @Option(name = "-c", aliases = "--citation", usage = "The citations (epsg or esri)", required = false)
+        String citation = "epsg"
+
+        @Option(name = "-i", aliases = "--indentation", usage = "The number of spaces to indent", required = false)
+        int indentation = 2
 
     }
 }

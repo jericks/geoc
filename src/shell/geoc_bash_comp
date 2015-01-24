@@ -42,7 +42,7 @@ _geoc()
     elif [[ "$line" == *"geoc proj envelope "* ]]; then
         COMPREPLY=($(compgen -W '--help -e --epsg -g --geo-bounds -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc proj wkt "* ]]; then
-        COMPREPLY=($(compgen -W '--help -e --epsg -f --file' -- $cur))
+        COMPREPLY=($(compgen -W '--help -c --citation -e --epsg -f --file -i --indentation' -- $cur))
     elif [[ "$line" == *"geoc proj " ]]; then
         COMPREPLY=($(compgen -W ' envelope  wkt'))
     elif [[ "$line" == *"geoc proj"[[:space:]][[:alpha:]]* ]]; then

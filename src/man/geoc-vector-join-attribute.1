@@ -1,0 +1,32 @@
+.TH "geoc-vector-join-attribute" "1" "31 January 2015" "version 0.1"
+.SH NAME
+geoc vector join attribute
+.SH DESCRIPTION
+Perform a attribute join between a Layers and a table.
+.SH USAGE
+geoc vector join attribute -i polygons.shp -s table.csv -o polygons_table.shp -y id -j key -n name -n descriptions
+.SH OPTIONS
+-s --table-source: The table source
+.PP
+-t --table-name: The table name
+.PP
+-y --layer-field: The input layer field name
+.PP
+-j --table-field: The other layer field name
+.PP
+-n --field: The join field names to include in the output layer
+.PP
+-m --only-include-matching: The flag to whether only include matching rows
+.PP
+-p --options: The options (for csv separator and quote, for dbf encoding)
+.PP
+-o --output-workspace: The output workspace
+.PP
+-r --output-layer: The output layer
+.PP
+-i --input-workspace: The input workspace
+.PP
+-l --input-layer: The input layer
+.PP
+--help : Print the help message
+.PP

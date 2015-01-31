@@ -107,6 +107,7 @@ org.geocommands.vector.DatabaseCreateIndexCommand
 org.geocommands.vector.DatabaseListIndexCommand
 org.geocommands.vector.DatabaseIndexDeleteCommand
 org.geocommands.vector.DatabaseRemoveCommand
+org.geocommands.vector.AttributeJoinCommand
 
 org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand

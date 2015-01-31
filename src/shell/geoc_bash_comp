@@ -396,6 +396,14 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector intersection "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --include-duplicates -f --first-postfix -i --input-workspace -k --other-workspace -l --input-layer -m --maxfieldname-length -o --output-workspace -p --postfix-all -r --output-layer -s --second-postfix -y --other-layer' -- $cur))
+    elif [[ "$line" == *"geoc vector join attribute "* ]]; then
+        COMPREPLY=($(compgen -W '--help -i --input-workspace -j --table-field -l --input-layer -m --only-include-matching -n --field -o --output-workspace -p --options -r --output-layer -s --table-source -t --table-name -y --layer-field' -- $cur))
+    elif [[ "$line" == *"geoc vector join " ]]; then
+        COMPREPLY=($(compgen -W ' attribute'))
+    elif [[ "$line" == *"geoc vector join"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "vector join attribute" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' attribute'))
+        fi
     elif [[ "$line" == *"geoc vector list layers "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector list " ]]; then
@@ -501,7 +509,7 @@ _geoc()
     elif [[ "$line" == *"geoc vector voronoi "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector " ]]; then
-        COMPREPLY=($(compgen -W ' database  page  update  addareafield  delete  addxyfields  translate  splitbylayer  append  symdifference  copy  datastoreparams  supercircle  single2multiple  octagonalenvelope  barnessurface  mincircles  pointstacker  gradientstyle  subset  rotate  interiorpoint  centroid  clip  uniquevaluesstyle  voronoi  arcpolygon  splitbyfield  delaunay  uniquevalues  geomw  compareschemas  geomr  envelopes  sinestar  info  addlengthfield  dissolveintersecting  reflect  grid  datastorelist  octagonalenvelopes  shear  multiple2single  intersection  arc  addfields  minrects  schema  rectangle  add  squircle  union  minrect  filter  from  updatefield  mincircle  validity  transform  addidfield  create  smooth  envelope  convexhull  merge  densify  project  ellipse  convexhulls  buffer  raster  erase  scale  heatmap  defaultstyle  to  removefields  simplify  identity  dissolvebyfield  sort  coordinates  randompoints  list  draw  count  snap'))
+        COMPREPLY=($(compgen -W ' database  page  update  addareafield  delete  addxyfields  translate  splitbylayer  append  symdifference  copy  join  datastoreparams  supercircle  single2multiple  octagonalenvelope  barnessurface  mincircles  pointstacker  gradientstyle  subset  rotate  interiorpoint  centroid  clip  uniquevaluesstyle  voronoi  arcpolygon  splitbyfield  delaunay  uniquevalues  geomw  compareschemas  geomr  envelopes  sinestar  info  addlengthfield  dissolveintersecting  reflect  grid  datastorelist  octagonalenvelopes  shear  multiple2single  intersection  arc  addfields  minrects  schema  rectangle  add  squircle  union  minrect  filter  from  updatefield  mincircle  validity  transform  addidfield  create  smooth  envelope  convexhull  merge  densify  project  ellipse  convexhulls  buffer  raster  erase  scale  heatmap  defaultstyle  to  removefields  simplify  identity  dissolvebyfield  sort  coordinates  randompoints  list  draw  count  snap'))
     elif [[ "$line" == *"geoc vector"[[:space:]][[:alpha:]]* ]]; then
         if [[ "vector add" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' add'))
@@ -637,6 +645,9 @@ _geoc()
         fi
         if [[ "vector intersection" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' intersection'))
+        fi
+        if [[ "vector join" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' join'))
         fi
         if [[ "vector list" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' list'))

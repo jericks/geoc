@@ -25,6 +25,7 @@ Commands
     commands/vector-convexhulls.rst
     commands/vector-interiorpoint.rst
     commands/vector-join-attribute.rst
+    commands/vector-join-spatial.rst
     commands/vector-mincircle.rst
     commands/vector-mincircles.rst
     commands/vector-minrect.rst

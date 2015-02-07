@@ -87,15 +87,6 @@ class IdentityCommand extends LayerInOtherOutCombineSchemasCommand<IdentityOptio
         }
     }
 
-    /*@Override
-    protected Schema createOutputSchema(Layer inputLayer, Layer otherLayer, IdentityOptions options) {
-        Map schemaAndFields = inputLayer.schema.addSchema(otherLayer.schema, getOutputLayerName(inputLayer, otherLayer, "identity", options),
-            postfixAll: true, maxFieldNameLength: Util.isWorkspaceStringShapefile(options.outputWorkspace) ? 10 : -1)
-        options.fields = schemaAndFields.fields
-        schemaAndFields.schema
-    }*/
-
     static class IdentityOptions extends LayerInOtherOutCombineSchemasOptions {
-        //List fields
     }
 }

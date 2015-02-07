@@ -1,0 +1,28 @@
+.TH "geoc-vector-join-spatial" "1" "5 February 2015" "version 0.1"
+.SH NAME
+geoc vector join spatial
+.SH DESCRIPTION
+Spatially join two layers to create the output Layer.
+.SH USAGE
+geoc vector join spatial -i points.shp -k polygons.shp -o points_joined.shp -f name -f description -f homepage
+.SH OPTIONS
+-f --field: A Field name
+.PP
+-t --spatial-type: The spatial type (intersects, contains). Defaults to intersects.
+.PP
+-m --multiple-type: The multiple type (first, closest, largest). Defaults to first.
+.PP
+-k --other-workspace: The other workspace
+.PP
+-y --other-layer: The other layer
+.PP
+-o --output-workspace: The output workspace
+.PP
+-r --output-layer: The output layer
+.PP
+-i --input-workspace: The input workspace
+.PP
+-l --input-layer: The input layer
+.PP
+--help : Print the help message
+.PP

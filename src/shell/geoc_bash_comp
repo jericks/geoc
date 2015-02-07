@@ -398,11 +398,16 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -d --include-duplicates -f --first-postfix -i --input-workspace -k --other-workspace -l --input-layer -m --maxfieldname-length -o --output-workspace -p --postfix-all -r --output-layer -s --second-postfix -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector join attribute "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-workspace -j --table-field -l --input-layer -m --only-include-matching -n --field -o --output-workspace -p --options -r --output-layer -s --table-source -t --table-name -y --layer-field' -- $cur))
+    elif [[ "$line" == *"geoc vector join spatial "* ]]; then
+        COMPREPLY=($(compgen -W '--help -f --field -i --input-workspace -k --other-workspace -l --input-layer -m --multiple-type -o --output-workspace -r --output-layer -t --spatial-type -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector join " ]]; then
-        COMPREPLY=($(compgen -W ' attribute'))
+        COMPREPLY=($(compgen -W ' spatial  attribute'))
     elif [[ "$line" == *"geoc vector join"[[:space:]][[:alpha:]]* ]]; then
         if [[ "vector join attribute" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' attribute'))
+        fi
+        if [[ "vector join spatial" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' spatial'))
         fi
     elif [[ "$line" == *"geoc vector list layers "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-workspace' -- $cur))

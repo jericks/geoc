@@ -4,6 +4,7 @@ import geoscript.geom.Point
 import geoscript.layer.ArcGrid
 import geoscript.layer.GeoTIFF
 import geoscript.layer.Raster
+import geoscript.proj.Projection
 import org.apache.commons.io.input.ReaderInputStream
 import org.geocommands.BaseTest
 import org.geocommands.raster.CropWithLayerCommand.CropWithLayerOptions
@@ -66,7 +67,7 @@ class CropWithLayerCommandTest extends BaseTest {
         command.execute(options, reader, writer)
 
         ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(writer.toString())))
-        Raster raster = format.read()
+        Raster raster = format.read(new Projection("EPSG:4326"))
         assertNotNull(raster)
 
         // No Data
@@ -99,7 +100,7 @@ class CropWithLayerCommandTest extends BaseTest {
         ], reader.text)
 
         ArcGrid format = new ArcGrid(new ReaderInputStream(new StringReader(result)))
-        Raster raster = format.read()
+        Raster raster = format.read(new Projection("EPSG:4326"))
         assertNotNull(raster)
 
         // No Data

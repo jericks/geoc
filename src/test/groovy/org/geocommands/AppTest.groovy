@@ -6,7 +6,7 @@ import org.junit.Test
 
 import java.security.Permission
 
-import static org.junit.Assert.assertEquals
+import static org.junit.Assert.*
 
 /**
  * The App Unit Test
@@ -52,6 +52,36 @@ class AppTest extends BaseTest {
                     + " -l (--input-layer) VAL      : The input layer" + NEW_LINE
                     + " -o (--output-workspace) VAL : The output workspace" + NEW_LINE
                     + " -r (--output-layer) VAL     : The output layer" + NEW_LINE, output)
+        } catch (OverrideExitException ex) {
+        }
+    }
+
+    @Test
+    void runWithError() {
+        try {
+            String output = runApp(["vector centroid", "-i", "BAD_INPUT", "-o", "BAD_OUTPUT"], "")
+            assertTrue(output.startsWith("java.lang.IllegalArgumentException: Unknown Workspace parameter string: BAD_INPUT"))
+            assertTrue(output.endsWith("Unknown Workspace parameter string: BAD_INPUT" + NEW_LINE +
+                    "Usage: geoc <command> <args>" + NEW_LINE +
+                    " --help                      : Print the help message" + NEW_LINE +
+                    " -i (--input-workspace) VAL  : The input workspace" + NEW_LINE +
+                    " -l (--input-layer) VAL      : The input layer" + NEW_LINE +
+                    " -o (--output-workspace) VAL : The output workspace" + NEW_LINE +
+                    " -r (--output-layer) VAL     : The output layer" + NEW_LINE))
+        } catch (OverrideExitException ex) {
+        }
+    }
+
+    @Test
+    void runForHelpWithRequiredParams() {
+        try {
+            String output = runApp(["geometry greatcirclearc", "--help"], "")
+            assertEquals("geoc geometry greatcirclearc: Calculate the orthodromic distance between two points." + NEW_LINE +
+                    " --help                 : Print the help message" + NEW_LINE +
+                    " -e (--ellipsoid) VAL   : The ellipsoid" + NEW_LINE +
+                    " -n (--num-points) N    : The number of points" + NEW_LINE +
+                    " -p (--start-point) VAL : The start point" + NEW_LINE +
+                    " -t (--end-point) VAL   : The end point" + NEW_LINE, output)
         } catch (OverrideExitException ex) {
         }
     }

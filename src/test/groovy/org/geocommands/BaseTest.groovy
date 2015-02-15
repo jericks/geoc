@@ -1,5 +1,6 @@
 package org.geocommands
 
+import com.sun.xml.internal.ws.util.ByteArrayBuffer
 import geoscript.layer.Layer
 import geoscript.layer.io.CsvReader
 import org.junit.Rule
@@ -84,18 +85,23 @@ class BaseTest {
         // Save normal System.in and System.out
         InputStream sysin = System.in
         OutputStream sysout = System.out
+        OutputStream syserr = System.err
         // Replace System.in with input text
         System.in = new ByteArrayInputStream(input.getBytes("UTF-8"))
         // Replace System.out with OutputStream we can capture
         OutputStream out = new ByteArrayOutputStream()
         System.out = new PrintStream(out)
+        // Replace System.err with OutputStream we can capture
+        OutputStream err = new ByteArrayOutputStream()
+        System.err = new PrintStream(err)
         // Run the app with the List of arguments
         App.main(args as String[])
         // Replace normal System.in and System.out
         System.in = sysin
         System.out = sysout
+        System.err = syserr
         // Return the captured output
-        out.toString()
+        out.toString() ?: err.toString()
     }
 
 }

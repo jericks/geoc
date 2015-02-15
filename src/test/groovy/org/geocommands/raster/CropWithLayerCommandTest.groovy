@@ -76,7 +76,6 @@ class CropWithLayerCommandTest extends BaseTest {
                 [-174.265761974, 83.2132801161],
                 [-175.96892598,  82.8444847605]
         ].each { List pt ->
-            println "Raster value at ${pt[0]}, ${pt[1]} = ${raster.getValue(new Point(pt[0], pt[1]))}"
             assertEquals("Raster value should be NO DATA value!", -9999.0, raster.getValue(new Point(pt[0], pt[1])), 0.1)
         }
         // Data
@@ -86,6 +85,7 @@ class CropWithLayerCommandTest extends BaseTest {
                 [-174.66808418,  82.5762699565]
         ].each { List pt ->
             println "Raster value at ${pt[0]}, ${pt[1]} = ${raster.getValue(new Point(pt[0], pt[1]))}"
+            // This fails under Travis CI but works on OSX
             //assertTrue("Raster value ${raster.getValue(new Point(pt[0], pt[1]))} should be greater than 0.",
             //        raster.getValue(new Point(pt[0], pt[1])) > 0)
         }
@@ -111,8 +111,7 @@ class CropWithLayerCommandTest extends BaseTest {
                 [-174.265761974, 83.2132801161],
                 [-175.96892598,  82.8444847605]
         ].each { List pt ->
-            println "Raster value at ${pt[0]}, ${pt[1]} = ${raster.getValue(new Point(pt[0], pt[1]))}"
-            //assertEquals("Raster value should be NO DATA value!", -9999.0, raster.getValue(new Point(pt[0], pt[1])), 0.1)
+            assertEquals("Raster value should be NO DATA value!", -9999.0, raster.getValue(new Point(pt[0], pt[1])), 0.1)
         }
 
         // Data
@@ -122,6 +121,7 @@ class CropWithLayerCommandTest extends BaseTest {
                 [-174.66808418,  82.5762699565]
         ].each { List pt ->
             println "Raster value at ${pt[0]}, ${pt[1]} = ${raster.getValue(new Point(pt[0], pt[1]))}"
+            // This fails under Travis CI but works on OSX
             //assertTrue("Raster value ${raster.getValue(new Point(pt[0], pt[1]))} should be greater than 0.",
             //        raster.getValue(new Point(pt[0], pt[1])) > 0)
         }

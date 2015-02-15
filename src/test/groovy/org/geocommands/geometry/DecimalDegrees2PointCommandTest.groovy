@@ -31,6 +31,13 @@ class DecimalDegrees2PointCommandTest extends BaseTest {
         Point point = Geometry.fromWKT(writer.toString())
         assertEquals(-122.5256194, point.x, 0.001)
         assertEquals(47.212022222, point.y, 0.001)
+
+        options = new DecimalDegrees2PointCommand.DecimalDegrees2PointOptions(outputType: "UNKNOWN")
+        writer = new StringWriter()
+        cmd.execute(options, new StringReader("""122\u00B0 31' 32.23\" W, 47\u00B0 12' 43.28\" N"""), writer)
+        point = Geometry.fromWKT(writer.toString())
+        assertEquals(-122.5256194, point.x, 0.001)
+        assertEquals(47.212022222, point.y, 0.001)
     }
 
     @Test
@@ -42,6 +49,11 @@ class DecimalDegrees2PointCommandTest extends BaseTest {
 
         result = runApp(["geometry dd2pt", "-t", "wkt"], "122d 31m 32.23s W, 47d 12m 43.28s N")
         Point point = Geometry.fromWKT(result)
+        assertEquals(-122.5256194, point.x, 0.001)
+        assertEquals(47.212022222, point.y, 0.001)
+
+        result = runApp(["geometry dd2pt", "-t", "json"], "122d 31m 32.23s W, 47d 12m 43.28s N")
+        point = Geometry.fromGeoJSON(result)
         assertEquals(-122.5256194, point.x, 0.001)
         assertEquals(47.212022222, point.y, 0.001)
     }

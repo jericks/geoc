@@ -27,6 +27,16 @@ class Point2DecimalDegreesCommandTest extends BaseTest {
         writer = new StringWriter()
         cmd.execute(options, new StringReader("POINT (-122.5256194 47.212022222)"), writer)
         assertEquals "-122d 31m 32.2298s W, 47d 12m 43.2800s N", writer.toString()
+
+        options = new Point2DecimalDegreesOptions(outputType: "ddm_char")
+        writer = new StringWriter()
+        cmd.execute(options, new StringReader("POINT (-122.5256194 47.212022222)"), writer)
+        assertEquals "-122d 31.5372m W, 47d 12.7213m N", writer.toString()
+
+        options = new Point2DecimalDegreesOptions(outputType: "UNKNOWN")
+        writer = new StringWriter()
+        cmd.execute(options, new StringReader("POINT (-122.5256194 47.212022222)"), writer)
+        assertEquals """-122\u00B0 31' 32.2298\" W, 47\u00B0 12' 43.2800\" N""", writer.toString()
     }
 
     @Test

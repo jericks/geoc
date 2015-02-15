@@ -116,8 +116,6 @@ class ConvertCommandTest extends BaseTest {
                 "</gml:Point>" + NEW_LINE +
                 "</gsf:geom>" + NEW_LINE +
                 "</gsf:feature>"
-        println actual
-        println expected
         assertStringsEqual(expected, actual, true)
     }
 }

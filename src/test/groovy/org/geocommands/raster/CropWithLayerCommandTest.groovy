@@ -40,16 +40,16 @@ class CropWithLayerCommandTest extends BaseTest {
                 [1166953.87837, 823903.700795],
                 [1166388.09793, 823748.641883],
                 [1167067.40364, 823704.339336]
-        ].each { pt ->
+        ].each { List pt ->
             assertEquals(0.0, raster.getValue(new Point(pt[0], pt[1])), 0.1)
         }
         // Data
         [
-                [1166471.1652, 823936.927705],
+                [1166471.1652,  823936.927705],
                 [1167120.93588, 823842.784794],
                 [1166430.55454, 823474.519877],
                 [1167101.55352, 823581.584364]
-        ].each { pt ->
+        ].each { List pt ->
             assertTrue(raster.getValue(new Point(pt[0], pt[1])) > 0)
         }
     }
@@ -73,16 +73,17 @@ class CropWithLayerCommandTest extends BaseTest {
         [
                 [-174.634557329, 85.4595791001],
                 [-174.265761974, 83.2132801161],
-                [-175.96892598, 82.8444847605]
-        ].each { pt ->
+                [-175.96892598,  82.8444847605]
+        ].each { List pt ->
             assertEquals(-9999.0, raster.getValue(new Point(pt[0], pt[1])), 0.1)
         }
         // Data
         [
                 [-175.754354136, 85.3925253991],
                 [-174.507155298, 84.2727285922],
-                [-174.66808418, 82.5762699565]
-        ].each { pt ->
+                [-174.66808418,  82.5762699565]
+        ].each { List pt ->
+            println "${pt} = ${raster.getValue(new Point(pt[0], pt[1]))}"
             assertTrue(raster.getValue(new Point(pt[0], pt[1])) > 0)
         }
     }
@@ -105,16 +106,16 @@ class CropWithLayerCommandTest extends BaseTest {
         [
                 [-174.634557329, 85.4595791001],
                 [-174.265761974, 83.2132801161],
-                [-175.96892598, 82.8444847605]
-        ].each { pt ->
+                [-175.96892598,  82.8444847605]
+        ].each { List pt ->
             assertEquals(-9999.0, raster.getValue(new Point(pt[0], pt[1])), 0.1)
         }
         // Data
         [
                 [-175.754354136, 85.3925253991],
                 [-174.507155298, 84.2727285922],
-                [-174.66808418, 82.5762699565]
-        ].each { pt ->
+                [-174.66808418,  82.5762699565]
+        ].each { List pt ->
             assertTrue(raster.getValue(new Point(pt[0], pt[1])) > 0)
         }
     }
@@ -141,7 +142,7 @@ class CropWithLayerCommandTest extends BaseTest {
                 [1166953.87837, 823903.700795],
                 [1166388.09793, 823748.641883],
                 [1167067.40364, 823704.339336]
-        ].each { pt ->
+        ].each { List pt ->
             assertEquals(0.0, raster.getValue(new Point(pt[0], pt[1])), 0.1)
         }
         // Data
@@ -150,7 +151,7 @@ class CropWithLayerCommandTest extends BaseTest {
                 [1167120.93588, 823842.784794],
                 [1166430.55454, 823474.519877],
                 [1167101.55352, 823581.584364]
-        ].each { pt ->
+        ].each { List pt ->
             assertTrue(raster.getValue(new Point(pt[0], pt[1])) > 0)
         }
     }

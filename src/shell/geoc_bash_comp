@@ -11,7 +11,7 @@ _geoc()
     elif [[ "$line" == *"geoc geometry greatcirclearc "* ]]; then
         COMPREPLY=($(compgen -W '--help -e --ellipsoid -n --num-points -p --start-point -t --end-point' -- $cur))
     elif [[ "$line" == *"geoc geometry orthodromicdistance "* ]]; then
-        COMPREPLY=($(compgen -W '--help -e --ellipsoid -p --point1 -t --point2' -- $cur))
+        COMPREPLY=($(compgen -W '--help -e --ellipsoid -p --start-point -t --end-point' -- $cur))
     elif [[ "$line" == *"geoc geometry plot "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --draw-coords -f --file -h --height -i --input -l --legend -p --fill-polys -r --fill-coords -w --width' -- $cur))
     elif [[ "$line" == *"geoc geometry pt2dd "* ]]; then

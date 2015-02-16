@@ -13,7 +13,7 @@ Format a Point in Decimal Degrees
 
    * -p --point: The Point
 
-   * -t --type: The output type
+   * -t --type: The output type (dms, dms_char, ddm, ddm_char)
 
    * --help : Print the help message
 

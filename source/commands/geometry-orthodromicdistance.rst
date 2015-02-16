@@ -13,9 +13,9 @@ Calculate the orthodromic distance between two points.
 
    * -e --ellipsoid: The ellipsoid
 
-   * -p --point1: The first point
+   * -p --start-point: The start point
 
-   * -t --point2: The second point
+   * -t --end-point: The end point
 
    * --help : Print the help message
 

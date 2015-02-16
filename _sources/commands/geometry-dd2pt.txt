@@ -13,7 +13,7 @@ Convert a decimal degrees formatted string into a Point
 
    * -d --decimaldegrees: The decimal degrees
 
-   * -t --type: The output type
+   * -t --type: The output type (xy, wkt, json)
 
    * --help : Print the help message
 

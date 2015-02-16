@@ -13,7 +13,7 @@ Convert a geometry from one format to another
 
    * -i --input: The input geometry
 
-   * -f --format: The output format
+   * -f --format: The output format (wkt, geojson, gml2, gml3, kml, georss, gpx, csv, wkb)
 
    * -p --format-options: The output format options
 

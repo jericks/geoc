@@ -38,10 +38,10 @@ class OrthodromicDistanceCommand extends Command<OrthodromicDistanceOptions> {
         @Option(name="-e", aliases="--ellipsoid",  usage="The ellipsoid", required = false)
         String ellipsoid = "wgs84"
 
-        @Option(name="-p", aliases="--point1",  usage="The first point", required = false)
+        @Option(name="-p", aliases="--start-point",  usage="The start point", required = false)
         String point1
 
-        @Option(name="-t", aliases="--point2",  usage="The second point", required = true)
+        @Option(name="-t", aliases="--end-point",  usage="The end point", required = true)
         String point2
 
     }

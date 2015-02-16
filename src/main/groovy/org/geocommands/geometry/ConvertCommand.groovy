@@ -115,7 +115,7 @@ class ConvertCommand extends Command<ConvertOptions> {
         @Option(name = "-i", aliases = "--input", usage = "The input geometry", required = false)
         String input
 
-        @Option(name = "-f", aliases = "--format", usage = "The output format", required = true)
+        @Option(name = "-f", aliases = "--format", usage = "The output format (wkt, geojson, gml2, gml3, kml, georss, gpx, csv, wkb)", required = true)
         String format
 
         @Option(name = "-p", aliases = "--format-options", usage = "The output format options", required = false)

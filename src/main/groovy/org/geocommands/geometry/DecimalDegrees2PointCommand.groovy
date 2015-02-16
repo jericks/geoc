@@ -43,7 +43,7 @@ class DecimalDegrees2PointCommand extends Command<DecimalDegrees2PointOptions> {
         @Option(name = "-d", aliases = "--decimaldegrees", usage = "The decimal degrees", required = false)
         String decimalDegrees
 
-        @Option(name = "-t", aliases = "--type", usage = "The output type", required = false)
+        @Option(name = "-t", aliases = "--type", usage = "The output type (xy, wkt, json)", required = false)
         String outputType = "XY"
 
     }

@@ -46,7 +46,7 @@ class Point2DecimalDegreesCommand extends Command<Point2DecimalDegreesOptions> {
         @Option(name = "-p", aliases = "--point", usage = "The Point", required = false)
         String point
 
-        @Option(name = "-t", aliases = "--type", usage = "The output type", required = false)
+        @Option(name = "-t", aliases = "--type", usage = "The output type (dms, dms_char, ddm, ddm_char)", required = false)
         String outputType = "dms"
     }
 }

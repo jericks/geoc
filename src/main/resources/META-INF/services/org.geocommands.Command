@@ -109,6 +109,7 @@ org.geocommands.vector.DatabaseIndexDeleteCommand
 org.geocommands.vector.DatabaseRemoveCommand
 org.geocommands.vector.AttributeJoinCommand
 org.geocommands.vector.SpatialJoinCommand
+org.geocommands.vector.DisplayLayerCommand
 
 org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand

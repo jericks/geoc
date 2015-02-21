@@ -15,6 +15,7 @@ Commands
     commands/geometry-pt2dd.rst
     commands/vector-datastorelist.rst
     commands/vector-datastoreparams.rst
+    commands/vector-display.rst
     commands/vector-list-layers.rst
     commands/vector-count.rst
     commands/vector-buffer.rst

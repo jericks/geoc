@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector randompoints &mdash; geoc 0.2 documentation</title>
+  <title>vector display &mdash; geoc 0.2 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.2 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector create" href="vector-create.html"/>
-        <link rel="prev" title="vector copy" href="vector-copy.html"/> 
+        <link rel="next" title="vector list layers" href="vector-list-layers.html"/>
+        <link rel="prev" title="vector datastoreparams" href="vector-datastoreparams.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -75,7 +75,7 @@
 <li class="toctree-l2"><a class="reference internal" href="geometry-pt2dd.html">geometry pt2dd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-datastorelist.html">vector datastorelist</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-datastoreparams.html">vector datastoreparams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vector-display.html">vector display</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">vector display</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-list-layers.html">vector list layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-count.html">vector count</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-buffer.html">vector buffer</a></li>
@@ -107,7 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-updatefield.html">vector updatefield</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-project.html">vector project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-copy.html">vector copy</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector randompoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-randompoints.html">vector randompoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-create.html">vector create</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-add.html">vector add</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-grid.html">vector grid</a></li>
@@ -233,10 +233,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector randompoints</li>
+    <li>vector display</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-randompoints.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/vector-display.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -244,30 +244,28 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-randompoints">
-<h1>vector randompoints<a class="headerlink" href="#vector-randompoints" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="vector-display">
+<h1>vector display<a class="headerlink" href="#vector-display" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector randompoints</p>
+<p>geoc vector display</p>
 <p><strong>Description</strong>:</p>
-<p>Create a new Layer with randomly placed points</p>
+<p>Display a Layer in a simple viewer</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-n &#8211;number: The number of points</li>
-<li>-p &#8211;projection: The projection</li>
-<li>-g &#8211;geometry: The geometry</li>
-<li>-d &#8211;grid: Whether to create random points in grid</li>
-<li>-c &#8211;constrained-to-circle: Whether the points should be constrained to a circle or not</li>
-<li>-f &#8211;gutter-fraction: The size of the gutter between cells</li>
-<li>-e &#8211;geom-fieldname: The geometry field name</li>
-<li>-u &#8211;id-fieldname: The id field name</li>
-<li>-o &#8211;output-workspace: The output workspace</li>
-<li>-r &#8211;output-layer: The output layer</li>
+<li>-w &#8211;width: The width</li>
+<li>-h &#8211;height: The height</li>
+<li>-s &#8211;sld-file: The sld file</li>
+<li>-b &#8211;bounds: The bounds</li>
+<li>-m &#8211;base-map: The base map (can be a OSM tile set like stamen-toner, stamen-toner-lite, stamen-watercolor, mapquest-street, mapquest-satellite, shapefile, or Groovy script that returns Layers)</li>
+<li>-g &#8211;background-color: The background color</li>
+<li>-i &#8211;input-workspace: The input workspace</li>
+<li>-l &#8211;input-layer: The input layer</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc vector randompoints -n 10 -g &quot;0,0,10,10&quot; -o &quot;dbtype=h2 database=h2.db&quot; -r points
+<div class="highlight-python"><div class="highlight"><pre>geoc vector display -i points.shp -w 400 -h 400
 </pre></div>
 </div>
 </div>
@@ -278,10 +276,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-create.html" class="btn btn-neutral float-right" title="vector create"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="vector-list-layers.html" class="btn btn-neutral float-right" title="vector list layers"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-copy.html" class="btn btn-neutral" title="vector copy"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vector-datastoreparams.html" class="btn btn-neutral" title="vector datastoreparams"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -83,6 +83,8 @@ _geoc()
         if [[ "raster crop with" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' with'))
         fi
+    elif [[ "$line" == *"geoc raster display "* ]]; then
+        COMPREPLY=($(compgen -W '--help -b --bounds -g --background-color -h --height -i --input-raster -l --input-raster-name -m --base-map -p --input-projection -s --sld-file -w --width' -- $cur))
     elif [[ "$line" == *"geoc raster divide constant "* ]]; then
         COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -v --value' -- $cur))
     elif [[ "$line" == *"geoc raster divide " ]]; then
@@ -184,7 +186,7 @@ _geoc()
     elif [[ "$line" == *"geoc raster worldfile "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --bounds -f --file -s --size' -- $cur))
     elif [[ "$line" == *"geoc raster " ]]; then
-        COMPREPLY=($(compgen -W ' get  style  divide  reclassify  animatedgif  envelope  crop  worldfile  project  contour  multiply  mapalgebra  point  stylize  add  polygon  scale  subtract  to  resample  info  draw  invert'))
+        COMPREPLY=($(compgen -W ' reclassify  animatedgif  crop  contour  stylize  add  polygon  subtract  resample  invert  get  style  divide  envelope  worldfile  project  multiply  mapalgebra  point  display  scale  to  info  draw'))
     elif [[ "$line" == *"geoc raster"[[:space:]][[:alpha:]]* ]]; then
         if [[ "raster add" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' add'))
@@ -197,6 +199,9 @@ _geoc()
         fi
         if [[ "raster crop" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' crop'))
+        fi
+        if [[ "raster display" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' display'))
         fi
         if [[ "raster divide" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' divide'))

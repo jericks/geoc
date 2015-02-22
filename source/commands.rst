@@ -112,6 +112,7 @@ Commands
     commands/vector-count-featuresInfeature.rst
     commands/vector-snap-points2lines.rst
     commands/raster-info.rst
+    commands/raster-display.rst
     commands/raster-draw.rst
     commands/raster-crop.rst
     commands/raster-crop-with-geometry.rst

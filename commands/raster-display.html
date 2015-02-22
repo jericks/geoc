@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>raster add constant &mdash; geoc 0.2 documentation</title>
+  <title>raster display &mdash; geoc 0.2 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.2 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="raster add" href="raster-add.html"/>
-        <link rel="prev" title="raster stylize" href="raster-stylize.html"/> 
+        <link rel="next" title="raster draw" href="raster-draw.html"/>
+        <link rel="prev" title="raster info" href="raster-info.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -172,7 +172,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-count-featuresInfeature.html">vector count featuresInfeature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-snap-points2lines.html">vector snap points2lines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-info.html">raster info</a></li>
-<li class="toctree-l2"><a class="reference internal" href="raster-display.html">raster display</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">raster display</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-draw.html">raster draw</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-crop.html">raster crop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-crop-with-geometry.html">raster crop with geometry</a></li>
@@ -184,7 +184,7 @@
 <li class="toctree-l2"><a class="reference internal" href="raster-resample.html">raster resample</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-invert.html">raster invert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-stylize.html">raster stylize</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">raster add constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-add-constant.html">raster add constant</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-add.html">raster add</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-subtract-constant.html">raster subtract constant</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-subtract.html">raster subtract</a></li>
@@ -234,10 +234,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>raster add constant</li>
+    <li>raster display</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/raster-add-constant.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/raster-display.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -245,18 +245,21 @@
 </div>
           <div role="main">
             
-  <div class="section" id="raster-add-constant">
-<h1>raster add constant<a class="headerlink" href="#raster-add-constant" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="raster-display">
+<h1>raster display<a class="headerlink" href="#raster-display" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc raster add constant</p>
+<p>geoc raster display</p>
 <p><strong>Description</strong>:</p>
-<p>Add a constant value to a Raster</p>
+<p>Display a Raster in a simple viewer</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-v &#8211;value: The value</li>
-<li>-o &#8211;output-raster: The output raster</li>
-<li>-f &#8211;output-raster-format: The output raster format</li>
+<li>-w &#8211;width: The width</li>
+<li>-h &#8211;height: The height</li>
+<li>-s &#8211;sld-file: The sld file</li>
+<li>-b &#8211;bounds: The bounds</li>
+<li>-m &#8211;base-map: The base map (can be a OSM tile set like stamen-toner, stamen-toner-lite, stamen-watercolor, mapquest-street, mapquest-satellite, shapefile, or Groovy script that returns Layers)</li>
+<li>-g &#8211;background-color: The background color</li>
 <li>-i &#8211;input-raster: The input raster</li>
 <li>-l &#8211;input-raster-name: The input raster name</li>
 <li>-p &#8211;input-projection: The input projection</li>
@@ -264,7 +267,7 @@
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc raster add constant -i raster.tif -v 100 -o raster_add_100.tif
+<div class="highlight-python"><div class="highlight"><pre>geoc raster display -i raster.tif -w 400 -h 400
 </pre></div>
 </div>
 </div>
@@ -275,10 +278,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="raster-add.html" class="btn btn-neutral float-right" title="raster add"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="raster-draw.html" class="btn btn-neutral float-right" title="raster draw"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="raster-stylize.html" class="btn btn-neutral" title="raster stylize"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="raster-info.html" class="btn btn-neutral" title="raster info"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

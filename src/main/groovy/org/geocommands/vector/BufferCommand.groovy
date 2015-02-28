@@ -62,7 +62,7 @@ class BufferCommand extends LayerInOutCommand<BufferOptions> {
     }
 
     @Override
-    protected Schema createOutputSchema(Layer layer, LayerInOutOptions options) {
+    protected Schema createOutputSchema(Layer layer, BufferOptions options) {
         layer.schema.changeGeometryType("Polygon", getOutputLayerName(layer, "buffer", options))
     }
 

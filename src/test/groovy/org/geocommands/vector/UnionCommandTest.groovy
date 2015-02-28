@@ -73,16 +73,16 @@ class UnionCommandTest extends BaseTest {
         assertEquals 7, layer.count
         assertEquals 1, layer.count("A1 = 1 AND B2 = 3")
         assertEquals 1, layer.count("A1 = 1 AND B2 = 4")
-        assertEquals 1, layer.count("A1 = 1 AND B2 = ''")
+        assertEquals 1, layer.count("A1 = 1 AND B2 IS NULL")
         assertEquals 1, layer.count("A1 = 2 AND B2 = 4")
-        assertEquals 1, layer.count("A1 = 2 AND B2 = ''")
+        assertEquals 1, layer.count("A1 = 2 AND B2 IS NULL")
         assertEquals 1, layer.count("A1 = '' AND B2 = 3")
         assertEquals 1, layer.count("A1 = '' AND B2 = 4")
         assertEquals "MULTIPOLYGON (((90 100, 90 105, 95 105, 95 100, 90 100)))", layer.getFeatures("A1 = 1 AND B2 = 3")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((100 105, 100 100, 97 100, 97 105, 100 105)))", layer.getFeatures("A1 = 1 AND B2 = 4")[0].geom.wkt
-        assertEquals "MULTIPOLYGON (((90 105, 90 110, 100 110, 100 105, 97 105, 97 100, 95 100, 95 105, 90 105)))", layer.getFeatures("A1 = 1 AND B2 = ''")[0].geom.wkt
+        assertEquals "MULTIPOLYGON (((90 105, 90 110, 100 110, 100 105, 97 105, 97 100, 95 100, 95 105, 90 105)))", layer.getFeatures("A1 = 1 AND B2 IS NULL")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((120 100, 120 105, 125 105, 125 100, 120 100)))", layer.getFeatures("A1 = 2 AND B2 = 4")[0].geom.wkt
-        assertEquals "MULTIPOLYGON (((120 105, 120 110, 130 110, 130 100, 125 100, 125 105, 120 105)))", layer.getFeatures("A1 = 2 AND B2 = ''")[0].geom.wkt
+        assertEquals "MULTIPOLYGON (((120 105, 120 110, 130 110, 130 100, 125 100, 125 105, 120 105)))", layer.getFeatures("A1 = 2 AND B2 IS NULL")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((85 95, 85 105, 90 105, 90 100, 95 100, 95 95, 85 95)))", layer.getFeatures("A1 = '' AND B2 = 3")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((97 95, 97 100, 100 100, 100 105, 120 105, 120 100, 125 100, 125 95, 97 95)))", layer.getFeatures("A1 = '' AND B2 = 4")[0].geom.wkt
     }
@@ -133,16 +133,16 @@ class UnionCommandTest extends BaseTest {
         assertEquals 7, layer.count
         assertEquals 1, layer.count("A1 = 1 AND B2 = 3")
         assertEquals 1, layer.count("A1 = 1 AND B2 = 4")
-        assertEquals 1, layer.count("A1 = 1 AND B2 = ''")
+        assertEquals 1, layer.count("A1 = 1 AND B2 IS NULL")
         assertEquals 1, layer.count("A1 = 2 AND B2 = 4")
-        assertEquals 1, layer.count("A1 = 2 AND B2 = ''")
+        assertEquals 1, layer.count("A1 = 2 AND B2 IS NULL")
         assertEquals 1, layer.count("A1 = '' AND B2 = 3")
         assertEquals 1, layer.count("A1 = '' AND B2 = 4")
         assertEquals "MULTIPOLYGON (((90 100, 90 105, 95 105, 95 100, 90 100)))", layer.getFeatures("A1 = 1 AND B2 = 3")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((100 105, 100 100, 97 100, 97 105, 100 105)))", layer.getFeatures("A1 = 1 AND B2 = 4")[0].geom.wkt
-        assertEquals "MULTIPOLYGON (((90 105, 90 110, 100 110, 100 105, 97 105, 97 100, 95 100, 95 105, 90 105)))", layer.getFeatures("A1 = 1 AND B2 = ''")[0].geom.wkt
+        assertEquals "MULTIPOLYGON (((90 105, 90 110, 100 110, 100 105, 97 105, 97 100, 95 100, 95 105, 90 105)))", layer.getFeatures("A1 = 1 AND B2 IS NULL")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((120 100, 120 105, 125 105, 125 100, 120 100)))", layer.getFeatures("A1 = 2 AND B2 = 4")[0].geom.wkt
-        assertEquals "MULTIPOLYGON (((120 105, 120 110, 130 110, 130 100, 125 100, 125 105, 120 105)))", layer.getFeatures("A1 = 2 AND B2 = ''")[0].geom.wkt
+        assertEquals "MULTIPOLYGON (((120 105, 120 110, 130 110, 130 100, 125 100, 125 105, 120 105)))", layer.getFeatures("A1 = 2 AND B2 IS NULL")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((85 95, 85 105, 90 105, 90 100, 95 100, 95 95, 85 95)))", layer.getFeatures("A1 = '' AND B2 = 3")[0].geom.wkt
         assertEquals "MULTIPOLYGON (((97 95, 97 100, 100 100, 100 105, 120 105, 120 100, 125 100, 125 95, 97 95)))", layer.getFeatures("A1 = '' AND B2 = 4")[0].geom.wkt
     }

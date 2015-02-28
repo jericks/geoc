@@ -31,10 +31,10 @@ class ProjectCommandTest extends BaseTest {
         assertEquals 4, shp.count
         assertEquals "Point", shp.schema.geom.typ
         assertEquals "EPSG:4326", shp.proj.id
-        assertEquals "POINT (-122.36985813333858 47.12497202856968)", shp.features[0].geom.wkt
-        assertEquals "POINT (-122.21241010080831 47.01970249424006)", shp.features[1].geom.wkt
-        assertEquals "POINT (-122.29601986406784 47.249057682554785)", shp.features[2].geom.wkt
-        assertEquals "POINT (-122.77252242180316 47.250825786783665)", shp.features[3].geom.wkt
+        assertEquals "POINT (-122.36984341006178 47.124966381776666)", shp.features[0].geom.wkt
+        assertEquals "POINT (-122.21239542729938 47.019696836485686)", shp.features[1].geom.wkt
+        assertEquals "POINT (-122.29600512408041 47.24905202092161)",  shp.features[2].geom.wkt
+        assertEquals "POINT (-122.77250760440084 47.250820176480524)", shp.features[3].geom.wkt
     }
 
     @Test
@@ -48,10 +48,10 @@ class ProjectCommandTest extends BaseTest {
         cmd.execute(options, readCsv("points2927.csv"), w)
         Layer layer = getLayerFromCsv(w.toString())
         assertEquals 4, layer.count
-        assertEquals "POINT (-122.36985813333858 47.12497202856968)", layer.features[0].geom.wkt
-        assertEquals "POINT (-122.21241010080831 47.01970249424006)", layer.features[1].geom.wkt
-        assertEquals "POINT (-122.29601986406784 47.249057682554785)", layer.features[2].geom.wkt
-        assertEquals "POINT (-122.77252242180316 47.250825786783665)", layer.features[3].geom.wkt
+        assertEquals "POINT (-122.36984341006178 47.124966381776666)", layer.features[0].geom.wkt
+        assertEquals "POINT (-122.21239542729938 47.019696836485686)", layer.features[1].geom.wkt
+        assertEquals "POINT (-122.29600512408041 47.24905202092161)", layer.features[2].geom.wkt
+        assertEquals "POINT (-122.77250760440084 47.250820176480524)", layer.features[3].geom.wkt
     }
 
     @Test
@@ -69,18 +69,18 @@ class ProjectCommandTest extends BaseTest {
         assertEquals 4, shp.count
         assertEquals "Point", shp.schema.geom.typ
         assertEquals "EPSG:4326", shp.proj.id
-        assertEquals "POINT (-122.36985813333858 47.12497202856968)", shp.features[0].geom.wkt
-        assertEquals "POINT (-122.21241010080831 47.01970249424006)", shp.features[1].geom.wkt
-        assertEquals "POINT (-122.29601986406784 47.249057682554785)", shp.features[2].geom.wkt
-        assertEquals "POINT (-122.77252242180316 47.250825786783665)", shp.features[3].geom.wkt
+        assertEquals "POINT (-122.36984341006178 47.124966381776666)", shp.features[0].geom.wkt
+        assertEquals "POINT (-122.21239542729938 47.019696836485686)", shp.features[1].geom.wkt
+        assertEquals "POINT (-122.29600512408041 47.24905202092161)",  shp.features[2].geom.wkt
+        assertEquals "POINT (-122.77250760440084 47.250820176480524)", shp.features[3].geom.wkt
 
         String output = runApp(["vector project", "-s", "EPSG:2927", "-t", "EPSG:4326"], readCsv("points2927.csv").text)
         Layer layer = getLayerFromCsv(output)
         assertEquals 4, layer.count
-        assertEquals "POINT (-122.36985813333858 47.12497202856968)", layer.features[0].geom.wkt
-        assertEquals "POINT (-122.21241010080831 47.01970249424006)", layer.features[1].geom.wkt
-        assertEquals "POINT (-122.29601986406784 47.249057682554785)", layer.features[2].geom.wkt
-        assertEquals "POINT (-122.77252242180316 47.250825786783665)", layer.features[3].geom.wkt
+        assertEquals "POINT (-122.36984341006178 47.124966381776666)", layer.features[0].geom.wkt
+        assertEquals "POINT (-122.21239542729938 47.019696836485686)", layer.features[1].geom.wkt
+        assertEquals "POINT (-122.29600512408041 47.24905202092161)", layer.features[2].geom.wkt
+        assertEquals "POINT (-122.77250760440084 47.250820176480524)", layer.features[3].geom.wkt
     }
 
 }

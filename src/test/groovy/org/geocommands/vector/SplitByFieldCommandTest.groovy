@@ -70,15 +70,15 @@ class SplitByFieldCommandTest extends BaseTest {
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("polygons.csv"), w)
         String actual = w.toString()
-        String expected = """csv_row_1
-"the_geom:Polygon","id:String","row:String","col:String"
-"POLYGON ((0 5, 0 10, 5 10, 5 5, 0 5))","1","1","0"
-"POLYGON ((5 5, 5 10, 10 10, 10 5, 5 5))","3","1","1"
-
-csv_row_0
+        String expected = """csv_row_0
 "the_geom:Polygon","id:String","row:String","col:String"
 "POLYGON ((0 0, 0 5, 5 5, 5 0, 0 0))","0","0","0"
 "POLYGON ((5 0, 5 5, 10 5, 10 0, 5 0))","2","0","1"
+
+csv_row_1
+"the_geom:Polygon","id:String","row:String","col:String"
+"POLYGON ((0 5, 0 10, 5 10, 5 5, 0 5))","1","1","0"
+"POLYGON ((5 5, 5 10, 10 10, 10 5, 5 5))","3","1","1"
 """
         assertStringsEqual expected, actual
     }
@@ -125,15 +125,15 @@ csv_row_0
         assertEquals "MULTIPOLYGON (((5 5, 5 10, 10 10, 10 5, 5 5)))", f.geom.wkt
 
         String actual = runApp(["vector splitbyfield", "-f", "row"], readCsv("polygons.csv").text)
-        String expected = """csv_row_1
-"the_geom:Polygon","id:String","row:String","col:String"
-"POLYGON ((0 5, 0 10, 5 10, 5 5, 0 5))","1","1","0"
-"POLYGON ((5 5, 5 10, 10 10, 10 5, 5 5))","3","1","1"
-
-csv_row_0
+        String expected = """csv_row_0
 "the_geom:Polygon","id:String","row:String","col:String"
 "POLYGON ((0 0, 0 5, 5 5, 5 0, 0 0))","0","0","0"
 "POLYGON ((5 0, 5 5, 10 5, 10 0, 5 0))","2","0","1"
+
+csv_row_1
+"the_geom:Polygon","id:String","row:String","col:String"
+"POLYGON ((0 5, 0 10, 5 10, 5 5, 0 5))","1","1","0"
+"POLYGON ((5 5, 5 10, 10 10, 10 5, 5 5))","3","1","1"
 
 """
         assertStringsEqual expected, actual

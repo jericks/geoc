@@ -28,7 +28,6 @@ class CssToSldCommandTest extends BaseTest {
     <sld:UserStyle>
       <sld:Name>Default Styler</sld:Name>
       <sld:FeatureTypeStyle>
-        <sld:Name>name</sld:Name>
         <sld:Rule>
           <sld:PointSymbolizer>
             <sld:Graphic>
@@ -42,6 +41,7 @@ class CssToSldCommandTest extends BaseTest {
             </sld:Graphic>
           </sld:PointSymbolizer>
         </sld:Rule>
+        <sld:VendorOption name="ruleEvaluation">first</sld:VendorOption>
       </sld:FeatureTypeStyle>
     </sld:UserStyle>
   </sld:UserLayer>

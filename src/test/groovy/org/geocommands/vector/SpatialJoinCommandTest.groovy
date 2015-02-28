@@ -52,8 +52,8 @@ class SpatialJoinCommandTest extends BaseTest {
         assertTrue(layer.schema.has("col"))
         layer.eachFeature { Feature f ->
             if (f['name'] == 'Number 1' || f['name'] == 'Number 2') {
-                assertEquals("", f['row'])
-                assertEquals("", f['col'])
+                assertEquals(null, f['row'])
+                assertEquals(null, f['col'])
             } else {
                 assertEquals(1, f['row'])
                 assertEquals(0, f['col'])

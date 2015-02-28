@@ -35,7 +35,7 @@ class AppendCommandTest extends BaseTest {
         // Get the input layer
         File file = getCopiedResource("points.properties")
         // Get another Layer
-        File anotherFile = File.createTempFile("points", ".properties")
+        File anotherFile = createTemporaryFile("points", "properties")
         Property property = new Property(anotherFile.parentFile)
         Layer anotherLayer = createLayer(property, anotherFile.name.replaceAll(".properties", ""))
         // Set up options
@@ -58,7 +58,7 @@ class AppendCommandTest extends BaseTest {
     @Test
     void executeWithCsv() {
         // Get another Layer
-        File anotherFile = File.createTempFile("points", ".properties")
+        File anotherFile = createTemporaryFile("points", "properties")
         Property property = new Property(anotherFile.parentFile)
         Layer anotherLayer = createLayer(property, anotherFile.name.replaceAll(".properties", ""))
         // Run the Command
@@ -78,7 +78,7 @@ class AppendCommandTest extends BaseTest {
     void runAsCommandLine() {
         File file = getCopiedResource("points.properties")
         // Get another Layer
-        File anotherFile = File.createTempFile("points", ".properties")
+        File anotherFile = createTemporaryFile("points", "properties")
         Property property = new Property(anotherFile.parentFile)
         Layer anotherLayer = createLayer(property, anotherFile.name.replaceAll(".properties", ""))
         App.main([

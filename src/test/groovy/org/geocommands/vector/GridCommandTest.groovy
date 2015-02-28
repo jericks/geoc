@@ -34,7 +34,7 @@ class GridCommandTest extends BaseTest {
 
     @Test
     void executeCellWidthHeightToPropertyFile() {
-        File file = File.createTempFile("grid", ".properties")
+        File file = createTemporaryFile("grid","properties")
         GridCommand cmd = new GridCommand()
         GridOptions options = new GridCommand.GridOptions(
                 cellWidth: 5,

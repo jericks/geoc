@@ -55,9 +55,9 @@ class RasterValuesCommandTest extends BaseTest {
         assertEquals inLayer.count, outLayer.count
         assertFalse inLayer.schema.has("raster_value")
         assertTrue outLayer.schema.has("raster_value")
-        assertEquals 37, outLayer.count("raster_value <> ''")
-        assertEquals 63, outLayer.count("raster_value = ''")
-        assertEquals 222.0, outLayer.first(filter: "raster_value <> ''")['raster_value'] as double, 0.1
+        assertEquals 37, outLayer.count("raster_value IS NOT NULL")
+        assertEquals 63, outLayer.count("raster_value IS NULL")
+        assertEquals 222.0, outLayer.first(filter: "raster_value IS NOT NULL")['raster_value'] as double, 0.1
     }
 
     @Test
@@ -96,8 +96,8 @@ class RasterValuesCommandTest extends BaseTest {
         assertEquals inLayer.count, outLayer.count
         assertFalse inLayer.schema.has("raster_value")
         assertTrue outLayer.schema.has("raster_value")
-        assertEquals 37, outLayer.count("raster_value <> ''")
-        assertEquals 63, outLayer.count("raster_value = ''")
-        assertEquals 222.0, outLayer.first(filter: "raster_value <> ''")['raster_value'] as double, 0.1
+        assertEquals 37, outLayer.count("raster_value IS NOT NULL")
+        assertEquals 63, outLayer.count("raster_value IS NULL")
+        assertEquals 222.0, outLayer.first(filter: "raster_value IS NOT NULL")['raster_value'] as double, 0.1
     }
 }

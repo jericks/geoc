@@ -253,7 +253,7 @@ class ConvertCommandTest extends BaseTest {
         StringWriter writer = new StringWriter()
         cmd.execute(options, reader, writer)
         String expected = "<kml:kml xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:kml=\"http://earth.google.com/kml/2.1\">" + NEW_LINE +
-                "<kml:Document id=\"featureCollection\">" + NEW_LINE +
+                "<kml:Document>" + NEW_LINE +
                 "<kml:Placemark id=\"fid-2cacb84e_14b934d23d9_-7ffd\">" + NEW_LINE +
                 "<kml:Point>" + NEW_LINE +
                 "<kml:coordinates>1.0,2.0</kml:coordinates>" + NEW_LINE +

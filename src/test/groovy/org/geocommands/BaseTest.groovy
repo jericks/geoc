@@ -39,6 +39,10 @@ class BaseTest {
         }
     }
 
+    String stripXmlNS(String str) {
+        str.replaceAll("xmlns.*?(\"|\').*?(\"|\')", "")
+    }
+
     File getResource(String resource) {
         new File(getClass().getClassLoader().getResource(resource).toURI())
     }

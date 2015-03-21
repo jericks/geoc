@@ -135,6 +135,6 @@ class ToCommandTest extends BaseTest {
                 "-p", "includeAttributes=true",
                 "-p", "name=f['name']"
         ], readCsv("points.csv").text)
-        assertTrue actual.contains("<gpx xmlns:ogr=\"http://www.gdal.org/ogr/\" xmlns=\"http://www.topografix.com/GPX/1/1\" version=\"1.1\" creator=\"geoscript\">")
+        assertTrue stripXmlNS(actual).contains("<gpx   version=\"1.1\" creator=\"geoscript\">")
     }
 }

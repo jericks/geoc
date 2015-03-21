@@ -106,7 +106,7 @@ class ConvertCommandTest extends BaseTest {
         StringReader reader = new StringReader("POINT (1 2)")
         StringWriter writer = new StringWriter()
         cmd.execute(options, reader, writer)
-        assertEquals("<gsf:feature xmlns:gsf=\"http://geoscript.org/feature\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:gml=\"http://www.opengis.net/gml\" fid=\"1\">" + NEW_LINE +
+        assertEquals(stripXmlNS("<gsf:feature xmlns:gsf=\"http://geoscript.org/feature\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:gml=\"http://www.opengis.net/gml\" fid=\"1\">" + NEW_LINE +
                 "<gsf:geom>" + NEW_LINE +
                 "<gml:Point>" + NEW_LINE +
                 "<gml:coord>" + NEW_LINE +
@@ -115,7 +115,7 @@ class ConvertCommandTest extends BaseTest {
                 "</gml:coord>" + NEW_LINE +
                 "</gml:Point>" + NEW_LINE +
                 "</gsf:geom>" + NEW_LINE +
-                "</gsf:feature>" + NEW_LINE, writer.toString())
+                "</gsf:feature>" + NEW_LINE), stripXmlNS(writer.toString()))
     }
 
     @Test
@@ -151,7 +151,8 @@ class ConvertCommandTest extends BaseTest {
                 "<title>1</title><summary>[geom:POINT (1 2)]</summary>" +
                 "<updated>Mon Feb 16 08:38:14 PST 2015</updated>" +
                 "<georss:point>2.0 1.0</georss:point></entry>"
-        assertTrue(actual.startsWith(expected.substring(0, expected.indexOf("<updated>"))))
+        assertTrue(actual.startsWith("<entry"))
+        assertTrue(actual.contains(expected.substring(expected.indexOf("<title>"), expected.indexOf("<updated>"))))
         assertTrue(actual.endsWith(expected.substring(expected.indexOf("</updated>"))))
     }
 
@@ -238,7 +239,8 @@ class ConvertCommandTest extends BaseTest {
                 "</gml:featureMember>" + NEW_LINE +
                 "</wfs:FeatureCollection>" + NEW_LINE
         String actual = writer.toString()
-        assertTrue actual.startsWith(expected.substring(0, expected.indexOf("<gsf:feature fid=\"")))
+        assertTrue actual.startsWith("<wfs:FeatureCollection")
+        assertTrue actual.contains(expected.substring(expected.indexOf("<gml:boundedBy>"), expected.indexOf("<gsf:feature fid=\"")))
         assertTrue actual.endsWith(expected.substring(expected.indexOf("<gsf:geom>")))
     }
 
@@ -417,6 +419,6 @@ class ConvertCommandTest extends BaseTest {
                 "</gml:Point>" + NEW_LINE +
                 "</gsf:geom>" + NEW_LINE +
                 "</gsf:feature>"
-        assertStringsEqual(expected, actual, true)
+        assertStringsEqual(stripXmlNS(expected), stripXmlNS(actual), true)
     }
 }

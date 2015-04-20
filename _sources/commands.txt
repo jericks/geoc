@@ -117,6 +117,7 @@ Commands
     commands/raster-crop.rst
     commands/raster-crop-with-geometry.rst
     commands/raster-crop-with-layer.rst
+    commands/raster-extractfootprint.rst
     commands/raster-get-value.rst
     commands/raster-scale.rst
     commands/raster-project.rst

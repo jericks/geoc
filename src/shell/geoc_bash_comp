@@ -17,7 +17,7 @@ _geoc()
     elif [[ "$line" == *"geoc geometry pt2dd "* ]]; then
         COMPREPLY=($(compgen -W '--help -p --point -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry " ]]; then
-        COMPREPLY=($(compgen -W ' dd2pt  pt2dd  greatcirclearc  orthodromicdistance  plot  convert'))
+        COMPREPLY=($(compgen -W ' convert  dd2pt  greatcirclearc  orthodromicdistance  plot  pt2dd'))
     elif [[ "$line" == *"geoc geometry"[[:space:]][[:alpha:]]* ]]; then
         if [[ "geometry convert" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' convert'))
@@ -97,6 +97,8 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -b --bounds -f --file -h --height -i --input-raster -l --input-raster-name -m --base-map -p --input-projection -s --sld-file -t --type -w --width' -- $cur))
     elif [[ "$line" == *"geoc raster envelope "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-raster -l --input-raster-name -o --output-workspace -p --input-projection -r --output-layer' -- $cur))
+    elif [[ "$line" == *"geoc raster extractfootprint "* ]]; then
+        COMPREPLY=($(compgen -W '--help -c --remove-collinear -e --exclusion-range -f --compute-simplified-footprint -i --input-raster -l --input-raster-name -o --output-workspace -p --input-projection -r --output-layer -s --simplifier-factor -t --threshold-area -v --force-valid -y --loading-type' -- $cur))
     elif [[ "$line" == *"geoc raster get value "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --band -i --input-raster -l --input-raster-name -p --input-projection -t --type -x --x-coordinate -y --y-coordinate' -- $cur))
     elif [[ "$line" == *"geoc raster get " ]]; then
@@ -154,7 +156,7 @@ _geoc()
     elif [[ "$line" == *"geoc raster style shadedrelief "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --brightness-only -o --opacity -r --relief-factor' -- $cur))
     elif [[ "$line" == *"geoc raster style " ]]; then
-        COMPREPLY=($(compgen -W ' channel  contrast  colormap  shadedrelief  default'))
+        COMPREPLY=($(compgen -W ' channel  colormap  contrast  default  shadedrelief'))
     elif [[ "$line" == *"geoc raster style"[[:space:]][[:alpha:]]* ]]; then
         if [[ "raster style channel" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' channel'))
@@ -186,7 +188,7 @@ _geoc()
     elif [[ "$line" == *"geoc raster worldfile "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --bounds -f --file -s --size' -- $cur))
     elif [[ "$line" == *"geoc raster " ]]; then
-        COMPREPLY=($(compgen -W ' reclassify  animatedgif  crop  contour  stylize  add  polygon  subtract  resample  invert  get  style  divide  envelope  worldfile  project  multiply  mapalgebra  point  display  scale  to  info  draw'))
+        COMPREPLY=($(compgen -W ' add  animatedgif  contour  crop  display  divide  draw  envelope  extractfootprint  get  info  invert  mapalgebra  multiply  point  polygon  project  reclassify  resample  scale  style  stylize  subtract  to  worldfile'))
     elif [[ "$line" == *"geoc raster"[[:space:]][[:alpha:]]* ]]; then
         if [[ "raster add" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' add'))
@@ -211,6 +213,9 @@ _geoc()
         fi
         if [[ "raster envelope" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' envelope'))
+        fi
+        if [[ "raster extractfootprint" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' extractfootprint'))
         fi
         if [[ "raster get" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' get'))
@@ -321,7 +326,7 @@ _geoc()
     elif [[ "$line" == *"geoc vector database index list "* ]]; then
         COMPREPLY=($(compgen -W '--help -l --layer-name -p --pretty-print -w --database-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector database index " ]]; then
-        COMPREPLY=($(compgen -W ' create  list  delete'))
+        COMPREPLY=($(compgen -W ' create  delete  list'))
     elif [[ "$line" == *"geoc vector database index"[[:space:]][[:alpha:]]* ]]; then
         if [[ "vector database index create" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' create'))
@@ -339,7 +344,7 @@ _geoc()
     elif [[ "$line" == *"geoc vector database sql "* ]]; then
         COMPREPLY=($(compgen -W '--help -s --sql -w --database-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector database " ]]; then
-        COMPREPLY=($(compgen -W ' sql  remove  index  select'))
+        COMPREPLY=($(compgen -W ' index  remove  select  sql'))
     elif [[ "$line" == *"geoc vector database"[[:space:]][[:alpha:]]* ]]; then
         if [[ "vector database index" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' index'))
@@ -408,7 +413,7 @@ _geoc()
     elif [[ "$line" == *"geoc vector join spatial "* ]]; then
         COMPREPLY=($(compgen -W '--help -f --field -i --input-workspace -k --other-workspace -l --input-layer -m --multiple-type -o --output-workspace -r --output-layer -t --spatial-type -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector join " ]]; then
-        COMPREPLY=($(compgen -W ' spatial  attribute'))
+        COMPREPLY=($(compgen -W ' attribute  spatial'))
     elif [[ "$line" == *"geoc vector join"[[:space:]][[:alpha:]]* ]]; then
         if [[ "vector join attribute" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' attribute'))
@@ -521,7 +526,7 @@ _geoc()
     elif [[ "$line" == *"geoc vector voronoi "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector " ]]; then
-        COMPREPLY=($(compgen -W ' database  page  update  addareafield  delete  addxyfields  translate  splitbylayer  append  symdifference  copy  join  datastoreparams  supercircle  single2multiple  octagonalenvelope  barnessurface  mincircles  pointstacker  gradientstyle  subset  rotate  interiorpoint  centroid  clip  uniquevaluesstyle  voronoi  display  arcpolygon  splitbyfield  delaunay  uniquevalues  geomw  compareschemas  geomr  envelopes  sinestar  info  addlengthfield  dissolveintersecting  reflect  grid  datastorelist  octagonalenvelopes  shear  multiple2single  intersection  arc  addfields  minrects  schema  rectangle  add  squircle  union  minrect  filter  from  updatefield  mincircle  validity  transform  addidfield  create  smooth  envelope  convexhull  merge  densify  project  ellipse  convexhulls  buffer  raster  erase  scale  heatmap  defaultstyle  to  removefields  simplify  identity  dissolvebyfield  sort  coordinates  randompoints  list  draw  count  snap'))
+        COMPREPLY=($(compgen -W ' add  addareafield  addfields  addidfield  addlengthfield  addxyfields  append  arc  arcpolygon  barnessurface  buffer  centroid  clip  compareschemas  convexhull  convexhulls  coordinates  copy  count  create  database  datastorelist  datastoreparams  defaultstyle  delaunay  delete  densify  display  dissolvebyfield  dissolveintersecting  draw  ellipse  envelope  envelopes  erase  filter  from  geomr  geomw  gradientstyle  grid  heatmap  identity  info  interiorpoint  intersection  join  list  merge  mincircle  mincircles  minrect  minrects  multiple2single  octagonalenvelope  octagonalenvelopes  page  pointstacker  project  randompoints  raster  rectangle  reflect  removefields  rotate  scale  schema  shear  simplify  sinestar  single2multiple  smooth  snap  sort  splitbyfield  splitbylayer  squircle  subset  supercircle  symdifference  to  transform  translate  union  uniquevalues  uniquevaluesstyle  update  updatefield  validity  voronoi'))
     elif [[ "$line" == *"geoc vector"[[:space:]][[:alpha:]]* ]]; then
         if [[ "vector add" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' add'))
@@ -794,7 +799,7 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' voronoi'))
         fi
     elif [[ "$line" == *"geoc " ]]; then
-        COMPREPLY=($(compgen -W ' raster  style  proj  geometry  vector  list'))
+        COMPREPLY=($(compgen -W ' geometry  list  proj  raster  style  vector'))
     elif [[ "$line" == *"geoc"[[:space:]][[:alpha:]]* ]]; then
         if [[ "geometry" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' geometry'))

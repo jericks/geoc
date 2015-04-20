@@ -1,0 +1,34 @@
+.TH "geoc-raster-extractfootprint" "1" "19 April 2015" "version 0.1"
+.SH NAME
+geoc raster extractfootprint
+.SH DESCRIPTION
+Extract the footprint of the Raster as a Vector Layer
+.SH USAGE
+geoc raster extractfootprint -i raster.tif -o footprint.shp
+.SH OPTIONS
+-e --exclusion-range: A comma delimited range of values to exclude from the search.
+.PP
+-t --threshold-area: A number used to exclude small Polygons.  The default is 5.
+.PP
+-f --compute-simplified-footprint: Whether to compute a simplified footprint or not.  The default is false.
+.PP
+-s --simplifier-factor: A number used to simplify the geometry. The default is 2.
+.PP
+-c --remove-collinear: Whether to remove collinear coordinates. The default is true.
+.PP
+-v --force-valid: Whether to force creation of valid polygons.  The default is true.
+.PP
+-y --loading-type: The image loading type (Deferred or Immediate). Immediate is the default.
+.PP
+-o --output-workspace: The output workspace
+.PP
+-r --output-layer: The output layer
+.PP
+-i --input-raster: The input raster
+.PP
+-l --input-raster-name: The input raster name
+.PP
+-p --input-projection: The input projection
+.PP
+--help : Print the help message
+.PP

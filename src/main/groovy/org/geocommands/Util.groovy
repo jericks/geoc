@@ -1,5 +1,6 @@
 package org.geocommands
 
+import geoscript.layer.Layer
 import geoscript.layer.OSM
 import geoscript.layer.Shapefile
 
@@ -61,6 +62,9 @@ class Util {
         } else if (basemap.endsWith(".shp")) {
             Shapefile shp = new Shapefile(basemap)
             layers.add(0, shp)
+        } else if (basemap.endsWith(".properties")) {
+            Layer layer = new geoscript.layer.Property(basemap)
+            layers.add(0, layer)
         } else if (basemap.endsWith(".groovy")) {
             File file = new File(basemap)
             if (file.exists()) {

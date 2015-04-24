@@ -146,3 +146,5 @@ org.geocommands.raster.ColorMapStyleCommand
 org.geocommands.raster.AnimatedGIFCommand
 org.geocommands.raster.DisplayRasterCommand
 org.geocommands.raster.ExtractFootprintCommand
+
+org.geocommands.tile.GenerateCommand

@@ -273,6 +273,14 @@ _geoc()
         if [[ "style css2sld" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' css2sld'))
         fi
+    elif [[ "$line" == *"geoc tile generate "* ]]; then
+        COMPREPLY=($(compgen -W '--help -b --bounds -d --layer-fields -e --end-zoom -f --field -l --tile-layer -m --base-map -n --tile-layer-name -p --pyramid -s --start-zoom -t --type -v --verbose' -- $cur))
+    elif [[ "$line" == *"geoc tile " ]]; then
+        COMPREPLY=($(compgen -W ' generate'))
+    elif [[ "$line" == *"geoc tile"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "tile generate" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' generate'))
+        fi
     elif [[ "$line" == *"geoc vector add "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -v --value' -- $cur))
     elif [[ "$line" == *"geoc vector addareafield "* ]]; then
@@ -799,7 +807,7 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' voronoi'))
         fi
     elif [[ "$line" == *"geoc " ]]; then
-        COMPREPLY=($(compgen -W ' geometry  list  proj  raster  style  vector'))
+        COMPREPLY=($(compgen -W ' geometry  list  proj  raster  style  tile  vector'))
     elif [[ "$line" == *"geoc"[[:space:]][[:alpha:]]* ]]; then
         if [[ "geometry" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' geometry'))
@@ -815,6 +823,9 @@ _geoc()
         fi
         if [[ "style" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' style'))
+        fi
+        if [[ "tile" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' tile'))
         fi
         if [[ "vector" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' vector'))

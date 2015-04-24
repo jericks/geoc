@@ -146,3 +146,4 @@ Commands
     commands/raster-style-contrast-enhancement.rst
     commands/raster-style-colormap.rst
     commands/raster-animatedgif.rst
+    commands/tile-generate.rst

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector update &mdash; geoc 0.3 documentation</title>
+  <title>tile generate &mdash; geoc 0.3 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.3 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector symdifference" href="vector-symdifference.html"/>
-        <link rel="prev" title="vector identity" href="vector-identity.html"/> 
+        <link rel="next" title="Build" href="../build.html"/>
+        <link rel="prev" title="raster animatedgif" href="raster-animatedgif.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -134,7 +134,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-intersection.html">vector intersection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-erase.html">vector erase</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-identity.html">vector identity</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-update.html">vector update</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-symdifference.html">vector symdifference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-validity.html">vector validity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-single2multiple.html">vector single2multiple</a></li>
@@ -206,7 +206,7 @@
 <li class="toctree-l2"><a class="reference internal" href="raster-style-contrast-enhancement.html">raster style contrast enhancement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-style-colormap.html">raster style colormap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-animatedgif.html">raster animatedgif</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tile-generate.html">tile generate</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">tile generate</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../build.html">Build</a></li>
@@ -236,10 +236,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector update</li>
+    <li>tile generate</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-update.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/tile-generate.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -247,26 +247,31 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-update">
-<h1>vector update<a class="headerlink" href="#vector-update" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="tile-generate">
+<h1>tile generate<a class="headerlink" href="#tile-generate" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector update</p>
+<p>geoc tile generate</p>
 <p><strong>Description</strong>:</p>
-<p>Update one Layer with another Layer</p>
+<p>Generate tiles</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-k &#8211;other-workspace: The other workspace</li>
-<li>-y &#8211;other-layer: The other layer</li>
-<li>-o &#8211;output-workspace: The output workspace</li>
-<li>-r &#8211;output-layer: The output layer</li>
-<li>-i &#8211;input-workspace: The input workspace</li>
-<li>-l &#8211;input-layer: The input layer</li>
+<li>-l &#8211;tile-layer: The tile layer</li>
+<li>-n &#8211;tile-layer-name: The tile layer name</li>
+<li>-t &#8211;type: The type of tile layer(png, utfgrid, mvt, pbf)</li>
+<li>-p &#8211;pyramid: The pyramid</li>
+<li>-f &#8211;field: A field</li>
+<li>-d &#8211;layer-fields: A List of sub fields for a layer</li>
+<li>-m &#8211;base-map: The base map</li>
+<li>-s &#8211;start-zoom: The start zoom level</li>
+<li>-e &#8211;end-zoom: The end zoom level</li>
+<li>-b &#8211;bounds: The bounds</li>
+<li>-v &#8211;verbose: The verbose flag</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc vector update -i states.shp -k clip_layer.shp -o states_update.shp
+<div class="highlight-python"><div class="highlight"><pre>geoc tile generate -l earthquakes.mbtiles -n earthquakes -m layerFile -s 0 -e 2 -v false
 </pre></div>
 </div>
 </div>
@@ -277,10 +282,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-symdifference.html" class="btn btn-neutral float-right" title="vector symdifference"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../build.html" class="btn btn-neutral float-right" title="Build"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-identity.html" class="btn btn-neutral" title="vector identity"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="raster-animatedgif.html" class="btn btn-neutral" title="raster animatedgif"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -148,3 +148,4 @@ org.geocommands.raster.DisplayRasterCommand
 org.geocommands.raster.ExtractFootprintCommand
 
 org.geocommands.tile.GenerateCommand
+org.geocommands.tile.StitchRasterCommand

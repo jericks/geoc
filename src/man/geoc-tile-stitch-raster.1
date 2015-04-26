@@ -1,0 +1,38 @@
+.TH "geoc-tile-stitch-raster" "1" "25 April 2015" "version 0.1"
+.SH NAME
+geoc tile stitch raster
+.SH DESCRIPTION
+Stitch image tiles together to create a Raster
+.SH USAGE
+geoc tile stitch raster -l earthquakes.mbtiles -z 1 -o earthquakes.tif
+.SH OPTIONS
+-l --tile-layer: The tile layer
+.PP
+-n --tile-layer-name: The tile layer name
+.PP
+-t --type: The type of tile layer(png, utfgrid, mvt, pbf)
+.PP
+-p --pyramid: The pyramid
+.PP
+-b --bounds: The bounds
+.PP
+-w --width: The raster width
+.PP
+-h --height: The raster height
+.PP
+-z --zoom-level: The tile zoom level
+.PP
+-x --minx: The min x or col
+.PP
+-y --miny: The min y or row
+.PP
+-c --maxx: The max x or col
+.PP
+-u --maxy: The max y or row
+.PP
+-o --output-raster: The output raster
+.PP
+-f --output-raster-format: The output raster format
+.PP
+--help : Print the help message
+.PP

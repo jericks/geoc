@@ -147,3 +147,4 @@ Commands
     commands/raster-style-colormap.rst
     commands/raster-animatedgif.rst
     commands/tile-generate.rst
+    commands/tile-stitch-raster.rst

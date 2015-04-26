@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector database select &mdash; geoc 0.3 documentation</title>
+  <title>tile stitch raster &mdash; geoc 0.3 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.3 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector database sql" href="vector-database-sql.html"/>
-        <link rel="prev" title="vector squircle" href="vector-squircle.html"/> 
+        <link rel="next" title="Build" href="../build.html"/>
+        <link rel="prev" title="tile generate" href="tile-generate.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -163,7 +163,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-sinestar.html">vector sinestar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-supercircle.html">vector supercircle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-squircle.html">vector squircle</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector database select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-database-select.html">vector database select</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-database-sql.html">vector database sql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-database-index-create.html">vector database index create</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-database-index-list.html">vector database index list</a></li>
@@ -207,7 +207,7 @@
 <li class="toctree-l2"><a class="reference internal" href="raster-style-colormap.html">raster style colormap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-animatedgif.html">raster animatedgif</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tile-generate.html">tile generate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tile-stitch-raster.html">tile stitch raster</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">tile stitch raster</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../build.html">Build</a></li>
@@ -237,10 +237,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector database select</li>
+    <li>tile stitch raster</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-database-select.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/tile-stitch-raster.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -248,27 +248,34 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-database-select">
-<h1>vector database select<a class="headerlink" href="#vector-database-select" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="tile-stitch-raster">
+<h1>tile stitch raster<a class="headerlink" href="#tile-stitch-raster" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector database select</p>
+<p>geoc tile stitch raster</p>
 <p><strong>Description</strong>:</p>
-<p>Get a Layer from a Database using a SELECT statement</p>
+<p>Stitch image tiles together to create a Raster</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-w &#8211;database-workspace: The input workspace</li>
-<li>-l &#8211;layer-name: The input layer</li>
-<li>-s &#8211;sql: The input layer</li>
-<li>-g &#8211;geometry-field: The geometry field (name|type|projection)</li>
-<li>-p &#8211;primary-key-field: The primary key field names</li>
-<li>-o &#8211;output-workspace: The output workspace</li>
-<li>-r &#8211;output-layer: The output layer</li>
+<li>-l &#8211;tile-layer: The tile layer</li>
+<li>-n &#8211;tile-layer-name: The tile layer name</li>
+<li>-t &#8211;type: The type of tile layer(png, utfgrid, mvt, pbf)</li>
+<li>-p &#8211;pyramid: The pyramid</li>
+<li>-b &#8211;bounds: The bounds</li>
+<li>-w &#8211;width: The raster width</li>
+<li>-h &#8211;height: The raster height</li>
+<li>-z &#8211;zoom-level: The tile zoom level</li>
+<li>-x &#8211;minx: The min x or col</li>
+<li>-y &#8211;miny: The min y or row</li>
+<li>-c &#8211;maxx: The max x or col</li>
+<li>-u &#8211;maxy: The max y or row</li>
+<li>-o &#8211;output-raster: The output raster</li>
+<li>-f &#8211;output-raster-format: The output raster format</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc vector database select -w h2.db -l centroids -o centroids.properties -s &quot;SELECT ST_CENTROID(&quot;the_geom&quot;) as &quot;the_geom&quot;, &quot;id&quot; FROM &quot;polygons&quot;&quot; -g the_geom|Point
+<div class="highlight-python"><div class="highlight"><pre>geoc tile stitch raster -l earthquakes.mbtiles -z 1 -o earthquakes.tif
 </pre></div>
 </div>
 </div>
@@ -279,10 +286,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-database-sql.html" class="btn btn-neutral float-right" title="vector database sql"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../build.html" class="btn btn-neutral float-right" title="Build"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-squircle.html" class="btn btn-neutral" title="vector squircle"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tile-generate.html" class="btn btn-neutral" title="tile generate"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

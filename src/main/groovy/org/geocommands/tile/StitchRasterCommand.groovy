@@ -1,7 +1,6 @@
 package org.geocommands.tile
 
 import geoscript.geom.Bounds
-import geoscript.layer.Format
 import geoscript.layer.GeoPackage
 import geoscript.layer.ImageTileLayer
 import geoscript.layer.MBTiles
@@ -108,19 +107,6 @@ class StitchRasterCommand extends Command<StitchRasterOptions> {
         @Option(name = "-f", aliases = "--output-raster-format", usage = "The output raster format", required = false)
         String outputFormat
 
-    }
-
-    static void main(String[] args) {
-        File dir = new File("/Users/jericks/Desktop/countries")
-        File file = new File("/Users/jericks/Desktop/countries.tif")
-        StitchRasterOptions options = new StitchRasterOptions(
-                tileLayer: dir.absolutePath,
-                tileLayerName: "countries",
-                z: 2,
-                outputRaster: file.absolutePath
-        )
-        StitchRasterCommand cmd = new StitchRasterCommand()
-        cmd.execute(options)
     }
 }
 

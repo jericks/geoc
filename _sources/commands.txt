@@ -5,7 +5,7 @@ Commands
     commands/list.rst
     commands/proj-wkt.rst
     commands/proj-envelope.rst
-    commands/proj-envelope.rest
+    commands/proj-envelope.rst
     commands/style-css2sld.rst
     commands/geometry-convert.rst
     commands/geometry-dd2pt.rst
@@ -148,3 +148,5 @@ Commands
     commands/raster-animatedgif.rst
     commands/tile-generate.rst
     commands/tile-stitch-raster.rst
+    commands/tile-stitch-vector.rst
+

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector translate &mdash; geoc 0.3 documentation</title>
+  <title>tile stitch vector &mdash; geoc 0.3 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.3 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector uniquevalues" href="vector-uniquevalues.html"/>
-        <link rel="prev" title="vector page" href="vector-page.html"/> 
+        <link rel="next" title="Build" href="../build.html"/>
+        <link rel="prev" title="tile stitch raster" href="tile-stitch-raster.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -149,7 +149,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-subset.html">vector subset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-sort.html">vector sort</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-page.html">vector page</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector translate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-translate.html">vector translate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-uniquevalues.html">vector uniquevalues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-shear.html">vector shear</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-rotate.html">vector rotate</a></li>
@@ -208,7 +208,7 @@
 <li class="toctree-l2"><a class="reference internal" href="raster-animatedgif.html">raster animatedgif</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tile-generate.html">tile generate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tile-stitch-raster.html">tile stitch raster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tile-stitch-vector.html">tile stitch vector</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">tile stitch vector</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../build.html">Build</a></li>
@@ -238,10 +238,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector translate</li>
+    <li>tile stitch vector</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-translate.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/tile-stitch-vector.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -249,26 +249,33 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-translate">
-<h1>vector translate<a class="headerlink" href="#vector-translate" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="tile-stitch-vector">
+<h1>tile stitch vector<a class="headerlink" href="#tile-stitch-vector" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector translate</p>
+<p>geoc tile stitch vector</p>
 <p><strong>Description</strong>:</p>
-<p>Translate or move Feature in a Layer</p>
+<p>Stitch vector tiles together to create a one or more Layers</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-x &#8211;x-distance: The x distance</li>
-<li>-y &#8211;y-distance: The y distance</li>
+<li>-l &#8211;tile-layer: The tile layer</li>
+<li>-n &#8211;tile-layer-name: The tile layer name</li>
+<li>-t &#8211;type: The type of tile layer(png, utfgrid, mvt, pbf)</li>
+<li>-p &#8211;pyramid: The pyramid</li>
+<li>-b &#8211;bounds: The bounds</li>
+<li>-w &#8211;width: The raster width</li>
+<li>-h &#8211;height: The raster height</li>
+<li>-z &#8211;zoom-level: The tile zoom level</li>
+<li>-x &#8211;minx: The min x or col</li>
+<li>-y &#8211;miny: The min y or row</li>
+<li>-c &#8211;maxx: The max x or col</li>
+<li>-u &#8211;maxy: The max y or row</li>
 <li>-o &#8211;output-workspace: The output workspace</li>
-<li>-r &#8211;output-layer: The output layer</li>
-<li>-i &#8211;input-workspace: The input workspace</li>
-<li>-l &#8211;input-layer: The input layer</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc vector translate -i points.properties -i points_transolate.shp -x 5 -y 10
+<div class="highlight-python"><div class="highlight"><pre>geoc tile stitch vector -l earthquakes/mvt -z 1 -o earthquakes.gpkg
 </pre></div>
 </div>
 </div>
@@ -279,10 +286,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-uniquevalues.html" class="btn btn-neutral float-right" title="vector uniquevalues"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../build.html" class="btn btn-neutral float-right" title="Build"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-page.html" class="btn btn-neutral" title="vector page"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tile-stitch-raster.html" class="btn btn-neutral" title="tile stitch raster"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

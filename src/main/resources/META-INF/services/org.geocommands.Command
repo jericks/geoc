@@ -149,3 +149,4 @@ org.geocommands.raster.ExtractFootprintCommand
 
 org.geocommands.tile.GenerateCommand
 org.geocommands.tile.StitchRasterCommand
+org.geocommands.tile.StitchVectorCommand

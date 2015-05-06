@@ -277,11 +277,16 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -b --bounds -d --layer-fields -e --end-zoom -f --field -l --tile-layer -m --base-map -n --tile-layer-name -p --pyramid -s --start-zoom -t --type -v --verbose' -- $cur))
     elif [[ "$line" == *"geoc tile stitch raster "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --bounds -c --maxx -f --output-raster-format -h --height -l --tile-layer -n --tile-layer-name -o --output-raster -p --pyramid -t --type -u --maxy -w --width -x --minx -y --miny -z --zoom-level' -- $cur))
+    elif [[ "$line" == *"geoc tile stitch vector "* ]]; then
+        COMPREPLY=($(compgen -W '--help -b --bounds -c --maxx -h --height -l --tile-layer -n --tile-layer-name -o --output-workspace -p --pyramid -t --type -u --maxy -w --width -x --minx -y --miny -z --zoom-level' -- $cur))
     elif [[ "$line" == *"geoc tile stitch " ]]; then
-        COMPREPLY=($(compgen -W ' raster'))
+        COMPREPLY=($(compgen -W ' raster  vector'))
     elif [[ "$line" == *"geoc tile stitch"[[:space:]][[:alpha:]]* ]]; then
         if [[ "tile stitch raster" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' raster'))
+        fi
+        if [[ "tile stitch vector" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' vector'))
         fi
     elif [[ "$line" == *"geoc tile " ]]; then
         COMPREPLY=($(compgen -W ' generate  stitch'))

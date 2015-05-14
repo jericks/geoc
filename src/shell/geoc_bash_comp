@@ -290,8 +290,16 @@ _geoc()
         if [[ "tile stitch vector" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' vector'))
         fi
+    elif [[ "$line" == *"geoc tile vector grid "* ]]; then
+        COMPREPLY=($(compgen -W '--help -b --bounds -c --maxx -l --tile-layer -n --tile-layer-name -o --output-workspace -p --pyramid -r --output-layer -t --type -u --maxy -x --minx -y --miny -z --zoom-level' -- $cur))
+    elif [[ "$line" == *"geoc tile vector " ]]; then
+        COMPREPLY=($(compgen -W ' grid'))
+    elif [[ "$line" == *"geoc tile vector"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "tile vector grid" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' grid'))
+        fi
     elif [[ "$line" == *"geoc tile " ]]; then
-        COMPREPLY=($(compgen -W ' generate  pyramid  stitch'))
+        COMPREPLY=($(compgen -W ' generate  pyramid  stitch  vector'))
     elif [[ "$line" == *"geoc tile"[[:space:]][[:alpha:]]* ]]; then
         if [[ "tile generate" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' generate'))
@@ -301,6 +309,9 @@ _geoc()
         fi
         if [[ "tile stitch" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' stitch'))
+        fi
+        if [[ "tile vector" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' vector'))
         fi
     elif [[ "$line" == *"geoc vector add "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -v --value' -- $cur))

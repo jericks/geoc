@@ -149,4 +149,5 @@ Commands
     commands/tile-pyramid.rst
     commands/tile-stitch-raster.rst
     commands/tile-stitch-vector.rst
+    commands/tile-vector-grid.rst
 

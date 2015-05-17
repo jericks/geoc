@@ -28,8 +28,8 @@ class ReclassifyCommandTest extends BaseTest {
                 inputRaster: inFile,
                 outputRaster: outFile,
                 ranges: [
-                        "49-100=1",
-                        "100-256=255"
+                        "1-100=1",
+                        "100-255=2"
                 ]
         )
         command.execute(options, new StringReader(""), new StringWriter())
@@ -37,7 +37,7 @@ class ReclassifyCommandTest extends BaseTest {
         GeoTIFF format = new GeoTIFF(outFile)
         Raster outRaster = format.read()
         assertNotNull(outRaster)
-        assertEquals(255, outRaster.getValue(new Point(-22.2352941176, 18.5294117647)), 0.1)
+        assertEquals(2, outRaster.getValue(new Point(-22.2352941176, 18.5294117647)), 0.1)
         assertEquals(1, outRaster.getValue(new Point(-90.2887700535, -63.6737967914)), 0.1)
     }
 
@@ -69,14 +69,14 @@ class ReclassifyCommandTest extends BaseTest {
                 "raster reclassify",
                 "-i", inFile.absolutePath,
                 "-o", outFile.absolutePath,
-                "-r", "49-100=1",
-                "-r", "100-256=255"
+                "-r", "1-100=1",
+                "-r", "100-255=2"
         ], "")
 
         GeoTIFF format = new GeoTIFF(outFile)
         Raster outRaster = format.read()
         assertNotNull(outRaster)
-        assertEquals(255, outRaster.getValue(new Point(-22.2352941176, 18.5294117647)), 0.1)
+        assertEquals(2, outRaster.getValue(new Point(-22.2352941176, 18.5294117647)), 0.1)
         assertEquals(1, outRaster.getValue(new Point(-90.2887700535, -63.6737967914)), 0.1)
     }
 

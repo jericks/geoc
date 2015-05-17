@@ -22,6 +22,7 @@ class DataStoreParametersCommandTest extends BaseTest {
 namespace
 enable spatial index
 create spatial index
+use a ODBC provider to fast execution of Dbase filters
 charset
 timezone
 memory mapped buffer
@@ -38,6 +39,7 @@ fstype""", w.toString()
 namespace
 enable spatial index
 create spatial index
+use a ODBC provider to fast execution of Dbase filters
 charset
 timezone
 memory mapped buffer

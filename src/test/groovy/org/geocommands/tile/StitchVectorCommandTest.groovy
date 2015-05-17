@@ -40,7 +40,6 @@ class StitchVectorCommandTest extends BaseTest {
         Layer layer = workspace.get("earthquakes")
         assertEquals 47, layer.count
         assertTrue layer.schema.has("title")
-        assertTrue layer.schema.has("elevation")
     }
 
     @Test
@@ -59,7 +58,6 @@ class StitchVectorCommandTest extends BaseTest {
         Layer layer = workspace.get("earthquakes")
         assertEquals 47, layer.count
         assertTrue layer.schema.has("title")
-        assertTrue layer.schema.has("elevation")
     }
 
     private File generateMvtTiles() {
@@ -70,7 +68,7 @@ class StitchVectorCommandTest extends BaseTest {
                 tileLayer: tileFile.absolutePath,
                 tileLayerName: "earthquakes",
                 type: "mvt",
-                fields: ["the_geom", "title", "elevation"],
+                fields: ["the_geom", "title"],
                 baseMap: layerFile,
                 startZoom: 0,
                 endZoom: 2,

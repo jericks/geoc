@@ -37,6 +37,18 @@ class ConvertCommandTest extends BaseTest {
     }
 
     @Test
+    void executeWKTToGeobufGeometryFromReader() {
+        ConvertCommand cmd = new ConvertCommand()
+        ConvertOptions options = new ConvertOptions(
+                format: "geobuf"
+        )
+        StringReader reader = new StringReader("POINT (1 2)")
+        StringWriter writer = new StringWriter()
+        cmd.execute(options, reader, writer)
+        assertEquals("10021806320b08001a0780897a8092f401", writer.toString())
+    }
+
+    @Test
     void executeWKTToKMLGeometryFromReader() {
         ConvertCommand cmd = new ConvertCommand()
         ConvertOptions options = new ConvertOptions(
@@ -119,6 +131,19 @@ class ConvertCommandTest extends BaseTest {
     }
 
     @Test
+    void executeWktToGeobufFeatureFromReader() {
+        ConvertCommand cmd = new ConvertCommand()
+        ConvertOptions options = new ConvertOptions(
+                format: "geobuf",
+                type: "feature"
+        )
+        StringReader reader = new StringReader("POINT (1 2)")
+        StringWriter writer = new StringWriter()
+        cmd.execute(options, reader, writer)
+        assertEquals("100218062a0d0a0b08001a0780897a8092f401", writer.toString())
+    }
+
+    @Test
     void executeWktToKmlFeatureFromReader() {
         ConvertCommand cmd = new ConvertCommand()
         ConvertOptions options = new ConvertOptions(
@@ -183,6 +208,19 @@ class ConvertCommandTest extends BaseTest {
         cmd.execute(options, reader, writer)
         assertEquals("\"geom:Point\"" + NEW_LINE +
                 "\"POINT (1 2)\"" + NEW_LINE, writer.toString())
+    }
+
+    @Test
+    void executeWktToGeobufLayerFromReader() {
+        ConvertCommand cmd = new ConvertCommand()
+        ConvertOptions options = new ConvertOptions(
+                format: "geobuf",
+                type: "layer"
+        )
+        StringReader reader = new StringReader("POINT (1 2)")
+        StringWriter writer = new StringWriter()
+        cmd.execute(options, reader, writer)
+        assertEquals("10021806220f0a0d0a0b08001a0780897a8092f401", writer.toString())
     }
 
     @Test

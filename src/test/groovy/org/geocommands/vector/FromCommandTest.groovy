@@ -2,6 +2,8 @@ package org.geocommands.vector
 
 import geoscript.layer.Layer
 import geoscript.layer.Shapefile
+import geoscript.layer.io.GeobufReader
+import geoscript.layer.io.GeobufWriter
 import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.FromCommand.FromOptions
@@ -46,6 +48,27 @@ class FromCommandTest extends BaseTest {
         )
         StringWriter writer = new StringWriter()
         cmd.execute(options, new StringReader(file.text), writer)
+        Layer layer = getLayerFromCsv(writer.toString())
+        assertEquals "Point", layer.schema.geom.typ
+        assertEquals 3, layer.count
+        layer.eachFeature { f ->
+            assertNotNull f.geom
+        }
+    }
+
+    @Test
+    void executeFromGeobuf() {
+        File csvFile = getResource("points.csv")
+        Layer pointsLayer = getLayerFromCsv(csvFile.text)
+        GeobufWriter geobufWriter = new GeobufWriter()
+        File geobufFile = createTemporaryFile("points","geobuf")
+        geobufFile.text = geobufWriter.write(pointsLayer)
+        FromCommand cmd = new FromCommand()
+        FromOptions options = new FromOptions(
+                format: "geobuf",
+        )
+        StringWriter writer = new StringWriter()
+        cmd.execute(options, new StringReader(geobufFile.text), writer)
         Layer layer = getLayerFromCsv(writer.toString())
         assertEquals "Point", layer.schema.geom.typ
         assertEquals 3, layer.count

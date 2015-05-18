@@ -5,6 +5,7 @@ import geoscript.layer.Layer
 import geoscript.layer.io.CsvWriter
 import geoscript.layer.io.GeoJSONWriter
 import geoscript.layer.io.GeoRSSWriter
+import geoscript.layer.io.GeobufWriter
 import geoscript.layer.io.GmlWriter
 import geoscript.layer.io.GpxWriter
 import geoscript.layer.io.KmlWriter
@@ -23,7 +24,7 @@ class ToCommand extends LayerCommand<ToOptions> {
 
     @Override
     String getDescription() {
-        "Write a Layer to a String format (CSV, GeoJSON, KML, GML)"
+        "Write a Layer to a String format (CSV, GeoJSON, KML, GML, GEORSS, GPX)"
     }
 
     @Override
@@ -45,10 +46,11 @@ class ToCommand extends LayerCommand<ToOptions> {
             }
         } else if (options.format.equalsIgnoreCase("geojson")) {
             layerWriter = new GeoJSONWriter()
+        } else if (options.format.equalsIgnoreCase("geobuf")) {
+            layerWriter = new GeobufWriter()
         } else if (options.format.equalsIgnoreCase("gml")) {
             layerWriter = new GmlWriter()
         } else if (options.format.equalsIgnoreCase("kml")) {
-
             layerWriter = new KmlWriter()
         } else if (options.format.equalsIgnoreCase("georss")) {
             ["feedTitle","feedDescription", "feedLink",
@@ -87,7 +89,7 @@ class ToCommand extends LayerCommand<ToOptions> {
     }
 
     static class ToOptions extends LayerOptions {
-        @Option(name = "-f", aliases = "--format", usage = "The string format (CSV, GeoJSON, KML, GML)", required = true)
+        @Option(name = "-f", aliases = "--format", usage = "The string format (CSV, GeoJSON, KML, GML, GEORSS, GPX)", required = true)
         String format
 
         @Option(name = "-p", aliases = "--format-options", usage = "A format options 'key=value'", required = false)

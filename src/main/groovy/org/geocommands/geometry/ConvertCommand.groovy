@@ -71,6 +71,8 @@ class ConvertCommand extends Command<ConvertOptions> {
             new geoscript.geom.io.WkbWriter()
         } else if (format.equalsIgnoreCase("gpx")) {
             new geoscript.geom.io.GpxWriter()
+        } else if (format.equalsIgnoreCase("geobuf")) {
+            new geoscript.geom.io.GeobufWriter()
         } else {
             throw new IllegalArgumentException("Unknown format '${format}'!")
         }
@@ -87,6 +89,8 @@ class ConvertCommand extends Command<ConvertOptions> {
             new geoscript.feature.io.GeoRSSWriter()
         } else if (format.equalsIgnoreCase("gpx")) {
             new geoscript.feature.io.GpxWriter()
+        } else if (format.equalsIgnoreCase("geobuf")) {
+            new geoscript.feature.io.GeobufWriter()
         } else {
             throw new IllegalArgumentException("Unknown format '${format}'!")
         }
@@ -105,6 +109,8 @@ class ConvertCommand extends Command<ConvertOptions> {
             new geoscript.layer.io.GeoRSSWriter()
         } else if (format.equalsIgnoreCase("gpx")) {
             new geoscript.layer.io.GpxWriter()
+        } else if (format.equalsIgnoreCase("geobuf")) {
+            new geoscript.layer.io.GeobufWriter()
         } else {
             throw new IllegalArgumentException("Unknown format '${format}'!")
         }

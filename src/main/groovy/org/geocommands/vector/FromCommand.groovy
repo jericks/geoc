@@ -5,6 +5,7 @@ import geoscript.layer.Layer
 import geoscript.layer.io.CsvReader
 import geoscript.layer.io.GeoJSONReader
 import geoscript.layer.io.GeoRSSReader
+import geoscript.layer.io.GeobufReader
 import geoscript.layer.io.GmlReader
 import geoscript.layer.io.GpxReader
 import geoscript.layer.io.KmlReader
@@ -13,7 +14,7 @@ import geoscript.workspace.Workspace
 import org.kohsuke.args4j.Option
 
 /**
- * Create a Layer from a string of KML, CSV, GML, or GeoJSON
+ * Create a Layer from a string of KML, CSV, GML, GEORSS, GEOBUF, GPX or GeoJSON.
  * @author Jared Erickson
  */
 class FromCommand extends LayerOutCommand<FromOptions> {
@@ -25,7 +26,7 @@ class FromCommand extends LayerOutCommand<FromOptions> {
 
     @Override
     String getDescription() {
-        "Create a Layer from a string of KML, CSV, GML, or GeoJSON"
+        "Create a Layer from a string of KML, CSV, GML, GEORSS, GEOBUF, GPX or GeoJSON"
     }
 
     @Override
@@ -58,6 +59,8 @@ class FromCommand extends LayerOutCommand<FromOptions> {
             } else {
                 layerReader = new CsvReader(options.formatOptions, type)
             }
+        } else if (options.format.equalsIgnoreCase("geobuf")) {
+            layerReader = new GeobufReader()
         } else if (options.format.equalsIgnoreCase("geojson")) {
             layerReader = new GeoJSONReader()
         } else if (options.format.equalsIgnoreCase("georss")) {
@@ -74,7 +77,12 @@ class FromCommand extends LayerOutCommand<FromOptions> {
             throw new Exception("Unknown ${options.format} format!")
         }
         String text = options.text ?: reader.text
-        Layer layer = layerReader.read(options.formatOptions, text)
+        Layer layer
+        if (layerReader instanceof GeobufReader) {
+            layer = layerReader.read(text)
+        } else {
+            layer = layerReader.read(options.formatOptions, text)
+        }
 
         // Create output Schema
         List fields = layer.schema.fields

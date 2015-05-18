@@ -3,9 +3,7 @@ package org.geocommands.vector
 import org.geocommands.BaseTest
 import org.geocommands.vector.ToCommand.ToOptions
 import org.junit.Test
-
-import static org.junit.Assert.assertEquals
-import static org.junit.Assert.assertTrue
+import static org.junit.Assert.*
 
 /**
  * The ToCommand Unit Test
@@ -39,6 +37,18 @@ class ToCommandTest extends BaseTest {
         cmd.execute(options, readCsv("points.csv"), writer)
         String kml = writer.toString()
         assertTrue(kml.startsWith("<kml:kml"))
+    }
+
+    @Test
+    void executeFromCsvToGeobuf() {
+        ToCommand cmd = new ToCommand()
+        ToOptions options = new ToOptions(
+                format: "geobuf"
+        )
+        StringWriter writer = new StringWriter()
+        cmd.execute(options, readCsv("points.csv"), writer)
+        String geobuf = writer.toString()
+        assertNotNull geobuf
     }
 
     @Test

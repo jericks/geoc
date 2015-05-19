@@ -9,6 +9,7 @@ import geoscript.layer.io.GeobufReader
 import geoscript.layer.io.GmlReader
 import geoscript.layer.io.GpxReader
 import geoscript.layer.io.KmlReader
+import geoscript.layer.io.MvtReader
 import geoscript.workspace.Memory
 import geoscript.workspace.Workspace
 import org.kohsuke.args4j.Option
@@ -61,6 +62,8 @@ class FromCommand extends LayerOutCommand<FromOptions> {
             }
         } else if (options.format.equalsIgnoreCase("geobuf")) {
             layerReader = new GeobufReader()
+        } else if (options.format.equalsIgnoreCase("mvt")) {
+            layerReader = new MvtReader()
         } else if (options.format.equalsIgnoreCase("geojson")) {
             layerReader = new GeoJSONReader()
         } else if (options.format.equalsIgnoreCase("georss")) {
@@ -78,7 +81,7 @@ class FromCommand extends LayerOutCommand<FromOptions> {
         }
         String text = options.text ?: reader.text
         Layer layer
-        if (layerReader instanceof GeobufReader) {
+        if (layerReader instanceof GeobufReader || layerReader instanceof MvtReader) {
             layer = layerReader.read(text)
         } else {
             layer = layerReader.read(options.formatOptions, text)

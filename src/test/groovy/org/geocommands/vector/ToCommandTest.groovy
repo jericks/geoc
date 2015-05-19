@@ -26,7 +26,6 @@ class ToCommandTest extends BaseTest {
         assertEquals(expected, actual)
     }
 
-
     @Test
     void executeFromCsvToKml() {
         ToCommand cmd = new ToCommand()
@@ -37,6 +36,19 @@ class ToCommandTest extends BaseTest {
         cmd.execute(options, readCsv("points.csv"), writer)
         String kml = writer.toString()
         assertTrue(kml.startsWith("<kml:kml"))
+    }
+
+    @Test
+    void executeFromCsvToMvt() {
+        ToCommand cmd = new ToCommand()
+        ToOptions options = new ToOptions(
+                format: "mvt"
+        )
+        StringWriter writer = new StringWriter()
+        cmd.execute(options, readCsv("points.csv"), writer)
+        String mvt = writer.toString()
+        assertEquals "iU1WVAAAAFh4nGNgYGBmYGAQBWIGRvsPDGAAo4FAqVopJbO4JDEvOVXJSslIS" +
+                "UcpLzEXxPQrzU1KLVIwVKqFa3dQgeiB0RjaDTG0GyFrh+pxUMCh3RRDu7FSLQBYQSP3", mvt
     }
 
     @Test

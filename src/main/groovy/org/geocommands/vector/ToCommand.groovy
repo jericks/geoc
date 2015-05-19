@@ -9,6 +9,7 @@ import geoscript.layer.io.GeobufWriter
 import geoscript.layer.io.GmlWriter
 import geoscript.layer.io.GpxWriter
 import geoscript.layer.io.KmlWriter
+import geoscript.layer.io.MvtWriter
 import org.kohsuke.args4j.Option
 
 /**
@@ -48,6 +49,8 @@ class ToCommand extends LayerCommand<ToOptions> {
             layerWriter = new GeoJSONWriter()
         } else if (options.format.equalsIgnoreCase("geobuf")) {
             layerWriter = new GeobufWriter()
+        } else if (options.format.equalsIgnoreCase("mvt")) {
+            layerWriter = new MvtWriter()
         } else if (options.format.equalsIgnoreCase("gml")) {
             layerWriter = new GmlWriter()
         } else if (options.format.equalsIgnoreCase("kml")) {

@@ -1,7 +1,9 @@
 package org.geocommands
 
+import geoscript.layer.GeoTIFF
 import geoscript.layer.Layer
 import geoscript.layer.OSM
+import geoscript.layer.Raster
 import geoscript.layer.Shapefile
 
 /**
@@ -65,6 +67,10 @@ class Util {
         } else if (basemap.endsWith(".properties")) {
             Layer layer = new geoscript.layer.Property(basemap)
             layers.add(0, layer)
+        } else if (basemap.endsWith(".tif")) {
+            GeoTIFF geotiff = new GeoTIFF(new File(basemap))
+            Raster raster = geotiff.read()
+            layers.add(0, raster)
         } else if (basemap.endsWith(".groovy")) {
             File file = new File(basemap)
             if (file.exists()) {

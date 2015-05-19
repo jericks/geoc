@@ -39,6 +39,14 @@ _geoc()
         fi
     elif [[ "$line" == *"geoc list "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --description' -- $cur))
+    elif [[ "$line" == *"geoc map cube "* ]]; then
+        COMPREPLY=($(compgen -W '--help -f --file -m --map -s --tab-size -t --draw-tabs' -- $cur))
+    elif [[ "$line" == *"geoc map " ]]; then
+        COMPREPLY=($(compgen -W ' cube'))
+    elif [[ "$line" == *"geoc map"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "map cube" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' cube'))
+        fi
     elif [[ "$line" == *"geoc proj envelope "* ]]; then
         COMPREPLY=($(compgen -W '--help -e --epsg -g --geo-bounds -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc proj wkt "* ]]; then
@@ -839,13 +847,16 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' voronoi'))
         fi
     elif [[ "$line" == *"geoc " ]]; then
-        COMPREPLY=($(compgen -W ' geometry  list  proj  raster  style  tile  vector'))
+        COMPREPLY=($(compgen -W ' geometry  list  map  proj  raster  style  tile  vector'))
     elif [[ "$line" == *"geoc"[[:space:]][[:alpha:]]* ]]; then
         if [[ "geometry" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' geometry'))
         fi
         if [[ "list" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' list'))
+        fi
+        if [[ "map" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' map'))
         fi
         if [[ "proj" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' proj'))

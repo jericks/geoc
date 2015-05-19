@@ -5,6 +5,8 @@ org.geocommands.proj.EnvelopeCommand
 
 org.geocommands.style.CssToSldCommand
 
+org.geocommands.map.MapCubeCommand
+
 org.geocommands.geometry.ConvertCommand
 org.geocommands.geometry.DecimalDegrees2PointCommand
 org.geocommands.geometry.OrthodromicDistanceCommand

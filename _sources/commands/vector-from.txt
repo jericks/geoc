@@ -7,7 +7,7 @@ geoc vector from
 
 **Description**:
 
-Create a Layer from a string of KML, CSV, GML, or GeoJSON
+Create a Layer from a string of KML, CSV, GML, GEORSS, GEOBUF, GPX or GeoJSON
 
 **Arguments**:
 

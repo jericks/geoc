@@ -7,11 +7,11 @@ geoc vector to
 
 **Description**:
 
-Write a Layer to a String format (CSV, GeoJSON, KML, GML)
+Write a Layer to a String format (CSV, GeoJSON, KML, GML, GEORSS, GPX)
 
 **Arguments**:
 
-   * -f --format: The string format (CSV, GeoJSON, KML, GML)
+   * -f --format: The string format (CSV, GeoJSON, KML, GML, GEORSS, GPX)
 
    * -p --format-options: A format options 'key=value'
 

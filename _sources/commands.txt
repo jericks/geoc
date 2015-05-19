@@ -12,6 +12,7 @@ Commands
     commands/geometry-orthodromicdistance.rst
     commands/geometry-plot.rst
     commands/geometry-pt2dd.rst
+    commands/map-cube.rst
     commands/vector-datastorelist.rst
     commands/vector-datastoreparams.rst
     commands/vector-display.rst

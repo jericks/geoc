@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector page &mdash; geoc 0.3 documentation</title>
+  <title>map cube &mdash; geoc 0.3 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.3 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector translate" href="vector-translate.html"/>
-        <link rel="prev" title="vector sort" href="vector-sort.html"/> 
+        <link rel="next" title="vector datastorelist" href="vector-datastorelist.html"/>
+        <link rel="prev" title="geometry pt2dd" href="geometry-pt2dd.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -73,7 +73,7 @@
 <li class="toctree-l2"><a class="reference internal" href="geometry-orthodromicdistance.html">geometry orthodromicdistance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-plot.html">geometry plot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-pt2dd.html">geometry pt2dd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="map-cube.html">map cube</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">map cube</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-datastorelist.html">vector datastorelist</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-datastoreparams.html">vector datastoreparams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-display.html">vector display</a></li>
@@ -149,7 +149,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-raster-values.html">vector raster values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-subset.html">vector subset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-sort.html">vector sort</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-page.html">vector page</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-translate.html">vector translate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-uniquevalues.html">vector uniquevalues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-shear.html">vector shear</a></li>
@@ -241,10 +241,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector page</li>
+    <li>map cube</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-page.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/map-cube.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -252,26 +252,24 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-page">
-<h1>vector page<a class="headerlink" href="#vector-page" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="map-cube">
+<h1>map cube<a class="headerlink" href="#map-cube" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector page</p>
+<p>geoc map cube</p>
 <p><strong>Description</strong>:</p>
-<p>Page through Feature in the input Layer</p>
+<p>Create a map cube</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-m &#8211;max: The maximum number of Features to include</li>
-<li>-t &#8211;start: The index of the Feature to start at</li>
-<li>-o &#8211;output-workspace: The output workspace</li>
-<li>-r &#8211;output-layer: The output layer</li>
-<li>-i &#8211;input-workspace: The input workspace</li>
-<li>-l &#8211;input-layer: The input layer</li>
+<li>-m &#8211;map: The groovy map file that contains the layers to render</li>
+<li>-f &#8211;file: The output image file</li>
+<li>-t &#8211;draw-tabs: The flag to whether to draw tabs or not</li>
+<li>-s &#8211;tab-size: The tab size</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>cat states.csv | geoc vector page -t 0 -m 2
+<div class="highlight-python"><div class="highlight"><pre>geoc map cube -m map.groovy -f mapcube.png
 </pre></div>
 </div>
 </div>
@@ -282,10 +280,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-translate.html" class="btn btn-neutral float-right" title="vector translate"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="vector-datastorelist.html" class="btn btn-neutral float-right" title="vector datastorelist"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-sort.html" class="btn btn-neutral" title="vector sort"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="geometry-pt2dd.html" class="btn btn-neutral" title="geometry pt2dd"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

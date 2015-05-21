@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>raster polygon &mdash; geoc 0.3 documentation</title>
+  <title>geometry geohash encode &mdash; geoc 0.3 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.3 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="raster contour" href="raster-contour.html"/>
-        <link rel="prev" title="raster point" href="raster-point.html"/> 
+        <link rel="next" title="geometry greatcirclearc" href="geometry-greatcirclearc.html"/>
+        <link rel="prev" title="geometry dd2pt" href="geometry-dd2pt.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -69,7 +69,7 @@
 <li class="toctree-l2"><a class="reference internal" href="style-css2sld.html">style css2sld</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-convert.html">geometry convert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-dd2pt.html">geometry dd2pt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geometry-geohash-encode.html">geometry geohash encode</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">geometry geohash encode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-greatcirclearc.html">geometry greatcirclearc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-orthodromicdistance.html">geometry orthodromicdistance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-plot.html">geometry plot</a></li>
@@ -197,7 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="raster-divide.html">raster divide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-envelope.html">raster envelope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-point.html">raster point</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">raster polygon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-polygon.html">raster polygon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-contour.html">raster contour</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-to.html">raster to</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-mapalgebra.html">raster mapalgebra</a></li>
@@ -242,10 +242,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>raster polygon</li>
+    <li>geometry geohash encode</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/raster-polygon.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/geometry-geohash-encode.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -253,30 +253,24 @@
 </div>
           <div role="main">
             
-  <div class="section" id="raster-polygon">
-<h1>raster polygon<a class="headerlink" href="#raster-polygon" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="geometry-geohash-encode">
+<h1>geometry geohash encode<a class="headerlink" href="#geometry-geohash-encode" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc raster polygon</p>
+<p>geoc geometry geohash encode</p>
 <p><strong>Description</strong>:</p>
-<p>Convert a Raster to a Polygon Vector Layer</p>
+<p>Encode a Geometry as a GeoHash</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-b &#8211;band: The band</li>
-<li>-e &#8211;inside-edges: Whether to include inside edges</li>
-<li>-g &#8211;region-of-interest: The region of interest</li>
-<li>-n &#8211;no-data: A no data value</li>
-<li>-a &#8211;range: A range (min,minIncluded,max,maxIncluded)</li>
-<li>-o &#8211;output-workspace: The output workspace</li>
-<li>-r &#8211;output-layer: The output layer</li>
-<li>-i &#8211;input-raster: The input raster</li>
-<li>-l &#8211;input-raster-name: The input raster name</li>
-<li>-p &#8211;input-projection: The input projection</li>
+<li>-i &#8211;input: The input geometry</li>
+<li>-t &#8211;type: The encoding type (string or long). The default is string.</li>
+<li>-n &#8211;number-of-chars: The number of characters. The default is 9.</li>
+<li>-d &#8211;bit-depth: The bit depth. The default is 52.</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc raster polygon -i raster.tif -o polygons.shp
+<div class="highlight-python"><div class="highlight"><pre>geoc geometry geohash encode -i &quot;POINT (45 78)&quot;
 </pre></div>
 </div>
 </div>
@@ -287,10 +281,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="raster-contour.html" class="btn btn-neutral float-right" title="raster contour"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="geometry-greatcirclearc.html" class="btn btn-neutral float-right" title="geometry greatcirclearc"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="raster-point.html" class="btn btn-neutral" title="raster point"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="geometry-dd2pt.html" class="btn btn-neutral" title="geometry dd2pt"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

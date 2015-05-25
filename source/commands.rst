@@ -9,6 +9,7 @@ Commands
     commands/geometry-convert.rst
     commands/geometry-dd2pt.rst
     commands/geometry-geohash-encode.rst
+    commands/geometry-geohash-decode.rst
     commands/geometry-greatcirclearc.rst
     commands/geometry-orthodromicdistance.rst
     commands/geometry-plot.rst

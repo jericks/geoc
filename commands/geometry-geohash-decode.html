@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector transform &mdash; geoc 0.3 documentation</title>
+  <title>geometry geohash decode &mdash; geoc 0.3 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.3 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector pointstacker" href="vector-pointstacker.html"/>
-        <link rel="prev" title="vector compareschemas" href="vector-compareschemas.html"/> 
+        <link rel="next" title="geometry greatcirclearc" href="geometry-greatcirclearc.html"/>
+        <link rel="prev" title="geometry geohash encode" href="geometry-geohash-encode.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -70,7 +70,7 @@
 <li class="toctree-l2"><a class="reference internal" href="geometry-convert.html">geometry convert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-dd2pt.html">geometry dd2pt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-geohash-encode.html">geometry geohash encode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geometry-geohash-decode.html">geometry geohash decode</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">geometry geohash decode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-greatcirclearc.html">geometry greatcirclearc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-orthodromicdistance.html">geometry orthodromicdistance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-plot.html">geometry plot</a></li>
@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-single2multiple.html">vector single2multiple</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-multiple2single.html">vector multiple2single</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-compareschemas.html">vector compareschemas</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-transform.html">vector transform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-pointstacker.html">vector pointstacker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-raster.html">vector raster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-heatmap.html">vector heatmap</a></li>
@@ -243,10 +243,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector transform</li>
+    <li>geometry geohash decode</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-transform.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/geometry-geohash-decode.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -254,25 +254,22 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-transform">
-<h1>vector transform<a class="headerlink" href="#vector-transform" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="geometry-geohash-decode">
+<h1>geometry geohash decode<a class="headerlink" href="#geometry-geohash-decode" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector transform</p>
+<p>geoc geometry geohash decode</p>
 <p><strong>Description</strong>:</p>
-<p>Transform the values of the input Layer using Expression and Functions</p>
+<p>Decode a GeoHash to a Geometry.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-d &#8211;definition: A transform definition &#8216;field=expression&#8217;</li>
-<li>-o &#8211;output-workspace: The output workspace</li>
-<li>-r &#8211;output-layer: The output layer</li>
-<li>-i &#8211;input-workspace: The input workspace</li>
-<li>-l &#8211;input-layer: The input layer</li>
+<li>-i &#8211;input: The input geohash</li>
+<li>-t &#8211;type: Whether the geohash is a point or bounds</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc vector transform -i point.properties -i points_transformed.shp -d &quot;the_geom=buffer(the_geom,10)&quot; -d &quot;name=strToUpperCase(name)&quot; -d &quot;distance=distance * 10&quot;
+<div class="highlight-python"><div class="highlight"><pre>geoc geometry geohash decode -i uf8vk6wjr
 </pre></div>
 </div>
 </div>
@@ -283,10 +280,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-pointstacker.html" class="btn btn-neutral float-right" title="vector pointstacker"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="geometry-greatcirclearc.html" class="btn btn-neutral float-right" title="geometry greatcirclearc"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-compareschemas.html" class="btn btn-neutral" title="vector compareschemas"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="geometry-geohash-encode.html" class="btn btn-neutral" title="geometry geohash encode"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

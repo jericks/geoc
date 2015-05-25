@@ -75,9 +75,4 @@ class GeoHashEncodeCommand extends Command<GeoHashEncodeOptions> {
 
     }
 
-    static void main(String[] args) {
-
-
-    }
-
 }

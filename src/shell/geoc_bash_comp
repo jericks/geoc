@@ -8,11 +8,16 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -f --format -i --input -p --format-options -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry dd2pt "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --decimaldegrees -t --type' -- $cur))
+    elif [[ "$line" == *"geoc geometry geohash decode "* ]]; then
+        COMPREPLY=($(compgen -W '--help -i --input -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry geohash encode "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --bit-depth -i --input -n --number-of-chars -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry geohash " ]]; then
-        COMPREPLY=($(compgen -W ' encode'))
+        COMPREPLY=($(compgen -W ' decode  encode'))
     elif [[ "$line" == *"geoc geometry geohash"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "geometry geohash decode" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' decode'))
+        fi
         if [[ "geometry geohash encode" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' encode'))
         fi

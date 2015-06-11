@@ -12,14 +12,19 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -i --input -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry geohash encode "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --bit-depth -i --input -n --number-of-chars -t --type' -- $cur))
+    elif [[ "$line" == *"geoc geometry geohash neighbors "* ]]; then
+        COMPREPLY=($(compgen -W '--help -d --bit-depth -i --input -n --number-of-chars' -- $cur))
     elif [[ "$line" == *"geoc geometry geohash " ]]; then
-        COMPREPLY=($(compgen -W ' decode  encode'))
+        COMPREPLY=($(compgen -W ' decode  encode  neighbors'))
     elif [[ "$line" == *"geoc geometry geohash"[[:space:]][[:alpha:]]* ]]; then
         if [[ "geometry geohash decode" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' decode'))
         fi
         if [[ "geometry geohash encode" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' encode'))
+        fi
+        if [[ "geometry geohash neighbors" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' neighbors'))
         fi
     elif [[ "$line" == *"geoc geometry greatcirclearc "* ]]; then
         COMPREPLY=($(compgen -W '--help -e --ellipsoid -n --num-points -p --start-point -t --end-point' -- $cur))

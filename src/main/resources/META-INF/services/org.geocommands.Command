@@ -15,6 +15,7 @@ org.geocommands.geometry.Point2DecimalDegreesCommand
 org.geocommands.geometry.GreatCircleArcCommand
 org.geocommands.geometry.GeoHashEncodeCommand
 org.geocommands.geometry.GeoHashDecodeCommand
+org.geocommands.geometry.GeoHashNeighborsCommand
 
 org.geocommands.vector.DataStoreListCommand
 org.geocommands.vector.DataStoreParametersCommand

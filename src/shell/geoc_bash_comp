@@ -8,6 +8,8 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -f --format -i --input -p --format-options -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry dd2pt "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --decimaldegrees -t --type' -- $cur))
+    elif [[ "$line" == *"geoc geometry geohash bounds "* ]]; then
+        COMPREPLY=($(compgen -W '--help -b --bounds -d --bit-depth -n --number-of-chars -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry geohash decode "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry geohash encode "* ]]; then
@@ -15,8 +17,11 @@ _geoc()
     elif [[ "$line" == *"geoc geometry geohash neighbors "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --bit-depth -i --input -n --number-of-chars' -- $cur))
     elif [[ "$line" == *"geoc geometry geohash " ]]; then
-        COMPREPLY=($(compgen -W ' decode  encode  neighbors'))
+        COMPREPLY=($(compgen -W ' bounds  decode  encode  neighbors'))
     elif [[ "$line" == *"geoc geometry geohash"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "geometry geohash bounds" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' bounds'))
+        fi
         if [[ "geometry geohash decode" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' decode'))
         fi

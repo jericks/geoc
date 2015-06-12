@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>raster divide constant &mdash; geoc 0.3 documentation</title>
+  <title>geometry geohash bounds &mdash; geoc 0.3 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.3 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="raster divide" href="raster-divide.html"/>
-        <link rel="prev" title="raster multiply" href="raster-multiply.html"/> 
+        <link rel="next" title="geometry geohash neighbors" href="geometry-geohash-neighbors.html"/>
+        <link rel="prev" title="geometry geohash decode" href="geometry-geohash-decode.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -71,7 +71,7 @@
 <li class="toctree-l2"><a class="reference internal" href="geometry-dd2pt.html">geometry dd2pt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-geohash-encode.html">geometry geohash encode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-geohash-decode.html">geometry geohash decode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geometry-geohash-bounds.html">geometry geohash bounds</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">geometry geohash bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-geohash-neighbors.html">geometry geohash neighbors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-greatcirclearc.html">geometry greatcirclearc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-orthodromicdistance.html">geometry orthodromicdistance</a></li>
@@ -196,7 +196,7 @@
 <li class="toctree-l2"><a class="reference internal" href="raster-subtract.html">raster subtract</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-multiply-constant.html">raster multiply constant</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-multiply.html">raster multiply</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">raster divide constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-divide-constant.html">raster divide constant</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-divide.html">raster divide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-envelope.html">raster envelope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-point.html">raster point</a></li>
@@ -245,10 +245,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>raster divide constant</li>
+    <li>geometry geohash bounds</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/raster-divide-constant.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/geometry-geohash-bounds.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -256,26 +256,24 @@
 </div>
           <div role="main">
             
-  <div class="section" id="raster-divide-constant">
-<h1>raster divide constant<a class="headerlink" href="#raster-divide-constant" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="geometry-geohash-bounds">
+<h1>geometry geohash bounds<a class="headerlink" href="#geometry-geohash-bounds" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc raster divide constant</p>
+<p>geoc geometry geohash bounds</p>
 <p><strong>Description</strong>:</p>
-<p>Divide a constant value to a Raster</p>
+<p>Calculate the geohashes for the given bounds</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-v &#8211;value: The value</li>
-<li>-o &#8211;output-raster: The output raster</li>
-<li>-f &#8211;output-raster-format: The output raster format</li>
-<li>-i &#8211;input-raster: The input raster</li>
-<li>-l &#8211;input-raster-name: The input raster name</li>
-<li>-p &#8211;input-projection: The input projection</li>
+<li>-b &#8211;bounds: The input geometry</li>
+<li>-t &#8211;type: The encoding type (string or long). The default is string.</li>
+<li>-n &#8211;number-of-chars: The number of characters. The default is 9.</li>
+<li>-d &#8211;bit-depth: The bit depth. The default is 52.</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc raster divide constant -i raster.tif -o raster_div_2.tif -v 2
+<div class="highlight-python"><div class="highlight"><pre>geoc geometry geohash bounds -b &quot;120, 30, 120.0001, 30.0001&quot;
 </pre></div>
 </div>
 </div>
@@ -286,10 +284,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="raster-divide.html" class="btn btn-neutral float-right" title="raster divide"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="geometry-geohash-neighbors.html" class="btn btn-neutral float-right" title="geometry geohash neighbors"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="raster-multiply.html" class="btn btn-neutral" title="raster multiply"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="geometry-geohash-decode.html" class="btn btn-neutral" title="geometry geohash decode"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

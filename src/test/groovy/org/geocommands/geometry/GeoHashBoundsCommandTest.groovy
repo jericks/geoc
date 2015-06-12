@@ -63,7 +63,8 @@ wtm6dtm7h""", result)
 
     @Test void runLong() {
         String result = runApp([
-                gi
+                "geometry geohash bounds",
+                "-b","120, 30, 120.0001, 30.0001",
                 "-t","long",
                 "-d","45"
         ],"")

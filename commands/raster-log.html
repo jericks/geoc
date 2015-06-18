@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector octagonalenvelope &mdash; geoc 0.3 documentation</title>
+  <title>raster log &mdash; geoc 0.3 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.3 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector octagonalenvelopes" href="vector-octagonalenvelopes.html"/>
-        <link rel="prev" title="vector minrects" href="vector-minrects.html"/> 
+        <link rel="next" title="raster get value" href="raster-get-value.html"/>
+        <link rel="prev" title="raster extractfootprint" href="raster-extractfootprint.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -96,7 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-mincircles.html">vector mincircles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-minrect.html">vector minrect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-minrects.html">vector minrects</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector octagonalenvelope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-octagonalenvelope.html">vector octagonalenvelope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-octagonalenvelopes.html">vector octagonalenvelopes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-draw.html">vector draw</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-voronoi.html">vector voronoi</a></li>
@@ -183,7 +183,7 @@
 <li class="toctree-l2"><a class="reference internal" href="raster-crop-with-geometry.html">raster crop with geometry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-crop-with-layer.html">raster crop with layer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-extractfootprint.html">raster extractfootprint</a></li>
-<li class="toctree-l2"><a class="reference internal" href="raster-log.html">raster log</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">raster log</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-get-value.html">raster get value</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-scale.html">raster scale</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-project.html">raster project</a></li>
@@ -246,10 +246,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector octagonalenvelope</li>
+    <li>raster log</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-octagonalenvelope.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/raster-log.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -257,24 +257,25 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-octagonalenvelope">
-<h1>vector octagonalenvelope<a class="headerlink" href="#vector-octagonalenvelope" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="raster-log">
+<h1>raster log<a class="headerlink" href="#raster-log" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector octagonalenvelope</p>
+<p>geoc raster log</p>
 <p><strong>Description</strong>:</p>
-<p>Calculate the octagonal envelope of the input Layer and save it to the output Layer</p>
+<p>Calculate the log for each cell.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-o &#8211;output-workspace: The output workspace</li>
-<li>-r &#8211;output-layer: The output layer</li>
-<li>-i &#8211;input-workspace: The input workspace</li>
-<li>-l &#8211;input-layer: The input layer</li>
+<li>-o &#8211;output-raster: The output raster</li>
+<li>-f &#8211;output-raster-format: The output raster format</li>
+<li>-i &#8211;input-raster: The input raster</li>
+<li>-l &#8211;input-raster-name: The input raster name</li>
+<li>-p &#8211;input-projection: The input projection</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc vector octagonalenvelope -i states.shp -o state_octagonalenvelope.shp
+<div class="highlight-python"><div class="highlight"><pre>geoc raster log -i raster.tif -o raster_log.tif
 </pre></div>
 </div>
 </div>
@@ -285,10 +286,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-octagonalenvelopes.html" class="btn btn-neutral float-right" title="vector octagonalenvelopes"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="raster-get-value.html" class="btn btn-neutral float-right" title="raster get value"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-minrects.html" class="btn btn-neutral" title="vector minrects"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="raster-extractfootprint.html" class="btn btn-neutral" title="raster extractfootprint"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

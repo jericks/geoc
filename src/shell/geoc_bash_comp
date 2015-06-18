@@ -145,6 +145,8 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -i --input-raster -l --input-raster-name -p --input-projection' -- $cur))
     elif [[ "$line" == *"geoc raster invert "* ]]; then
         COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
+    elif [[ "$line" == *"geoc raster log "* ]]; then
+        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
     elif [[ "$line" == *"geoc raster mapalgebra "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --bounds -f --output-raster-format -n --output-name -o --output-raster -p --output-raster-projection -r --raster -s --script -z --size' -- $cur))
     elif [[ "$line" == *"geoc raster multiply constant "* ]]; then
@@ -222,7 +224,7 @@ _geoc()
     elif [[ "$line" == *"geoc raster worldfile "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --bounds -f --file -s --size' -- $cur))
     elif [[ "$line" == *"geoc raster " ]]; then
-        COMPREPLY=($(compgen -W ' add  animatedgif  contour  crop  display  divide  draw  envelope  extractfootprint  get  info  invert  mapalgebra  multiply  point  polygon  project  reclassify  resample  scale  style  stylize  subtract  to  worldfile'))
+        COMPREPLY=($(compgen -W ' add  animatedgif  contour  crop  display  divide  draw  envelope  extractfootprint  get  info  invert  log  mapalgebra  multiply  point  polygon  project  reclassify  resample  scale  style  stylize  subtract  to  worldfile'))
     elif [[ "$line" == *"geoc raster"[[:space:]][[:alpha:]]* ]]; then
         if [[ "raster add" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' add'))
@@ -259,6 +261,9 @@ _geoc()
         fi
         if [[ "raster invert" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' invert'))
+        fi
+        if [[ "raster log" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' log'))
         fi
         if [[ "raster mapalgebra" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' mapalgebra'))

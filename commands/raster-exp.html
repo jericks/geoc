@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector merge &mdash; geoc 0.3 documentation</title>
+  <title>raster exp &mdash; geoc 0.3 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.3 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector clip" href="vector-clip.html"/>
-        <link rel="prev" title="vector append" href="vector-append.html"/> 
+        <link rel="next" title="raster crop" href="raster-crop.html"/>
+        <link rel="prev" title="raster draw" href="raster-draw.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -133,7 +133,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-dissolvebyfield.html">vector dissolvebyfield</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-dissolveintersecting.html">vector dissolveintersecting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-append.html">vector append</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-merge.html">vector merge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-clip.html">vector clip</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-union.html">vector union</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-intersection.html">vector intersection</a></li>
@@ -179,7 +179,7 @@
 <li class="toctree-l2"><a class="reference internal" href="raster-info.html">raster info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-display.html">raster display</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-draw.html">raster draw</a></li>
-<li class="toctree-l2"><a class="reference internal" href="raster-exp.html">raster exp</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">raster exp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-crop.html">raster crop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-crop-with-geometry.html">raster crop with geometry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-crop-with-layer.html">raster crop with layer</a></li>
@@ -247,10 +247,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector merge</li>
+    <li>raster exp</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-merge.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/raster-exp.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -258,26 +258,25 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-merge">
-<h1>vector merge<a class="headerlink" href="#vector-merge" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="raster-exp">
+<h1>raster exp<a class="headerlink" href="#raster-exp" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector merge</p>
+<p>geoc raster exp</p>
 <p><strong>Description</strong>:</p>
-<p>Merge two Layers together to create a new Layer</p>
+<p>Calculate the exponent for each cell.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-k &#8211;other-workspace: The other workspace</li>
-<li>-y &#8211;other-layer: The other layer</li>
-<li>-o &#8211;output-workspace: The output workspace</li>
-<li>-r &#8211;output-layer: The output layer</li>
-<li>-i &#8211;input-workspace: The input workspace</li>
-<li>-l &#8211;input-layer: The input layer</li>
+<li>-o &#8211;output-raster: The output raster</li>
+<li>-f &#8211;output-raster-format: The output raster format</li>
+<li>-i &#8211;input-raster: The input raster</li>
+<li>-l &#8211;input-raster-name: The input raster name</li>
+<li>-p &#8211;input-projection: The input projection</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc vector merge -i states_SUB_REGION_Pacific.shp -k states_SUB_REGION_Mtn.shp -o states_west.shp
+<div class="highlight-python"><div class="highlight"><pre>geoc raster exp -i raster.tif -o raster_exp.tif
 </pre></div>
 </div>
 </div>
@@ -288,10 +287,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-clip.html" class="btn btn-neutral float-right" title="vector clip"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="raster-crop.html" class="btn btn-neutral float-right" title="raster crop"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-append.html" class="btn btn-neutral" title="vector append"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="raster-draw.html" class="btn btn-neutral" title="raster draw"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

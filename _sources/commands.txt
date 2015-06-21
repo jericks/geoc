@@ -118,6 +118,7 @@ Commands
     commands/raster-info.rst
     commands/raster-display.rst
     commands/raster-draw.rst
+    commands/raster-exp.rst
     commands/raster-crop.rst
     commands/raster-crop-with-geometry.rst
     commands/raster-crop-with-layer.rst

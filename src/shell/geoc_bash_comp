@@ -131,6 +131,8 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -b --bounds -f --file -h --height -i --input-raster -l --input-raster-name -m --base-map -p --input-projection -s --sld-file -t --type -w --width' -- $cur))
     elif [[ "$line" == *"geoc raster envelope "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-raster -l --input-raster-name -o --output-workspace -p --input-projection -r --output-layer' -- $cur))
+    elif [[ "$line" == *"geoc raster exp "* ]]; then
+        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
     elif [[ "$line" == *"geoc raster extractfootprint "* ]]; then
         COMPREPLY=($(compgen -W '--help -c --remove-collinear -e --exclusion-range -f --compute-simplified-footprint -i --input-raster -l --input-raster-name -o --output-workspace -p --input-projection -r --output-layer -s --simplifier-factor -t --threshold-area -v --force-valid -y --loading-type' -- $cur))
     elif [[ "$line" == *"geoc raster get value "* ]]; then
@@ -224,7 +226,7 @@ _geoc()
     elif [[ "$line" == *"geoc raster worldfile "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --bounds -f --file -s --size' -- $cur))
     elif [[ "$line" == *"geoc raster " ]]; then
-        COMPREPLY=($(compgen -W ' add  animatedgif  contour  crop  display  divide  draw  envelope  extractfootprint  get  info  invert  log  mapalgebra  multiply  point  polygon  project  reclassify  resample  scale  style  stylize  subtract  to  worldfile'))
+        COMPREPLY=($(compgen -W ' add  animatedgif  contour  crop  display  divide  draw  envelope  exp  extractfootprint  get  info  invert  log  mapalgebra  multiply  point  polygon  project  reclassify  resample  scale  style  stylize  subtract  to  worldfile'))
     elif [[ "$line" == *"geoc raster"[[:space:]][[:alpha:]]* ]]; then
         if [[ "raster add" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' add'))
@@ -249,6 +251,9 @@ _geoc()
         fi
         if [[ "raster envelope" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' envelope'))
+        fi
+        if [[ "raster exp" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' exp'))
         fi
         if [[ "raster extractfootprint" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' extractfootprint'))

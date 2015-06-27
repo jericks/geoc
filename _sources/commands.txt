@@ -115,6 +115,7 @@ Commands
     commands/vector-database-remove.rst
     commands/vector-count-featuresInfeature.rst
     commands/vector-snap-points2lines.rst
+    commands/raster-abs.rst
     commands/raster-info.rst
     commands/raster-display.rst
     commands/raster-draw.rst

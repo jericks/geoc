@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector voronoi &mdash; geoc 0.3 documentation</title>
+  <title>raster abs &mdash; geoc 0.3 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.3 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector delaunay" href="vector-delaunay.html"/>
-        <link rel="prev" title="vector draw" href="vector-draw.html"/> 
+        <link rel="next" title="raster info" href="raster-info.html"/>
+        <link rel="prev" title="vector snap points2lines" href="vector-snap-points2lines.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -99,7 +99,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-octagonalenvelope.html">vector octagonalenvelope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-octagonalenvelopes.html">vector octagonalenvelopes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-draw.html">vector draw</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector voronoi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-voronoi.html">vector voronoi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-delaunay.html">vector delaunay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-geomw.html">vector geomw</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-geomr.html">vector geomr</a></li>
@@ -176,7 +176,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-database-remove.html">vector database remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-count-featuresInfeature.html">vector count featuresInfeature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-snap-points2lines.html">vector snap points2lines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="raster-abs.html">raster abs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">raster abs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-info.html">raster info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-display.html">raster display</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-draw.html">raster draw</a></li>
@@ -248,10 +248,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector voronoi</li>
+    <li>raster abs</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-voronoi.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/raster-abs.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -259,24 +259,25 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-voronoi">
-<h1>vector voronoi<a class="headerlink" href="#vector-voronoi" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="raster-abs">
+<h1>raster abs<a class="headerlink" href="#raster-abs" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector voronoi</p>
+<p>geoc raster abs</p>
 <p><strong>Description</strong>:</p>
-<p>Calculate a voronoi diagram of the input Layer and save it to the output Layer</p>
+<p>Calculate the absolute value for each cell.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-o &#8211;output-workspace: The output workspace</li>
-<li>-r &#8211;output-layer: The output layer</li>
-<li>-i &#8211;input-workspace: The input workspace</li>
-<li>-l &#8211;input-layer: The input layer</li>
+<li>-o &#8211;output-raster: The output raster</li>
+<li>-f &#8211;output-raster-format: The output raster format</li>
+<li>-i &#8211;input-raster: The input raster</li>
+<li>-l &#8211;input-raster-name: The input raster name</li>
+<li>-p &#8211;input-projection: The input projection</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc vector voronoi -i states.shp -o states_voronoi.shp
+<div class="highlight-python"><div class="highlight"><pre>geoc raster abs -i raster.tif -o raster_abs.tif
 </pre></div>
 </div>
 </div>
@@ -287,10 +288,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-delaunay.html" class="btn btn-neutral float-right" title="vector delaunay"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="raster-info.html" class="btn btn-neutral float-right" title="raster info"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-draw.html" class="btn btn-neutral" title="vector draw"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vector-snap-points2lines.html" class="btn btn-neutral" title="vector snap points2lines"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

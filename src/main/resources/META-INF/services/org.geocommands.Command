@@ -161,3 +161,5 @@ org.geocommands.tile.PyramidCommand
 org.geocommands.tile.StitchRasterCommand
 org.geocommands.tile.StitchVectorCommand
 org.geocommands.tile.VectorGridCommand
+
+org.geocommands.filter.CqlToXmlCommand

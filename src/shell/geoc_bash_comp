@@ -4,7 +4,15 @@ _geoc()
     local line=${COMP_LINE}
     local cmd=${line##*geoc }
     COMPREPLY=()
-    if [[ "$line" == *"geoc geometry convert "* ]]; then
+    if [[ "$line" == *"geoc filter cql2xml "* ]]; then
+        COMPREPLY=($(compgen -W '--help -c --cql' -- $cur))
+    elif [[ "$line" == *"geoc filter " ]]; then
+        COMPREPLY=($(compgen -W ' cql2xml'))
+    elif [[ "$line" == *"geoc filter"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "filter cql2xml" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' cql2xml'))
+        fi
+    elif [[ "$line" == *"geoc geometry convert "* ]]; then
         COMPREPLY=($(compgen -W '--help -f --format -i --input -p --format-options -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry dd2pt "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --decimaldegrees -t --type' -- $cur))
@@ -888,8 +896,11 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' voronoi'))
         fi
     elif [[ "$line" == *"geoc " ]]; then
-        COMPREPLY=($(compgen -W ' geometry  list  map  proj  raster  style  tile  vector'))
+        COMPREPLY=($(compgen -W ' filter  geometry  list  map  proj  raster  style  tile  vector'))
     elif [[ "$line" == *"geoc"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "filter" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' filter'))
+        fi
         if [[ "geometry" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' geometry'))
         fi

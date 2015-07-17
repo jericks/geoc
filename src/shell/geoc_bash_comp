@@ -331,7 +331,7 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' css2sld'))
         fi
     elif [[ "$line" == *"geoc tile generate "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -d --layer-fields -e --end-zoom -f --field -l --tile-layer -m --base-map -n --tile-layer-name -p --pyramid -s --start-zoom -t --type -v --verbose' -- $cur))
+        COMPREPLY=($(compgen -W '--help -b --bounds -d --layer-fields -e --end-zoom -f --field -i --missing -l --tile-layer -m --base-map -n --tile-layer-name -p --pyramid -s --start-zoom -t --type -v --verbose' -- $cur))
     elif [[ "$line" == *"geoc tile pyramid "* ]]; then
         COMPREPLY=($(compgen -W '--help -l --tile-layer -n --tile-layer-name -o --output-type -p --pyramid -t --type' -- $cur))
     elif [[ "$line" == *"geoc tile stitch raster "* ]]; then

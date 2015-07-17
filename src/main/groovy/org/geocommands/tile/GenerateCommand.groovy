@@ -93,7 +93,8 @@ class GenerateCommand extends Command<GenerateOptions> {
 
         TileGenerator generator = new TileGenerator(verbose: options.verbose)
         try {
-            generator.generate(tileLayer, tileRenderer, options.startZoom, options.endZoom, bounds: Bounds.fromString(options.bounds))
+            generator.generate(tileLayer, tileRenderer, options.startZoom, options.endZoom,
+                    bounds: Bounds.fromString(options.bounds), missingOnly: options.missing)
         } finally {
             tileLayer.close()
         }
@@ -130,6 +131,9 @@ class GenerateCommand extends Command<GenerateOptions> {
 
         @Option(name = "-b", aliases = "--bounds", usage = "The bounds", required = false)
         String bounds
+
+        @Option(name = "-i", aliases = "--missing", usage = "Whether to generate only missing tiles", required = false)
+        boolean missing = false
 
         @Option(name = "-v", aliases = "--verbose", usage = "The verbose flag", required = false)
         boolean verbose = false

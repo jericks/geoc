@@ -31,6 +31,8 @@ Generate tiles
 
    * -b --bounds: The bounds
 
+   * -i --missing: Whether to generate only missing tiles
+
    * -v --verbose: The verbose flag
 
    * --help : Print the help message

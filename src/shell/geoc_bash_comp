@@ -330,6 +330,8 @@ _geoc()
         if [[ "style css2sld" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' css2sld'))
         fi
+    elif [[ "$line" == *"geoc tile delete "* ]]; then
+        COMPREPLY=($(compgen -W '--help -b --bounds -c --maxx -i --tile -l --tile-layer -n --tile-layer-name -p --pyramid -t --type -u --maxy -x --minx -y --miny -z --zoom-level' -- $cur))
     elif [[ "$line" == *"geoc tile generate "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --bounds -d --layer-fields -e --end-zoom -f --field -i --missing -l --tile-layer -m --base-map -n --tile-layer-name -p --pyramid -s --start-zoom -t --type -v --verbose' -- $cur))
     elif [[ "$line" == *"geoc tile pyramid "* ]]; then
@@ -356,8 +358,11 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' grid'))
         fi
     elif [[ "$line" == *"geoc tile " ]]; then
-        COMPREPLY=($(compgen -W ' generate  pyramid  stitch  vector'))
+        COMPREPLY=($(compgen -W ' delete  generate  pyramid  stitch  vector'))
     elif [[ "$line" == *"geoc tile"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "tile delete" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' delete'))
+        fi
         if [[ "tile generate" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' generate'))
         fi

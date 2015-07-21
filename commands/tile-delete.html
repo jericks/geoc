@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>geometry greatcirclearc &mdash; geoc 0.3 documentation</title>
+  <title>tile delete &mdash; geoc 0.3 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.3 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="geometry orthodromicdistance" href="geometry-orthodromicdistance.html"/>
-        <link rel="prev" title="geometry geohash neighbors" href="geometry-geohash-neighbors.html"/> 
+        <link rel="next" title="tile pyramid" href="tile-pyramid.html"/>
+        <link rel="prev" title="tile generate" href="tile-generate.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -73,7 +73,7 @@
 <li class="toctree-l2"><a class="reference internal" href="geometry-geohash-decode.html">geometry geohash decode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-geohash-bounds.html">geometry geohash bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-geohash-neighbors.html">geometry geohash neighbors</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">geometry greatcirclearc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry-greatcirclearc.html">geometry greatcirclearc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-orthodromicdistance.html">geometry orthodromicdistance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-plot.html">geometry plot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-pt2dd.html">geometry pt2dd</a></li>
@@ -216,7 +216,7 @@
 <li class="toctree-l2"><a class="reference internal" href="raster-style-colormap.html">raster style colormap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-animatedgif.html">raster animatedgif</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tile-generate.html">tile generate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tile-delete.html">tile delete</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">tile delete</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tile-pyramid.html">tile pyramid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tile-stitch-raster.html">tile stitch raster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tile-stitch-vector.html">tile stitch vector</a></li>
@@ -250,10 +250,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>geometry greatcirclearc</li>
+    <li>tile delete</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/geometry-greatcirclearc.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/tile-delete.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -261,24 +261,31 @@
 </div>
           <div role="main">
             
-  <div class="section" id="geometry-greatcirclearc">
-<h1>geometry greatcirclearc<a class="headerlink" href="#geometry-greatcirclearc" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="tile-delete">
+<h1>tile delete<a class="headerlink" href="#tile-delete" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc geometry greatcirclearc</p>
+<p>geoc tile delete</p>
 <p><strong>Description</strong>:</p>
-<p>Calculate the orthodromic distance between two points.</p>
+<p>Delete tiles from a tile layer</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-e &#8211;ellipsoid: The ellipsoid</li>
-<li>-p &#8211;start-point: The start point</li>
-<li>-t &#8211;end-point: The end point</li>
-<li>-n &#8211;num-points: The number of points</li>
+<li>-l &#8211;tile-layer: The tile layer</li>
+<li>-n &#8211;tile-layer-name: The tile layer name</li>
+<li>-t &#8211;type: The type of tile layer(png, utfgrid, mvt, pbf)</li>
+<li>-p &#8211;pyramid: The pyramid</li>
+<li>-i &#8211;tile: The Tile Z/X/Y coordinates</li>
+<li>-b &#8211;bounds: The bounds</li>
+<li>-z &#8211;zoom-level: The tile zoom level</li>
+<li>-x &#8211;minx: The min x or col</li>
+<li>-y &#8211;miny: The min y or row</li>
+<li>-c &#8211;maxx: The max x or col</li>
+<li>-u &#8211;maxy: The max y or row</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc geometry greatcirclearc -p &quot;POINT (-122 48)&quot; -t &quot;POINT (-77 39)&quot;
+<div class="highlight-python"><div class="highlight"><pre>geoc tile delete -l earthquakes.mbtiles -n earthquakes -z 2
 </pre></div>
 </div>
 </div>
@@ -289,10 +296,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="geometry-orthodromicdistance.html" class="btn btn-neutral float-right" title="geometry orthodromicdistance"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tile-pyramid.html" class="btn btn-neutral float-right" title="tile pyramid"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="geometry-geohash-neighbors.html" class="btn btn-neutral" title="geometry geohash neighbors"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tile-generate.html" class="btn btn-neutral" title="tile generate"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

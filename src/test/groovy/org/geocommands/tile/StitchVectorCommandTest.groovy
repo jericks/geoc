@@ -28,9 +28,7 @@ class StitchVectorCommandTest extends BaseTest {
         File outFile = createTemporaryFile("earthquakes", "gpkg")
         StitchVectorCommand cmd = new StitchVectorCommand()
         StitchVectorOptions options = new StitchVectorOptions(
-                tileLayer: mvtTilesDir.absolutePath,
-                tileLayerName: "earthquakes",
-                type: "mvt",
+                tileLayer: "type=vectortiles format=mvt name=earthquakes file=${mvtTilesDir.absolutePath}",
                 z: 1,
                 outputWorkspace: outFile.absolutePath
         )
@@ -48,9 +46,7 @@ class StitchVectorCommandTest extends BaseTest {
         File outFile = createTemporaryFile("earthquakes", "gpkg")
         runApp([
                 "tile stitch vector",
-                "-l", mvtTilesDir.absolutePath,
-                "-n", "earthquakes",
-                "-t", "mvt",
+                "-l", "type=vectortiles name=earthquakes format=mvt file=${mvtTilesDir.absolutePath}",
                 "-z", 1,
                 "-o", outFile.absolutePath
         ], "")
@@ -61,13 +57,11 @@ class StitchVectorCommandTest extends BaseTest {
     }
 
     private File generateMvtTiles() {
-        GenerateCommand cmd = new GenerateCommand()
         File tileFile = temporaryFolder.newFolder("earthquakes")
         File layerFile = getResource("earthquakes.properties")
+        GenerateCommand cmd = new GenerateCommand()
         GenerateOptions options = new GenerateOptions(
-                tileLayer: tileFile.absolutePath,
-                tileLayerName: "earthquakes",
-                type: "mvt",
+                tileLayer: "type=vectortiles format=mvt file=${tileFile.absolutePath}",
                 fields: ["the_geom", "title"],
                 baseMap: layerFile,
                 startZoom: 0,

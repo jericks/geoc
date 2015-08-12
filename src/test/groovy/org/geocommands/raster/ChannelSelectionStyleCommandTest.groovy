@@ -38,14 +38,18 @@ class ChannelSelectionStyleCommandTest extends BaseTest {
             <sld:ChannelSelection>
               <sld:RedChannel>
                 <sld:SourceChannelName>red</sld:SourceChannelName>
+                <sld:ContrastEnhancement/>
               </sld:RedChannel>
               <sld:GreenChannel>
                 <sld:SourceChannelName>green</sld:SourceChannelName>
+                <sld:ContrastEnhancement/>
               </sld:GreenChannel>
               <sld:BlueChannel>
                 <sld:SourceChannelName>blue</sld:SourceChannelName>
+                <sld:ContrastEnhancement/>
               </sld:BlueChannel>
             </sld:ChannelSelection>
+            <sld:ContrastEnhancement/>
           </sld:RasterSymbolizer>
         </sld:Rule>
       </sld:FeatureTypeStyle>
@@ -83,8 +87,10 @@ class ChannelSelectionStyleCommandTest extends BaseTest {
             <sld:ChannelSelection>
               <sld:GrayChannel>
                 <sld:SourceChannelName>gray</sld:SourceChannelName>
+                <sld:ContrastEnhancement/>
               </sld:GrayChannel>
             </sld:ChannelSelection>
+            <sld:ContrastEnhancement/>
           </sld:RasterSymbolizer>
         </sld:Rule>
       </sld:FeatureTypeStyle>
@@ -142,6 +148,7 @@ class ChannelSelectionStyleCommandTest extends BaseTest {
                 </sld:ContrastEnhancement>
               </sld:BlueChannel>
             </sld:ChannelSelection>
+            <sld:ContrastEnhancement/>
           </sld:RasterSymbolizer>
         </sld:Rule>
       </sld:FeatureTypeStyle>

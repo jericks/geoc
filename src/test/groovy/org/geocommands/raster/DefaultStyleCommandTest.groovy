@@ -33,6 +33,7 @@ class DefaultStyleCommandTest extends BaseTest {
               <ogc:Literal>grid</ogc:Literal>
             </sld:Geometry>
             <sld:Opacity>0.85</sld:Opacity>
+            <sld:ContrastEnhancement/>
           </sld:RasterSymbolizer>
         </sld:Rule>
       </sld:FeatureTypeStyle>
@@ -66,6 +67,7 @@ class DefaultStyleCommandTest extends BaseTest {
               <ogc:Literal>grid</ogc:Literal>
             </sld:Geometry>
             <sld:Opacity>0.85</sld:Opacity>
+            <sld:ContrastEnhancement/>
           </sld:RasterSymbolizer>
         </sld:Rule>
       </sld:FeatureTypeStyle>

@@ -22,10 +22,10 @@ class GenerateCommandTest extends BaseTest {
     void executeMbtiles() {
         GenerateCommand cmd = new GenerateCommand()
         File tileFile = temporaryFolder.newFile("earthquakes.mbtiles")
+        tileFile.delete()
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: tileFile.absolutePath,
-                tileLayerName: "earthquakes",
                 baseMap: layerFile,
                 startZoom: 0,
                 endZoom: 2,
@@ -43,10 +43,10 @@ class GenerateCommandTest extends BaseTest {
     void executeGeopackage() {
         GenerateCommand cmd = new GenerateCommand()
         File tileFile = temporaryFolder.newFile("earthquakes.gpkg")
+        tileFile.delete()
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: tileFile.absolutePath,
-                tileLayerName: "earthquakes",
                 baseMap: layerFile,
                 startZoom: 0,
                 endZoom: 2,
@@ -66,8 +66,7 @@ class GenerateCommandTest extends BaseTest {
         File tileFile = temporaryFolder.newFolder("earthquakes")
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
-                tileLayer: tileFile.absolutePath,
-                tileLayerName: "earthquakes",
+                tileLayer: "type=tms format=png file=${tileFile.absolutePath}",
                 baseMap: layerFile,
                 startZoom: 0,
                 endZoom: 2,
@@ -92,10 +91,8 @@ class GenerateCommandTest extends BaseTest {
         println layer.schema.fields
 
         GenerateOptions options = new GenerateOptions(
-                type: "utfgrid",
+                tileLayer: "type=utfgrid file=${tileFile.absolutePath}",
                 fields: ["title", "elevation"],
-                tileLayer: tileFile.absolutePath,
-                tileLayerName: "earthquakes",
                 baseMap: layerFile,
                 startZoom: 0,
                 endZoom: 2,
@@ -115,9 +112,7 @@ class GenerateCommandTest extends BaseTest {
         File tileFile = temporaryFolder.newFolder("earthquakes")
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
-                type: "mvt",
-                tileLayer: tileFile.absolutePath,
-                tileLayerName: "earthquakes",
+                tileLayer: "type=vectortiles format=mvt file=${tileFile.absolutePath}",
                 baseMap: layerFile,
                 startZoom: 0,
                 endZoom: 2,
@@ -137,9 +132,7 @@ class GenerateCommandTest extends BaseTest {
         File tileFile = temporaryFolder.newFolder("earthquakes")
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
-                type: "geojson",
-                tileLayer: tileFile.absolutePath,
-                tileLayerName: "earthquakes",
+                tileLayer: "type=vectortiles format=geojson file=${tileFile.absolutePath}",
                 baseMap: layerFile,
                 startZoom: 0,
                 endZoom: 2,
@@ -159,9 +152,7 @@ class GenerateCommandTest extends BaseTest {
         File tileFile = temporaryFolder.newFolder("earthquakes")
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
-                type: "pbf",
-                tileLayer: tileFile.absolutePath,
-                tileLayerName: "earthquakes",
+                tileLayer: "type=vectortiles format=pbf file=${tileFile.absolutePath}",
                 baseMap: layerFile,
                 startZoom: 0,
                 endZoom: 2,
@@ -178,11 +169,11 @@ class GenerateCommandTest extends BaseTest {
     @Test
     void runMbtiles() {
         File tileFile = temporaryFolder.newFile("earthquakes.mbtiles")
+        tileFile.delete()
         File layerFile = getResource("earthquakes.properties")
         runApp([
                 "tile generate",
                 "-l", tileFile.absolutePath,
-                "-n", "earthquakes",
                 "-m", layerFile,
                 "-s", 0,
                 "-e", 2,

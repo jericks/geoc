@@ -4,6 +4,7 @@ import geoscript.geom.Bounds
 import geoscript.layer.Layer
 import geoscript.layer.Pyramid
 import geoscript.layer.TileCursor
+import geoscript.layer.TileLayer
 import geoscript.layer.VectorTiles
 import geoscript.workspace.Memory
 import geoscript.workspace.Workspace
@@ -34,8 +35,14 @@ class StitchVectorCommand extends Command<StitchVectorOptions> {
 
     @Override
     void execute(StitchVectorOptions options, Reader reader, Writer writer) throws Exception {
-        Pyramid pyramid = PyramidUtil.readPyramid(options.pyramid)
-        VectorTiles vectorTiles = new VectorTiles(options.tileLayerName, new File(options.tileLayer), pyramid, options.type)
+        TileLayer tileLayer = TileLayer.getTileLayer(options.tileLayer)
+        if (tileLayer == null) {
+            throw new IllegalArgumentException("Can't get tile layer from ${options.tileLayer}!")
+        }
+        if (!tileLayer instanceof VectorTiles) {
+            throw new IllegalArgumentException("Tile Layer must be a Vector Tile Layer!")
+        }
+        VectorTiles vectorTiles = tileLayer as VectorTiles
         try {
             TileCursor tileCursor
             if (options.bounds && !options.z) {
@@ -76,15 +83,6 @@ class StitchVectorCommand extends Command<StitchVectorOptions> {
 
         @Option(name = "-l", aliases = "--tile-layer", usage = "The tile layer", required = true)
         String tileLayer
-
-        @Option(name = "-n", aliases = "--tile-layer-name", usage = "The tile layer name", required = false)
-        String tileLayerName
-
-        @Option(name = "-t", aliases = "--type", usage = "The type of tile layer(png, utfgrid, mvt, pbf)", required = false)
-        String type = "pbf"
-
-        @Option(name = "-p", aliases = "--pyramid", usage = "The pyramid", required = false)
-        String pyramid = "GlobalMercator"
 
         @Option(name = "-b", aliases = "--bounds", usage = "The bounds", required = false)
         String bounds

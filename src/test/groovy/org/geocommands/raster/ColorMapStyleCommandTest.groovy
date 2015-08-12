@@ -39,6 +39,7 @@ class ColorMapStyleCommandTest extends BaseTest {
               <sld:ColorMapEntry color="#f5deb3" opacity="1.0" quantity="100"/>
               <sld:ColorMapEntry color="#ffffff" opacity="1.0" quantity="250"/>
             </sld:ColorMap>
+            <sld:ContrastEnhancement/>
           </sld:RasterSymbolizer>
         </sld:Rule>
       </sld:FeatureTypeStyle>
@@ -82,6 +83,7 @@ class ColorMapStyleCommandTest extends BaseTest {
               <sld:ColorMapEntry color="#f5deb3" opacity="1.0" quantity="100"/>
               <sld:ColorMapEntry color="#ffffff" opacity="1.0" quantity="250"/>
             </sld:ColorMap>
+            <sld:ContrastEnhancement/>
           </sld:RasterSymbolizer>
         </sld:Rule>
       </sld:FeatureTypeStyle>

@@ -34,7 +34,7 @@ class VectorGridCommand extends LayerOutCommand<VectorGridOptions> {
     @Override
     Layer createLayer(VectorGridOptions options, Reader reader, Writer writer) throws Exception {
         Layer layer
-        TileLayer tileLayer = TileUtil.getTileLayer(options.tileLayer, options.tileLayerName, options.type, options.pyramid)
+        TileLayer tileLayer = TileLayer.getTileLayer(options.tileLayer)
         try {
             TileCursor tileCursor
             if (options.bounds && !options.z) {
@@ -71,15 +71,6 @@ class VectorGridCommand extends LayerOutCommand<VectorGridOptions> {
         @Option(name = "-l", aliases = "--tile-layer", usage = "The tile layer", required = true)
         String tileLayer
 
-        @Option(name = "-n", aliases = "--tile-layer-name", usage = "The tile layer name", required = false)
-        String tileLayerName
-
-        @Option(name = "-t", aliases = "--type", usage = "The type of tile layer(png, utfgrid, mvt, pbf)", required = false)
-        String type = "pbf"
-
-        @Option(name = "-p", aliases = "--pyramid", usage = "The pyramid", required = false)
-        String pyramid = "GlobalMercator"
-
         @Option(name = "-b", aliases = "--bounds", usage = "The bounds", required = false)
         String bounds
 
@@ -97,6 +88,12 @@ class VectorGridCommand extends LayerOutCommand<VectorGridOptions> {
 
         @Option(name = "-u", aliases = "--maxy", usage = "The max y or row", required = false)
         Long maxY = null
+
+        @Option(name = "-w", aliases = "--width", usage = "The raster width", required = false)
+        int width = 400
+
+        @Option(name = "-h", aliases = "--height", usage = "The raster height", required = false)
+        int height = 400
 
     }
 }

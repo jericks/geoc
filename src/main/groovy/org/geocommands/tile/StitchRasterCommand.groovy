@@ -7,6 +7,8 @@ import geoscript.layer.MBTiles
 import geoscript.layer.Pyramid
 import geoscript.layer.Raster
 import geoscript.layer.TMS
+import geoscript.layer.TileLayer
+import geoscript.layer.VectorTiles
 import org.geocommands.Command
 import org.geocommands.Options
 import org.geocommands.raster.RasterUtil
@@ -35,27 +37,22 @@ class StitchRasterCommand extends Command<StitchRasterOptions> {
 
     @Override
     void execute(StitchRasterOptions options, Reader reader, Writer writer) throws Exception {
-        ImageTileLayer tileLayer
-        if (options.tileLayer.endsWith(".mbtiles")) {
-            tileLayer = new MBTiles(new File(options.tileLayer))
-        } else if (options.tileLayer.endsWith(".gpkg")) {
-            tileLayer = new GeoPackage(new File(options.tileLayer), options.tileLayerName)
-        } else if (options.type in ["png","jpeg","jpg","gif"] && new File(options.tileLayer).isDirectory()) {
-            Pyramid pyramid = PyramidUtil.readPyramid(options.pyramid)
-            tileLayer = new TMS(options.tileLayerName, options.type, new File(options.tileLayer), pyramid)
-        } else if (options.tileLayer.equalsIgnoreCase("osm")) {
-            tileLayer = TileUtil.getOSMImageTileLayer(options.tileLayerName)
+        TileLayer tileLayer = TileLayer.getTileLayer(options.tileLayer)
+        if (!tileLayer instanceof ImageTileLayer) {
+            throw new IllegalArgumentException("Tile Layer must be an Image Tile Layer!")
+            return
         }
+        ImageTileLayer imageTileLayer = tileLayer as ImageTileLayer
 
         Raster raster
         if (options.bounds && !options.z) {
-            raster = tileLayer.getRaster(Bounds.fromString(options.bounds), options.width, options.height)
+            raster = imageTileLayer.getRaster(Bounds.fromString(options.bounds), options.width, options.height)
         } else if (options.bounds && options.z) {
-            raster = tileLayer.getRaster(tileLayer.tiles(Bounds.fromString(options.bounds), options.z))
+            raster = imageTileLayer.getRaster(imageTileLayer.tiles(Bounds.fromString(options.bounds), options.z))
         } else if (options.z && options.minX && options.minY && options.maxX && options.maxY) {
-            raster = tileLayer.getRaster(tileLayer.tiles(options.z, options.minX, options.minY, options.maxX, options.maxY))
+            raster = imageTileLayer.getRaster(imageTileLayer.tiles(options.z, options.minX, options.minY, options.maxX, options.maxY))
         } else if (options.z) {
-            raster = tileLayer.getRaster(tileLayer.tiles(options.z))
+            raster = imageTileLayer.getRaster(imageTileLayer.tiles(options.z))
         } else {
             throw new IllegalArgumentException("Wrong combination of options for stitching together a raster from a tile layer!")
         }
@@ -67,15 +64,6 @@ class StitchRasterCommand extends Command<StitchRasterOptions> {
 
         @Option(name = "-l", aliases = "--tile-layer", usage = "The tile layer", required = true)
         String tileLayer
-
-        @Option(name = "-n", aliases = "--tile-layer-name", usage = "The tile layer name", required = false)
-        String tileLayerName
-
-        @Option(name = "-t", aliases = "--type", usage = "The type of tile layer(png, utfgrid, mvt, pbf)", required = false)
-        String type = "png"
-
-        @Option(name = "-p", aliases = "--pyramid", usage = "The pyramid", required = false)
-        String pyramid = "GlobalMercator"
 
         @Option(name = "-b", aliases = "--bounds", usage = "The bounds", required = false)
         String bounds

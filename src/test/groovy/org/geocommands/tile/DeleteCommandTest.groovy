@@ -25,7 +25,6 @@ class DeleteCommandTest extends BaseTest {
         DeleteCommand cmd = new DeleteCommand()
         DeleteOptions options = new DeleteOptions(
                 tileLayer: mbtilesFile.absolutePath,
-                tileLayerName: "earthquakes",
                 z: 1
         )
         cmd.execute(options)
@@ -47,7 +46,6 @@ class DeleteCommandTest extends BaseTest {
         String result = runApp([
                 "tile delete",
                 "-l", mbtilesFile.absolutePath,
-                "-n", "earthquakes",
                 "-i", "1/1/0"
         ],"")
         MBTiles mbtiles = new MBTiles(mbtilesFile)
@@ -65,10 +63,10 @@ class DeleteCommandTest extends BaseTest {
     private File generateMBTiles() {
         GenerateCommand cmd = new GenerateCommand()
         File tileFile = temporaryFolder.newFile("earthquakes.mbtiles")
+        tileFile.delete()
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: tileFile.absolutePath,
-                tileLayerName: "earthquakes",
                 baseMap: layerFile,
                 startZoom: 0,
                 endZoom: 2,

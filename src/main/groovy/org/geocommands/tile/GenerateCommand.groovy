@@ -39,56 +39,49 @@ class GenerateCommand extends Command<GenerateOptions> {
     @Override
     void execute(GenerateOptions options, Reader reader, Writer writer) throws Exception {
 
-        TileLayer tileLayer
+        TileLayer tileLayer = TileLayer.getTileLayer(options.tileLayer)
         TileRenderer tileRenderer
 
         List layers = []
         org.geocommands.Util.addBasemap(options.baseMap, layers)
 
-        if (options.tileLayer.endsWith(".mbtiles")) {
-            tileLayer = new MBTiles(new File(options.tileLayer), options.tileLayerName, options.tileLayerName)
+        if (tileLayer instanceof MBTiles) {
             tileRenderer = new ImageTileRenderer(tileLayer, layers)
-        } else if (options.tileLayer.endsWith(".gpkg")) {
-            Pyramid pyramid = PyramidUtil.readPyramid(options.pyramid)
-            tileLayer = new GeoPackage(new File(options.tileLayer), options.tileLayerName, pyramid)
+        } else if (tileLayer instanceof GeoPackage) {
             tileRenderer = new ImageTileRenderer(tileLayer, layers)
-        } else if (options.type in ["png","jpeg","jpg","gif"] && new File(options.tileLayer).isDirectory()) {
-            Pyramid pyramid = PyramidUtil.readPyramid(options.pyramid)
-            tileLayer = new TMS(options.tileLayerName, options.type, new File(options.tileLayer), pyramid)
+        } else if (tileLayer instanceof TMS) {
             tileRenderer = new ImageTileRenderer(tileLayer, layers)
-        } else if (options.type.equalsIgnoreCase("utfgrid") && new File(options.tileLayer).isDirectory()) {
-            tileLayer = new UTFGrid(new File(options.tileLayer))
+        } else if (tileLayer instanceof UTFGrid) {
             Layer layer = layers[0]
             List fields = options.fields.collect { layer.schema.get(it) }
             tileRenderer = new UTFGridTileRenderer(tileLayer, layers[0], fields)
-        } else if (options.type.toLowerCase() in ["mvt","json", "geojson", "csv", "georss", "gml", "gpx", "kml"] && new File(options.tileLayer).isDirectory()) {
-            geoscript.layer.io.Writer layerWriter
-            if (options.type.equalsIgnoreCase("mvt")) {
-                layerWriter = new MvtWriter()
-            } else if (options.type.toLowerCase() in ["json", "geojson"]) {
-                layerWriter = new GeoJSONWriter()
-            } else if (options.type.equalsIgnoreCase("csv")) {
-                layerWriter = new CsvWriter()
-            } else if (options.type.equalsIgnoreCase("georss")) {
-                layerWriter = new GeoRSSWriter()
-            } else if (options.type.equalsIgnoreCase("gml")) {
-                layerWriter = new GmlWriter()
-            } else if (options.type.equalsIgnoreCase("gpx")) {
-                layerWriter = new GpxWriter()
-            } else if (options.type.equalsIgnoreCase("kml")) {
-                layerWriter = new KmlWriter()
+        } else if (tileLayer instanceof VectorTiles) {
+            VectorTiles vectorTiles = tileLayer as VectorTiles
+            if (vectorTiles.type.equalsIgnoreCase("pbf")) {
+                Map<String,List> layerFields = options.fieldMap.isEmpty() ? null : [:]
+                options.fieldMap.each{String key, String value ->
+                    layerFields[key] = value.split(",") as List
+                }
+                tileRenderer = new PbfVectorTileRenderer(layers, layerFields)
+            } else {
+                geoscript.layer.io.Writer layerWriter
+                if (vectorTiles.type.equalsIgnoreCase("mvt")) {
+                    layerWriter = new MvtWriter()
+                } else if (vectorTiles.type.toLowerCase() in ["json", "geojson"]) {
+                    layerWriter = new GeoJSONWriter()
+                } else if (vectorTiles.type.equalsIgnoreCase("csv")) {
+                    layerWriter = new CsvWriter()
+                } else if (vectorTiles.type.equalsIgnoreCase("georss")) {
+                    layerWriter = new GeoRSSWriter()
+                } else if (vectorTiles.type.equalsIgnoreCase("gml")) {
+                    layerWriter = new GmlWriter()
+                } else if (vectorTiles.type.equalsIgnoreCase("gpx")) {
+                    layerWriter = new GpxWriter()
+                } else if (vectorTiles.type.equalsIgnoreCase("kml")) {
+                    layerWriter = new KmlWriter()
+                }
+                tileRenderer = new VectorTileRenderer(layerWriter, layers[0], options.fields)
             }
-            Pyramid pyramid = PyramidUtil.readPyramid(options.pyramid)
-            tileLayer = new VectorTiles(options.tileLayerName, new File(options.tileLayer), pyramid, options.type)
-            tileRenderer = new VectorTileRenderer(layerWriter, layers[0], options.fields)
-        } else if (options.type.equalsIgnoreCase("pbf") && new File(options.tileLayer).isDirectory()) {
-            Pyramid pyramid = PyramidUtil.readPyramid(options.pyramid)
-            tileLayer = new VectorTiles(options.tileLayerName, new File(options.tileLayer), pyramid, options.type)
-            Map<String,List> layerFields = options.fieldMap.isEmpty() ? null : [:]
-            options.fieldMap.each{String key, String value ->
-                layerFields[key] = value.split(",") as List
-            }
-            tileRenderer = new PbfVectorTileRenderer(layers, layerFields)
         }
 
         TileGenerator generator = new TileGenerator(verbose: options.verbose)
@@ -104,15 +97,6 @@ class GenerateCommand extends Command<GenerateOptions> {
 
         @Option(name = "-l", aliases = "--tile-layer", usage = "The tile layer", required = true)
         String tileLayer
-
-        @Option(name = "-n", aliases = "--tile-layer-name", usage = "The tile layer name", required = true)
-        String tileLayerName
-
-        @Option(name = "-t", aliases = "--type", usage = "The type of tile layer(png, utfgrid, mvt, pbf)", required = false)
-        String type = "png"
-
-        @Option(name = "-p", aliases = "--pyramid", usage = "The pyramid", required = false)
-        String pyramid = "GlobalMercator"
 
         @Option(name = "-f", aliases = "--field", usage = "A field", required = false)
         List<String> fields = []

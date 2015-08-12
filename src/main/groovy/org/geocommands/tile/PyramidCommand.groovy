@@ -28,23 +28,20 @@ class PyramidCommand extends Command<PyramidOptions> {
 
     @Override
     void execute(PyramidOptions options, Reader reader, Writer writer) throws Exception {
-        TileLayer tileLayer = TileUtil.getTileLayer(options.tileLayer, options.tileLayerName, options.type, options.pyramid)
-        writer.write(PyramidUtil.writePyramid(tileLayer.pyramid, options.outputType))
+        TileLayer tileLayer = TileLayer.getTileLayer(options.tileLayer)
+        if (options.outputType.equalsIgnoreCase("text") || options.outputType.equalsIgnoreCase("csv")) {
+            writer.write(tileLayer.pyramid.getCsv())
+        } else if (options.outputType.equalsIgnoreCase("json")) {
+            writer.write(tileLayer.pyramid.getJson())
+        } else if (options.outputType.equalsIgnoreCase("xml")) {
+            writer.write(tileLayer.pyramid.getXml())
+        }
     }
 
     static class PyramidOptions extends Options {
 
         @Option(name = "-l", aliases = "--tile-layer", usage = "The tile layer", required = true)
         String tileLayer
-
-        @Option(name = "-n", aliases = "--tile-layer-name", usage = "The tile layer name", required = true)
-        String tileLayerName
-
-        @Option(name = "-t", aliases = "--type", usage = "The type of tile layer(png, utfgrid, mvt, pbf)", required = false)
-        String type = "png"
-
-        @Option(name = "-p", aliases = "--pyramid", usage = "The pyramid", required = false)
-        String pyramid = "GlobalMercator"
 
         @Option(name = "-o", aliases = "--output-type", usage = "The output type (text, xml, json)", required = false)
         String outputType = "text"

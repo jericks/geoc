@@ -16,32 +16,6 @@ import geoscript.layer.VectorTiles
 class TileUtil {
 
     /**
-     * Get a TileLayer
-     * @param layer The TileLayer connection string (file, directory, ect...)
-     * @param name The TileLayer name
-     * @param type The type (utfgrid, mbtiles, mvt, pbf)
-     * @param pyramid The Pyramid string or File
-     * @return A TileLayer or null
-     */
-    static TileLayer getTileLayer(String layer, String name, String type, String pyramid) {
-        TileLayer tileLayer = null
-        if (layer.endsWith(".mbtiles")) {
-            tileLayer = new MBTiles(new File(layer), name, name)
-        } else if (layer.endsWith(".gpkg")) {
-            tileLayer = new GeoPackage(new File(layer), name)
-        } else if (type in ["png","jpeg","jpg","gif"] && new File(layer).isDirectory()) {
-            Pyramid p = PyramidUtil.readPyramid(pyramid)
-            tileLayer = new TMS(name, type, new File(layer), p)
-        } else if (type.equalsIgnoreCase("utfgrid") && new File(layer).isDirectory()) {
-            tileLayer = new UTFGrid(new File(layer))
-        } else if (type.toLowerCase() in ["mvt","json", "geojson", "csv", "georss", "gml", "gpx", "kml", "pbf"] && new File(layer).isDirectory()) {
-            Pyramid p = PyramidUtil.readPyramid(pyramid)
-            tileLayer = new VectorTiles(name, new File(layer), p, type)
-        }
-        tileLayer
-    }
-    
-    /**
      * Get a OSM TileLayer by name
      * @param name The name of the OSM TileLayer (stamen-toner, stamen-toner-lite, stamen-watercolor, mapquest-street,
      * mapquest-satellite, or osm)

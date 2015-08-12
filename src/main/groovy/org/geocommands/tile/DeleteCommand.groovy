@@ -31,7 +31,7 @@ class DeleteCommand extends Command<DeleteOptions> {
 
     @Override
     void execute(DeleteOptions options, Reader reader, Writer writer) throws Exception {
-        TileLayer tileLayer = TileUtil.getTileLayer(options.tileLayer, options.tileLayerName, options.type, options.pyramid)
+        TileLayer tileLayer = TileLayer.getTileLayer(options.tileLayer)
         if (options.tile) {
             List parts = options.tile.split("/")
             long z = parts[0] as long
@@ -61,15 +61,6 @@ class DeleteCommand extends Command<DeleteOptions> {
         @Option(name = "-l", aliases = "--tile-layer", usage = "The tile layer", required = true)
         String tileLayer
 
-        @Option(name = "-n", aliases = "--tile-layer-name", usage = "The tile layer name", required = true)
-        String tileLayerName
-
-        @Option(name = "-t", aliases = "--type", usage = "The type of tile layer(png, utfgrid, mvt, pbf)", required = false)
-        String type = "png"
-
-        @Option(name = "-p", aliases = "--pyramid", usage = "The pyramid", required = false)
-        String pyramid = "GlobalMercator"
-
         @Option(name = "-i", aliases = "--tile", usage = "The Tile Z/X/Y coordinates", required = false)
         String tile
 
@@ -91,6 +82,11 @@ class DeleteCommand extends Command<DeleteOptions> {
         @Option(name = "-u", aliases = "--maxy", usage = "The max y or row", required = false)
         Long maxY = null
 
+        @Option(name = "-w", aliases = "--width", usage = "The raster width", required = false)
+        int width = 400
+
+        @Option(name = "-h", aliases = "--height", usage = "The raster height", required = false)
+        int height = 400
     }
 
 }

@@ -25,7 +25,6 @@ class StitchRasterCommandTest extends BaseTest {
         StitchRasterCommand cmd = new StitchRasterCommand()
         StitchRasterOptions options = new StitchRasterOptions(
                 tileLayer: mbtilesFile.absolutePath,
-                tileLayerName: "earthquakes",
                 z: 1,
                 outputRaster: rasterFile.absolutePath
         )
@@ -43,7 +42,6 @@ class StitchRasterCommandTest extends BaseTest {
         runApp([
            "tile stitch raster",
                 "-l", mbtilesFile.absolutePath,
-                "-n", "earthquakes",
                 "-z", 1,
                 "-o", rasterFile
         ],"")
@@ -57,10 +55,10 @@ class StitchRasterCommandTest extends BaseTest {
     private File generateMBTiles() {
         GenerateCommand cmd = new GenerateCommand()
         File tileFile = temporaryFolder.newFile("earthquakes.mbtiles")
+        tileFile.delete()
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: tileFile.absolutePath,
-                tileLayerName: "earthquakes",
                 baseMap: layerFile,
                 startZoom: 0,
                 endZoom: 2,

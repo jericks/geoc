@@ -21,11 +21,8 @@ class VectorGridCommandTest extends BaseTest {
         VectorGridCommand cmd = new VectorGridCommand()
         VectorGridOptions options = new VectorGridOptions(
                 tileLayer: mbtilesFile.absolutePath,
-                tileLayerName: "earthquakes",
                 z: 1,
                 outputWorkspace: file.absolutePath
-
-
         )
         cmd.execute(options)
         Layer layer = new Shapefile(file)
@@ -49,7 +46,6 @@ class VectorGridCommandTest extends BaseTest {
         runApp([
            "tile vector grid",
                 "-l", mbtilesFile.absolutePath,
-                "-n", "earthquakes",
                 "-z", 1,
                 "-o", file.absolutePath
         ],"")

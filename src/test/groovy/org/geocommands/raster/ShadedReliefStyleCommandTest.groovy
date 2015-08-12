@@ -36,6 +36,7 @@ class ShadedReliefStyleCommandTest extends BaseTest {
               <ogc:Literal>grid</ogc:Literal>
             </sld:Geometry>
             <sld:Opacity>0.85</sld:Opacity>
+            <sld:ContrastEnhancement/>
             <sld:ShadedRelief>
               <sld:BrightnessOnly>true</sld:BrightnessOnly>
               <sld:ReliefFactor>65</sld:ReliefFactor>
@@ -75,6 +76,7 @@ class ShadedReliefStyleCommandTest extends BaseTest {
               <ogc:Literal>grid</ogc:Literal>
             </sld:Geometry>
             <sld:Opacity>0.85</sld:Opacity>
+            <sld:ContrastEnhancement/>
             <sld:ShadedRelief>
               <sld:BrightnessOnly>true</sld:BrightnessOnly>
               <sld:ReliefFactor>65</sld:ReliefFactor>

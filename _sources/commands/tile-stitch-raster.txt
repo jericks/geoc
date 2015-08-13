@@ -13,12 +13,6 @@ Stitch image tiles together to create a Raster
 
    * -l --tile-layer: The tile layer
 
-   * -n --tile-layer-name: The tile layer name
-
-   * -t --type: The type of tile layer(png, utfgrid, mvt, pbf)
-
-   * -p --pyramid: The pyramid
-
    * -b --bounds: The bounds
 
    * -w --width: The raster width

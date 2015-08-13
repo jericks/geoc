@@ -13,12 +13,6 @@ Delete tiles from a tile layer
 
    * -l --tile-layer: The tile layer
 
-   * -n --tile-layer-name: The tile layer name
-
-   * -t --type: The type of tile layer(png, utfgrid, mvt, pbf)
-
-   * -p --pyramid: The pyramid
-
    * -i --tile: The Tile Z/X/Y coordinates
 
    * -b --bounds: The bounds
@@ -33,10 +27,14 @@ Delete tiles from a tile layer
 
    * -u --maxy: The max y or row
 
+   * -w --width: The raster width
+
+   * -h --height: The raster height
+
    * --help : Print the help message
 
 
 
 **Example**::
 
-    geoc tile delete -l earthquakes.mbtiles -n earthquakes -z 2
+    geoc tile delete -l earthquakes.mbtiles -z 2

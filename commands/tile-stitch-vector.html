@@ -271,9 +271,6 @@
 <blockquote>
 <div><ul class="simple">
 <li>-l &#8211;tile-layer: The tile layer</li>
-<li>-n &#8211;tile-layer-name: The tile layer name</li>
-<li>-t &#8211;type: The type of tile layer(png, utfgrid, mvt, pbf)</li>
-<li>-p &#8211;pyramid: The pyramid</li>
 <li>-b &#8211;bounds: The bounds</li>
 <li>-w &#8211;width: The raster width</li>
 <li>-h &#8211;height: The raster height</li>
@@ -287,7 +284,7 @@
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc tile stitch vector -l earthquakes/mvt -z 1 -o earthquakes.gpkg
+<div class="highlight-python"><div class="highlight"><pre>geoc tile stitch vector -l &quot;type=vectortiles format=mvt file=earthquakes/mvt name=earthquakes&quot; -z 1 -o earthquakes.gpkg
 </pre></div>
 </div>
 </div>

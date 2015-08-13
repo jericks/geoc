@@ -271,22 +271,21 @@
 <blockquote>
 <div><ul class="simple">
 <li>-l &#8211;tile-layer: The tile layer</li>
-<li>-n &#8211;tile-layer-name: The tile layer name</li>
-<li>-t &#8211;type: The type of tile layer(png, utfgrid, mvt, pbf)</li>
-<li>-p &#8211;pyramid: The pyramid</li>
 <li>-b &#8211;bounds: The bounds</li>
 <li>-z &#8211;zoom-level: The tile zoom level</li>
 <li>-x &#8211;minx: The min x or col</li>
 <li>-y &#8211;miny: The min y or row</li>
 <li>-c &#8211;maxx: The max x or col</li>
 <li>-u &#8211;maxy: The max y or row</li>
+<li>-w &#8211;width: The raster width</li>
+<li>-h &#8211;height: The raster height</li>
 <li>-o &#8211;output-workspace: The output workspace</li>
 <li>-r &#8211;output-layer: The output layer</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc tile vector grid -l earthquakes.mbtiles -n earthquakes -z 1 -o grid.shp
+<div class="highlight-python"><div class="highlight"><pre>geoc tile vector grid -l earthquakes.mbtiles -z 1 -o grid.shp
 </pre></div>
 </div>
 </div>

@@ -13,12 +13,6 @@ Stitch vector tiles together to create a one or more Layers
 
    * -l --tile-layer: The tile layer
 
-   * -n --tile-layer-name: The tile layer name
-
-   * -t --type: The type of tile layer(png, utfgrid, mvt, pbf)
-
-   * -p --pyramid: The pyramid
-
    * -b --bounds: The bounds
 
    * -w --width: The raster width
@@ -43,4 +37,4 @@ Stitch vector tiles together to create a one or more Layers
 
 **Example**::
 
-    geoc tile stitch vector -l earthquakes/mvt -z 1 -o earthquakes.gpkg
+    geoc tile stitch vector -l "type=vectortiles format=mvt file=earthquakes/mvt name=earthquakes" -z 1 -o earthquakes.gpkg

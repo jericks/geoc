@@ -13,12 +13,6 @@ Create a vector grid of a tile layers cells.
 
    * -l --tile-layer: The tile layer
 
-   * -n --tile-layer-name: The tile layer name
-
-   * -t --type: The type of tile layer(png, utfgrid, mvt, pbf)
-
-   * -p --pyramid: The pyramid
-
    * -b --bounds: The bounds
 
    * -z --zoom-level: The tile zoom level
@@ -31,6 +25,10 @@ Create a vector grid of a tile layers cells.
 
    * -u --maxy: The max y or row
 
+   * -w --width: The raster width
+
+   * -h --height: The raster height
+
    * -o --output-workspace: The output workspace
 
    * -r --output-layer: The output layer
@@ -41,4 +39,4 @@ Create a vector grid of a tile layers cells.
 
 **Example**::
 
-    geoc tile vector grid -l earthquakes.mbtiles -n earthquakes -z 1 -o grid.shp
+    geoc tile vector grid -l earthquakes.mbtiles -z 1 -o grid.shp

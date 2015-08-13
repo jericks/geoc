@@ -13,12 +13,6 @@ Generate tiles
 
    * -l --tile-layer: The tile layer
 
-   * -n --tile-layer-name: The tile layer name
-
-   * -t --type: The type of tile layer(png, utfgrid, mvt, pbf)
-
-   * -p --pyramid: The pyramid
-
    * -f --field: A field
 
    * -d --layer-fields: A List of sub fields for a layer
@@ -41,4 +35,4 @@ Generate tiles
 
 **Example**::
 
-    geoc tile generate -l earthquakes.mbtiles -n earthquakes -m layerFile -s 0 -e 2 -v false
+    geoc tile generate -l earthquakes.mbtiles -m layerFile -s 0 -e 2 -v false

@@ -1,18 +1,12 @@
-.TH "geoc-tile-vector-grid" "1" "12 May 2015" "version 0.1"
+.TH "geoc-tile-vector-grid" "1" "12 August 2015" "version 0.1"
 .SH NAME
 geoc tile vector grid
 .SH DESCRIPTION
 Create a vector grid of a tile layers cells.
 .SH USAGE
-geoc tile vector grid -l earthquakes.mbtiles -n earthquakes -z 1 -o grid.shp
+geoc tile vector grid -l earthquakes.mbtiles -z 1 -o grid.shp
 .SH OPTIONS
 -l --tile-layer: The tile layer
-.PP
--n --tile-layer-name: The tile layer name
-.PP
--t --type: The type of tile layer(png, utfgrid, mvt, pbf)
-.PP
--p --pyramid: The pyramid
 .PP
 -b --bounds: The bounds
 .PP
@@ -25,6 +19,10 @@ geoc tile vector grid -l earthquakes.mbtiles -n earthquakes -z 1 -o grid.shp
 -c --maxx: The max x or col
 .PP
 -u --maxy: The max y or row
+.PP
+-w --width: The raster width
+.PP
+-h --height: The raster height
 .PP
 -o --output-workspace: The output workspace
 .PP

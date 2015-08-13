@@ -1,18 +1,12 @@
-.TH "geoc-tile-stitch-vector" "1" "5 May 2015" "version 0.1"
+.TH "geoc-tile-stitch-vector" "1" "12 August 2015" "version 0.1"
 .SH NAME
 geoc tile stitch vector
 .SH DESCRIPTION
 Stitch vector tiles together to create a one or more Layers
 .SH USAGE
-geoc tile stitch vector -l earthquakes/mvt -z 1 -o earthquakes.gpkg
+geoc tile stitch vector -l "type=vectortiles format=mvt file=earthquakes/mvt name=earthquakes" -z 1 -o earthquakes.gpkg
 .SH OPTIONS
 -l --tile-layer: The tile layer
-.PP
--n --tile-layer-name: The tile layer name
-.PP
--t --type: The type of tile layer(png, utfgrid, mvt, pbf)
-.PP
--p --pyramid: The pyramid
 .PP
 -b --bounds: The bounds
 .PP

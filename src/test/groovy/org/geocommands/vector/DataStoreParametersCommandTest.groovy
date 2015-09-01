@@ -18,11 +18,11 @@ class DataStoreParametersCommandTest extends BaseTest {
         DataStoreParametersOptions options = new DataStoreParametersOptions(name: "Shapefile")
         StringWriter w = new StringWriter()
         cmd.execute(options, new StringReader(""), w)
+        println w.toString()
         assertStringsEqual """url
 namespace
 enable spatial index
 create spatial index
-use a ODBC provider to fast execution of Dbase filters
 charset
 timezone
 memory mapped buffer
@@ -39,7 +39,6 @@ fstype""", w.toString()
 namespace
 enable spatial index
 create spatial index
-use a ODBC provider to fast execution of Dbase filters
 charset
 timezone
 memory mapped buffer

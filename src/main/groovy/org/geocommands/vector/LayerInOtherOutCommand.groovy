@@ -36,7 +36,7 @@ abstract class LayerInOtherOutCommand<T extends LayerInOtherOutOptions> extends 
         }
     }
 
-    abstract void processLayers(Layer inLayer, Layer otherLayer, Layer outLayer, T options, Reader reader, Writer writer) throws Exception;
+    abstract void processLayers(Layer inLayer, Layer otherLayer, Layer outLayer, T options, Reader reader, Writer writer) throws Exception
 
     Layer getInputLayer(String workspaceStr, String layerName, Reader reader) {
         Layer layer = null

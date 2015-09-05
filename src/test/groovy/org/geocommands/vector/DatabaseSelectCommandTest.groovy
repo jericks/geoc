@@ -45,7 +45,7 @@ class DatabaseSelectCommandTest extends BaseTest {
     @Test
     void executeToOut() {
         File inFile = new File("src/test/resources/h2.db")
-        StringWriter writer = new StringWriter();
+        StringWriter writer = new StringWriter()
         DatabaseSelectCommand cmd = new DatabaseSelectCommand()
         DatabaseSelectOptions options = new DatabaseSelectOptions(
                 databaseWorkspace: inFile.absolutePath,

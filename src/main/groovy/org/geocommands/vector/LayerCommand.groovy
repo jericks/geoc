@@ -31,7 +31,7 @@ abstract class LayerCommand<T extends LayerOptions> extends Command<T> {
         }
     }
 
-    protected abstract void processLayer(Layer layer, T options, Reader reader, Writer writer) throws Exception;
+    protected abstract void processLayer(Layer layer, T options, Reader reader, Writer writer) throws Exception
 
     protected boolean shouldWriteLayer() {
         false

@@ -31,6 +31,6 @@ abstract class RasterInOtherOutCommand<T extends RasterInOtherOutOptions> extend
         }
     }
 
-    abstract Raster createOutputRaster(Raster inRaster, Raster otherRaster, T options, Reader reader, Writer writer) throws Exception;
+    abstract Raster createOutputRaster(Raster inRaster, Raster otherRaster, T options, Reader reader, Writer writer) throws Exception
 
 }

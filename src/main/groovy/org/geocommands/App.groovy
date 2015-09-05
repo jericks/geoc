@@ -18,9 +18,9 @@ class App {
         System.setProperty("org.geotools.referencing.forceXY", "true")
 
         // Turn off logging
-        LogManager.getLogManager().reset();
-        Logger globalLogger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-        globalLogger.setLevel(Level.OFF);
+        LogManager.getLogManager().reset()
+        Logger globalLogger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME)
+        globalLogger.setLevel(Level.OFF)
 
         // The usage
         final String usage = "Usage: geoc <command> <args>"
@@ -34,7 +34,7 @@ class App {
 
         // Get the command name
         String name = args.takeWhile { String arg ->
-            !arg.startsWith("-");
+            !arg.startsWith("-")
         }.join(" ")
 
         // Lookup the Command by name

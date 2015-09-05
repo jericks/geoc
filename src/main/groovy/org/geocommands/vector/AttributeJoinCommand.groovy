@@ -94,14 +94,14 @@ class AttributeJoinCommand extends LayerInOutCommand<AttributeOptions> {
 
     private static class DBF implements Table {
 
-        private File file;
+        private File file
 
         private String encoding
 
         private List<Field> flds = []
 
         DBF(File file, String encoding) {
-            this.file = file;
+            this.file = file
             this.encoding = encoding
         }
 

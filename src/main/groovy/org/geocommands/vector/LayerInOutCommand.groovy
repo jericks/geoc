@@ -17,7 +17,7 @@ abstract class LayerInOutCommand<T extends LayerInOutOptions> extends LayerComma
 
     abstract T getOptions()
 
-    abstract void processLayers(Layer inLayer, Layer outLayer, T options, Reader reader, Writer writer) throws Exception;
+    abstract void processLayers(Layer inLayer, Layer outLayer, T options, Reader reader, Writer writer) throws Exception
 
     @Override
     protected void processLayer(Layer inLayer, T options, Reader reader, Writer writer) throws Exception {

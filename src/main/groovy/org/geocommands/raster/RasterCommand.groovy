@@ -28,7 +28,7 @@ abstract class RasterCommand<T extends RasterOptions> extends Command<T> {
         }
     }
 
-    protected abstract void processRaster(Raster raster, T options, Reader reader, Writer writer) throws Exception;
+    protected abstract void processRaster(Raster raster, T options, Reader reader, Writer writer) throws Exception
 
     protected boolean shouldWriteRaster() {
         false

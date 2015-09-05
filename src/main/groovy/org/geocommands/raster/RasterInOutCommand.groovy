@@ -14,7 +14,7 @@ abstract class RasterInOutCommand<T extends RasterInOutOptions> extends RasterCo
 
     abstract T getOptions()
 
-    abstract Raster createOutputRaster(Raster inRaster, T options, Reader reader, Writer writer) throws Exception;
+    abstract Raster createOutputRaster(Raster inRaster, T options, Reader reader, Writer writer) throws Exception
 
     @Override
     protected void processRaster(Raster inRaster, T options, Reader reader, Writer writer) throws Exception {

@@ -15,7 +15,7 @@ abstract class LayerInOtherOutCombineSchemasCommand<T extends LayerInOtherOutCom
 
     abstract T getOptions()
 
-    abstract void processLayers(Layer inLayer, Layer otherLayer, Layer outLayer, T options, Reader reader, Writer writer) throws Exception;
+    abstract void processLayers(Layer inLayer, Layer otherLayer, Layer outLayer, T options, Reader reader, Writer writer) throws Exception
 
     protected Schema createOutputSchema(Layer inputLayer, Layer otherLayer, T options) {
         Map schemaAndFields = inputLayer.schema.addSchema(otherLayer.schema, getOutputLayerName(inputLayer, otherLayer, name, options),

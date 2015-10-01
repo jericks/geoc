@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>raster subtract &mdash; geoc 0.3 documentation</title>
+  <title>vector points2lines &mdash; geoc 0.3 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.3 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="raster multiply constant" href="raster-multiply-constant.html"/>
-        <link rel="prev" title="raster subtract constant" href="raster-subtract-constant.html"/> 
+        <link rel="next" title="raster abs" href="raster-abs.html"/>
+        <link rel="prev" title="vector snap points2lines" href="vector-snap-points2lines.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -177,7 +177,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-database-remove.html">vector database remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-count-featuresInfeature.html">vector count featuresInfeature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-snap-points2lines.html">vector snap points2lines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vector-points2lines.html">vector points2lines</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">vector points2lines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-abs.html">raster abs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-info.html">raster info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-display.html">raster display</a></li>
@@ -198,7 +198,7 @@
 <li class="toctree-l2"><a class="reference internal" href="raster-add-constant.html">raster add constant</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-add.html">raster add</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-subtract-constant.html">raster subtract constant</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">raster subtract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-subtract.html">raster subtract</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-multiply-constant.html">raster multiply constant</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-multiply.html">raster multiply</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-divide-constant.html">raster divide constant</a></li>
@@ -251,10 +251,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>raster subtract</li>
+    <li>vector points2lines</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/raster-subtract.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/vector-points2lines.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -262,28 +262,26 @@
 </div>
           <div role="main">
             
-  <div class="section" id="raster-subtract">
-<h1>raster subtract<a class="headerlink" href="#raster-subtract" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="vector-points2lines">
+<h1>vector points2lines<a class="headerlink" href="#vector-points2lines" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc raster subtract</p>
+<p>geoc vector points2lines</p>
 <p><strong>Description</strong>:</p>
-<p>Subtract one Raster from another Raster</p>
+<p>Convert points to lines</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-k &#8211;other-raster: The other raster</li>
-<li>-y &#8211;other-raster-name: The other raster name</li>
-<li>-j &#8211;other-projection: The other projection</li>
-<li>-o &#8211;output-raster: The output raster</li>
-<li>-f &#8211;output-raster-format: The output raster format</li>
-<li>-i &#8211;input-raster: The input raster</li>
-<li>-l &#8211;input-raster-name: The input raster name</li>
-<li>-p &#8211;input-projection: The input projection</li>
+<li>-s &#8211;sort-field: The Field to sort the field</li>
+<li>-g &#8211;group-field: The Field used create separate Lines</li>
+<li>-o &#8211;output-workspace: The output workspace</li>
+<li>-r &#8211;output-layer: The output layer</li>
+<li>-i &#8211;input-workspace: The input workspace</li>
+<li>-l &#8211;input-layer: The input layer</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc raster substract -i raster1.acs -p &quot;EPSG:4326&quot; -k raster2.acs -j &quot;EPSG:4326&quot; -o raster_subtracted.tif
+<div class="highlight-python"><div class="highlight"><pre>geoc vector points2lines -i points.shp -o lines.shp -s id -g group
 </pre></div>
 </div>
 </div>
@@ -294,10 +292,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="raster-multiply-constant.html" class="btn btn-neutral float-right" title="raster multiply constant"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="raster-abs.html" class="btn btn-neutral float-right" title="raster abs"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="raster-subtract-constant.html" class="btn btn-neutral" title="raster subtract constant"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vector-snap-points2lines.html" class="btn btn-neutral" title="vector snap points2lines"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

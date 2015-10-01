@@ -1,6 +1,7 @@
 package org.geocommands.vector
 
 import geoscript.feature.Field
+import geoscript.geom.Geometry
 import geoscript.geom.Point
 import geoscript.layer.Layer
 import geoscript.layer.Shapefile
@@ -114,7 +115,7 @@ class CopyCommandTest extends BaseTest {
         l.add([new Point(3, 3), "three"])
 
         // geometries Layer with Geometry type Geometry
-        l = h2.create('geometries', [new Field("geom", "Geometry", "EPSG:4326"), new Field("name", "String")])
+        l = h2.create('geometries', [new Field("geom", "Point", "EPSG:4326"), new Field("name", "String")])
         l.add([new Point(1, 1), "one"])
         l.add([new Point(2, 2), "two"])
         l.add([new Point(3, 3), "three"])

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>list &mdash; geoc 0.3 documentation</title>
+  <title>vector points2polygons &mdash; geoc 0.3 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.3 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="proj wkt" href="proj-wkt.html"/>
-        <link rel="prev" title="Commands" href="../commands.html"/> 
+        <link rel="next" title="raster abs" href="raster-abs.html"/>
+        <link rel="prev" title="vector points2lines" href="vector-points2lines.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -63,7 +63,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../datasources.html">Data Sources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../commands.html">Commands</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="proj-wkt.html">proj wkt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="proj-envelope.html">proj envelope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="style-css2sld.html">style css2sld</a></li>
@@ -178,7 +178,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-count-featuresInfeature.html">vector count featuresInfeature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-snap-points2lines.html">vector snap points2lines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-points2lines.html">vector points2lines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vector-points2polygons.html">vector points2polygons</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">vector points2polygons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-abs.html">raster abs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-info.html">raster info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-display.html">raster display</a></li>
@@ -252,10 +252,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>list</li>
+    <li>vector points2polygons</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/list.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/vector-points2polygons.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -263,21 +263,26 @@
 </div>
           <div role="main">
             
-  <div class="section" id="list">
-<h1>list<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="vector-points2polygons">
+<h1>vector points2polygons<a class="headerlink" href="#vector-points2polygons" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc list</p>
+<p>geoc vector points2polygons</p>
 <p><strong>Description</strong>:</p>
-<p>List all geocommands</p>
+<p>Convert points to polygons</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-d &#8211;description: Include the description</li>
+<li>-s &#8211;sort-field: The Field to sort the field</li>
+<li>-g &#8211;group-field: The Field used create separate Lines</li>
+<li>-o &#8211;output-workspace: The output workspace</li>
+<li>-r &#8211;output-layer: The output layer</li>
+<li>-i &#8211;input-workspace: The input workspace</li>
+<li>-l &#8211;input-layer: The input layer</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc list
+<div class="highlight-python"><div class="highlight"><pre>geoc vector points2polygons -i points.shp -o polygons.shp -s id -g group
 </pre></div>
 </div>
 </div>
@@ -288,10 +293,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="proj-wkt.html" class="btn btn-neutral float-right" title="proj wkt"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="raster-abs.html" class="btn btn-neutral float-right" title="raster abs"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../commands.html" class="btn btn-neutral" title="Commands"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vector-points2lines.html" class="btn btn-neutral" title="vector points2lines"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -117,6 +117,7 @@ org.geocommands.vector.AttributeJoinCommand
 org.geocommands.vector.SpatialJoinCommand
 org.geocommands.vector.DisplayLayerCommand
 org.geocommands.vector.PointsToLinesCommand
+org.geocommands.vector.PointsToPolygonsCommand
 
 org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand

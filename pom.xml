@@ -23,9 +23,19 @@
             <url>http://download.osgeo.org/webdav/geotools</url>
         </repository>
         <repository>
-            <id>maven2-repository.dev.java.net</id>
-            <name>Java.net repository</name>
-            <url>http://download.java.net/maven/2</url>
+            <id>geosolutions</id>
+            <name>GeoSolutions Repository</name>
+            <url>http://maven.geo-solutions.it/</url>
+        </repository>
+        <repository>
+            <id>unidata</id>
+            <name>Unidata UCAR Repository</name>
+            <url>https://artifacts.unidata.ucar.edu/content/repositories/unidata/</url>
+        </repository>
+        <repository>
+            <id>ecc</id>
+            <name>Electronic Chart Centre Repository</name>
+            <url>https://github.com/ElectronicChartCentre/ecc-mvn-repo/raw/master/releases</url>
         </repository>
     </repositories>
     <dependencies>

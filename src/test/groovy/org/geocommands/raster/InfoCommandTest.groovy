@@ -51,7 +51,7 @@ Bands:
                 inputProjection: "EPSG:4326"
         )
         command.execute(options, reader, writer)
-        String expected = """Format: ArcGrid
+        String expected = """Format: ArcGrid (ASCII)
 Size: 6, 11
 Projection ID: EPSG:4326
 Projection WKT: GEOGCS["WGS 84",
@@ -130,7 +130,7 @@ Bands:
                 "-p", "EPSG:4326"
 
         ], reader.text)
-        String expected = """Format: ArcGrid
+        String expected = """Format: ArcGrid (ASCII)
 Size: 7, 5
 Projection ID: EPSG:4326
 Projection WKT: GEOGCS["WGS 84",

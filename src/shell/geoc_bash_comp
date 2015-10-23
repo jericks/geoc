@@ -41,6 +41,8 @@ _geoc()
         fi
     elif [[ "$line" == *"geoc geometry greatcirclearc "* ]]; then
         COMPREPLY=($(compgen -W '--help -e --ellipsoid -n --num-points -p --start-point -t --end-point' -- $cur))
+    elif [[ "$line" == *"geoc geometry offset "* ]]; then
+        COMPREPLY=($(compgen -W '--help -d --offset -i --input -s --quadrant-segements' -- $cur))
     elif [[ "$line" == *"geoc geometry orthodromicdistance "* ]]; then
         COMPREPLY=($(compgen -W '--help -e --ellipsoid -p --start-point -t --end-point' -- $cur))
     elif [[ "$line" == *"geoc geometry plot "* ]]; then
@@ -48,7 +50,7 @@ _geoc()
     elif [[ "$line" == *"geoc geometry pt2dd "* ]]; then
         COMPREPLY=($(compgen -W '--help -p --point -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry " ]]; then
-        COMPREPLY=($(compgen -W ' convert  dd2pt  geohash  greatcirclearc  orthodromicdistance  plot  pt2dd'))
+        COMPREPLY=($(compgen -W ' convert  dd2pt  geohash  greatcirclearc  offset  orthodromicdistance  plot  pt2dd'))
     elif [[ "$line" == *"geoc geometry"[[:space:]][[:alpha:]]* ]]; then
         if [[ "geometry convert" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' convert'))
@@ -61,6 +63,9 @@ _geoc()
         fi
         if [[ "geometry greatcirclearc" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' greatcirclearc'))
+        fi
+        if [[ "geometry offset" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' offset'))
         fi
         if [[ "geometry orthodromicdistance" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' orthodromicdistance'))

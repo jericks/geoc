@@ -8,6 +8,7 @@ org.geocommands.style.CssToSldCommand
 org.geocommands.map.MapCubeCommand
 
 org.geocommands.geometry.ConvertCommand
+org.geocommands.geometry.OffsetCommand
 org.geocommands.geometry.DecimalDegrees2PointCommand
 org.geocommands.geometry.OrthodromicDistanceCommand
 org.geocommands.geometry.PlotCommand

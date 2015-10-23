@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector filter &mdash; geoc 0.5.0 documentation</title>
+  <title>geometry offset &mdash; geoc 0.5.0 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.5.0 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector delete" href="vector-delete.html"/>
-        <link rel="prev" title="vector densify" href="vector-densify.html"/> 
+        <link rel="next" title="geometry orthodromicdistance" href="geometry-orthodromicdistance.html"/>
+        <link rel="prev" title="geometry greatcirclearc" href="geometry-greatcirclearc.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -74,7 +74,7 @@
 <li class="toctree-l2"><a class="reference internal" href="geometry-geohash-bounds.html">geometry geohash bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-geohash-neighbors.html">geometry geohash neighbors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-greatcirclearc.html">geometry greatcirclearc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geometry-offset.html">geometry offset</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">geometry offset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-orthodromicdistance.html">geometry orthodromicdistance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-plot.html">geometry plot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-pt2dd.html">geometry pt2dd</a></li>
@@ -108,7 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-coordinates.html">vector coordinates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-simplify.html">vector simplify</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-densify.html">vector densify</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-filter.html">vector filter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-delete.html">vector delete</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-schema.html">vector schema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-updatefield.html">vector updatefield</a></li>
@@ -253,10 +253,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector filter</li>
+    <li>geometry offset</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-filter.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/geometry-offset.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -264,25 +264,23 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-filter">
-<h1>vector filter<a class="headerlink" href="#vector-filter" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="geometry-offset">
+<h1>geometry offset<a class="headerlink" href="#geometry-offset" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector filter</p>
+<p>geoc geometry offset</p>
 <p><strong>Description</strong>:</p>
-<p>Filter features from the input Layer and save them to the output Layer</p>
+<p>Create a Geometry offset from the input Geometry</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-f &#8211;filter: The CQL Filter</li>
-<li>-o &#8211;output-workspace: The output workspace</li>
-<li>-r &#8211;output-layer: The output layer</li>
-<li>-i &#8211;input-workspace: The input workspace</li>
-<li>-l &#8211;input-layer: The input layer</li>
+<li>-i &#8211;input: The input geometry</li>
+<li>-d &#8211;offset: The offset distance</li>
+<li>-s &#8211;quadrant-segements: The number of quadrant segments (defaults to 8)</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc vector filter -i states.shp -f &quot;STATE_POP &gt; 1000000&quot; -o states_largepop.shp
+<div class="highlight-python"><div class="highlight"><pre>geoc geometry offset -i &quot;LINESTRING (10 0, 10 10)&quot; -d 5 -s 8
 </pre></div>
 </div>
 </div>
@@ -293,10 +291,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-delete.html" class="btn btn-neutral float-right" title="vector delete"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="geometry-orthodromicdistance.html" class="btn btn-neutral float-right" title="geometry orthodromicdistance"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-densify.html" class="btn btn-neutral" title="vector densify"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="geometry-greatcirclearc.html" class="btn btn-neutral" title="geometry greatcirclearc"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

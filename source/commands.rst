@@ -13,6 +13,7 @@ Commands
     commands/geometry-geohash-bounds.rst
     commands/geometry-geohash-neighbors.rst
     commands/geometry-greatcirclearc.rst
+    commands/geometry-offset.rst
     commands/geometry-orthodromicdistance.rst
     commands/geometry-plot.rst
     commands/geometry-pt2dd.rst

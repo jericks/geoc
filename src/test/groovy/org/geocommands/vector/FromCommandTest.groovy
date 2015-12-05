@@ -50,7 +50,7 @@ class FromCommandTest extends BaseTest {
         StringWriter writer = new StringWriter()
         cmd.execute(options, new StringReader(file.text), writer)
         Layer layer = getLayerFromCsv(writer.toString())
-        assertEquals "Point", layer.schema.geom.typ
+        assertEquals "Geometry", layer.schema.geom.typ
         assertEquals 3, layer.count
         layer.eachFeature { f ->
             assertNotNull f.geom
@@ -119,7 +119,7 @@ class FromCommandTest extends BaseTest {
 
         String output = runApp(["vector from", "-f", "kml"], file.text)
         Layer layer = getLayerFromCsv(output)
-        assertEquals "Point", layer.schema.geom.typ
+        assertEquals "Geometry", layer.schema.geom.typ
         assertEquals 3, layer.count
         layer.eachFeature { f ->
             assertNotNull f.geom

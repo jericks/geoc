@@ -485,6 +485,14 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -c --count-field -d --id-field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector draw "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --bounds -f --file -g --background-color -h --height -i --input-workspace -l --input-layer -m --base-map -s --sld-file -t --type -w --width' -- $cur))
+    elif [[ "$line" == *"geoc vector dump shapefiles "* ]]; then
+        COMPREPLY=($(compgen -W '--help -d --max-dbf-size -i --input-workspace -l --input-layer -o --output-directory -s --max-shp-size' -- $cur))
+    elif [[ "$line" == *"geoc vector dump " ]]; then
+        COMPREPLY=($(compgen -W ' shapefiles'))
+    elif [[ "$line" == *"geoc vector dump"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "vector dump shapefiles" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' shapefiles'))
+        fi
     elif [[ "$line" == *"geoc vector ellipse "* ]]; then
         COMPREPLY=($(compgen -W '--help -a --rotation -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -u --unit -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector envelope "* ]]; then
@@ -637,7 +645,7 @@ _geoc()
     elif [[ "$line" == *"geoc vector voronoi "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector " ]]; then
-        COMPREPLY=($(compgen -W ' add  addareafield  addfields  addidfield  addlengthfield  addxyfields  append  arc  arcpolygon  barnessurface  buffer  centroid  clip  compareschemas  convexhull  convexhulls  coordinates  copy  count  create  database  datastorelist  datastoreparams  defaultstyle  delaunay  delete  densify  display  dissolvebyfield  dissolveintersecting  draw  ellipse  envelope  envelopes  erase  filter  from  geomr  geomw  gradientstyle  grid  heatmap  identity  info  interiorpoint  intersection  join  list  merge  mincircle  mincircles  minrect  minrects  multiple2single  octagonalenvelope  octagonalenvelopes  page  points2lines  points2polygons  pointstacker  project  randompoints  raster  rectangle  reflect  removefields  rotate  scale  schema  shear  simplify  sinestar  single2multiple  smooth  snap  sort  splitbyfield  splitbylayer  squircle  subset  supercircle  symdifference  to  transform  translate  union  uniquevalues  uniquevaluesstyle  update  updatefield  validity  voronoi'))
+        COMPREPLY=($(compgen -W ' add  addareafield  addfields  addidfield  addlengthfield  addxyfields  append  arc  arcpolygon  barnessurface  buffer  centroid  clip  compareschemas  convexhull  convexhulls  coordinates  copy  count  create  database  datastorelist  datastoreparams  defaultstyle  delaunay  delete  densify  display  dissolvebyfield  dissolveintersecting  draw  dump  ellipse  envelope  envelopes  erase  filter  from  geomr  geomw  gradientstyle  grid  heatmap  identity  info  interiorpoint  intersection  join  list  merge  mincircle  mincircles  minrect  minrects  multiple2single  octagonalenvelope  octagonalenvelopes  page  points2lines  points2polygons  pointstacker  project  randompoints  raster  rectangle  reflect  removefields  rotate  scale  schema  shear  simplify  sinestar  single2multiple  smooth  snap  sort  splitbyfield  splitbylayer  squircle  subset  supercircle  symdifference  to  transform  translate  union  uniquevalues  uniquevaluesstyle  update  updatefield  validity  voronoi'))
     elif [[ "$line" == *"geoc vector"[[:space:]][[:alpha:]]* ]]; then
         if [[ "vector add" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' add'))
@@ -731,6 +739,9 @@ _geoc()
         fi
         if [[ "vector draw" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' draw'))
+        fi
+        if [[ "vector dump" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' dump'))
         fi
         if [[ "vector ellipse" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' ellipse'))

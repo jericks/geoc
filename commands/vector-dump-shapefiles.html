@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector squircle &mdash; geoc 0.5.0 documentation</title>
+  <title>vector dump shapefiles &mdash; geoc 0.5.0 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.5.0 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector database select" href="vector-database-select.html"/>
-        <link rel="prev" title="vector supercircle" href="vector-supercircle.html"/> 
+        <link rel="next" title="raster abs" href="raster-abs.html"/>
+        <link rel="prev" title="vector points2polygons" href="vector-points2polygons.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -169,7 +169,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-rectangle.html">vector rectangle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-sinestar.html">vector sinestar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-supercircle.html">vector supercircle</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector squircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-squircle.html">vector squircle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-database-select.html">vector database select</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-database-sql.html">vector database sql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-database-index-create.html">vector database index create</a></li>
@@ -180,7 +180,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-snap-points2lines.html">vector snap points2lines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-points2lines.html">vector points2lines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-points2polygons.html">vector points2polygons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vector-dump-shapefiles.html">vector dump shapefiles</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">vector dump shapefiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-abs.html">raster abs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-info.html">raster info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-display.html">raster display</a></li>
@@ -254,10 +254,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector squircle</li>
+    <li>vector dump shapefiles</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-squircle.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/vector-dump-shapefiles.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -265,30 +265,25 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-squircle">
-<h1>vector squircle<a class="headerlink" href="#vector-squircle" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="vector-dump-shapefiles">
+<h1>vector dump shapefiles<a class="headerlink" href="#vector-dump-shapefiles" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector squircle</p>
+<p>geoc vector dump shapefiles</p>
 <p><strong>Description</strong>:</p>
-<p>Create a squircle shape around each feature of the input Layer</p>
+<p>Create shapefiles from the input Layer</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-g &#8211;geometry: The geometry expression</li>
-<li>-w &#8211;width: The width of the bounds</li>
-<li>-h &#8211;height: The height of the bounds</li>
-<li>-p &#8211;num-points: The number of points</li>
-<li>-a &#8211;rotation: The angle of rotation</li>
-<li>-u &#8211;unit: The unit can either be degrees(d) or radians(r). The default is degrees.</li>
-<li>-o &#8211;output-workspace: The output workspace</li>
-<li>-r &#8211;output-layer: The output layer</li>
+<li>-o &#8211;output-directory: The output directory</li>
+<li>-s &#8211;max-shp-size: The maximum shp size</li>
+<li>-d &#8211;max-dbf-size: The maximum dbf size</li>
 <li>-i &#8211;input-workspace: The input workspace</li>
 <li>-l &#8211;input-layer: The input layer</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc vector squircle -i polys.properties -o squircles.shp -p 40
+<div class="highlight-python"><div class="highlight"><pre>cat pointsAndPolygons.csv | geoc vector dump shapfiles -o shapefiles
 </pre></div>
 </div>
 </div>
@@ -299,10 +294,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-database-select.html" class="btn btn-neutral float-right" title="vector database select"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="raster-abs.html" class="btn btn-neutral float-right" title="raster abs"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-supercircle.html" class="btn btn-neutral" title="vector supercircle"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vector-points2polygons.html" class="btn btn-neutral" title="vector points2polygons"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

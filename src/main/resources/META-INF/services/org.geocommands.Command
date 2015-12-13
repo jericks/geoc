@@ -120,6 +120,10 @@ org.geocommands.vector.DisplayLayerCommand
 org.geocommands.vector.PointsToLinesCommand
 org.geocommands.vector.PointsToPolygonsCommand
 org.geocommands.vector.DumpShapefilesCommand
+org.geocommands.vector.GraticuleSquareCommand
+org.geocommands.vector.GraticuleHexagonCommand
+org.geocommands.vector.GraticuleRectangleCommand
+org.geocommands.vector.GraticuleLineCommand
 
 org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand

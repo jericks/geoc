@@ -511,6 +511,29 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer' -- $cur))
     elif [[ "$line" == *"geoc vector gradientstyle "* ]]; then
         COMPREPLY=($(compgen -W '--help -c --colors -e --else-mode -f --field -i --input-workspace -l --input-layer -m --method -n --number' -- $cur))
+    elif [[ "$line" == *"geoc vector graticule hexagon "* ]]; then
+        COMPREPLY=($(compgen -W '--help -g --geometry -l --length -o --output-workspace -r --output-layer -s --spacing -t --orientation' -- $cur))
+    elif [[ "$line" == *"geoc vector graticule line "* ]]; then
+        COMPREPLY=($(compgen -W '--help -g --geometry -l --line-definition -o --output-workspace -r --output-layer -s --spacing' -- $cur))
+    elif [[ "$line" == *"geoc vector graticule rectangle "* ]]; then
+        COMPREPLY=($(compgen -W '--help -g --geometry -h --height -o --output-workspace -r --output-layer -s --spacing -w --width' -- $cur))
+    elif [[ "$line" == *"geoc vector graticule square "* ]]; then
+        COMPREPLY=($(compgen -W '--help -g --geometry -l --length -o --output-workspace -r --output-layer -s --spacing' -- $cur))
+    elif [[ "$line" == *"geoc vector graticule " ]]; then
+        COMPREPLY=($(compgen -W ' hexagon  line  rectangle  square'))
+    elif [[ "$line" == *"geoc vector graticule"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "vector graticule hexagon" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' hexagon'))
+        fi
+        if [[ "vector graticule line" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' line'))
+        fi
+        if [[ "vector graticule rectangle" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' rectangle'))
+        fi
+        if [[ "vector graticule square" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' square'))
+        fi
     elif [[ "$line" == *"geoc vector grid "* ]]; then
         COMPREPLY=($(compgen -W '--help -g --geometry -h --cell-height -o --output-workspace -p --projection -r --output-layer -t --type -w --cell-width -x --columns -y --rows' -- $cur))
     elif [[ "$line" == *"geoc vector heatmap "* ]]; then
@@ -645,7 +668,7 @@ _geoc()
     elif [[ "$line" == *"geoc vector voronoi "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector " ]]; then
-        COMPREPLY=($(compgen -W ' add  addareafield  addfields  addidfield  addlengthfield  addxyfields  append  arc  arcpolygon  barnessurface  buffer  centroid  clip  compareschemas  convexhull  convexhulls  coordinates  copy  count  create  database  datastorelist  datastoreparams  defaultstyle  delaunay  delete  densify  display  dissolvebyfield  dissolveintersecting  draw  dump  ellipse  envelope  envelopes  erase  filter  from  geomr  geomw  gradientstyle  grid  heatmap  identity  info  interiorpoint  intersection  join  list  merge  mincircle  mincircles  minrect  minrects  multiple2single  octagonalenvelope  octagonalenvelopes  page  points2lines  points2polygons  pointstacker  project  randompoints  raster  rectangle  reflect  removefields  rotate  scale  schema  shear  simplify  sinestar  single2multiple  smooth  snap  sort  splitbyfield  splitbylayer  squircle  subset  supercircle  symdifference  to  transform  translate  union  uniquevalues  uniquevaluesstyle  update  updatefield  validity  voronoi'))
+        COMPREPLY=($(compgen -W ' add  addareafield  addfields  addidfield  addlengthfield  addxyfields  append  arc  arcpolygon  barnessurface  buffer  centroid  clip  compareschemas  convexhull  convexhulls  coordinates  copy  count  create  database  datastorelist  datastoreparams  defaultstyle  delaunay  delete  densify  display  dissolvebyfield  dissolveintersecting  draw  dump  ellipse  envelope  envelopes  erase  filter  from  geomr  geomw  gradientstyle  graticule  grid  heatmap  identity  info  interiorpoint  intersection  join  list  merge  mincircle  mincircles  minrect  minrects  multiple2single  octagonalenvelope  octagonalenvelopes  page  points2lines  points2polygons  pointstacker  project  randompoints  raster  rectangle  reflect  removefields  rotate  scale  schema  shear  simplify  sinestar  single2multiple  smooth  snap  sort  splitbyfield  splitbylayer  squircle  subset  supercircle  symdifference  to  transform  translate  union  uniquevalues  uniquevaluesstyle  update  updatefield  validity  voronoi'))
     elif [[ "$line" == *"geoc vector"[[:space:]][[:alpha:]]* ]]; then
         if [[ "vector add" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' add'))
@@ -769,6 +792,9 @@ _geoc()
         fi
         if [[ "vector gradientstyle" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' gradientstyle'))
+        fi
+        if [[ "vector graticule" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' graticule'))
         fi
         if [[ "vector grid" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' grid'))

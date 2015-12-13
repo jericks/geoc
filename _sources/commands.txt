@@ -120,6 +120,10 @@ Commands
     commands/vector-points2lines.rst
     commands/vector-points2polygons.rst
     commands/vector-dump-shapefiles.rst
+    commands/vector-graticule-square.rst
+    commands/vector-graticule-rectangle.rst
+    commands/vector-graticule-hexagon.rst
+    commands/vector-graticule-line.rst
     commands/raster-abs.rst
     commands/raster-info.rst
     commands/raster-display.rst

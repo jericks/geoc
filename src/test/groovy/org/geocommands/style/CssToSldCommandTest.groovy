@@ -56,7 +56,7 @@ class CssToSldCommandTest extends BaseTest {
         CssToSldCommand cmd = new CssToSldCommand()
         CssToSldOptions options = new CssToSldOptions()
         cmd.execute(options, reader, writer)
-        assertStringsEqual(sld, writer.toString(), true)
+        assertStringsEqual(sld, writer.toString(), true, true)
     }
 
     @Test
@@ -72,7 +72,7 @@ class CssToSldCommandTest extends BaseTest {
                 output: outFile.absolutePath
         )
         cmd.execute(options, reader, writer)
-        assertStringsEqual(sld, outFile.text, true)
+        assertStringsEqual(sld, outFile.text, true, true)
     }
 
     @Test
@@ -80,7 +80,7 @@ class CssToSldCommandTest extends BaseTest {
         String sld = runApp([
                 "style css2sld"
         ], css)
-        assertStringsEqual(sld, sld, true)
+        assertStringsEqual(sld, sld, true, true)
     }
 
     @Test
@@ -93,6 +93,6 @@ class CssToSldCommandTest extends BaseTest {
                 "-i", inFile.absolutePath,
                 "-o", outFile.absolutePath
         ], "")
-        assertStringsEqual(sld, outFile.text, true)
+        assertStringsEqual(sld, outFile.text, true, true)
     }
 }

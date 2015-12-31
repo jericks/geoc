@@ -23,7 +23,7 @@ class BaseTest {
         assertStringsEqual(expected, actual, false)
     }
 
-    void assertStringsEqual(String expected, String actual, boolean trim) {
+    void assertStringsEqual(String expected, String actual, boolean trim, boolean stripXmlNamespaces = false) {
         StringReader expectedReader = new StringReader(expected)
         StringReader actualReader = new StringReader(actual)
         List<String> expectedLines = expectedReader.readLines()
@@ -34,6 +34,10 @@ class BaseTest {
             if (trim) {
                 exp = exp.trim()
                 act = act.trim()
+            }
+            if (stripXmlNamespaces) {
+                exp = stripXmlNS(exp)
+                act = stripXmlNS(act)
             }
             assertEquals(exp, act)
         }

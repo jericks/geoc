@@ -49,7 +49,7 @@ class ShadedReliefStyleCommandTest extends BaseTest {
 </sld:StyledLayerDescriptor>
 """
         String actual = writer.toString().trim()
-        assertStringsEqual(expected, actual)
+        assertStringsEqual(expected, actual, true, true)
     }
 
     @Test
@@ -88,7 +88,7 @@ class ShadedReliefStyleCommandTest extends BaseTest {
   </sld:UserLayer>
 </sld:StyledLayerDescriptor>
 """
-        assertStringsEqual(expected, actual)
+        assertStringsEqual(expected, actual, true, true)
     }
 
 }

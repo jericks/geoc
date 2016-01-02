@@ -124,6 +124,7 @@ Commands
     commands/vector-graticule-rectangle.rst
     commands/vector-graticule-hexagon.rst
     commands/vector-graticule-line.rst
+    commands/vector-remove-layer.rst
     commands/raster-abs.rst
     commands/raster-info.rst
     commands/raster-display.rst

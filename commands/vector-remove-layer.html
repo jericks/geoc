@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector graticule rectangle &mdash; geoc 0.5.0 documentation</title>
+  <title>vector remove layer &mdash; geoc 0.5.0 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.5.0 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector graticule hexagon" href="vector-graticule-hexagon.html"/>
-        <link rel="prev" title="vector graticule square" href="vector-graticule-square.html"/> 
+        <link rel="next" title="raster abs" href="raster-abs.html"/>
+        <link rel="prev" title="vector graticule line" href="vector-graticule-line.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -182,10 +182,10 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-points2polygons.html">vector points2polygons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-dump-shapefiles.html">vector dump shapefiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-graticule-square.html">vector graticule square</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector graticule rectangle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-graticule-rectangle.html">vector graticule rectangle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-graticule-hexagon.html">vector graticule hexagon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-graticule-line.html">vector graticule line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vector-remove-layer.html">vector remove layer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">vector remove layer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-abs.html">raster abs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-info.html">raster info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-display.html">raster display</a></li>
@@ -259,10 +259,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector graticule rectangle</li>
+    <li>vector remove layer</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-graticule-rectangle.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/vector-remove-layer.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -270,26 +270,22 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-graticule-rectangle">
-<h1>vector graticule rectangle<a class="headerlink" href="#vector-graticule-rectangle" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="vector-remove-layer">
+<h1>vector remove layer<a class="headerlink" href="#vector-remove-layer" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector graticule rectangle</p>
+<p>geoc vector remove layer</p>
 <p><strong>Description</strong>:</p>
-<p>Create rectangle graticules</p>
+<p>Remove a Layer from a Workspace</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-g &#8211;geometry: The geometry</li>
-<li>-w &#8211;width: The width</li>
-<li>-h &#8211;height: The height</li>
-<li>-s &#8211;spacing: The spacing (defaults to -1)</li>
-<li>-o &#8211;output-workspace: The output workspace</li>
-<li>-r &#8211;output-layer: The output layer</li>
+<li>-i &#8211;input-workspace: The input workspace</li>
+<li>-l &#8211;input-layer: The input layer</li>
 <li>&#8211;help : Print the help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc vector graticule rectangle -w 10 -h 15 -g -180,-90,180,90
+<div class="highlight-python"><div class="highlight"><pre>geoc vector remove layer -i layers.gpkg -l points
 </pre></div>
 </div>
 </div>
@@ -300,10 +296,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-graticule-hexagon.html" class="btn btn-neutral float-right" title="vector graticule hexagon"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="raster-abs.html" class="btn btn-neutral float-right" title="raster abs"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-graticule-square.html" class="btn btn-neutral" title="vector graticule square"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vector-graticule-line.html" class="btn btn-neutral" title="vector graticule line"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

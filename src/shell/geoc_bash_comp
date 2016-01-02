@@ -607,6 +607,14 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -a --rotation -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -u --unit -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector reflect "* ]]; then
         COMPREPLY=($(compgen -W '--help -c --x2-distance -d --y2-distance -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -x --x1-distance -y --y1-distance' -- $cur))
+    elif [[ "$line" == *"geoc vector remove layer "* ]]; then
+        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer' -- $cur))
+    elif [[ "$line" == *"geoc vector remove " ]]; then
+        COMPREPLY=($(compgen -W ' layer'))
+    elif [[ "$line" == *"geoc vector remove"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "vector remove layer" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' layer'))
+        fi
     elif [[ "$line" == *"geoc vector removefields "* ]]; then
         COMPREPLY=($(compgen -W '--help -f --field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector rotate "* ]]; then
@@ -668,7 +676,7 @@ _geoc()
     elif [[ "$line" == *"geoc vector voronoi "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector " ]]; then
-        COMPREPLY=($(compgen -W ' add  addareafield  addfields  addidfield  addlengthfield  addxyfields  append  arc  arcpolygon  barnessurface  buffer  centroid  clip  compareschemas  convexhull  convexhulls  coordinates  copy  count  create  database  datastorelist  datastoreparams  defaultstyle  delaunay  delete  densify  display  dissolvebyfield  dissolveintersecting  draw  dump  ellipse  envelope  envelopes  erase  filter  from  geomr  geomw  gradientstyle  graticule  grid  heatmap  identity  info  interiorpoint  intersection  join  list  merge  mincircle  mincircles  minrect  minrects  multiple2single  octagonalenvelope  octagonalenvelopes  page  points2lines  points2polygons  pointstacker  project  randompoints  raster  rectangle  reflect  removefields  rotate  scale  schema  shear  simplify  sinestar  single2multiple  smooth  snap  sort  splitbyfield  splitbylayer  squircle  subset  supercircle  symdifference  to  transform  translate  union  uniquevalues  uniquevaluesstyle  update  updatefield  validity  voronoi'))
+        COMPREPLY=($(compgen -W ' add  addareafield  addfields  addidfield  addlengthfield  addxyfields  append  arc  arcpolygon  barnessurface  buffer  centroid  clip  compareschemas  convexhull  convexhulls  coordinates  copy  count  create  database  datastorelist  datastoreparams  defaultstyle  delaunay  delete  densify  display  dissolvebyfield  dissolveintersecting  draw  dump  ellipse  envelope  envelopes  erase  filter  from  geomr  geomw  gradientstyle  graticule  grid  heatmap  identity  info  interiorpoint  intersection  join  list  merge  mincircle  mincircles  minrect  minrects  multiple2single  octagonalenvelope  octagonalenvelopes  page  points2lines  points2polygons  pointstacker  project  randompoints  raster  rectangle  reflect  remove  removefields  rotate  scale  schema  shear  simplify  sinestar  single2multiple  smooth  snap  sort  splitbyfield  splitbylayer  squircle  subset  supercircle  symdifference  to  transform  translate  union  uniquevalues  uniquevaluesstyle  update  updatefield  validity  voronoi'))
     elif [[ "$line" == *"geoc vector"[[:space:]][[:alpha:]]* ]]; then
         if [[ "vector add" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' add'))
@@ -870,6 +878,9 @@ _geoc()
         fi
         if [[ "vector reflect" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' reflect'))
+        fi
+        if [[ "vector remove" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' remove'))
         fi
         if [[ "vector removefields" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' removefields'))

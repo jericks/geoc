@@ -124,6 +124,7 @@ org.geocommands.vector.GraticuleSquareCommand
 org.geocommands.vector.GraticuleHexagonCommand
 org.geocommands.vector.GraticuleRectangleCommand
 org.geocommands.vector.GraticuleLineCommand
+org.geocommands.vector.RemoveLayerCommand
 
 org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand

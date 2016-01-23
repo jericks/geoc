@@ -36,6 +36,10 @@ class UniqueValuesStyleCommandTest extends BaseTest {
                 <sld:Fill>
                   <sld:CssParameter name="fill">#f7fcf5</sld:CssParameter>
                 </sld:Fill>
+                <sld:Stroke>
+                  <sld:CssParameter name="stroke">#acb0ab</sld:CssParameter>
+                  <sld:CssParameter name="stroke-width">0.1</sld:CssParameter>
+                </sld:Stroke>
               </sld:Mark>
               <sld:Size>6</sld:Size>
             </sld:Graphic>
@@ -55,6 +59,10 @@ class UniqueValuesStyleCommandTest extends BaseTest {
                 <sld:Fill>
                   <sld:CssParameter name="fill">#e5f5e0</sld:CssParameter>
                 </sld:Fill>
+                <sld:Stroke>
+                  <sld:CssParameter name="stroke">#a0ab9c</sld:CssParameter>
+                  <sld:CssParameter name="stroke-width">0.1</sld:CssParameter>
+                </sld:Stroke>
               </sld:Mark>
               <sld:Size>6</sld:Size>
             </sld:Graphic>
@@ -74,6 +82,10 @@ class UniqueValuesStyleCommandTest extends BaseTest {
                 <sld:Fill>
                   <sld:CssParameter name="fill">#c7e9c0</sld:CssParameter>
                 </sld:Fill>
+                <sld:Stroke>
+                  <sld:CssParameter name="stroke">#8ba386</sld:CssParameter>
+                  <sld:CssParameter name="stroke-width">0.1</sld:CssParameter>
+                </sld:Stroke>
               </sld:Mark>
               <sld:Size>6</sld:Size>
             </sld:Graphic>
@@ -108,6 +120,10 @@ class UniqueValuesStyleCommandTest extends BaseTest {
                 <sld:Fill>
                   <sld:CssParameter name="fill">#f5deb3</sld:CssParameter>
                 </sld:Fill>
+                <sld:Stroke>
+                  <sld:CssParameter name="stroke">#ab9b7d</sld:CssParameter>
+                  <sld:CssParameter name="stroke-width">0.1</sld:CssParameter>
+                </sld:Stroke>
               </sld:Mark>
               <sld:Size>6</sld:Size>
             </sld:Graphic>
@@ -127,6 +143,10 @@ class UniqueValuesStyleCommandTest extends BaseTest {
                 <sld:Fill>
                   <sld:CssParameter name="fill">#ffff00</sld:CssParameter>
                 </sld:Fill>
+                <sld:Stroke>
+                  <sld:CssParameter name="stroke">#b2b200</sld:CssParameter>
+                  <sld:CssParameter name="stroke-width">0.1</sld:CssParameter>
+                </sld:Stroke>
               </sld:Mark>
               <sld:Size>6</sld:Size>
             </sld:Graphic>
@@ -146,6 +166,10 @@ class UniqueValuesStyleCommandTest extends BaseTest {
                 <sld:Fill>
                   <sld:CssParameter name="fill">#0000ff</sld:CssParameter>
                 </sld:Fill>
+                <sld:Stroke>
+                  <sld:CssParameter name="stroke">#0000b2</sld:CssParameter>
+                  <sld:CssParameter name="stroke-width">0.1</sld:CssParameter>
+                </sld:Stroke>
               </sld:Mark>
               <sld:Size>6</sld:Size>
             </sld:Graphic>

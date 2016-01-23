@@ -30,6 +30,10 @@ class DefaultStyleCommandTest extends BaseTest {
                 <sld:Fill>
                   <sld:CssParameter name="fill">#f5deb3</sld:CssParameter>
                 </sld:Fill>
+                <sld:Stroke>
+                  <sld:CssParameter name="stroke">#ab9b7d</sld:CssParameter>
+                  <sld:CssParameter name="stroke-width">0.1</sld:CssParameter>
+                </sld:Stroke>
               </sld:Mark>
               <sld:Size>6</sld:Size>
             </sld:Graphic>

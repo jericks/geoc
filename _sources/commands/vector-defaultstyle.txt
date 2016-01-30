@@ -13,6 +13,8 @@ Get the default style for the Layer
 
    * -c --color: The base color
 
+   * -o --opacity: The opacity (defaults to 1.0)
+
    * -i --input-workspace: The input workspace
 
    * -l --input-layer: The input layer

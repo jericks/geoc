@@ -28,12 +28,10 @@ class DefaultStyleCommand extends LayerCommand<DefaultStyleOptions> {
 
     @Override
     protected void processLayer(Layer layer, DefaultStyleOptions options, Reader reader, Writer writer) throws Exception {
-        String sld
-        if (options.color) {
-            sld = Symbolizer.getDefault(layer.schema.geom.typ, new Color(options.color)).sld
-        } else {
-            sld = Symbolizer.getDefault(layer.schema.geom.typ).sld
-        }
+        String sld = Symbolizer.getDefault([
+                color: options.color ? new Color(options.color) : "#f2f2f2",
+                opacity: options.opacity
+        ], layer.schema.geom.typ).sld
         writer.write(sld.trim())
     }
 
@@ -41,6 +39,9 @@ class DefaultStyleCommand extends LayerCommand<DefaultStyleOptions> {
 
         @Option(name = "-c", aliases = "--color", usage = "The base color", required = false)
         String color
+
+        @Option(name = "-o", aliases = "--opacity", usage = "The opacity (defaults to 1.0)", required = false)
+        double opacity = 1.0
 
     }
 }

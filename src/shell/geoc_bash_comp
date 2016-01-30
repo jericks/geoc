@@ -470,7 +470,7 @@ _geoc()
     elif [[ "$line" == *"geoc vector datastoreparams "* ]]; then
         COMPREPLY=($(compgen -W '--help -n --name' -- $cur))
     elif [[ "$line" == *"geoc vector defaultstyle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --color -i --input-workspace -l --input-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help -c --color -i --input-workspace -l --input-layer -o --opacity' -- $cur))
     elif [[ "$line" == *"geoc vector delaunay "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector delete "* ]]; then

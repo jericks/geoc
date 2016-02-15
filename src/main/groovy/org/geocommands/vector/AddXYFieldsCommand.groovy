@@ -32,7 +32,7 @@ class AddXYFieldsCommand extends LayerInOutCommand<AddXYFieldsOptions> {
     void processLayers(Layer inLayer, Layer outLayer, AddXYFieldsOptions options, Reader reader, Writer writer) throws Exception {
         outLayer.withWriter { geoscript.layer.Writer w ->
             inLayer.eachFeature { Feature f ->
-                Point pt = f.geom.centroid
+                Point pt = options.algorithm.equalsIgnoreCase("interiorpoint") ? f.geom.interiorPoint :f.geom.centroid
                 Map attributes = f.attributes
                 attributes[options.xFieldName] = pt.x
                 attributes[options.yFieldName] = pt.y
@@ -56,6 +56,9 @@ class AddXYFieldsCommand extends LayerInOutCommand<AddXYFieldsOptions> {
 
         @Option(name = "-y", aliases = "--y-fieldname", usage = "The name for the Y Field", required = false)
         String yFieldName = "Y"
+
+        @Option(name = "-a", aliases = "--algorithm", usage = "The XY generation algorithm (centroid or interiorpoint)", required = false)
+        String algorithm = "centroid"
 
     }
 }

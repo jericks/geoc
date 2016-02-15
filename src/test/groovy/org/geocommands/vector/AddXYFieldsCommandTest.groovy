@@ -81,5 +81,15 @@ class AddXYFieldsCommandTest extends BaseTest {
             assertTrue f["X_COORD"] > 0
             assertTrue f["Y_COORD"] > 0
         }
+
+        output = runApp(["vector addxyfields", "-x", "X_COORD", "-y", "Y_COORD", "-a", "interiorpoint"], readCsv("polygons.csv").text)
+        layer = getLayerFromCsv(output)
+        assertEquals 4, layer.count
+        assertTrue shp.schema.has("X_COORD")
+        assertTrue shp.schema.has("Y_COORD")
+        shp.eachFeature { f ->
+            assertTrue f["X_COORD"] > 0
+            assertTrue f["Y_COORD"] > 0
+        }
     }
 }

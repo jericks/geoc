@@ -40,7 +40,7 @@ class CreateCommand extends LayerOutCommand<CreateOptions> {
 
         // Get Fields
         List<Field> fields = []
-        options.fields.each { f ->
+        options.fields.each { Map.Entry<String,String> f ->
             Field field
             if (f.value.contains("EPSG")) {
                 def parts = f.value.split(" ")

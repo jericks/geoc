@@ -19,6 +19,7 @@ Commands
     commands/geometry-pt2dd.rst
     commands/filter-cql2xml.rst
     commands/map-cube.rst
+    commands/map-draw.rest
     commands/vector-datastorelist.rst
     commands/vector-datastoreparams.rst
     commands/vector-display.rst

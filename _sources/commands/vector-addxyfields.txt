@@ -15,6 +15,8 @@ Add a XY Fields
 
    * -y --y-fieldname: The name for the Y Field
 
+   * -a --algorithm: The XY generation algorithm (centroid or interiorpoint)
+
    * -o --output-workspace: The output workspace
 
    * -r --output-layer: The output layer

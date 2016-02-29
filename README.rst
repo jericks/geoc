@@ -50,12 +50,17 @@ separated by an '=' sign and multiple key/value pairs are separated by a white s
 geoc also is smart enough to know that a file ending in '.shp' is a shapefile, a file ending in '.gpkg' is a GeoPackage database.
 Here are some examples:
 
-* PostGIS: dbtype=postgis database=postgres host=localhost port=5432 user=postgres passwd=postgres
-* H2: dbtype=h2 database=test.db
-* Shapefile: "data/states.shp"
-* Properties: "data/states.properties"
-* GeoPackage: layers.gpkg
-* Spatialite: layers.sqlite
+* PostGIS: "dbtype=postgis database=postgres host=localhost port=5432 user=postgres passwd=postgres"
+* MySQL: "dbtype=mysql database=layers host=localhost port=5432 user=me passwd=s$cr$t"
+* H2: "test.db" or "dbtype=h2 database=test.db" or "dbtype=h2 host=localhost port=5432 schema=public user=me password=s$cr$t" or "dbtype=h2 jndiReferenceName=layers schema=public"
+* Shapefile: "data/states.shp" or "url=data/states.shp"
+* Memory: "memory"
+* Properties: "data/states.properties" or "directory=data/properties"
+* GeoPackage: "layers.gpkg" or "database=layers.gpkg dbtype=geopkg user=me passwd=s$cr$t"
+* Geobuf: "layer.pbf" or "file=layer.pbg precision=6 dimension=2"
+* Spatialite: "layers.sqlite" or "dbtype=spatialite database=layers.sqlite"
+* OGR: "DatasourceName=states.shp DriverName='ESRI Shapefile' namespace=shp"
+* WFS: "http://geoserver.org/wfs?request=getcapabilities"
 
 Here is a longer example that create 100 random points in a GeoPackage database, get's metadata of that layer, and then finally converts the layer to CSV:::
 

@@ -80,11 +80,16 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -d --description' -- $cur))
     elif [[ "$line" == *"geoc map cube "* ]]; then
         COMPREPLY=($(compgen -W '--help -f --file -m --map -s --tab-size -t --draw-tabs' -- $cur))
+    elif [[ "$line" == *"geoc map draw "* ]]; then
+        COMPREPLY=($(compgen -W '--help -b --bounds -f --file -g --background-color -h --height -i --layer-file -l --layer -p --projection -t --type -w --width' -- $cur))
     elif [[ "$line" == *"geoc map " ]]; then
-        COMPREPLY=($(compgen -W ' cube'))
+        COMPREPLY=($(compgen -W ' cube  draw'))
     elif [[ "$line" == *"geoc map"[[:space:]][[:alpha:]]* ]]; then
         if [[ "map cube" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' cube'))
+        fi
+        if [[ "map draw" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' draw'))
         fi
     elif [[ "$line" == *"geoc proj envelope "* ]]; then
         COMPREPLY=($(compgen -W '--help -e --epsg -g --geo-bounds -o --output-workspace -r --output-layer' -- $cur))

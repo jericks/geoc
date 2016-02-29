@@ -1,0 +1,28 @@
+.TH "geoc-map-draw" "1" "28 February 2016" "version 0.1"
+.SH NAME
+geoc map draw
+.SH DESCRIPTION
+Draw a Map
+.SH USAGE
+geoc map draw -l "layertype=layer dbtype=geopkg database=data/countries.gpkg layername=countries style=data/countries.sld" -l "/layertype=layer file=data/points.csv layername=points style=data/points.sld"
+.SH OPTIONS
+-l --layer: The map layer
+.PP
+-i --layer-file: The input layer file
+.PP
+-f --file: The output image file
+.PP
+-t --type: The type of document
+.PP
+-w --width: The width
+.PP
+-h --height: The height
+.PP
+-b --bounds: The bounds
+.PP
+-g --background-color: The background color
+.PP
+-p --projection: The projection
+.PP
+--help : Print the help message
+.PP

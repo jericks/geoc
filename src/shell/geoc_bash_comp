@@ -391,7 +391,7 @@ _geoc()
     elif [[ "$line" == *"geoc vector addlengthfield "* ]]; then
         COMPREPLY=($(compgen -W '--help -f --length-fieldname -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector addxyfields "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -x --x-fieldname -y --y-fieldname' -- $cur))
+        COMPREPLY=($(compgen -W '--help -a --algorithm -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -x --x-fieldname -y --y-fieldname' -- $cur))
     elif [[ "$line" == *"geoc vector append "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-workspace -k --other-workspace -l --input-layer -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector arc "* ]]; then

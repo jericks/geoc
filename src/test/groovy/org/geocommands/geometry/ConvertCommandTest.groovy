@@ -206,8 +206,9 @@ class ConvertCommandTest extends BaseTest {
         StringReader reader = new StringReader("POINT (1 2)")
         StringWriter writer = new StringWriter()
         cmd.execute(options, reader, writer)
-        assertEquals("\"geom:Point\"" + NEW_LINE +
-                "\"POINT (1 2)\"" + NEW_LINE, writer.toString())
+        assertEquals("""\"geom:Point\"
+\"POINT (1 2)\"
+""", writer.toString())
     }
 
     @Test

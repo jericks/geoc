@@ -130,17 +130,21 @@ class MapCommand extends Command<MapOptions>{
                 File file = new File(params.get("file"))
                 if (file.exists()) {
                     // Try to use a Workspace first
-                    workspace = Workspace.getWorkspace(file.absolutePath)
-                    if (workspace) {
-                        LOGGER.info "Workspace = ${workspace.format}"
-                        Layer layer = workspace.get(layerName ?: file.name)
-                        if (params.layerprojection) {
-                            layer.proj = params.layerprojection
+                    try {
+                        workspace = Workspace.getWorkspace(file.absolutePath)
+                        if (workspace) {
+                            LOGGER.info "Workspace = ${workspace.format}"
+                            Layer layer = workspace.get(layerName ?: file.name)
+                            if (params.layerprojection) {
+                                layer.proj = params.layerprojection
+                            }
+                            if (style) {
+                                layer.style = getStyle(layer, style)
+                            }
+                            renderable = layer
                         }
-                        if (style) {
-                            layer.style = getStyle(layer, style)
-                        }
-                        renderable = layer
+                    } catch(Exception ex) {
+                        // Just try the Layer Readers
                     }
                     // Then try to use a Layer Reader
                     if (!renderable) {

@@ -117,7 +117,7 @@ class MapCommand extends Command<MapOptions>{
             Workspace workspace = Workspace.getWorkspace(params)
             if (workspace) {
                 LOGGER.info "Workspace = ${workspace.format}"
-                Layer layer = workspace.get(layerName ?: 0)
+                Layer layer = workspace.get(layerName ?: workspace.names[0])
                 if (params.layerprojection) {
                     layer.proj = params.layerprojection
                 }

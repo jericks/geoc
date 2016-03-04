@@ -57,7 +57,7 @@ Here are some examples:
 * Memory: "memory"
 * Properties: "data/states.properties" or "directory=data/properties"
 * GeoPackage: "layers.gpkg" or "database=layers.gpkg dbtype=geopkg user=me passwd=s$cr$t"
-* Geobuf: "layer.pbf" or "file=layer.pbg precision=6 dimension=2"
+* Geobuf: "layer.pbf" or "file=layers precision=6 dimension=2"
 * Spatialite: "layers.sqlite" or "dbtype=spatialite database=layers.sqlite"
 * OGR: "DatasourceName=states.shp DriverName='ESRI Shapefile' namespace=shp"
 * WFS: "http://geoserver.org/wfs?request=getcapabilities"

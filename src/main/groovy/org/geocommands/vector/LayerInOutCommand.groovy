@@ -39,8 +39,8 @@ abstract class LayerInOutCommand<T extends LayerInOutOptions> extends LayerComma
 
     protected String getOutputLayerName(Layer layer, String postfix, T options) {
         String outName = options.outputLayer ? options.outputLayer : layer.name + "_" + postfix
-        if (options.outputWorkspace &&
-                (options.outputWorkspace.endsWith(".shp") || options.outputWorkspace.endsWith(".properties"))) {
+        if (options.outputWorkspace && (options.outputWorkspace.endsWith(".shp") ||
+                options.outputWorkspace.endsWith(".properties") || options.outputWorkspace.endsWith(".pbf"))) {
             String fileName = new File(options.outputWorkspace).name
             outName = fileName.substring(0, fileName.lastIndexOf("."))
         }

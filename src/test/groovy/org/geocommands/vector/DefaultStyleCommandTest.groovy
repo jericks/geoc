@@ -74,6 +74,20 @@ class DefaultStyleCommandTest extends BaseTest {
     }
 
     @Test
+    void executeWithGeometryType() {
+        DefaultStyleCommand cmd = new DefaultStyleCommand()
+        DefaultStyleOptions options = new DefaultStyleOptions(
+                geometryType: "point",
+                color: "wheat"
+        )
+        StringWriter writer = new StringWriter()
+        cmd.execute(options, new StringReader(""), writer)
+        String actual = writer.toString()
+        String expected = sld
+        assertStringsEqual(expected, actual, true, true)
+    }
+
+    @Test
     void runAsCommandLine() {
         File file = getResource("points.properties")
         String output = runApp([

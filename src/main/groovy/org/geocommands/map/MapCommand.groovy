@@ -103,7 +103,20 @@ class MapCommand extends Command<MapOptions>{
         map.backgroundColor = options.backgroundColor
 
         File file = options.file ? options.file : new File("${['pdf', 'svg'].contains(options.type) ? "document" : "image"}.${options.type}")
-        map.render(file)
+        try {
+            map.render(file)
+        } finally {
+            map.layers.each { Renderable renderable ->
+                if (renderable instanceof Layer) {
+                    (renderable as Layer).workspace.close()
+                } else if (renderable instanceof TileLayer) {
+                    (renderable as TileLayer).close()
+                } else if (renderable instanceof Raster) {
+                    (renderable as Raster).dispose()
+                }
+            }
+            map.close()
+        }
     }
 
     private Renderable getRenderable(Map params) {

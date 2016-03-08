@@ -131,6 +131,7 @@ class MapCommand extends Command<MapOptions>{
             if (workspace) {
                 LOGGER.info "Workspace = ${workspace.format}"
                 Layer layer = workspace.get(layerName ?: workspace.names[0])
+                LOGGER.info "Layer = ${layer}"
                 if (params.layerprojection) {
                     layer.proj = params.layerprojection
                 }
@@ -148,6 +149,7 @@ class MapCommand extends Command<MapOptions>{
                         if (workspace) {
                             LOGGER.info "Workspace = ${workspace.format}"
                             Layer layer = workspace.get(layerName ?: file.name)
+                            LOGGER.info "Layer = ${layer}"
                             if (params.layerprojection) {
                                 layer.proj = params.layerprojection
                             }

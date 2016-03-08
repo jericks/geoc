@@ -11,6 +11,8 @@ Get the default style for the Layer
 
 **Arguments**:
 
+   * -g --geometry-type: The geometry type
+
    * -c --color: The base color
 
    * -o --opacity: The opacity (defaults to 1.0)

@@ -74,6 +74,8 @@ Installation
 ------------
 Just download the latest `release <https://github.com/jericks/geoc/releases>`_ and put the geoc/bin directory on your path. geoc also requires Java 7.
 
+If you want to use the OGR Workspace, you need to install the GDAL/OGR native library compiled with JNI support and then set the GEOC_GDAL_HOME variable.
+
 Getting Help
 ------------
 Each command contains a --help option::

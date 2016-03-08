@@ -29,6 +29,34 @@ for jar in `ls $LIBDIR`; do
   fi
 done
 
+if [ -e "$GEOC_GDAL_HOME" ]; then
+    if [ "$(uname)" == "Darwin" ]; then
+        if [ "$DYLD_LIBRARY_PATH" == "" ]; then
+            export DYLD_LIBRARY_PATH=$GEOC_GDAL_HOME
+        else
+            export DYLD_LIBRARY_PATH=$GEOC_GDAL_HOME:$DYLD_LIBRARY_PATH
+        fi
+    elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+        if [ "$LD_LIBRARY_PATH" == "" ]; then
+            export LD_LIBRARY_PATH=$GEOC_GDAL_HOME
+        else
+            export LD_LIBRARY_PATH=$GEOC_GDAL_HOME:$LD_LIBRARY_PATH
+        fi
+    elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+        if [ "$PATH" == "" ]; then
+            export PATH=$GEOC_GDAL_HOME
+        else
+            export PATH=$GEOC_GDAL_HOME:$PATH
+        fi
+    elif [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
+        if [ "$PATH" == "" ]; then
+            export PATH=$GEOC_GDAL_HOME
+        else
+            export PATH=$GEOC_GDAL_HOME:$PATH
+        fi
+    fi
+fi
+
 if [[ $OSTYPE == cygwin ]]; then
   "$JAVA" -cp `cygpath -wp $CLASSPATH` org.geocommands.App "$@"
 else 

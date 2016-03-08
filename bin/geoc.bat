@@ -32,6 +32,11 @@ cd %~dp0
 @REM build up the classpath
 set CLASSPATH=%CD%\..\lib\*
 
+@REM set native library path
+if not "%GEOC_GDAL_HOME%" == "" (
+    set "PATH=%GEOC_GDAL_HOME%;%PATH%"
+)
+
 cd %CWD%
 %JAVA% org.geocommands.App %*
 goto end

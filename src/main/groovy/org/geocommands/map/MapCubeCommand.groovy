@@ -7,6 +7,7 @@ import geoscript.proj.Projection
 import geoscript.render.Map
 import org.geocommands.Options
 import org.geocommands.Command
+import org.geocommands.Util
 import org.kohsuke.args4j.Option
 
 import javax.imageio.ImageIO
@@ -53,8 +54,7 @@ class MapCubeCommand extends Command<MapCubeOptions> {
     @Override
     void execute(MapCubeOptions options, Reader reader, Writer writer) throws Exception {
 
-        List layers = []
-        org.geocommands.Util.addBasemap(options.map, layers)
+        List layers = Util.getMapLayers(options.layers)
 
         BufferedImage image = new BufferedImage(1800, 1500, BufferedImage.TYPE_INT_ARGB)
         Graphics2D g2d = image.createGraphics()
@@ -147,8 +147,8 @@ class MapCubeCommand extends Command<MapCubeOptions> {
 
     static class MapCubeOptions extends Options {
 
-        @Option(name = "-m", aliases = "--map", usage = "The groovy map file that contains the layers to render", required = true)
-        String map
+        @Option(name = "-l", aliases = "--layer", usage = "The map layer", required = true)
+        List<String> layers
 
         @Option(name = "-f", aliases = "--file", usage = "The output image file", required = false)
         File file = new File("mapcube.png")

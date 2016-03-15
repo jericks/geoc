@@ -63,7 +63,9 @@ class StitchVectorCommandTest extends BaseTest {
         GenerateOptions options = new GenerateOptions(
                 tileLayer: "type=vectortiles format=mvt file=${tileFile.absolutePath}",
                 fields: ["the_geom", "title"],
-                baseMap: layerFile,
+                layers: [
+                        "layertype=layer file=${layerFile.absolutePath}"
+                ],
                 startZoom: 0,
                 endZoom: 2,
                 verbose: false

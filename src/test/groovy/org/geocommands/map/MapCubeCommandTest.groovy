@@ -18,7 +18,9 @@ class MapCubeCommandTest extends BaseTest {
         File cubeFile = createTemporaryFile("cube", "png")
         MapCubeCommand cmd = new MapCubeCommand()
         MapCubeOptions options = new MapCubeOptions(
-                map: rasterFile.absolutePath,
+                layers: [
+                        "layertype=raster source=${rasterFile.absolutePath}"
+                ],
                 file: cubeFile
         )
         cmd.execute(options)
@@ -32,7 +34,7 @@ class MapCubeCommandTest extends BaseTest {
         File cubeFile = createTemporaryFile("cube", "png")
         runApp([
                 "map cube",
-                "-m", rasterFile,
+                "-l", "layertype=raster source=${rasterFile.absolutePath}",
                 "-f", cubeFile
         ], "")
         assertTrue cubeFile.exists()

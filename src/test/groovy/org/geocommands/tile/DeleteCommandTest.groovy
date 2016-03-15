@@ -67,7 +67,9 @@ class DeleteCommandTest extends BaseTest {
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: tileFile.absolutePath,
-                baseMap: layerFile,
+                layers: [
+                  "layertype=layer file=${layerFile.absolutePath}"
+                ],
                 startZoom: 0,
                 endZoom: 2,
                 verbose: false

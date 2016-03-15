@@ -26,7 +26,9 @@ class GenerateCommandTest extends BaseTest {
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: tileFile.absolutePath,
-                baseMap: layerFile,
+                layers: [
+                        "layertype=layer file=${layerFile.absolutePath}"
+                ],
                 startZoom: 0,
                 endZoom: 2,
                 verbose: false
@@ -47,7 +49,9 @@ class GenerateCommandTest extends BaseTest {
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: tileFile.absolutePath,
-                baseMap: layerFile,
+                layers: [
+                        "layertype=layer file=${layerFile.absolutePath}"
+                ],
                 startZoom: 0,
                 endZoom: 2,
                 verbose: false
@@ -67,7 +71,9 @@ class GenerateCommandTest extends BaseTest {
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: "type=tms format=png file=${tileFile.absolutePath}",
-                baseMap: layerFile,
+                layers: [
+                        "layertype=layer file=${layerFile.absolutePath}"
+                ],
                 startZoom: 0,
                 endZoom: 2,
                 verbose: false
@@ -86,14 +92,12 @@ class GenerateCommandTest extends BaseTest {
         File tileFile = temporaryFolder.newFolder("earthquakes")
         File layerFile = getResource("earthquakes.properties")
 
-        Layer layer = new Property(layerFile)
-        println layer.count
-        println layer.schema.fields
-
         GenerateOptions options = new GenerateOptions(
                 tileLayer: "type=utfgrid file=${tileFile.absolutePath}",
                 fields: ["title", "elevation"],
-                baseMap: layerFile,
+                layers: [
+                        "layertype=layer file=${layerFile.absolutePath}"
+                ],
                 startZoom: 0,
                 endZoom: 2,
                 verbose: false
@@ -113,7 +117,9 @@ class GenerateCommandTest extends BaseTest {
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: "type=vectortiles format=mvt file=${tileFile.absolutePath}",
-                baseMap: layerFile,
+                layers: [
+                        "layertype=layer file=${layerFile.absolutePath}"
+                ],
                 startZoom: 0,
                 endZoom: 2,
                 verbose: false
@@ -133,7 +139,9 @@ class GenerateCommandTest extends BaseTest {
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: "type=vectortiles format=geojson file=${tileFile.absolutePath}",
-                baseMap: layerFile,
+                layers: [
+                        "layertype=layer file=${layerFile.absolutePath}"
+                ],
                 startZoom: 0,
                 endZoom: 2,
                 verbose: false
@@ -153,7 +161,9 @@ class GenerateCommandTest extends BaseTest {
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: "type=vectortiles format=pbf file=${tileFile.absolutePath}",
-                baseMap: layerFile,
+                layers: [
+                        "layertype=layer file=${layerFile.absolutePath}"
+                ],
                 startZoom: 0,
                 endZoom: 2,
                 verbose: false
@@ -174,7 +184,7 @@ class GenerateCommandTest extends BaseTest {
         runApp([
                 "tile generate",
                 "-l", tileFile.absolutePath,
-                "-m", layerFile,
+                "-m", "layertype=layer file=${layerFile.absolutePath}",
                 "-s", 0,
                 "-e", 2,
                 "-v", false

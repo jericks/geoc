@@ -11,6 +11,7 @@ import geoscript.layer.io.KmlWriter
 import geoscript.layer.io.MvtWriter
 import org.geocommands.Command
 import org.geocommands.Options
+import org.geocommands.Util
 import org.kohsuke.args4j.Option
 
 import java.io.Writer
@@ -42,8 +43,7 @@ class GenerateCommand extends Command<GenerateOptions> {
         TileLayer tileLayer = TileLayer.getTileLayer(options.tileLayer)
         TileRenderer tileRenderer
 
-        List layers = []
-        org.geocommands.Util.addBasemap(options.baseMap, layers)
+        List layers = Util.getMapLayers(options.layers)
 
         if (tileLayer instanceof MBTiles) {
             tileRenderer = new ImageTileRenderer(tileLayer, layers)
@@ -104,8 +104,8 @@ class GenerateCommand extends Command<GenerateOptions> {
         @Option(name = "-d", aliases = "--layer-fields", usage = "A List of sub fields for a layer", required = false)
         Map<String,String> fieldMap = [:]
 
-        @Option(name = "-m", aliases = "--base-map", usage = "The base map", required = true)
-        String baseMap
+        @Option(name = "-m", aliases = "--layer", usage = "The map layer", required = true)
+        List<String> layers
 
         @Option(name = "-s", aliases = "--start-zoom", usage = "The start zoom level", required = true)
         int startZoom

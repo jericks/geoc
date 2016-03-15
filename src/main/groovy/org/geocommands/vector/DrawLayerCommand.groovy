@@ -39,8 +39,8 @@ class DrawLayerCommand extends LayerCommand<DrawLayerOptions> {
             }
         }
         List layers = [layer]
-        if (options.baseMap) {
-            org.geocommands.Util.addBasemap(options.baseMap, layers)
+        if (options.layers) {
+            layers.addAll(org.geocommands.Util.getMapLayers(options.layers))
         }
         geoscript.render.Map map = new geoscript.render.Map(
                 layers: layers,
@@ -73,8 +73,8 @@ class DrawLayerCommand extends LayerCommand<DrawLayerOptions> {
         @Option(name = "-b", aliases = "--bounds", usage = "The bounds", required = false)
         String bounds
 
-        @Option(name = "-m", aliases = "--base-map", usage = "The base map (can be a OSM tile set like stamen-toner, stamen-toner-lite, stamen-watercolor, mapquest-street, mapquest-satellite, shapefile, or Groovy script that returns Layers)", required = false)
-        String baseMap
+        @Option(name = "-m", aliases = "--layer", usage = "The map layer", required = false)
+        List<String> layers
 
         @Option(name = "-g", aliases = "--background-color", usage = "The background color", required = false)
         String backgroundColor

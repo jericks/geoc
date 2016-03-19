@@ -79,7 +79,7 @@ _geoc()
     elif [[ "$line" == *"geoc list "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --description' -- $cur))
     elif [[ "$line" == *"geoc map cube "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --file -m --map -s --tab-size -t --draw-tabs' -- $cur))
+        COMPREPLY=($(compgen -W '--help -f --file -l --layer -o --draw-outline -s --tab-size -t --draw-tabs' -- $cur))
     elif [[ "$line" == *"geoc map draw "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --bounds -f --file -g --background-color -h --height -i --layer-file -l --layer -p --projection -t --type -w --width' -- $cur))
     elif [[ "$line" == *"geoc map " ]]; then
@@ -138,7 +138,7 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' with'))
         fi
     elif [[ "$line" == *"geoc raster display "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -g --background-color -h --height -i --input-raster -l --input-raster-name -m --base-map -p --input-projection -s --sld-file -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help -b --bounds -g --background-color -h --height -i --input-raster -l --input-raster-name -m --layer -p --input-projection -s --sld-file -w --width' -- $cur))
     elif [[ "$line" == *"geoc raster divide constant "* ]]; then
         COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -v --value' -- $cur))
     elif [[ "$line" == *"geoc raster divide " ]]; then
@@ -148,7 +148,7 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' constant'))
         fi
     elif [[ "$line" == *"geoc raster draw "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -f --file -h --height -i --input-raster -l --input-raster-name -m --base-map -p --input-projection -s --sld-file -t --type -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help -b --bounds -f --file -h --height -i --input-raster -l --input-raster-name -m --layer -p --input-projection -s --sld-file -t --type -w --width' -- $cur))
     elif [[ "$line" == *"geoc raster envelope "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-raster -l --input-raster-name -o --output-workspace -p --input-projection -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc raster exp "* ]]; then
@@ -343,7 +343,7 @@ _geoc()
     elif [[ "$line" == *"geoc tile delete "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --bounds -c --maxx -h --height -i --tile -l --tile-layer -u --maxy -w --width -x --minx -y --miny -z --zoom-level' -- $cur))
     elif [[ "$line" == *"geoc tile generate "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -d --layer-fields -e --end-zoom -f --field -i --missing -l --tile-layer -m --base-map -s --start-zoom -v --verbose' -- $cur))
+        COMPREPLY=($(compgen -W '--help -b --bounds -d --layer-fields -e --end-zoom -f --field -i --missing -l --tile-layer -m --layer -s --start-zoom -v --verbose' -- $cur))
     elif [[ "$line" == *"geoc tile pyramid "* ]]; then
         COMPREPLY=($(compgen -W '--help -l --tile-layer -o --output-type' -- $cur))
     elif [[ "$line" == *"geoc tile stitch raster "* ]]; then
@@ -483,13 +483,13 @@ _geoc()
     elif [[ "$line" == *"geoc vector densify "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --distance -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector display "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -g --background-color -h --height -i --input-workspace -l --input-layer -m --base-map -s --sld-file -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help -b --bounds -g --background-color -h --height -i --input-workspace -l --input-layer -m --layer -s --sld-file -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector dissolvebyfield "* ]]; then
         COMPREPLY=($(compgen -W '--help -c --count-field -d --id-field -f --field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector dissolveintersecting "* ]]; then
         COMPREPLY=($(compgen -W '--help -c --count-field -d --id-field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector draw "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -f --file -g --background-color -h --height -i --input-workspace -l --input-layer -m --base-map -s --sld-file -t --type -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help -b --bounds -f --file -g --background-color -h --height -i --input-workspace -l --input-layer -m --layer -s --sld-file -t --type -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector dump shapefiles "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --max-dbf-size -i --input-workspace -l --input-layer -o --output-directory -s --max-shp-size' -- $cur))
     elif [[ "$line" == *"geoc vector dump " ]]; then

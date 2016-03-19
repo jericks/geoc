@@ -11,9 +11,11 @@ Create a map cube
 
 **Arguments**:
 
-   * -m --map: The groovy map file that contains the layers to render
+   * -l --layer: The map layer
 
    * -f --file: The output image file
+
+   * -o --draw-outline: The flag to whether to draw outlines or not
 
    * -t --draw-tabs: The flag to whether to draw tabs or not
 

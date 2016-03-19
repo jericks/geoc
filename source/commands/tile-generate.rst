@@ -17,7 +17,7 @@ Generate tiles
 
    * -d --layer-fields: A List of sub fields for a layer
 
-   * -m --base-map: The base map
+   * -m --layer: The map layer
 
    * -s --start-zoom: The start zoom level
 

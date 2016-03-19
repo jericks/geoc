@@ -23,7 +23,7 @@ Draw a Raster to an image
 
    * -b --bounds: The bounds
 
-   * -m --base-map: The base map (can be a OSM tile set, shapefile, or Groovy script that returns Layers)
+   * -m --layer: The map layer
 
    * -i --input-raster: The input raster
 

@@ -19,7 +19,7 @@ Display a Raster in a simple viewer
 
    * -b --bounds: The bounds
 
-   * -m --base-map: The base map (can be a OSM tile set like stamen-toner, stamen-toner-lite, stamen-watercolor, mapquest-street, mapquest-satellite, shapefile, or Groovy script that returns Layers)
+   * -m --layer: The map layer
 
    * -g --background-color: The background color
 

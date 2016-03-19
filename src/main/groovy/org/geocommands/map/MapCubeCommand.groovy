@@ -102,6 +102,10 @@ class MapCubeCommand extends Command<MapCubeOptions> {
             )
             BufferedImage img = map.renderToImage()
             g2d.drawImage(img, cube.image[0], cube.image[1], null)
+            if (options.drawOutline) {
+                g2d.paint = new Color(0, 0, 0)
+                g2d.drawRect(cube.image[0], cube.image[1], 400, 400)
+            }
         }
 
         if (options.drawTabs) {
@@ -152,6 +156,9 @@ class MapCubeCommand extends Command<MapCubeOptions> {
 
         @Option(name = "-f", aliases = "--file", usage = "The output image file", required = false)
         File file = new File("mapcube.png")
+
+        @Option(name = "-o", aliases = "--draw-outline", usage = "The flag to whether to draw outlines or not", required = false)
+        boolean drawOutline = false
 
         @Option(name = "-t", aliases = "--draw-tabs", usage = "The flag to whether to draw tabs or not", required = false)
         boolean drawTabs = true

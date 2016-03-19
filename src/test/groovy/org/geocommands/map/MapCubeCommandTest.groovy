@@ -35,7 +35,8 @@ class MapCubeCommandTest extends BaseTest {
         runApp([
                 "map cube",
                 "-l", "layertype=raster source=${rasterFile.absolutePath}",
-                "-f", cubeFile
+                "-f", cubeFile,
+                "-o"
         ], "")
         assertTrue cubeFile.exists()
         assertTrue cubeFile.length() > 0

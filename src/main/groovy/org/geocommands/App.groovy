@@ -1,5 +1,6 @@
 package org.geocommands
 
+import geoscript.workspace.OGR
 import org.kohsuke.args4j.CmdLineParser
 
 import java.util.logging.Level
@@ -21,6 +22,11 @@ class App {
         LogManager.getLogManager().reset()
         Logger globalLogger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME)
         globalLogger.setLevel(Level.OFF)
+
+        // Turn off GDAL logging
+        if (OGR.isAvailable()) {
+            OGR.setErrorHandler("quiet")
+        }
 
         // The usage
         final String usage = "Usage: geoc <command> <args>"

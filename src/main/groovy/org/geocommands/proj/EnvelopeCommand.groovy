@@ -59,7 +59,7 @@ class EnvelopeCommand extends Command<EnvelopeOptions> {
         }
         Layer layer = workspace.create(org.geocommands.vector.Util.getOutputLayerName(options.outputWorkspace, options.outputLayer, "proj"), [
             new Field("the_geom", "POLYGON", options.geoBounds ? "EPSG:4326" : proj),
-            new Field("epsg", "int")
+            new Field("epsg", "String")
         ])
         // Add Bounds
         Bounds bounds = options.geoBounds ? proj.geoBounds : proj.bounds

@@ -67,7 +67,7 @@ class MapCubeCommand extends Command<MapCubeOptions> {
                 height: 800,
                 proj: new Projection("EPSG:4326"),
                 fixAspectRatio: false,
-                bounds: new Bounds(-180, -90, 180, 90, "EPSG:4326"),
+                bounds: new Bounds(-180, -89.9, 180, 89.9, "EPSG:4326"),
                 layers: layers
         )
         preMap.render(preFile)

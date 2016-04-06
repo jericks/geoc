@@ -31,13 +31,17 @@ abstract class LayerOutCommand<T extends LayerOutOptions> extends Command<T> {
     }
 
     protected String getOutputLayerName(T options, String defaultName) {
-        String outName = options.outputLayer ? options.outputLayer : defaultName
-        if (options.outputWorkspace && (options.outputWorkspace.endsWith(".shp") ||
-                options.outputWorkspace.endsWith(".properties") ||
-                options.outputWorkspace.endsWith(".pbf")
-        )) {
-            String fileName = new File(options.outputWorkspace).name
-            outName = fileName.substring(0, fileName.lastIndexOf("."))
+        String outName = options.outputLayer
+        if (!outName) {
+            if (options.outputWorkspace && (options.outputWorkspace.endsWith(".shp") ||
+                    options.outputWorkspace.endsWith(".properties") ||
+                    options.outputWorkspace.endsWith(".pbf")
+            )) {
+                String fileName = new File(options.outputWorkspace).name
+                outName = fileName.substring(0, fileName.lastIndexOf("."))
+            } else {
+                outName = defaultName
+            }
         }
         outName
     }

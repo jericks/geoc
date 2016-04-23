@@ -334,11 +334,21 @@ _geoc()
         fi
     elif [[ "$line" == *"geoc style css2sld "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input -o --output' -- $cur))
+    elif [[ "$line" == *"geoc style sld2ysld "* ]]; then
+        COMPREPLY=($(compgen -W '--help -i --input -o --output' -- $cur))
+    elif [[ "$line" == *"geoc style ysld2sld "* ]]; then
+        COMPREPLY=($(compgen -W '--help -i --input -o --output' -- $cur))
     elif [[ "$line" == *"geoc style " ]]; then
-        COMPREPLY=($(compgen -W ' css2sld'))
+        COMPREPLY=($(compgen -W ' css2sld  sld2ysld  ysld2sld'))
     elif [[ "$line" == *"geoc style"[[:space:]][[:alpha:]]* ]]; then
         if [[ "style css2sld" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' css2sld'))
+        fi
+        if [[ "style sld2ysld" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' sld2ysld'))
+        fi
+        if [[ "style ysld2sld" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' ysld2sld'))
         fi
     elif [[ "$line" == *"geoc tile delete "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --bounds -c --maxx -h --height -i --tile -l --tile-layer -u --maxy -w --width -x --minx -y --miny -z --zoom-level' -- $cur))

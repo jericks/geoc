@@ -4,6 +4,8 @@ org.geocommands.proj.WktCommand
 org.geocommands.proj.EnvelopeCommand
 
 org.geocommands.style.CssToSldCommand
+org.geocommands.style.YsldToSldCommand
+org.geocommands.style.SldToYsldCommand
 
 org.geocommands.map.MapCommand
 org.geocommands.map.MapCubeCommand

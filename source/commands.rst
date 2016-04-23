@@ -6,6 +6,8 @@ Commands
     commands/proj-wkt.rst
     commands/proj-envelope.rst
     commands/style-css2sld.rst
+    commands/style-sld2ysld.rst
+    commands/style-ysld2sld.rst
     commands/geometry-convert.rst
     commands/geometry-dd2pt.rst
     commands/geometry-geohash-encode.rst

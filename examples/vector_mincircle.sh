@@ -1,4 +1,6 @@
 #!/bin/bash
+rm mincircle.sqlite
+
 geoc vector mincircle -i naturalearth.gpkg -l places -o mincircle.sqlite -r envelope
 geoc vector mincircles -i naturalearth.gpkg -l countries -o mincircle.sqlite -r envelopes
 

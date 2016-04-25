@@ -33,5 +33,5 @@ geoc vector schema -i "type=h2 file=points.db" -l polys_area -p
 
 echo "Add Length field:"
 geoc vector addlengthfield -i "type=h2 file=points.db" -l polys_area -o "type=h2 file=points.db" -r polys_area_len
-geoc vector schema -i "type=h2 file=points.db" -l polys_area_ln -p
+geoc vector schema -i "type=h2 file=points.db" -l polys_area_len -p
 geoc vector copy -i "type=h2 file=points.db" -l polys_area_len

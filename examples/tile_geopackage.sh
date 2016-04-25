@@ -1,4 +1,6 @@
 #!/bin/bash
+rm tiles.gpkg
+
 geoc tile generate -l "type=geopackage file=tiles.gpkg name=world pyramid=geodetic" \
     -m "layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld" \
     -m "layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld" \

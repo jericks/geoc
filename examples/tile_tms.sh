@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -r tms
 mkdir tms
 
 geoc tile generate -l "type=tms file=tms format=jpeg" \

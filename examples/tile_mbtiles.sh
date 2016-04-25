@@ -1,4 +1,6 @@
 #!/bin/bash
+rm countries.mbtiles
+
 geoc tile generate -l countries.mbtiles \
     -m "layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld" \
     -m "layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld" \

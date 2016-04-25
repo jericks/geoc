@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -r mvt
 mkdir mvt
 
 geoc tile generate -l "type=vectortiles file=mvt format=mvt" \

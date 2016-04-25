@@ -1,17 +1,10 @@
 package org.geocommands.map
 
 import geoscript.geom.Bounds
-import geoscript.layer.Format
 import geoscript.layer.Layer
 import geoscript.layer.Raster
 import geoscript.layer.Renderable
 import geoscript.layer.TileLayer
-import geoscript.style.RasterSymbolizer
-import geoscript.style.Style
-import geoscript.style.Symbolizer
-import geoscript.style.io.CSSReader
-import geoscript.style.io.SLDReader
-import geoscript.workspace.Workspace
 import org.geocommands.Command
 import org.geocommands.Options
 import org.geocommands.Util

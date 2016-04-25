@@ -13,6 +13,7 @@ import geoscript.style.Style
 import geoscript.style.Symbolizer
 import geoscript.style.io.CSSReader
 import geoscript.style.io.SLDReader
+import geoscript.style.io.SimpleStyleReader
 import geoscript.workspace.Workspace
 import org.geotools.util.logging.Logging
 
@@ -244,7 +245,7 @@ class Util {
     private static Map getParams(String str) {
         Map params = [:]
         str.split("[ ]+(?=([^\']*\'[^\']*\')*[^\']*\$)").each {
-            def parts = it.split("=")
+            def parts = it.split("[=]+(?=([^\']*\'[^\']*\')*[^\']*\$)")
             def key = parts[0].trim()
             if ((key.startsWith("'") && key.endsWith("'")) ||
                     (key.startsWith("\"") && key.endsWith("\""))) {
@@ -271,20 +272,29 @@ class Util {
     }
 
     private static Style getStyle(Style defaultStyle, String styleStr) {
-        Style style = defaultStyle
+        Style style = null
         File file = new File(styleStr)
         if (file.exists()) {
             if (file.name.endsWith(".sld")) {
                 style = new SLDReader().read(file)
-            } else {
+            } else if (file.name.endsWith(".css")){
                 style = new CSSReader().read(file)
+            } else if (file.name.endsWith(".txt")){
+                style = new SimpleStyleReader().read(file)
             }
-        } else {
-            try {
-                style = new CSSReader().read(styleStr)
-            } catch (Exception ex) {
-                style = new SLDReader().read(styleStr)
+        }
+        if (!style) {
+            geoscript.style.io.Readers.list().each { geoscript.style.io.Reader reader ->
+               try {
+                   style = reader.read(styleStr)
+                   return style
+               }
+               catch (Exception ex) {
+               }
             }
+        }
+        if (!style) {
+            style = defaultStyle
         }
         style
     }

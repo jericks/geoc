@@ -1,6 +1,6 @@
 package org.geocommands.vector
 
-import au.com.bytecode.opencsv.CSVWriter
+import com.opencsv.CSVWriter
 import geoscript.workspace.Database
 import geoscript.workspace.Workspace
 import groovy.sql.Sql

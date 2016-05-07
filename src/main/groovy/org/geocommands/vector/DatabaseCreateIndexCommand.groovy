@@ -1,10 +1,7 @@
 package org.geocommands.vector
 
-import au.com.bytecode.opencsv.CSVWriter
-import geoscript.layer.Layer
 import geoscript.workspace.Database
 import geoscript.workspace.Workspace
-import groovy.sql.Sql
 import org.geocommands.Command
 import org.geocommands.Options
 import org.kohsuke.args4j.Option

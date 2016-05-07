@@ -1,6 +1,6 @@
 package org.geocommands.vector
 
-import au.com.bytecode.opencsv.CSVReader
+import com.opencsv.CSVReader
 import geoscript.feature.Feature
 import geoscript.feature.Field
 import geoscript.feature.Schema

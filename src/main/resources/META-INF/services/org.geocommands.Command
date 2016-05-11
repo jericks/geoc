@@ -3,6 +3,7 @@ org.geocommands.ListCommand
 org.geocommands.proj.WktCommand
 org.geocommands.proj.EnvelopeCommand
 
+org.geocommands.style.CreateStyleCommand
 org.geocommands.style.CssToSldCommand
 org.geocommands.style.YsldToSldCommand
 org.geocommands.style.SldToYsldCommand

@@ -5,6 +5,7 @@ Commands
     commands/list.rst
     commands/proj-wkt.rst
     commands/proj-envelope.rst
+    commands/style-create.rst
     commands/style-css2sld.rst
     commands/style-sld2ysld.rst
     commands/style-ysld2sld.rst

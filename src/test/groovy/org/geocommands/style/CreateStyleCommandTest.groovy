@@ -35,12 +35,6 @@ class CreateStyleCommandTest extends BaseTest {
       <sld:FeatureTypeStyle>
         <sld:Name>name</sld:Name>
         <sld:Rule>
-          <sld:PolygonSymbolizer>
-            <sld:Fill>
-              <sld:CssParameter name="fill">#555555</sld:CssParameter>
-              <sld:CssParameter name="fill-opacity">0.6</sld:CssParameter>
-            </sld:Fill>
-          </sld:PolygonSymbolizer>
           <sld:LineSymbolizer>
             <sld:Stroke>
               <sld:CssParameter name="stroke-width">0.5</sld:CssParameter>
@@ -66,9 +60,6 @@ feature-styles:
   rules:
   - scale: [min, max]
     symbolizers:
-    - polygon:
-        fill-color: '#555555'
-        fill-opacity: 0.6
     - line:
         stroke-color: '#000000'
         stroke-width: 0.5""", result.trim(), true, false)

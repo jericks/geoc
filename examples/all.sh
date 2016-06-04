@@ -18,6 +18,7 @@
 ./proj_wkt_env.sh
 ./raster_display.sh
 ./raster_draw.sh
+./style_ysld.sh
 ./tile_geopackage.sh
 ./tile_mbtiles.sh
 ./tile_mvt.sh
@@ -31,6 +32,7 @@
 ./vector_draw.sh
 ./vector_envelope.sh
 ./vector_fields.sh
+./vector_gradientstyle.sh
 ./vector_interiorpoint.sh
 ./vector_metadata.sh
 ./vector_mincircle.sh
@@ -38,4 +40,5 @@
 ./vector_octagonalenvelope.sh
 ./vector_random.sh
 ./vector_supercircle.sh
+./vector_uniquevaluesstyle.sh
 ./vector_voronoi.sh

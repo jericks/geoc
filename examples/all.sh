@@ -7,6 +7,7 @@
 ./geom_greatcircle.sh
 ./geom_offset.sh
 ./geom_plot.sh
+./geopackage.sh
 ./list_commands.sh
 ./man_pages.sh
 ./map_cube.sh

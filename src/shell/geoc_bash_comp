@@ -179,6 +179,8 @@ _geoc()
         if [[ "raster multiply constant" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' constant'))
         fi
+    elif [[ "$line" == *"geoc raster normalize "* ]]; then
+        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
     elif [[ "$line" == *"geoc raster point "* ]]; then
         COMPREPLY=($(compgen -W '--help -i --input-raster -l --input-raster-name -o --output-workspace -p --input-projection -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc raster polygon "* ]]; then
@@ -246,7 +248,7 @@ _geoc()
     elif [[ "$line" == *"geoc raster worldfile "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --bounds -f --file -s --size' -- $cur))
     elif [[ "$line" == *"geoc raster " ]]; then
-        COMPREPLY=($(compgen -W ' abs  add  animatedgif  contour  crop  display  divide  draw  envelope  exp  extractfootprint  get  info  invert  log  mapalgebra  multiply  point  polygon  project  reclassify  resample  scale  style  stylize  subtract  to  worldfile'))
+        COMPREPLY=($(compgen -W ' abs  add  animatedgif  contour  crop  display  divide  draw  envelope  exp  extractfootprint  get  info  invert  log  mapalgebra  multiply  normalize  point  polygon  project  reclassify  resample  scale  style  stylize  subtract  to  worldfile'))
     elif [[ "$line" == *"geoc raster"[[:space:]][[:alpha:]]* ]]; then
         if [[ "raster abs" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' abs'))
@@ -298,6 +300,9 @@ _geoc()
         fi
         if [[ "raster multiply" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' multiply'))
+        fi
+        if [[ "raster normalize" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' normalize'))
         fi
         if [[ "raster point" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' point'))

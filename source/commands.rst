@@ -139,6 +139,8 @@ Commands
     commands/raster-crop-with-layer.rst
     commands/raster-extractfootprint.rst
     commands/raster-log.rst
+    commands/raster-normalize.rst
+    commands/raster-convolve.rst
     commands/raster-get-value.rst
     commands/raster-scale.rst
     commands/raster-project.rst

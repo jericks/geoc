@@ -118,6 +118,8 @@ _geoc()
         COMPREPLY=($(compgen -W '--help -d --delay -f --file -o --output-file -r --repeat' -- $cur))
     elif [[ "$line" == *"geoc raster contour "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --band -i --input-raster -l --input-raster-name -m --smooth -n --bounds -o --output-workspace -p --input-projection -r --output-layer -s --simplify -v --level' -- $cur))
+    elif [[ "$line" == *"geoc raster convolve "* ]]; then
+        COMPREPLY=($(compgen -W '--help -f --output-raster-format -h --height -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -w --width' -- $cur))
     elif [[ "$line" == *"geoc raster crop with geometry "* ]]; then
         COMPREPLY=($(compgen -W '--help -f --output-raster-format -g --geometry -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
     elif [[ "$line" == *"geoc raster crop with layer "* ]]; then
@@ -248,7 +250,7 @@ _geoc()
     elif [[ "$line" == *"geoc raster worldfile "* ]]; then
         COMPREPLY=($(compgen -W '--help -b --bounds -f --file -s --size' -- $cur))
     elif [[ "$line" == *"geoc raster " ]]; then
-        COMPREPLY=($(compgen -W ' abs  add  animatedgif  contour  crop  display  divide  draw  envelope  exp  extractfootprint  get  info  invert  log  mapalgebra  multiply  normalize  point  polygon  project  reclassify  resample  scale  style  stylize  subtract  to  worldfile'))
+        COMPREPLY=($(compgen -W ' abs  add  animatedgif  contour  convolve  crop  display  divide  draw  envelope  exp  extractfootprint  get  info  invert  log  mapalgebra  multiply  normalize  point  polygon  project  reclassify  resample  scale  style  stylize  subtract  to  worldfile'))
     elif [[ "$line" == *"geoc raster"[[:space:]][[:alpha:]]* ]]; then
         if [[ "raster abs" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' abs'))
@@ -261,6 +263,9 @@ _geoc()
         fi
         if [[ "raster contour" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' contour'))
+        fi
+        if [[ "raster convolve" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' convolve'))
         fi
         if [[ "raster crop" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' crop'))

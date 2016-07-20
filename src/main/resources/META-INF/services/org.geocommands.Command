@@ -169,6 +169,7 @@ org.geocommands.raster.LogCommand
 org.geocommands.raster.ExponentCommand
 org.geocommands.raster.AbsoluteCommand
 org.geocommands.raster.NormalizeCommand
+org.geocommands.raster.ConvolveCommand
 
 org.geocommands.tile.GenerateCommand
 org.geocommands.tile.PyramidCommand

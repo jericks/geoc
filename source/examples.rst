@@ -28,3 +28,8 @@ Create 100 random points in a GeoPackage database, get's metadata of that layer,
     >>> geoc vector info -i test.gpkg -l points100
 
     >>> geoc vector to -i test.gpkg -f csv
+
+.. toctree::
+    examples/vector_buffer.rst
+    examples/vector_voronoi.rst
+  

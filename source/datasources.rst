@@ -90,7 +90,7 @@ Tile
     * globalgeodetic
     * geodetic
 
-    or use a file that contains pyramid metadata in cdv, xml, or json format.
+    or use a file that contains pyramid metadata in csv, xml, or json format.
 
 
 **mbtiles**

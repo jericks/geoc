@@ -1,5 +1,5 @@
-Create a Voronoi Diagram
-========================
+Create a Voronoi Diagram from a Vector Layer
+============================================
 
 .. code-block:: bash
 

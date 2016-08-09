@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Create a Voronoi Diagram &mdash; geoc 0.5.0 documentation</title>
+  <title>Create a Voronoi Diagram from a Vector Layer &mdash; geoc 0.5.0 documentation</title>
   
 
   
@@ -31,7 +31,7 @@
     <link rel="top" title="geoc 0.5.0 documentation" href="../index.html"/>
         <link rel="up" title="Examples" href="../examples.html"/>
         <link rel="next" title="Commands" href="../commands.html"/>
-        <link rel="prev" title="Buffer a Vector Layer" href="vector_buffer.html"/> 
+        <link rel="prev" title="Create Centroids from a Vector Layer" href="vector_centroid.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -60,10 +60,17 @@
         
             <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../keyfeatures.html">Key Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../datasources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasources.html">Data Sources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../datasources.html#vector">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datasources.html#raster">Raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datasources.html#tile">Tile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datasources.html#map-layer">Map Layer</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="vector_buffer.html">Buffer a Vector Layer</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Create a Voronoi Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector_centroid.html">Create Centroids from a Vector Layer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Create a Voronoi Diagram from a Vector Layer</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../commands.html">Commands</a><ul>
@@ -268,7 +275,7 @@
       
           <li><a href="../examples.html">Examples</a> &raquo;</li>
       
-    <li>Create a Voronoi Diagram</li>
+    <li>Create a Voronoi Diagram from a Vector Layer</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../_sources/examples/vector_voronoi.txt" rel="nofollow"> View page source</a>
@@ -279,8 +286,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="create-a-voronoi-diagram">
-<h1>Create a Voronoi Diagram<a class="headerlink" href="#create-a-voronoi-diagram" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="create-a-voronoi-diagram-from-a-vector-layer">
+<h1>Create a Voronoi Diagram from a Vector Layer<a class="headerlink" href="#create-a-voronoi-diagram-from-a-vector-layer" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-bash"><div class="highlight"><pre>geoc vector centroid -i naturalearth.gpkg -l countries <span class="p">|</span> geoc vector voronoi -o countries_voronoi.shp
 
 geoc vector defaultstyle --color navy -o 0.15 -i countries_voronoi.shp &gt; countries_voronoi.sld
@@ -303,7 +310,7 @@ geoc map draw -f vector_voronoi.png -b <span class="s2">&quot;-180,-90,180,90&qu
         <a href="../commands.html" class="btn btn-neutral float-right" title="Commands"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector_buffer.html" class="btn btn-neutral" title="Buffer a Vector Layer"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vector_centroid.html" class="btn btn-neutral" title="Create Centroids from a Vector Layer"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -1,6 +1,6 @@
 Build
 -----
-Building geoc is very easy but you will need Java 7 and Maven 3.
+Building geoc is very easy but you will need Java 8 and Maven 3.
 
 Check it out::
 

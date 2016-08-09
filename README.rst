@@ -140,7 +140,7 @@ Tile
     * globalgeodetic
     * geodetic
 
-    or use a file that contains pyramid metadata in cdv, xml, or json format.
+    or use a file that contains pyramid metadata in csv, xml, or json format.
 
 
 **mbtiles**
@@ -225,7 +225,7 @@ For tile layertype, you use the same key value pairs used to specify a tile laye
 
 Installation
 ------------
-Just download the latest `release <https://github.com/jericks/geoc/releases>`_ and put the geoc/bin directory on your path. geoc also requires Java 7.
+Just download the latest `release <https://github.com/jericks/geoc/releases>`_ and put the geoc/bin directory on your path. geoc also requires Java 8.
 
 If you want to use the OGR Workspace, you need to install the GDAL/OGR native library compiled with JNI support and then set the GEOC_GDAL_HOME variable.
 

@@ -29,6 +29,8 @@ Snap points to their nearest line
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

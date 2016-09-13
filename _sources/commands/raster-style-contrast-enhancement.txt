@@ -18,3 +18,5 @@ Create a contrast enhancement Raster SLD
    * -o --opacity: The opacity
 
    * --help : Print the help message
+
+   * --web-help : Open help in a browser

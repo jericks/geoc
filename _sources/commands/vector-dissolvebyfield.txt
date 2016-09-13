@@ -27,6 +27,8 @@ Dissolve the Features of a Layer by a Field.
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

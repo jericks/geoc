@@ -21,6 +21,8 @@ Calculate the orthodromic distance between two points.
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

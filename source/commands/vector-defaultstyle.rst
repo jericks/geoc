@@ -23,6 +23,8 @@ Get the default style for the Layer
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

@@ -17,6 +17,8 @@ Convert a decimal degrees formatted string into a Point
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

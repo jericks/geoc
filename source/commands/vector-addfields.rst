@@ -23,6 +23,8 @@ Add one or more Fields to the input Layer to create the output Layer
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

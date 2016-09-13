@@ -23,6 +23,8 @@ Calculate the exponent for each cell.
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

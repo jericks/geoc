@@ -20,3 +20,5 @@ Create a color map Raster style
    * -o --opacity: The opacity
 
    * --help : Print the help message
+
+   * --web-help : Open help in a browser

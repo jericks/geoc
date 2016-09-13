@@ -21,6 +21,8 @@ Calculate the minimum bounding circles of each feature in the input Layer and sa
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

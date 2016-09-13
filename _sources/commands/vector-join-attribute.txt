@@ -35,6 +35,8 @@ Perform a attribute join between a Layers and a table.
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

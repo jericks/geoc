@@ -33,6 +33,8 @@ Stitch vector tiles together to create a one or more Layers
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

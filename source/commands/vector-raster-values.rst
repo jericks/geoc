@@ -33,6 +33,8 @@ Get value from a Raster for each Feature's geometry
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

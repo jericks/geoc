@@ -21,6 +21,8 @@ Calculate the octagonal envelope of the input Layer and save it to the output La
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

@@ -15,6 +15,8 @@ List all parameters for the given DataStore
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

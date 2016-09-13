@@ -19,6 +19,8 @@ Add a Feature to an existing Layer
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

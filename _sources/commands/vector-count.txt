@@ -19,6 +19,8 @@ Count the features, geometries, or points in a Layer
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

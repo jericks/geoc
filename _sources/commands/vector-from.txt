@@ -25,6 +25,8 @@ Create a Layer from a string of KML, CSV, GML, GEORSS, GEOBUF, GPX or GeoJSON
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

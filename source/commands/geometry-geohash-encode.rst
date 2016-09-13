@@ -21,6 +21,8 @@ Encode a Geometry as a GeoHash
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

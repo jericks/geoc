@@ -25,6 +25,8 @@ Crop a Raster with a Geometry
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

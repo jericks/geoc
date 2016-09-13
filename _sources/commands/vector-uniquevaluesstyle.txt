@@ -21,6 +21,8 @@ Create an SLD document where each unique value in the Layer is a rule.
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

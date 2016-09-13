@@ -23,6 +23,8 @@ Create a channel selection Raster SLD
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

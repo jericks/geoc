@@ -27,6 +27,8 @@ Crop a Raster using the geometry from a Layer
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

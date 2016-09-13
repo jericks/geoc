@@ -31,6 +31,8 @@ Group nearby points together
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

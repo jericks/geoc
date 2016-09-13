@@ -19,6 +19,8 @@ Delete features from a Layer in place
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

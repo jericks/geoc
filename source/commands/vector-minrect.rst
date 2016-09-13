@@ -21,6 +21,8 @@ Calculate the minimum rectangle of the input Layer and save it to the output Lay
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

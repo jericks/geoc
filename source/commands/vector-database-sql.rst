@@ -17,6 +17,8 @@ Execute SQL commands against a Database Workspace
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

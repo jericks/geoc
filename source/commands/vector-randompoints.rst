@@ -33,6 +33,8 @@ Create a new Layer with randomly placed points
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

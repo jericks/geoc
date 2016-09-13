@@ -27,6 +27,8 @@ Get a Layer from a Database using a SELECT statement
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

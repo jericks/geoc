@@ -27,6 +27,8 @@ Count the number of features in a feature
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

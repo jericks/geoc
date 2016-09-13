@@ -19,6 +19,8 @@ List the unique values in a Layer's Field
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

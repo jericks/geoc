@@ -17,6 +17,8 @@ Get a Pyramid from a TileLayer
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

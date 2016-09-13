@@ -21,6 +21,8 @@ Calculate a voronoi diagram of the input Layer and save it to the output Layer
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

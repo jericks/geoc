@@ -21,6 +21,8 @@ Calculate the geohashes for the given bounds
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

@@ -21,6 +21,8 @@ Combine all of the geometries in the input Layer into one multipart geometry in 
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

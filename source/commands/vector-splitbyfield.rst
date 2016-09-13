@@ -21,6 +21,8 @@ Split a Layer into separate Layers based on values from a Field
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

@@ -21,6 +21,8 @@ Convert multipart geometries in the input Layer into single geometries in the ou
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

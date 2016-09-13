@@ -21,6 +21,8 @@ Get the bounding envelope of all the features of the input Layer and save it to 
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

@@ -33,6 +33,8 @@ Create a ellipse shape around each feature of the input Layer
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

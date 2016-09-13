@@ -31,6 +31,8 @@ Display a Raster in a simple viewer
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

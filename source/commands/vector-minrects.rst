@@ -21,6 +21,8 @@ Calculate the minimum rectangle of each feature in the input Layer and save them
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

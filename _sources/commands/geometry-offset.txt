@@ -19,6 +19,8 @@ Create a Geometry offset from the input Geometry
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

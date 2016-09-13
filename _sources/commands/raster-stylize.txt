@@ -25,6 +25,8 @@ Create a new Raster by baking the style into an existing Raster
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

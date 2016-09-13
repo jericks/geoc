@@ -25,6 +25,8 @@ Project the input Layer to another Projection and save it as the output Layer.
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

@@ -17,6 +17,8 @@ Convert the input layer to a text stream of WKT geometries that can be read by t
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

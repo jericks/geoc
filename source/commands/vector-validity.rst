@@ -19,6 +19,8 @@ Check whether geometry in a Layer is valid or not
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

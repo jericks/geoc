@@ -21,6 +21,8 @@ Calculate the envelope of each feature in the input Layer and save them to the o
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

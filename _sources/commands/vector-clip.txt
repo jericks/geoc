@@ -25,6 +25,8 @@ Clip the input Layer by the other Layer to produce the output Layer.
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

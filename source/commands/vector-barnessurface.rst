@@ -47,6 +47,8 @@ Create a barnes surface of the features from the input layer
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

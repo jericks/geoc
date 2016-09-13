@@ -19,6 +19,8 @@ Get information about a Raster
 
    * --help : Print the help message
 
+   * --web-help : Open help in a browser
+
 
 
 **Example**::

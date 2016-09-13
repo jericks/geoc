@@ -16,6 +16,9 @@ class Options {
     @Option(name = "--help", usage = "Print the help message", required = false)
     boolean help
 
+    @Option(name = "--web-help", usage = "Open help in a browser", required = false)
+    boolean webHelp
+
     String getName() {
         names.join(" ")
     }

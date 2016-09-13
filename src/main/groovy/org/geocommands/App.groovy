@@ -3,6 +3,7 @@ package org.geocommands
 import geoscript.workspace.OGR
 import org.kohsuke.args4j.CmdLineParser
 
+import java.awt.Desktop
 import java.util.logging.Level
 import java.util.logging.LogManager
 import java.util.logging.Logger
@@ -69,7 +70,12 @@ class App {
             if (options.isHelp()) {
                 System.out.println("geoc " + command.getName() + ": " + command.getDescription())
                 cmdLineParser.printUsage(System.out)
-            } else {
+            }
+            else if (options.isWebHelp()) {
+                URI uri = new URI("http://jericks.github.io/geoc/commands/${options.names.join('-')}.html")
+                Desktop.desktop.browse(uri)
+            }
+            else {
                 // If there are no errors, execute the command
                 Reader reader = new InputStreamReader(System.in)
                 Writer writer = new StringWriter()
@@ -85,7 +91,12 @@ class App {
             if (options.isHelp()) {
                 System.out.println("geoc " + command.getName() + ": " + command.getDescription())
                 cmdLineParser.printUsage(System.out)
-            } else {
+            }
+            else if (options.isWebHelp()) {
+                URI uri = new URI("http://jericks.github.io/geoc/commands/${options.names.join('-')}.html")
+                Desktop.desktop.browse(uri)
+            }
+            else {
                 // Oops, display the error messages to the user
                 e.printStackTrace()
                 System.err.println(e.getMessage())

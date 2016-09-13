@@ -48,6 +48,7 @@ class AppTest extends BaseTest {
             String output = runApp(["vector centroid", "--help"], "")
             assertEquals("geoc vector centroid: Get the centroid of each feature in the input Layer and save them to the output Layer" + NEW_LINE +
                     " --help                      : Print the help message (default: true)" + NEW_LINE +
+                    " --web-help                  : Open help in a browser (default: false)" + NEW_LINE +
                     " -i (--input-workspace) VAL  : The input workspace" + NEW_LINE +
                     " -l (--input-layer) VAL      : The input layer" + NEW_LINE +
                     " -o (--output-workspace) VAL : The output workspace" + NEW_LINE +
@@ -64,6 +65,7 @@ class AppTest extends BaseTest {
             assertTrue(output.endsWith("Unknown Workspace parameter string: BAD_INPUT" + NEW_LINE +
                     "Usage: geoc <command> <args>" + NEW_LINE +
                     " --help                      : Print the help message (default: false)" + NEW_LINE +
+                    " --web-help                  : Open help in a browser (default: false)" + NEW_LINE +
                     " -i (--input-workspace) VAL  : The input workspace (default: BAD_INPUT)" + NEW_LINE +
                     " -l (--input-layer) VAL      : The input layer" + NEW_LINE +
                     " -o (--output-workspace) VAL : The output workspace (default: BAD_OUTPUT)" + NEW_LINE +
@@ -78,6 +80,7 @@ class AppTest extends BaseTest {
             String output = runApp(["geometry greatcirclearc", "--help"], "")
             assertEquals("geoc geometry greatcirclearc: Calculate the orthodromic distance between two points." + NEW_LINE +
                     " --help                 : Print the help message (default: true)" + NEW_LINE +
+                    " --web-help             : Open help in a browser (default: false)" + NEW_LINE +
                     " -e (--ellipsoid) VAL   : The ellipsoid (default: wgs84)" + NEW_LINE +
                     " -n (--num-points) N    : The number of points (default: 100)" + NEW_LINE +
                     " -p (--start-point) VAL : The start point" + NEW_LINE +

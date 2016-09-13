@@ -5,7 +5,7 @@ _geoc()
     local cmd=${line##*geoc }
     COMPREPLY=()
     if [[ "$line" == *"geoc filter cql2xml "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --cql' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --cql' -- $cur))
     elif [[ "$line" == *"geoc filter " ]]; then
         COMPREPLY=($(compgen -W ' cql2xml'))
     elif [[ "$line" == *"geoc filter"[[:space:]][[:alpha:]]* ]]; then
@@ -13,17 +13,17 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' cql2xml'))
         fi
     elif [[ "$line" == *"geoc geometry convert "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --format -i --input -p --format-options -t --type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --format -i --input -p --format-options -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry dd2pt "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --decimaldegrees -t --type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --decimaldegrees -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry geohash bounds "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -d --bit-depth -n --number-of-chars -t --type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -d --bit-depth -n --number-of-chars -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry geohash decode "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input -t --type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry geohash encode "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --bit-depth -i --input -n --number-of-chars -t --type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --bit-depth -i --input -n --number-of-chars -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry geohash neighbors "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --bit-depth -i --input -n --number-of-chars' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --bit-depth -i --input -n --number-of-chars' -- $cur))
     elif [[ "$line" == *"geoc geometry geohash " ]]; then
         COMPREPLY=($(compgen -W ' bounds  decode  encode  neighbors'))
     elif [[ "$line" == *"geoc geometry geohash"[[:space:]][[:alpha:]]* ]]; then
@@ -40,15 +40,15 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' neighbors'))
         fi
     elif [[ "$line" == *"geoc geometry greatcirclearc "* ]]; then
-        COMPREPLY=($(compgen -W '--help -e --ellipsoid -n --num-points -p --start-point -t --end-point' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -e --ellipsoid -n --num-points -p --start-point -t --end-point' -- $cur))
     elif [[ "$line" == *"geoc geometry offset "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --offset -i --input -s --quadrant-segements' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --offset -i --input -s --quadrant-segements' -- $cur))
     elif [[ "$line" == *"geoc geometry orthodromicdistance "* ]]; then
-        COMPREPLY=($(compgen -W '--help -e --ellipsoid -p --start-point -t --end-point' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -e --ellipsoid -p --start-point -t --end-point' -- $cur))
     elif [[ "$line" == *"geoc geometry plot "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --draw-coords -f --file -h --height -i --input -l --legend -p --fill-polys -r --fill-coords -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --draw-coords -f --file -h --height -i --input -l --legend -p --fill-polys -r --fill-coords -w --width' -- $cur))
     elif [[ "$line" == *"geoc geometry pt2dd "* ]]; then
-        COMPREPLY=($(compgen -W '--help -p --point -t --type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -p --point -t --type' -- $cur))
     elif [[ "$line" == *"geoc geometry " ]]; then
         COMPREPLY=($(compgen -W ' convert  dd2pt  geohash  greatcirclearc  offset  orthodromicdistance  plot  pt2dd'))
     elif [[ "$line" == *"geoc geometry"[[:space:]][[:alpha:]]* ]]; then
@@ -77,11 +77,11 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' pt2dd'))
         fi
     elif [[ "$line" == *"geoc list "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --description' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --description' -- $cur))
     elif [[ "$line" == *"geoc map cube "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --file -l --layer -o --draw-outline -s --tab-size -t --draw-tabs' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --file -l --layer -o --draw-outline -s --tab-size -t --draw-tabs' -- $cur))
     elif [[ "$line" == *"geoc map draw "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -f --file -g --background-color -h --height -i --layer-file -l --layer -p --projection -t --type -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -f --file -g --background-color -h --height -i --layer-file -l --layer -p --projection -t --type -w --width' -- $cur))
     elif [[ "$line" == *"geoc map " ]]; then
         COMPREPLY=($(compgen -W ' cube  draw'))
     elif [[ "$line" == *"geoc map"[[:space:]][[:alpha:]]* ]]; then
@@ -92,9 +92,9 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' draw'))
         fi
     elif [[ "$line" == *"geoc proj envelope "* ]]; then
-        COMPREPLY=($(compgen -W '--help -e --epsg -g --geo-bounds -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -e --epsg -g --geo-bounds -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc proj wkt "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --citation -e --epsg -f --file -i --indentation' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --citation -e --epsg -f --file -i --indentation' -- $cur))
     elif [[ "$line" == *"geoc proj " ]]; then
         COMPREPLY=($(compgen -W ' envelope  wkt'))
     elif [[ "$line" == *"geoc proj"[[:space:]][[:alpha:]]* ]]; then
@@ -105,9 +105,9 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' wkt'))
         fi
     elif [[ "$line" == *"geoc raster abs "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
     elif [[ "$line" == *"geoc raster add constant "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -v --value' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -v --value' -- $cur))
     elif [[ "$line" == *"geoc raster add " ]]; then
         COMPREPLY=($(compgen -W ' constant'))
     elif [[ "$line" == *"geoc raster add"[[:space:]][[:alpha:]]* ]]; then
@@ -115,15 +115,15 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' constant'))
         fi
     elif [[ "$line" == *"geoc raster animatedgif "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --delay -f --file -o --output-file -r --repeat' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --delay -f --file -o --output-file -r --repeat' -- $cur))
     elif [[ "$line" == *"geoc raster contour "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --band -i --input-raster -l --input-raster-name -m --smooth -n --bounds -o --output-workspace -p --input-projection -r --output-layer -s --simplify -v --level' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --band -i --input-raster -l --input-raster-name -m --smooth -n --bounds -o --output-workspace -p --input-projection -r --output-layer -s --simplify -v --level' -- $cur))
     elif [[ "$line" == *"geoc raster convolve "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -h --height -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -h --height -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -w --width' -- $cur))
     elif [[ "$line" == *"geoc raster crop with geometry "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -g --geometry -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -g --geometry -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
     elif [[ "$line" == *"geoc raster crop with layer "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -w --input-workspace -y --input-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -w --input-workspace -y --input-layer' -- $cur))
     elif [[ "$line" == *"geoc raster crop with " ]]; then
         COMPREPLY=($(compgen -W ' geometry  layer'))
     elif [[ "$line" == *"geoc raster crop with"[[:space:]][[:alpha:]]* ]]; then
@@ -140,9 +140,9 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' with'))
         fi
     elif [[ "$line" == *"geoc raster display "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -g --background-color -h --height -i --input-raster -l --input-raster-name -m --layer -p --input-projection -s --sld-file -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -g --background-color -h --height -i --input-raster -l --input-raster-name -m --layer -p --input-projection -s --sld-file -w --width' -- $cur))
     elif [[ "$line" == *"geoc raster divide constant "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -v --value' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -v --value' -- $cur))
     elif [[ "$line" == *"geoc raster divide " ]]; then
         COMPREPLY=($(compgen -W ' constant'))
     elif [[ "$line" == *"geoc raster divide"[[:space:]][[:alpha:]]* ]]; then
@@ -150,15 +150,15 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' constant'))
         fi
     elif [[ "$line" == *"geoc raster draw "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -f --file -h --height -i --input-raster -l --input-raster-name -m --layer -p --input-projection -s --sld-file -t --type -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -f --file -h --height -i --input-raster -l --input-raster-name -m --layer -p --input-projection -s --sld-file -t --type -w --width' -- $cur))
     elif [[ "$line" == *"geoc raster envelope "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-raster -l --input-raster-name -o --output-workspace -p --input-projection -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-raster -l --input-raster-name -o --output-workspace -p --input-projection -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc raster exp "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
     elif [[ "$line" == *"geoc raster extractfootprint "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --remove-collinear -e --exclusion-range -f --compute-simplified-footprint -i --input-raster -l --input-raster-name -o --output-workspace -p --input-projection -r --output-layer -s --simplifier-factor -t --threshold-area -v --force-valid -y --loading-type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --remove-collinear -e --exclusion-range -f --compute-simplified-footprint -i --input-raster -l --input-raster-name -o --output-workspace -p --input-projection -r --output-layer -s --simplifier-factor -t --threshold-area -v --force-valid -y --loading-type' -- $cur))
     elif [[ "$line" == *"geoc raster get value "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --band -i --input-raster -l --input-raster-name -p --input-projection -t --type -x --x-coordinate -y --y-coordinate' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --band -i --input-raster -l --input-raster-name -p --input-projection -t --type -x --x-coordinate -y --y-coordinate' -- $cur))
     elif [[ "$line" == *"geoc raster get " ]]; then
         COMPREPLY=($(compgen -W ' value'))
     elif [[ "$line" == *"geoc raster get"[[:space:]][[:alpha:]]* ]]; then
@@ -166,15 +166,15 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' value'))
         fi
     elif [[ "$line" == *"geoc raster info "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-raster -l --input-raster-name -p --input-projection' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-raster -l --input-raster-name -p --input-projection' -- $cur))
     elif [[ "$line" == *"geoc raster invert "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
     elif [[ "$line" == *"geoc raster log "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
     elif [[ "$line" == *"geoc raster mapalgebra "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -f --output-raster-format -n --output-name -o --output-raster -p --output-raster-projection -r --raster -s --script -z --size' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -f --output-raster-format -n --output-name -o --output-raster -p --output-raster-projection -r --raster -s --script -z --size' -- $cur))
     elif [[ "$line" == *"geoc raster multiply constant "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -v --value' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -v --value' -- $cur))
     elif [[ "$line" == *"geoc raster multiply " ]]; then
         COMPREPLY=($(compgen -W ' constant'))
     elif [[ "$line" == *"geoc raster multiply"[[:space:]][[:alpha:]]* ]]; then
@@ -182,21 +182,21 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' constant'))
         fi
     elif [[ "$line" == *"geoc raster normalize "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
     elif [[ "$line" == *"geoc raster point "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-raster -l --input-raster-name -o --output-workspace -p --input-projection -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-raster -l --input-raster-name -o --output-workspace -p --input-projection -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc raster polygon "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --range -b --band -e --inside-edges -g --region-of-interest -i --input-raster -l --input-raster-name -n --no-data -o --output-workspace -p --input-projection -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --range -b --band -e --inside-edges -g --region-of-interest -i --input-raster -l --input-raster-name -n --no-data -o --output-workspace -p --input-projection -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc raster project "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -t --target-projection' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -t --target-projection' -- $cur))
     elif [[ "$line" == *"geoc raster reclassify "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --band -f --output-raster-format -i --input-raster -l --input-raster-name -n --nodata -o --output-raster -p --input-projection -r --range' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --band -f --output-raster-format -i --input-raster -l --input-raster-name -n --nodata -o --output-raster -p --input-projection -r --range' -- $cur))
     elif [[ "$line" == *"geoc raster resample "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -s --size' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -s --size' -- $cur))
     elif [[ "$line" == *"geoc raster scale "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -n --interpolation -o --output-raster -p --input-projection -r --y-translate -t --x-translate -x --x-scale -y --y-scale' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -n --interpolation -o --output-raster -p --input-projection -r --y-translate -t --x-translate -x --x-scale -y --y-scale' -- $cur))
     elif [[ "$line" == *"geoc raster style channel selection "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --blue -g --green -o --opacity -r --red -y --gray' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --blue -g --green -o --opacity -r --red -y --gray' -- $cur))
     elif [[ "$line" == *"geoc raster style channel " ]]; then
         COMPREPLY=($(compgen -W ' selection'))
     elif [[ "$line" == *"geoc raster style channel"[[:space:]][[:alpha:]]* ]]; then
@@ -204,9 +204,9 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' selection'))
         fi
     elif [[ "$line" == *"geoc raster style colormap "* ]]; then
-        COMPREPLY=($(compgen -W '--help -e --extended -o --opacity -t --type -v --value' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -e --extended -o --opacity -t --type -v --value' -- $cur))
     elif [[ "$line" == *"geoc raster style contrast enhancement "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --gamma-value -m --method -o --opacity' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --gamma-value -m --method -o --opacity' -- $cur))
     elif [[ "$line" == *"geoc raster style contrast " ]]; then
         COMPREPLY=($(compgen -W ' enhancement'))
     elif [[ "$line" == *"geoc raster style contrast"[[:space:]][[:alpha:]]* ]]; then
@@ -214,9 +214,9 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' enhancement'))
         fi
     elif [[ "$line" == *"geoc raster style default "* ]]; then
-        COMPREPLY=($(compgen -W '--help -o --opacity' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -o --opacity' -- $cur))
     elif [[ "$line" == *"geoc raster style shadedrelief "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --brightness-only -o --opacity -r --relief-factor' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --brightness-only -o --opacity -r --relief-factor' -- $cur))
     elif [[ "$line" == *"geoc raster style " ]]; then
         COMPREPLY=($(compgen -W ' channel  colormap  contrast  default  shadedrelief'))
     elif [[ "$line" == *"geoc raster style"[[:space:]][[:alpha:]]* ]]; then
@@ -236,9 +236,9 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' shadedrelief'))
         fi
     elif [[ "$line" == *"geoc raster stylize "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -s --style' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -s --style' -- $cur))
     elif [[ "$line" == *"geoc raster subtract constant "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -m --from -o --output-raster -p --input-projection -v --value' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -m --from -o --output-raster -p --input-projection -v --value' -- $cur))
     elif [[ "$line" == *"geoc raster subtract " ]]; then
         COMPREPLY=($(compgen -W ' constant'))
     elif [[ "$line" == *"geoc raster subtract"[[:space:]][[:alpha:]]* ]]; then
@@ -246,9 +246,9 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' constant'))
         fi
     elif [[ "$line" == *"geoc raster to "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
     elif [[ "$line" == *"geoc raster worldfile "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -f --file -s --size' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -f --file -s --size' -- $cur))
     elif [[ "$line" == *"geoc raster " ]]; then
         COMPREPLY=($(compgen -W ' abs  add  animatedgif  contour  convolve  crop  display  divide  draw  envelope  exp  extractfootprint  get  info  invert  log  mapalgebra  multiply  normalize  point  polygon  project  reclassify  resample  scale  style  stylize  subtract  to  worldfile'))
     elif [[ "$line" == *"geoc raster"[[:space:]][[:alpha:]]* ]]; then
@@ -343,13 +343,13 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' worldfile'))
         fi
     elif [[ "$line" == *"geoc style create "* ]]; then
-        COMPREPLY=($(compgen -W '--help -o --output -s --style-options -t --type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -o --output -s --style-options -t --type' -- $cur))
     elif [[ "$line" == *"geoc style css2sld "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input -o --output' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input -o --output' -- $cur))
     elif [[ "$line" == *"geoc style sld2ysld "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input -o --output' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input -o --output' -- $cur))
     elif [[ "$line" == *"geoc style ysld2sld "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input -o --output' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input -o --output' -- $cur))
     elif [[ "$line" == *"geoc style " ]]; then
         COMPREPLY=($(compgen -W ' create  css2sld  sld2ysld  ysld2sld'))
     elif [[ "$line" == *"geoc style"[[:space:]][[:alpha:]]* ]]; then
@@ -366,15 +366,15 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' ysld2sld'))
         fi
     elif [[ "$line" == *"geoc tile delete "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -c --maxx -h --height -i --tile -l --tile-layer -u --maxy -w --width -x --minx -y --miny -z --zoom-level' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -c --maxx -h --height -i --tile -l --tile-layer -u --maxy -w --width -x --minx -y --miny -z --zoom-level' -- $cur))
     elif [[ "$line" == *"geoc tile generate "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -d --layer-fields -e --end-zoom -f --field -i --missing -l --tile-layer -m --layer -s --start-zoom -v --verbose' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -d --layer-fields -e --end-zoom -f --field -i --missing -l --tile-layer -m --layer -s --start-zoom -v --verbose' -- $cur))
     elif [[ "$line" == *"geoc tile pyramid "* ]]; then
-        COMPREPLY=($(compgen -W '--help -l --tile-layer -o --output-type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -l --tile-layer -o --output-type' -- $cur))
     elif [[ "$line" == *"geoc tile stitch raster "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -c --maxx -f --output-raster-format -h --height -l --tile-layer -o --output-raster -u --maxy -w --width -x --minx -y --miny -z --zoom-level' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -c --maxx -f --output-raster-format -h --height -l --tile-layer -o --output-raster -u --maxy -w --width -x --minx -y --miny -z --zoom-level' -- $cur))
     elif [[ "$line" == *"geoc tile stitch vector "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -c --maxx -h --height -l --tile-layer -o --output-workspace -u --maxy -w --width -x --minx -y --miny -z --zoom-level' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -c --maxx -h --height -l --tile-layer -o --output-workspace -u --maxy -w --width -x --minx -y --miny -z --zoom-level' -- $cur))
     elif [[ "$line" == *"geoc tile stitch " ]]; then
         COMPREPLY=($(compgen -W ' raster  vector'))
     elif [[ "$line" == *"geoc tile stitch"[[:space:]][[:alpha:]]* ]]; then
@@ -385,7 +385,7 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' vector'))
         fi
     elif [[ "$line" == *"geoc tile vector grid "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -c --maxx -h --height -l --tile-layer -o --output-workspace -r --output-layer -u --maxy -w --width -x --minx -y --miny -z --zoom-level' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -c --maxx -h --height -l --tile-layer -o --output-workspace -r --output-layer -u --maxy -w --width -x --minx -y --miny -z --zoom-level' -- $cur))
     elif [[ "$line" == *"geoc tile vector " ]]; then
         COMPREPLY=($(compgen -W ' grid'))
     elif [[ "$line" == *"geoc tile vector"[[:space:]][[:alpha:]]* ]]; then
@@ -411,43 +411,43 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' vector'))
         fi
     elif [[ "$line" == *"geoc vector add "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -v --value' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -v --value' -- $cur))
     elif [[ "$line" == *"geoc vector addareafield "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --area-fieldname -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --area-fieldname -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector addfields "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector addidfield "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --id-fieldname -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -s --start' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --id-fieldname -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -s --start' -- $cur))
     elif [[ "$line" == *"geoc vector addlengthfield "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --length-fieldname -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --length-fieldname -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector addxyfields "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --algorithm -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -x --x-fieldname -y --y-fieldname' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --algorithm -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -x --x-fieldname -y --y-fieldname' -- $cur))
     elif [[ "$line" == *"geoc vector append "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -k --other-workspace -l --input-layer -y --other-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -k --other-workspace -l --input-layer -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector arc "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --rotation -e --end-angle -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -s --start-angle -u --unit -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --rotation -e --end-angle -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -s --start-angle -u --unit -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector arcpolygon "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --rotation -e --end-angle -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -s --start-angle -u --unit -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --rotation -e --end-angle -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -s --start-angle -u --unit -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector barnessurface "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -c --convergence -d --data-limit -e --pixels-per-cell -f --output-raster-format -h --height -i --input-workspace -l --input-layer -m --min-observations -n --no-data -o --output-raster -p --passes -q --query-buffer -s --scale -v --value-field -w --width -x --max-observation-distance' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -c --convergence -d --data-limit -e --pixels-per-cell -f --output-raster-format -h --height -i --input-workspace -l --input-layer -m --min-observations -n --no-data -o --output-raster -p --passes -q --query-buffer -s --scale -v --value-field -w --width -x --max-observation-distance' -- $cur))
     elif [[ "$line" == *"geoc vector buffer "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --capstyle -d --distance -i --input-workspace -l --input-layer -o --output-workspace -q --quadrantsegments -r --output-layer -s --singlesided' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --capstyle -d --distance -i --input-workspace -l --input-layer -o --output-workspace -q --quadrantsegments -r --output-layer -s --singlesided' -- $cur))
     elif [[ "$line" == *"geoc vector centroid "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector clip "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -k --other-workspace -l --input-layer -o --output-workspace -r --output-layer -y --other-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -k --other-workspace -l --input-layer -o --output-workspace -r --output-layer -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector compareschemas "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -k --other-workspace -l --input-layer -p --pretty-print -y --other-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -k --other-workspace -l --input-layer -p --pretty-print -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector convexhull "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector convexhulls "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector coordinates "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector copy "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --field -f --filter -i --input-workspace -l --input-layer -m --max -o --output-workspace -r --output-layer -s --sort -t --start' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --field -f --filter -i --input-workspace -l --input-layer -m --max -o --output-workspace -r --output-layer -s --sort -t --start' -- $cur))
     elif [[ "$line" == *"geoc vector count featuresInfeature "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --count-fieldname -i --input-workspace -k --other-workspace -l --input-layer -o --output-workspace -r --output-layer -y --other-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --count-fieldname -i --input-workspace -k --other-workspace -l --input-layer -o --output-workspace -r --output-layer -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector count " ]]; then
         COMPREPLY=($(compgen -W ' featuresInfeature'))
     elif [[ "$line" == *"geoc vector count"[[:space:]][[:alpha:]]* ]]; then
@@ -455,13 +455,13 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' featuresInfeature'))
         fi
     elif [[ "$line" == *"geoc vector create "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --field -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --field -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector database index create "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --field -i --index-name -l --layer-name -u --unique -w --database-workspace' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --field -i --index-name -l --layer-name -u --unique -w --database-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector database index delete "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --index-name -l --layer-name -w --database-workspace' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --index-name -l --layer-name -w --database-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector database index list "* ]]; then
-        COMPREPLY=($(compgen -W '--help -l --layer-name -p --pretty-print -w --database-workspace' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -l --layer-name -p --pretty-print -w --database-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector database index " ]]; then
         COMPREPLY=($(compgen -W ' create  delete  list'))
     elif [[ "$line" == *"geoc vector database index"[[:space:]][[:alpha:]]* ]]; then
@@ -475,11 +475,11 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' list'))
         fi
     elif [[ "$line" == *"geoc vector database remove "* ]]; then
-        COMPREPLY=($(compgen -W '--help -l --layer-name -w --database-workspace' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -l --layer-name -w --database-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector database select "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry-field -l --layer-name -o --output-workspace -p --primary-key-field -r --output-layer -s --sql -w --database-workspace' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry-field -l --layer-name -o --output-workspace -p --primary-key-field -r --output-layer -s --sql -w --database-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector database sql "* ]]; then
-        COMPREPLY=($(compgen -W '--help -s --sql -w --database-workspace' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -s --sql -w --database-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector database " ]]; then
         COMPREPLY=($(compgen -W ' index  remove  select  sql'))
     elif [[ "$line" == *"geoc vector database"[[:space:]][[:alpha:]]* ]]; then
@@ -496,27 +496,27 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' sql'))
         fi
     elif [[ "$line" == *"geoc vector datastorelist "* ]]; then
-        COMPREPLY=($(compgen -W '--help' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help' -- $cur))
     elif [[ "$line" == *"geoc vector datastoreparams "* ]]; then
-        COMPREPLY=($(compgen -W '--help -n --name' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -n --name' -- $cur))
     elif [[ "$line" == *"geoc vector defaultstyle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --color -g --geometry-type -i --input-workspace -l --input-layer -o --opacity' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --color -g --geometry-type -i --input-workspace -l --input-layer -o --opacity' -- $cur))
     elif [[ "$line" == *"geoc vector delaunay "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector delete "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --filter -i --input-workspace -l --input-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --filter -i --input-workspace -l --input-layer' -- $cur))
     elif [[ "$line" == *"geoc vector densify "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --distance -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --distance -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector display "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -g --background-color -h --height -i --input-workspace -l --input-layer -m --layer -s --sld-file -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -g --background-color -h --height -i --input-workspace -l --input-layer -m --layer -s --sld-file -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector dissolvebyfield "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --count-field -d --id-field -f --field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --count-field -d --id-field -f --field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector dissolveintersecting "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --count-field -d --id-field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --count-field -d --id-field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector draw "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -f --file -g --background-color -h --height -i --input-workspace -l --input-layer -m --layer -s --sld-file -t --type -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -f --file -g --background-color -h --height -i --input-workspace -l --input-layer -m --layer -s --sld-file -t --type -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector dump shapefiles "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --max-dbf-size -i --input-workspace -l --input-layer -o --output-directory -s --max-shp-size' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --max-dbf-size -i --input-workspace -l --input-layer -o --output-directory -s --max-shp-size' -- $cur))
     elif [[ "$line" == *"geoc vector dump " ]]; then
         COMPREPLY=($(compgen -W ' shapefiles'))
     elif [[ "$line" == *"geoc vector dump"[[:space:]][[:alpha:]]* ]]; then
@@ -524,31 +524,31 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' shapefiles'))
         fi
     elif [[ "$line" == *"geoc vector ellipse "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --rotation -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -u --unit -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --rotation -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -u --unit -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector envelope "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector envelopes "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector erase "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -k --other-workspace -l --input-layer -o --output-workspace -r --output-layer -y --other-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -k --other-workspace -l --input-layer -o --output-workspace -r --output-layer -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector filter "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --filter -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --filter -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector from "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --format -g --geometry-type -o --output-workspace -p --format-options -r --output-layer -t --text' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --format -g --geometry-type -o --output-workspace -p --format-options -r --output-layer -t --text' -- $cur))
     elif [[ "$line" == *"geoc vector geomr "* ]]; then
-        COMPREPLY=($(compgen -W '--help -o --output-workspace -r --output-layer -t --text' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -o --output-workspace -r --output-layer -t --text' -- $cur))
     elif [[ "$line" == *"geoc vector geomw "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer' -- $cur))
     elif [[ "$line" == *"geoc vector gradientstyle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --colors -e --else-mode -f --field -i --input-workspace -l --input-layer -m --method -n --number' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --colors -e --else-mode -f --field -i --input-workspace -l --input-layer -m --method -n --number' -- $cur))
     elif [[ "$line" == *"geoc vector graticule hexagon "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -l --length -o --output-workspace -r --output-layer -s --spacing -t --orientation' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -l --length -o --output-workspace -r --output-layer -s --spacing -t --orientation' -- $cur))
     elif [[ "$line" == *"geoc vector graticule line "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -l --line-definition -o --output-workspace -r --output-layer -s --spacing' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -l --line-definition -o --output-workspace -r --output-layer -s --spacing' -- $cur))
     elif [[ "$line" == *"geoc vector graticule rectangle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -h --height -o --output-workspace -r --output-layer -s --spacing -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -h --height -o --output-workspace -r --output-layer -s --spacing -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector graticule square "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -l --length -o --output-workspace -r --output-layer -s --spacing' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -l --length -o --output-workspace -r --output-layer -s --spacing' -- $cur))
     elif [[ "$line" == *"geoc vector graticule " ]]; then
         COMPREPLY=($(compgen -W ' hexagon  line  rectangle  square'))
     elif [[ "$line" == *"geoc vector graticule"[[:space:]][[:alpha:]]* ]]; then
@@ -565,21 +565,21 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' square'))
         fi
     elif [[ "$line" == *"geoc vector grid "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -h --cell-height -o --output-workspace -p --projection -r --output-layer -t --type -w --cell-width -x --columns -y --rows' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -h --cell-height -o --output-workspace -p --projection -r --output-layer -t --type -w --cell-width -x --columns -y --rows' -- $cur))
     elif [[ "$line" == *"geoc vector heatmap "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --weight-field -b --bounds -f --output-raster-format -h --height -i --input-workspace -l --input-layer -o --output-raster -p --pixels-per-cell -r --radius-pixels -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --weight-field -b --bounds -f --output-raster-format -h --height -i --input-workspace -l --input-layer -o --output-raster -p --pixels-per-cell -r --radius-pixels -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector identity "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --include-duplicates -f --first-postfix -i --input-workspace -k --other-workspace -l --input-layer -m --maxfieldname-length -o --output-workspace -p --postfix-all -r --output-layer -s --second-postfix -y --other-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --include-duplicates -f --first-postfix -i --input-workspace -k --other-workspace -l --input-layer -m --maxfieldname-length -o --output-workspace -p --postfix-all -r --output-layer -s --second-postfix -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector info "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer' -- $cur))
     elif [[ "$line" == *"geoc vector interiorpoint "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector intersection "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --include-duplicates -f --first-postfix -i --input-workspace -k --other-workspace -l --input-layer -m --maxfieldname-length -o --output-workspace -p --postfix-all -r --output-layer -s --second-postfix -y --other-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --include-duplicates -f --first-postfix -i --input-workspace -k --other-workspace -l --input-layer -m --maxfieldname-length -o --output-workspace -p --postfix-all -r --output-layer -s --second-postfix -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector join attribute "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -j --table-field -l --input-layer -m --only-include-matching -n --field -o --output-workspace -p --options -r --output-layer -s --table-source -t --table-name -y --layer-field' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -j --table-field -l --input-layer -m --only-include-matching -n --field -o --output-workspace -p --options -r --output-layer -s --table-source -t --table-name -y --layer-field' -- $cur))
     elif [[ "$line" == *"geoc vector join spatial "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --field -i --input-workspace -k --other-workspace -l --input-layer -m --multiple-type -o --output-workspace -r --output-layer -t --spatial-type -y --other-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --field -i --input-workspace -k --other-workspace -l --input-layer -m --multiple-type -o --output-workspace -r --output-layer -t --spatial-type -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector join " ]]; then
         COMPREPLY=($(compgen -W ' attribute  spatial'))
     elif [[ "$line" == *"geoc vector join"[[:space:]][[:alpha:]]* ]]; then
@@ -590,7 +590,7 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' spatial'))
         fi
     elif [[ "$line" == *"geoc vector list layers "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector list " ]]; then
         COMPREPLY=($(compgen -W ' layers'))
     elif [[ "$line" == *"geoc vector list"[[:space:]][[:alpha:]]* ]]; then
@@ -598,35 +598,35 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' layers'))
         fi
     elif [[ "$line" == *"geoc vector merge "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -k --other-workspace -l --input-layer -o --output-workspace -r --output-layer -y --other-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -k --other-workspace -l --input-layer -o --output-workspace -r --output-layer -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector mincircle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector mincircles "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector minrect "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector minrects "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector multiple2single "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector octagonalenvelope "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector octagonalenvelopes "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector page "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -m --max -o --output-workspace -r --output-layer -t --start' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -m --max -o --output-workspace -r --output-layer -t --start' -- $cur))
     elif [[ "$line" == *"geoc vector points2lines "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --group-field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -s --sort-field' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --group-field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -s --sort-field' -- $cur))
     elif [[ "$line" == *"geoc vector points2polygons "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --group-field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -s --sort-field' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --group-field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -s --sort-field' -- $cur))
     elif [[ "$line" == *"geoc vector pointstacker "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --bounds -c --cell-size -h --height -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -s --source-projection -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -c --cell-size -h --height -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -s --source-projection -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector project "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -s --source-projection -t --target-projection' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -s --source-projection -t --target-projection' -- $cur))
     elif [[ "$line" == *"geoc vector randompoints "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --constrained-to-circle -d --grid -e --geom-fieldname -f --gutter-fraction -g --geometry -n --number -o --output-workspace -p --projection -r --output-layer -u --id-fieldname' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --constrained-to-circle -d --grid -e --geom-fieldname -f --gutter-fraction -g --geometry -n --number -o --output-workspace -p --projection -r --output-layer -u --id-fieldname' -- $cur))
     elif [[ "$line" == *"geoc vector raster values "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --band -e --input-raster-name -i --input-workspace -l --input-layer -n --field-name -o --output-workspace -p --input-projection -r --output-layer -s --input-raster -t --field-type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --band -e --input-raster-name -i --input-workspace -l --input-layer -n --field-name -o --output-workspace -p --input-projection -r --output-layer -s --input-raster -t --field-type' -- $cur))
     elif [[ "$line" == *"geoc vector raster " ]]; then
         COMPREPLY=($(compgen -W ' values'))
     elif [[ "$line" == *"geoc vector raster"[[:space:]][[:alpha:]]* ]]; then
@@ -634,11 +634,11 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' values'))
         fi
     elif [[ "$line" == *"geoc vector rectangle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --rotation -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -u --unit -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --rotation -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -u --unit -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector reflect "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --x2-distance -d --y2-distance -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -x --x1-distance -y --y1-distance' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --x2-distance -d --y2-distance -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -x --x1-distance -y --y1-distance' -- $cur))
     elif [[ "$line" == *"geoc vector remove layer "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer' -- $cur))
     elif [[ "$line" == *"geoc vector remove " ]]; then
         COMPREPLY=($(compgen -W ' layer'))
     elif [[ "$line" == *"geoc vector remove"[[:space:]][[:alpha:]]* ]]; then
@@ -646,25 +646,25 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' layer'))
         fi
     elif [[ "$line" == *"geoc vector removefields "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --field -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector rotate "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --cosine -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -s --sine -t --theta -x --x-coord -y --y-coord' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --cosine -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -s --sine -t --theta -x --x-coord -y --y-coord' -- $cur))
     elif [[ "$line" == *"geoc vector scale "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --x-coord -d --y-coord -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -x --x-distance -y --y-distance' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --x-coord -d --y-coord -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -x --x-distance -y --y-distance' -- $cur))
     elif [[ "$line" == *"geoc vector schema "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -p --pretty-print' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -p --pretty-print' -- $cur))
     elif [[ "$line" == *"geoc vector shear "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -x --x-distance -y --y-distance' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -x --x-distance -y --y-distance' -- $cur))
     elif [[ "$line" == *"geoc vector simplify "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --algorithm -d --distance -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --algorithm -d --distance -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector sinestar "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --rotation -e --arm-length-ratio -g --geometry -h --height -i --input-workspace -l --input-layer -n --number-of-arms -o --output-workspace -p --num-points -r --output-layer -u --unit -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --rotation -e --arm-length-ratio -g --geometry -h --height -i --input-workspace -l --input-layer -n --number-of-arms -o --output-workspace -p --num-points -r --output-layer -u --unit -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector single2multiple "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector smooth "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --fit -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --fit -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector snap points2lines "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --search-distance -i --input-workspace -k --other-workspace -l --input-layer -o --output-workspace -r --output-layer -s --snapped-fieldname -y --other-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --search-distance -i --input-workspace -k --other-workspace -l --input-layer -o --output-workspace -r --output-layer -s --snapped-fieldname -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector snap " ]]; then
         COMPREPLY=($(compgen -W ' points2lines'))
     elif [[ "$line" == *"geoc vector snap"[[:space:]][[:alpha:]]* ]]; then
@@ -672,39 +672,39 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' points2lines'))
         fi
     elif [[ "$line" == *"geoc vector sort "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -s --sort' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -s --sort' -- $cur))
     elif [[ "$line" == *"geoc vector splitbyfield "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --field -i --input-workspace -l --input-layer -o --output-workspace' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --field -i --input-workspace -l --input-layer -o --output-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector splitbylayer "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --field -i --input-workspace -l --input-layer -o --output-workspace -p --split-layer -s --split-workspace' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --field -i --input-workspace -l --input-layer -o --output-workspace -p --split-layer -s --split-workspace' -- $cur))
     elif [[ "$line" == *"geoc vector squircle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --rotation -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -u --unit -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --rotation -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -u --unit -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector subset "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --filter -i --input-workspace -l --input-layer -m --max -o --output-workspace -r --output-layer -s --sort -t --start' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --filter -i --input-workspace -l --input-layer -m --max -o --output-workspace -r --output-layer -s --sort -t --start' -- $cur))
     elif [[ "$line" == *"geoc vector supercircle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --rotation -e --power -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -u --unit -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --rotation -e --power -g --geometry -h --height -i --input-workspace -l --input-layer -o --output-workspace -p --num-points -r --output-layer -u --unit -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector symdifference "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --include-duplicates -f --first-postfix -i --input-workspace -k --other-workspace -l --input-layer -m --maxfieldname-length -o --output-workspace -p --postfix-all -r --output-layer -s --second-postfix -y --other-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --include-duplicates -f --first-postfix -i --input-workspace -k --other-workspace -l --input-layer -m --maxfieldname-length -o --output-workspace -p --postfix-all -r --output-layer -s --second-postfix -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector to "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --format -i --input-workspace -l --input-layer -p --format-options' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --format -i --input-workspace -l --input-layer -p --format-options' -- $cur))
     elif [[ "$line" == *"geoc vector transform "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --definition -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --definition -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector translate "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -x --x-distance -y --y-distance' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer -x --x-distance -y --y-distance' -- $cur))
     elif [[ "$line" == *"geoc vector union "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --include-duplicates -f --first-postfix -i --input-workspace -k --other-workspace -l --input-layer -m --maxfieldname-length -o --output-workspace -p --postfix-all -r --output-layer -s --second-postfix -y --other-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --include-duplicates -f --first-postfix -i --input-workspace -k --other-workspace -l --input-layer -m --maxfieldname-length -o --output-workspace -p --postfix-all -r --output-layer -s --second-postfix -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector uniquevalues "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --field -i --input-workspace -l --input-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --field -i --input-workspace -l --input-layer' -- $cur))
     elif [[ "$line" == *"geoc vector uniquevaluesstyle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --colors -f --field -i --input-workspace -l --input-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --colors -f --field -i --input-workspace -l --input-layer' -- $cur))
     elif [[ "$line" == *"geoc vector update "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -k --other-workspace -l --input-layer -o --output-workspace -r --output-layer -y --other-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -k --other-workspace -l --input-layer -o --output-workspace -r --output-layer -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector updatefield "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --field -f --filter -i --input-workspace -l --input-layer -s --script -v --value' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --field -f --filter -i --input-workspace -l --input-layer -s --script -v --value' -- $cur))
     elif [[ "$line" == *"geoc vector validity "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --field -i --input-workspace -l --input-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --field -i --input-workspace -l --input-layer' -- $cur))
     elif [[ "$line" == *"geoc vector voronoi "* ]]; then
-        COMPREPLY=($(compgen -W '--help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector " ]]; then
         COMPREPLY=($(compgen -W ' add  addareafield  addfields  addidfield  addlengthfield  addxyfields  append  arc  arcpolygon  barnessurface  buffer  centroid  clip  compareschemas  convexhull  convexhulls  coordinates  copy  count  create  database  datastorelist  datastoreparams  defaultstyle  delaunay  delete  densify  display  dissolvebyfield  dissolveintersecting  draw  dump  ellipse  envelope  envelopes  erase  filter  from  geomr  geomw  gradientstyle  graticule  grid  heatmap  identity  info  interiorpoint  intersection  join  list  merge  mincircle  mincircles  minrect  minrects  multiple2single  octagonalenvelope  octagonalenvelopes  page  points2lines  points2polygons  pointstacker  project  randompoints  raster  rectangle  reflect  remove  removefields  rotate  scale  schema  shear  simplify  sinestar  single2multiple  smooth  snap  sort  splitbyfield  splitbylayer  squircle  subset  supercircle  symdifference  to  transform  translate  union  uniquevalues  uniquevaluesstyle  update  updatefield  validity  voronoi'))
     elif [[ "$line" == *"geoc vector"[[:space:]][[:alpha:]]* ]]; then

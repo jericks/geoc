@@ -22,7 +22,7 @@ Commands
     commands/geometry-pt2dd.rst
     commands/filter-cql2xml.rst
     commands/map-cube.rst
-    commands/map-draw.rest
+    commands/map-draw.rst
     commands/vector-datastorelist.rst
     commands/vector-datastoreparams.rst
     commands/vector-display.rst
@@ -175,4 +175,6 @@ Commands
     commands/tile-stitch-raster.rst
     commands/tile-stitch-vector.rst
     commands/tile-vector-grid.rst
+    commands/tile-get-bounds.rst
+    commands/tile-list-tiles.rst
 

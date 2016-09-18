@@ -37,4 +37,4 @@ Draw a Map
 
 **Example**::
 
-    geoc map draw -l "layertype=layer dbtype=geopkg database=data/countries.gpkg layername=countries style=data/countries.sld" -l "/layertype=layer file=data/points.csv layername=points style=data/points.sld"
+    geoc map draw -l "layertype=layer dbtype=geopkg database=data/countries.gpkg layername=countries style=data/countries.sld" -l "layertype=layer file=data/points.csv layername=points style=data/points.sld"

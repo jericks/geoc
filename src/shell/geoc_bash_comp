@@ -369,6 +369,22 @@ _geoc()
         COMPREPLY=($(compgen -W '--help --web-help -b --bounds -c --maxx -h --height -i --tile -l --tile-layer -u --maxy -w --width -x --minx -y --miny -z --zoom-level' -- $cur))
     elif [[ "$line" == *"geoc tile generate "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -b --bounds -d --layer-fields -e --end-zoom -f --field -i --missing -l --tile-layer -m --layer -s --start-zoom -v --verbose' -- $cur))
+    elif [[ "$line" == *"geoc tile get bounds "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -p --pyramid -x --column -y --row -z --zoom-level' -- $cur))
+    elif [[ "$line" == *"geoc tile get " ]]; then
+        COMPREPLY=($(compgen -W ' bounds'))
+    elif [[ "$line" == *"geoc tile get"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "tile get bounds" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' bounds'))
+        fi
+    elif [[ "$line" == *"geoc tile list tiles "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -p --pyramid -z --zoom-level' -- $cur))
+    elif [[ "$line" == *"geoc tile list " ]]; then
+        COMPREPLY=($(compgen -W ' tiles'))
+    elif [[ "$line" == *"geoc tile list"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "tile list tiles" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' tiles'))
+        fi
     elif [[ "$line" == *"geoc tile pyramid "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -l --tile-layer -o --output-type' -- $cur))
     elif [[ "$line" == *"geoc tile stitch raster "* ]]; then
@@ -393,13 +409,19 @@ _geoc()
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' grid'))
         fi
     elif [[ "$line" == *"geoc tile " ]]; then
-        COMPREPLY=($(compgen -W ' delete  generate  pyramid  stitch  vector'))
+        COMPREPLY=($(compgen -W ' delete  generate  get  list  pyramid  stitch  vector'))
     elif [[ "$line" == *"geoc tile"[[:space:]][[:alpha:]]* ]]; then
         if [[ "tile delete" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' delete'))
         fi
         if [[ "tile generate" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' generate'))
+        fi
+        if [[ "tile get" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' get'))
+        fi
+        if [[ "tile list" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' list'))
         fi
         if [[ "tile pyramid" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' pyramid'))

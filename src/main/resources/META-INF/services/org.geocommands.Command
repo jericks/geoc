@@ -177,5 +177,7 @@ org.geocommands.tile.StitchRasterCommand
 org.geocommands.tile.StitchVectorCommand
 org.geocommands.tile.VectorGridCommand
 org.geocommands.tile.DeleteCommand
+org.geocommands.tile.GetTileBoundsCommand
+org.geocommands.tile.ListTilesCommand
 
 org.geocommands.filter.CqlToXmlCommand

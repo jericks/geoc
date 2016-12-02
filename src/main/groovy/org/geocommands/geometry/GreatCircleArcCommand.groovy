@@ -19,7 +19,7 @@ class GreatCircleArcCommand extends Command<GreatCircleArcCommandOptions> {
     }
 
     String getDescription() {
-        "Calculate the orthodromic distance between two points."
+        "Create a great circle arc."
     }
 
     GreatCircleArcCommandOptions getOptions() {

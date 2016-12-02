@@ -78,7 +78,7 @@ class AppTest extends BaseTest {
     void runForHelpWithRequiredParams() {
         try {
             String output = runApp(["geometry greatcirclearc", "--help"], "")
-            assertEquals("geoc geometry greatcirclearc: Calculate the orthodromic distance between two points." + NEW_LINE +
+            assertEquals("geoc geometry greatcirclearc: Create a great circle arc." + NEW_LINE +
                     " --help                 : Print the help message (default: true)" + NEW_LINE +
                     " --web-help             : Open help in a browser (default: false)" + NEW_LINE +
                     " -e (--ellipsoid) VAL   : The ellipsoid (default: wgs84)" + NEW_LINE +

@@ -7,7 +7,7 @@ geoc geometry greatcirclearc
 
 **Description**:
 
-Calculate the orthodromic distance between two points.
+Create a great circle arc.
 
 **Arguments**:
 

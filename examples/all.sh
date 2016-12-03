@@ -34,6 +34,7 @@
 ./vector_draw.sh
 ./vector_envelope.sh
 ./vector_fields.sh
+./vector_geomr.sh
 ./vector_gradientstyle.sh
 ./vector_interiorpoint.sh
 ./vector_metadata.sh

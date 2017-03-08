@@ -19,6 +19,9 @@
 ./proj_wkt_env.sh
 ./raster_display.sh
 ./raster_draw.sh
+./raster_info.sh
+./raster_crop.sh
+./raster_srtm.sh
 ./style_ysld.sh
 ./tile_geopackage.sh
 ./tile_mbtiles.sh

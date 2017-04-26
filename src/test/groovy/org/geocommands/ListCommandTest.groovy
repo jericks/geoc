@@ -3,7 +3,7 @@ package org.geocommands
 import org.geocommands.ListCommand.ListOptions
 import org.junit.Test
 
-import static org.junit.Assert.assertTrue
+import static org.junit.Assert.*
 
 /**
  * The ListCommand Unit Test
@@ -49,6 +49,18 @@ class ListCommandTest extends BaseTest {
         assertTrue str.contains("vector copy = Copy the input Layer to the output Layer")
         assertTrue str.contains("list = List all geocommands")
         assertTrue str.contains("vector clip = Clip the input Layer by the other Layer to produce the output Layer")
+    }
+
+    @Test
+    void setOptionsProperties() {
+        ListOptions options = new ListOptions().setProperties([
+            showDescriptions: true,
+            help: false,
+            webHelp: false
+        ])
+        assertTrue(options.showDescriptions)
+        assertFalse(options.help)
+        assertFalse(options.webHelp)
     }
 
 }

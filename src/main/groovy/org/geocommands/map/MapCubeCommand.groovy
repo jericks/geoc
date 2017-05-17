@@ -61,18 +61,23 @@ class MapCubeCommand extends Command<MapCubeOptions> {
         g2d.paint = java.awt.Color.WHITE
         g2d.fillRect(0, 0, 1800, 1500)
 
-        File preFile = File.createTempFile("map", ".png")
-        Map preMap = new Map(
-                width: 1600,
-                height: 800,
-                proj: new Projection("EPSG:4326"),
-                fixAspectRatio: false,
-                bounds: new Bounds(-180, -89.9, 180, 89.9, "EPSG:4326"),
-                layers: layers
-        )
-        preMap.render(preFile)
+        Raster preRaster = null
+        if (layers.size() > 0) {
+            File preFile = File.createTempFile("map", ".png")
+            Map preMap = new Map(
+                    width: 1600,
+                    height: 800,
+                    proj: new Projection("EPSG:4326"),
+                    fixAspectRatio: false,
+                    bounds: new Bounds(-180, -89.9, 180, 89.9, "EPSG:4326"),
+                    layers: layers
+            )
+            preMap.render(preFile)
 
-        Raster preRaster = new Raster(ImageIO.read(preFile), new Bounds(-180, -90, 180, 90, "EPSG:4326"))
+            preRaster = new Raster(ImageIO.read(preFile), new Bounds(-180, -90, 180, 90, "EPSG:4326"))
+        } else {
+            options.drawOutline = true
+        }
 
         List cubes = [
                 // north
@@ -87,21 +92,23 @@ class MapCubeCommand extends Command<MapCubeOptions> {
         ]
 
         cubes.each { java.util.Map cube ->
-            Point center = cube.center
-            Projection p = new Projection("AUTO:97001,9001,${center.x},${center.y}")
-            Bounds b = cube.bounds.reproject(p)
-            Map map = new Map(
-                    scaleComputation: "ogc",
-                    layers: [preRaster],
-                    width: 400,
-                    height: 400,
-                    fixAspectRatio: false,
-                    backgroundColor: "white",
-                    proj: p,
-                    bounds: b
-            )
-            BufferedImage img = map.renderToImage()
-            g2d.drawImage(img, cube.image[0], cube.image[1], null)
+            if (preRaster) {
+                Point center = cube.center
+                Projection p = new Projection("AUTO:97001,9001,${center.x},${center.y}")
+                Bounds b = cube.bounds.reproject(p)
+                Map map = new Map(
+                        scaleComputation: "ogc",
+                        layers: [preRaster],
+                        width: 400,
+                        height: 400,
+                        fixAspectRatio: false,
+                        backgroundColor: "white",
+                        proj: p,
+                        bounds: b
+                )
+                BufferedImage img = map.renderToImage()
+                g2d.drawImage(img, cube.image[0], cube.image[1], null)
+            }
             if (options.drawOutline) {
                 g2d.paint = new Color(0, 0, 0)
                 g2d.drawRect(cube.image[0], cube.image[1], 400, 400)
@@ -151,7 +158,7 @@ class MapCubeCommand extends Command<MapCubeOptions> {
 
     static class MapCubeOptions extends Options {
 
-        @Option(name = "-l", aliases = "--layer", usage = "The map layer", required = true)
+        @Option(name = "-l", aliases = "--layer", usage = "The map layer", required = false)
         List<String> layers
 
         @Option(name = "-f", aliases = "--file", usage = "The output image file", required = false)

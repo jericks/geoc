@@ -29,6 +29,20 @@ class MapCubeCommandTest extends BaseTest {
     }
 
     @Test
+    void executeBlank() {
+        File cubeFile = createTemporaryFile("cube", "png")
+        MapCubeCommand cmd = new MapCubeCommand()
+        MapCubeOptions options = new MapCubeOptions(
+                file: cubeFile,
+                tabSize: 60,
+                drawTabs: true
+        )
+        cmd.execute(options)
+        assertTrue cubeFile.exists()
+        assertTrue cubeFile.length() > 0
+    }
+
+    @Test
     void run() {
         File rasterFile = getResource("raster.tif")
         File cubeFile = createTemporaryFile("cube", "png")
@@ -41,4 +55,18 @@ class MapCubeCommandTest extends BaseTest {
         assertTrue cubeFile.exists()
         assertTrue cubeFile.length() > 0
     }
+
+    @Test
+    void runBlank() {
+        File cubeFile = createTemporaryFile("cube", "png")
+        runApp([
+                "map cube",
+                "-f", cubeFile,
+                "-t",
+                "-s", "60"
+        ], "")
+        assertTrue cubeFile.exists()
+        assertTrue cubeFile.length() > 0
+    }
+
 }

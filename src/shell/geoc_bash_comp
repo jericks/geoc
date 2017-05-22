@@ -79,7 +79,7 @@ _geoc()
     elif [[ "$line" == *"geoc list "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -d --description' -- $cur))
     elif [[ "$line" == *"geoc map cube "* ]]; then
-        COMPREPLY=($(compgen -W '--help --web-help -f --file -l --layer -o --draw-outline -s --tab-size -t --draw-tabs' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --source -f --file -i --title -l --layer -o --draw-outline -s --tab-size -t --draw-tabs' -- $cur))
     elif [[ "$line" == *"geoc map draw "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -b --bounds -f --file -g --background-color -h --height -i --layer-file -l --layer -p --projection -t --type -w --width' -- $cur))
     elif [[ "$line" == *"geoc map " ]]; then

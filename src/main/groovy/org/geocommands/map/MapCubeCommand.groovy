@@ -129,6 +129,18 @@ class MapCubeCommand extends Command<MapCubeOptions> {
             drawTab(g2d, 100 + (400 * 4), 540, "east", options.tabSize)
         }
 
+        int x = 20
+        int y = 50
+        if (options.title) {
+            g2d.setFont(new Font("Verdana", Font.BOLD, 42))
+            g2d.drawString(options.title, x, y)
+            y += 40
+        }
+        if (options.source) {
+            g2d.setFont(new Font("Verdana", Font.ITALIC, 24))
+            g2d.drawString(options.source, x, y)
+        }
+
         g2d.dispose()
         ImageIO.write(image, "png", options.file)
 
@@ -173,6 +185,11 @@ class MapCubeCommand extends Command<MapCubeOptions> {
         @Option(name = "-s", aliases = "--tab-size", usage = "The tab size", required = false)
         int tabSize = 30
 
+        @Option(name = "-i", aliases = "--title", usage = "The title", required = false)
+        String title = ""
+
+        @Option(name = "-c", aliases = "--source", usage = "The data source or credits", required = false)
+        String source = ""
     }
 
 }

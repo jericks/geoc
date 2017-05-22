@@ -21,6 +21,10 @@ Create a map cube
 
    * -s --tab-size: The tab size
 
+   * -i --title: The title
+
+   * -c --source: The data source or credits
+
    * --help : Print the help message
 
    * --web-help : Open help in a browser

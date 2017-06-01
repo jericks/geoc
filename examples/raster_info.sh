@@ -1,2 +1,6 @@
 #!/bin/bash
-geoc raster info -i earth.tif 
+echo "Info"
+geoc raster info -i earth.tif
+
+echo "Size"
+geoc raster size -i earth.tif

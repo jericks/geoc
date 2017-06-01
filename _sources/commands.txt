@@ -163,6 +163,7 @@ Commands
     commands/raster-to.rst
     commands/raster-mapalgebra.rst
     commands/raster-worldfile.rst
+    commands/raster-size.rst
     commands/raster-style-default.rst
     commands/raster-style-shadedrelief.rst
     commands/raster-style-channel-selection.rst

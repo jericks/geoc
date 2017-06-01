@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>vector addareafield &mdash; geoc 0.5.0 documentation</title>
+  <title>raster size &mdash; geoc 0.5.0 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="geoc 0.5.0 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="vector addlengthfield" href="vector-addlengthfield.html"/>
-        <link rel="prev" title="vector addidfield" href="vector-addidfield.html"/> 
+        <link rel="next" title="raster style default" href="raster-style-default.html"/>
+        <link rel="prev" title="raster worldfile" href="raster-worldfile.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -144,7 +144,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-addfields.html">vector addfields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-removefields.html">vector removefields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-addidfield.html">vector addidfield</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">vector addareafield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-addareafield.html">vector addareafield</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-addlengthfield.html">vector addlengthfield</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-addxyfields.html">vector addxyfields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-splitbyfield.html">vector splitbyfield</a></li>
@@ -237,7 +237,7 @@
 <li class="toctree-l2"><a class="reference internal" href="raster-to.html">raster to</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-mapalgebra.html">raster mapalgebra</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-worldfile.html">raster worldfile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="raster-size.html">raster size</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">raster size</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-style-default.html">raster style default</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-style-shadedrelief.html">raster style shadedrelief</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-style-channel-selection.html">raster style channel selection</a></li>
@@ -281,10 +281,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>vector addareafield</li>
+    <li>raster size</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/vector-addareafield.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/raster-size.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -292,26 +292,24 @@
 </div>
           <div role="main">
             
-  <div class="section" id="vector-addareafield">
-<h1>vector addareafield<a class="headerlink" href="#vector-addareafield" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="raster-size">
+<h1>raster size<a class="headerlink" href="#raster-size" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc vector addareafield</p>
+<p>geoc raster size</p>
 <p><strong>Description</strong>:</p>
-<p>Add an area Field</p>
+<p>Get the Raster size (width,height)</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-f &#8211;area-fieldname: The name for the area Field</li>
-<li>-o &#8211;output-workspace: The output workspace</li>
-<li>-r &#8211;output-layer: The output layer</li>
-<li>-i &#8211;input-workspace: The input workspace</li>
-<li>-l &#8211;input-layer: The input layer</li>
+<li>-i &#8211;input-raster: The input raster</li>
+<li>-l &#8211;input-raster-name: The input raster name</li>
+<li>-p &#8211;input-projection: The input projection</li>
 <li>&#8211;help : Print the help message</li>
 <li>&#8211;web-help : Open help in a browser</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geoc vector addareafield -i states.shp -o states_area.shp -f area
+<div class="highlight-python"><div class="highlight"><pre>geoc raster size -i raster.tif
 </pre></div>
 </div>
 </div>
@@ -322,10 +320,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector-addlengthfield.html" class="btn btn-neutral float-right" title="vector addlengthfield"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="raster-style-default.html" class="btn btn-neutral float-right" title="raster style default"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector-addidfield.html" class="btn btn-neutral" title="vector addidfield"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="raster-worldfile.html" class="btn btn-neutral" title="raster worldfile"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

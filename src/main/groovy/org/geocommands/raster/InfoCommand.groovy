@@ -9,7 +9,6 @@ import geoscript.layer.Raster
  */
 class InfoCommand extends RasterCommand<InfoOptions> {
 
-
     @Override
     String getName() {
         "raster info"

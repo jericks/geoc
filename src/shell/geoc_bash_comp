@@ -189,6 +189,8 @@ _geoc()
         COMPREPLY=($(compgen -W '--help --web-help -a --range -b --band -e --inside-edges -g --region-of-interest -i --input-raster -l --input-raster-name -n --no-data -o --output-workspace -p --input-projection -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc raster project "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -t --target-projection' -- $cur))
+    elif [[ "$line" == *"geoc raster projection "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-raster -l --input-raster-name -p --input-projection -t --type' -- $cur))
     elif [[ "$line" == *"geoc raster reclassify "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -b --band -f --output-raster-format -i --input-raster -l --input-raster-name -n --nodata -o --output-raster -p --input-projection -r --range' -- $cur))
     elif [[ "$line" == *"geoc raster resample "* ]]; then
@@ -252,7 +254,7 @@ _geoc()
     elif [[ "$line" == *"geoc raster worldfile "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -b --bounds -f --file -s --size' -- $cur))
     elif [[ "$line" == *"geoc raster " ]]; then
-        COMPREPLY=($(compgen -W ' abs  add  animatedgif  contour  convolve  crop  display  divide  draw  envelope  exp  extractfootprint  get  info  invert  log  mapalgebra  multiply  normalize  point  polygon  project  reclassify  resample  scale  size  style  stylize  subtract  to  worldfile'))
+        COMPREPLY=($(compgen -W ' abs  add  animatedgif  contour  convolve  crop  display  divide  draw  envelope  exp  extractfootprint  get  info  invert  log  mapalgebra  multiply  normalize  point  polygon  project  projection  reclassify  resample  scale  size  style  stylize  subtract  to  worldfile'))
     elif [[ "$line" == *"geoc raster"[[:space:]][[:alpha:]]* ]]; then
         if [[ "raster abs" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' abs'))
@@ -319,6 +321,9 @@ _geoc()
         fi
         if [[ "raster project" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' project'))
+        fi
+        if [[ "raster projection" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' projection'))
         fi
         if [[ "raster reclassify" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' reclassify'))

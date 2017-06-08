@@ -171,6 +171,7 @@ org.geocommands.raster.AbsoluteCommand
 org.geocommands.raster.NormalizeCommand
 org.geocommands.raster.ConvolveCommand
 org.geocommands.raster.GetSizeCommand
+org.geocommands.raster.GetProjectionCommand
 
 org.geocommands.tile.GenerateCommand
 org.geocommands.tile.PyramidCommand

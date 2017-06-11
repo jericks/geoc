@@ -18,7 +18,7 @@ class PageCommandTest extends BaseTest {
     @Test
     void executeWithFiles() {
         File file = getResource("earthquakes.properties")
-        File shpFile = createTemporaryShapefile("earthquakes")
+        File shpFile = createTemporaryShapefile("earthquakes1")
         PageCommand cmd = new PageCommand()
         // 1,2,3
         PageOptions options = new PageOptions(
@@ -91,7 +91,7 @@ class PageCommandTest extends BaseTest {
     void runWithFiles() {
         // 1,2,3
         File file = getResource("earthquakes.properties")
-        File shpFile = createTemporaryShapefile("earthquakes")
+        File shpFile = createTemporaryShapefile("earthquakes2")
         runApp([
                 "vector page",
                 "-i", file.absolutePath,
@@ -107,7 +107,7 @@ class PageCommandTest extends BaseTest {
             if (i == 2) assertEquals "M 2.5, Hawaii region, Hawaii", f["title"]
         }
         // 4,5,6
-        shpFile = createTemporaryShapefile("earthquakes")
+        shpFile = createTemporaryShapefile("earthquakes3")
         runApp([
                 "vector page",
                 "-i", file.absolutePath,

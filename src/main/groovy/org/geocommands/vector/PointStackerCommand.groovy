@@ -1,8 +1,10 @@
 package org.geocommands.vector
 
+import geoscript.feature.Feature
 import geoscript.feature.Field
 import geoscript.feature.Schema
 import geoscript.geom.Bounds
+import geoscript.geom.Point
 import geoscript.layer.Cursor
 import geoscript.layer.Layer
 import geoscript.process.Process
@@ -39,6 +41,7 @@ class PointStackerCommand extends LayerInOutCommand<PointStackerOptions> {
             projectedLayer.add(inLayer.cursor)
             inLayer = projectedLayer
         }
+        // Run the process
         Process process = new Process("vec:PointStacker")
         Map results = process.execute([
                 data        : inLayer,
@@ -47,12 +50,20 @@ class PointStackerCommand extends LayerInOutCommand<PointStackerOptions> {
                 outputHeight: options.height,
                 outputBBOX  : Bounds.fromString(options.bounds) ?: inLayer.bounds
         ])
+        // Write the results to the output Layer
         Cursor cursor = results.result
         outLayer.withWriter { geoscript.layer.Writer w ->
-            cursor.each { f ->
-                w.add(f)
+            cursor.each { Feature f ->
+                Map attributes = [
+                        geom: new Point(f.geom.x, f.geom.y),
+                        count: f.get("count"),
+                        countunique: f.get("countunique")
+                ]
+                Feature newFeature = outLayer.schema.feature(attributes)
+                w.add(newFeature)
             }
         }
+        cursor.close()
     }
 
     @Override
@@ -60,7 +71,7 @@ class PointStackerCommand extends LayerInOutCommand<PointStackerOptions> {
         new Schema(getOutputLayerName(layer, name, options), [
                 new Field("geom", "Point", layer.proj),
                 new Field("count", "int"),
-                new Field("countUnique", "int")
+                new Field("countunique", "int")
         ])
     }
 

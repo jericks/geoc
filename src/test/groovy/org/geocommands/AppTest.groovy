@@ -61,6 +61,7 @@ class AppTest extends BaseTest {
     void runWithError() {
         try {
             String output = runApp(["vector centroid", "-i", "BAD_INPUT", "-o", "BAD_OUTPUT"], "")
+            println output
             assertTrue(output.startsWith("java.lang.IllegalArgumentException: Unknown Workspace parameter string: BAD_INPUT"))
             assertTrue(output.endsWith("Unknown Workspace parameter string: BAD_INPUT" + NEW_LINE +
                     "Usage: geoc <command> <args>" + NEW_LINE +

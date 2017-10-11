@@ -30,6 +30,7 @@
 ./tile_vector_grid.sh
 ./vector_buffer.sh
 ./vector_centroid.sh
+./vector_copy.sh
 ./vector_convexhull.sh
 ./vector_datasources.sh
 ./vector_delaunay.sh

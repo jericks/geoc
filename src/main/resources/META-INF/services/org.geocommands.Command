@@ -7,6 +7,7 @@ org.geocommands.style.CreateStyleCommand
 org.geocommands.style.CssToSldCommand
 org.geocommands.style.YsldToSldCommand
 org.geocommands.style.SldToYsldCommand
+org.geocommands.style.UniqueValuesStyleFromTextCommand
 
 org.geocommands.map.MapCommand
 org.geocommands.map.MapCubeCommand

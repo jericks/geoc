@@ -358,10 +358,12 @@ _geoc()
         COMPREPLY=($(compgen -W '--help --web-help -i --input -o --output' -- $cur))
     elif [[ "$line" == *"geoc style sld2ysld "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -i --input -o --output' -- $cur))
+    elif [[ "$line" == *"geoc style uniquevaluesfromtext "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -f --field -g --geometry-type -i --input -o --output -t --type' -- $cur))
     elif [[ "$line" == *"geoc style ysld2sld "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -i --input -o --output' -- $cur))
     elif [[ "$line" == *"geoc style " ]]; then
-        COMPREPLY=($(compgen -W ' create  css2sld  sld2ysld  ysld2sld'))
+        COMPREPLY=($(compgen -W ' create  css2sld  sld2ysld  uniquevaluesfromtext  ysld2sld'))
     elif [[ "$line" == *"geoc style"[[:space:]][[:alpha:]]* ]]; then
         if [[ "style create" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' create'))
@@ -371,6 +373,9 @@ _geoc()
         fi
         if [[ "style sld2ysld" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' sld2ysld'))
+        fi
+        if [[ "style uniquevaluesfromtext" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' uniquevaluesfromtext'))
         fi
         if [[ "style ysld2sld" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' ysld2sld'))

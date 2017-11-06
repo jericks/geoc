@@ -9,6 +9,7 @@ Commands
     commands/style-css2sld.rst
     commands/style-sld2ysld.rst
     commands/style-ysld2sld.rst
+    commands/style-uniquevaluesfromtext.rst
     commands/geometry-convert.rst
     commands/geometry-dd2pt.rst
     commands/geometry-geohash-encode.rst

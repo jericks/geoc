@@ -153,11 +153,11 @@ class ConvertCommandTest extends BaseTest {
         StringReader reader = new StringReader("POINT (1 2)")
         StringWriter writer = new StringWriter()
         cmd.execute(options, reader, writer)
-        assertEquals("<kml:Placemark xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:kml=\"http://earth.google.com/kml/2.1\" id=\"1\">" + NEW_LINE +
-                "<kml:Point>" + NEW_LINE +
-                "<kml:coordinates>1.0,2.0</kml:coordinates>" + NEW_LINE +
-                "</kml:Point>" + NEW_LINE +
-                "</kml:Placemark>" + NEW_LINE, writer.toString())
+        assertEquals("<kml:Placemark xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:kml=\"http://earth.google.com/kml/2.1\" id=\"1\">" +
+                "<kml:Point>" +
+                "<kml:coordinates>1.0,2.0</kml:coordinates>" +
+                "</kml:Point>" +
+                "</kml:Placemark>", writer.toString())
     }
 
     @Test
@@ -432,10 +432,10 @@ class ConvertCommandTest extends BaseTest {
                 "-f", "kml",
                 "-t", "feature"
         ], "POINT (1 2)").trim()
-        String expected = "<kml:Placemark xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:kml=\"http://earth.google.com/kml/2.1\" id=\"1\">" + NEW_LINE +
-                "<kml:Point>" + NEW_LINE +
-                "<kml:coordinates>1.0,2.0</kml:coordinates>" + NEW_LINE +
-                "</kml:Point>" + NEW_LINE +
+        String expected = "<kml:Placemark xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:kml=\"http://earth.google.com/kml/2.1\" id=\"1\">" +
+                "<kml:Point>" +
+                "<kml:coordinates>1.0,2.0</kml:coordinates>" +
+                "</kml:Point>" +
                 "</kml:Placemark>"
         assertEquals(expected, actual)
     }

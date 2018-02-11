@@ -16,13 +16,21 @@
             <useProjectArtifact>true</useProjectArtifact>
         </dependencySet>
     </dependencySets>
+    <files>
+        <file>
+            <source>${project.basedir}/bin/geoc</source>
+            <outputDirectory>/bin</outputDirectory>
+            <filtered>true</filtered>
+            <fileMode>0755</fileMode>
+        </file>
+        <file>
+            <source>${project.basedir}/bin/geoc.bat</source>
+            <outputDirectory>/bin</outputDirectory>
+            <filtered>true</filtered>
+            <fileMode>0755</fileMode>
+        </file>
+    </files>
     <fileSets>
-        <fileSet>
-            <outputDirectory>/</outputDirectory>
-            <includes>
-                <include>bin/geoc*</include>
-            </includes>
-        </fileSet>
 		<fileSet>
 			<directory>${project.basedir}/src/man</directory>
             <outputDirectory>/man/man1</outputDirectory>

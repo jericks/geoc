@@ -49,6 +49,8 @@ class GenerateCommand extends Command<GenerateOptions> {
             tileRenderer = new ImageTileRenderer(tileLayer, layers)
         } else if (tileLayer instanceof GeoPackage) {
             tileRenderer = new ImageTileRenderer(tileLayer, layers)
+        } else if (tileLayer instanceof DBTiles) {
+            tileRenderer = new ImageTileRenderer(tileLayer, layers)
         } else if (tileLayer instanceof TMS) {
             tileRenderer = new ImageTileRenderer(tileLayer, layers)
         } else if (tileLayer instanceof UTFGrid) {

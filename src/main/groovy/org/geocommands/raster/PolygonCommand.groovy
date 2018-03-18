@@ -72,7 +72,6 @@ class PolygonCommand extends RasterToVectorCommand<PolygonOptions> {
         @Option(name = "-n", aliases = "--no-data", usage = "A no data value", required = false)
         List<String> noData
 
-        // min,minIncluded,max,maxIncluded
         @Option(name = "-a", aliases = "--range", usage = "A range (min,minIncluded,max,maxIncluded)", required = false)
         List<String> ranges
     }

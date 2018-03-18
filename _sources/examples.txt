@@ -38,4 +38,5 @@ Create 100 random points in a GeoPackage database, get's metadata of that layer,
     examples/map_cube.rst
     examples/tile_geopackage_geodetic.rst
     examples/tile_mbtiles.rst
+    examples/raster_reclassify.rst
   

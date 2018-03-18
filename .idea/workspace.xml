@@ -1,7 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0202bec-b6b8-44da-9970-2a16f31aec42" name="Default" comment="" />
+    <list default="true" id="e0202bec-b6b8-44da-9970-2a16f31aec42" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/doctrees/environment.pickle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctrees/examples.doctree" afterPath="$PROJECT_DIR$/doctrees/examples.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pdf/geoc.pdf" afterPath="$PROJECT_DIR$/pdf/geoc.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_sources/examples.txt" afterPath="$PROJECT_DIR$/_sources/examples.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.html" afterPath="$PROJECT_DIR$/build.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands.html" afterPath="$PROJECT_DIR$/commands.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/filter-cql2xml.html" afterPath="$PROJECT_DIR$/commands/filter-cql2xml.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/geometry-convert.html" afterPath="$PROJECT_DIR$/commands/geometry-convert.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/geometry-dd2pt.html" afterPath="$PROJECT_DIR$/commands/geometry-dd2pt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/geometry-geohash-bounds.html" afterPath="$PROJECT_DIR$/commands/geometry-geohash-bounds.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/geometry-geohash-decode.html" afterPath="$PROJECT_DIR$/commands/geometry-geohash-decode.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/geometry-geohash-encode.html" afterPath="$PROJECT_DIR$/commands/geometry-geohash-encode.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/geometry-geohash-neighbors.html" afterPath="$PROJECT_DIR$/commands/geometry-geohash-neighbors.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/geometry-greatcirclearc.html" afterPath="$PROJECT_DIR$/commands/geometry-greatcirclearc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/geometry-offset.html" afterPath="$PROJECT_DIR$/commands/geometry-offset.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/geometry-orthodromicdistance.html" afterPath="$PROJECT_DIR$/commands/geometry-orthodromicdistance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/geometry-plot.html" afterPath="$PROJECT_DIR$/commands/geometry-plot.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/geometry-pt2dd.html" afterPath="$PROJECT_DIR$/commands/geometry-pt2dd.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/list.html" afterPath="$PROJECT_DIR$/commands/list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/map-cube.html" afterPath="$PROJECT_DIR$/commands/map-cube.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/map-draw.html" afterPath="$PROJECT_DIR$/commands/map-draw.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/proj-envelope.html" afterPath="$PROJECT_DIR$/commands/proj-envelope.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/proj-wkt.html" afterPath="$PROJECT_DIR$/commands/proj-wkt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-abs.html" afterPath="$PROJECT_DIR$/commands/raster-abs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-add-constant.html" afterPath="$PROJECT_DIR$/commands/raster-add-constant.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-add.html" afterPath="$PROJECT_DIR$/commands/raster-add.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-animatedgif.html" afterPath="$PROJECT_DIR$/commands/raster-animatedgif.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-contour.html" afterPath="$PROJECT_DIR$/commands/raster-contour.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-convolve.html" afterPath="$PROJECT_DIR$/commands/raster-convolve.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-crop-with-geometry.html" afterPath="$PROJECT_DIR$/commands/raster-crop-with-geometry.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-crop-with-layer.html" afterPath="$PROJECT_DIR$/commands/raster-crop-with-layer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-crop.html" afterPath="$PROJECT_DIR$/commands/raster-crop.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-display.html" afterPath="$PROJECT_DIR$/commands/raster-display.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-divide-constant.html" afterPath="$PROJECT_DIR$/commands/raster-divide-constant.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-divide.html" afterPath="$PROJECT_DIR$/commands/raster-divide.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-draw.html" afterPath="$PROJECT_DIR$/commands/raster-draw.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-envelope.html" afterPath="$PROJECT_DIR$/commands/raster-envelope.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-exp.html" afterPath="$PROJECT_DIR$/commands/raster-exp.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-extractfootprint.html" afterPath="$PROJECT_DIR$/commands/raster-extractfootprint.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-get-value.html" afterPath="$PROJECT_DIR$/commands/raster-get-value.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-info.html" afterPath="$PROJECT_DIR$/commands/raster-info.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-invert.html" afterPath="$PROJECT_DIR$/commands/raster-invert.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-log.html" afterPath="$PROJECT_DIR$/commands/raster-log.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-mapalgebra.html" afterPath="$PROJECT_DIR$/commands/raster-mapalgebra.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-multiply-constant.html" afterPath="$PROJECT_DIR$/commands/raster-multiply-constant.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-multiply.html" afterPath="$PROJECT_DIR$/commands/raster-multiply.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-normalize.html" afterPath="$PROJECT_DIR$/commands/raster-normalize.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-point.html" afterPath="$PROJECT_DIR$/commands/raster-point.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-polygon.html" afterPath="$PROJECT_DIR$/commands/raster-polygon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-project.html" afterPath="$PROJECT_DIR$/commands/raster-project.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-projection.html" afterPath="$PROJECT_DIR$/commands/raster-projection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-reclassify.html" afterPath="$PROJECT_DIR$/commands/raster-reclassify.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-resample.html" afterPath="$PROJECT_DIR$/commands/raster-resample.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-scale.html" afterPath="$PROJECT_DIR$/commands/raster-scale.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-size.html" afterPath="$PROJECT_DIR$/commands/raster-size.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-style-channel-selection.html" afterPath="$PROJECT_DIR$/commands/raster-style-channel-selection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-style-colormap.html" afterPath="$PROJECT_DIR$/commands/raster-style-colormap.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-style-contrast-enhancement.html" afterPath="$PROJECT_DIR$/commands/raster-style-contrast-enhancement.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-style-default.html" afterPath="$PROJECT_DIR$/commands/raster-style-default.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-style-shadedrelief.html" afterPath="$PROJECT_DIR$/commands/raster-style-shadedrelief.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-stylize.html" afterPath="$PROJECT_DIR$/commands/raster-stylize.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-subtract-constant.html" afterPath="$PROJECT_DIR$/commands/raster-subtract-constant.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-subtract.html" afterPath="$PROJECT_DIR$/commands/raster-subtract.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-to.html" afterPath="$PROJECT_DIR$/commands/raster-to.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/raster-worldfile.html" afterPath="$PROJECT_DIR$/commands/raster-worldfile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/style-create.html" afterPath="$PROJECT_DIR$/commands/style-create.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/style-css2sld.html" afterPath="$PROJECT_DIR$/commands/style-css2sld.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/style-sld2ysld.html" afterPath="$PROJECT_DIR$/commands/style-sld2ysld.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/style-uniquevaluesfromtext.html" afterPath="$PROJECT_DIR$/commands/style-uniquevaluesfromtext.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/style-ysld2sld.html" afterPath="$PROJECT_DIR$/commands/style-ysld2sld.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/tile-delete.html" afterPath="$PROJECT_DIR$/commands/tile-delete.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/tile-generate.html" afterPath="$PROJECT_DIR$/commands/tile-generate.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/tile-get-bounds.html" afterPath="$PROJECT_DIR$/commands/tile-get-bounds.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/tile-list-tiles.html" afterPath="$PROJECT_DIR$/commands/tile-list-tiles.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/tile-pyramid.html" afterPath="$PROJECT_DIR$/commands/tile-pyramid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/tile-stitch-raster.html" afterPath="$PROJECT_DIR$/commands/tile-stitch-raster.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/tile-stitch-vector.html" afterPath="$PROJECT_DIR$/commands/tile-stitch-vector.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/tile-vector-grid.html" afterPath="$PROJECT_DIR$/commands/tile-vector-grid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-add.html" afterPath="$PROJECT_DIR$/commands/vector-add.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-addareafield.html" afterPath="$PROJECT_DIR$/commands/vector-addareafield.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-addfields.html" afterPath="$PROJECT_DIR$/commands/vector-addfields.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-addidfield.html" afterPath="$PROJECT_DIR$/commands/vector-addidfield.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-addlengthfield.html" afterPath="$PROJECT_DIR$/commands/vector-addlengthfield.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-addxyfields.html" afterPath="$PROJECT_DIR$/commands/vector-addxyfields.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-append.html" afterPath="$PROJECT_DIR$/commands/vector-append.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-arc.html" afterPath="$PROJECT_DIR$/commands/vector-arc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-arcpolygon.html" afterPath="$PROJECT_DIR$/commands/vector-arcpolygon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-barnessurface.html" afterPath="$PROJECT_DIR$/commands/vector-barnessurface.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-buffer.html" afterPath="$PROJECT_DIR$/commands/vector-buffer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-centroid.html" afterPath="$PROJECT_DIR$/commands/vector-centroid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-clip.html" afterPath="$PROJECT_DIR$/commands/vector-clip.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-compareschemas.html" afterPath="$PROJECT_DIR$/commands/vector-compareschemas.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-convexhull.html" afterPath="$PROJECT_DIR$/commands/vector-convexhull.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-convexhulls.html" afterPath="$PROJECT_DIR$/commands/vector-convexhulls.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-coordinates.html" afterPath="$PROJECT_DIR$/commands/vector-coordinates.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-copy.html" afterPath="$PROJECT_DIR$/commands/vector-copy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-count-featuresInfeature.html" afterPath="$PROJECT_DIR$/commands/vector-count-featuresInfeature.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-count.html" afterPath="$PROJECT_DIR$/commands/vector-count.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-create.html" afterPath="$PROJECT_DIR$/commands/vector-create.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-database-index-create.html" afterPath="$PROJECT_DIR$/commands/vector-database-index-create.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-database-index-delete.html" afterPath="$PROJECT_DIR$/commands/vector-database-index-delete.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-database-index-list.html" afterPath="$PROJECT_DIR$/commands/vector-database-index-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-database-remove.html" afterPath="$PROJECT_DIR$/commands/vector-database-remove.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-database-select.html" afterPath="$PROJECT_DIR$/commands/vector-database-select.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-database-sql.html" afterPath="$PROJECT_DIR$/commands/vector-database-sql.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-datastorelist.html" afterPath="$PROJECT_DIR$/commands/vector-datastorelist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-datastoreparams.html" afterPath="$PROJECT_DIR$/commands/vector-datastoreparams.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-defaultstyle.html" afterPath="$PROJECT_DIR$/commands/vector-defaultstyle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-delaunay.html" afterPath="$PROJECT_DIR$/commands/vector-delaunay.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-delete.html" afterPath="$PROJECT_DIR$/commands/vector-delete.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-densify.html" afterPath="$PROJECT_DIR$/commands/vector-densify.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-display.html" afterPath="$PROJECT_DIR$/commands/vector-display.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-dissolvebyfield.html" afterPath="$PROJECT_DIR$/commands/vector-dissolvebyfield.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-dissolveintersecting.html" afterPath="$PROJECT_DIR$/commands/vector-dissolveintersecting.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-draw.html" afterPath="$PROJECT_DIR$/commands/vector-draw.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-dump-shapefiles.html" afterPath="$PROJECT_DIR$/commands/vector-dump-shapefiles.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-ellipse.html" afterPath="$PROJECT_DIR$/commands/vector-ellipse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-envelope.html" afterPath="$PROJECT_DIR$/commands/vector-envelope.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-envelopes.html" afterPath="$PROJECT_DIR$/commands/vector-envelopes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-erase.html" afterPath="$PROJECT_DIR$/commands/vector-erase.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-filter.html" afterPath="$PROJECT_DIR$/commands/vector-filter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-from.html" afterPath="$PROJECT_DIR$/commands/vector-from.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-geomr.html" afterPath="$PROJECT_DIR$/commands/vector-geomr.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-geomw.html" afterPath="$PROJECT_DIR$/commands/vector-geomw.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-gradientstyle.html" afterPath="$PROJECT_DIR$/commands/vector-gradientstyle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-graticule-hexagon.html" afterPath="$PROJECT_DIR$/commands/vector-graticule-hexagon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-graticule-line.html" afterPath="$PROJECT_DIR$/commands/vector-graticule-line.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-graticule-rectangle.html" afterPath="$PROJECT_DIR$/commands/vector-graticule-rectangle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-graticule-square.html" afterPath="$PROJECT_DIR$/commands/vector-graticule-square.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-grid.html" afterPath="$PROJECT_DIR$/commands/vector-grid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-heatmap.html" afterPath="$PROJECT_DIR$/commands/vector-heatmap.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-identity.html" afterPath="$PROJECT_DIR$/commands/vector-identity.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-info.html" afterPath="$PROJECT_DIR$/commands/vector-info.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-interiorpoint.html" afterPath="$PROJECT_DIR$/commands/vector-interiorpoint.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-intersection.html" afterPath="$PROJECT_DIR$/commands/vector-intersection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-join-attribute.html" afterPath="$PROJECT_DIR$/commands/vector-join-attribute.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-join-spatial.html" afterPath="$PROJECT_DIR$/commands/vector-join-spatial.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-list-layers.html" afterPath="$PROJECT_DIR$/commands/vector-list-layers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-merge.html" afterPath="$PROJECT_DIR$/commands/vector-merge.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-mincircle.html" afterPath="$PROJECT_DIR$/commands/vector-mincircle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-mincircles.html" afterPath="$PROJECT_DIR$/commands/vector-mincircles.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-minrect.html" afterPath="$PROJECT_DIR$/commands/vector-minrect.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-minrects.html" afterPath="$PROJECT_DIR$/commands/vector-minrects.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-multiple2single.html" afterPath="$PROJECT_DIR$/commands/vector-multiple2single.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-octagonalenvelope.html" afterPath="$PROJECT_DIR$/commands/vector-octagonalenvelope.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-octagonalenvelopes.html" afterPath="$PROJECT_DIR$/commands/vector-octagonalenvelopes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-page.html" afterPath="$PROJECT_DIR$/commands/vector-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-points2lines.html" afterPath="$PROJECT_DIR$/commands/vector-points2lines.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-points2polygons.html" afterPath="$PROJECT_DIR$/commands/vector-points2polygons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-pointstacker.html" afterPath="$PROJECT_DIR$/commands/vector-pointstacker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-project.html" afterPath="$PROJECT_DIR$/commands/vector-project.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-randompoints.html" afterPath="$PROJECT_DIR$/commands/vector-randompoints.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-raster-values.html" afterPath="$PROJECT_DIR$/commands/vector-raster-values.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-raster.html" afterPath="$PROJECT_DIR$/commands/vector-raster.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-rectangle.html" afterPath="$PROJECT_DIR$/commands/vector-rectangle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-reflect.html" afterPath="$PROJECT_DIR$/commands/vector-reflect.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-remove-layer.html" afterPath="$PROJECT_DIR$/commands/vector-remove-layer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-removefields.html" afterPath="$PROJECT_DIR$/commands/vector-removefields.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-rotate.html" afterPath="$PROJECT_DIR$/commands/vector-rotate.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-scale.html" afterPath="$PROJECT_DIR$/commands/vector-scale.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-schema.html" afterPath="$PROJECT_DIR$/commands/vector-schema.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-shear.html" afterPath="$PROJECT_DIR$/commands/vector-shear.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-simplify.html" afterPath="$PROJECT_DIR$/commands/vector-simplify.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-sinestar.html" afterPath="$PROJECT_DIR$/commands/vector-sinestar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-single2multiple.html" afterPath="$PROJECT_DIR$/commands/vector-single2multiple.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-smooth.html" afterPath="$PROJECT_DIR$/commands/vector-smooth.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-snap-points2lines.html" afterPath="$PROJECT_DIR$/commands/vector-snap-points2lines.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-sort.html" afterPath="$PROJECT_DIR$/commands/vector-sort.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-splitbyfield.html" afterPath="$PROJECT_DIR$/commands/vector-splitbyfield.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-splitbylayer.html" afterPath="$PROJECT_DIR$/commands/vector-splitbylayer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-squircle.html" afterPath="$PROJECT_DIR$/commands/vector-squircle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-subset.html" afterPath="$PROJECT_DIR$/commands/vector-subset.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-supercircle.html" afterPath="$PROJECT_DIR$/commands/vector-supercircle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-symdifference.html" afterPath="$PROJECT_DIR$/commands/vector-symdifference.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-to.html" afterPath="$PROJECT_DIR$/commands/vector-to.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-transform.html" afterPath="$PROJECT_DIR$/commands/vector-transform.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-translate.html" afterPath="$PROJECT_DIR$/commands/vector-translate.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-union.html" afterPath="$PROJECT_DIR$/commands/vector-union.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-uniquevalues.html" afterPath="$PROJECT_DIR$/commands/vector-uniquevalues.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-uniquevaluesstyle.html" afterPath="$PROJECT_DIR$/commands/vector-uniquevaluesstyle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-update.html" afterPath="$PROJECT_DIR$/commands/vector-update.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-updatefield.html" afterPath="$PROJECT_DIR$/commands/vector-updatefield.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-validity.html" afterPath="$PROJECT_DIR$/commands/vector-validity.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/vector-voronoi.html" afterPath="$PROJECT_DIR$/commands/vector-voronoi.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasources.html" afterPath="$PROJECT_DIR$/datasources.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples.html" afterPath="$PROJECT_DIR$/examples.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/map_cube.html" afterPath="$PROJECT_DIR$/examples/map_cube.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/raster_reclassify.html" afterPath="$PROJECT_DIR$/examples/raster_reclassify.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/tile_geopackage_geodetic.html" afterPath="$PROJECT_DIR$/examples/tile_geopackage_geodetic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/tile_mbtiles.html" afterPath="$PROJECT_DIR$/examples/tile_mbtiles.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/vector_buffer.html" afterPath="$PROJECT_DIR$/examples/vector_buffer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/vector_centroid.html" afterPath="$PROJECT_DIR$/examples/vector_centroid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/vector_convexhull.html" afterPath="$PROJECT_DIR$/examples/vector_convexhull.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/vector_random.html" afterPath="$PROJECT_DIR$/examples/vector_random.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/vector_voronoi.html" afterPath="$PROJECT_DIR$/examples/vector_voronoi.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/genindex.html" afterPath="$PROJECT_DIR$/genindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/help.html" afterPath="$PROJECT_DIR$/help.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/keyfeatures.html" afterPath="$PROJECT_DIR$/keyfeatures.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/search.html" afterPath="$PROJECT_DIR$/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searchindex.js" afterPath="$PROJECT_DIR$/searchindex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/examples.rst" afterPath="$PROJECT_DIR$/source/examples.rst" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,28 +222,18 @@
       <file leaf-file-name="examples.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/examples.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="25" lean-forward="false" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+            <state relative-caret-position="333">
+              <caret line="41" column="29" lean-forward="false" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map_cube.rst" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/examples/map_cube.rst">
+      <file leaf-file-name="raster_vectorize.rst" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/examples/raster_vectorize.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tile_geopackage_geodetic.rst" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/examples/tile_geopackage_geodetic.rst">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            <state relative-caret-position="285">
+              <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -67,8 +261,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/source/examples/map_cube.rst" />
-        <option value="$PROJECT_DIR$/source/examples.rst" />
         <option value="$PROJECT_DIR$/source/examples/tile_geopackage_geodetic.rst" />
+        <option value="$PROJECT_DIR$/source/examples/raster_vectorize.rst" />
+        <option value="$PROJECT_DIR$/source/examples.rst" />
       </list>
     </option>
   </component>
@@ -97,7 +292,6 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -110,8 +304,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="geoc-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="geoc-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pdf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -555,25 +764,25 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25751072" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20600858" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -585,6 +794,30 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/source/examples.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="25" lean-forward="false" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/map_cube.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/tile_geopackage_geodetic.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/examples.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
@@ -613,6 +846,16 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/raster_vectorize.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/raster_reclassify.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/examples/map_cube.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -623,8 +866,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/examples.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="25" lean-forward="false" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+        <state relative-caret-position="333">
+          <caret line="41" column="29" lean-forward="false" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -632,7 +875,15 @@
     <entry file="file://$PROJECT_DIR$/source/examples/tile_geopackage_geodetic.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <caret line="6" column="17" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/raster_vectorize.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
           <folding />
         </state>
       </provider>

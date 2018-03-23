@@ -5,7 +5,7 @@
     <groupId>org.geocommands</groupId>
     <artifactId>geocommands</artifactId>
     <packaging>jar</packaging>
-    <version>0.9-SNAPSHOT</version>
+    <version>0.9.0</version>
     <name>GeoCommands</name>
     <description>A collection of geospatial command line applications</description>
     <repositories>
@@ -32,17 +32,12 @@
             <name>Unidata UCAR Repository</name>
             <url>https://artifacts.unidata.ucar.edu/content/repositories/unidata/</url>
         </repository>
-        <repository>
-            <id>ecc</id>
-            <name>Electronic Chart Centre Repository</name>
-            <url>https://github.com/ElectronicChartCentre/ecc-mvn-repo/raw/master/releases</url>
-        </repository>
     </repositories>
     <dependencies>
         <dependency>
             <groupId>org.geoscript</groupId>
             <artifactId>geoscript-groovy</artifactId>
-            <version>1.11-SNAPSHOT</version>
+            <version>1.11.0</version>
         </dependency>
         <dependency>
             <groupId>args4j</groupId>

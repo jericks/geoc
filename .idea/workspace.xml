@@ -2,7 +2,288 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0202bec-b6b8-44da-9970-2a16f31aec42" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/_sources/commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_sources/commands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.html" beforeDir="false" afterPath="$PROJECT_DIR$/build.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/filter-cql2xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/filter-cql2xml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/geometry-convert.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/geometry-convert.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/geometry-dd2pt.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/geometry-dd2pt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/geometry-geohash-bounds.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/geometry-geohash-bounds.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/geometry-geohash-decode.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/geometry-geohash-decode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/geometry-geohash-encode.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/geometry-geohash-encode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/geometry-geohash-neighbors.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/geometry-geohash-neighbors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/geometry-greatcirclearc.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/geometry-greatcirclearc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/geometry-offset.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/geometry-offset.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/geometry-orthodromicdistance.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/geometry-orthodromicdistance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/geometry-plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/geometry-plot.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/geometry-pt2dd.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/geometry-pt2dd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/map-cube.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/map-cube.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/map-draw.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/map-draw.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/proj-envelope.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/proj-envelope.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/proj-wkt.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/proj-wkt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-abs.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-abs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-add-constant.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-add-constant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-animatedgif.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-animatedgif.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-contour.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-contour.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-convolve.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-convolve.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-crop-with-geometry.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-crop-with-geometry.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-crop-with-layer.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-crop-with-layer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-crop.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-crop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-display.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-display.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-divide-constant.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-divide-constant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-divide.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-divide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-draw.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-draw.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-envelope.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-envelope.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-exp.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-exp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-extractfootprint.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-extractfootprint.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-get-value.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-get-value.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-invert.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-invert.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-log.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-mapalgebra.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-mapalgebra.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-multiply-constant.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-multiply-constant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-multiply.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-multiply.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-normalize.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-normalize.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-point.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-point.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-polygon.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-polygon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-project.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-project.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-projection.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-projection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-reclassify.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-reclassify.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-resample.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-resample.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-scale.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-scale.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-size.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-size.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-style-channel-selection.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-style-channel-selection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-style-colormap.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-style-colormap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-style-contrast-enhancement.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-style-contrast-enhancement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-style-default.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-style-default.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-style-shadedrelief.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-style-shadedrelief.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-stylize.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-stylize.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-subtract-constant.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-subtract-constant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-subtract.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-subtract.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-to.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-to.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/raster-worldfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/raster-worldfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/style-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/style-create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/style-css2sld.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/style-css2sld.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/style-sld2ysld.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/style-sld2ysld.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/style-uniquevaluesfromtext.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/style-uniquevaluesfromtext.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/style-ysld2sld.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/style-ysld2sld.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/tile-delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/tile-delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/tile-generate.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/tile-generate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/tile-get-bounds.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/tile-get-bounds.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/tile-list-tiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/tile-list-tiles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/tile-pyramid.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/tile-pyramid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/tile-stitch-raster.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/tile-stitch-raster.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/tile-stitch-vector.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/tile-stitch-vector.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/tile-vector-grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/tile-vector-grid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-addareafield.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-addareafield.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-addfields.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-addfields.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-addidfield.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-addidfield.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-addlengthfield.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-addlengthfield.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-addxyfields.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-addxyfields.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-append.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-append.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-arc.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-arc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-arcpolygon.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-arcpolygon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-barnessurface.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-barnessurface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-buffer.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-buffer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-centroid.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-centroid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-clip.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-clip.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-compareschemas.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-compareschemas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-convexhull.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-convexhull.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-convexhulls.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-convexhulls.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-coordinates.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-coordinates.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-copy.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-copy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-count-featuresInfeature.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-count-featuresInfeature.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-count.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-count.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-database-index-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-database-index-create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-database-index-delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-database-index-delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-database-index-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-database-index-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-database-remove.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-database-remove.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-database-select.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-database-select.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-database-sql.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-database-sql.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-datastorelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-datastorelist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-datastoreparams.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-datastoreparams.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-defaultstyle.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-defaultstyle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-delaunay.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-delaunay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-densify.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-densify.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-display.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-display.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-dissolvebyfield.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-dissolvebyfield.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-dissolveintersecting.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-dissolveintersecting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-draw.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-draw.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-dump-shapefiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-dump-shapefiles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-ellipse.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-ellipse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-envelope.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-envelope.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-envelopes.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-envelopes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-erase.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-erase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-filter.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-filter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-from.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-from.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-geomr.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-geomr.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-geomw.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-geomw.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-gradientstyle.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-gradientstyle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-graticule-hexagon.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-graticule-hexagon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-graticule-line.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-graticule-line.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-graticule-rectangle.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-graticule-rectangle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-graticule-square.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-graticule-square.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-grid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-heatmap.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-heatmap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-identity.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-identity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-interiorpoint.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-interiorpoint.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-intersection.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-intersection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-join-attribute.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-join-attribute.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-join-spatial.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-join-spatial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-list-layers.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-list-layers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-mincircle.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-mincircle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-mincircles.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-mincircles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-minrect.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-minrect.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-minrects.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-minrects.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-multiple2single.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-multiple2single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-octagonalenvelope.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-octagonalenvelope.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-octagonalenvelopes.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-octagonalenvelopes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-points2lines.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-points2lines.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-points2polygons.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-points2polygons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-pointstacker.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-pointstacker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-project.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-project.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-randompoints.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-randompoints.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-raster-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-raster-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-raster.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-raster.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-rectangle.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-rectangle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-reflect.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-reflect.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-remove-layer.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-remove-layer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-removefields.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-removefields.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-rotate.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-rotate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-scale.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-scale.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-schema.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-schema.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-shear.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-shear.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-simplify.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-simplify.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-sinestar.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-sinestar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-single2multiple.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-single2multiple.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-smooth.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-smooth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-snap-points2lines.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-snap-points2lines.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-sort.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-sort.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-splitbyfield.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-splitbyfield.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-splitbylayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-splitbylayer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-squircle.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-squircle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-subset.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-subset.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-supercircle.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-supercircle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-symdifference.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-symdifference.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-to.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-to.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-transform.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-transform.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-translate.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-translate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-union.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-union.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-uniquevalues.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-uniquevalues.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-uniquevaluesstyle.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-uniquevaluesstyle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-update.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-updatefield.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-updatefield.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-validity.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-validity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/vector-voronoi.html" beforeDir="false" afterPath="$PROJECT_DIR$/commands/vector-voronoi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasources.html" beforeDir="false" afterPath="$PROJECT_DIR$/datasources.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/geometry-dd2pt.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/geometry-dd2pt.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/geometry-geohash-neighbors.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/geometry-geohash-neighbors.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/geometry-greatcirclearc.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/geometry-greatcirclearc.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/geometry-orthodromicdistance.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/geometry-orthodromicdistance.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/geometry-plot.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/geometry-plot.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/geometry-pt2dd.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/geometry-pt2dd.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/list.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/list.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/map-cube.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/map-cube.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/map-draw.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/map-draw.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/proj-envelope.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/proj-envelope.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/proj-wkt.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/proj-wkt.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-abs.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-abs.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-add.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-add.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-convolve.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-convolve.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-crop-with-geometry.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-crop-with-geometry.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-crop-with-layer.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-crop-with-layer.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-crop.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-crop.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-display.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-display.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-divide.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-divide.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-envelope.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-envelope.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-exp.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-exp.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-extractfootprint.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-extractfootprint.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-get-value.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-get-value.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-info.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-info.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-invert.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-invert.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-multiply-constant.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-multiply-constant.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-multiply.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-multiply.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-normalize.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-normalize.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-point.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-point.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-polygon.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-polygon.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-project.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-project.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-resample.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-resample.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-scale.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-scale.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-size.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-size.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-style-channel-selection.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-style-channel-selection.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-style-colormap.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-style-colormap.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/raster-style-contrast-enhancement.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/raster-style-contrast-enhancement.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/style-ysld2sld.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/style-ysld2sld.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/tile-delete.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/tile-delete.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-convexhull.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-convexhull.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-convexhulls.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-convexhulls.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-database-index-delete.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-database-index-delete.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-database-index-list.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-database-index-list.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-datastorelist.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-datastorelist.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-defaultstyle.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-defaultstyle.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-densify.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-densify.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-display.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-display.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-envelopes.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-envelopes.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-erase.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-erase.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-filter.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-filter.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-geomr.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-geomr.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-geomw.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-geomw.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-graticule-rectangle.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-graticule-rectangle.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-graticule-square.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-graticule-square.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-heatmap.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-heatmap.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-identity.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-identity.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-info.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-info.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-mincircles.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-mincircles.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-minrects.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-minrects.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-points2lines.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-points2lines.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-points2polygons.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-points2polygons.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-pointstacker.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-pointstacker.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-randompoints.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-randompoints.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-raster.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-raster.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-reflect.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-reflect.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-removefields.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-removefields.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-rotate.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-rotate.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-scale.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-scale.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-schema.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-schema.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-single2multiple.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-single2multiple.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-smooth.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-smooth.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-snap-points2lines.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-snap-points2lines.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-squircle.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-squircle.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-subset.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-subset.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-translate.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-translate.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-union.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-union.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-uniquevaluesstyle.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-uniquevaluesstyle.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/commands/vector-validity.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/commands/vector-validity.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/map_cube.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/map_cube.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/raster_reclassify.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/raster_reclassify.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/raster_vectorize.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/raster_vectorize.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/tile_geopackage_geodetic.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/tile_geopackage_geodetic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/tile_mbtiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/tile_mbtiles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/vector_buffer.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/vector_buffer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/vector_centroid.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/vector_centroid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/vector_convexhull.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/vector_convexhull.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/vector_delaunay.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/vector_delaunay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/vector_random.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/vector_random.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/vector_voronoi.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/vector_voronoi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help.html" beforeDir="false" afterPath="$PROJECT_DIR$/help.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyfeatures.html" beforeDir="false" afterPath="$PROJECT_DIR$/keyfeatures.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/commands.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/commands.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/examples.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/examples.rst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,25 +295,31 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="examples.rst" pinned="false" current-in-tab="false">
+      <file leaf-file-name="examples.rst" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/examples.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="29" lean-forward="false" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="261">
+              <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="raster_vectorize.rst" pinned="false" current-in-tab="true">
+      <file leaf-file-name="raster_vectorize.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/examples/raster_vectorize.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="120">
+              <caret line="8" column="22" selection-end-line="19" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vector_intersects.rst" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/examples/vector_intersects.rst">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -61,6 +348,7 @@
         <option value="$PROJECT_DIR$/source/examples/map_cube.rst" />
         <option value="$PROJECT_DIR$/source/examples/tile_geopackage_geodetic.rst" />
         <option value="$PROJECT_DIR$/source/examples/raster_vectorize.rst" />
+        <option value="$PROJECT_DIR$/source/examples/vector_intersects.rst" />
         <option value="$PROJECT_DIR$/source/examples.rst" />
       </list>
     </option>
@@ -74,69 +362,35 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geoc-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geoc-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geoc-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geoc-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geoc-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geoc-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="examples" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="geoc-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="geoc-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="geoc-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="geoc-web" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="geoc-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="geoc-web" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -156,13 +410,62 @@
       <recent name="$PROJECT_DIR$/source/examples" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-      <method />
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
@@ -219,29 +522,6 @@
       </Profilers>
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-      <method />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -256,27 +536,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -384,34 +643,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -422,6 +653,13 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="geoc-web" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Attests">
@@ -554,8 +792,8 @@
       </map>
     </option>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -568,158 +806,142 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="819" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="22" width="1440" height="819" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21173105" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Tool Output" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32904148" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21459228" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="7" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Properties" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Nl-Palette" order="2" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/source/examples.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
-          <caret line="41" column="29" lean-forward="false" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/examples/raster_vectorize.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/examples.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/examples.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="25" lean-forward="false" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/examples/map_cube.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/examples/tile_geopackage_geodetic.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/examples.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="21" lean-forward="false" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/examples/map_cube.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/vector_buffer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/examples/map_cube.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/examples/raster_vectorize.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/examples/raster_reclassify.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/examples/map_cube.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/examples.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="29" lean-forward="false" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/examples/tile_geopackage_geodetic.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="39" />
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/examples/raster_vectorize.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding />
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/raster_vectorize.rst">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples.rst">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/map_cube.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/tile_geopackage_geodetic.rst">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/map_cube.rst">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/vector_buffer.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/map_cube.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/raster_vectorize.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/raster_reclassify.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/map_cube.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/tile_geopackage_geodetic.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="17" selection-end-line="20" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/raster_vectorize.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="22" selection-end-line="19" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples/vector_intersects.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/examples.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
         </state>
       </provider>
     </entry>

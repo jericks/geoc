@@ -83,6 +83,7 @@ Commands
     commands/vector-clip.rst
     commands/vector-union.rst
     commands/vector-intersection.rst
+    commands/vector-intersects.rst
     commands/vector-erase.rst
     commands/vector-identity.rst
     commands/vector-update.rst

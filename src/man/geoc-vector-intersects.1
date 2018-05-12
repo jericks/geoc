@@ -1,0 +1,24 @@
+.TH "geoc-vector-intersects" "1" "12 May 2018" "version 0.1"
+.SH NAME
+geoc vector intersects
+.SH DESCRIPTION
+Only include Features from the Input Layer that Intersect with Features from the Other Layer in the Output Layer.
+.SH USAGE
+geoc vector intersects -i points.shp -k polygons.shp -o pointsIntersectingPolygons.shp
+.SH OPTIONS
+-k --other-workspace: The other workspace
+.PP
+-y --other-layer: The other layer
+.PP
+-o --output-workspace: The output workspace
+.PP
+-r --output-layer: The output layer
+.PP
+-i --input-workspace: The input workspace
+.PP
+-l --input-layer: The input layer
+.PP
+--help : Print the help message
+.PP
+--web-help : Open help in a browser
+.PP

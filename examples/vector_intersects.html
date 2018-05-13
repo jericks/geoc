@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Filter intersecting features &mdash; geoc 0.8.0 documentation</title>
+  <title>Select Features that intersect other Features &mdash; geoc 0.8.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
     <link rel="top" title="geoc 0.8.0 documentation" href="../index.html"/>
         <link rel="up" title="Examples" href="../examples.html"/>
-        <link rel="next" title="Create a Map Cube" href="map_cube.html"/>
+        <link rel="next" title="Select Features contained in other Features" href="vector_contains.html"/>
         <link rel="prev" title="Create a Delaunay Diagram from a Vector Layer" href="vector_delaunay.html"/> 
 
   
@@ -74,7 +74,8 @@
 <li class="toctree-l2"><a class="reference internal" href="vector_random.html">Create a Vector Layer of Random Points</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector_voronoi.html">Create a Voronoi Diagram from a Vector Layer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector_delaunay.html">Create a Delaunay Diagram from a Vector Layer</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Filter intersecting features</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Select Features that intersect other Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector_contains.html">Select Features contained in other Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="map_cube.html">Create a Map Cube</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tile_geopackage_geodetic.html">Generate Geodetic Tiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tile_mbtiles.html">Generate Web Mercator Tiles in MBTiles</a></li>
@@ -165,6 +166,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../commands/vector-union.html">vector union</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/vector-intersection.html">vector intersection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/vector-intersects.html">vector intersects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/vector-contains.html">vector contains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/vector-erase.html">vector erase</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/vector-identity.html">vector identity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/vector-update.html">vector update</a></li>
@@ -291,7 +293,7 @@
       
           <li><a href="../examples.html">Examples</a> &raquo;</li>
       
-    <li>Filter intersecting features</li>
+    <li>Select Features that intersect other Features</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../_sources/examples/vector_intersects.txt" rel="nofollow"> View page source</a>
@@ -302,22 +304,22 @@
 </div>
           <div role="main">
             
-  <div class="section" id="filter-intersecting-features">
-<h1>Filter intersecting features<a class="headerlink" href="#filter-intersecting-features" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="select-features-that-intersect-other-features">
+<h1>Select Features that intersect other Features<a class="headerlink" href="#select-features-that-intersect-other-features" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c">#!/bin/bash</span>
-geoc vector randompoints -g -180,-90,180,90 -n <span class="m">1000</span> -o points.shp
+geoc vector randompoints -g -180,-90,180,90 -n <span class="m">100</span> <span class="p">|</span> geoc vector buffer -d <span class="m">4</span> -o polys1.shp
 
-geoc vector randompoints -g -180,-90,180,90 -n <span class="m">10</span> <span class="p">|</span> geoc vector buffer -d <span class="m">8</span> -o polys.shp
+geoc vector randompoints -g -180,-90,180,90 -n <span class="m">10</span> <span class="p">|</span> geoc vector buffer -d <span class="m">8</span> -o polys2.shp
 
-geoc vector intersects -i points.shp -k polys.shp &gt; pointsInPolys.csv
+geoc vector intersects -i polys1.shp -k polys2.shp &gt; intersectingPolys.csv
 
-cat pointsInPolys.csv <span class="p">|</span> geoc vector defaultstyle --color red -o 0.75 &gt; pointsInPolys.sld
+cat intersectingPolys.csv <span class="p">|</span> geoc vector defaultstyle --color red -o 0.75 &gt; intersectingPolys.sld
 
 geoc map draw -f vector_intersects.png -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span> <span class="se">\</span>
     -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=polys.shp&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=points.shp&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=pointsInPolys.csv style=pointsInPolys.sld&quot;</span>
+    -l <span class="s2">&quot;layertype=layer file=polys1.shp&quot;</span> <span class="se">\</span>
+    -l <span class="s2">&quot;layertype=layer file=polys2.shp&quot;</span> <span class="se">\</span>
+    -l <span class="s2">&quot;layertype=layer file=intersectingPolys.csv style=intersectingPolys.sld&quot;</span>
 </pre></div>
 </div>
 <img alt="../_images/vector_intersects.png" src="../_images/vector_intersects.png" />
@@ -329,7 +331,7 @@ geoc map draw -f vector_intersects.png -l <span class="s2">&quot;layertype=layer
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="map_cube.html" class="btn btn-neutral float-right" title="Create a Map Cube"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="vector_contains.html" class="btn btn-neutral float-right" title="Select Features contained in other Features"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="vector_delaunay.html" class="btn btn-neutral" title="Create a Delaunay Diagram from a Vector Layer"><span class="fa fa-arrow-circle-left"></span> Previous</a>

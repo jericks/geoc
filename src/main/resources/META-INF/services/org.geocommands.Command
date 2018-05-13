@@ -131,6 +131,7 @@ org.geocommands.vector.GraticuleRectangleCommand
 org.geocommands.vector.GraticuleLineCommand
 org.geocommands.vector.RemoveLayerCommand
 org.geocommands.vector.IntersectsCommand
+org.geocommands.vector.ContainsCommand
 
 org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand

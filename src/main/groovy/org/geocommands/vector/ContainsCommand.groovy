@@ -9,25 +9,25 @@ import geoscript.layer.Layer
 import groovy.transform.CompileStatic
 
 @CompileStatic
-class IntersectsCommand extends LayerInOtherOutCommand<IntersectsOptions> {
+class ContainsCommand extends LayerInOtherOutCommand<ContainsOptions> {
 
     @Override
     String getName() {
-        "vector intersects"
+        "vector contains"
     }
 
     @Override
     String getDescription() {
-        "Only include Features from the Input Layer that Intersect with Features from the Other Layer in the Output Layer."
+        "Only include Features from the Input Layer that are contained by Features from the Other Layer in the Output Layer."
     }
 
     @Override
-    IntersectsOptions getOptions() {
-        new IntersectsOptions()
+    ContainsOptions getOptions() {
+        new ContainsOptions()
     }
 
     @Override
-    void processLayers(Layer inLayer, Layer otherLayer, Layer outLayer, IntersectsOptions options, Reader reader, Writer writer) throws Exception {
+    void processLayers(Layer inLayer, Layer otherLayer, Layer outLayer, ContainsOptions options, Reader reader, Writer writer) throws Exception {
 
         // Put all of the Features in the Clip Layer in a spatial index
         SpatialIndex index = new STRtree()
@@ -41,7 +41,7 @@ class IntersectsCommand extends LayerInOtherOutCommand<IntersectsOptions> {
                 // See if the Feature intersects with the Bounds of any Feature in the spatial index
                 index.query(inputFeature.bounds).each { def otherFeature ->
                     // Make sure it actually intersects the Geometry of a Feature in the spatial index
-                    if (inputFeature.geom.intersects((otherFeature as Feature).geom)) {
+                    if (((otherFeature as Feature).geom).contains(inputFeature.geom)) {
                         w.add(outLayer.schema.feature(inputFeature.attributes))
                     }
                 }
@@ -50,10 +50,10 @@ class IntersectsCommand extends LayerInOtherOutCommand<IntersectsOptions> {
     }
 
     @Override
-    protected Schema createOutputSchema(Layer inputLayer, Layer otherLayer, IntersectsOptions options) {
-        new Schema(getOutputLayerName(inputLayer, otherLayer, "intersects", options), inputLayer.schema.fields)
+    protected Schema createOutputSchema(Layer inputLayer, Layer otherLayer, ContainsOptions options) {
+        new Schema(getOutputLayerName(inputLayer, otherLayer, "contains", options), inputLayer.schema.fields)
     }
 
-    static class IntersectsOptions extends LayerInOtherOutOptions {
+    static class ContainsOptions extends LayerInOtherOutOptions {
     }
 }

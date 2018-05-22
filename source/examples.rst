@@ -33,6 +33,7 @@ Create 100 random points in a GeoPackage database, get's metadata of that layer,
     examples/vector_buffer.rst
     examples/vector_centroid.rst
     examples/vector_convexhull.rst
+    examples/vector_envelope.rst
     examples/vector_random.rst
     examples/vector_voronoi.rst
     examples/vector_delaunay.rst

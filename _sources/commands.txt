@@ -85,6 +85,7 @@ Commands
     commands/vector-intersection.rst
     commands/vector-intersects.rst
     commands/vector-contains.rst
+    commands/vector-distancewithin.rst
     commands/vector-erase.rst
     commands/vector-identity.rst
     commands/vector-update.rst

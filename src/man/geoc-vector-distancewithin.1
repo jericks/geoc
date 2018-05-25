@@ -1,0 +1,26 @@
+.TH "geoc-vector-distancewithin" "1" "24 May 2018" "version 0.1"
+.SH NAME
+geoc vector distancewithin
+.SH DESCRIPTION
+Only include Features from the Input Layer that are within a given distance of Features from the Other Layer in the Output Layer.
+.SH USAGE
+geoc vector distancewithin -i points.shp -k polygons.shp -o pointsInPolygons.shp -d 4.56
+.SH OPTIONS
+-d --distance: The distance
+.PP
+-k --other-workspace: The other workspace
+.PP
+-y --other-layer: The other layer
+.PP
+-o --output-workspace: The output workspace
+.PP
+-r --output-layer: The output layer
+.PP
+-i --input-workspace: The input workspace
+.PP
+-l --input-layer: The input layer
+.PP
+--help : Print the help message
+.PP
+--web-help : Open help in a browser
+.PP

@@ -18,7 +18,7 @@ abstract class ShapeCommand<T extends ShapeOptions> extends LayerInOutCommand<T>
 
     protected double getAngle(T options, double angle) {
         if (options.unit.equalsIgnoreCase("degrees") || options.unit.equalsIgnoreCase("d")) {
-            com.vividsolutions.jts.algorithm.Angle.toRadians(angle)
+            org.locationtech.jts.algorithm.Angle.toRadians(angle)
         } else {
             angle
         }

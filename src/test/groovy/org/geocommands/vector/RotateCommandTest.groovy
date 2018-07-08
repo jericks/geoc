@@ -25,7 +25,7 @@ class RotateCommandTest extends BaseTest {
         RotateOptions options = new RotateOptions(
                 inputWorkspace: inFile.absolutePath,
                 outputWorkspace: outFile,
-                theta: com.vividsolutions.jts.algorithm.Angle.toRadians(45)
+                theta: org.locationtech.jts.algorithm.Angle.toRadians(45)
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Layer inLayer = new Property(inFile)
@@ -36,7 +36,7 @@ class RotateCommandTest extends BaseTest {
         (0..<inGeoms.size()).each { i ->
             Geometry inGeom = inGeoms[i]
             Geometry outGeom = outGeoms[i]
-            assertEquals inGeom.rotate(com.vividsolutions.jts.algorithm.Angle.toRadians(45)), outGeom
+            assertEquals inGeom.rotate(org.locationtech.jts.algorithm.Angle.toRadians(45)), outGeom
         }
     }
 
@@ -48,7 +48,7 @@ class RotateCommandTest extends BaseTest {
         RotateOptions options = new RotateOptions(
                 inputWorkspace: inFile.absolutePath,
                 outputWorkspace: outFile,
-                theta: com.vividsolutions.jts.algorithm.Angle.toRadians(45),
+                theta: org.locationtech.jts.algorithm.Angle.toRadians(45),
                 x: "getX(centroid(geom))",
                 y: "getY(centroid(geom))"
         )
@@ -61,7 +61,7 @@ class RotateCommandTest extends BaseTest {
         (0..<inGeoms.size()).each { i ->
             Geometry inGeom = inGeoms[i]
             Geometry outGeom = outGeoms[i]
-            assertEquals inGeom.rotate(com.vividsolutions.jts.algorithm.Angle.toRadians(45),
+            assertEquals inGeom.rotate(org.locationtech.jts.algorithm.Angle.toRadians(45),
                     inGeom.centroid.x, inGeom.centroid.y), outGeom
         }
     }
@@ -74,8 +74,8 @@ class RotateCommandTest extends BaseTest {
         RotateOptions options = new RotateOptions(
                 inputWorkspace: inFile.absolutePath,
                 outputWorkspace: outFile,
-                sin: com.vividsolutions.jts.algorithm.Angle.toRadians(45),
-                cos: com.vividsolutions.jts.algorithm.Angle.toRadians(15),
+                sin: org.locationtech.jts.algorithm.Angle.toRadians(45),
+                cos: org.locationtech.jts.algorithm.Angle.toRadians(15),
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Layer inLayer = new Property(inFile)
@@ -87,8 +87,8 @@ class RotateCommandTest extends BaseTest {
             Geometry inGeom = inGeoms[i]
             Geometry outGeom = outGeoms[i]
             assertEquals inGeom.rotate(
-                    com.vividsolutions.jts.algorithm.Angle.toRadians(45),
-                    com.vividsolutions.jts.algorithm.Angle.toRadians(15)), outGeom
+                    org.locationtech.jts.algorithm.Angle.toRadians(45),
+                    org.locationtech.jts.algorithm.Angle.toRadians(15)), outGeom
         }
     }
 
@@ -100,8 +100,8 @@ class RotateCommandTest extends BaseTest {
         RotateOptions options = new RotateOptions(
                 inputWorkspace: inFile.absolutePath,
                 outputWorkspace: outFile,
-                sin: com.vividsolutions.jts.algorithm.Angle.toRadians(45),
-                cos: com.vividsolutions.jts.algorithm.Angle.toRadians(15),
+                sin: org.locationtech.jts.algorithm.Angle.toRadians(45),
+                cos: org.locationtech.jts.algorithm.Angle.toRadians(15),
                 x: "getX(centroid(geom))",
                 y: "getY(centroid(geom))"
         )
@@ -115,8 +115,8 @@ class RotateCommandTest extends BaseTest {
             Geometry inGeom = inGeoms[i]
             Geometry outGeom = outGeoms[i]
             assertEquals inGeom.rotate(
-                    com.vividsolutions.jts.algorithm.Angle.toRadians(45),
-                    com.vividsolutions.jts.algorithm.Angle.toRadians(15),
+                    org.locationtech.jts.algorithm.Angle.toRadians(45),
+                    org.locationtech.jts.algorithm.Angle.toRadians(15),
                     inGeom.centroid.x, inGeom.centroid.y), outGeom
         }
     }
@@ -128,7 +128,7 @@ class RotateCommandTest extends BaseTest {
         StringWriter writer = new StringWriter()
         RotateCommand cmd = new RotateCommand()
         RotateOptions options = new RotateOptions(
-                theta: com.vividsolutions.jts.algorithm.Angle.toRadians(45),
+                theta: org.locationtech.jts.algorithm.Angle.toRadians(45),
                 x: "getX(centroid(geom))",
                 y: "getY(centroid(geom))"
         )
@@ -142,7 +142,7 @@ class RotateCommandTest extends BaseTest {
         (0..<inGeoms.size()).each { i ->
             Geometry inGeom = inGeoms[i]
             Geometry outGeom = outGeoms[i]
-            assertEquals inGeom.rotate(com.vividsolutions.jts.algorithm.Angle.toRadians(45),
+            assertEquals inGeom.rotate(org.locationtech.jts.algorithm.Angle.toRadians(45),
                     inGeom.centroid.x, inGeom.centroid.y), outGeom
         }
     }
@@ -155,7 +155,7 @@ class RotateCommandTest extends BaseTest {
                 "vector rotate",
                 "-i", inFile.absolutePath,
                 "-o", outFile.absolutePath,
-                "-t", com.vividsolutions.jts.algorithm.Angle.toRadians(45),
+                "-t", org.locationtech.jts.algorithm.Angle.toRadians(45),
                 "-x", "getX(centroid(geom))",
                 "-y", "getY(centroid(geom))"
         ], "")
@@ -167,7 +167,7 @@ class RotateCommandTest extends BaseTest {
         (0..<inGeoms.size()).each { i ->
             Geometry inGeom = inGeoms[i]
             Geometry outGeom = outGeoms[i]
-            assertEquals inGeom.rotate(com.vividsolutions.jts.algorithm.Angle.toRadians(45),
+            assertEquals inGeom.rotate(org.locationtech.jts.algorithm.Angle.toRadians(45),
                     inGeom.centroid.x, inGeom.centroid.y), outGeom
         }
     }
@@ -177,7 +177,7 @@ class RotateCommandTest extends BaseTest {
         StringReader reader = getStringReader("polys.csv")
         String result = runApp([
                 "vector Rotate",
-                "-t", com.vividsolutions.jts.algorithm.Angle.toRadians(45),
+                "-t", org.locationtech.jts.algorithm.Angle.toRadians(45),
                 "-x", "getX(centroid(geom))",
                 "-y", "getY(centroid(geom))"
         ], reader.text)
@@ -190,7 +190,7 @@ class RotateCommandTest extends BaseTest {
         (0..<inGeoms.size()).each { i ->
             Geometry inGeom = inGeoms[i]
             Geometry outGeom = outGeoms[i]
-            assertEquals inGeom.rotate(com.vividsolutions.jts.algorithm.Angle.toRadians(45),
+            assertEquals inGeom.rotate(org.locationtech.jts.algorithm.Angle.toRadians(45),
                     inGeom.centroid.x, inGeom.centroid.y), outGeom
         }
     }

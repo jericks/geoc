@@ -317,7 +317,7 @@ class ConvertCommandTest extends BaseTest {
         StringReader reader = new StringReader("POINT (1 2)")
         StringWriter writer = new StringWriter()
         cmd.execute(options, reader, writer)
-        String expected ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + NEW_LINE +
+        String expected ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
                 "<feed xmlns:georss=\"http://www.georss.org/georss\" xmlns=\"http://www.w3.org/2005/Atom\">" + NEW_LINE +
                 "<title>feature</title>" + NEW_LINE +
                 "<subtitle>feature geom: Point</subtitle>" + NEW_LINE +
@@ -344,7 +344,7 @@ class ConvertCommandTest extends BaseTest {
         StringReader reader = new StringReader("POINT (1 2)")
         StringWriter writer = new StringWriter()
         cmd.execute(options, reader, writer)
-        String expected = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + NEW_LINE +
+        String expected = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
                 "<gpx xmlns=\"http://www.topografix.com/GPX/1/1\" version=\"1.1\" creator=\"geoscript\">" + NEW_LINE +
                 "<wpt lat=\"2.0\" lon=\"1.0\">" + NEW_LINE +
                 "<name>fid-2cacb84e_14b934d23d9_-7ffb</name>" + NEW_LINE +

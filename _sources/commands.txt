@@ -169,6 +169,7 @@ Commands
     commands/raster-worldfile.rst
     commands/raster-size.rst
     commands/raster-projection.rst
+    commands/raster-shadedrelief.rst
     commands/raster-style-default.rst
     commands/raster-style-shadedrelief.rst
     commands/raster-style-channel-selection.rst

@@ -21,6 +21,7 @@
 ./raster_draw.sh
 ./raster_info.sh
 ./raster_crop.sh
+./raster_shadedrelief.sh
 ./raster_srtm.sh
 ./style_ysld.sh
 ./tile_geopackage.sh

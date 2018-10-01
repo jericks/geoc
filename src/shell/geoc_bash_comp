@@ -197,6 +197,8 @@ _geoc()
         COMPREPLY=($(compgen -W '--help --web-help -b --bounds -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -s --size' -- $cur))
     elif [[ "$line" == *"geoc raster scale "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -n --interpolation -o --output-raster -p --input-projection -r --y-translate -t --x-translate -x --x-scale -y --y-scale' -- $cur))
+    elif [[ "$line" == *"geoc raster shadedrelief "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -a --altitude -f --output-raster-format -g --algorithm -i --input-raster -l --input-raster-name -m --azimuth -o --output-raster -p --input-projection -s --scale -x --resx -y --resy -z --zeta-factory' -- $cur))
     elif [[ "$line" == *"geoc raster size "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -i --input-raster -l --input-raster-name -p --input-projection' -- $cur))
     elif [[ "$line" == *"geoc raster style channel selection "* ]]; then
@@ -254,7 +256,7 @@ _geoc()
     elif [[ "$line" == *"geoc raster worldfile "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -b --bounds -f --file -s --size' -- $cur))
     elif [[ "$line" == *"geoc raster " ]]; then
-        COMPREPLY=($(compgen -W ' abs  add  animatedgif  contour  convolve  crop  display  divide  draw  envelope  exp  extractfootprint  get  info  invert  log  mapalgebra  multiply  normalize  point  polygon  project  projection  reclassify  resample  scale  size  style  stylize  subtract  to  worldfile'))
+        COMPREPLY=($(compgen -W ' abs  add  animatedgif  contour  convolve  crop  display  divide  draw  envelope  exp  extractfootprint  get  info  invert  log  mapalgebra  multiply  normalize  point  polygon  project  projection  reclassify  resample  scale  shadedrelief  size  style  stylize  subtract  to  worldfile'))
     elif [[ "$line" == *"geoc raster"[[:space:]][[:alpha:]]* ]]; then
         if [[ "raster abs" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' abs'))
@@ -333,6 +335,9 @@ _geoc()
         fi
         if [[ "raster scale" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' scale'))
+        fi
+        if [[ "raster shadedrelief" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' shadedrelief'))
         fi
         if [[ "raster size" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' size'))

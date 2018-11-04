@@ -1050,8 +1050,10 @@ _geoc()
         if [[ "vector voronoi" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' voronoi'))
         fi
+    elif [[ "$line" == *"geoc version "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help' -- $cur))
     elif [[ "$line" == *"geoc " ]]; then
-        COMPREPLY=($(compgen -W ' filter  geometry  list  map  proj  raster  style  tile  vector'))
+        COMPREPLY=($(compgen -W ' filter  geometry  list  map  proj  raster  style  tile  vector  version'))
     elif [[ "$line" == *"geoc"[[:space:]][[:alpha:]]* ]]; then
         if [[ "filter" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' filter'))
@@ -1079,6 +1081,9 @@ _geoc()
         fi
         if [[ "vector" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' vector'))
+        fi
+        if [[ "version" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' version'))
         fi
     fi
     return 0

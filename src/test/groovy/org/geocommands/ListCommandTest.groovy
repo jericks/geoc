@@ -50,17 +50,5 @@ class ListCommandTest extends BaseTest {
         assertTrue str.contains("list = List all geocommands")
         assertTrue str.contains("vector clip = Clip the input Layer by the other Layer to produce the output Layer")
     }
-
-    @Test
-    void setOptionsProperties() {
-        ListOptions options = new ListOptions().setProperties([
-            showDescriptions: true,
-            help: false,
-            webHelp: false
-        ])
-        assertTrue(options.showDescriptions)
-        assertFalse(options.help)
-        assertFalse(options.webHelp)
-    }
-
+    
 }

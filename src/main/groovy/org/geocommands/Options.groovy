@@ -23,11 +23,4 @@ class Options {
         names.join(" ")
     }
 
-    Options setProperties(Map<String,Object> properties) {
-        properties.each { String name, Object value ->
-            this.setProperty(name, value)
-        }
-        this
-    }
-
 }

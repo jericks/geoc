@@ -388,7 +388,7 @@ _geoc()
     elif [[ "$line" == *"geoc tile delete "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -b --bounds -c --maxx -h --height -i --tile -l --tile-layer -u --maxy -w --width -x --minx -y --miny -z --zoom-level' -- $cur))
     elif [[ "$line" == *"geoc tile generate "* ]]; then
-        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -d --layer-fields -e --end-zoom -f --field -i --missing -l --tile-layer -m --layer -s --start-zoom -v --verbose' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -d --layer-fields -e --end-zoom -f --field -i --missing -l --tile-layer -m --layer -s --start-zoom -t --metatile -v --verbose' -- $cur))
     elif [[ "$line" == *"geoc tile get bounds "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -p --pyramid -x --column -y --row -z --zoom-level' -- $cur))
     elif [[ "$line" == *"geoc tile get " ]]; then

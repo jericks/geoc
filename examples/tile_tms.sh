@@ -7,7 +7,8 @@ geoc tile generate -l "type=tms file=tms format=jpeg" \
     -m "layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld" \
     -s 0 \
     -e 4 \
-    -v
+    -v \
+    -t "4,4"
 
 geoc tile pyramid -l "type=tms file=tms format=jpeg" -o xml
 

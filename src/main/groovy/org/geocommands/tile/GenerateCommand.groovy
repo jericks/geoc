@@ -86,10 +86,17 @@ class GenerateCommand extends Command<GenerateOptions> {
             }
         }
 
+        Map metatile = [:]
+        if (options.metatile) {
+            List parts = options.metatile.split(",")
+            metatile.width = Double.parseDouble(parts[0])
+            metatile.height = Double.parseDouble(parts[1])
+        }
+
         TileGenerator generator = new TileGenerator(verbose: options.verbose)
         try {
             generator.generate(tileLayer, tileRenderer, options.startZoom, options.endZoom,
-                    bounds: Bounds.fromString(options.bounds), missingOnly: options.missing)
+                    bounds: Bounds.fromString(options.bounds), missingOnly: options.missing, metatile: metatile)
         } finally {
             tileLayer.close()
         }
@@ -117,6 +124,9 @@ class GenerateCommand extends Command<GenerateOptions> {
 
         @Option(name = "-b", aliases = "--bounds", usage = "The bounds", required = false)
         String bounds
+
+        @Option(name = "-t", aliases = "--metatile", usage = "The metatile width,height", required = false)
+        String metatile
 
         @Option(name = "-i", aliases = "--missing", usage = "Whether to generate only missing tiles", required = false)
         boolean missing = false

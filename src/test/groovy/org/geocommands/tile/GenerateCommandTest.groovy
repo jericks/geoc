@@ -87,6 +87,29 @@ class GenerateCommandTest extends BaseTest {
     }
 
     @Test
+    void executeTMSMetatile() {
+        GenerateCommand cmd = new GenerateCommand()
+        File tileFile = temporaryFolder.newFolder("earthquakes")
+        File layerFile = getResource("earthquakes.properties")
+        GenerateOptions options = new GenerateOptions(
+                tileLayer: "type=tms format=png file=${tileFile.absolutePath}",
+                layers: [
+                        "layertype=layer file=${layerFile.absolutePath}"
+                ],
+                startZoom: 0,
+                endZoom: 2,
+                verbose: false,
+                metatile: "4,4"
+        )
+        cmd.execute(options)
+
+        TileLayer tileLayer = new TMS("earthquakes", "png", tileFile, Pyramid.createGlobalMercatorPyramid())
+        assertNotNull tileLayer.get(0, 0, 0)
+        assertNotNull tileLayer.get(1, 1, 1)
+        assertNotNull tileLayer.get(2, 2, 2)
+    }
+
+    @Test
     void executeUTFGrid() {
         GenerateCommand cmd = new GenerateCommand()
         File tileFile = temporaryFolder.newFolder("earthquakes")

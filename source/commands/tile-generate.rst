@@ -25,6 +25,8 @@ Generate tiles
 
    * -b --bounds: The bounds
 
+   * -t --metatile: The metatile width,height
+
    * -i --missing: Whether to generate only missing tiles
 
    * -v --verbose: The verbose flag

@@ -4,8 +4,6 @@ import org.geocommands.BaseTest
 import org.geocommands.vector.GradientStyleCommand.GradientStyleOptions
 import org.junit.Test
 
-import static org.junit.Assert.assertEquals
-
 /**
  * The GradientStyleCommand Unit Test
  * @author Jared Erickson
@@ -108,7 +106,7 @@ class GradientStyleCommandTest extends BaseTest {
         StringWriter writer = new StringWriter()
         cmd.execute(options, new StringReader(""), writer)
         String actual = writer.toString()
-        String expected = """<?xml version="1.0" encoding="UTF-8"?><sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml" version="1.0.0">
+        String expected = """<?xml version="1.0" encoding="UTF-8"?><sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" version="1.0.0">
   <sld:UserLayer>
     <sld:LayerFeatureConstraints>
       <sld:FeatureTypeConstraint/>
@@ -141,16 +139,10 @@ class GradientStyleCommandTest extends BaseTest {
         </sld:Rule>
         <sld:Rule>
           <ogc:Filter>
-            <ogc:And>
-              <ogc:PropertyIsGreaterThanOrEqualTo>
-                <ogc:PropertyName>row</ogc:PropertyName>
-                <ogc:Literal>1</ogc:Literal>
-              </ogc:PropertyIsGreaterThanOrEqualTo>
-              <ogc:PropertyIsLessThanOrEqualTo>
-                <ogc:PropertyName>row</ogc:PropertyName>
-                <ogc:Literal>1</ogc:Literal>
-              </ogc:PropertyIsLessThanOrEqualTo>
-            </ogc:And>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>row</ogc:PropertyName>
+              <ogc:Literal>1</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
           </ogc:Filter>
           <sld:PolygonSymbolizer>
             <sld:Fill>
@@ -165,6 +157,7 @@ class GradientStyleCommandTest extends BaseTest {
     </sld:UserStyle>
   </sld:UserLayer>
 </sld:StyledLayerDescriptor>"""
+        println actual
         assertStringsEqual(expected, actual, true, true)
     }
 

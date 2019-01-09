@@ -157,7 +157,6 @@ class GradientStyleCommandTest extends BaseTest {
     </sld:UserStyle>
   </sld:UserLayer>
 </sld:StyledLayerDescriptor>"""
-        println actual
         assertStringsEqual(expected, actual, true, true)
     }
 

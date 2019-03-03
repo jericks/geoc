@@ -161,6 +161,7 @@ Commands
     commands/raster-multiply.rst
     commands/raster-divide-constant.rst
     commands/raster-divide.rst
+    commands/raster-mosaic.rst
     commands/raster-envelope.rst
     commands/raster-point.rst
     commands/raster-polygon.rst

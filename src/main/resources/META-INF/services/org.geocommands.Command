@@ -178,6 +178,7 @@ org.geocommands.raster.ConvolveCommand
 org.geocommands.raster.GetSizeCommand
 org.geocommands.raster.GetProjectionCommand
 org.geocommands.raster.ShadedReliefCommand
+org.geocommands.raster.MosaicCommand
 
 org.geocommands.tile.GenerateCommand
 org.geocommands.tile.PyramidCommand

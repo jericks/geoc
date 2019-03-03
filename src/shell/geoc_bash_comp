@@ -173,6 +173,8 @@ _geoc()
         COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection' -- $cur))
     elif [[ "$line" == *"geoc raster mapalgebra "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -b --bounds -f --output-raster-format -n --output-name -o --output-raster -p --output-raster-projection -r --raster -s --script -z --size' -- $cur))
+    elif [[ "$line" == *"geoc raster mosaic "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -b --bounds -f --output-raster-format -o --output-raster -r --raster -z --size' -- $cur))
     elif [[ "$line" == *"geoc raster multiply constant "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -f --output-raster-format -i --input-raster -l --input-raster-name -o --output-raster -p --input-projection -v --value' -- $cur))
     elif [[ "$line" == *"geoc raster multiply " ]]; then
@@ -256,7 +258,7 @@ _geoc()
     elif [[ "$line" == *"geoc raster worldfile "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -b --bounds -f --file -s --size' -- $cur))
     elif [[ "$line" == *"geoc raster " ]]; then
-        COMPREPLY=($(compgen -W ' abs  add  animatedgif  contour  convolve  crop  display  divide  draw  envelope  exp  extractfootprint  get  info  invert  log  mapalgebra  multiply  normalize  point  polygon  project  projection  reclassify  resample  scale  shadedrelief  size  style  stylize  subtract  to  worldfile'))
+        COMPREPLY=($(compgen -W ' abs  add  animatedgif  contour  convolve  crop  display  divide  draw  envelope  exp  extractfootprint  get  info  invert  log  mapalgebra  mosaic  multiply  normalize  point  polygon  project  projection  reclassify  resample  scale  shadedrelief  size  style  stylize  subtract  to  worldfile'))
     elif [[ "$line" == *"geoc raster"[[:space:]][[:alpha:]]* ]]; then
         if [[ "raster abs" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' abs'))
@@ -308,6 +310,9 @@ _geoc()
         fi
         if [[ "raster mapalgebra" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' mapalgebra'))
+        fi
+        if [[ "raster mosaic" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' mosaic'))
         fi
         if [[ "raster multiply" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' multiply'))

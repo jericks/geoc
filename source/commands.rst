@@ -79,6 +79,7 @@ Commands
     commands/vector-splitbylayer.rst
     commands/vector-dissolvebyfield.rst
     commands/vector-dissolveintersecting.rst
+    commands/vector-pointsalongline.rst
     commands/vector-append.rst
     commands/vector-merge.rst
     commands/vector-clip.rst

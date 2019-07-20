@@ -98,7 +98,6 @@ class App {
             }
             else {
                 // Oops, display the error messages to the user
-                e.printStackTrace()
                 System.err.println(e.getMessage())
                 System.err.println(usage)
                 cmdLineParser.printUsage(System.err)

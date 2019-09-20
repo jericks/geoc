@@ -41,6 +41,7 @@ Create 100 random points in a GeoPackage database, get's metadata of that layer,
     examples/vector_intersects.rst
     examples/vector_contains.rst
     examples/vector_distancewithin.rst
+    examples/vector_supercircles.rst
     examples/map_cube.rst
     examples/tile_geopackage_geodetic.rst
     examples/tile_mbtiles.rst

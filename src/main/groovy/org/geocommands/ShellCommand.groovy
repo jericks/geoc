@@ -1,5 +1,6 @@
 package org.geocommands
 
+import org.jline.builtins.Completers.FileNameCompleter
 import org.jline.reader.Candidate
 import org.jline.reader.Completer
 import org.jline.reader.LineReader
@@ -35,12 +36,14 @@ class ShellCommand extends Command<ShellOptions> {
     }
 
     private static final String banner = """                     
-   __ _  ___  ___   ___ 
-  / _` |/ _ \\/ _ \\ / __|
- | (_| |  __/ (_) | (__ 
-  \\__, |\\___|\\___/ \\___|
-   __/ |                
-  |___/                 
+                              _          _ _ 
+                             | |        | | |
+   __ _  ___  ___   ___   ___| |__   ___| | |
+  / _` |/ _ \\/ _ \\ / __| / __| '_ \\ / _ \\ | |
+ | (_| |  __/ (_) | (__  \\__ \\ | | |  __/ | |
+  \\__, |\\___|\\___/ \\___| |___/_| |_|\\___|_|_|
+   __/ |                                     
+  |___/                                                        
 """
 
     void execute(ShellOptions shellOptions, Reader reader, Writer writer) {
@@ -172,14 +175,20 @@ class ShellCommand extends Command<ShellOptions> {
 
         private final org.geocommands.Completer completer
 
+        private final FileNameCompleter fileNameCompleter
+
         GeocCompleter() {
             this.completer = new org.geocommands.Completer()
+            fileNameCompleter = new FileNameCompleter()
         }
 
         @Override
         void complete(LineReader lineReader, ParsedLine parsedLine, List<Candidate> list) {
             completer.complete(parsedLine.line()).each { String candidate ->
                 list.add(new Candidate(candidate))
+            }
+            if (parsedLine.line().contains("-")) {
+                fileNameCompleter.complete(lineReader, parsedLine, list)
             }
         }
 

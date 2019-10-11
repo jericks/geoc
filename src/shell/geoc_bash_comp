@@ -362,6 +362,8 @@ _geoc()
         if [[ "raster worldfile" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' worldfile'))
         fi
+    elif [[ "$line" == *"geoc shell "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help' -- $cur))
     elif [[ "$line" == *"geoc style create "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -o --output -s --style-options -t --type' -- $cur))
     elif [[ "$line" == *"geoc style css2sld "* ]]; then
@@ -1063,7 +1065,7 @@ _geoc()
     elif [[ "$line" == *"geoc version "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help' -- $cur))
     elif [[ "$line" == *"geoc " ]]; then
-        COMPREPLY=($(compgen -W ' filter  geometry  list  map  proj  raster  style  tile  vector  version'))
+        COMPREPLY=($(compgen -W ' filter  geometry  list  map  proj  raster  shell  style  tile  vector  version'))
     elif [[ "$line" == *"geoc"[[:space:]][[:alpha:]]* ]]; then
         if [[ "filter" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' filter'))
@@ -1082,6 +1084,9 @@ _geoc()
         fi
         if [[ "raster" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' raster'))
+        fi
+        if [[ "shell" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' shell'))
         fi
         if [[ "style" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' style'))

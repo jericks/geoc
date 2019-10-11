@@ -1,5 +1,6 @@
 org.geocommands.ListCommand
 org.geocommands.VersionCommand
+org.geocommands.ShellCommand
 
 org.geocommands.proj.WktCommand
 org.geocommands.proj.EnvelopeCommand

@@ -15,6 +15,7 @@ import org.jline.terminal.Terminal
 import org.jline.reader.MaskingCallback
 import org.jline.utils.AttributedStringBuilder
 import org.jline.utils.AttributedStyle
+import org.jline.utils.InfoCmp
 import org.kohsuke.args4j.CmdLineParser
 
 import java.awt.Desktop
@@ -78,7 +79,12 @@ class ShellCommand extends Command<ShellOptions> {
             try {
                 rawLine = lineReader.readLine(prompt, rightPrompt, (MaskingCallback) null, null)
                 ParsedLine parsedLine = lineReader.getParser().parse(rawLine, 0)
-                run(parsedLine.words() as String[], terminal.writer(), new StringReader(""))
+                String line = parsedLine.line()
+                if (line.equals("clear")) {
+                    terminal.puts(InfoCmp.Capability.clear_screen);
+                } else {
+                    run(parsedLine.words() as String[], terminal.writer(), new StringReader(""))
+                }
             } catch (UserInterruptException e) {
                 // Ignore
             } catch (EndOfFileException e) {

@@ -4,6 +4,7 @@ Commands
 .. toctree::
     commands/list.rst
     commands/version.rst
+    commands/shell.rst
     commands/proj-wkt.rst
     commands/proj-envelope.rst
     commands/style-create.rst

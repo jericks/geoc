@@ -133,6 +133,7 @@ Commands
     commands/vector-dump-shapefiles.rst
     commands/vector-graticule-square.rst
     commands/vector-graticule-rectangle.rst
+    commands/vector-graticule-oval.rst
     commands/vector-graticule-hexagon.rst
     commands/vector-graticule-line.rst
     commands/vector-remove-layer.rst

@@ -598,18 +598,23 @@ _geoc()
         COMPREPLY=($(compgen -W '--help --web-help -g --geometry -l --length -o --output-workspace -r --output-layer -s --spacing -t --orientation' -- $cur))
     elif [[ "$line" == *"geoc vector graticule line "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -g --geometry -l --line-definition -o --output-workspace -r --output-layer -s --spacing' -- $cur))
+    elif [[ "$line" == *"geoc vector graticule oval "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -l --length -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector graticule rectangle "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -g --geometry -h --height -o --output-workspace -r --output-layer -s --spacing -w --width' -- $cur))
     elif [[ "$line" == *"geoc vector graticule square "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -g --geometry -l --length -o --output-workspace -r --output-layer -s --spacing' -- $cur))
     elif [[ "$line" == *"geoc vector graticule " ]]; then
-        COMPREPLY=($(compgen -W ' hexagon  line  rectangle  square'))
+        COMPREPLY=($(compgen -W ' hexagon  line  oval  rectangle  square'))
     elif [[ "$line" == *"geoc vector graticule"[[:space:]][[:alpha:]]* ]]; then
         if [[ "vector graticule hexagon" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' hexagon'))
         fi
         if [[ "vector graticule line" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' line'))
+        fi
+        if [[ "vector graticule oval" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' oval'))
         fi
         if [[ "vector graticule rectangle" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' rectangle'))

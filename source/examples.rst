@@ -42,8 +42,10 @@ Create 100 random points in a GeoPackage database, get's metadata of that layer,
     examples/vector_contains.rst
     examples/vector_distancewithin.rst
     examples/vector_supercircles.rst
+    examples/vector_graticule_hexagon.rst
     examples/vector_graticule_oval.rst
     examples/vector_graticule_square.rst
+    examples/vector_graticule_rectangle.rst
     examples/vector_uniquevaluesstyle.rst
     examples/map_cube.rst
     examples/tile_geopackage_geodetic.rst

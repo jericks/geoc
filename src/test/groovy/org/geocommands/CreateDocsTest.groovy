@@ -11,6 +11,9 @@ class CreateDocsTest {
     void createDocs() {
 
         File dir = new File("src/docs")
+        if (!dir.exists()) {
+            dir.mkdir()
+        }
 
         def examples = new Properties()
         new File("src/test/resources/example.properties").withInputStream { inp ->

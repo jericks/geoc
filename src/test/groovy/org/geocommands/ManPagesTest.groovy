@@ -13,6 +13,9 @@ class ManPagesTest {
     void createManPages() {
 
         File dir = new File("../geoc/src/man")
+        if (!dir.exists()) {
+            dir.mkdir()
+        }
 
         def examples = new Properties()
         new File("src/test/resources/example.properties").withInputStream { inp ->

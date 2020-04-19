@@ -12,6 +12,9 @@ class BashCompletionTest {
     void createBashCompletion() {
 
         File file = new File("src/shell/geoc_bash_comp")
+        if (!file.exists()) {
+            file.mkdir()
+        }
 
         String NEW_LINE = System.getProperty("line.separator")
 

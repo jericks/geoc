@@ -1,6 +1,5 @@
 package org.geocommands
 
-import com.sun.xml.internal.ws.util.ByteArrayBuffer
 import geoscript.layer.Layer
 import geoscript.layer.io.CsvReader
 import org.junit.Rule

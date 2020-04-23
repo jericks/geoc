@@ -1,10 +1,10 @@
 dist: trusty
 language: java
 jdk: oraclejdk8
-addons:
-    apt:
-        packages:
-            - python3.6
+before_install:
+    - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 762E3157
+    - sudo apt-get update
+    - sudo apt-get install python3
 script:
     - pip3 install --upgrade -r src/website/requirements.txt
     - ./mvnw clean install

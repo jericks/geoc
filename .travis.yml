@@ -1,6 +1,7 @@
 dist: trusty
-
 language: java
-
-jdk:
-    - oraclejdk8
+jdk: oraclejdk8
+before_install:
+    - sudo apt-get -y install python3.6
+before_cache:
+    - pip install --upgrade -r src/website/requirements.txt

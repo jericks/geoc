@@ -9,6 +9,7 @@ before_install:
 script:
     - pip3 install --upgrade -r src/website/requirements.txt
     - ./mvnw clean install -P website
+    - touch src/website/build/html/.nojekyll
 deploy:
     provider: pages
     skip_cleanup: true

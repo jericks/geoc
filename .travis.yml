@@ -9,3 +9,11 @@ before_install:
 script:
     - pip3 install --upgrade -r src/website/requirements.txt
     - ./mvnw clean install -P website
+deploy:
+    provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_OAUTH_TOKEN
+    keep-history: true
+    on:
+        branch: GEOC-WEBSITE
+    local_dir: src/website/build/html

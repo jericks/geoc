@@ -10,9 +10,9 @@ class CreateDocsTest {
     @Test
     void createDocs() {
 
-        File dir = new File("src/docs")
+        File dir = new File("src/website/source/commands")
         if (!dir.exists()) {
-            dir.mkdir()
+            dir.mkdirs()
         }
 
         def examples = new Properties()
@@ -22,7 +22,7 @@ class CreateDocsTest {
 
         ServiceLoader.load(Command.class).each { cmd ->
             String cmdName = cmd.name.replaceAll(" ", "-")
-            File file = new File(dir, "${cmdName}.md")
+            File file = new File(dir, "${cmdName}.rst")
             String example = examples.getProperty("geoc-${cmdName.toLowerCase()}")
 
             String optionStr = ""

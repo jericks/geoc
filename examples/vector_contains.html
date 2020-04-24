@@ -5,68 +5,84 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Select Features contained in other Features &mdash; geoc 0.12.0 documentation</title>
+  <title>Select Features contained in other Features &mdash; geoc 0.13.0 documentation</title>
   
 
   
   
+  
+  
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="geoc 0.12.0 documentation" href="../index.html"/>
-        <link rel="up" title="Examples" href="../examples.html"/>
-        <link rel="next" title="Select Features within a distance of other Features" href="vector_distancewithin.html"/>
-        <link rel="prev" title="Select Features that intersect other Features" href="vector_intersects.html"/> 
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Select Features within a distance of other Features" href="vector_distancewithin.html" />
+    <link rel="prev" title="Select Features that intersect other Features" href="vector_intersects.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        <a href="../index.html" class="fa fa-home"> geoc</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> geoc
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-      </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
-        
-            <ul class="current">
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../keyfeatures.html">Key Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../datasources.html">Data Sources</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../datasources.html#vector">Vector</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../datasources.html#raster">Raster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../datasources.html#tile">Tile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../datasources.html#map-layer">Map Layer</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../datasources.html">Data Sources</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="vector_buffer.html">Buffer a Vector Layer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector_centroid.html">Create Centroids from a Vector Layer</a></li>
@@ -77,7 +93,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector_voronoi.html">Create a Voronoi Diagram from a Vector Layer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector_delaunay.html">Create a Delaunay Diagram from a Vector Layer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector_intersects.html">Select Features that intersect other Features</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Select Features contained in other Features</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Select Features contained in other Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector_distancewithin.html">Select Features within a distance of other Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector_supercircles.html">Create supercirlces for each Feature in a Layer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector_graticule_hexagon.html">Create Hexagon Graticule Layer</a></li>
@@ -92,244 +108,85 @@
 <li class="toctree-l2"><a class="reference internal" href="raster_vectorize.html">Create Polygons from a Raster</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../commands.html">Commands</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../commands/list.html">list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/version.html">version</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/shell.html">shell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/proj-wkt.html">proj wkt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/proj-envelope.html">proj envelope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/style-create.html">style create</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/style-css2sld.html">style css2sld</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/style-sld2ysld.html">style sld2ysld</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/style-ysld2sld.html">style ysld2sld</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/style-uniquevaluesfromtext.html">style uniquevaluesfromtext</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/geometry-convert.html">geometry convert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/geometry-dd2pt.html">geometry dd2pt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/geometry-geohash-encode.html">geometry geohash encode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/geometry-geohash-decode.html">geometry geohash decode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/geometry-geohash-bounds.html">geometry geohash bounds</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/geometry-geohash-neighbors.html">geometry geohash neighbors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/geometry-greatcirclearc.html">geometry greatcirclearc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/geometry-offset.html">geometry offset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/geometry-orthodromicdistance.html">geometry orthodromicdistance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/geometry-plot.html">geometry plot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/geometry-pt2dd.html">geometry pt2dd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/filter-cql2xml.html">filter cql2xml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/map-cube.html">map cube</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/map-draw.html">map draw</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-datastorelist.html">vector datastorelist</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-datastoreparams.html">vector datastoreparams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-display.html">vector display</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-list-layers.html">vector list layers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-count.html">vector count</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-buffer.html">vector buffer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-envelope.html">vector envelope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-envelopes.html">vector envelopes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-centroid.html">vector centroid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-convexhull.html">vector convexhull</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-convexhulls.html">vector convexhulls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-interiorpoint.html">vector interiorpoint</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-join-attribute.html">vector join attribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-join-spatial.html">vector join spatial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-mincircle.html">vector mincircle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-mincircles.html">vector mincircles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-minrect.html">vector minrect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-minrects.html">vector minrects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-octagonalenvelope.html">vector octagonalenvelope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-octagonalenvelopes.html">vector octagonalenvelopes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-draw.html">vector draw</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-voronoi.html">vector voronoi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-delaunay.html">vector delaunay</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-geomw.html">vector geomw</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-geomr.html">vector geomr</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-coordinates.html">vector coordinates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-simplify.html">vector simplify</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-densify.html">vector densify</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-filter.html">vector filter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-delete.html">vector delete</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-schema.html">vector schema</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-updatefield.html">vector updatefield</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-project.html">vector project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-copy.html">vector copy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-randompoints.html">vector randompoints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-create.html">vector create</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-add.html">vector add</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-grid.html">vector grid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-to.html">vector to</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-from.html">vector from</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-info.html">vector info</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-defaultstyle.html">vector defaultstyle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-uniquevaluesstyle.html">vector uniquevaluesstyle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-gradientstyle.html">vector gradientstyle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-addfields.html">vector addfields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-removefields.html">vector removefields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-addidfield.html">vector addidfield</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-addareafield.html">vector addareafield</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-addlengthfield.html">vector addlengthfield</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-addxyfields.html">vector addxyfields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-splitbyfield.html">vector splitbyfield</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-splitbylayer.html">vector splitbylayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-dissolvebyfield.html">vector dissolvebyfield</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-dissolveintersecting.html">vector dissolveintersecting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-pointsalongline.html">vector pointsalongline</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-append.html">vector append</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-merge.html">vector merge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-clip.html">vector clip</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-union.html">vector union</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-intersection.html">vector intersection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-intersects.html">vector intersects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-contains.html">vector contains</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-distancewithin.html">vector distancewithin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-erase.html">vector erase</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-identity.html">vector identity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-update.html">vector update</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-symdifference.html">vector symdifference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-validity.html">vector validity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-single2multiple.html">vector single2multiple</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-multiple2single.html">vector multiple2single</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-compareschemas.html">vector compareschemas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-transform.html">vector transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-pointstacker.html">vector pointstacker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-raster.html">vector raster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-heatmap.html">vector heatmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-barnessurface.html">vector barnessurface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-raster-values.html">vector raster values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-subset.html">vector subset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-sort.html">vector sort</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-page.html">vector page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-translate.html">vector translate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-uniquevalues.html">vector uniquevalues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-shear.html">vector shear</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-rotate.html">vector rotate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-scale.html">vector scale</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-reflect.html">vector reflect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-smooth.html">vector smooth</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-arc.html">vector arc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-arcpolygon.html">vector arcpolygon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-ellipse.html">vector ellipse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-rectangle.html">vector rectangle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-sinestar.html">vector sinestar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-supercircle.html">vector supercircle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-squircle.html">vector squircle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-database-select.html">vector database select</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-database-sql.html">vector database sql</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-database-index-create.html">vector database index create</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-database-index-list.html">vector database index list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-database-index-delete.html">vector database index delete</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-database-remove.html">vector database remove</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-count-featuresInfeature.html">vector count featuresInfeature</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-snap-points2lines.html">vector snap points2lines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-points2lines.html">vector points2lines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-points2polygons.html">vector points2polygons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-dump-shapefiles.html">vector dump shapefiles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-graticule-square.html">vector graticule square</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-graticule-rectangle.html">vector graticule rectangle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-graticule-oval.html">vector graticule oval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-graticule-hexagon.html">vector graticule hexagon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-graticule-line.html">vector graticule line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/vector-remove-layer.html">vector remove layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-abs.html">raster abs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-info.html">raster info</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-display.html">raster display</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-draw.html">raster draw</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-exp.html">raster exp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-crop.html">raster crop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-crop-with-geometry.html">raster crop with geometry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-crop-with-layer.html">raster crop with layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-extractfootprint.html">raster extractfootprint</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-log.html">raster log</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-normalize.html">raster normalize</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-convolve.html">raster convolve</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-get-value.html">raster get value</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-scale.html">raster scale</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-project.html">raster project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-reclassify.html">raster reclassify</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-resample.html">raster resample</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-invert.html">raster invert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-stylize.html">raster stylize</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-add-constant.html">raster add constant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-add.html">raster add</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-subtract-constant.html">raster subtract constant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-subtract.html">raster subtract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-multiply-constant.html">raster multiply constant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-multiply.html">raster multiply</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-divide-constant.html">raster divide constant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-divide.html">raster divide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-mosaic.html">raster mosaic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-envelope.html">raster envelope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-point.html">raster point</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-polygon.html">raster polygon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-contour.html">raster contour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-to.html">raster to</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-mapalgebra.html">raster mapalgebra</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-worldfile.html">raster worldfile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-size.html">raster size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-projection.html">raster projection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-shadedrelief.html">raster shadedrelief</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-style-default.html">raster style default</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-style-shadedrelief.html">raster style shadedrelief</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-style-channel-selection.html">raster style channel selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-style-contrast-enhancement.html">raster style contrast enhancement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-style-colormap.html">raster style colormap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/raster-animatedgif.html">raster animatedgif</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/tile-generate.html">tile generate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/tile-delete.html">tile delete</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/tile-pyramid.html">tile pyramid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/tile-stitch-raster.html">tile stitch raster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/tile-stitch-vector.html">tile stitch vector</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/tile-vector-grid.html">tile vector grid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/tile-get-bounds.html">tile get bounds</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/tile-list-tiles.html">tile list tiles</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../build.html">Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../help.html">Help</a></li>
 </ul>
 
-        
+            
+          
+        </div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">geoc</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">geoc</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="../examples.html">Examples</a> &raquo;</li>
-      
-    <li>Select Features contained in other Features</li>
+        
+      <li>Select Features contained in other Features</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/examples/vector_contains.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/examples/vector_contains.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="select-features-contained-in-other-features">
 <h1>Select Features contained in other Features<a class="headerlink" href="#select-features-contained-in-other-features" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c">#!/bin/bash</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 geoc vector randompoints -g -180,-90,180,90 -n <span class="m">1000</span> -o points.shp
 
 geoc vector randompoints -g -180,-90,180,90 -n <span class="m">10</span> <span class="p">|</span> geoc vector buffer -d <span class="m">8</span> -o polys.shp
 
 geoc vector contains -i points.shp -k polys.shp &gt; pointsInPolys.csv
 
-cat pointsInPolys.csv <span class="p">|</span> geoc vector defaultstyle --color red -o 0.75 &gt; pointsInPolys.sld
+cat pointsInPolys.csv <span class="p">|</span> geoc vector defaultstyle --color red -o <span class="m">0</span>.75 &gt; pointsInPolys.sld
 
 geoc map draw -f vector_contains.png -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span> <span class="se">\</span>
     -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span> <span class="se">\</span>
@@ -342,15 +199,17 @@ geoc map draw -f vector_contains.png -l <span class="s2">&quot;layertype=layer f
 </div>
 
 
+           </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vector_distancewithin.html" class="btn btn-neutral float-right" title="Select Features within a distance of other Features"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="vector_distancewithin.html" class="btn btn-neutral float-right" title="Select Features within a distance of other Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vector_intersects.html" class="btn btn-neutral" title="Select Features that intersect other Features"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vector_intersects.html" class="btn btn-neutral float-left" title="Select Features that intersect other Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -359,12 +218,14 @@ geoc map draw -f vector_contains.png -l <span class="s2">&quot;layertype=layer f
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Jared Erickson.
+        &copy; Copyright 2020, Jared Erickson
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
+
         </div>
       </div>
 
@@ -374,35 +235,15 @@ geoc map draw -f vector_contains.png -l <span class="s2">&quot;layertype=layer f
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.12.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

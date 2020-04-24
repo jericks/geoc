@@ -16,5 +16,5 @@ deploy:
     github_token: $GEOC_GITHUB_OAUTH_TOKEN
     keep-history: true
     on:
-        branch: GEOC-WEBSITE
+        branch: master
     local_dir: src/website/build/html

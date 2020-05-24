@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Generate Web Mercator Tiles in MBTiles &mdash; geoc 0.13.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> geoc
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../keyfeatures.html">Key Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help.html">Help</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">geoc</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Generate Web Mercator Tiles in MBTiles</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/examples/tile_utfgrid.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="generate-web-mercator-tiles-in-mbtiles">
+<h1>Generate Web Mercator Tiles in MBTiles<a class="headerlink" href="#generate-web-mercator-tiles-in-mbtiles" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+rm -r utf
+mkdir utf
+
+geoc tile generate -l <span class="s2">&quot;type=utfgrid file=utf&quot;</span> <span class="se">\</span>
+    -m <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span> <span class="se">\</span>
+    -f <span class="s2">&quot;NAME&quot;</span> <span class="se">\</span>
+    -s <span class="m">0</span> <span class="se">\</span>
+    -e <span class="m">4</span> <span class="se">\</span>
+    -v
+
+rm -r tms
+mkdir tms
+
+geoc tile generate -l <span class="s2">&quot;type=tms file=tms format=jpeg&quot;</span> <span class="se">\</span>
+    -m <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span> <span class="se">\</span>
+    -m <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span> <span class="se">\</span>
+    -s <span class="m">0</span> <span class="se">\</span>
+    -e <span class="m">4</span> <span class="se">\</span>
+    -v <span class="se">\</span>
+    -t <span class="s2">&quot;4,4&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+      <span class="p">.</span><span class="nc">map</span> <span class="p">{</span>
+        <span class="k">height</span><span class="p">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>geoc UTFGrid Example<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>geoc UTFGrid Example<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;map&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;map&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display: none;&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Overlay with the country info --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;country-info&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;country-name&quot;</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+
+      <span class="kd">var</span> <span class="nx">tms</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
+        <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">XYZ</span><span class="p">({</span>
+          <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://localhost:8000/tms/{z}/{x}/{-y}.jpeg&#39;</span><span class="p">,</span>
+          <span class="nx">wrapX</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nx">noWrap</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">})</span>
+      <span class="p">});</span>
+
+      <span class="kd">var</span> <span class="nx">gridSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">UTFGrid</span><span class="p">({</span>
+        <span class="nx">tileJSON</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">tilejson</span><span class="o">:</span> <span class="s2">&quot;2.2.0&quot;</span><span class="p">,</span>
+          <span class="nx">grids</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;http://localhost:8000/utf/{z}/{x}/{y}.grid.json&#39;</span> <span class="p">]</span>
+        <span class="p">}</span>
+      <span class="p">});</span>
+
+      <span class="kd">var</span> <span class="nx">utfGrid</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
+        <span class="nx">source</span><span class="o">:</span> <span class="nx">gridSource</span>
+      <span class="p">});</span>
+
+      <span class="kd">var</span> <span class="nx">view</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">View</span><span class="p">({</span>
+        <span class="nx">center</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="nx">zoom</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">});</span>
+
+      <span class="kd">var</span> <span class="nx">mapElement</span> <span class="o">=</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;map&#39;</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">Map</span><span class="p">({</span>
+          <span class="nx">target</span><span class="o">:</span> <span class="nx">mapElement</span><span class="p">,</span>
+          <span class="nx">layers</span><span class="o">:</span> <span class="p">[</span>
+            <span class="nx">tms</span><span class="p">,</span>
+            <span class="nx">utfGrid</span>
+          <span class="p">],</span>
+          <span class="nx">view</span><span class="o">:</span> <span class="nx">view</span>
+      <span class="p">});</span>
+
+      <span class="kd">var</span> <span class="nx">infoElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;country-info&#39;</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">nameElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;country-name&#39;</span><span class="p">);</span>
+
+      <span class="kd">var</span> <span class="nx">infoOverlay</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">Overlay</span><span class="p">({</span>
+        <span class="nx">element</span><span class="o">:</span> <span class="nx">infoElement</span><span class="p">,</span>
+        <span class="nx">offset</span><span class="o">:</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+        <span class="nx">stopEvent</span><span class="o">:</span> <span class="kc">false</span>
+      <span class="p">});</span>
+      <span class="nx">map</span><span class="p">.</span><span class="nx">addOverlay</span><span class="p">(</span><span class="nx">infoOverlay</span><span class="p">);</span>
+
+      <span class="kd">var</span> <span class="nx">displayCountryInfo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">coordinate</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">viewResolution</span> <span class="o">=</span> <span class="nx">view</span><span class="p">.</span><span class="nx">getResolution</span><span class="p">();</span>
+        <span class="nx">gridSource</span><span class="p">.</span><span class="nx">forDataAtCoordinateAndResolution</span><span class="p">(</span><span class="nx">coordinate</span><span class="p">,</span> <span class="nx">viewResolution</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">mapElement</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">cursor</span> <span class="o">=</span> <span class="nx">data</span> <span class="o">?</span> <span class="s1">&#39;pointer&#39;</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">nameElement</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">data</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">];</span>
+          <span class="p">}</span>
+          <span class="nx">infoOverlay</span><span class="p">.</span><span class="nx">setPosition</span><span class="p">(</span><span class="nx">data</span> <span class="o">?</span> <span class="nx">coordinate</span> <span class="o">:</span> <span class="kc">undefined</span><span class="p">);</span>
+        <span class="p">});</span>
+      <span class="p">};</span>
+
+      <span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointermove&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">dragging</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kd">var</span> <span class="nx">coordinate</span> <span class="o">=</span> <span class="nx">map</span><span class="p">.</span><span class="nx">getEventCoordinate</span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">originalEvent</span><span class="p">);</span>
+        <span class="nx">displayCountryInfo</span><span class="p">(</span><span class="nx">coordinate</span><span class="p">);</span>
+      <span class="p">});</span>
+
+      <span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">displayCountryInfo</span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">coordinate</span><span class="p">);</span>
+      <span class="p">});</span>
+
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<img alt="../_images/tile_mbtiles.png" src="../_images/tile_mbtiles.png" />
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Jared Erickson
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

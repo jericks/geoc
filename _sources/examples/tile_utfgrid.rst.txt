@@ -1,5 +1,5 @@
-Generate Web Mercator Tiles in MBTiles
-======================================
+Generate UTFGrid Tiles
+======================
 
 .. code-block:: bash
 
@@ -122,4 +122,4 @@ Generate Web Mercator Tiles in MBTiles
       </body>
     </html>
 
-.. image:: tile_mbtiles.png
+.. image:: tile_utfgrid.png

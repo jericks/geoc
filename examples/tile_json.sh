@@ -1,15 +1,15 @@
 #!/bin/bash
-rm -r pbf
-mkdir pbf
+rm -r json
+mkdir json
 
-geoc tile generate -l "type=vectortiles file=pbf format=pbf pyramid=GlobalMercatorTopLeft" \
+geoc tile generate -l "type=vectortiles file=json format=json pyramid=GlobalMercatorTopLeft" \
     -m "layertype=layer file=naturalearth.gpkg layername=ocean" \
     -m "layertype=layer file=naturalearth.gpkg layername=countries" \
     -s 0 \
     -e 4 \
     -v
 
-cat <<EOT >> pbf.html
+cat <<EOT >> json.html
 <!doctype html>
 <html lang="en">
   <head>
@@ -29,10 +29,10 @@ cat <<EOT >> pbf.html
     <script type="text/javascript">
         var vectorLayer = new ol.layer.VectorTile({
           source: new ol.source.VectorTile({
-            format: new ol.format.MVT(),
+            format: new ol.format.GeoJSON(),
             projection: 'EPSG:3857',
             tileGrid: new ol.tilegrid.createXYZ({minZoom: 0, maxZoom: 6}),
-            url: 'http://localhost:8000/pbf/{z}/{x}/{y}.pbf'
+            url: 'http://localhost:8000/json/{z}/{x}/{y}.json'
           }),
           style: new ol.style.Style({
             stroke: new ol.style.Stroke({

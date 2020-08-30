@@ -137,6 +137,7 @@ org.geocommands.vector.IntersectsCommand
 org.geocommands.vector.ContainsCommand
 org.geocommands.vector.DistanceWithinCommand
 org.geocommands.vector.PointsAlongLineCommand
+org.geocommands.vector.LargestEmptyCircleCommand
 
 org.geocommands.raster.InfoCommand
 org.geocommands.raster.DrawCommand

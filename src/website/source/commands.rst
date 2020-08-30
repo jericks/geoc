@@ -42,6 +42,7 @@ Commands
     commands/vector-join-spatial.rst
     commands/vector-mincircle.rst
     commands/vector-mincircles.rst
+    commands/vector-largestemptycircle.rst
     commands/vector-minrect.rst
     commands/vector-minrects.rst
     commands/vector-octagonalenvelope.rst

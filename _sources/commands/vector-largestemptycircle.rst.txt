@@ -1,0 +1,32 @@
+vector largestemptycircle
+=========================
+
+**Name**:
+
+geoc vector largestemptycircle
+
+**Description**:
+
+find the largest empty circle amound the features of the input Layer
+
+**Arguments**:
+
+   * -t --tolerance: The tolerance
+
+   * -o --output-workspace: The output workspace
+
+   * -r --output-layer: The output layer
+
+   * -i --input-workspace: The input workspace
+
+   * -l --input-layer: The input layer
+
+   * --help : Print the help message
+
+   * --web-help : Open help in a browser
+
+
+
+**Example**::
+
+    geoc vector largestemptycircle -i points.shp -o circle.shp -t 1.0

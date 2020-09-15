@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>geometry pt2dd &mdash; geoc 0.13.0 documentation</title>
+  <title>pipe &mdash; geoc 0.13.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="filter cql2xml" href="filter-cql2xml.html" />
-    <link rel="prev" title="geometry plot" href="geometry-plot.html" /> 
+    <link rel="next" title="proj wkt" href="proj-wkt.html" />
+    <link rel="prev" title="shell" href="shell.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,7 +88,7 @@
 <li class="toctree-l2"><a class="reference internal" href="list.html">list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="version.html">version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shell.html">shell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pipe.html">pipe</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pipe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="proj-wkt.html">proj wkt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="proj-envelope.html">proj envelope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="style-create.html">style create</a></li>
@@ -106,7 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="geometry-offset.html">geometry offset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-orthodromicdistance.html">geometry orthodromicdistance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-plot.html">geometry plot</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">geometry pt2dd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry-pt2dd.html">geometry pt2dd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="filter-cql2xml.html">filter cql2xml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="map-cube.html">map cube</a></li>
 <li class="toctree-l2"><a class="reference internal" href="map-draw.html">map draw</a></li>
@@ -325,13 +325,13 @@
         
           <li><a href="../commands.html">Commands</a> &raquo;</li>
         
-      <li>geometry pt2dd</li>
+      <li>pipe</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/commands/geometry-pt2dd.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/commands/pipe.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -344,23 +344,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="geometry-pt2dd">
-<h1>geometry pt2dd<a class="headerlink" href="#geometry-pt2dd" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pipe">
+<h1>pipe<a class="headerlink" href="#pipe" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc geometry pt2dd</p>
+<p>geoc pipe</p>
 <p><strong>Description</strong>:</p>
-<p>Format a Point in Decimal Degrees</p>
+<p>Combine multiple commands together with a pipe.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>-p –point: The Point</p></li>
-<li><p>-t –type: The output type (dms, dms_char, ddm, ddm_char)</p></li>
+<li><p>-c –commands: Commands separate by pipe</p></li>
 <li><p>–help : Print the help message</p></li>
 <li><p>–web-help : Open help in a browser</p></li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geoc</span> <span class="n">geometry</span> <span class="n">pt2dd</span> <span class="o">-</span><span class="n">p</span> <span class="s2">&quot;POINT (-122.5256194 47.212022222)&quot;</span> <span class="o">-</span><span class="n">t</span> <span class="n">dms</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geoc</span> <span class="n">pipe</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;vector randompoints -n 10 -g &#39;1,1,10,10&#39; | vector buffer -d 10&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -373,10 +372,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="filter-cql2xml.html" class="btn btn-neutral float-right" title="filter cql2xml" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="proj-wkt.html" class="btn btn-neutral float-right" title="proj wkt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="geometry-plot.html" class="btn btn-neutral float-left" title="geometry plot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="shell.html" class="btn btn-neutral float-left" title="shell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

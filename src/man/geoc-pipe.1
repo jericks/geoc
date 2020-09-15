@@ -1,0 +1,14 @@
+.TH "geoc-pipe" "1" "14 September 2020" "version 0.1"
+.SH NAME
+geoc pipe
+.SH DESCRIPTION
+Combine multiple commands together with a pipe.
+.SH USAGE
+geoc pipe -c "vector randompoints -n 10 -g '1,1,10,10' | vector buffer -d 10"
+.SH OPTIONS
+-c --commands: Commands separate by pipe
+.PP
+--help : Print the help message
+.PP
+--web-help : Open help in a browser
+.PP

@@ -134,7 +134,6 @@ csv_row_1
 "the_geom:Polygon","id:String","row:String","col:String"
 "POLYGON ((0 5, 0 10, 5 10, 5 5, 0 5))","1","1","0"
 "POLYGON ((5 5, 5 10, 10 10, 10 5, 5 5))","3","1","1"
-
 """
         assertStringsEqual expected, actual
     }

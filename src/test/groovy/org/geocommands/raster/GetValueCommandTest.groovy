@@ -80,7 +80,7 @@ class GetValueCommandTest extends BaseTest {
                 "-y", "1",
                 "-t", "pixel"
         ], "")
-        String expected = "184.0" + NEW_LINE + NEW_LINE
+        String expected = "184.0" + NEW_LINE
         assertEquals(expected, actual)
 
         actual = runApp([
@@ -90,7 +90,7 @@ class GetValueCommandTest extends BaseTest {
                 "-y", "1",
                 "-t", "point"
         ], "")
-        expected = "227.0" + NEW_LINE + NEW_LINE
+        expected = "227.0" + NEW_LINE
         assertEquals(expected, actual)
     }
 
@@ -103,7 +103,7 @@ class GetValueCommandTest extends BaseTest {
                 "-y", "1",
                 "-t", "pixel"
         ], reader.text)
-        String expected = "184.0" + NEW_LINE + NEW_LINE
+        String expected = "184.0" + NEW_LINE
         assertEquals(expected, actual)
 
         reader = getStringReader("raster.asc")
@@ -113,7 +113,7 @@ class GetValueCommandTest extends BaseTest {
                 "-y", "83",
                 "-t", "point"
         ], reader.text)
-        expected = "185.0" + NEW_LINE + NEW_LINE
+        expected = "185.0" + NEW_LINE
         assertEquals(expected, actual)
     }
 }

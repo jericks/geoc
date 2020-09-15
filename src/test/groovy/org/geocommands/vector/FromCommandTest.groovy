@@ -142,7 +142,6 @@ class FromCommandTest extends BaseTest {
 "1.0","1.0","2","Number 1","POINT (1 1)"
 "10.0","10.0","1","Number 2","POINT (10 10)"
 "2.0","8.0","5","Number 3","POINT (2 8)"
-
 """
         assertStringsEqual actual, expected
     }

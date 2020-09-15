@@ -76,7 +76,6 @@ class ListTilesCommandTest extends BaseTest {
 10/574/626
 10/575/626
 10/576/626
-
 """.denormalize(), result
     }
 

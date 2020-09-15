@@ -126,7 +126,6 @@ csv_1_2
 "POLYGON ((5 0, 5 5, 10 5, 10 0, 5 0))","2","0","1"
 "POLYGON ((5 10, 5 5, 5 10, 5 10))","1","1","0"
 "POLYGON ((5 5, 5 10, 10 10, 10 5, 5 5))","3","1","1"
-
 """
         assertStringsEqual expected, actual
     }

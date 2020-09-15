@@ -70,7 +70,7 @@ class DatabaseSqlCommandTest extends BaseTest {
         ],"")
         assertStringsEqual('"geom","id","name"' + NEW_LINE +
                 '"POINT (1 1)","1","point 1"' + NEW_LINE +
-                '"POINT (2 2)","2","point 2"' + NEW_LINE + NEW_LINE, result)
+                '"POINT (2 2)","2","point 2"' + NEW_LINE, result)
     }
 
 }

@@ -53,9 +53,9 @@ class ValidityCommandTest extends BaseTest {
     void runAsCommandLine() {
         File file = getResource("invalid.properties")
         String output = runApp(["vector validity", "-i", file.absolutePath, "-f", "id", "-f", "name"], "")
-        assertEquals "1,Polygon 1,Self-intersection" + NEW_LINE + NEW_LINE, output
+        assertEquals "1,Polygon 1,Self-intersection" + NEW_LINE, output
 
         output = runApp(["vector validity", "-f", "id", "-f", "name"], readCsv("invalid.csv").text)
-        assertEquals "1,Polygon 1,Self-intersection" + NEW_LINE + NEW_LINE, output
+        assertEquals "1,Polygon 1,Self-intersection" + NEW_LINE, output
     }
 }

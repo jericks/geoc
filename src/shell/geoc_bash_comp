@@ -91,6 +91,8 @@ _geoc()
         if [[ "map draw" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' draw'))
         fi
+    elif [[ "$line" == *"geoc pipe "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -c --commands' -- $cur))
     elif [[ "$line" == *"geoc proj envelope "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -e --epsg -g --geo-bounds -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc proj wkt "* ]]; then
@@ -1075,7 +1077,7 @@ _geoc()
     elif [[ "$line" == *"geoc version "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help' -- $cur))
     elif [[ "$line" == *"geoc " ]]; then
-        COMPREPLY=($(compgen -W ' filter  geometry  list  map  proj  raster  shell  style  tile  vector  version'))
+        COMPREPLY=($(compgen -W ' filter  geometry  list  map  pipe  proj  raster  shell  style  tile  vector  version'))
     elif [[ "$line" == *"geoc"[[:space:]][[:alpha:]]* ]]; then
         if [[ "filter" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' filter'))
@@ -1088,6 +1090,9 @@ _geoc()
         fi
         if [[ "map" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' map'))
+        fi
+        if [[ "pipe" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' pipe'))
         fi
         if [[ "proj" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' proj'))

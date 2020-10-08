@@ -5,7 +5,7 @@
     <groupId>org.geocommands</groupId>
     <artifactId>geocommands</artifactId>
     <packaging>jar</packaging>
-    <version>0.15.0</version>
+    <version>0.16.0-SNAPSHOT</version>
     <name>GeoCommands</name>
     <description>A collection of geospatial command line applications</description>
     <distributionManagement>
@@ -43,7 +43,7 @@
         <dependency>
             <groupId>org.geoscript</groupId>
             <artifactId>geoscript-groovy</artifactId>
-            <version>1.16.0</version>
+            <version>1.17-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>args4j</groupId>

@@ -22,7 +22,7 @@ copyright = '2020, Jared Erickson'
 author = 'Jared Erickson'
 
 # The full version, including alpha/beta/rc tags
-release = '0.15.0'
+release = '0.16.0'
 
 
 # -- General configuration ---------------------------------------------------

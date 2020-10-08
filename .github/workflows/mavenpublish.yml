@@ -1,4 +1,4 @@
-name: Maven Package
+name: Maven Publish
 on:
   release:
     types: [created]
@@ -10,8 +10,7 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: 1.8
-        server-id: github-geoc
     - name: Publish
       run: mvn -B deploy
       env:
-        GITHUB_TOKEN: ${{ github.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

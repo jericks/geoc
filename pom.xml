@@ -10,8 +10,8 @@
     <description>A collection of geospatial command line applications</description>
     <distributionManagement>
         <repository>
-            <id>github-geoc</id>
-            <name>GitHub OWNER Apache Maven Packages</name>
+            <id>github</id>
+            <name>GitHub Packages</name>
             <url>https://maven.pkg.github.com/jericks/geoc</url>
         </repository>
     </distributionManagement>

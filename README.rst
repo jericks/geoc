@@ -1,6 +1,10 @@
 .. image:: https://travis-ci.org/jericks/geoc.svg?branch=master
     :target: https://travis-ci.org/jericks/geoc
 
+.. image:: https://github.com/jericks/geoc/workflows/Maven%20Build/badge.svg
+    :target: https://github.com/jericks/geoc/actions
+
+
 geoc
 ====
 geoc is a geospatial command line application that follows the unix philosophy.  Each command does one thing well (buffer a layer, crop a raster) by reading a vector layer as a CSV text stream or a raster layer as an ASCII grid, processing the layer or raster, and then writing out the vector layer as a CSV or a raster layer as an ASCII grid.  Individual commands can be chained together with unix pipes. 

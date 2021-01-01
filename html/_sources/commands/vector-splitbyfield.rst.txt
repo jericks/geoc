@@ -1,0 +1,30 @@
+vector splitbyfield
+===================
+
+**Name**:
+
+geoc vector splitbyfield
+
+**Description**:
+
+Split a Layer into separate Layers based on values from a Field
+
+**Arguments**:
+
+   * -f --field: The field name
+
+   * -o --output-workspace: The output workspace
+
+   * -i --input-workspace: The input workspace
+
+   * -l --input-layer: The input layer
+
+   * --help : Print the help message
+
+   * --web-help : Open help in a browser
+
+
+
+**Example**::
+
+    geoc vector splitbyfield -i states.shp -o state_regions -f SUB_REGION

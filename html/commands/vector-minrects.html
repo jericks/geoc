@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>vector minrects &mdash; geoc 0.16.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="vector octagonalenvelope" href="vector-octagonalenvelope.html" />
+    <link rel="prev" title="vector minrect" href="vector-minrect.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> geoc
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../keyfeatures.html">Key Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../commands.html">Commands</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="list.html">list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version.html">version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell.html">shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipe.html">pipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="proj-wkt.html">proj wkt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="proj-envelope.html">proj envelope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style-create.html">style create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style-css2sld.html">style css2sld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style-sld2ysld.html">style sld2ysld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style-ysld2sld.html">style ysld2sld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style-uniquevaluesfromtext.html">style uniquevaluesfromtext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry-convert.html">geometry convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry-dd2pt.html">geometry dd2pt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry-geohash-encode.html">geometry geohash encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry-geohash-decode.html">geometry geohash decode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry-geohash-bounds.html">geometry geohash bounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry-geohash-neighbors.html">geometry geohash neighbors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry-greatcirclearc.html">geometry greatcirclearc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry-offset.html">geometry offset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry-orthodromicdistance.html">geometry orthodromicdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry-plot.html">geometry plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry-pt2dd.html">geometry pt2dd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filter-cql2xml.html">filter cql2xml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map-cube.html">map cube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map-draw.html">map draw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-datastorelist.html">vector datastorelist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-datastoreparams.html">vector datastoreparams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-display.html">vector display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-list-layers.html">vector list layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-count.html">vector count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-buffer.html">vector buffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-envelope.html">vector envelope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-envelopes.html">vector envelopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-centroid.html">vector centroid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-convexhull.html">vector convexhull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-convexhulls.html">vector convexhulls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-interiorpoint.html">vector interiorpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-join-attribute.html">vector join attribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-join-spatial.html">vector join spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-mincircle.html">vector mincircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-mincircles.html">vector mincircles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-largestemptycircle.html">vector largestemptycircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-minrect.html">vector minrect</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">vector minrects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-octagonalenvelope.html">vector octagonalenvelope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-octagonalenvelopes.html">vector octagonalenvelopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-draw.html">vector draw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-voronoi.html">vector voronoi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-delaunay.html">vector delaunay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-geomw.html">vector geomw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-geomr.html">vector geomr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-coordinates.html">vector coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-simplify.html">vector simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-densify.html">vector densify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-filter.html">vector filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-delete.html">vector delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-schema.html">vector schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-updatefield.html">vector updatefield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-project.html">vector project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-copy.html">vector copy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-randompoints.html">vector randompoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-create.html">vector create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-add.html">vector add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-grid.html">vector grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-to.html">vector to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-from.html">vector from</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-info.html">vector info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-defaultstyle.html">vector defaultstyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-uniquevaluesstyle.html">vector uniquevaluesstyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-gradientstyle.html">vector gradientstyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-addfields.html">vector addfields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-removefields.html">vector removefields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-addidfield.html">vector addidfield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-addareafield.html">vector addareafield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-addlengthfield.html">vector addlengthfield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-addxyfields.html">vector addxyfields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-splitbyfield.html">vector splitbyfield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-splitbylayer.html">vector splitbylayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-dissolvebyfield.html">vector dissolvebyfield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-dissolveintersecting.html">vector dissolveintersecting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-pointsalongline.html">vector pointsalongline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-append.html">vector append</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-merge.html">vector merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-clip.html">vector clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-union.html">vector union</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-intersection.html">vector intersection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-intersects.html">vector intersects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-contains.html">vector contains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-distancewithin.html">vector distancewithin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-erase.html">vector erase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-identity.html">vector identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-update.html">vector update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-symdifference.html">vector symdifference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-validity.html">vector validity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-single2multiple.html">vector single2multiple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-multiple2single.html">vector multiple2single</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-compareschemas.html">vector compareschemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-transform.html">vector transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-pointstacker.html">vector pointstacker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-raster.html">vector raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-heatmap.html">vector heatmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-barnessurface.html">vector barnessurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-raster-values.html">vector raster values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-subset.html">vector subset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-sort.html">vector sort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-page.html">vector page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-translate.html">vector translate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-uniquevalues.html">vector uniquevalues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-shear.html">vector shear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-rotate.html">vector rotate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-scale.html">vector scale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-reflect.html">vector reflect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-smooth.html">vector smooth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-arc.html">vector arc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-arcpolygon.html">vector arcpolygon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-ellipse.html">vector ellipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-rectangle.html">vector rectangle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-sinestar.html">vector sinestar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-supercircle.html">vector supercircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-squircle.html">vector squircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-database-select.html">vector database select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-database-sql.html">vector database sql</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-database-index-create.html">vector database index create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-database-index-list.html">vector database index list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-database-index-delete.html">vector database index delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-database-remove.html">vector database remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-count-featuresInfeature.html">vector count featuresInfeature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-snap-points2lines.html">vector snap points2lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-points2lines.html">vector points2lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-points2polygons.html">vector points2polygons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-dump-shapefiles.html">vector dump shapefiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-graticule-square.html">vector graticule square</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-graticule-rectangle.html">vector graticule rectangle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-graticule-oval.html">vector graticule oval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-graticule-hexagon.html">vector graticule hexagon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-graticule-line.html">vector graticule line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector-remove-layer.html">vector remove layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-abs.html">raster abs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-info.html">raster info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-display.html">raster display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-draw.html">raster draw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-exp.html">raster exp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-crop.html">raster crop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-crop-with-geometry.html">raster crop with geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-crop-with-layer.html">raster crop with layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-extractfootprint.html">raster extractfootprint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-log.html">raster log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-normalize.html">raster normalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-convolve.html">raster convolve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-get-value.html">raster get value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-scale.html">raster scale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-project.html">raster project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-reclassify.html">raster reclassify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-resample.html">raster resample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-invert.html">raster invert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-stylize.html">raster stylize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-add-constant.html">raster add constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-add.html">raster add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-subtract-constant.html">raster subtract constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-subtract.html">raster subtract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-multiply-constant.html">raster multiply constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-multiply.html">raster multiply</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-divide-constant.html">raster divide constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-divide.html">raster divide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-mosaic.html">raster mosaic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-envelope.html">raster envelope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-point.html">raster point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-polygon.html">raster polygon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-contour.html">raster contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-to.html">raster to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-mapalgebra.html">raster mapalgebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-worldfile.html">raster worldfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-size.html">raster size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-projection.html">raster projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-shadedrelief.html">raster shadedrelief</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-style-default.html">raster style default</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-style-shadedrelief.html">raster style shadedrelief</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-style-channel-selection.html">raster style channel selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-style-contrast-enhancement.html">raster style contrast enhancement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-style-colormap.html">raster style colormap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-animatedgif.html">raster animatedgif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tile-generate.html">tile generate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tile-delete.html">tile delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tile-pyramid.html">tile pyramid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tile-stitch-raster.html">tile stitch raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tile-stitch-vector.html">tile stitch vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tile-vector-grid.html">tile vector grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tile-get-bounds.html">tile get bounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tile-list-tiles.html">tile list tiles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help.html">Help</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">geoc</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../commands.html">Commands</a> &raquo;</li>
+        
+      <li>vector minrects</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/commands/vector-minrects.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vector-minrects">
+<h1>vector minrects<a class="headerlink" href="#vector-minrects" title="Permalink to this headline">¶</a></h1>
+<p><strong>Name</strong>:</p>
+<p>geoc vector minrects</p>
+<p><strong>Description</strong>:</p>
+<p>Calculate the minimum rectangle of each feature in the input Layer and save them to the output Layer</p>
+<p><strong>Arguments</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>-o –output-workspace: The output workspace</p></li>
+<li><p>-r –output-layer: The output layer</p></li>
+<li><p>-i –input-workspace: The input workspace</p></li>
+<li><p>-l –input-layer: The input layer</p></li>
+<li><p>–help : Print the help message</p></li>
+<li><p>–web-help : Open help in a browser</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geoc</span> <span class="n">vector</span> <span class="n">minrects</span> <span class="o">-</span><span class="n">i</span> <span class="n">states</span><span class="o">.</span><span class="n">shp</span> <span class="o">-</span><span class="n">o</span> <span class="n">state_minrects</span><span class="o">.</span><span class="n">shp</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="vector-octagonalenvelope.html" class="btn btn-neutral float-right" title="vector octagonalenvelope" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="vector-minrect.html" class="btn btn-neutral float-left" title="vector minrect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Jared Erickson
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

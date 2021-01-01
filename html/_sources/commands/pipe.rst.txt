@@ -1,0 +1,24 @@
+pipe
+====
+
+**Name**:
+
+geoc pipe
+
+**Description**:
+
+Combine multiple commands together with a pipe.
+
+**Arguments**:
+
+   * -c --commands: Commands separate by pipe
+
+   * --help : Print the help message
+
+   * --web-help : Open help in a browser
+
+
+
+**Example**::
+
+    geoc pipe -c "vector randompoints -n 10 -g '1,1,10,10' | vector buffer -d 10"

@@ -1,0 +1,32 @@
+vector sort
+===========
+
+**Name**:
+
+geoc vector sort
+
+**Description**:
+
+Sort the Features in the input Layer.
+
+**Arguments**:
+
+   * -s --sort: The sort field
+
+   * -o --output-workspace: The output workspace
+
+   * -r --output-layer: The output layer
+
+   * -i --input-workspace: The input workspace
+
+   * -l --input-layer: The input layer
+
+   * --help : Print the help message
+
+   * --web-help : Open help in a browser
+
+
+
+**Example**::
+
+    cat states.csv | geoc vector sort -s "STATE_NAME ASC"

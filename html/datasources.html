@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data Sources &mdash; geoc 0.16.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="prev" title="Key Features" href="keyfeatures.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> geoc
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="keyfeatures.html">Key Features</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Sources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vector">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#raster">Raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tile">Tile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#map-layer">Map Layer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html">Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">geoc</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Data Sources</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/datasources.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-sources">
+<h1>Data Sources<a class="headerlink" href="#data-sources" title="Permalink to this headline">¶</a></h1>
+<p>By default, vector commands read and write CSV using WKT for geometry fields and raster commands read and write ASCII grids.
+But, geoc can read and write any supported GeoTools DataStore or CoverageStore by using Connection Strings. GeoTools uses
+connection maps to connect to DataStore’s.  geoc connection strings are these connection maps where the key/value pairs are
+separated by an ‘=’ sign and multiple key/value pairs are separated by a white space.  Values can be single quoted.</p>
+<div class="section" id="vector">
+<h2>Vector<a class="headerlink" href="#vector" title="Permalink to this headline">¶</a></h2>
+<p><strong>PostGIS</strong></p>
+<blockquote>
+<div><p>dbtype=postgis database=postgres host=localhost port=5432 user=postgres passwd=postgres</p>
+</div></blockquote>
+<p><strong>MySQL</strong></p>
+<blockquote>
+<div><p>dbtype=mysql database=layers host=localhost port=5432 user=me passwd=s$cr$t</p>
+</div></blockquote>
+<p><strong>H2</strong></p>
+<blockquote>
+<div><p>test.db</p>
+<p>dbtype=h2 database=test.db</p>
+<p>dbtype=h2 host=localhost port=5432 schema=public user=me password=s$cr$t</p>
+<p>dbtype=h2 jndiReferenceName=layers schema=public</p>
+</div></blockquote>
+<p><strong>Shapefile</strong></p>
+<blockquote>
+<div><p>url=data/states.shp</p>
+<p>data/states.shp</p>
+</div></blockquote>
+<p><strong>Memory</strong></p>
+<blockquote>
+<div><p>memory</p>
+</div></blockquote>
+<p><strong>Properties</strong></p>
+<blockquote>
+<div><p>data/states.properties</p>
+<p>directory=data/properties</p>
+</div></blockquote>
+<p><strong>GeoPackage</strong></p>
+<blockquote>
+<div><p>layers.gpkg</p>
+<p>database=layers.gpkg dbtype=geopkg user=me passwd=s$cr$t</p>
+</div></blockquote>
+<p><strong>Geobuf</strong></p>
+<blockquote>
+<div><p>layer.pbf</p>
+<p>file=layers precision=6 dimension=2</p>
+</div></blockquote>
+<p><strong>Spatialite</strong></p>
+<blockquote>
+<div><p>layers.sqlite</p>
+<p>dbtype=spatialite database=layers.sqlite</p>
+</div></blockquote>
+<p><strong>OGR</strong></p>
+<blockquote>
+<div><p>DatasourceName=states.shp DriverName=’ESRI Shapefile’ namespace=shp</p>
+</div></blockquote>
+<p><strong>WFS</strong></p>
+<blockquote>
+<div><p><a class="reference external" href="http://geoserver.org/wfs?request=getcapabilities">http://geoserver.org/wfs?request=getcapabilities</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="raster">
+<h2>Raster<a class="headerlink" href="#raster" title="Permalink to this headline">¶</a></h2>
+<p>Raster sources are currently all file based.</p>
+<blockquote>
+<div><p>data/earth.tif</p>
+<p>world.png</p>
+</div></blockquote>
+</div>
+<div class="section" id="tile">
+<h2>Tile<a class="headerlink" href="#tile" title="Permalink to this headline">¶</a></h2>
+<p><strong>pyramid</strong></p>
+<blockquote>
+<div><p>Several tile layers can take a pyramid attribute.  You can use one of several well known pyramid names:</p>
+<ul class="simple">
+<li><p>globalmercator</p></li>
+<li><p>mercator</p></li>
+<li><p>globalmercatorbottomleft</p></li>
+<li><p>globalgeodetic</p></li>
+<li><p>geodetic</p></li>
+</ul>
+<p>or use a file that contains pyramid metadata in csv, xml, or json format.</p>
+</div></blockquote>
+<p><strong>mbtiles</strong></p>
+<blockquote>
+<div><p>type=mbtiles file=states.mbtiles</p>
+<p>type=mbtiles file=states.mbtiles name=states description=’The united states’</p>
+<p>states.mbtiles</p>
+</div></blockquote>
+<p><strong>geopackage</strong></p>
+<blockquote>
+<div><p>type=geopackage file=states.gpkg name=states pyramid=globalmercator</p>
+<p>states.gpkg</p>
+</div></blockquote>
+<p><strong>tms</strong></p>
+<blockquote>
+<div><p>type=tms file=/Users/you/tms format=jpeg</p>
+<p>type=tms file=/Users/you/tms format=png name=tms pyramid=geodetic</p>
+</div></blockquote>
+<p><strong>osm</strong></p>
+<blockquote>
+<div><p>type=osm url=http://a.tile.openstreetmap.org</p>
+<p>type=osm urls=http://a.tile.openstreetmap.org,http://b.tile.openstreetmap.org</p>
+</div></blockquote>
+<p><strong>utfgrid</strong></p>
+<blockquote>
+<div><p>type=utfgrid file=/Users/me/tiles/states</p>
+</div></blockquote>
+<p><strong>vectortiles</strong></p>
+<blockquote>
+<div><p>type=vectortiles name=states file=/Users/me/tiles/states format=mvt pyramid=GlobalMercator</p>
+<p>type=vectortiles name=states url=http://vectortiles.org format=pbf pyramid=GlobalGeodetic</p>
+</div></blockquote>
+</div>
+<div class="section" id="map-layer">
+<h2>Map Layer<a class="headerlink" href="#map-layer" title="Permalink to this headline">¶</a></h2>
+<p>Map layer strings contain a layertype, layername, layerprojection, and style properties.</p>
+<p><strong>layertype</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>layer</p></li>
+<li><p>raster</p></li>
+<li><p>tile</p></li>
+</ul>
+</div></blockquote>
+<p>For layer layertype, you can use the same key value pairs used to specify a Workspace.</p>
+<p>For raster layertype, you specify a source=file key value pair.</p>
+<p>For tile layertype, you use the same key value pairs used to specify a tile layer.</p>
+<p><strong>layername</strong></p>
+<blockquote>
+<div><p>The name of the layer</p>
+</div></blockquote>
+<p><strong>style</strong></p>
+<blockquote>
+<div><p>A SLD or CSS File</p>
+</div></blockquote>
+<p><strong>Examples</strong></p>
+<blockquote>
+<div><p>layertype=layer dbtype=geopkg database=/Users/user/Desktop/countries.gpkg layername=countries style=/Users/user/Desktop/countries.sld</p>
+<p>layertype=layer file=/Users/user/Desktop/geoc/polygons.csv layername=polygons style=/Users/user/Desktop/geoc/polygons.sld</p>
+<p>layertype=layer file=/Users/user/Desktop/geoc/points.properties style=/Users/user/Desktop/geoc/points.sld</p>
+<p>layertype=layer file=/Users/user/Projects/geoc/src/test/resources/polygons.shp</p>
+<p>layertype=layer directory=/Users/user/Projects/geoc/src/test/resources/points.properties layername=points</p>
+<p>layertype=raster source=rasters/earth.tif</p>
+<p>layertype=tile file=world.mbtiles</p>
+<p>layertype=tile type=geopackage file=states.gpkg</p>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="examples.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="keyfeatures.html" class="btn btn-neutral float-left" title="Key Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Jared Erickson
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

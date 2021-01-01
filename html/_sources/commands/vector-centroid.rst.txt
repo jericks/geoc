@@ -1,0 +1,30 @@
+vector centroid
+===============
+
+**Name**:
+
+geoc vector centroid
+
+**Description**:
+
+Get the centroid of each feature in the input Layer and save them to the output Layer
+
+**Arguments**:
+
+   * -o --output-workspace: The output workspace
+
+   * -r --output-layer: The output layer
+
+   * -i --input-workspace: The input workspace
+
+   * -l --input-layer: The input layer
+
+   * --help : Print the help message
+
+   * --web-help : Open help in a browser
+
+
+
+**Example**::
+
+    geoc vector centroid -i states.shp -o state_centroids.shp

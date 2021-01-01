@@ -30,7 +30,6 @@ class Util {
      */
     private static final Logger LOGGER = Logging.getLogger("org.geocommands.Util")
 
-
     /**
      * Add one or more base map layers to a list of layers based on a base map string.
      * @param basemap The basemap string

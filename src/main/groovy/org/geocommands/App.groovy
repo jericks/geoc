@@ -37,7 +37,7 @@ class App {
                     new OutputStreamWriter(System.err)
             );
         } catch (Commands.CommandException e) {
-            System.exit(-1);
+            System.exit(-1)
         }
     }
 }

@@ -26,7 +26,7 @@ jobs:
         name: geoc.jar
         path: target/geoc-app*.jar
     - name: Sphinx build
-      uses: ammaraskar/sphinx-action@master
+      uses: ammaraskar/sphinx-action@0.4
       with:
         docs-folder: "src/website"
     - name: Deploy website
@@ -34,5 +34,5 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: src/website/build
+        FOLDER: src/website/build/html
         CLEAN: false

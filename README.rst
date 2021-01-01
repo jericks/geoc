@@ -1,9 +1,5 @@
-.. image:: https://travis-ci.org/jericks/geoc.svg?branch=master
-    :target: https://travis-ci.org/jericks/geoc
-
 .. image:: https://github.com/jericks/geoc/workflows/Maven%20Build/badge.svg
     :target: https://github.com/jericks/geoc/actions
-
 
 geoc
 ====

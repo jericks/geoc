@@ -21,6 +21,8 @@ Create a Style from reading values in the unique values format
 
    * -o --output: The output file
 
+   * -w --writer-options: The StyleWriter options
+
    * --help : Print the help message
 
    * --web-help : Open help in a browser

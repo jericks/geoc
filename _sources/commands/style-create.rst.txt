@@ -15,6 +15,8 @@ Create a simple style
 
    * -t --type: The output type (sld or ysld)
 
+   * -w --writer-options: The StyleWriter options
+
    * -o --output: The output file
 
    * --help : Print the help message

@@ -33,8 +33,14 @@ class CreateStyleCommand extends Command<CreateStyleOptions> {
     @Override
     void execute(CreateStyleOptions options, Reader reader, Writer writer) throws Exception {
         Style style = new SimpleStyleReader().read(options.options)
-        StyleWriter styleWriter = options.type.equalsIgnoreCase("ysld") ? new YSLDWriter() :new SLDWriter()
-        String styleStr = styleWriter.write(style)
+        String styleStr = ""
+        if (options.type.equalsIgnoreCase("ysld")) {
+            StyleWriter styleWriter = new YSLDWriter()
+            styleStr = styleWriter.write(style)
+        } else {
+            StyleWriter styleWriter = new SLDWriter()
+            styleStr = styleWriter.write(options.writerOptions, style)
+        }
         if (options.output) {
             new File(options.output).write(styleStr)
         } else {
@@ -49,6 +55,9 @@ class CreateStyleCommand extends Command<CreateStyleOptions> {
 
         @Option(name = "-t", aliases = "--type", usage = "The output type (sld or ysld)", required = false)
         String type = "sld"
+
+        @Option(name = "-w", aliases = "--writer-options", usage = "The StyleWriter options", required = false)
+        Map<String,String> writerOptions = [:]
 
         @Option(name = "-o", aliases = "--output", usage = "The output file", required = false)
         String output

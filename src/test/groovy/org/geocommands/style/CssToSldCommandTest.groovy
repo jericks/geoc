@@ -19,7 +19,7 @@ class CssToSldCommandTest extends BaseTest {
    fill: red;
  }"""
 
-    private String sld = """<?xml version="1.0" encoding="UTF-8"?><sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml" version="1.0.0">
+    private String expectedSld = """<?xml version="1.0" encoding="UTF-8"?><sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml" version="1.0.0">
   <sld:UserLayer>
     <sld:LayerFeatureConstraints>
       <sld:FeatureTypeConstraint/>
@@ -55,7 +55,7 @@ class CssToSldCommandTest extends BaseTest {
         CssToSldCommand cmd = new CssToSldCommand()
         CssToSldOptions options = new CssToSldOptions()
         cmd.execute(options, reader, writer)
-        assertStringsEqual(sld, writer.toString(), true, true)
+        assertStringsEqual(expectedSld, writer.toString(), true, true)
     }
 
     @Test
@@ -71,7 +71,7 @@ class CssToSldCommandTest extends BaseTest {
                 output: outFile.absolutePath
         )
         cmd.execute(options, reader, writer)
-        assertStringsEqual(sld, outFile.text, true, true)
+        assertStringsEqual(expectedSld, outFile.text, true, true)
     }
 
     @Test
@@ -79,7 +79,7 @@ class CssToSldCommandTest extends BaseTest {
         String sld = runApp([
                 "style css2sld"
         ], css)
-        assertStringsEqual(sld, sld, true, true)
+        assertStringsEqual(expectedSld, sld, true, true)
     }
 
     @Test
@@ -92,6 +92,39 @@ class CssToSldCommandTest extends BaseTest {
                 "-i", inFile.absolutePath,
                 "-o", outFile.absolutePath
         ], "")
-        assertStringsEqual(sld, outFile.text, true, true)
+        assertStringsEqual(expectedSld, outFile.text, true, true)
+    }
+
+    @Test
+    void runWithStringsToNamedLayerSld() {
+        String sld = runApp([
+                "style css2sld",
+                "-w", "type=NamedLayer"
+        ], css)
+        assertStringsEqual("""<?xml version="1.0" encoding="UTF-8"?><sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" version="1.0.0">
+  <sld:NamedLayer>
+    <sld:Name/>
+    <sld:UserStyle>
+      <sld:Name>Default Styler</sld:Name>
+      <sld:FeatureTypeStyle>
+        <sld:Rule>
+          <sld:PointSymbolizer>
+            <sld:Graphic>
+              <sld:Mark>
+                <sld:WellKnownName>circle</sld:WellKnownName>
+                <sld:Fill>
+                  <sld:CssParameter name="fill">#ff0000</sld:CssParameter>
+                </sld:Fill>
+              </sld:Mark>
+              <sld:Size>6</sld:Size>
+            </sld:Graphic>
+          </sld:PointSymbolizer>
+        </sld:Rule>
+        <sld:VendorOption name="ruleEvaluation">first</sld:VendorOption>
+      </sld:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+</sld:StyledLayerDescriptor>
+""", sld.trim(), true, true)
     }
 }

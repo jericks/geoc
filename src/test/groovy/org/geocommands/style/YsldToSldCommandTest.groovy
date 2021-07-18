@@ -25,7 +25,7 @@ feature-styles:
   x-ruleEvaluation: first
 """
 
-    private String sld = """<?xml version="1.0" encoding="UTF-8"?><sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml" version="1.0.0">
+    private String expectedSld = """<?xml version="1.0" encoding="UTF-8"?><sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml" version="1.0.0">
   <sld:UserLayer>
     <sld:LayerFeatureConstraints>
       <sld:FeatureTypeConstraint/>
@@ -61,7 +61,7 @@ feature-styles:
         YsldToSldCommand cmd = new YsldToSldCommand()
         YsldToSldOptions options = new YsldToSldOptions()
         cmd.execute(options, reader, writer)
-        assertStringsEqual(sld, writer.toString().trim(), true, true)
+        assertStringsEqual(expectedSld, writer.toString().trim(), true, true)
     }
 
     @Test
@@ -77,7 +77,7 @@ feature-styles:
                 output: outFile.absolutePath
         )
         cmd.execute(options, reader, writer)
-        assertStringsEqual(sld, outFile.text.trim(), true, true)
+        assertStringsEqual(expectedSld, outFile.text.trim(), true, true)
     }
 
     @Test
@@ -85,7 +85,7 @@ feature-styles:
         String result = runApp([
                 "style ysld2sld"
         ], ysld)
-        assertStringsEqual(sld, result.trim(), true, true)
+        assertStringsEqual(expectedSld, result.trim(), true, true)
     }
 
     @Test
@@ -98,6 +98,39 @@ feature-styles:
                 "-i", inFile.absolutePath,
                 "-o", outFile.absolutePath
         ], "")
-        assertStringsEqual(sld, outFile.text.trim(), true, true)
+        assertStringsEqual(expectedSld, outFile.text.trim(), true, true)
+    }
+
+    @Test
+    void runWithStringsToNamedLayer() {
+        String result = runApp([
+                "style ysld2sld",
+                "-w", "type=NamedLayer"
+        ], ysld)
+        assertStringsEqual("""<?xml version="1.0" encoding="UTF-8"?><sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" version="1.0.0">
+  <sld:NamedLayer>
+    <sld:Name/>
+    <sld:UserStyle>
+      <sld:Name>Default Styler</sld:Name>
+      <sld:FeatureTypeStyle>
+        <sld:Name>name</sld:Name>
+        <sld:Rule>
+          <sld:PointSymbolizer>
+            <sld:Graphic>
+              <sld:Mark>
+                <sld:WellKnownName>circle</sld:WellKnownName>
+                <sld:Fill>
+                  <sld:CssParameter name="fill">#FF0000</sld:CssParameter>
+                </sld:Fill>
+              </sld:Mark>
+              <sld:Size>6</sld:Size>
+            </sld:Graphic>
+          </sld:PointSymbolizer>
+        </sld:Rule>
+        <sld:VendorOption name="ruleEvaluation">first</sld:VendorOption>
+      </sld:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+</sld:StyledLayerDescriptor>""", result.trim(), true, true)
     }
 }

@@ -367,15 +367,15 @@ _geoc()
     elif [[ "$line" == *"geoc shell "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help' -- $cur))
     elif [[ "$line" == *"geoc style create "* ]]; then
-        COMPREPLY=($(compgen -W '--help --web-help -o --output -s --style-options -t --type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -o --output -s --style-options -t --type -w --writer-options' -- $cur))
     elif [[ "$line" == *"geoc style css2sld "* ]]; then
-        COMPREPLY=($(compgen -W '--help --web-help -i --input -o --output' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input -o --output -w --writer-options' -- $cur))
     elif [[ "$line" == *"geoc style sld2ysld "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -i --input -o --output' -- $cur))
     elif [[ "$line" == *"geoc style uniquevaluesfromtext "* ]]; then
-        COMPREPLY=($(compgen -W '--help --web-help -f --field -g --geometry-type -i --input -o --output -t --type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --field -g --geometry-type -i --input -o --output -t --type -w --writer-options' -- $cur))
     elif [[ "$line" == *"geoc style ysld2sld "* ]]; then
-        COMPREPLY=($(compgen -W '--help --web-help -i --input -o --output' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -i --input -o --output -w --writer-options' -- $cur))
     elif [[ "$line" == *"geoc style " ]]; then
         COMPREPLY=($(compgen -W ' create  css2sld  sld2ysld  uniquevaluesfromtext  ysld2sld'))
     elif [[ "$line" == *"geoc style"[[:space:]][[:alpha:]]* ]]; then

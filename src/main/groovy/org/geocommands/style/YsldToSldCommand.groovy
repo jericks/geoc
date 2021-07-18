@@ -42,7 +42,7 @@ class YsldToSldCommand extends Command<YsldToSldOptions> {
             style = styleReader.read(reader.text)
         }
         if (style) {
-            String sld = new SLDWriter().write(style)
+            String sld = new SLDWriter().write(options.writerOptions, style)
             if (options.output) {
                 new File(options.output).write(sld)
             } else {
@@ -58,6 +58,9 @@ class YsldToSldCommand extends Command<YsldToSldOptions> {
 
         @Option(name = "-o", aliases = "--output", usage = "The output file", required = false)
         String output
+
+        @Option(name = "-w", aliases = "--writer-options", usage = "The StyleWriter options", required = false)
+        Map<String,String> writerOptions = [:]
 
     }
 }

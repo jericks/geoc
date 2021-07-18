@@ -8,7 +8,7 @@ import org.geocommands.Command
 import org.geocommands.Options
 import org.kohsuke.args4j.Option
 
-class UniqueValuesStyleFromTextCommand extends Command<ReadUniqueValuesStyleOptions> {
+class UniqueValuesStyleFromTextCommand extends Command<UniqueValuesStyleFromTextOptions> {
 
     @Override
     String getName() {
@@ -21,12 +21,12 @@ class UniqueValuesStyleFromTextCommand extends Command<ReadUniqueValuesStyleOpti
     }
 
     @Override
-    ReadUniqueValuesStyleOptions getOptions() {
-        new ReadUniqueValuesStyleOptions()
+    UniqueValuesStyleFromTextOptions getOptions() {
+        new UniqueValuesStyleFromTextOptions()
     }
 
     @Override
-    void execute(ReadUniqueValuesStyleOptions options, Reader reader, Writer writer) throws Exception {
+    void execute(UniqueValuesStyleFromTextOptions options, Reader reader, Writer writer) throws Exception {
         // Read
         Style style
         UniqueValuesReader uniqueValuesReader = new UniqueValuesReader(options.field, options.geometryType)
@@ -40,8 +40,14 @@ class UniqueValuesStyleFromTextCommand extends Command<ReadUniqueValuesStyleOpti
             style = uniqueValuesReader.read(reader.text)
         }
         // Write
-        geoscript.style.io.Writer styleWriter = options.type.equalsIgnoreCase("ysld") ? new YSLDWriter() :new SLDWriter()
-        String styleStr = styleWriter.write(style)
+        String styleStr = ""
+        if (options.type.equalsIgnoreCase("ysld")) {
+            YSLDWriter styleWriter = new YSLDWriter()
+            styleStr = styleWriter.write(style)
+        } else {
+            SLDWriter styleWriter = new SLDWriter()
+            styleStr = styleWriter.write(options.writerOptions, style)
+        }
         if (options.output) {
             new File(options.output).write(styleStr)
         } else {
@@ -49,7 +55,7 @@ class UniqueValuesStyleFromTextCommand extends Command<ReadUniqueValuesStyleOpti
         }
     }
 
-    static class ReadUniqueValuesStyleOptions extends Options {
+    static class UniqueValuesStyleFromTextOptions extends Options {
 
         @Option(name = "-f", aliases = "--field", usage = "The field", required = true)
         String field
@@ -65,6 +71,9 @@ class UniqueValuesStyleFromTextCommand extends Command<ReadUniqueValuesStyleOpti
 
         @Option(name = "-o", aliases = "--output", usage = "The output file", required = false)
         String output
+
+        @Option(name = "-w", aliases = "--writer-options", usage = "The StyleWriter options", required = false)
+        Map<String,String> writerOptions = [:]
 
     }
 

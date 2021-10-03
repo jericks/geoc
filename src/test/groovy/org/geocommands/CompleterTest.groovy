@@ -23,14 +23,14 @@ class CompleterTest {
         assertTrue(values.contains("raster"))
 
         values = completer.complete("vector")
-        assertEquals(100, values.size())
+        assertEquals(101, values.size())
         assertTrue(values.contains("centroid"))
         assertTrue(values.contains("buffer"))
         assertTrue(values.contains("mincircle"))
         assertTrue(values.contains("count"))
 
         values = completer.complete("vector buf")
-        assertEquals(100, values.size())
+        assertEquals(101, values.size())
         assertTrue(values.contains("centroid"))
         assertTrue(values.contains("buffer"))
         assertTrue(values.contains("mincircle"))

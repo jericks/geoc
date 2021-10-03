@@ -588,6 +588,8 @@ _geoc()
         COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -k --other-workspace -l --input-layer -o --output-workspace -r --output-layer -y --other-layer' -- $cur))
     elif [[ "$line" == *"geoc vector filter "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -f --filter -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
+    elif [[ "$line" == *"geoc vector fix "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector from "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -f --format -g --geometry-type -o --output-workspace -p --format-options -r --output-layer -t --text' -- $cur))
     elif [[ "$line" == *"geoc vector geomr "* ]]; then
@@ -772,7 +774,7 @@ _geoc()
     elif [[ "$line" == *"geoc vector voronoi "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -i --input-workspace -l --input-layer -o --output-workspace -r --output-layer' -- $cur))
     elif [[ "$line" == *"geoc vector " ]]; then
-        COMPREPLY=($(compgen -W ' add  addareafield  addfields  addidfield  addlengthfield  addxyfields  append  arc  arcpolygon  barnessurface  buffer  centroid  clip  compareschemas  contains  convexhull  convexhulls  coordinates  copy  count  create  database  datastorelist  datastoreparams  defaultstyle  delaunay  delete  densify  display  dissolvebyfield  dissolveintersecting  distancewithin  draw  dump  ellipse  envelope  envelopes  erase  filter  from  geomr  geomw  gradientstyle  graticule  grid  heatmap  identity  info  interiorpoint  intersection  intersects  join  largestemptycircle  list  merge  mincircle  mincircles  minrect  minrects  multiple2single  octagonalenvelope  octagonalenvelopes  page  points2lines  points2polygons  pointsalongline  pointstacker  project  randompoints  raster  rectangle  reflect  remove  removefields  rotate  scale  schema  shear  simplify  sinestar  single2multiple  smooth  snap  sort  splitbyfield  splitbylayer  squircle  subset  supercircle  symdifference  to  transform  translate  union  uniquevalues  uniquevaluesstyle  update  updatefield  validity  voronoi'))
+        COMPREPLY=($(compgen -W ' add  addareafield  addfields  addidfield  addlengthfield  addxyfields  append  arc  arcpolygon  barnessurface  buffer  centroid  clip  compareschemas  contains  convexhull  convexhulls  coordinates  copy  count  create  database  datastorelist  datastoreparams  defaultstyle  delaunay  delete  densify  display  dissolvebyfield  dissolveintersecting  distancewithin  draw  dump  ellipse  envelope  envelopes  erase  filter  fix  from  geomr  geomw  gradientstyle  graticule  grid  heatmap  identity  info  interiorpoint  intersection  intersects  join  largestemptycircle  list  merge  mincircle  mincircles  minrect  minrects  multiple2single  octagonalenvelope  octagonalenvelopes  page  points2lines  points2polygons  pointsalongline  pointstacker  project  randompoints  raster  rectangle  reflect  remove  removefields  rotate  scale  schema  shear  simplify  sinestar  single2multiple  smooth  snap  sort  splitbyfield  splitbylayer  squircle  subset  supercircle  symdifference  to  transform  translate  union  uniquevalues  uniquevaluesstyle  update  updatefield  validity  voronoi'))
     elif [[ "$line" == *"geoc vector"[[:space:]][[:alpha:]]* ]]; then
         if [[ "vector add" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' add'))
@@ -890,6 +892,9 @@ _geoc()
         fi
         if [[ "vector filter" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' filter'))
+        fi
+        if [[ "vector fix" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' fix'))
         fi
         if [[ "vector from" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' from'))

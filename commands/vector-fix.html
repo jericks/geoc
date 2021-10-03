@@ -9,7 +9,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>raster abs &mdash; geoc 0.17.0 documentation</title>
+  <title>vector fix &mdash; geoc 0.17.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="raster add constant" href="raster-add-constant.html" />
-    <link rel="prev" title="proj wkt" href="proj-wkt.html" /> 
+    <link rel="next" title="vector from" href="vector-from.html" />
+    <link rel="prev" title="vector filter" href="vector-filter.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -106,7 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="map-draw.html">map draw</a></li>
 <li class="toctree-l2"><a class="reference internal" href="proj-envelope.html">proj envelope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="proj-wkt.html">proj wkt</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">raster abs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster-abs.html">raster abs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-add-constant.html">raster add constant</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-add.html">raster add</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-animatedgif.html">raster animatedgif</a></li>
@@ -208,7 +208,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vector-envelopes.html">vector envelopes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-erase.html">vector erase</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-filter.html">vector filter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vector-fix.html">vector fix</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">vector fix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-from.html">vector from</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-geomr.html">vector geomr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vector-geomw.html">vector geomw</a></li>
@@ -327,13 +327,13 @@
         
           <li><a href="../commands.html">Commands</a> &raquo;</li>
         
-      <li>raster abs</li>
+      <li>vector fix</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/commands/raster-abs.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/commands/vector-fix.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -346,26 +346,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="raster-abs">
-<h1>raster abs<a class="headerlink" href="#raster-abs" title="Permalink to this headline">¶</a></h1>
+  <section id="vector-fix">
+<h1>vector fix<a class="headerlink" href="#vector-fix" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc raster abs</p>
+<p>geoc vector fix</p>
 <p><strong>Description</strong>:</p>
-<p>Calculate the absolute value for each cell.</p>
+<p>Fix the geometry of the features of the input Layer and save them to the output Layer</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>-o –output-raster: The output raster</p></li>
-<li><p>-f –output-raster-format: The output raster format</p></li>
-<li><p>-i –input-raster: The input raster</p></li>
-<li><p>-l –input-raster-name: The input raster name</p></li>
-<li><p>-p –input-projection: The input projection</p></li>
+<li><p>-o –output-workspace: The output workspace</p></li>
+<li><p>-r –output-layer: The output layer</p></li>
+<li><p>-i –input-workspace: The input workspace</p></li>
+<li><p>-l –input-layer: The input layer</p></li>
 <li><p>–help : Print the help message</p></li>
 <li><p>–web-help : Open help in a browser</p></li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geoc</span> <span class="n">raster</span> <span class="nb">abs</span> <span class="o">-</span><span class="n">i</span> <span class="n">raster</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">o</span> <span class="n">raster_abs</span><span class="o">.</span><span class="n">tif</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;geoc vector fix -i lines.shp -o fixed_lines.shp&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -378,10 +377,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="raster-add-constant.html" class="btn btn-neutral float-right" title="raster add constant" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="vector-from.html" class="btn btn-neutral float-right" title="vector from" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="proj-wkt.html" class="btn btn-neutral float-left" title="proj wkt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vector-filter.html" class="btn btn-neutral float-left" title="vector filter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

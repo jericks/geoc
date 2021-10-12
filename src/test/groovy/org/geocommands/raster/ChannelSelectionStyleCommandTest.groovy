@@ -2,7 +2,7 @@ package org.geocommands.raster
 
 import org.geocommands.BaseTest
 import org.geocommands.raster.ChannelSelectionStyleCommand.ChannelSelectionStyleOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 /**
  * The ChannelSelectionStyleCommand Unit Test

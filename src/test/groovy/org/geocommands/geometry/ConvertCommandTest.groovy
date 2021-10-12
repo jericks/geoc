@@ -3,8 +3,8 @@ package org.geocommands.geometry
 import groovy.json.JsonSlurper
 import org.geocommands.BaseTest
 import org.geocommands.geometry.ConvertCommand.ConvertOptions
-import org.junit.Test
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The ConvertCommand Unit Test

@@ -3,9 +3,9 @@ package org.geocommands.geometry
 import geoscript.geom.Point
 import org.geocommands.BaseTest
 import org.geocommands.geometry.PlotCommand.PlotOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.assertTrue
+import static org.junit.jupiter.api.Assertions.assertTrue
 
 /**
  * The PlotCommand Unit Test

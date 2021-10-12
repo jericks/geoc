@@ -8,14 +8,14 @@ import org.geocommands.vector.RandomPointsCommand.RandomPointsOptions
 import org.geocommands.vector.BufferCommand.BufferOptions
 import org.geocommands.vector.IntersectsCommand.IntersectsOptions
 import org.geocommands.BaseTest
-import org.junit.Test
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 @CompileStatic
 class IntersectsCommandTest extends BaseTest {
 
     private File createPoints(String name, int number) {
-        File pointsFile = folder.newFile("${name}.shp")
+        File pointsFile = new File(folder, "${name}.shp")
         RandomPointsCommand randomPointsCommand = new RandomPointsCommand()
         RandomPointsOptions options = new RandomPointsOptions()
         options.geometry = "-180,-90,180,90"
@@ -26,7 +26,7 @@ class IntersectsCommandTest extends BaseTest {
     }
 
     private File createPolygons() {
-        File polysFile = folder.newFile("polys.shp")
+        File polysFile = new File(folder, "polys.shp")
         File pointsFile = createPoints("polys_points", 10)
         BufferCommand bufferCommand = new BufferCommand()
         BufferOptions bufferOptions = new BufferOptions()

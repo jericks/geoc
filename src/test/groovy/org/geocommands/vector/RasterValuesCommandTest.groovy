@@ -6,9 +6,9 @@ import geoscript.layer.Shapefile
 import geoscript.layer.io.CsvReader
 import org.geocommands.BaseTest
 import org.geocommands.vector.RasterValuesCommand.RasterValuesOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.*
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The RasterValuesCommand Unit Test

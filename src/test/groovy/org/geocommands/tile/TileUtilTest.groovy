@@ -1,8 +1,8 @@
 package org.geocommands.tile
 
 import geoscript.layer.OSM
-import org.junit.Test
-import static org.junit.Assert.assertEquals
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.assertEquals
 
 /**
  * The TileUtil Unit Test.

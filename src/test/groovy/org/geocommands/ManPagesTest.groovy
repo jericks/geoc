@@ -1,6 +1,6 @@
 package org.geocommands
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 import org.kohsuke.args4j.Option
 
 import java.text.SimpleDateFormat

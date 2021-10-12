@@ -6,10 +6,10 @@ import geoscript.layer.Raster
 import org.apache.commons.io.input.ReaderInputStream
 import org.geocommands.BaseTest
 import org.geocommands.raster.ScaleCommand.ScaleOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.assertNotNull
-import static org.junit.Assert.assertTrue
+import static org.junit.jupiter.api.Assertions.assertNotNull
+import static org.junit.jupiter.api.Assertions.assertTrue
 
 /**
  * The ScaleCommand Unit Test

@@ -5,9 +5,9 @@ import geoscript.layer.Shapefile
 import geoscript.layer.io.CsvReader
 import org.geocommands.BaseTest
 import org.geocommands.vector.ArcPolygonCommand.ArcPolygonOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.assertEquals
+import static org.junit.jupiter.api.Assertions.assertEquals
 
 /**
  * The ArcPolygonCommand Unit Test

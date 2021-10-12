@@ -9,9 +9,9 @@ import geoscript.workspace.H2
 import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.CopyCommand.CopyOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.*
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The CopyCommand Unit Test
@@ -104,7 +104,7 @@ class CopyCommandTest extends BaseTest {
     void executeH2ToShapefile() {
 
         // Create an H2 Database with two Layers
-        File dir = folder.newFolder("layers")
+        File dir = createDir("layers")
         File h2File = new File(dir, "layers.db")
         H2 h2 = new H2("layers.db", dir)
 

@@ -2,7 +2,7 @@ package org.geocommands.proj
 
 import org.geocommands.BaseTest
 import org.geocommands.proj.WktCommand.WktOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 /**
  * The PrjCommand Unit Test

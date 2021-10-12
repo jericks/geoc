@@ -5,8 +5,8 @@ import geoscript.workspace.H2
 import org.geocommands.vector.DatabaseRemoveCommand.DatabaseRemoveOptions
 import org.geocommands.vector.CopyCommand.CopyOptions
 import org.geocommands.BaseTest
-import org.junit.Test
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The DatabaseRemoveCommand Unit Test

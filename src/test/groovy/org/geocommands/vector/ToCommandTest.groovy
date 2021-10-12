@@ -2,8 +2,8 @@ package org.geocommands.vector
 
 import org.geocommands.BaseTest
 import org.geocommands.vector.ToCommand.ToOptions
-import org.junit.Test
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The ToCommand Unit Test

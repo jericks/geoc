@@ -2,8 +2,7 @@ package org.geocommands
 
 import geoscript.layer.Layer
 import geoscript.layer.io.CsvReader
-import org.junit.Rule
-import org.junit.rules.TemporaryFolder
+import org.junit.jupiter.api.io.TempDir
 
 import static junit.framework.Assert.assertEquals
 
@@ -13,8 +12,8 @@ import static junit.framework.Assert.assertEquals
  */
 class BaseTest {
 
-    @Rule
-    public TemporaryFolder folder = new TemporaryFolder()
+    @TempDir
+    File folder
 
     public static String NEW_LINE = System.getProperty("line.separator")
 
@@ -66,13 +65,19 @@ class BaseTest {
         ]
     }
 
+    File createDir(String name) {
+        File file = new File(folder, name)
+        file.mkdir()
+        file
+    }
+
     File createTemporaryShapefile(String name) {
-        File dir = folder.newFolder(name)
+        File dir = createDir(name)
         new File(dir, "${name}.shp")
     }
 
     File createTemporaryFile(String name, String ext) {
-        File dir = folder.newFolder(name)
+        File dir = createDir(name)
         new File(dir, "${name}.${ext}")
     }
 

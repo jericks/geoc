@@ -5,7 +5,7 @@ import geoscript.workspace.Property
 import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.DeleteCommand.DeleteOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 import static junit.framework.Assert.assertEquals
 

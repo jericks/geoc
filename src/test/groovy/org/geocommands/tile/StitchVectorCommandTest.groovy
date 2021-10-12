@@ -6,21 +6,15 @@ import geoscript.workspace.Workspace
 import org.geocommands.BaseTest
 import org.geocommands.tile.GenerateCommand.GenerateOptions
 import org.geocommands.tile.StitchVectorCommand.StitchVectorOptions
-import org.junit.Rule
-import org.junit.Test
-import org.junit.rules.TemporaryFolder
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.assertEquals
-import static org.junit.Assert.assertTrue
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The StitchVectorCommand Unit Test
  * @author Jared Erickson
  */
 class StitchVectorCommandTest extends BaseTest {
-
-    @Rule
-    public TemporaryFolder temporaryFolder = new TemporaryFolder()
 
     @Test
     void executeMvtTiles() {
@@ -57,7 +51,7 @@ class StitchVectorCommandTest extends BaseTest {
     }
 
     private File generateMvtTiles() {
-        File tileFile = temporaryFolder.newFolder("earthquakes")
+        File tileFile = createDir("earthquakes")
         File layerFile = getResource("earthquakes.properties")
         GenerateCommand cmd = new GenerateCommand()
         GenerateOptions options = new GenerateOptions(

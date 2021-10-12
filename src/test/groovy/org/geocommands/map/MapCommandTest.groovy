@@ -2,8 +2,8 @@ package org.geocommands.map
 
 import org.geocommands.BaseTest
 import org.geocommands.map.MapCommand.MapOptions
-import org.junit.Test
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The MapCommand Unit Test.
@@ -12,7 +12,7 @@ import static org.junit.Assert.*
 class MapCommandTest extends BaseTest {
 
     private File getFile(String name) {
-        folder.newFile(name)
+        new File(folder, name)
     }
 
     @Test void execute() {

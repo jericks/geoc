@@ -6,7 +6,8 @@ import geoscript.layer.Shapefile
 import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.InteriorPointCommand.InteriorPointOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The InteriorPointCommand Unit Test
@@ -25,8 +26,8 @@ class InteriorPointCommandTest extends BaseTest {
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
-        org.junit.Assert.assertEquals 4, shp.count
-        org.junit.Assert.assertEquals "Point", shp.schema.geom.typ
+        assertEquals 4, shp.count
+        assertEquals "Point", shp.schema.geom.typ
     }
 
     @Test
@@ -36,8 +37,8 @@ class InteriorPointCommandTest extends BaseTest {
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("polygons.csv"), w)
         Layer layer = getLayerFromCsv(w.toString())
-        org.junit.Assert.assertEquals 4, layer.count
-        layer.eachFeature { org.junit.Assert.assertTrue it.geom instanceof Point }
+        assertEquals 4, layer.count
+        layer.eachFeature { assertTrue it.geom instanceof Point }
     }
 
     @Test
@@ -50,12 +51,12 @@ class InteriorPointCommandTest extends BaseTest {
                 "-o", shpFile.absolutePath
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
-        org.junit.Assert.assertEquals 4, shp.count
-        org.junit.Assert.assertEquals "Point", shp.schema.geom.typ
+        assertEquals 4, shp.count
+        assertEquals "Point", shp.schema.geom.typ
 
         String output = runApp(["vector interiorpoint"], readCsv("polygons.csv").text)
         Layer layer = getLayerFromCsv(output)
-        org.junit.Assert.assertEquals 4, layer.count
-        layer.eachFeature { org.junit.Assert.assertTrue it.geom instanceof Point }
+        assertEquals 4, layer.count
+        layer.eachFeature { assertTrue it.geom instanceof Point }
     }
 }

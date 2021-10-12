@@ -2,7 +2,7 @@ package org.geocommands.style
 
 import org.geocommands.BaseTest
 import org.geocommands.style.YsldToSldCommand.YsldToSldOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 /**
  * The CssToSldCommand Unit Test

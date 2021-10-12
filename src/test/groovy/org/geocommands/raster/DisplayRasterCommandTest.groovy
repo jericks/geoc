@@ -3,8 +3,8 @@ package org.geocommands.raster
 import geoscript.render.Map
 import org.geocommands.BaseTest
 import org.geocommands.raster.DisplayRasterCommand.DisplayRasterOptions
-import org.junit.Test
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The DisplayRasterCommand Unit Test

@@ -7,10 +7,10 @@ import geoscript.layer.Raster
 import geoscript.proj.Projection
 import org.apache.commons.io.input.ReaderInputStream
 import org.geocommands.BaseTest
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.assertEquals
-import static org.junit.Assert.assertNotNull
+import static org.junit.jupiter.api.Assertions.assertEquals
+import static org.junit.jupiter.api.Assertions.assertNotNull
 
 class ShadedReliefCommandTest extends BaseTest {
 

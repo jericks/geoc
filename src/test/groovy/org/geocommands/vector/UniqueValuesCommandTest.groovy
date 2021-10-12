@@ -2,7 +2,7 @@ package org.geocommands.vector
 
 import org.geocommands.BaseTest
 import org.geocommands.vector.UniqueValuesCommand.UniqueValuesOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 /**
  * The UniqueValuesCommand Test

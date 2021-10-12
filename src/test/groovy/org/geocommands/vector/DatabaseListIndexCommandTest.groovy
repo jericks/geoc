@@ -3,7 +3,7 @@ package org.geocommands.vector
 import org.geocommands.vector.CopyCommand.CopyOptions
 import org.geocommands.vector.DatabaseListIndexCommand.DatabaseListIndexOptions
 import org.geocommands.BaseTest
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 /**
  * The DatabaseListIndexCommand Unit Test

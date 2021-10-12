@@ -6,9 +6,9 @@ import geoscript.layer.Shapefile
 import geoscript.workspace.H2
 import org.geocommands.App
 import org.geocommands.BaseTest
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.*
+import static org.junit.jupiter.api.Assertions.*
 
 /**s
  * The BufferCommand Unit Test
@@ -36,7 +36,7 @@ class BufferCommandTest extends BaseTest {
     void executeToH2() {
         BufferCommand cmd = new BufferCommand()
         File file = getResource("points.properties")
-        File h2File = new File(folder.newFolder("h2buffer"), "database.db")
+        File h2File = new File(createDir("h2buffer"), "database.db")
         BufferCommand.BufferOptions options = new BufferCommand.BufferOptions(
                 inputWorkspace: file.absolutePath,
                 distance: 2,

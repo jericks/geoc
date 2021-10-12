@@ -4,8 +4,8 @@ import geoscript.layer.Layer
 import org.geocommands.raster.ExtractFootprintCommand.ExtractFootprintOptions
 import geoscript.layer.Shapefile
 import org.geocommands.BaseTest
-import org.junit.Test
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The ExtractFootprintCommand Unit Test

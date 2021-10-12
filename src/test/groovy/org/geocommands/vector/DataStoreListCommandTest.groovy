@@ -2,9 +2,9 @@ package org.geocommands.vector
 
 import org.geocommands.BaseTest
 import org.geocommands.vector.DataStoreListCommand.DataStoreListOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.assertTrue
+import static org.junit.jupiter.api.Assertions.assertTrue
 
 /**
  * The DataStoreListCommand Unit Test

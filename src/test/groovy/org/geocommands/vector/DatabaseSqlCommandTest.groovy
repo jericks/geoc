@@ -2,7 +2,7 @@ package org.geocommands.vector
 
 import org.geocommands.vector.DatabaseSqlCommand.DatabaseSqlOptions
 import org.geocommands.BaseTest
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 /**
  * The DatabaseSqlCommand Unit Test

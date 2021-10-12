@@ -4,9 +4,9 @@ import geoscript.layer.Layer
 import geoscript.workspace.Directory
 import org.geocommands.vector.DumpShapefilesCommand.DumpShapefilesOptions
 import org.geocommands.BaseTest
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.*
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The DumpShapefilesCommand Unit Test
@@ -15,7 +15,7 @@ import static org.junit.Assert.*
 class DumpShapefilesCommandTest extends BaseTest {
 
     @Test void execute() {
-        File dir = folder.newFolder("shapefiles")
+        File dir = createDir("shapefiles")
         DumpShapefilesOptions options = new DumpShapefilesOptions(
                 outputDirectory: dir
         )
@@ -30,7 +30,7 @@ class DumpShapefilesCommandTest extends BaseTest {
     }
 
     @Test void run() {
-        File dir = folder.newFolder("shapefiles")
+        File dir = createDir("shapefiles")
         runApp([
                 "vector dump shapefiles",
                 "-o", dir

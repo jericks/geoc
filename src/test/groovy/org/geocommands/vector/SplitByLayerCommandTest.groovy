@@ -6,10 +6,10 @@ import geoscript.workspace.Directory
 import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.SplitByLayerCommand.SplitByLayerOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.assertEquals
-import static org.junit.Assert.assertTrue
+import static org.junit.jupiter.api.Assertions.assertEquals
+import static org.junit.jupiter.api.Assertions.assertTrue
 
 /**
  * The SplitByCommand Unit Test
@@ -21,7 +21,7 @@ class SplitByLayerCommandTest extends BaseTest {
     void execute() {
         File file1 = getResource("polygons2.properties")
         File file2 = getResource("polygons.properties")
-        File file3 = folder.newFolder("rows")
+        File file3 = createDir("rows")
         SplitByLayerCommand cmd = new SplitByLayerCommand()
         SplitByLayerOptions options = new SplitByLayerOptions(
                 inputWorkspace: file2.absolutePath,
@@ -83,7 +83,7 @@ csv_1_2
     void runAsCommandLine() {
         File file1 = getResource("polygons2.properties")
         File file2 = getResource("polygons.properties")
-        File file3 = folder.newFolder("rows")
+        File file3 = createDir("rows")
         App.main([
                 "vector splitbylayer",
                 "-i", file2.absolutePath,

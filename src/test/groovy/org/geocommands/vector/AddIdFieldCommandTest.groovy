@@ -5,9 +5,9 @@ import geoscript.layer.Shapefile
 import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.AddIdFieldCommand.AddIdFieldOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.assertEquals
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The AddIdFieldCommand UniTest
@@ -27,8 +27,8 @@ class AddIdFieldCommandTest extends BaseTest {
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
-        org.junit.Assert.assertEquals 4, shp.count
-        org.junit.Assert.assertTrue shp.schema.has("THE_ID")
+        assertEquals 4, shp.count
+        assertTrue shp.schema.has("THE_ID")
         assertEquals 1, shp.getFeatures("THE_ID=1")[0]["THE_ID"]
         assertEquals 2, shp.getFeatures("THE_ID=2")[0]["THE_ID"]
         assertEquals 3, shp.getFeatures("THE_ID=3")[0]["THE_ID"]
@@ -42,8 +42,8 @@ class AddIdFieldCommandTest extends BaseTest {
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("polygons.csv"), w)
         Layer layer = getLayerFromCsv(w.toString())
-        org.junit.Assert.assertEquals 4, layer.count
-        org.junit.Assert.assertTrue layer.schema.has("THE_ID")
+        assertEquals 4, layer.count
+        assertTrue layer.schema.has("THE_ID")
         assertEquals 1, layer.getFeatures("THE_ID=1")[0]["THE_ID"]
         assertEquals 2, layer.getFeatures("THE_ID=2")[0]["THE_ID"]
         assertEquals 3, layer.getFeatures("THE_ID=3")[0]["THE_ID"]
@@ -62,8 +62,8 @@ class AddIdFieldCommandTest extends BaseTest {
                 "-s", 100
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
-        org.junit.Assert.assertEquals 4, shp.count
-        org.junit.Assert.assertTrue shp.schema.has("THE_ID")
+        assertEquals 4, shp.count
+        assertTrue shp.schema.has("THE_ID")
         assertEquals 100, shp.getFeatures("THE_ID=100")[0]["THE_ID"]
         assertEquals 101, shp.getFeatures("THE_ID=101")[0]["THE_ID"]
         assertEquals 102, shp.getFeatures("THE_ID=102")[0]["THE_ID"]
@@ -71,8 +71,8 @@ class AddIdFieldCommandTest extends BaseTest {
 
         String output = runApp(["vector addidfield", "-f", "THE_ID"], readCsv("polygons.csv").text)
         Layer layer = getLayerFromCsv(output)
-        org.junit.Assert.assertEquals 4, layer.count
-        org.junit.Assert.assertTrue layer.schema.has("THE_ID")
+        assertEquals 4, layer.count
+        assertTrue layer.schema.has("THE_ID")
         assertEquals 1, layer.getFeatures("THE_ID=1")[0]["THE_ID"]
         assertEquals 2, layer.getFeatures("THE_ID=2")[0]["THE_ID"]
         assertEquals 3, layer.getFeatures("THE_ID=3")[0]["THE_ID"]

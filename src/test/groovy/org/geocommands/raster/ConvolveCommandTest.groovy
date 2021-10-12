@@ -5,8 +5,8 @@ import geoscript.layer.GeoTIFF
 import geoscript.layer.Raster
 import org.geocommands.raster.ConvolveCommand.ConvolveOptions
 import org.geocommands.BaseTest
-import org.junit.Test
-import static org.junit.Assert.assertEquals
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.assertEquals
 
 /**
  * The ConvolveCommand Unit Test

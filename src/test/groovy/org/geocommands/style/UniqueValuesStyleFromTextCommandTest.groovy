@@ -2,13 +2,13 @@ package org.geocommands.style
 
 import org.geocommands.style.UniqueValuesStyleFromTextCommand.UniqueValuesStyleFromTextOptions
 import org.geocommands.BaseTest
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class UniqueValuesStyleFromTextCommandTest extends BaseTest {
 
     @Test void execute() {
         UniqueValuesStyleFromTextCommand cmd = new UniqueValuesStyleFromTextCommand()
-        File inputFile = folder.newFile("units.txt")
+        File inputFile = new File(folder, "units.txt")
         inputFile.text = """AHa=#aa0c74
 AHat=#b83b1f
 AHcf=#964642
@@ -19,7 +19,7 @@ AHt3=#e76161
 Aa1=#fcedcd
 Aa2=#94474b
 """
-        File outputFile = folder.newFile("units.sld")
+        File outputFile = new File(folder, "units.sld")
         UniqueValuesStyleFromTextOptions options = new UniqueValuesStyleFromTextOptions(
                 field: "UnitType",
                 geometryType: "Polygon",

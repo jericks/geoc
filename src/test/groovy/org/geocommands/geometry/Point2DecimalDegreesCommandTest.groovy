@@ -2,9 +2,9 @@ package org.geocommands.geometry
 
 import org.geocommands.BaseTest
 import org.geocommands.geometry.Point2DecimalDegreesCommand.Point2DecimalDegreesOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.assertEquals
+import static org.junit.jupiter.api.Assertions.assertEquals
 
 /**
  * The Point2DecimalDegreesCommand Unit Test

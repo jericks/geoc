@@ -2,7 +2,7 @@ package org.geocommands.raster
 
 import org.geocommands.BaseTest
 import org.geocommands.raster.DefaultStyleCommand.DefaultStyleOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 /**
  * The DefaultStyleCommand Unit Test

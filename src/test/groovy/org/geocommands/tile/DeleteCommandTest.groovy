@@ -2,23 +2,17 @@ package org.geocommands.tile
 
 import geoscript.layer.MBTiles
 import geoscript.layer.Tile
-import org.geocommands.BaseTest
 import org.geocommands.tile.GenerateCommand.GenerateOptions
 import org.geocommands.tile.DeleteCommand.DeleteOptions
 import org.geocommands.BaseTest
-import org.junit.Rule
-import org.junit.Test
-import org.junit.rules.TemporaryFolder
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The DeleteCommand Unit Test
  * @author Jared Erickson
  */
 class DeleteCommandTest extends BaseTest {
-
-    @Rule
-    public TemporaryFolder temporaryFolder = new TemporaryFolder()
 
     @Test void execute() {
         File mbtilesFile = generateMBTiles()
@@ -62,7 +56,7 @@ class DeleteCommandTest extends BaseTest {
 
     private File generateMBTiles() {
         GenerateCommand cmd = new GenerateCommand()
-        File tileFile = temporaryFolder.newFile("earthquakes.mbtiles")
+        File tileFile = new File(folder, "earthquakes.mbtiles")
         tileFile.delete()
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(

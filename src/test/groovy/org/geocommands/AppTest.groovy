@@ -1,12 +1,11 @@
 package org.geocommands
 
-import org.junit.After
-import org.junit.Before
-import org.junit.Test
-
+import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 import java.security.Permission
 
-import static org.junit.Assert.*
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The App Unit Test
@@ -14,12 +13,12 @@ import static org.junit.Assert.*
  */
 class AppTest extends BaseTest {
 
-    @Before
+    @BeforeEach
     public void before() throws Exception {
         System.setSecurityManager(new OverrideExitSecurityManager())
     }
 
-    @After
+    @AfterEach
     public void after() throws Exception {
         System.setSecurityManager(null)
     }

@@ -5,7 +5,8 @@ import geoscript.layer.Layer
 import geoscript.layer.Shapefile
 import org.geocommands.App
 import org.geocommands.BaseTest
-import org.junit.Test
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The CentroidCommand Unit Test
@@ -24,8 +25,8 @@ class CentroidCommandTest extends BaseTest {
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
-        org.junit.Assert.assertEquals 4, shp.count
-        org.junit.Assert.assertEquals "Point", shp.schema.geom.typ
+        assertEquals 4, shp.count
+        assertEquals "Point", shp.schema.geom.typ
     }
 
     @Test
@@ -35,8 +36,8 @@ class CentroidCommandTest extends BaseTest {
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("polygons.csv"), w)
         Layer layer = getLayerFromCsv(w.toString())
-        org.junit.Assert.assertEquals 4, layer.count
-        layer.eachFeature { org.junit.Assert.assertTrue it.geom instanceof Point }
+        assertEquals 4, layer.count
+        layer.eachFeature { assertTrue it.geom instanceof Point }
     }
 
     @Test
@@ -49,12 +50,12 @@ class CentroidCommandTest extends BaseTest {
                 "-o", shpFile.absolutePath
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
-        org.junit.Assert.assertEquals 4, shp.count
-        org.junit.Assert.assertEquals "Point", shp.schema.geom.typ
+        assertEquals 4, shp.count
+        assertEquals "Point", shp.schema.geom.typ
 
         String output = runApp(["vector centroid"], readCsv("polygons.csv").text)
         Layer layer = getLayerFromCsv(output)
-        org.junit.Assert.assertEquals 4, layer.count
-        layer.eachFeature { org.junit.Assert.assertTrue it.geom instanceof Point }
+        assertEquals 4, layer.count
+        layer.eachFeature { assertTrue it.geom instanceof Point }
     }
 }

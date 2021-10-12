@@ -5,8 +5,8 @@ import geoscript.layer.Layer
 import geoscript.layer.Shapefile
 import org.geocommands.vector.SpatialJoinCommand.SpatialJoinOptions
 import org.geocommands.BaseTest
-import org.junit.Test
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The SpatialJoinCommand Unit Test

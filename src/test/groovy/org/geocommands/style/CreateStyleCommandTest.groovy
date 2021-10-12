@@ -2,7 +2,7 @@ package org.geocommands.style
 
 import org.geocommands.style.CreateStyleCommand.CreateStyleOptions
 import org.geocommands.BaseTest
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 /**
  * The CreateSimpleStyleCommand Unit Test
@@ -12,7 +12,7 @@ class CreateStyleCommandTest extends BaseTest {
 
     @Test void execute() {
         CreateStyleCommand cmd = new CreateStyleCommand()
-        File file = folder.newFile("outline.sld")
+        File file = new File(folder, "outline.sld")
         CreateStyleOptions options = new CreateStyleOptions(
             options: [
                 "stroke": "black",

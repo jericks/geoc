@@ -2,8 +2,8 @@ package org.geocommands.filter
 
 import org.geocommands.filter.CqlToXmlCommand.CqlToXmlOptions
 import org.geocommands.BaseTest
-import org.junit.Test
-import static org.junit.Assert.assertTrue
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.assertTrue
 
 /**
  * The CqlToXmlCommand Unit Test

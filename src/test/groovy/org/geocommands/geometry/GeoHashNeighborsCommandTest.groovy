@@ -2,7 +2,7 @@ package org.geocommands.geometry
 
 import org.geocommands.geometry.GeoHashNeighborsCommand.GeoHashNeighborsOptions
 import org.geocommands.BaseTest
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 /**
  * The GeoHashNeighborsCommand Unit Test.

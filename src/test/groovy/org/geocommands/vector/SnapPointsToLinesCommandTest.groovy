@@ -5,8 +5,8 @@ import geoscript.layer.Shapefile
 import geoscript.layer.io.CsvReader
 import org.geocommands.vector.SnapPointsToLinesCommand.SnapPointsToLinesOptions
 import org.geocommands.BaseTest
-import org.junit.Test
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The SnapPointsToLinesCommand Unit Test

@@ -2,7 +2,7 @@ package org.geocommands.geometry
 
 import org.geocommands.geometry.GeoHashBoundsCommand.GeoHashBoundsOptions
 import org.geocommands.BaseTest
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 /**
  * The GeoHashBoundsCommand Unit Test

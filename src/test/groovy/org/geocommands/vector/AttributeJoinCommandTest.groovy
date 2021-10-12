@@ -5,8 +5,8 @@ import geoscript.layer.Layer
 import geoscript.layer.Shapefile
 import org.geocommands.vector.AttributeJoinCommand.AttributeOptions
 import org.geocommands.BaseTest
-import org.junit.Test
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The TabularJoinCommand Unit Test

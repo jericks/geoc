@@ -3,8 +3,8 @@ package org.geocommands.geometry
 import geoscript.geom.Geometry
 import geoscript.geom.Point
 import org.geocommands.BaseTest
-import org.junit.Test
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The DecimalDegrees2PointCommand Unit Test

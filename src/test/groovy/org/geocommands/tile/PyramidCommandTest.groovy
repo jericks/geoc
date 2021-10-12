@@ -2,19 +2,14 @@ package org.geocommands.tile
 
 import org.geocommands.tile.PyramidCommand.PyramidOptions
 import org.geocommands.BaseTest
-import org.junit.Rule
-import org.junit.Test
-import org.junit.rules.TemporaryFolder
-import static org.junit.Assert.assertTrue
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.assertTrue
 
 /**
  * The PyramidCommand Unit Test
  * @author Jared Erickson
  */
 class PyramidCommandTest extends BaseTest {
-
-    @Rule
-    public TemporaryFolder temporaryFolder = new TemporaryFolder()
 
     @Test void executeText() {
         PyramidCommand cmd = new PyramidCommand()

@@ -7,9 +7,9 @@ import geoscript.workspace.Property
 import geoscript.workspace.Workspace
 import org.geocommands.App
 import org.geocommands.BaseTest
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.assertEquals
+import static org.junit.jupiter.api.Assertions.assertEquals
 
 /**
  * The AppendCommand Unit Test

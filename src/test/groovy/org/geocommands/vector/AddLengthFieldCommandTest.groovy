@@ -5,7 +5,8 @@ import geoscript.layer.Shapefile
 import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.AddLengthFieldCommand.AddLengthFieldOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The AddLengthFieldCommand UniTest
@@ -24,10 +25,10 @@ class AddLengthFieldCommandTest extends BaseTest {
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
-        org.junit.Assert.assertEquals 4, shp.count
-        org.junit.Assert.assertTrue shp.schema.has("LENGTH")
+        assertEquals 4, shp.count
+        assertTrue shp.schema.has("LENGTH")
         shp.eachFeature { f ->
-            org.junit.Assert.assertTrue f["LENGTH"] > 0
+            assertTrue f["LENGTH"] > 0
         }
     }
 
@@ -38,10 +39,10 @@ class AddLengthFieldCommandTest extends BaseTest {
         StringWriter w = new StringWriter()
         cmd.execute(options, readCsv("polygons.csv"), w)
         Layer layer = getLayerFromCsv(w.toString())
-        org.junit.Assert.assertEquals 4, layer.count
-        org.junit.Assert.assertTrue layer.schema.has("THE_LENGTH")
+        assertEquals 4, layer.count
+        assertTrue layer.schema.has("THE_LENGTH")
         layer.eachFeature { f ->
-            org.junit.Assert.assertTrue((f["THE_LENGTH"] as Double) > 0)
+            assertTrue((f["THE_LENGTH"] as Double) > 0)
         }
     }
 
@@ -56,18 +57,18 @@ class AddLengthFieldCommandTest extends BaseTest {
                 "-f", "PERIMETER"
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
-        org.junit.Assert.assertEquals 4, shp.count
-        org.junit.Assert.assertTrue shp.schema.has("PERIMETER")
+        assertEquals 4, shp.count
+        assertTrue shp.schema.has("PERIMETER")
         shp.eachFeature { f ->
-            org.junit.Assert.assertTrue f["PERIMETER"] > 0
+            assertTrue f["PERIMETER"] > 0
         }
 
         String output = runApp(["vector addlengthfield", "-f", "PERIM"], readCsv("polygons.csv").text)
         Layer layer = getLayerFromCsv(output)
-        org.junit.Assert.assertEquals 4, layer.count
-        org.junit.Assert.assertTrue layer.schema.has("PERIM")
+        assertEquals 4, layer.count
+        assertTrue layer.schema.has("PERIM")
         layer.eachFeature { f ->
-            org.junit.Assert.assertTrue((f["PERIM"] as Double) > 0)
+            assertTrue((f["PERIM"] as Double) > 0)
         }
     }
 }

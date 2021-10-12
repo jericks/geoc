@@ -2,9 +2,9 @@ package org.geocommands.geometry
 
 import org.geocommands.BaseTest
 import org.geocommands.geometry.GreatCircleArcCommand.GreatCircleArcCommandOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.assertTrue
+import static org.junit.jupiter.api.Assertions.assertTrue
 
 /**
  * The GreatCircleArcCommand Unit Test

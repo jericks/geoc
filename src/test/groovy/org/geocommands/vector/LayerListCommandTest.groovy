@@ -2,7 +2,7 @@ package org.geocommands.vector
 
 import org.geocommands.BaseTest
 import org.geocommands.vector.LayerListCommand.LayerListOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 /**
  * The LayerListCommand Unit Test

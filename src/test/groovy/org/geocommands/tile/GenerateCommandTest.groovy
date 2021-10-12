@@ -3,11 +3,9 @@ package org.geocommands.tile
 import geoscript.layer.*
 import org.geocommands.BaseTest
 import org.geocommands.tile.GenerateCommand.GenerateOptions
-import org.junit.Rule
-import org.junit.Test
-import org.junit.rules.TemporaryFolder
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.assertNotNull
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The GenerateCommand Unit Test
@@ -15,13 +13,10 @@ import static org.junit.Assert.assertNotNull
  */
 class GenerateCommandTest extends BaseTest {
 
-    @Rule
-    public TemporaryFolder temporaryFolder = new TemporaryFolder()
-
     @Test
     void executeMbtiles() {
         GenerateCommand cmd = new GenerateCommand()
-        File tileFile = temporaryFolder.newFile("earthquakes.mbtiles")
+        File tileFile = new File(folder, "earthquakes.mbtiles")
         tileFile.delete()
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
@@ -44,7 +39,7 @@ class GenerateCommandTest extends BaseTest {
     @Test
     void executeGeopackage() {
         GenerateCommand cmd = new GenerateCommand()
-        File tileFile = temporaryFolder.newFile("earthquakes.gpkg")
+        File tileFile = new File(folder, "earthquakes.gpkg")
         tileFile.delete()
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
@@ -67,7 +62,7 @@ class GenerateCommandTest extends BaseTest {
     @Test
     void executeTMS() {
         GenerateCommand cmd = new GenerateCommand()
-        File tileFile = temporaryFolder.newFolder("earthquakes")
+        File tileFile = createDir("earthquakes")
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: "type=tms format=png file=${tileFile.absolutePath}",
@@ -89,7 +84,7 @@ class GenerateCommandTest extends BaseTest {
     @Test
     void executeTMSMetatile() {
         GenerateCommand cmd = new GenerateCommand()
-        File tileFile = temporaryFolder.newFolder("earthquakes")
+        File tileFile = createDir("earthquakes")
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: "type=tms format=png file=${tileFile.absolutePath}",
@@ -112,7 +107,7 @@ class GenerateCommandTest extends BaseTest {
     @Test
     void executeUTFGrid() {
         GenerateCommand cmd = new GenerateCommand()
-        File tileFile = temporaryFolder.newFolder("earthquakes")
+        File tileFile = createDir("earthquakes")
         File layerFile = getResource("earthquakes.properties")
 
         GenerateOptions options = new GenerateOptions(
@@ -136,7 +131,7 @@ class GenerateCommandTest extends BaseTest {
     @Test
     void executeMvtVectorTiles() {
         GenerateCommand cmd = new GenerateCommand()
-        File tileFile = temporaryFolder.newFolder("earthquakes")
+        File tileFile = createDir("earthquakes")
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: "type=vectortiles format=mvt file=${tileFile.absolutePath}",
@@ -158,7 +153,7 @@ class GenerateCommandTest extends BaseTest {
     @Test
     void executeGeoJsonVectorTiles() {
         GenerateCommand cmd = new GenerateCommand()
-        File tileFile = temporaryFolder.newFolder("earthquakes")
+        File tileFile = createDir("earthquakes")
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: "type=vectortiles format=geojson file=${tileFile.absolutePath}",
@@ -180,7 +175,7 @@ class GenerateCommandTest extends BaseTest {
     @Test
     void executePbfVectorTiles() {
         GenerateCommand cmd = new GenerateCommand()
-        File tileFile = temporaryFolder.newFolder("earthquakes")
+        File tileFile = createDir("earthquakes")
         File layerFile = getResource("earthquakes.properties")
         GenerateOptions options = new GenerateOptions(
                 tileLayer: "type=vectortiles format=pbf file=${tileFile.absolutePath}",
@@ -201,7 +196,7 @@ class GenerateCommandTest extends BaseTest {
 
     @Test
     void runMbtiles() {
-        File tileFile = temporaryFolder.newFile("earthquakes.mbtiles")
+        File tileFile = new File(folder, "earthquakes.mbtiles")
         tileFile.delete()
         File layerFile = getResource("earthquakes.properties")
         runApp([

@@ -2,8 +2,8 @@ package org.geocommands.tile
 
 import org.geocommands.tile.GetTileBoundsCommand.GetTileBoundsOptions
 import org.geocommands.BaseTest
-import org.junit.Test
-import static org.junit.Assert.assertEquals
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.assertEquals
 
 class GetTileBoundsCommandTest extends BaseTest {
 

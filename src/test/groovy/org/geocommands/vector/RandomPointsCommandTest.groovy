@@ -6,7 +6,8 @@ import geoscript.layer.Shapefile
 import org.geocommands.App
 import org.geocommands.BaseTest
 import org.geocommands.vector.RandomPointsCommand.RandomPointsOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The RandomPointsCommand Unit Test
@@ -25,8 +26,8 @@ class RandomPointsCommandTest extends BaseTest {
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
-        org.junit.Assert.assertEquals 50, shp.count
-        org.junit.Assert.assertEquals "Point", shp.schema.geom.typ
+        assertEquals 50, shp.count
+        assertEquals "Point", shp.schema.geom.typ
     }
 
     @Test
@@ -39,8 +40,8 @@ class RandomPointsCommandTest extends BaseTest {
         StringWriter w = new StringWriter()
         cmd.execute(options, new StringReader(""), w)
         Layer layer = getLayerFromCsv(w.toString())
-        org.junit.Assert.assertEquals 50, layer.count
-        layer.eachFeature { org.junit.Assert.assertTrue it.geom instanceof Point }
+        assertEquals 50, layer.count
+        layer.eachFeature { assertTrue it.geom instanceof Point }
     }
 
     @Test
@@ -53,13 +54,13 @@ class RandomPointsCommandTest extends BaseTest {
                 "-o", shpFile.absolutePath
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
-        org.junit.Assert.assertEquals 50, shp.count
-        org.junit.Assert.assertEquals "Point", shp.schema.geom.typ
+        assertEquals 50, shp.count
+        assertEquals "Point", shp.schema.geom.typ
 
         String output = runApp(["vector randompoints", "-n", "50"], "POLYGON ((90 90, 90 110, 110 110, 110 90, 90 90))")
         Layer layer = getLayerFromCsv(output)
-        org.junit.Assert.assertEquals 50, layer.count
-        layer.eachFeature { org.junit.Assert.assertTrue it.geom instanceof Point }
+        assertEquals 50, layer.count
+        layer.eachFeature { assertTrue it.geom instanceof Point }
     }
 
 }

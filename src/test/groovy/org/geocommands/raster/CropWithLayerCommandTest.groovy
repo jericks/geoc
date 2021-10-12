@@ -8,9 +8,9 @@ import geoscript.proj.Projection
 import org.apache.commons.io.input.ReaderInputStream
 import org.geocommands.BaseTest
 import org.geocommands.raster.CropWithLayerCommand.CropWithLayerOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.*
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The CropWithLayerCommand Unit Test
@@ -76,7 +76,7 @@ class CropWithLayerCommandTest extends BaseTest {
                 [-174.265761974, 83.2132801161],
                 [-175.96892598,  82.8444847605]
         ].each { List pt ->
-            assertEquals("Raster value should be NO DATA value!", -9999.0, raster.getValue(new Point(pt[0], pt[1])), 0.1)
+            assertEquals(-9999.0, raster.getValue(new Point(pt[0], pt[1])), 0.1, "Raster value should be NO DATA value!")
         }
         // Data
         [
@@ -111,7 +111,7 @@ class CropWithLayerCommandTest extends BaseTest {
                 [-174.265761974, 83.2132801161],
                 [-175.96892598,  82.8444847605]
         ].each { List pt ->
-            assertEquals("Raster value should be NO DATA value!", -9999.0, raster.getValue(new Point(pt[0], pt[1])), 0.1)
+            assertEquals( -9999.0, raster.getValue(new Point(pt[0], pt[1])), 0.1, "Raster value should be NO DATA value!")
         }
 
         // Data

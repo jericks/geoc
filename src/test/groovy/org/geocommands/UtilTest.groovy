@@ -2,8 +2,8 @@ package org.geocommands
 
 import geoscript.layer.OSM
 import geoscript.layer.Shapefile
-import org.junit.Test
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The Util Test
@@ -68,7 +68,7 @@ class UtilTest extends BaseTest {
         assertTrue layers[0] instanceof Shapefile
 
         // Groovy Script
-        File groovyFile = folder.newFile("map.groovy")
+        File groovyFile = new File(folder, "map.groovy")
         groovyFile.text = """
 import geoscript.workspace.Memory
 import geoscript.layer.*

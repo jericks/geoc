@@ -5,8 +5,8 @@ import geoscript.workspace.H2
 import org.geocommands.vector.CopyCommand.CopyOptions
 import org.geocommands.vector.DatabaseCreateIndexCommand.DatabaseCreateIndexOptions
 import org.geocommands.BaseTest
-import org.junit.Test
-import static org.junit.Assert.assertTrue
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.assertTrue
 
 /**
  * The DatabaseCreateIndexCommand Unit Test

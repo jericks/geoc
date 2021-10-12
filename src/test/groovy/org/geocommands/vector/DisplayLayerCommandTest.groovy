@@ -3,8 +3,8 @@ package org.geocommands.vector
 import geoscript.render.Map
 import org.geocommands.vector.DisplayLayerCommand.DisplayLayerOptions
 import org.geocommands.BaseTest
-import org.junit.Test
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The DisplayLayerCommand Unit Test

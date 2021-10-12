@@ -2,8 +2,8 @@ package org.geocommands.raster
 
 import org.geocommands.BaseTest
 import org.geocommands.raster.GetSizeCommand.GetSizeOptions
-import org.junit.Test
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The GetSizeCommand Unit Test

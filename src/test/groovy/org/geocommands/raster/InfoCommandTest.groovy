@@ -2,7 +2,7 @@ package org.geocommands.raster
 
 import org.geocommands.BaseTest
 import org.geocommands.raster.InfoCommand.InfoOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 /**
  * The InfoCommand Unit Test

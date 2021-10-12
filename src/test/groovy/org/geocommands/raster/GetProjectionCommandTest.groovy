@@ -2,8 +2,8 @@ package org.geocommands.raster
 
 import org.geocommands.raster.GetProjectionCommand.GetProjectionOptions
 import org.geocommands.BaseTest
-import org.junit.Test
-import static org.junit.Assert.assertEquals
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.assertEquals
 
 class GetProjectionCommandTest extends BaseTest {
 

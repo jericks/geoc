@@ -1,7 +1,8 @@
 package org.geocommands
 
 import geoscript.layer.Shapefile
-import org.junit.Test
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 class PipeCommandTest extends BaseTest {
 
@@ -14,8 +15,8 @@ class PipeCommandTest extends BaseTest {
         )
         cmd.execute(options, new StringReader(""), new StringWriter())
         Shapefile shp = new Shapefile(shpFile)
-        org.junit.Assert.assertEquals 10, shp.count
-        org.junit.Assert.assertEquals "MultiPolygon", shp.schema.geom.typ
+        assertEquals 10, shp.count
+        assertEquals "MultiPolygon", shp.schema.geom.typ
     }
 
     @Test
@@ -26,8 +27,8 @@ class PipeCommandTest extends BaseTest {
                 "-c", "vector randompoints -g 0,0,10,10 -n 10 | vector buffer -d 2 -o ${shpFile.absolutePath}"
         ] as String[])
         Shapefile shp = new Shapefile(shpFile)
-        org.junit.Assert.assertEquals 10, shp.count
-        org.junit.Assert.assertEquals "MultiPolygon", shp.schema.geom.typ
+        assertEquals 10, shp.count
+        assertEquals "MultiPolygon", shp.schema.geom.typ
     }
     
 }

@@ -5,8 +5,8 @@ import geoscript.layer.Layer
 import geoscript.layer.Shapefile
 import org.geocommands.BaseTest
 import org.geocommands.tile.VectorGridCommand.VectorGridOptions
-import org.junit.Test
-import static org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * The VectorGridCommand Unit Test

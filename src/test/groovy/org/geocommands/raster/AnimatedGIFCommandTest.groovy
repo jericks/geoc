@@ -2,14 +2,14 @@ package org.geocommands.raster
 
 import org.geocommands.BaseTest
 import org.geocommands.raster.AnimatedGIFCommand.AnimatedGIFOptions
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 import javax.imageio.ImageIO
 import java.awt.*
 import java.awt.image.BufferedImage
 import java.util.List
 
-import static org.junit.Assert.assertTrue
+import static org.junit.jupiter.api.Assertions.assertTrue
 
 /**
  * The AnimatedGIFCommand Unit Test
@@ -19,9 +19,9 @@ class AnimatedGIFCommandTest extends BaseTest {
 
     protected List<File> createImageFiles() {
         List files = [
-                folder.newFile("image1.gif"),
-                folder.newFile("image2.gif"),
-                folder.newFile("image3.gif")
+                new File(folder, "image1.gif"),
+                new File(folder, "image2.gif"),
+                new File(folder, "image3.gif")
         ]
         files.each { File f ->
             BufferedImage image = new BufferedImage(256, 256, BufferedImage.TYPE_INT_ARGB)
@@ -37,7 +37,7 @@ class AnimatedGIFCommandTest extends BaseTest {
     @Test
     void execute() {
 
-        File outputFile = folder.newFile("animated.gif")
+        File outputFile = new File(folder, "animated.gif")
         List files = createImageFiles()
 
         AnimatedGIFOptions options = new AnimatedGIFOptions(
@@ -56,7 +56,7 @@ class AnimatedGIFCommandTest extends BaseTest {
     @Test
     void run() {
 
-        File outputFile = folder.newFile("animated.gif")
+        File outputFile = new File(folder, "animated.gif")
         List files = createImageFiles()
 
         runApp([

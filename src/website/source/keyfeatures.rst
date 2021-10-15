@@ -11,4 +11,4 @@ Key Features
    
 5. Where appropriate, values are expressions (literals, properties, or CQL with functions)
 
-6. Uses `GeoScript Groovy <http://geoscript.org/>`_ for extremely terse code.
+6. Uses `GeoScript Groovy <http://geoscript.net/>`_ for extremely terse code.

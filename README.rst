@@ -16,7 +16,7 @@ Key features
 3. But geoc can read and write to any supported `GeoTools <http://geotools.org>`_ DataStore (Shapefiles, PostGIS, H2) or CoverageStore (GeoTIFF, WorldImage, GTOPO).
 4. Commands are looked up using Java's Service Provider Interface (SPI) so the framework is extensible.
 5. Where appropriate, values are expressions (literals, properties, or CQL with functions)
-6. Uses `GeoScript Groovy <http://geoscript.org/>`_ for extremely terse code.
+6. Uses `GeoScript Groovy <http://geoscript.net/>`_ for extremely terse code.
 
 Examples
 --------

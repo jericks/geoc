@@ -48,7 +48,7 @@ class Commands {
 
         // Get the command name
         String name = args.takeWhile { String arg ->
-            !arg.startsWith("-")
+            !arg.startsWith("-") && !arg.startsWith("@")
         }.join(" ")
 
         // Lookup the Command by name

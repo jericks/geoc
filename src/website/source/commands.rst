@@ -68,6 +68,11 @@ Commands
     commands/raster-worldfile.rst
     commands/style-create.rst
     commands/style-css2sld.rst
+    commands/style-repository-copy.rst
+    commands/style-repository-delete.rst
+    commands/style-repository-get.rst
+    commands/style-repository-list.rst
+    commands/style-repository-save.rst
     commands/style-sld2ysld.rst
     commands/style-uniquevaluesfromtext.rst
     commands/style-ysld2sld.rst

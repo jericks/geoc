@@ -370,6 +370,34 @@ _geoc()
         COMPREPLY=($(compgen -W '--help --web-help -o --output -s --style-options -t --type -w --writer-options' -- $cur))
     elif [[ "$line" == *"geoc style css2sld "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -i --input -o --output -w --writer-options' -- $cur))
+    elif [[ "$line" == *"geoc style repository copy "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -o --output-type -p --input-options -r --output-options -t --input-type' -- $cur))
+    elif [[ "$line" == *"geoc style repository delete "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -l --layer-name -o --options -s --style-name -t --type' -- $cur))
+    elif [[ "$line" == *"geoc style repository get "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -f --output-file -l --layer-name -o --options -s --style-name -t --type' -- $cur))
+    elif [[ "$line" == *"geoc style repository list "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -l --layer-name -o --options -t --type' -- $cur))
+    elif [[ "$line" == *"geoc style repository save "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -f --style-file -l --layer-name -o --options -s --style-name -t --type' -- $cur))
+    elif [[ "$line" == *"geoc style repository " ]]; then
+        COMPREPLY=($(compgen -W ' copy  delete  get  list  save'))
+    elif [[ "$line" == *"geoc style repository"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "style repository copy" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' copy'))
+        fi
+        if [[ "style repository delete" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' delete'))
+        fi
+        if [[ "style repository get" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' get'))
+        fi
+        if [[ "style repository list" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' list'))
+        fi
+        if [[ "style repository save" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' save'))
+        fi
     elif [[ "$line" == *"geoc style sld2ysld "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -i --input -o --output' -- $cur))
     elif [[ "$line" == *"geoc style uniquevaluesfromtext "* ]]; then
@@ -377,13 +405,16 @@ _geoc()
     elif [[ "$line" == *"geoc style ysld2sld "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -i --input -o --output -w --writer-options' -- $cur))
     elif [[ "$line" == *"geoc style " ]]; then
-        COMPREPLY=($(compgen -W ' create  css2sld  sld2ysld  uniquevaluesfromtext  ysld2sld'))
+        COMPREPLY=($(compgen -W ' create  css2sld  repository  sld2ysld  uniquevaluesfromtext  ysld2sld'))
     elif [[ "$line" == *"geoc style"[[:space:]][[:alpha:]]* ]]; then
         if [[ "style create" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' create'))
         fi
         if [[ "style css2sld" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' css2sld'))
+        fi
+        if [[ "style repository" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' repository'))
         fi
         if [[ "style sld2ysld" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' sld2ysld'))

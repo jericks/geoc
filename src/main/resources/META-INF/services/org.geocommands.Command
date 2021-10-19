@@ -12,6 +12,12 @@ org.geocommands.style.YsldToSldCommand
 org.geocommands.style.SldToYsldCommand
 org.geocommands.style.UniqueValuesStyleFromTextCommand
 
+org.geocommands.style.SaveStyleRepositoryCommand
+org.geocommands.style.DeleteStyleRepositoryCommand
+org.geocommands.style.ListStyleRepositoryCommand
+org.geocommands.style.GetStyleRepositoryCommand
+org.geocommands.style.CopyStyleRepositoryCommand
+
 org.geocommands.map.MapCommand
 org.geocommands.map.MapCubeCommand
 

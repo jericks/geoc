@@ -20,3 +20,9 @@ List styles from a style repository
    * --help : Print the help message
 
    * --web-help : Open help in a browser
+
+
+
+**Example**::
+
+    "geoc style repository list -t nested-directory -p file=styles"

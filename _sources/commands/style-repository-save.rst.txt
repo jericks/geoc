@@ -24,3 +24,9 @@ Save a style to a style repository
    * --help : Print the help message
 
    * --web-help : Open help in a browser
+
+
+
+**Example**::
+
+    "geoc style repository save -t sqlite -p file=styles.gpkg -l states -s states -f states.sld"

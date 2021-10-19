@@ -22,3 +22,9 @@ Copy styles from one repository to another
    * --help : Print the help message
 
    * --web-help : Open help in a browser
+
+
+
+**Example**::
+
+    "geoc style repository copy -t sqlite -p file=styles.db -o nested-directory -r file=styles"

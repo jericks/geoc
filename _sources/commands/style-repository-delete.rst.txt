@@ -22,3 +22,9 @@ Delete a style to a style repository
    * --help : Print the help message
 
    * --web-help : Open help in a browser
+
+
+
+**Example**::
+
+    "geoc style repository delete -t sqlite -p file=styles.db -l states -s states_population"

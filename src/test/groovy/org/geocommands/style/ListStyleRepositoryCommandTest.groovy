@@ -26,9 +26,8 @@ class ListStyleRepositoryCommandTest extends BaseTest {
         ), reader, writer)
         String results = writer.toString()
         assertNotNull(results)
-        assertEquals("""states states
-roads roads
-""", results)
+        assertTrue(results.contains("states states"))
+        assertTrue(results.contains("roads roads"))
     }
 
     @Test
@@ -49,9 +48,8 @@ roads roads
         ), reader, writer)
         String results = writer.toString()
         assertNotNull(results)
-        assertEquals("""states states
-states states-blue
-""", results)
+        assertTrue(results.contains("states states"))
+        assertTrue(results.contains("states states-blue"))
     }
 
     @Test
@@ -72,9 +70,8 @@ states states-blue
         ), reader, writer)
         String results = writer.toString()
         assertNotNull(results)
-        assertEquals("""states states
-states states-blue
-""", results)
+        assertTrue(results.contains("states states"))
+        assertTrue(results.contains("states states-blue"))
     }
 
     @Test
@@ -95,9 +92,8 @@ states states-blue
         ), reader, writer)
         String results = writer.toString()
         assertNotNull(results)
-        assertEquals("""states states
-states states-blue
-""", results)
+        assertTrue(results.contains("states states"))
+        assertTrue(results.contains("states states-blue"))
     }
 
     @Test
@@ -113,9 +109,8 @@ states states-blue
         ], "")
 
         assertNotNull(results)
-        assertEquals("""states states
-roads roads
-""", results)
+        assertTrue(results.contains("states states"))
+        assertTrue(results.contains("roads roads"))
     }
 
     private void save(String type, Map typeOptions, String layerName, String styleName) {

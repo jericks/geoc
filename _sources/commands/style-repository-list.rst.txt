@@ -1,0 +1,22 @@
+style repository list
+=====================
+
+**Name**:
+
+geoc style repository list
+
+**Description**:
+
+List styles from a style repository
+
+**Arguments**:
+
+   * -t --type: The type of style repository (directory, nested-directory, h2, sqlite, postgres)
+
+   * -o --options: The style repository options
+
+   * -l --layer-name: The layer name
+
+   * --help : Print the help message
+
+   * --web-help : Open help in a browser

@@ -1,0 +1,26 @@
+style repository save
+=====================
+
+**Name**:
+
+geoc style repository save
+
+**Description**:
+
+Save a style to a style repository
+
+**Arguments**:
+
+   * -t --type: The type of style repository (directory, nested-directory, h2, sqlite, postgres)
+
+   * -o --options: The style repository options
+
+   * -l --layer-name: The layer name
+
+   * -s --style-name: The style name
+
+   * -f --style-file: The style file (sld or css)
+
+   * --help : Print the help message
+
+   * --web-help : Open help in a browser

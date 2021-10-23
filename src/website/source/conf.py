@@ -18,11 +18,11 @@
 # -- Project information -----------------------------------------------------
 
 project = 'geoc'
-copyright = '2020, Jared Erickson'
+copyright = '2021, Jared Erickson'
 author = 'Jared Erickson'
 
 # The full version, including alpha/beta/rc tags
-release = '0.17.0'
+release = '0.18.0'
 
 
 # -- General configuration ---------------------------------------------------

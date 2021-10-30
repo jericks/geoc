@@ -18,7 +18,6 @@ class DataStoreParametersCommandTest extends BaseTest {
         DataStoreParametersOptions options = new DataStoreParametersOptions(name: "Shapefile")
         StringWriter w = new StringWriter()
         cmd.execute(options, new StringReader(""), w)
-        println w.toString()
         assertStringsEqual """url
 namespace
 enable spatial index
@@ -28,7 +27,8 @@ timezone
 memory mapped buffer
 cache and reuse memory maps
 filetype
-fstype""", w.toString()
+fstype
+skipScan""", w.toString()
 
     }
 
@@ -45,6 +45,7 @@ memory mapped buffer
 cache and reuse memory maps
 filetype
 fstype
+skipScan
 """, str
     }
 

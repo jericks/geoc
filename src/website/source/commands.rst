@@ -1,6 +1,40 @@
 Commands
 ========
 
+To see all commands use the list subcommand::
+
+    geoc list
+
+To see the version of geoc that you are using use the version subcommand::
+
+    geoc version
+
+You can easily combine commands together using the unix pipe operator::
+
+    geoc vector randompoints -n 10 -g "-180,-90,180,90"  | geoc vector buffer -d 5
+
+To avoid starting up Java two separate times, use the pipe subcommand::
+
+    geoc pipe -c "vector randompoints -n 10 -g '-180,-90,180,90' | vector buffer -d 5"
+
+You can also use the shell subcommand to start an interactive geoc session::
+
+    geoc shell
+    geoc> vector randompoints -n 10 -g '-180,-90,180,90'
+
+If a command has alot of arguments you can use the argument file syntax.
+
+Save the arguments to a separate file as args.txt::
+
+    -g
+    -180,-90,180,90
+    -n
+    10
+
+And then use it with the geoc command::
+
+    geoc vector randompoints @args.txt
+
 .. toctree::
     commands/list.rst
     commands/version.rst

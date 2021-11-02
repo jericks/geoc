@@ -269,6 +269,39 @@
              
   <section id="commands">
 <h1>Commands<a class="headerlink" href="#commands" title="Permalink to this headline"></a></h1>
+<p>To see all commands use the list subcommand:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geoc</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>To see the version of geoc that you are using use the version subcommand:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geoc</span> <span class="n">version</span>
+</pre></div>
+</div>
+<p>You can easily combine commands together using the unix pipe operator:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geoc</span> <span class="n">vector</span> <span class="n">randompoints</span> <span class="o">-</span><span class="n">n</span> <span class="mi">10</span> <span class="o">-</span><span class="n">g</span> <span class="s2">&quot;-180,-90,180,90&quot;</span>  <span class="o">|</span> <span class="n">geoc</span> <span class="n">vector</span> <span class="n">buffer</span> <span class="o">-</span><span class="n">d</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>To avoid starting up Java two separate times, use the pipe subcommand:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geoc</span> <span class="n">pipe</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;vector randompoints -n 10 -g &#39;-180,-90,180,90&#39; | vector buffer -d 5&quot;</span>
+</pre></div>
+</div>
+<p>You can also use the shell subcommand to start an interactive geoc session:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geoc</span> <span class="n">shell</span>
+<span class="n">geoc</span><span class="o">&gt;</span> <span class="n">vector</span> <span class="n">randompoints</span> <span class="o">-</span><span class="n">n</span> <span class="mi">10</span> <span class="o">-</span><span class="n">g</span> <span class="s1">&#39;-180,-90,180,90&#39;</span>
+</pre></div>
+</div>
+<p>If a command has alot of arguments you can use the argument file syntax.</p>
+<p>Save the arguments to a separate file as args.txt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">g</span>
+<span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">90</span>
+<span class="o">-</span><span class="n">n</span>
+<span class="mi">10</span>
+</pre></div>
+</div>
+<p>And then use it with the geoc command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geoc</span> <span class="n">vector</span> <span class="n">randompoints</span> <span class="nd">@args</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commands/list.html">list</a></li>

@@ -1,10 +1,11 @@
 package org.geocommands
 
+import geoscript.geom.Point
 import geoscript.layer.Layer
 import geoscript.layer.io.CsvReader
+import org.apache.commons.text.similarity.LevenshteinDistance
 import org.junit.jupiter.api.io.TempDir
-
-import static junit.framework.Assert.assertEquals
+import static org.junit.jupiter.api.Assertions.*
 
 /**
  * A base class for Unit Tests.
@@ -39,6 +40,33 @@ class BaseTest {
             }
             assertEquals(exp, act)
         }
+    }
+
+    void assertStringsAreSimilar(String expected, String actual, int maxDifference, boolean trim, boolean stripXmlNamespaces = false) {
+        StringReader expectedReader = new StringReader(expected)
+        StringReader actualReader = new StringReader(actual)
+        List<String> expectedLines = expectedReader.readLines()
+        List<String> actualLines = actualReader.readLines()
+        assertEquals(expectedLines.size(), actualLines.size())
+        LevenshteinDistance levenshteinDistance = new LevenshteinDistance()
+        expectedLines.eachWithIndex { String exp, int i ->
+            String act = actualLines[i]
+            if (trim) {
+                exp = exp.trim()
+                act = act.trim()
+            }
+            if (stripXmlNamespaces) {
+                exp = stripXmlNS(exp)
+                act = stripXmlNS(act)
+            }
+            int distance = levenshteinDistance.apply(exp, act)
+            assertTrue(distance <= maxDifference, "The difference between ${exp} and ${act} is ${distance}")
+        }
+    }
+
+    void assertPointsAreEqual(Point expected, Point actual, double delta) {
+        assertEquals(expected.x, actual.x, delta)
+        assertEquals(expected.y, actual.y, delta)
     }
 
     String stripXmlNS(String str) {

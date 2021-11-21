@@ -119,7 +119,7 @@ Bands:
    BLUE_BAND
       Min Value: 58.0 Max Value: 250.0
 """
-        assertStringsEqual(expected, actual, true)
+        assertStringsAreSimilar(expected, actual, 3, true)
     }
 
     @Test
@@ -151,4 +151,5 @@ Bands:
 """
         assertStringsEqual(expected, actual, true)
     }
+
 }

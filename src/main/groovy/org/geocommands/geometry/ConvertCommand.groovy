@@ -73,6 +73,8 @@ class ConvertCommand extends Command<ConvertOptions> {
             new geoscript.geom.io.GpxWriter()
         } else if (format.equalsIgnoreCase("geobuf")) {
             new geoscript.geom.io.GeobufWriter()
+        } else if (format.equalsIgnoreCase("yaml")) {
+            new geoscript.geom.io.YamlWriter()
         } else {
             throw new IllegalArgumentException("Unknown format '${format}'!")
         }
@@ -91,6 +93,8 @@ class ConvertCommand extends Command<ConvertOptions> {
             new geoscript.feature.io.GpxWriter()
         } else if (format.equalsIgnoreCase("geobuf")) {
             new geoscript.feature.io.GeobufWriter()
+        } else if (format.equalsIgnoreCase("yaml")) {
+            new geoscript.feature.io.YamlWriter()
         } else {
             throw new IllegalArgumentException("Unknown format '${format}'!")
         }
@@ -111,6 +115,8 @@ class ConvertCommand extends Command<ConvertOptions> {
             new geoscript.layer.io.GpxWriter()
         } else if (format.equalsIgnoreCase("geobuf")) {
             new geoscript.layer.io.GeobufWriter()
+        } else if (format.equalsIgnoreCase("yaml")) {
+            new geoscript.layer.io.YamlWriter()
         } else {
             throw new IllegalArgumentException("Unknown format '${format}'!")
         }

@@ -10,6 +10,7 @@ import geoscript.layer.io.GmlReader
 import geoscript.layer.io.GpxReader
 import geoscript.layer.io.KmlReader
 import geoscript.layer.io.MvtReader
+import geoscript.layer.io.YamlReader
 import geoscript.workspace.Memory
 import geoscript.workspace.Workspace
 import org.kohsuke.args4j.Option
@@ -76,12 +77,14 @@ class FromCommand extends LayerOutCommand<FromOptions> {
             layerReader = new GpxReader(options.formatOptions)
         } else if (options.format.equalsIgnoreCase("kml")) {
             layerReader = new KmlReader()
+        } else if (options.format.equalsIgnoreCase("yaml")) {
+            layerReader = new YamlReader()
         } else {
             throw new Exception("Unknown ${options.format} format!")
         }
         String text = options.text ?: reader.text
         Layer layer
-        if (layerReader instanceof GeobufReader || layerReader instanceof MvtReader) {
+        if (layerReader instanceof GeobufReader || layerReader instanceof MvtReader || layerReader instanceof YamlReader) {
             layer = layerReader.read(text)
         } else {
             layer = layerReader.read(options.formatOptions, text)

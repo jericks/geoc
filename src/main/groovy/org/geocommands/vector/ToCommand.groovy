@@ -10,6 +10,7 @@ import geoscript.layer.io.GmlWriter
 import geoscript.layer.io.GpxWriter
 import geoscript.layer.io.KmlWriter
 import geoscript.layer.io.MvtWriter
+import geoscript.layer.io.YamlWriter
 import org.kohsuke.args4j.Option
 
 /**
@@ -55,6 +56,8 @@ class ToCommand extends LayerCommand<ToOptions> {
             layerWriter = new GmlWriter()
         } else if (options.format.equalsIgnoreCase("kml")) {
             layerWriter = new KmlWriter()
+        } else if (options.format.equalsIgnoreCase("yaml")) {
+            layerWriter = new YamlWriter()
         } else if (options.format.equalsIgnoreCase("georss")) {
             ["feedTitle","feedDescription", "feedLink",
              "itemTitle", "itemId", "itemDescription", "itemDate", "itemGeometry"].each { String key ->

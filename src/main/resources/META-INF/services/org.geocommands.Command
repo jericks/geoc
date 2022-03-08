@@ -21,6 +21,8 @@ org.geocommands.style.CopyStyleRepositoryCommand
 org.geocommands.map.MapCommand
 org.geocommands.map.MapCubeCommand
 
+org.geocommands.carto.MapCommand
+
 org.geocommands.geometry.ConvertCommand
 org.geocommands.geometry.OffsetCommand
 org.geocommands.geometry.DecimalDegrees2PointCommand

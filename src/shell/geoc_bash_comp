@@ -4,7 +4,15 @@ _geoc()
     local line=${COMP_LINE}
     local cmd=${line##*geoc }
     COMPREPLY=()
-    if [[ "$line" == *"geoc filter cql2xml "* ]]; then
+    if [[ "$line" == *"geoc carto map "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -c --carto-file -o --output-file -t --type' -- $cur))
+    elif [[ "$line" == *"geoc carto " ]]; then
+        COMPREPLY=($(compgen -W ' map'))
+    elif [[ "$line" == *"geoc carto"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "carto map" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' map'))
+        fi
+    elif [[ "$line" == *"geoc filter cql2xml "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -c --cql' -- $cur))
     elif [[ "$line" == *"geoc filter " ]]; then
         COMPREPLY=($(compgen -W ' cql2xml'))
@@ -1113,8 +1121,11 @@ _geoc()
     elif [[ "$line" == *"geoc version "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help' -- $cur))
     elif [[ "$line" == *"geoc " ]]; then
-        COMPREPLY=($(compgen -W ' filter  geometry  list  map  pipe  proj  raster  shell  style  tile  vector  version'))
+        COMPREPLY=($(compgen -W ' carto  filter  geometry  list  map  pipe  proj  raster  shell  style  tile  vector  version'))
     elif [[ "$line" == *"geoc"[[:space:]][[:alpha:]]* ]]; then
+        if [[ "carto" == "$cmd"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' carto'))
+        fi
         if [[ "filter" == "$cmd"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W ' filter'))
         fi

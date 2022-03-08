@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue
  * The PlotCommand Unit Test
  * @author Jared Erickson
  */
-class PlotCommandTest extends BaseTest {
+class MapCommandTest extends BaseTest {
 
     @Test
     void execute() {

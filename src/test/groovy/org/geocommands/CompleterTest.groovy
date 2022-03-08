@@ -9,14 +9,14 @@ class CompleterTest {
     void complete() {
         Completer completer = new Completer()
         List<String> values = completer.complete("")
-        assertEquals(12, values.size())
+        assertEquals(13, values.size())
         assertTrue(values.contains("list"))
         assertTrue(values.contains("filter"))
         assertTrue(values.contains("tile"))
         assertTrue(values.contains("raster"))
 
         values = completer.complete("vec")
-        assertEquals(12, values.size())
+        assertEquals(13, values.size())
         assertTrue(values.contains("list"))
         assertTrue(values.contains("filter"))
         assertTrue(values.contains("tile"))

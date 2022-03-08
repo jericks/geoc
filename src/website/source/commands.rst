@@ -54,6 +54,7 @@ And then use it with the geoc command::
     commands/geometry-pt2dd.rst
     commands/map-cube.rst
     commands/map-draw.rst
+    commands/carto-map.rst
     commands/proj-envelope.rst
     commands/proj-wkt.rst
     commands/raster-abs.rst

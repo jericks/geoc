@@ -1,0 +1,28 @@
+carto map
+=========
+
+**Name**:
+
+geoc carto map
+
+**Description**:
+
+Create a cartographic map
+
+**Arguments**:
+
+   * -t --type: The type of the carto file (json, xml)
+
+   * -c --carto-file: The input carto definition file
+
+   * -o --output-file: The output file
+
+   * --help : Print the help message
+
+   * --web-help : Open help in a browser
+
+
+
+**Example**::
+
+    "geoc carto map -t json -c map.json -o map.png"

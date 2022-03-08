@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>geometry geohash encode &mdash; geoc 0.18.0 documentation</title>
+  <title>carto map &mdash; geoc 0.18.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="geometry geohash neighbors" href="geometry-geohash-neighbors.html" />
-    <link rel="prev" title="geometry geohash decode" href="geometry-geohash-decode.html" /> 
+    <link rel="next" title="proj envelope" href="proj-envelope.html" />
+    <link rel="prev" title="map draw" href="map-draw.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,7 +51,7 @@
 <li class="toctree-l2"><a class="reference internal" href="geometry-dd2pt.html">geometry dd2pt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-geohash-bounds.html">geometry geohash bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-geohash-decode.html">geometry geohash decode</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">geometry geohash encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry-geohash-encode.html">geometry geohash encode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-geohash-neighbors.html">geometry geohash neighbors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-greatcirclearc.html">geometry greatcirclearc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry-offset.html">geometry offset</a></li>
@@ -60,7 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="geometry-pt2dd.html">geometry pt2dd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="map-cube.html">map cube</a></li>
 <li class="toctree-l2"><a class="reference internal" href="map-draw.html">map draw</a></li>
-<li class="toctree-l2"><a class="reference internal" href="carto-map.html">carto map</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">carto map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="proj-envelope.html">proj envelope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="proj-wkt.html">proj wkt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raster-abs.html">raster abs</a></li>
@@ -259,9 +259,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../commands.html">Commands</a> &raquo;</li>
-      <li>geometry geohash encode</li>
+      <li>carto map</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/commands/geometry-geohash-encode.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/commands/carto-map.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -269,25 +269,24 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="geometry-geohash-encode">
-<h1>geometry geohash encode<a class="headerlink" href="#geometry-geohash-encode" title="Permalink to this headline"></a></h1>
+  <section id="carto-map">
+<h1>carto map<a class="headerlink" href="#carto-map" title="Permalink to this headline"></a></h1>
 <p><strong>Name</strong>:</p>
-<p>geoc geometry geohash encode</p>
+<p>geoc carto map</p>
 <p><strong>Description</strong>:</p>
-<p>Encode a Geometry as a GeoHash</p>
+<p>Create a cartographic map</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>-i –input: The input geometry</p></li>
-<li><p>-t –type: The encoding type (string or long). The default is string.</p></li>
-<li><p>-n –number-of-chars: The number of characters. The default is 9.</p></li>
-<li><p>-d –bit-depth: The bit depth. The default is 52.</p></li>
+<li><p>-t –type: The type of the carto file (json, xml)</p></li>
+<li><p>-c –carto-file: The input carto definition file</p></li>
+<li><p>-o –output-file: The output file</p></li>
 <li><p>–help : Print the help message</p></li>
 <li><p>–web-help : Open help in a browser</p></li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geoc</span> <span class="n">geometry</span> <span class="n">geohash</span> <span class="n">encode</span> <span class="o">-</span><span class="n">i</span> <span class="s2">&quot;POINT (45 78)&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;geoc carto map -t json -c map.json -o map.png&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -296,8 +295,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="geometry-geohash-decode.html" class="btn btn-neutral float-left" title="geometry geohash decode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="geometry-geohash-neighbors.html" class="btn btn-neutral float-right" title="geometry geohash neighbors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="map-draw.html" class="btn btn-neutral float-left" title="map draw" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="proj-envelope.html" class="btn btn-neutral float-right" title="proj envelope" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

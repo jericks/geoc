@@ -27,9 +27,9 @@ class CopyStyleRepositoryCommand extends Command<CopyStyleRepositoryOptions> {
     void execute(CopyStyleRepositoryOptions options, Reader reader, Writer writer) throws Exception {
         StyleRepository inputStyleRepository = StyleRepositoryFactory.getStyleRepository(options.inputType, options.inputParams)
         StyleRepository outputStyleRepository = StyleRepositoryFactory.getStyleRepository(options.outputType, options.outputParams)
-        List<Map<String, String>> styles = inputStyleRepository.getAll()
+        List<Map<String, Object>> styles = inputStyleRepository.getAll()
         styles.each {Map<String,String> style ->
-            outputStyleRepository.save(style.layerName, style.styleName, style.style)
+            outputStyleRepository.save(style.layerName, style.styleName, style.styleStr)
         }
     }
 

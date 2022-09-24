@@ -22,8 +22,7 @@ copyright = '2021, Jared Erickson'
 author = 'Jared Erickson'
 
 # The full version, including alpha/beta/rc tags
-release = '0.18.0'
-
+release = '0.19.0'
 
 # -- General configuration ---------------------------------------------------
 

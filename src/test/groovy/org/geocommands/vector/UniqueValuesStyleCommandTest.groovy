@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals
  */
 class UniqueValuesStyleCommandTest extends BaseTest {
 
-    private final String greensSld = """<?xml version="1.0" encoding="UTF-8"?><sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml" version="1.0.0">
+    private final String greensSld = """<?xml version="1.0" encoding="UTF-8"?><sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" version="1.0.0">
   <sld:UserLayer>
     <sld:LayerFeatureConstraints>
       <sld:FeatureTypeConstraint/>
@@ -22,6 +22,7 @@ class UniqueValuesStyleCommandTest extends BaseTest {
       <sld:FeatureTypeStyle>
         <sld:Name>name</sld:Name>
         <sld:Rule>
+          <sld:Name>Number 1</sld:Name>
           <ogc:Filter>
             <ogc:PropertyIsEqualTo>
               <ogc:PropertyName>name</ogc:PropertyName>
@@ -45,6 +46,7 @@ class UniqueValuesStyleCommandTest extends BaseTest {
           </sld:PointSymbolizer>
         </sld:Rule>
         <sld:Rule>
+          <sld:Name>Number 2</sld:Name>
           <ogc:Filter>
             <ogc:PropertyIsEqualTo>
               <ogc:PropertyName>name</ogc:PropertyName>
@@ -68,6 +70,7 @@ class UniqueValuesStyleCommandTest extends BaseTest {
           </sld:PointSymbolizer>
         </sld:Rule>
         <sld:Rule>
+          <sld:Name>Number 3</sld:Name>
           <ogc:Filter>
             <ogc:PropertyIsEqualTo>
               <ogc:PropertyName>name</ogc:PropertyName>
@@ -95,7 +98,7 @@ class UniqueValuesStyleCommandTest extends BaseTest {
   </sld:UserLayer>
 </sld:StyledLayerDescriptor>"""
 
-    private final String threeColorsSld = """<?xml version="1.0" encoding="UTF-8"?><sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml" version="1.0.0">
+    private final String threeColorsSld = """<?xml version="1.0" encoding="UTF-8"?><sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" version="1.0.0">
   <sld:UserLayer>
     <sld:LayerFeatureConstraints>
       <sld:FeatureTypeConstraint/>
@@ -105,6 +108,7 @@ class UniqueValuesStyleCommandTest extends BaseTest {
       <sld:FeatureTypeStyle>
         <sld:Name>name</sld:Name>
         <sld:Rule>
+          <sld:Name>Number 1</sld:Name>
           <ogc:Filter>
             <ogc:PropertyIsEqualTo>
               <ogc:PropertyName>name</ogc:PropertyName>
@@ -128,6 +132,7 @@ class UniqueValuesStyleCommandTest extends BaseTest {
           </sld:PointSymbolizer>
         </sld:Rule>
         <sld:Rule>
+          <sld:Name>Number 2</sld:Name>
           <ogc:Filter>
             <ogc:PropertyIsEqualTo>
               <ogc:PropertyName>name</ogc:PropertyName>
@@ -151,6 +156,7 @@ class UniqueValuesStyleCommandTest extends BaseTest {
           </sld:PointSymbolizer>
         </sld:Rule>
         <sld:Rule>
+          <sld:Name>Number 3</sld:Name>
           <ogc:Filter>
             <ogc:PropertyIsEqualTo>
               <ogc:PropertyName>name</ogc:PropertyName>

@@ -2,7 +2,12 @@ package org.geocommands
 
 import geoscript.geom.Point
 import geoscript.layer.Layer
+import geoscript.layer.Renderable
 import geoscript.layer.io.CsvReader
+import geoscript.render.Map
+import geoscript.style.io.SLDReader
+import geoscript.workspace.GeoPackage
+import geoscript.workspace.Workspace
 import org.apache.commons.text.similarity.LevenshteinDistance
 import org.junit.jupiter.api.io.TempDir
 import static org.junit.jupiter.api.Assertions.*
@@ -142,6 +147,32 @@ class BaseTest {
         System.err = syserr
         // Return the captured output
         out.toString() ?: err.toString()
+    }
+
+    void drawOnBasemap(java.util.Map options = [:], String name, List<Renderable> layers) {
+        Workspace workspace = new GeoPackage('src/test/resources/data.gpkg')
+        Layer countries = workspace.get("countries")
+        countries.style = new SLDReader().read(new File('src/test/resources/countries.sld'))
+        Layer ocean = workspace.get("ocean")
+        ocean.style = new SLDReader().read(new File('src/test/resources/ocean.sld'))
+        Map map = new Map(
+                width: 500,
+                height: 300,
+                layers: [ocean, countries]
+        )
+        map.setAdvancedProjectionHandling(false)
+        map.setContinuousMapWrapping(false)
+        if (options.bounds) {
+            map.bounds = options.bounds
+        }
+        layers.each { Renderable layer ->
+            map.addLayer(layer)
+        }
+        File file = new File("src/main/docs/images/${name}.png")
+        if(!file.parentFile.exists()) {
+            file.parentFile.mkdir()
+        }
+        map.render(file)
     }
 
 }

@@ -1,0 +1,12 @@
+= Geoc
+Jared Erickson
+v0.12.0-SNAPSHOT
+:title-page:
+:title-logo-image: image:geoc.png[pdfwidth=5.5in,align=center]
+ifndef::imagesdir[:imagesdir: images]
+
+geoc is a geospatial command line application that follows the unix philosophy. Each command does one thing well (buffer a layer, crop a raster) by reading a vector layer as a CSV text stream or a raster layer as an ASCII grid, processing the layer or raster, and then writing out the vector layer as a CSV or a raster layer as an ASCII grid. Individual commands can be chained together with unix pipes.
+
+include::core.adoc[]
+
+include::vector.adoc[]

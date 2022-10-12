@@ -9,3 +9,5 @@ src/test/resources/h2.db.trace.db
 src/test/resources/h2.db.*.log.db
 src/website/build
 src/website/source/commands
+src/main/docs/output
+src/main/docs/images

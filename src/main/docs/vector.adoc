@@ -73,6 +73,20 @@ include::output/geoc_delaunay_command.txt[]
 [.thumb]
 image::geoc_delaunay_command.png[]
 
+=== Ellipse
+
+Calculate the ellipse around each feature in a Layer.
+
+include::output/geoc_vector_ellipse_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_ellipse_command.txt[]
+----
+
+[.thumb]
+image::geoc_ellipse_command.png[]
+
 === Envelope
 
 Calculate the envelope of all the features in a Layer.

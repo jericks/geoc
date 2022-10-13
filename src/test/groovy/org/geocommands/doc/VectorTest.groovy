@@ -84,6 +84,18 @@ class VectorTest extends DocTest {
     }
 
     @Test
+    void ellipse() {
+        String command = "geoc vector ellipse -i src/test/resources/data.gpkg -l countries -o target/ellipse.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_ellipse_command", command)
+        writeTextFile("geoc_ellipse_command_output", result)
+
+        Layer layer = new Shapefile("target/ellipse.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_ellipse_command", [layer])
+    }
+
+    @Test
     void envelope() {
         String command = "geoc vector envelope -i src/test/resources/data.gpkg -l places -o target/envelope.shp"
         String result = runApp(command, "")

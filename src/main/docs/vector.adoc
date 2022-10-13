@@ -171,6 +171,20 @@ include::output/geoc_minrects_command.txt[]
 [.thumb]
 image::geoc_minrects_command.png[]
 
+=== Random Points
+
+Generate random points.
+
+include::output/geoc_vector_randompoints_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_randompoints_command.txt[]
+----
+
+[.thumb]
+image::geoc_randompoints_command.png[]
+
 === Voronoi
 
 Calculate a voronoi diagram of all the features in a Layer.

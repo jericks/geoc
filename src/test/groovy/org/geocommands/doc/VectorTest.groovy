@@ -179,6 +179,18 @@ class VectorTest extends DocTest {
     }
 
     @Test
+    void randompoints() {
+        String command = "geoc vector randompoints -n 100 -g -180,-90,180,90 -o target/randompoints.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_randompoints_command", command)
+        writeTextFile("geoc_randompoints_command_output", result)
+
+        Layer layer = new Shapefile("target/randompoints.shp")
+        layer.style = new SimpleStyleReader().read("shape-type=circle shape-size=8 shape=#555555")
+        drawOnBasemap("geoc_randompoints_command", [layer])
+    }
+
+    @Test
     void voronoi() {
         String command = "geoc vector voronoi -i src/test/resources/data.gpkg -l places -o target/voronoi.shp"
         String result = runApp(command, "")

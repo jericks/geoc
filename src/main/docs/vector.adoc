@@ -59,6 +59,20 @@ include::output/geoc_convexhulls_command.txt[]
 [.thumb]
 image::geoc_convexhulls_command.png[]
 
+=== Delaunay
+
+Calculate a delaunay diagram of all the features in a Layer.
+
+include::output/geoc_vector_delaunay_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_delaunay_command.txt[]
+----
+
+[.thumb]
+image::geoc_delaunay_command.png[]
+
 === Envelope
 
 Calculate the envelope of all the features in a Layer.

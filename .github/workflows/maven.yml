@@ -25,7 +25,7 @@ jobs:
       with:
         name: geoc.jar
         path: target/geoc-app*.jar
-    - name: Upload geoc.jar
+    - name: Upload geoc.pdf
       uses: actions/upload-artifact@v2
       with:
         name: geoc.pdf

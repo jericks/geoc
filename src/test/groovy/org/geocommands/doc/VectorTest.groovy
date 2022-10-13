@@ -67,6 +67,22 @@ class VectorTest extends DocTest {
     }
 
     @Test
+    void delaunay() {
+        String command = "geoc vector delaunay -i src/test/resources/data.gpkg -l places -o target/delaunay.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_delaunay_command", command)
+        writeTextFile("geoc_delaunay_command_output", result)
+
+        Workspace workspace = new GeoPackage("src/test/resources/data.gpkg")
+        Layer placesLayer = workspace.get("places")
+        placesLayer.style = new SimpleStyleReader().read("shape-type=circle shape-size=8 shape=#555555")
+
+        Layer layer = new Shapefile("target/delaunay.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_delaunay_command", [layer, placesLayer], bounds: placesLayer.bounds)
+    }
+
+    @Test
     void envelope() {
         String command = "geoc vector envelope -i src/test/resources/data.gpkg -l places -o target/envelope.shp"
         String result = runApp(command, "")

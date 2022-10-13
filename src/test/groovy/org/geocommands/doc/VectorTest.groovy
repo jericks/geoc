@@ -135,6 +135,34 @@ class VectorTest extends DocTest {
     }
 
     @Test
+    void minrect() {
+        String command = "geoc vector minrect -i src/test/resources/data.gpkg -l places -o target/minrect.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_minrect_command", command)
+        writeTextFile("geoc_minrect_command_output", result)
+
+        Workspace workspace = new GeoPackage("src/test/resources/data.gpkg")
+        Layer placesLayer = workspace.get("places")
+        placesLayer.style = new SimpleStyleReader().read("shape-type=circle shape-size=8 shape=#555555")
+
+        Layer layer = new Shapefile("target/minrect.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_minrect_command", [layer, placesLayer])
+    }
+
+    @Test
+    void minrects() {
+        String command = "geoc vector minrects -i src/test/resources/data.gpkg -l countries -o target/minrects.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_minrects_command", command)
+        writeTextFile("geoc_minrects_command_output", result)
+
+        Layer layer = new Shapefile("target/minrects.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_minrects_command", [layer], bounds: new Bounds(-180,-90,180,90, "EPSG:4326"))
+    }
+
+    @Test
     void voronoi() {
         String command = "geoc vector voronoi -i src/test/resources/data.gpkg -l places -o target/voronoi.shp"
         String result = runApp(command, "")

@@ -117,7 +117,7 @@ image::geoc_mincircle_command.png[]
 
 === Minimum Bounding Circles
 
-Calculate the mincircles for each feature in a Layer.
+Calculate the minimum bounding circle for each feature in a Layer.
 
 include::output/geoc_vector_mincircles_options.txt[]
 
@@ -128,6 +128,34 @@ include::output/geoc_mincircles_command.txt[]
 
 [.thumb]
 image::geoc_mincircles_command.png[]
+
+=== Minimum Bounding Rectangle
+
+Calculate the minimum bounding rectangle of all the features in a Layer.
+
+include::output/geoc_vector_minrect_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_minrect_command.txt[]
+----
+
+[.thumb]
+image::geoc_minrect_command.png[]
+
+=== Minimum Bounding rects
+
+Calculate the minimum bounding rectangle for each feature in a Layer.
+
+include::output/geoc_vector_minrects_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_minrects_command.txt[]
+----
+
+[.thumb]
+image::geoc_minrects_command.png[]
 
 === Voronoi
 

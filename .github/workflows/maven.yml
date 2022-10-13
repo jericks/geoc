@@ -25,6 +25,11 @@ jobs:
       with:
         name: geoc.jar
         path: target/geoc-app*.jar
+    - name: Upload geoc.jar
+      uses: actions/upload-artifact@v2
+      with:
+        name: geoc.pdf
+        path: target/generated-docs/index.pdf
     - name: Sphinx build
       uses: ammaraskar/sphinx-action@0.4
       with:

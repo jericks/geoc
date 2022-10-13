@@ -1,5 +1,6 @@
 package org.geocommands.doc
 
+import geoscript.geom.Bounds
 import geoscript.layer.Layer
 import geoscript.layer.Shapefile
 import geoscript.style.io.SimpleStyleReader
@@ -103,6 +104,34 @@ class VectorTest extends DocTest {
         Layer layer = new Shapefile("target/countries_interiorpoints.shp")
         layer.style = new SimpleStyleReader().read("shape-type=circle shape-size=8 shape=#555555")
         drawOnBasemap("geoc_interiorpoint_command", [layer])
+    }
+
+    @Test
+    void mincircle() {
+        String command = "geoc vector mincircle -i src/test/resources/data.gpkg -l places -o target/mincircle.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_mincircle_command", command)
+        writeTextFile("geoc_mincircle_command_output", result)
+
+        Workspace workspace = new GeoPackage("src/test/resources/data.gpkg")
+        Layer placesLayer = workspace.get("places")
+        placesLayer.style = new SimpleStyleReader().read("shape-type=circle shape-size=8 shape=#555555")
+
+        Layer layer = new Shapefile("target/mincircle.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_mincircle_command", [layer, placesLayer])
+    }
+
+    @Test
+    void mincircles() {
+        String command = "geoc vector mincircles -i src/test/resources/data.gpkg -l countries -o target/mincircles.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_mincircles_command", command)
+        writeTextFile("geoc_mincircles_command_output", result)
+
+        Layer layer = new Shapefile("target/mincircles.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_mincircles_command", [layer], bounds: new Bounds(-180,-90,180,90, "EPSG:4326"))
     }
 
     @Test

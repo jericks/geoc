@@ -1,0 +1,117 @@
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../../main/groovy]
+
+== Core Commands
+
+=== List
+
+List all command names.
+
+include::output/geoc_list_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_list_command.txt[]
+----
+[source.bash]
+----
+include::output/geoc_list_command_output.txt[]
+...
+----
+
+List all commands names with a short description.
+
+[source,bash]
+----
+include::output/geoc_list_description_command.txt[]
+----
+[source.bash]
+----
+include::output/geoc_list_description_command_output.txt[]
+...
+----
+
+=== Version
+
+Get the current version.
+
+include::output/geoc_version_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_version_command.txt[]
+----
+[source.bash]
+----
+include::output/geoc_version_command_output.txt[]
+----
+
+=== Help
+
+You can get help from any subcommand.
+
+[source,bash]
+----
+include::output/geoc_help_command.txt[]
+----
+[source.bash]
+----
+include::output/geoc_help_command_output.txt[]
+----
+
+=== Pipe
+
+Combine multiple commands together with a pipe.
+
+include::output/geoc_pipe_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_pipe_command.txt[]
+----
+[source.bash]
+----
+include::output/geoc_pipe_command_output.txt[]
+...
+----
+
+[.thumb]
+image::geoc_pipe_command.png[]
+
+=== Shell
+
+Run commands in an interactive shell.
+
+include::output/geoc_shell_options.txt[]
+
+[source,bash]
+----
+geoc shell
+----
+
+[.thumb]
+image::geoc_shell.png[]
+
+You can now type commands in the interactive shell.
+
+If you hit the *tab* key you can get command line completion.
+
+You can use the tab key again to cycle through the suggested values and hit the *return*
+key to select one.
+
+[.thumb]
+image::geoc_shell_top.png[]
+
+In this example, we are looking for the vector contains command, so after typing vector c
+and hitting tab, we get a list of all vector commands that begin with the letter c.
+
+[.thumb]
+image::geoc_shell_vector.png[]
+
+Once we have found our command, the shell will also provide completion for options.
+
+[.thumb]
+image::geoc_shell_options.png[]
+
+
+

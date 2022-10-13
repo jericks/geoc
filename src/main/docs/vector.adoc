@@ -1,0 +1,144 @@
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../../main/groovy]
+
+== Vector Commands
+
+=== Buffer
+
+Buffer all of the features in a Layer.
+
+include::output/geoc_vector_buffer_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_buffer_command.txt[]
+----
+
+[.thumb]
+image::geoc_buffer_command.png[]
+
+=== Centroid
+
+Calculate the centroid of all the features in a Layer.
+
+include::output/geoc_vector_centroid_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_centroid_command.txt[]
+----
+
+[.thumb]
+image::geoc_centroid_command.png[]
+
+=== Convexhull
+
+Calculate the convexhull of all the features in a Layer.
+
+include::output/geoc_vector_convexhull_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_convexhull_command.txt[]
+----
+
+[.thumb]
+image::geoc_convexhull_command.png[]
+
+=== Convexhulls
+
+Calculate the convexhulls for each feature in a Layer.
+
+include::output/geoc_vector_convexhulls_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_convexhulls_command.txt[]
+----
+
+[.thumb]
+image::geoc_convexhulls_command.png[]
+
+=== Envelope
+
+Calculate the envelope of all the features in a Layer.
+
+include::output/geoc_vector_envelope_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_envelope_command.txt[]
+----
+
+[.thumb]
+image::geoc_envelope_command.png[]
+
+=== Envelopes
+
+Calculate the envelopes for each feature in a Layer.
+
+include::output/geoc_vector_envelopes_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_envelopes_command.txt[]
+----
+
+[.thumb]
+image::geoc_envelopes_command.png[]
+
+=== Interior Point
+
+Calculate the interior point of all the features in a Layer.
+
+include::output/geoc_vector_interiorpoint_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_interiorpoint_command.txt[]
+----
+
+[.thumb]
+image::geoc_interiorpoint_command.png[]
+
+=== Minimum Bounding Circle
+
+Calculate the minimum bounding circle of all the features in a Layer.
+
+include::output/geoc_vector_mincircle_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_mincircle_command.txt[]
+----
+
+[.thumb]
+image::geoc_mincircle_command.png[]
+
+=== Minimum Bounding Circles
+
+Calculate the mincircles for each feature in a Layer.
+
+include::output/geoc_vector_mincircles_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_mincircles_command.txt[]
+----
+
+[.thumb]
+image::geoc_mincircles_command.png[]
+
+=== Voronoi
+
+Calculate a voronoi diagram of all the features in a Layer.
+
+include::output/geoc_vector_voronoi_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_voronoi_command.txt[]
+----
+
+[.thumb]
+image::geoc_voronoi_command.png[]

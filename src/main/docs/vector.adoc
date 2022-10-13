@@ -101,6 +101,76 @@ include::output/geoc_envelopes_command.txt[]
 [.thumb]
 image::geoc_envelopes_command.png[]
 
+=== Graticule - Hexagon
+
+Create hexagon graticules.
+
+include::output/geoc_vector_graticule_hexagon_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_graticule_hexagon_command.txt[]
+----
+
+[.thumb]
+image::geoc_graticule_hexagon_command.png[]
+
+=== Graticule - Line
+
+Create line graticules.
+
+include::output/geoc_vector_graticule_line_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_graticule_line_command.txt[]
+----
+
+[.thumb]
+image::geoc_graticule_line_command.png[]
+
+=== Graticule - Oval
+
+Create oval graticules.
+
+include::output/geoc_vector_graticule_oval_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_graticule_oval_command.txt[]
+----
+
+[.thumb]
+image::geoc_graticule_oval_command.png[]
+
+=== Graticule - Rectangle
+
+Create rectangle graticules.
+
+include::output/geoc_vector_graticule_rectangle_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_graticule_rectangle_command.txt[]
+----
+
+[.thumb]
+image::geoc_graticule_rectangle_command.png[]
+
+=== Graticule - Square
+
+Create square graticules.
+
+include::output/geoc_vector_graticule_square_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_graticule_square_command.txt[]
+----
+
+[.thumb]
+image::geoc_graticule_square_command.png[]
+
 === Interior Point
 
 Calculate the interior point of all the features in a Layer.

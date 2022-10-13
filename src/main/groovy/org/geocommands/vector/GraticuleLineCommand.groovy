@@ -11,7 +11,7 @@ import org.kohsuke.args4j.Option
  * Create line graticules.
  * @author Jared Erickson
  */
-class GraticuleLineCommand extends LayerOutCommand<GraticuleLineOptions>{
+class GraticuleLineCommand extends LayerOutCommand<GraticuleLineOptions> {
 
 
     @Override
@@ -33,7 +33,7 @@ class GraticuleLineCommand extends LayerOutCommand<GraticuleLineOptions>{
     Layer createLayer(GraticuleLineOptions options, Reader reader, Writer writer) throws Exception {
         Bounds bounds = Geometry.fromString(options.geometry).bounds
         Workspace workspace = Util.getWorkspace(options.outputWorkspace)
-       Graticule.createLines(
+        Graticule.createLines(
                 bounds,
                 options.lineDefinitions.collect {
                     if (!(it instanceof Map)) {

@@ -3,6 +3,7 @@ package org.geocommands.doc
 import geoscript.geom.Bounds
 import geoscript.layer.Layer
 import geoscript.layer.Shapefile
+import geoscript.layer.io.Pbf
 import geoscript.style.io.SimpleStyleReader
 import geoscript.workspace.GeoPackage
 import geoscript.workspace.Workspace
@@ -108,6 +109,66 @@ class VectorTest extends DocTest {
         Layer layer = new Shapefile("target/envelopes.shp")
         layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
         drawOnBasemap("geoc_envelopes_command", [layer])
+    }
+
+    @Test
+    void graticuleSquare() {
+        String command = "geoc vector graticule square -g -180,-90,180,90 -l 20 -o target/squares.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_graticule_square_command", command)
+        writeTextFile("geoc_graticule_square_command_output", result)
+
+        Layer layer = new Shapefile("target/squares.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_graticule_square_command", [layer])
+    }
+
+    @Test
+    void graticuleRectangle() {
+        String command = "geoc vector graticule rectangle -g -180,-90,180,90 -w 10 -h 20 -o target/rectangles.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_graticule_rectangle_command", command)
+        writeTextFile("geoc_graticule_rectangle_command_output", result)
+
+        Layer layer = new Shapefile("target/rectangles.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_graticule_rectangle_command", [layer])
+    }
+
+    @Test
+    void graticuleHexagon() {
+        String command = "geoc vector graticule hexagon -g -180,-90,180,90 -l 10 -o target/hexagons.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_graticule_hexagon_command", command)
+        writeTextFile("geoc_graticule_hexagon_command_output", result)
+
+        Layer layer = new Shapefile("target/hexagons.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_graticule_hexagon_command", [layer])
+    }
+
+    @Test
+    void graticuleOval() {
+        String command = "geoc vector graticule oval -g -180,-90,180,90 -l 20 -o target/ovals.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_graticule_oval_command", command)
+        writeTextFile("geoc_graticule_oval_command_output", result)
+
+        Layer layer = new Shapefile("target/ovals.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_graticule_oval_command", [layer])
+    }
+
+    @Test
+    void graticuleLine() {
+        String command = "geoc vector graticule line -g -180,-90,180,90 -l vertical,2,10 -l horizontal,1,2 -o target/lines.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_graticule_line_command", command)
+        writeTextFile("geoc_graticule_line_command_output", result)
+
+        Layer layer = new Shapefile("target/lines.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_graticule_line_command", [layer])
     }
 
     @Test

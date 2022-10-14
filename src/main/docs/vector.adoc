@@ -185,6 +185,22 @@ include::output/geoc_graticule_square_command.txt[]
 [.thumb]
 image::geoc_graticule_square_command.png[]
 
+=== Info
+
+Get information about a Layer.
+
+include::output/geoc_vector_info_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_info_command.txt[]
+----
+[source,bash]
+----
+include::output/geoc_info_command_output.txt[]
+...
+----
+
 === Interior Point
 
 Calculate the interior point of all the features in a Layer.

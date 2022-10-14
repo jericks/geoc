@@ -184,6 +184,14 @@ class VectorTest extends DocTest {
     }
 
     @Test
+    void info() {
+        String command = "geoc vector info -i src/test/resources/data.gpkg -l countries"
+        String result = runApp(command, "")
+        writeTextFile("geoc_info_command", command)
+        writeTextFile("geoc_info_command_output", result.split("\n").take(22).join("\n"))
+    }
+
+    @Test
     void interiorPoint() {
         String command = "geoc vector interiorPoint -i src/test/resources/data.gpkg -l countries -o target/countries_interiorpoints.shp"
         String result = runApp(command, "")

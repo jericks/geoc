@@ -11,11 +11,11 @@ include::output/geoc_vector_buffer_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_buffer_command.txt[]
+include::output/geoc_vector_buffer_command.txt[]
 ----
 
 [.thumb]
-image::geoc_buffer_command.png[]
+image::geoc_vector_buffer_command.png[]
 
 === Centroid
 
@@ -25,11 +25,11 @@ include::output/geoc_vector_centroid_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_centroid_command.txt[]
+include::output/geoc_vector_centroid_command.txt[]
 ----
 
 [.thumb]
-image::geoc_centroid_command.png[]
+image::geoc_vector_centroid_command.png[]
 
 === Convexhull
 
@@ -39,11 +39,11 @@ include::output/geoc_vector_convexhull_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_convexhull_command.txt[]
+include::output/geoc_vector_convexhull_command.txt[]
 ----
 
 [.thumb]
-image::geoc_convexhull_command.png[]
+image::geoc_vector_convexhull_command.png[]
 
 === Convexhulls
 
@@ -53,11 +53,11 @@ include::output/geoc_vector_convexhulls_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_convexhulls_command.txt[]
+include::output/geoc_vector_convexhulls_command.txt[]
 ----
 
 [.thumb]
-image::geoc_convexhulls_command.png[]
+image::geoc_vector_convexhulls_command.png[]
 
 === Delaunay
 
@@ -67,11 +67,11 @@ include::output/geoc_vector_delaunay_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_delaunay_command.txt[]
+include::output/geoc_vector_delaunay_command.txt[]
 ----
 
 [.thumb]
-image::geoc_delaunay_command.png[]
+image::geoc_vector_delaunay_command.png[]
 
 === Ellipse
 
@@ -81,11 +81,11 @@ include::output/geoc_vector_ellipse_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_ellipse_command.txt[]
+include::output/geoc_vector_ellipse_command.txt[]
 ----
 
 [.thumb]
-image::geoc_ellipse_command.png[]
+image::geoc_vector_ellipse_command.png[]
 
 === Envelope
 
@@ -95,11 +95,11 @@ include::output/geoc_vector_envelope_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_envelope_command.txt[]
+include::output/geoc_vector_envelope_command.txt[]
 ----
 
 [.thumb]
-image::geoc_envelope_command.png[]
+image::geoc_vector_envelope_command.png[]
 
 === Envelopes
 
@@ -109,11 +109,11 @@ include::output/geoc_vector_envelopes_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_envelopes_command.txt[]
+include::output/geoc_vector_envelopes_command.txt[]
 ----
 
 [.thumb]
-image::geoc_envelopes_command.png[]
+image::geoc_vector_envelopes_command.png[]
 
 === Graticule - Hexagon
 
@@ -123,11 +123,11 @@ include::output/geoc_vector_graticule_hexagon_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_graticule_hexagon_command.txt[]
+include::output/geoc_vector_graticule_hexagon_command.txt[]
 ----
 
 [.thumb]
-image::geoc_graticule_hexagon_command.png[]
+image::geoc_vector_graticule_hexagon_command.png[]
 
 === Graticule - Line
 
@@ -137,11 +137,11 @@ include::output/geoc_vector_graticule_line_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_graticule_line_command.txt[]
+include::output/geoc_vector_graticule_line_command.txt[]
 ----
 
 [.thumb]
-image::geoc_graticule_line_command.png[]
+image::geoc_vector_graticule_line_command.png[]
 
 === Graticule - Oval
 
@@ -151,11 +151,11 @@ include::output/geoc_vector_graticule_oval_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_graticule_oval_command.txt[]
+include::output/geoc_vector_graticule_oval_command.txt[]
 ----
 
 [.thumb]
-image::geoc_graticule_oval_command.png[]
+image::geoc_vector_graticule_oval_command.png[]
 
 === Graticule - Rectangle
 
@@ -165,11 +165,11 @@ include::output/geoc_vector_graticule_rectangle_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_graticule_rectangle_command.txt[]
+include::output/geoc_vector_graticule_rectangle_command.txt[]
 ----
 
 [.thumb]
-image::geoc_graticule_rectangle_command.png[]
+image::geoc_vector_graticule_rectangle_command.png[]
 
 === Graticule - Square
 
@@ -179,11 +179,11 @@ include::output/geoc_vector_graticule_square_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_graticule_square_command.txt[]
+include::output/geoc_vector_graticule_square_command.txt[]
 ----
 
 [.thumb]
-image::geoc_graticule_square_command.png[]
+image::geoc_vector_graticule_square_command.png[]
 
 === Info
 
@@ -193,11 +193,11 @@ include::output/geoc_vector_info_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_info_command.txt[]
+include::output/geoc_vector_info_command.txt[]
 ----
 [source,bash]
 ----
-include::output/geoc_info_command_output.txt[]
+include::output/geoc_vector_info_command_output.txt[]
 ...
 ----
 
@@ -209,11 +209,11 @@ include::output/geoc_vector_interiorpoint_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_interiorpoint_command.txt[]
+include::output/geoc_vector_interiorpoint_command.txt[]
 ----
 
 [.thumb]
-image::geoc_interiorpoint_command.png[]
+image::geoc_vector_interiorpoint_command.png[]
 
 === Minimum Bounding Circle
 
@@ -223,11 +223,11 @@ include::output/geoc_vector_mincircle_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_mincircle_command.txt[]
+include::output/geoc_vector_mincircle_command.txt[]
 ----
 
 [.thumb]
-image::geoc_mincircle_command.png[]
+image::geoc_vector_mincircle_command.png[]
 
 === Minimum Bounding Circles
 
@@ -237,11 +237,11 @@ include::output/geoc_vector_mincircles_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_mincircles_command.txt[]
+include::output/geoc_vector_mincircles_command.txt[]
 ----
 
 [.thumb]
-image::geoc_mincircles_command.png[]
+image::geoc_vector_mincircles_command.png[]
 
 === Minimum Bounding Rectangle
 
@@ -251,11 +251,11 @@ include::output/geoc_vector_minrect_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_minrect_command.txt[]
+include::output/geoc_vector_minrect_command.txt[]
 ----
 
 [.thumb]
-image::geoc_minrect_command.png[]
+image::geoc_vector_minrect_command.png[]
 
 === Minimum Bounding rects
 
@@ -265,11 +265,11 @@ include::output/geoc_vector_minrects_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_minrects_command.txt[]
+include::output/geoc_vector_minrects_command.txt[]
 ----
 
 [.thumb]
-image::geoc_minrects_command.png[]
+image::geoc_vector_minrects_command.png[]
 
 === Random Points
 
@@ -279,11 +279,11 @@ include::output/geoc_vector_randompoints_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_randompoints_command.txt[]
+include::output/geoc_vector_randompoints_command.txt[]
 ----
 
 [.thumb]
-image::geoc_randompoints_command.png[]
+image::geoc_vector_randompoints_command.png[]
 
 === Voronoi
 
@@ -293,8 +293,8 @@ include::output/geoc_vector_voronoi_options.txt[]
 
 [source,bash]
 ----
-include::output/geoc_voronoi_command.txt[]
+include::output/geoc_vector_voronoi_command.txt[]
 ----
 
 [.thumb]
-image::geoc_voronoi_command.png[]
+image::geoc_vector_voronoi_command.png[]

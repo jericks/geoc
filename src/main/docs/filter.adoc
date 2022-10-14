@@ -1,0 +1,19 @@
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../../main/groovy]
+
+== Filter Commands
+
+=== CQL to XML
+
+Convert a CQL statement to an OCG XML Filter.
+
+include::output/geoc_filter_cql2xml_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_filter_cql2xml_command.txt[]
+----
+[source,xml]
+----
+include::output/geoc_filter_cql2xml_output.txt[]
+----

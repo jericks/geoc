@@ -23,11 +23,12 @@ class DocTest extends BaseTest {
     }
 
     File copyFile(File fromFile, File toFile) {
-        fromFile.withInputStream {InputStream inputStream ->
+        fromFile.withInputStream { InputStream inputStream ->
             toFile.withOutputStream { OutputStream outputStream ->
                 outputStream << inputStream
             }
         }
+        toFile
     }
 
     List<Map> getCommandOptions(Command cmd) {

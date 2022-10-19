@@ -1,0 +1,44 @@
+{
+  "type": "png",
+  "width": 792,
+  "height": 612,
+  "items": [
+    {
+      "x": 0,
+      "y": 0,
+      "width": 792,
+      "height": 612,
+      "type": "rectangle",
+      "fillColor": "white",
+      "strokeColor": "black"
+    },
+    {
+      "x": 30,
+      "y": 50,
+      "width": 742,
+      "height": 20,
+      "type": "text",
+      "text": "Map Title",
+      "color": "Black",
+      "horizontalAlign": "center",
+      "verticalAlign": "middle",
+      "font": {
+        "name": "Arial",
+        "style": "Bold",
+        "size": 36
+      }
+    },
+    {
+      "x": 30,
+      "y": 120,
+      "width": 742,
+      "height": 470,
+      "type": "map",
+      "name": "mainMap",
+      "layers": [
+        {"layertype": "layer", "file": "src/test/resources/data.gpkg", "layername": "ocean", "style": "src/test/resources/ocean.sld"},
+        {"layertype": "layer", "file": "src/test/resources/data.gpkg", "layername": "countries", "style": "src/test/resources/countries.sld"}
+      ]
+    }
+  ]
+}

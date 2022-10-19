@@ -9,6 +9,8 @@ geoc is a geospatial command line application that follows the unix philosophy. 
 
 include::core.adoc[]
 
+include::carto.adoc[]
+
 include::filter.adoc[]
 
 include::vector.adoc[]

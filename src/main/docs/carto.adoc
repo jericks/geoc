@@ -1,0 +1,44 @@
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../../main/groovy]
+
+== Carto Commands
+
+=== Map
+
+Create a cartographic map from a JSON or XML definition file.
+
+include::output/geoc_carto_map_options.txt[]
+
+==== JSON
+
+Create a cartographic map from a JSON definition file.
+
+[source,bash]
+----
+include::output/geoc_carto_map_simple_json_command.txt[]
+----
+
+[source,json]
+----
+include::output/geoc_carto_map_simple_json_command.json[]
+----
+
+[.thumb]
+image::geoc_carto_map_simple_json_command.png[]
+
+==== XML
+
+Create a cartographic map from an XML definition file.
+
+[source,bash]
+----
+include::output/geoc_carto_map_simple_xml_command.txt[]
+----
+
+[source,xml]
+----
+include::output/geoc_carto_map_simple_xml_command.xml[]
+----
+
+[.thumb]
+image::geoc_carto_map_simple_xml_command.png[]

@@ -42,3 +42,315 @@ include::output/geoc_carto_map_simple_xml_command.xml[]
 
 [.thumb]
 image::geoc_carto_map_simple_xml_command.png[]
+
+==== Elements
+
+The geoc carto map command takes either a JSON or XML document made up of one or more elements.
+
+===== Map
+
+Draw a map.
+
+JSON
+[source,json]
+----
+include::output/carto_map_map_json.txt[]
+----
+
+[.thumb]
+image::carto_map_map_json.png[]
+
+XML
+[source,xml]
+----
+include::output/carto_map_map_xml.txt[]
+----
+
+[.thumb]
+image::carto_map_map_xml.png[]
+
+===== Overview Map
+
+Draw a overview map.
+
+JSON
+[source,json]
+----
+include::output/carto_map_overviewMap_json.txt[]
+----
+
+[.thumb]
+image::carto_map_overviewMap_json.png[]
+
+XML
+[source,xml]
+----
+include::output/carto_map_overviewMap_xml.txt[]
+----
+
+[.thumb]
+image::carto_map_overviewMap_xml.png[]
+
+===== Text
+
+Draw text.
+
+JSON
+[source,json]
+----
+include::output/carto_map_text_json.txt[]
+----
+
+[.thumb]
+image::carto_map_text_json.png[]
+
+XML
+[source,xml]
+----
+include::output/carto_map_text_xml.txt[]
+----
+
+[.thumb]
+image::carto_map_text_xml.png[]
+
+===== Rectangle
+
+Draw a rectangle.
+
+JSON
+[source,json]
+----
+include::output/carto_map_rectangle_json.txt[]
+----
+
+[.thumb]
+image::carto_map_rectangle_json.png[]
+
+XML
+[source,xml]
+----
+include::output/carto_map_rectangle_xml.txt[]
+----
+
+[.thumb]
+image::carto_map_rectangle_xml.png[]
+
+===== North Arrow
+
+Draw a north arrow.
+
+JSON
+[source,json]
+----
+include::output/carto_map_northarrow_json.txt[]
+----
+
+[.thumb]
+image::carto_map_northarrow_json.png[]
+
+XML
+[source,xml]
+----
+include::output/carto_map_northarrow_xml.txt[]
+----
+
+[.thumb]
+image::carto_map_northarrow_xml.png[]
+
+===== Legend
+
+Draw a legend.
+
+JSON
+[source,json]
+----
+include::output/carto_map_legend_json.txt[]
+----
+
+[.thumb]
+image::carto_map_legend_json.png[]
+
+XML
+[source,xml]
+----
+include::output/carto_map_legend_xml.txt[]
+----
+
+[.thumb]
+image::carto_map_legend_xml.png[]
+
+===== Date
+
+Draw a date.
+
+JSON
+[source,json]
+----
+include::output/carto_map_datetext_json.txt[]
+----
+
+[.thumb]
+image::carto_map_datetext_json.png[]
+
+XML
+[source,xml]
+----
+include::output/carto_map_datetext_xml.txt[]
+----
+
+[.thumb]
+image::carto_map_datetext_xml.png[]
+
+===== Scale Text
+
+Draw scale text.
+
+JSON
+[source,json]
+----
+include::output/carto_map_scaletext_json.txt[]
+----
+
+[.thumb]
+image::carto_map_scaletext_json.png[]
+
+XML
+[source,xml]
+----
+include::output/carto_map_scaletext_xml.txt[]
+----
+
+[.thumb]
+image::carto_map_scaletext_xml.png[]
+
+===== Scale Bar
+
+Draw scale bar.
+
+JSON
+[source,json]
+----
+include::output/carto_map_scalebar_json.txt[]
+----
+
+[.thumb]
+image::carto_map_scalebar_json.png[]
+
+XML
+[source,xml]
+----
+include::output/carto_map_scalebar_xml.txt[]
+----
+
+[.thumb]
+image::carto_map_scalebar_xml.png[]
+
+===== Line
+
+Draw a line.
+
+JSON
+[source,json]
+----
+include::output/carto_map_line_json.txt[]
+----
+
+[.thumb]
+image::carto_map_line_json.png[]
+
+XML
+[source,xml]
+----
+include::output/carto_map_line_xml.txt[]
+----
+
+[.thumb]
+image::carto_map_line_xml.png[]
+
+===== Grid
+
+Draw a grid to make it easier to place other items.
+
+JSON
+[source,json]
+----
+include::output/carto_map_grid_json.txt[]
+----
+
+[.thumb]
+image::carto_map_grid_json.png[]
+
+XML
+[source,xml]
+----
+include::output/carto_map_grid_xml.txt[]
+----
+
+[.thumb]
+image::carto_map_grid_xml.png[]
+
+===== Paragraph
+
+Draw paragraph.
+
+JSON
+[source,json]
+----
+include::output/carto_map_paragraph_json.txt[]
+----
+
+[.thumb]
+image::carto_map_paragraph_json.png[]
+
+XML
+[source,xml]
+----
+include::output/carto_map_paragraph_xml.txt[]
+----
+
+[.thumb]
+image::carto_map_paragraph_xml.png[]
+
+===== Image
+
+Draw an image.
+
+JSON
+[source,json]
+----
+include::output/carto_map_image_json.txt[]
+----
+
+[.thumb]
+image::carto_map_image_json.png[]
+
+XML
+[source,xml]
+----
+include::output/carto_map_image_xml.txt[]
+----
+
+[.thumb]
+image::carto_map_image_xml.png[]
+
+===== Table
+
+Draw a table of data.
+
+JSON
+[source,json]
+----
+include::output/carto_map_table_json.txt[]
+----
+
+[.thumb]
+image::carto_map_table_json.png[]
+
+XML
+[source,xml]
+----
+include::output/carto_map_table_xml.txt[]
+----
+
+[.thumb]
+image::carto_map_table_xml.png[]

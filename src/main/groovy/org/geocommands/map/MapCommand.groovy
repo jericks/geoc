@@ -128,9 +128,6 @@ class MapCommand extends Command<MapOptions>{
         @Option(name = "-l", aliases = "--layer", usage = "The map layer", required = true)
         List<String> layers
 
-        @Option(name = "-i", aliases = "--layer-file", usage = "The input layer file", required = false)
-        File inputFile
-
         @Option(name = "-f", aliases = "--file", usage = "The output image file", required = false)
         File file
 

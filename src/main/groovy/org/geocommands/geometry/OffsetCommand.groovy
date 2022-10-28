@@ -3,7 +3,6 @@ package org.geocommands.geometry
 import geoscript.geom.Geometry
 import org.geocommands.Command
 import org.geocommands.Options
-import org.geotools.geometry.jts.OffsetCurveBuilder
 import org.kohsuke.args4j.Option
 
 /**

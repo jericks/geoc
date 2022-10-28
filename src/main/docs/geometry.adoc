@@ -1,0 +1,184 @@
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../../main/groovy]
+
+== Geometry Commands
+
+=== Convert
+
+Convert a geometry from one format to another.
+
+include::output/geoc_geometry_convert_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_geometry_convert_wkt_geojson_feature_command.txt[]
+----
+
+[source,json]
+----
+include::output/geoc_geometry_convert_wkt_geojson_feature_command_output.txt[]
+----
+
+=== Decimal Degrees to Point
+
+Convert a decimal degrees formatted string into a Point.
+
+include::output/geoc_geometry_dd2pt_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_geometry_dd2pt_command.txt[]
+----
+
+[source,json]
+----
+include::output/geoc_geometry_dd2pt_command_output.txt[]
+----
+
+=== GeoHash Bounds
+
+Calculate the geohashes for the given bounds.
+
+include::output/geoc_geometry_geohash_bounds_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_geometry_geohash_bounds_command.txt[]
+----
+
+[source,json]
+----
+include::output/geoc_geometry_geohash_bounds_command_output.txt[]
+----
+
+=== GeoHash Decode
+
+Decode a GeoHash to a Geometry.
+
+include::output/geoc_geometry_geohash_decode_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_geometry_geohash_decode_command.txt[]
+----
+
+[source,json]
+----
+include::output/geoc_geometry_geohash_decode_command_output.txt[]
+----
+
+=== GeoHash Encode
+
+Encode a Geometry as a GeoHash.
+
+include::output/geoc_geometry_geohash_encode_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_geometry_geohash_encode_command.txt[]
+----
+
+[source,json]
+----
+include::output/geoc_geometry_geohash_encode_command_output.txt[]
+----
+
+=== GeoHash Neighbors
+
+Get a geohash's neighbors.
+
+include::output/geoc_geometry_geohash_neighbors_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_geometry_geohash_neighbors_command.txt[]
+----
+
+[source,json]
+----
+include::output/geoc_geometry_geohash_neighbors_command_output.txt[]
+----
+
+=== Great Circle Arc
+
+Create a great circle arc.
+
+include::output/geoc_geometry_greatcirclearc_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_geometry_greatcirclearc_command.txt[]
+----
+
+[source,json]
+----
+include::output/geoc_geometry_greatcirclearc_command_output.txt[]
+----
+
+[.thumb]
+image::geoc_geometry_greatcirclearc_command.png[]
+
+=== Offset
+
+Create a Geometry offset from the input Geometry.
+
+include::output/geoc_geometry_offset_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_geometry_offset_command.txt[]
+----
+
+[source,json]
+----
+include::output/geoc_geometry_offset_command_output.txt[]
+----
+
+[.thumb]
+image::geoc_geometry_offset_command.png[]
+
+=== orthodromicDistance
+
+Calculate the orthodromic distance between two points..
+
+include::output/geoc_geometry_orthodromicdistance_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_geometry_orthodromicdistance_command.txt[]
+----
+
+[source,json]
+----
+include::output/geoc_geometry_orthodromicdistance_command_output.txt[]
+----
+
+=== Plot
+
+Draw a geometry to a plot.
+
+include::output/geoc_geometry_plot_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_geometry_plot_command.txt[]
+----
+
+[.thumb]
+image::geoc_geometry_plot_command.png[]
+
+=== Point to Decimal Degrees
+
+Format a Point in Decimal Degrees.
+
+include::output/geoc_geometry_pt2dd_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_geometry_pt2dd_command.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_geometry_pt2dd_command_output.txt[]
+----

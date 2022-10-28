@@ -13,4 +13,6 @@ include::carto.adoc[]
 
 include::filter.adoc[]
 
+include::geometry.adoc[]
+
 include::vector.adoc[]

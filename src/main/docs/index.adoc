@@ -15,4 +15,6 @@ include::filter.adoc[]
 
 include::geometry.adoc[]
 
+include::map.adoc[]
+
 include::vector.adoc[]

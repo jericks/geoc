@@ -1,0 +1,70 @@
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../../main/groovy]
+
+== Map Commands
+
+=== Map Layers
+
+Map layer is a simple string format that allows you to pass in information about a map layer.
+
+It can contain the following properties:
+
+* *layertype* = The type of layer (layer, raster, tile)
+    ** For layer layertype, you can use the same key value pairs used to specify a Workspace.
+    ** For raster layertype, you specify a source=file key value pair.
+    ** For tile layertype, you use the same key value pairs used to specify a Tile layer.
+* *layername* = The name of the Layer/Raster/Tile
+* *layerprojection* = The Projection
+* *style* = The SLD, CSS, or other style
+
+Examples:
+
+* **Vector Layer**
+** *layertype*=layer *dbtype*=geopkg *database*=/Users/user/Desktop/countries.gpkg *layername*=countries *style*=/Users/user/Desktop/countries.sld
+** *layertype*=layer *file*=/Users/user/Desktop/geoc/polygons.csv *layername*=polygons *style*=/Users/user/Desktop/geoc/polygons.sld
+** *layertype*=layer *file*=/Users/user/Desktop/geoc/points.properties *style*=/Users/user/Desktop/geoc/points.sld
+** *layertype*=layer *file*=/Users/user/Projects/geoc/src/test/resources/polygons.shp
+** *layertype*=layer *directory*=/Users/user/Projects/geoc/src/test/resources/points.properties *layername*=points
+* **Raster**
+** *layertype*=raster *source*=rasters/earth.tif
+* **Tile**
+** *layertype*=tile *file*=world.mbtiles
+** *layertype*=tile *type*=geopackage *file*=states.gpkg
+
+=== Draw
+
+Draw a map.
+
+include::output/geoc_map_draw_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_map_draw_command.txt[]
+----
+
+[.thumb]
+image::geoc_map_draw_command.png[]
+
+=== Map Cube
+
+Draw a map cube.
+
+include::output/geoc_map_cube_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_map_cube_command.txt[]
+----
+
+[.thumb]
+image::geoc_map_cube_command.png[]
+
+Draw a blank map cube.
+
+[source,bash]
+----
+include::output/geoc_map_cube_blank_command.txt[]
+----
+
+[.thumb]
+image::geoc_map_cube_blank_command.png[]

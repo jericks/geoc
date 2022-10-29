@@ -13,8 +13,6 @@ Draw a Map
 
    * -l --layer: The map layer
 
-   * -i --layer-file: The input layer file
-
    * -f --file: The output image file
 
    * -t --type: The type of document

@@ -97,7 +97,7 @@ class GeometryTest extends DocTest {
         Layer outLayer = Layer.fromGeometry("offset", Geometry.fromWKT(result))
         inLayer.style = new SimpleStyleReader().read("stroke=#555555 stroke-width=0.5")
         outLayer.style = new SimpleStyleReader().read("stroke=red stroke-width=0.5")
-        drawOnBasemap("gppteoc_geometry_offset_command", [inLayer, outLayer])
+        drawOnBasemap("geoc_geometry_offset_command", [inLayer, outLayer])
     }
 
     @Test

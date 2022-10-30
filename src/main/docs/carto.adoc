@@ -76,11 +76,11 @@ Draw a overview map.
 JSON
 [source,json]
 ----
-include::output/carto_map_overviewMap_json.txt[]
+include::output/carto_map_overViewMap_json.txt[]
 ----
 
 [.thumb]
-image::carto_map_overviewMap_json.png[]
+image::carto_map_overViewMap_json.png[]
 
 XML
 [source,xml]

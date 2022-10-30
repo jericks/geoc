@@ -816,12 +816,10 @@ class CartoTest extends DocTest {
 
     void createCartoFragment(String type, String name, String fragment, int width, int height) {
         String document = type.equalsIgnoreCase("json") ? createJsonDocument(fragment, width, height) : createXmlDocument(fragment, width, height)
-        println document
         File file = new File("target/carto_map_${name}_${type}.${type}")
         file.text = document
         String command = "geoc carto map -t ${type} -c ${file.absolutePath} -o target/carto_map_${name}_${type}.png"
         String result = runApp(command, "")
-        println result
         writeTextFile("carto_map_${name}_${type}", fragment)
         copyFile(new File("target/carto_map_${name}_${type}.png"), new File("src/main/docs/images/carto_map_${name}_${type}.png"))
     }

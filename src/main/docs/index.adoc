@@ -17,4 +17,6 @@ include::geometry.adoc[]
 
 include::map.adoc[]
 
+include::proj.adoc[]
+
 include::vector.adoc[]

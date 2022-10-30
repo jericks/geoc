@@ -1,0 +1,34 @@
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../../main/groovy]
+
+== Projection Commands
+
+=== Envelope
+
+Get a Projection's envelope.
+
+include::output/geoc_proj_envelope_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_proj_envelope_command.txt[]
+----
+
+[.thumb]
+image::geoc_proj_envelope_command.png[]
+
+=== WKT
+
+Get the WKT of a Projection
+
+include::output/geoc_proj_wkt_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_proj_wkt_command.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_proj_wkt_command_output.txt[]
+----

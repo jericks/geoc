@@ -12,6 +12,40 @@ import org.junit.jupiter.api.Test
 class VectorTest extends DocTest {
 
     @Test
+    void addareafield() {
+        String command = "geoc vector addareafield -i src/test/resources/states.shp -o target/states_area.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_addareafield_command", command)
+
+        Layer layer = new Shapefile("target/states_area.shp")
+        writeTextFile("geoc_vector_addareafield_command_schema", createSchemaTable(layer.schema, ["the_geom", "STATE_NAME", "SUB_REGION", "STATE_ABBR", "AREA"]))
+        writeTextFile("geoc_vector_addareafield_command_values", createFeatureTable(layer, ["STATE_NAME", "SUB_REGION", "STATE_ABBR", "AREA"], 5))
+    }
+
+    @Test
+    void addlengthfield() {
+        String command = "geoc vector addlengthfield -i src/test/resources/data.gpkg -l rivers -o target/rivers_length.shp -f length"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_addlengthfield_command", command)
+
+        Layer layer = new Shapefile("target/rivers_length.shp")
+        writeTextFile("geoc_vector_addlengthfield_command_schema", createSchemaTable(layer.schema, ["the_geom", "name", "label", "length"]))
+        writeTextFile("geoc_vector_addlengthfield_command_values", createFeatureTable(layer, ["name", "label", "length"], 5))
+    }
+
+    @Test
+    void addxyfields() {
+        String command = "geoc vector addxyfields -i src/test/resources/data.gpkg -l places -o target/places_xy.shp -x x_coord -y y_coord -a centroid"
+        String result = runApp(command, "")
+        println result
+        writeTextFile("geoc_vector_addxyfields_command", command)
+
+        Layer layer = new Shapefile("target/places_xy.shp")
+        writeTextFile("geoc_vector_addxyfields_command_schema", createSchemaTable(layer.schema, ["the_geom", "NAME", "x_coord", "y_coord"]))
+        writeTextFile("geoc_vector_addxyfields_command_values", createFeatureTable(layer, ["NAME", "x_coord", "y_coord"], 5))
+    }
+
+    @Test
     void buffer() {
         String command = "geoc vector buffer -i src/test/resources/data.gpkg -l places -o target/places_buffer.shp -d 10"
         String result = runApp(command, "")
@@ -65,6 +99,14 @@ class VectorTest extends DocTest {
         Layer layer = new Shapefile("target/convexhulls.shp")
         layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
         drawOnBasemap("geoc_vector_convexhulls_command", [layer])
+    }
+
+    @Test
+    void count() {
+        String command = "geoc vector count -i src/test/resources/data.gpkg -l places"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_count_command", command)
+        writeTextFile("geoc_vector_count_command_output", result)
     }
 
     @Test

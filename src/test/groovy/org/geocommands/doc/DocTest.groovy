@@ -1,5 +1,8 @@
 package org.geocommands.doc
 
+import geoscript.feature.Feature
+import geoscript.feature.Schema
+import geoscript.layer.Layer
 import org.geocommands.BaseTest
 import org.geocommands.Command
 import org.kohsuke.args4j.Option
@@ -65,6 +68,37 @@ class DocTest extends BaseTest {
         str += "| Short Name | Long Name | Description \n\n"
         options.each { Map option ->
             str += "| ${option.name} | ${option.alias} | ${option.usage}\n"
+        }
+        str += "|==="
+        str
+    }
+
+    String createSchemaTable(Schema schema, List fieldNames = []) {
+        List fields = fieldNames.isEmpty() ? schema.fields : schema.fields.findAll { fieldNames.contains(it.name)}
+        String str = ""
+        str += "|===\n"
+        str += "| Name | Type \n\n"
+        fields.each { geoscript.feature.Field field ->
+            str += "| ${field.name} | ${field.typ}\n"
+        }
+        str += "|==="
+        str
+    }
+
+    String createFeatureTable(Layer layer, List fieldNames = [], int numberOfFeatures = -1) {
+        List fields = fieldNames.isEmpty() ? layer.schema.fields : layer.schema.fields.findAll { fieldNames.contains(it.name)}
+        int
+        String str = ""
+        str += "|===\n"
+        str += "| ${fields.collect { it.name }.join("|")} \n\n"
+        if (numberOfFeatures == -1) {
+            layer.eachFeature { Feature feature ->
+                str += "| ${fields.collect { feature[it.name] }.join("|")}\n"
+            }
+        } else {
+            layer.features.take(numberOfFeatures).each { Feature feature ->
+                str += "| ${fields.collect { feature[it.name] }.join("|")}\n"
+            }
         }
         str += "|==="
         str

@@ -3,6 +3,63 @@ ifndef::sourcedir[:sourcedir: ../../main/groovy]
 
 == Vector Commands
 
+=== Add Area Field
+
+Add an area Field.
+
+include::output/geoc_vector_addareafield_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_addareafield_command.txt[]
+----
+
+_Schema_
+
+include::output/geoc_vector_addareafield_command_schema.txt[]
+
+_Values_
+
+include::output/geoc_vector_addareafield_command_values.txt[]
+
+=== Add Length Field
+
+Add an Length Field.
+
+include::output/geoc_vector_addlengthfield_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_addlengthfield_command.txt[]
+----
+
+_Schema_
+
+include::output/geoc_vector_addlengthfield_command_schema.txt[]
+
+_Values_
+
+include::output/geoc_vector_addlengthfield_command_values.txt[]
+
+=== Add XY Fields
+
+Add XY Fields.
+
+include::output/geoc_vector_addxyfields_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_addxyfields_command.txt[]
+----
+
+_Schema_
+
+include::output/geoc_vector_addxyfields_command_schema.txt[]
+
+_Values_
+
+include::output/geoc_vector_addxyfields_command_values.txt[]
+
 === Buffer
 
 Buffer all of the features in a Layer.
@@ -58,6 +115,21 @@ include::output/geoc_vector_convexhulls_command.txt[]
 
 [.thumb]
 image::geoc_vector_convexhulls_command.png[]
+
+=== Count
+
+Count the Features in a Layer.
+
+include::output/geoc_vector_count_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_count_command.txt[]
+----
+[source,bash]
+----
+include::output/geoc_vector_count_command_output.txt[]
+----
 
 === Delaunay
 

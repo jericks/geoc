@@ -19,4 +19,6 @@ include::map.adoc[]
 
 include::proj.adoc[]
 
+include::style.adoc[]
+
 include::vector.adoc[]

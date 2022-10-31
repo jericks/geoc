@@ -1,0 +1,149 @@
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../../main/groovy]
+
+== Style Commands
+
+=== Create
+
+Create a simple style.
+
+include::output/geoc_style_create_options.txt[]
+
+**Style Options**:
+
+* Fill properties
+** *fill* (color)
+** *fill-opacity* (0-1)
+* Stroke properties
+** *stroke* (color)
+** *stroke-width* (double)
+** *stroke-opacity* (0-1)
+* Shape properties
+** *shape* (color)
+** *shape-size* (double)
+** *shape-type* (circle, square, triangle, star, cross, or x)
+* Label properties
+** *label-size* (12)
+** *label-style* (normal, italic, oblique)
+** *label-weight* (normal, bold)
+** *label-family* (serif, Arial, Verdana)
+
+[source,bash]
+----
+include::output/geoc_style_create_stroke_sld_command.txt[]
+----
+
+[source,xml]
+----
+include::output/geoc_style_create_stroke_sld_command.sld[]
+----
+
+[source,bash]
+----
+include::output/geoc_style_create_stroke_ysld_command.txt[]
+----
+
+[source,yaml]
+----
+include::output/geoc_style_create_stroke_ysld_command.ysld[]
+----
+
+=== CSS to SLD
+
+Convert CSS to SLD.
+
+include::output/geoc_style_css2sld_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_style_css2sld_command.txt[]
+----
+
+_points.css_
+
+[source,css]
+----
+include::output/geoc_style_css2sld_command.css[]
+----
+
+_points.sld_
+
+[source,xml]
+----
+include::output/geoc_style_css2sld_command.sld[]
+----
+
+=== SLD to Ysld
+
+Convert SLD to Ysld
+
+include::output/geoc_style_sld2ysld_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_style_sld2ysld_command.txt[]
+----
+
+_points.sld_
+
+[source,xml]
+----
+include::output/geoc_style_sld2ysld_command.sld[]
+----
+
+_points.ysld_
+
+[source,yaml]
+----
+include::output/geoc_style_sld2ysld_command.ysld[]
+----
+
+=== Ysld to SLD
+
+Convert Ysld to SLD.
+
+include::output/geoc_style_ysld2sld_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_style_ysld2sld_command.txt[]
+----
+
+_points.ysld_
+
+[source,yaml]
+----
+include::output/geoc_style_ysld2sld_command.ysld[]
+----
+
+_points.sld_
+
+[source,xml]
+----
+include::output/geoc_style_ysld2sld_command.sld[]
+----
+
+=== Unique Values from Text
+
+Create a Style from reading values in the unique values format.
+
+include::output/geoc_style_uniquevaluesfromtext_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_style_uniquevaluesfromtext_command.txt[]
+----
+
+_units.txt_
+
+[source,text]
+----
+include::output/geoc_style_uniquevaluesfromtext_command_units.txt[]
+----
+
+_units.sld_
+
+[source,xml]
+----
+include::output/geoc_style_uniquevaluesfromtext_command.sld[]
+----

@@ -19,15 +19,15 @@ It can contain the following properties:
 
 Examples:
 
-* **Vector Layer**
+* *Vector Layer*
 ** *layertype*=layer *dbtype*=geopkg *database*=/Users/user/Desktop/countries.gpkg *layername*=countries *style*=/Users/user/Desktop/countries.sld
 ** *layertype*=layer *file*=/Users/user/Desktop/geoc/polygons.csv *layername*=polygons *style*=/Users/user/Desktop/geoc/polygons.sld
 ** *layertype*=layer *file*=/Users/user/Desktop/geoc/points.properties *style*=/Users/user/Desktop/geoc/points.sld
 ** *layertype*=layer *file*=/Users/user/Projects/geoc/src/test/resources/polygons.shp
 ** *layertype*=layer *directory*=/Users/user/Projects/geoc/src/test/resources/points.properties *layername*=points
-* **Raster**
+* *Raster*
 ** *layertype*=raster *source*=rasters/earth.tif
-* **Tile**
+* *Tile*
 ** *layertype*=tile *file*=world.mbtiles
 ** *layertype*=tile *type*=geopackage *file*=states.gpkg
 

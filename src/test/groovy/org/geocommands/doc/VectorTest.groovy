@@ -3,13 +3,38 @@ package org.geocommands.doc
 import geoscript.geom.Bounds
 import geoscript.layer.Layer
 import geoscript.layer.Shapefile
-import geoscript.layer.io.Pbf
 import geoscript.style.io.SimpleStyleReader
 import geoscript.workspace.GeoPackage
 import geoscript.workspace.Workspace
 import org.junit.jupiter.api.Test
 
 class VectorTest extends DocTest {
+
+    @Test
+    void add() {
+        runApp(["vector", "create", "-o", "target/locations.shp", "-f", "the_geom=POINT EPSG:4326", "-f", "id=integer", "-f", "name=string"], "")
+        List commands = ["vector", "add", "-i", "target/locations.shp", "-v", "id=1", "-v", "name=Seattle", "-v", "the_geom=POINT (-122.334758 47.578364)"]
+        String command = "geoc " + commands.collect{
+            it.startsWith("the_geom") ? '"' + it + '"' : it
+        }.join(" ")
+        String result = runApp(commands, "")
+        writeTextFile("geoc_vector_add_command", command)
+        writeTextFile("geoc_vector_add_command_values", createFeatureTable(new Shapefile("target/locations.shp")))
+
+        Layer layer = new Shapefile("target/locations.shp")
+        layer.style = new SimpleStyleReader().read("shape-type=circle shape-size=8 shape=#555555 label=name label-size=14")
+        drawOnBasemap("geoc_vector_add_command", [layer])
+    }
+
+    @Test
+    void addfields() {
+        runApp(["vector", "create", "-o", "target/locations.shp", "-f", "the_geom=POINT EPSG:4326"], "")
+        List commands = ["vector", "addfields", "-i", "target/locations.shp", "-o", "target/locations_idname.shp", "-f", "id=int", "-f", "name=string"]
+        String command = "geoc " + commands.join(" ")
+        String result = runApp(commands, "")
+        writeTextFile("geoc_vector_addfields_command", command)
+        writeTextFile("geoc_vector_addfields_command_schema", createSchemaTable(new Shapefile("target/locations_idname.shp").schema))
+    }
 
     @Test
     void addareafield() {
@@ -107,6 +132,17 @@ class VectorTest extends DocTest {
         String result = runApp(command, "")
         writeTextFile("geoc_vector_count_command", command)
         writeTextFile("geoc_vector_count_command_output", result)
+    }
+
+    @Test
+    void create() {
+        List commands = ["vector", "create", "-o", "target/locations.shp", "-f", "the_geom=POINT EPSG:4326", "-f", "id=integer", "-f", "name=string"]
+        String command = "geoc " + commands.collect{
+            it.startsWith("the_geom") ? '"' + it + '"' : it
+        }.join(" ")
+        String result = runApp(commands, "")
+        writeTextFile("geoc_vector_create_command", command)
+        writeTextFile("geoc_vector_create_command_schema", createSchemaTable(new Shapefile("target/locations.shp").schema))
     }
 
     @Test

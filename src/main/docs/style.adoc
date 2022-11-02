@@ -23,6 +23,7 @@ include::output/geoc_style_create_options.txt[]
 ** *shape-size* (double)
 ** *shape-type* (circle, square, triangle, star, cross, or x)
 * Label properties
+** *label* The field name (ID, NAME)
 ** *label-size* (12)
 ** *label-style* (normal, italic, oblique)
 ** *label-weight* (normal, bold)

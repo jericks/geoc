@@ -3,6 +3,37 @@ ifndef::sourcedir[:sourcedir: ../../main/groovy]
 
 == Vector Commands
 
+=== Add
+
+Add a Feature to a Layer.
+
+include::output/geoc_vector_add_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_add_command.txt[]
+----
+
+include::output/geoc_vector_add_command_values.txt[]
+
+[.thumb]
+image::geoc_vector_add_command.png[]
+
+=== Add Fields
+
+Add one or more Fields to a Layer
+
+include::output/geoc_vector_addfields_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_addfields_command.txt[]
+----
+
+_Schema_
+
+include::output/geoc_vector_addfields_command_schema.txt[]
+
 === Add Area Field
 
 Add an area Field.
@@ -130,6 +161,19 @@ include::output/geoc_vector_count_command.txt[]
 ----
 include::output/geoc_vector_count_command_output.txt[]
 ----
+
+=== Create
+
+Create a new Layer.
+
+include::output/geoc_vector_create_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_create_command.txt[]
+----
+
+include::output/geoc_vector_create_command_schema.txt[]
 
 === Delaunay
 

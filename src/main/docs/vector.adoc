@@ -91,6 +91,20 @@ _Values_
 
 include::output/geoc_vector_addxyfields_command_values.txt[]
 
+=== Append
+
+Add a Features from one layer to another Layer.
+
+include::output/geoc_vector_append_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_append_command.txt[]
+----
+
+[.thumb]
+image::geoc_vector_append_command.png[]
+
 === Buffer
 
 Buffer all of the features in a Layer.
@@ -387,6 +401,20 @@ include::output/geoc_vector_minrects_command.txt[]
 [.thumb]
 image::geoc_vector_minrects_command.png[]
 
+=== Project
+
+Project the input Layer to another Projection and save it as the output Layer.
+
+include::output/geoc_vector_project_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_project_command.txt[]
+----
+
+[.thumb]
+image::geoc_vector_project_command.png[]
+
 === Random Points
 
 Generate random points.
@@ -400,6 +428,22 @@ include::output/geoc_vector_randompoints_command.txt[]
 
 [.thumb]
 image::geoc_vector_randompoints_command.png[]
+
+=== Schema
+
+Get a Layer's Schema.
+
+include::output/geoc_vector_schema_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_schema_command.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_vector_schema_command_output.txt[]
+----
 
 === Voronoi
 

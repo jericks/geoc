@@ -3,6 +3,9 @@ package org.geocommands.doc
 import geoscript.geom.Bounds
 import geoscript.layer.Layer
 import geoscript.layer.Shapefile
+import geoscript.proj.Projection
+import geoscript.style.Fill
+import geoscript.style.Shape
 import geoscript.style.io.SimpleStyleReader
 import geoscript.workspace.GeoPackage
 import geoscript.workspace.Workspace
@@ -62,12 +65,30 @@ class VectorTest extends DocTest {
     void addxyfields() {
         String command = "geoc vector addxyfields -i src/test/resources/data.gpkg -l places -o target/places_xy.shp -x x_coord -y y_coord -a centroid"
         String result = runApp(command, "")
-        println result
         writeTextFile("geoc_vector_addxyfields_command", command)
 
         Layer layer = new Shapefile("target/places_xy.shp")
         writeTextFile("geoc_vector_addxyfields_command_schema", createSchemaTable(layer.schema, ["the_geom", "NAME", "x_coord", "y_coord"]))
         writeTextFile("geoc_vector_addxyfields_command_values", createFeatureTable(layer, ["NAME", "x_coord", "y_coord"], 5))
+    }
+
+    @Test
+    void append() {
+        runApp(["vector", "randompoints", "-o", "target/points1.shp", "-g", "-180,-90,180,90", "-n", "5"], "")
+        runApp(["vector", "randompoints", "-o", "target/points2.shp", "-g", "-180,-90,180,90", "-n", "5"], "")
+        runApp(["vector", "copy", "-i", "target/points1.shp", "-o", "target/points1_original.shp"], "")
+        List commands = ["vector", "append", "-i", "target/points1.shp", "-k", "target/points2.shp"]
+        String command = "geoc " + commands.join(" ")
+        String result = runApp(commands, "")
+        writeTextFile("geoc_vector_append_command", command)
+
+        Layer layer1 = new Shapefile("target/points1_original.shp").buffer(4)
+        Layer layer2 = new Shapefile("target/points2.shp").buffer(4)
+        Layer layerAll = new Shapefile("target/points1.shp")
+        layer1.style = new Fill("green")
+        layer2.style = new Fill("blue")
+        layerAll.style = new Shape("yellow")
+        drawOnBasemap("geoc_vector_append_command", [layer1, layer2, layerAll])
     }
 
     @Test
@@ -338,6 +359,17 @@ class VectorTest extends DocTest {
     }
 
     @Test
+    void project() {
+        String command = "geoc vector project -i src/test/resources/data.gpkg -l places -o target/mercator.gpkg -r places -s EPSG:4326 -t EPSG:3857"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_project_command", command)
+
+        Layer layer = new GeoPackage("target/mercator.gpkg").get("places")
+        layer.style = new SimpleStyleReader().read("shape-type=circle shape-size=8 shape=#555555")
+        drawOnBasemap("geoc_vector_project_command", [layer], proj: "EPSG:3857")
+    }
+
+    @Test
     void randompoints() {
         String command = "geoc vector randompoints -n 100 -g -180,-90,180,90 -o target/randompoints.shp"
         String result = runApp(command, "")
@@ -347,6 +379,14 @@ class VectorTest extends DocTest {
         Layer layer = new Shapefile("target/randompoints.shp")
         layer.style = new SimpleStyleReader().read("shape-type=circle shape-size=8 shape=#555555")
         drawOnBasemap("geoc_vector_randompoints_command", [layer])
+    }
+
+    @Test
+    void schema() {
+        String command = "geoc vector schema -i src/test/resources/data.gpkg -l countries -p"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_schema_command", command)
+        writeTextFile("geoc_vector_schema_command_output", result)
     }
 
     @Test

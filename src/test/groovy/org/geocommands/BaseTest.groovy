@@ -1,9 +1,11 @@
 package org.geocommands
 
+import geoscript.geom.Bounds
 import geoscript.geom.Point
 import geoscript.layer.Layer
 import geoscript.layer.Renderable
 import geoscript.layer.io.CsvReader
+import geoscript.proj.Projection
 import geoscript.render.Map
 import geoscript.style.io.SLDReader
 import geoscript.workspace.GeoPackage
@@ -155,12 +157,25 @@ class BaseTest {
         countries.style = new SLDReader().read(new File('src/test/resources/countries.sld'))
         Layer ocean = workspace.get("ocean")
         ocean.style = new SLDReader().read(new File('src/test/resources/ocean.sld'))
+        Projection latLonProjection = new Projection("EPSG:4326")
+        Projection mercatorProjection = new Projection("EPSG:3857")
+        String projection = options.get("proj", "EPSG:4326")
+        int width = 500
+        int height = 300
+        Bounds bounds = new Bounds(-180,-90,180,90, latLonProjection)
+        if (projection.equalsIgnoreCase("EPSG:3857")) {
+            width = 400
+            height = 400
+            bounds = new Bounds(-179.99, -85.0511, 179.99, 85.0511, latLonProjection).reproject(mercatorProjection)
+        }
         Map map = new Map(
-                width: 500,
-                height: 300,
-                layers: [ocean, countries]
+            width: width,
+            height: height,
+            layers: [ocean, countries],
+            proj: new Projection(projection),
+            bounds: bounds
         )
-        map.setAdvancedProjectionHandling(false)
+        map.setAdvancedProjectionHandling(true)
         map.setContinuousMapWrapping(false)
         if (options.bounds) {
             map.bounds = options.bounds

@@ -1,0 +1,260 @@
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../../main/groovy]
+
+== Tile Commands
+
+=== Tile Layers
+
+All of the tile commands work with a tile layer.
+
+Supported Tile Layers include:
+
+* MBTiles
+* GeoPackage
+* TMS
+* OSM
+* UTFGrid
+* Vector Tiles
+
+*Tile layer configuration strings* are similar to layer and map layer configuration strings.
+
+* *pyramid* = Several tile layers can take a pyramid attribute.  You can use one of several well known pyramid names:
+** globalmercator
+** mercator
+** globalmercatorbottomleft
+** globalgeodetic
+** geodetic
+** file that contains pyramid metadata in csv, xml, or json format.
+* *type* = The type of image layer.
+** mbtiles
+** geopackage
+** tms
+** osm
+
+*mbtiles*
+
+* type=mbtiles file=states.mbtiles
+* type=mbtiles file=states.mbtiles name=states description='The united states'
+* states.mbtiles
+
+*geopackage*
+
+* type=geopackage file=states.gpkg name=states pyramid=globalmercator
+* states.gpkg
+
+*tms*
+
+* type=tms file=/Users/you/tms format=jpeg
+* type=tms file=/Users/you/tms format=png name=tms pyramid=geodetic
+
+*osm*
+
+* type=osm url=http://a.tile.openstreetmap.org
+* type=osm urls=http://a.tile.openstreetmap.org,http://b.tile.openstreetmap.org
+
+*utfgrid*
+
+* type=utfgrid file=/Users/me/tiles/states
+
+*vectortiles*
+
+* type=vectortiles name=states file=/Users/me/tiles/states format=mvt pyramid=GlobalMercator
+* type=vectortiles name=states url=http://vectortiles.org format=pbf pyramid=GlobalGeodeti
+
+=== Delete
+
+Delete tiles from a tile layer
+
+include::output/geoc_tile_delete_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_tile_delete_tiles_zoom_command.txt[]
+----
+
+=== Generate
+
+Generate tiles.
+
+include::output/geoc_tile_generate_options.txt[]
+
+MBTiles
+
+[source,bash]
+----
+include::output/geoc_tile_generate_mbtiles_command.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_tile_generate_mbtiles_command_output.txt[]
+----
+
+[.thumb]
+image::geoc_tile_generate_mbtiles_command.png[]
+
+GeoPackage
+
+[source,bash]
+----
+include::output/geoc_tile_generate_geopackage_command.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_tile_generate_geopackage_command_output.txt[]
+----
+
+[.thumb]
+image::geoc_tile_generate_geopackage_command.png[]
+
+TMS
+
+[source,bash]
+----
+include::output/geoc_tile_generate_tms_command.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_tile_generate_tms_command_output.txt[]
+----
+
+[.thumb]
+image::geoc_tile_generate_tms_command.png[]
+
+Vector Tiles (PBF)
+
+[source,bash]
+----
+include::output/geoc_tile_generate_pbf_command.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_tile_generate_pbf_command_output.txt[]
+----
+
+=== Tile Bounds
+
+Get the Bounds of a tile.
+
+include::output/geoc_tile_get_bounds_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_tile_get_bounds_command.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_tile_get_bounds_command_output.txt[]
+----
+
+=== List Tiles
+
+Get a list of tiles for a given geometry
+
+include::output/geoc_tile_list_tiles_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_tile_list_tiles_command.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_tile_list_tiles_command_output.txt[]
+----
+
+=== Pyramid
+
+Get a Pyramid from a TileLayer.
+
+include::output/geoc_tile_pyramid_options.txt[]
+
+Text
+
+[source,bash]
+----
+include::output/geoc_tile_pyramid_text_command.txt[]
+----
+
+----
+include::output/geoc_tile_pyramid_text_command_output.txt[]
+----
+
+JSON
+
+[source,bash]
+----
+include::output/geoc_tile_pyramid_json_command.txt[]
+----
+
+[source,json]
+----
+include::output/geoc_tile_pyramid_json_command_output.txt[]
+----
+
+XML
+
+[source,bash]
+----
+include::output/geoc_tile_pyramid_xml_command.txt[]
+----
+
+[source,xml]
+----
+include::output/geoc_tile_pyramid_xml_command_output.txt[]
+----
+
+=== Stitch Raster
+
+Stitch image tiles together to create a Raster.
+
+include::output/geoc_tile_stitch_raster_options.txt[]
+
+Zoom Level
+
+[source,bash]
+----
+include::output/geoc_tile_stitch_raster_zoom_command.txt[]
+----
+
+[.thumb]
+image::geoc_tile_stitch_raster_zoom_command.png[]
+
+=== Stitch Vector
+
+Stitch vector tiles together to create a one or more Layers.
+
+include::output/geoc_tile_stitch_vector_options.txt[]
+
+Zoom Level
+
+[source,bash]
+----
+include::output/geoc_tile_stitch_vector_zoom_command.txt[]
+----
+
+__Layers__
+
+include::output/geoc_tile_stitch_vector_zoom_command_layers.txt[]
+
+__Schema__
+
+include::output/geoc_tile_stitch_vector_zoom_command_schema.txt[]
+
+=== Vector Grid
+
+Create a vector grid of a tile layers cells.
+
+include::output/geoc_tile_vector_grid_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_tile_vector_grid_command.txt[]
+----
+
+[.thumb]
+image::geoc_tile_vector_grid_command.png[]

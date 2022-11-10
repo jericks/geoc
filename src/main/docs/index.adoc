@@ -21,4 +21,6 @@ include::proj.adoc[]
 
 include::style.adoc[]
 
+include::tile.adoc[]
+
 include::vector.adoc[]

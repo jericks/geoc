@@ -345,6 +345,22 @@ include::output/geoc_vector_interiorpoint_command.txt[]
 [.thumb]
 image::geoc_vector_interiorpoint_command.png[]
 
+=== Layer List
+
+List the Layers in a Workspace.
+
+include::output/geoc_vector_list_layers_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_list_layers_command.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_vector_list_layers_command_output.txt[]
+----
+
 === Minimum Bounding Circle
 
 Calculate the minimum bounding circle of all the features in a Layer.

@@ -18,7 +18,7 @@ class LayerListCommand extends Command<LayerListOptions> {
 
     @Override
     String getDescription() {
-        "List Layers in a DataStore"
+        "List Layers in a Workspace"
     }
 
     @Override

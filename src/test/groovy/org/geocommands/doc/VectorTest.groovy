@@ -303,6 +303,14 @@ class VectorTest extends DocTest {
     }
 
     @Test
+    void layerList() {
+        String command = "geoc vector list layers -i src/test/resources/data.gpkg"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_list_layers_command", command)
+        writeTextFile("geoc_vector_list_layers_command_output", result)
+    }
+
+    @Test
     void mincircle() {
         String command = "geoc vector mincircle -i src/test/resources/data.gpkg -l places -o target/mincircle.shp"
         String result = runApp(command, "")

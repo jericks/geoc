@@ -7,7 +7,7 @@ geoc vector list layers
 
 **Description**:
 
-List Layers in a DataStore
+List Layers in a Workspace
 
 **Arguments**:
 

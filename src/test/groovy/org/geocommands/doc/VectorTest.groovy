@@ -3,6 +3,8 @@ package org.geocommands.doc
 import geoscript.geom.Bounds
 import geoscript.layer.Layer
 import geoscript.layer.Shapefile
+import geoscript.layer.io.CsvReader
+import geoscript.layer.io.GeoJSONReader
 import geoscript.proj.Projection
 import geoscript.style.Fill
 import geoscript.style.Shape
@@ -223,6 +225,38 @@ class VectorTest extends DocTest {
     }
 
     @Test
+    void fromGeoJson() {
+        runApp("geoc vector randompoints -n 5 -g -180,-90,180,90 -o target/randompoints.shp","")
+        String str = runApp("geoc vector to -i target/randompoints.shp -f geojson","")
+        File file = new File("target/randompoints.json")
+        file.text = str
+        String command = "geoc vector from -f csv"
+        String result = runApp(command, str)
+        writeTextFile("geoc_vector_from_geojson_command", "cat points.json | ${command}")
+        writeTextFile("geoc_vector_from_geojson_command_input", str)
+
+        Layer layer = new GeoJSONReader().read(file)
+        layer.style = new SimpleStyleReader().read("shape-type=circle shape-size=8 shape=#555555")
+        drawOnBasemap("geoc_vector_from_geojson_command", [layer])
+    }
+
+    @Test
+    void fromCsv() {
+        runApp("geoc vector randompoints -n 5 -g -180,-90,180,90 -o target/randompoints.shp","")
+        String str = runApp("geoc vector to -i target/randompoints.shp -f csv","")
+        File file = new File("target/randompoints.csv")
+        file.text = str
+        String command = "geoc vector from -f csv"
+        String result = runApp(command, str)
+        writeTextFile("geoc_vector_from_csv_command", "cat points.csv | ${command}")
+        writeTextFile("geoc_vector_from_csv_command_input", str)
+
+        Layer layer = new CsvReader().read(result)
+        layer.style = new SimpleStyleReader().read("shape-type=circle shape-size=8 shape=#555555")
+        drawOnBasemap("geoc_vector_from_csv_command", [layer])
+    }
+
+    @Test
     void graticuleSquare() {
         String command = "geoc vector graticule square -g -180,-90,180,90 -l 20 -o target/squares.shp"
         String result = runApp(command, "")
@@ -395,6 +429,26 @@ class VectorTest extends DocTest {
         String result = runApp(command, "")
         writeTextFile("geoc_vector_schema_command", command)
         writeTextFile("geoc_vector_schema_command_output", result)
+    }
+
+    @Test
+    void toGeoJson() {
+        runApp("geoc vector randompoints -n 5 -g -180,-90,180,90 -o target/randompoints.shp","")
+        println new Shapefile("target/randompoints.shp").features
+        String command = "geoc vector to -i target/randompoints.shp -f geojson"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_to_command", command)
+        writeTextFile("geoc_vector_to_command_output", result)
+    }
+
+    @Test
+    void toCsv() {
+        runApp("geoc vector randompoints -n 5 -g -180,-90,180,90 -o target/randompoints.shp","")
+        println new Shapefile("target/randompoints.shp").features
+        String command = "geoc vector to -i target/randompoints.shp -f csv"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_to_csv_command", command)
+        writeTextFile("geoc_vector_to_csv_command_output", result)
     }
 
     @Test

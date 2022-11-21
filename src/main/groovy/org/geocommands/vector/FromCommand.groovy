@@ -59,7 +59,7 @@ class FromCommand extends LayerOutCommand<FromOptions> {
             } else if (column) {
                 layerReader = new CsvReader(options.formatOptions, column, type)
             } else {
-                layerReader = new CsvReader(options.formatOptions, type)
+                layerReader = new CsvReader(options.formatOptions)
             }
         } else if (options.format.equalsIgnoreCase("geobuf")) {
             layerReader = new GeobufReader()

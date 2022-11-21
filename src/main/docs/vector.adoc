@@ -245,6 +245,45 @@ include::output/geoc_vector_envelopes_command.txt[]
 [.thumb]
 image::geoc_vector_envelopes_command.png[]
 
+=== From
+
+Create a Layer from a string of KML, CSV, GML, GEORSS, GEOBUF, GPX or GeoJSON.
+
+include::output/geoc_vector_from_options.txt[]
+
+__GeoJSON__
+
+__points.json__
+
+[source, json]
+----
+include::output/geoc_vector_from_geojson_command_input.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_vector_from_geojson_command.txt[]
+----
+
+[.thumb]
+image::geoc_vector_from_geojson_command.png[]
+
+__CSV__
+
+__points.csv__
+
+----
+include::output/geoc_vector_from_csv_command_input.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_vector_from_csv_command.txt[]
+----
+
+[.thumb]
+image::geoc_vector_from_csv_command.png[]
+
 === Graticule - Hexagon
 
 Create hexagon graticules.
@@ -444,6 +483,36 @@ include::output/geoc_vector_randompoints_command.txt[]
 
 [.thumb]
 image::geoc_vector_randompoints_command.png[]
+
+=== To
+
+Write a Layer to a String format (CSV, GeoJSON, KML, GML, GEORSS, GPX).
+
+include::output/geoc_vector_to_options.txt[]
+
+__GeoJSON__
+
+[source,bash]
+----
+include::output/geoc_vector_to_command.txt[]
+----
+
+[source,json]
+----
+include::output/geoc_vector_to_command_output.txt[]
+----
+
+__CSV__
+
+[source,bash]
+----
+include::output/geoc_vector_to_csv_command.txt[]
+----
+
+[source,json]
+----
+include::output/geoc_vector_to_csv_command_output.txt[]
+----
 
 === Schema
 

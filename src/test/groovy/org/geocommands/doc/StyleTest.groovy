@@ -1,11 +1,8 @@
 package org.geocommands.doc
 
-import geoscript.layer.Layer
-import geoscript.layer.Shapefile
-import geoscript.style.io.SimpleStyleReader
 import org.junit.jupiter.api.Test
 
-class StyleTest extends CartoTest {
+class StyleTest extends DocTest {
 
     @Test
     void createSld() {

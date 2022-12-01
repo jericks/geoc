@@ -5,7 +5,6 @@ import geoscript.layer.Layer
 import geoscript.layer.Shapefile
 import geoscript.layer.io.CsvReader
 import geoscript.layer.io.GeoJSONReader
-import geoscript.proj.Projection
 import geoscript.style.Fill
 import geoscript.style.Shape
 import geoscript.style.io.SimpleStyleReader

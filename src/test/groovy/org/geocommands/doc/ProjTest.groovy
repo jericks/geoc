@@ -3,11 +3,9 @@ package org.geocommands.doc
 import geoscript.layer.Layer
 import geoscript.layer.Shapefile
 import geoscript.style.io.SimpleStyleReader
-import geoscript.workspace.GeoPackage
-import geoscript.workspace.Workspace
 import org.junit.jupiter.api.Test
 
-class ProjTest extends CartoTest {
+class ProjTest extends DocTest {
 
     @Test
     void envelope() {

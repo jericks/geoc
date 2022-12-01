@@ -2,7 +2,7 @@ package org.geocommands.doc
 
 import org.junit.jupiter.api.Test
 
-class MapTest extends CartoTest {
+class MapTest extends DocTest {
 
     @Test
     void map() {

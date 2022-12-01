@@ -1,0 +1,19 @@
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../../main/groovy]
+
+== Raster Commands
+
+=== Info
+
+Get information about a Raster.
+
+include::output/geoc_raster_info_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_info_command.txt[]
+----
+
+----
+include::output/geoc_raster_info_command_output.txt[]
+----

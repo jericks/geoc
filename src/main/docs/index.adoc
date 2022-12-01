@@ -19,6 +19,8 @@ include::map.adoc[]
 
 include::proj.adoc[]
 
+include::raster.adoc[]
+
 include::style.adoc[]
 
 include::tile.adoc[]

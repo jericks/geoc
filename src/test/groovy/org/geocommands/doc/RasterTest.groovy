@@ -12,4 +12,12 @@ class RasterTest extends DocTest {
         writeTextFile("geoc_raster_info_command_output", result)
     }
 
+    @Test
+    void getSize() {
+        String command = "geoc raster size -i src/test/resources/earth.tif"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_getsize_command", command)
+        writeTextFile("geoc_raster_getsize_command_output", result)
+    }
+
 }

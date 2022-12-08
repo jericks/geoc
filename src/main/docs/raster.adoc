@@ -17,3 +17,18 @@ include::output/geoc_raster_info_command.txt[]
 ----
 include::output/geoc_raster_info_command_output.txt[]
 ----
+
+=== Get Size
+
+Get the Raster size (width,height).
+
+include::output/geoc_raster_size_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_getsize_command.txt[]
+----
+
+----
+include::output/geoc_raster_getsize_command_output.txt[]
+----

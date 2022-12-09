@@ -1,0 +1,9 @@
+|===
+| Name | Type 
+
+| the_geom | MultiPolygon
+| STATE_NAME | String
+| SUB_REGION | String
+| STATE_ABBR | String
+| AREA | Double
+|===

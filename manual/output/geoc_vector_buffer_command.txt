@@ -1,0 +1,1 @@
+geoc vector buffer -i src/test/resources/data.gpkg -l places -o target/places_buffer.shp -d 10

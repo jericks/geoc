@@ -1,0 +1,16 @@
+|===
+| Short Name | Long Name | Description 
+
+| -l | --tile-layer | The tile layer
+| -b | --bounds | The bounds
+| -w | --width | The raster width
+| -h | --height | The raster height
+| -z | --zoom-level | The tile zoom level
+| -x | --minx | The min x or col
+| -y | --miny | The min y or row
+| -c | --maxx | The max x or col
+| -u | --maxy | The max y or row
+| -o | --output-workspace | The output workspace
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

@@ -1,0 +1,12 @@
+geoc vector buffer: Buffer the features of the input Layer and save them to the output Layer
+ --help                      : Print the help message (default: true)
+ --web-help                  : Open help in a browser (default: false)
+ -c (--capstyle) VAL         : The cap style (default: round)
+ -d (--distance) VAL         : The buffer distance
+ -i (--input-workspace) VAL  : The input workspace
+ -l (--input-layer) VAL      : The input layer
+ -o (--output-workspace) VAL : The output workspace
+ -q (--quadrantsegments) N   : The number of quadrant segments (default: 8)
+ -r (--output-layer) VAL     : The output layer
+ -s (--singlesided)          : Whether buffer should be single sided or not
+                               (default: false)

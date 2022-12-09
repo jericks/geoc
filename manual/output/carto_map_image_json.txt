@@ -1,0 +1,8 @@
+{
+  "x": 10,
+  "y": 10,
+  "width": 512,
+  "height": 431,
+  "type": "image",
+  "path": "src/main/docs/static/images/geoc.png"
+}

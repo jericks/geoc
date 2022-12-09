@@ -1,0 +1,1 @@
+geoc style sld2ysld -i target/points.sld -o target/points.ysld

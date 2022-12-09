@@ -1,0 +1,1 @@
+geoc geometry dd2pt -d "122d 31m 32.23s W, 47d 12m 43.28s N" -t wkt

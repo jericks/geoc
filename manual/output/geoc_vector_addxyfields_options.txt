@@ -1,0 +1,13 @@
+|===
+| Short Name | Long Name | Description 
+
+| -x | --x-fieldname | The name for the X Field
+| -y | --y-fieldname | The name for the Y Field
+| -a | --algorithm | The XY generation algorithm (centroid or interiorpoint)
+| -o | --output-workspace | The output workspace
+| -r | --output-layer | The output layer
+| -i | --input-workspace | The input workspace
+| -l | --input-layer | The input layer
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

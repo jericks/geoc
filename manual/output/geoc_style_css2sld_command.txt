@@ -1,0 +1,1 @@
+geoc style css2sld -i target/points.css -o target/points.sld

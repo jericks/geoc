@@ -1,0 +1,10 @@
+|===
+| Short Name | Long Name | Description 
+
+| -p | --pyramid | The tile pyramid
+| -z | --zoom-level | The tile zoom level
+| -x | --column | The tile x or column
+| -y | --row | The tile y or row
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

@@ -1,0 +1,1 @@
+geoc vector addfields -i target/locations.shp -o target/locations_idname.shp -f id=int -f name=string

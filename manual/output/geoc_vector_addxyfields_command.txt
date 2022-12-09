@@ -1,0 +1,1 @@
+geoc vector addxyfields -i src/test/resources/data.gpkg -l places -o target/places_xy.shp -x x_coord -y y_coord -a centroid

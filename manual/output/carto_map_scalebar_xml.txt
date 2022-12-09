@@ -1,0 +1,46 @@
+<item>
+    <x>10</x>
+    <y>10</y>
+    <width>580</width>
+    <height>240</height>
+    <type>map</type>
+    <name>mainMap</name>
+    <layers>
+        <layer>
+            <layertype>layer</layertype>
+            <file>src/test/resources/data.gpkg</file>
+            <layername>ocean</layername>
+            <style>src/test/resources/ocean.sld</style>
+        </layer>
+        <layer>
+            <layertype>layer</layertype>
+            <file>src/test/resources/data.gpkg</file>
+            <layername>countries</layername>
+            <style>src/test/resources/countries.sld</style>
+        </layer>
+         <layer>
+            <layertype>layer</layertype>
+            <file>src/test/resources/data.gpkg</file>
+            <layername>states</layername>
+            <style>src/test/resources/states.sld</style>
+        </layer>
+    </layers>
+</item>
+<item>
+    <x>10</x>
+    <y>250</y>
+    <width>380</width>
+    <height>40</height>
+    <type>scalebar</type>
+    <map>mainMap</map>
+    <strokeColor>black</strokeColor>
+    <strokeWidth>1</strokeWidth>
+    <border>5</border>
+    <units>US</units>
+    <fillColor>white</fillColor>
+    <font>
+        <name>Arial</name>
+        <style>plain</style>
+        <size>14</size>
+    </font>
+</item>

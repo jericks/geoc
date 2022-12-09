@@ -1,0 +1,1 @@
+geoc tile generate -l "type=geopackage file=target/world.gpkg name=world pyramid=geodetic" -m "layertype=layer file=src/test/resources/data.gpkg layername=ocean style=src/test/resources/ocean.sld" -m "layertype=layer file=src/test/resources/data.gpkg layername=countries style=src/test/resources/countries.sld" -s 0 -e 2 --verbose

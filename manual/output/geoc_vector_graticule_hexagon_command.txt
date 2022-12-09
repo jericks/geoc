@@ -1,0 +1,1 @@
+geoc vector graticule hexagon -g -180,-90,180,90 -l 10 -o target/hexagons.shp

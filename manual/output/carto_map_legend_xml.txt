@@ -1,0 +1,54 @@
+<item>
+    <x>10</x>
+    <y>10</y>
+    <width>380</width>
+    <height>190</height>
+    <type>map</type>
+    <name>mainMap</name>
+    <layers>
+        <layer>
+            <layertype>layer</layertype>
+            <file>src/test/resources/data.gpkg</file>
+            <layername>ocean</layername>
+            <style>src/test/resources/ocean.sld</style>
+        </layer>
+        <layer>
+            <layertype>layer</layertype>
+            <file>src/test/resources/data.gpkg</file>
+            <layername>countries</layername>
+            <style>src/test/resources/countries.sld</style>
+        </layer>
+         <layer>
+            <layertype>layer</layertype>
+            <file>src/test/resources/data.gpkg</file>
+            <layername>states</layername>
+            <style>src/test/resources/states.sld</style>
+        </layer>
+    </layers>
+</item>
+<item>
+    <x>10</x>
+    <y>210</y>
+    <width>380</width>
+    <height>70</height>
+    <type>legend</type>
+    <map>mainMap</map>
+    <backgroundColor>white</backgroundColor>
+    <title>Legend</title>
+    <titleFont>
+        <name>Arial</name>
+        <style>bold</style>
+        <size>14</size>
+    </titleFont>
+    <titleColor>black</titleColor>
+    <textColor>black</textColor>
+    <textFont>
+        <name>Arial</name>
+        <style>plain</style>
+        <size>12</size>
+    </textFont>
+    <numberFormat>#.##</numberFormat>
+    <legendEntryWidth>50</legendEntryWidth>
+    <legendEntryHeight>30</legendEntryHeight>
+    <gapBetweenEntries>10</gapBetweenEntries>
+</item>

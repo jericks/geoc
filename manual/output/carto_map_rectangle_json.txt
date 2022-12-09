@@ -1,0 +1,9 @@
+{
+  "x": 10,
+  "y": 10,
+  "width": 30,
+  "height": 30,
+  "type": "rectangle",
+  "fillColor": "white",
+  "strokeColor": "black"
+}

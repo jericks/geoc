@@ -1,0 +1,1 @@
+geoc tile pyramid -l "type=geopackage file=src/test/resources/data.gpkg name=world" -o json

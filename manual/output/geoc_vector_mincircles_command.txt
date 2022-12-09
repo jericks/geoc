@@ -1,0 +1,1 @@
+geoc vector mincircles -i src/test/resources/data.gpkg -l countries -o target/mincircles.shp

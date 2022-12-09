@@ -1,0 +1,1 @@
+geoc geometry orthodromicdistance -p POINT (-122 48) -t POINT (-0.102938 51.498749) -e wgs84

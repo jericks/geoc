@@ -1,0 +1,9 @@
+|===
+| Short Name | Long Name | Description 
+
+| -t | --type | The type of the carto file (json, xml)
+| -c | --carto-file | The input carto definition file
+| -o | --output-file | The output file
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

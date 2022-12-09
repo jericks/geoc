@@ -1,0 +1,1 @@
+geoc vector mincircle -i src/test/resources/data.gpkg -l places -o target/mincircle.shp

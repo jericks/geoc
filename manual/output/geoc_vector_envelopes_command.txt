@@ -1,0 +1,1 @@
+geoc vector envelopes -i src/test/resources/data.gpkg -l countries -o target/envelopes.shp

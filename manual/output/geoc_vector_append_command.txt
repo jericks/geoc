@@ -1,0 +1,1 @@
+geoc vector append -i target/points1.shp -k target/points2.shp

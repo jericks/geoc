@@ -1,0 +1,1 @@
+geoc vector ellipse -i src/test/resources/data.gpkg -l countries -o target/ellipse.shp

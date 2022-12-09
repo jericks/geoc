@@ -1,0 +1,9 @@
+<item>
+    <x>10</x>
+    <y>10</y>
+    <width>30</width>
+    <height>30</height>
+    <type>rectangle</type>
+    <fillColor>white</fillColor>
+    <strokeColor>black</strokeColor>
+</item>

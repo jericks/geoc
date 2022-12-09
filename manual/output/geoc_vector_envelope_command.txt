@@ -1,0 +1,1 @@
+geoc vector envelope -i src/test/resources/data.gpkg -l places -o target/envelope.shp

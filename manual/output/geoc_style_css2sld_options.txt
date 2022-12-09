@@ -1,0 +1,9 @@
+|===
+| Short Name | Long Name | Description 
+
+| -i | --input | The input file or url
+| -o | --output | The output file
+| -w | --writer-options | The StyleWriter options
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

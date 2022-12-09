@@ -1,0 +1,14 @@
+|===
+| Short Name | Long Name | Description 
+
+| -l | --layer | The map layer
+| -f | --file | The output image file
+| -t | --type | The type of document
+| -w | --width | The width
+| -h | --height | The height
+| -b | --bounds | The bounds
+| -g | --background-color | The background color
+| -p | --projection | The projection
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

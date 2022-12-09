@@ -1,0 +1,1 @@
+geoc vector project -i src/test/resources/data.gpkg -l places -o target/mercator.gpkg -r places -s EPSG:4326 -t EPSG:3857

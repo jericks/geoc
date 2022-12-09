@@ -1,0 +1,1 @@
+geoc tile generate -l "type=vectortiles format=pbf file=target/vectortiles" -m "layertype=layer file=src/test/resources/data.gpkg layername=countries" -d countries=NAME,TYPE,LEVEL -s 0 -e 2 --verbose

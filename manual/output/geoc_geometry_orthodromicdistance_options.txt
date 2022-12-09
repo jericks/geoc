@@ -1,0 +1,9 @@
+|===
+| Short Name | Long Name | Description 
+
+| -e | --ellipsoid | The ellipsoid
+| -p | --start-point | The start point
+| -t | --end-point | The end point
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

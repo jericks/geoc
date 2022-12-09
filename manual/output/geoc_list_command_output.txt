@@ -1,0 +1,10 @@
+carto map
+filter cql2xml
+geometry convert
+geometry dd2pt
+geometry geohash bounds
+geometry geohash decode
+geometry geohash encode
+geometry geohash neighbors
+geometry greatcirclearc
+geometry offset

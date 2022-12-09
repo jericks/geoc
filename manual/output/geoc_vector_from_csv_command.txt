@@ -1,0 +1,1 @@
+cat points.csv | geoc vector from -f csv

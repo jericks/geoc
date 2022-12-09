@@ -1,0 +1,1 @@
+geoc geometry pt2dd -p "POINT (-122 48)" -t dms

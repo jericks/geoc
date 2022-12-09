@@ -1,0 +1,1 @@
+geoc vector delaunay -i src/test/resources/data.gpkg -l places -o target/delaunay.shp

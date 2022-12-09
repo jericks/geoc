@@ -1,0 +1,15 @@
+|===
+| Short Name | Long Name | Description 
+
+| -w | --width | The width
+| -h | --height | The height
+| -s | --sld-file | The sld file
+| -b | --bounds | The bounds
+| -m | --layer | The map layer
+| -g | --background-color | The background color
+| -i | --input-raster | The input raster
+| -l | --input-raster-name | The input raster name
+| -p | --input-projection | The input projection
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

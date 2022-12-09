@@ -1,0 +1,1 @@
+geoc carto map -t xml -c src/test/resources/carto/simple.xml -o target/carto_simple_xml.png

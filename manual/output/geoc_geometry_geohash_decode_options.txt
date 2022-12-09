@@ -1,0 +1,8 @@
+|===
+| Short Name | Long Name | Description 
+
+| -i | --input | The input geohash
+| -t | --type | Whether the geohash is a point or bounds
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

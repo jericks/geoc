@@ -1,0 +1,14 @@
+|===
+| Short Name | Long Name | Description 
+
+| -d | --distance | The buffer distance
+| -q | --quadrantsegments | The number of quadrant segments
+| -s | --singlesided | Whether buffer should be single sided or not
+| -c | --capstyle | The cap style
+| -o | --output-workspace | The output workspace
+| -r | --output-layer | The output layer
+| -i | --input-workspace | The input workspace
+| -l | --input-layer | The input layer
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

@@ -1,0 +1,14 @@
+|===
+| Short Name | Long Name | Description 
+
+| -w | --width | The width
+| -h | --height | The height
+| -s | --sld-file | The sld file
+| -b | --bounds | The bounds
+| -m | --layer | The map layer
+| -g | --background-color | The background color
+| -i | --input-workspace | The input workspace
+| -l | --input-layer | The input layer
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

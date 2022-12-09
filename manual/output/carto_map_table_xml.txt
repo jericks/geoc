@@ -1,0 +1,29 @@
+<item>
+    <x>10</x>
+    <y>10</y>
+    <width>280</width>
+    <height>80</height>
+    <type>table</type>
+    <columns>
+        <column>ID</column>
+        <column>Name</column>
+        <column>Abbreviation</column>
+    </columns>
+    <rows>
+        <row>
+            <ID>1</ID>
+            <Name>Washington</Name>
+            <Abbreviation>WA</Abbreviation>
+        </row>
+        <row>
+            <ID>2</ID>
+            <Name>Oregon</Name>
+            <Abbreviation>OR</Abbreviation>
+        </row>
+        <row>
+            <ID>3</ID>
+            <Name>California</Name>
+            <Abbreviation>CA</Abbreviation>
+        </row>
+    </rows>
+</item>

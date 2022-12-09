@@ -1,0 +1,1 @@
+geoc vector to -i target/randompoints.shp -f csv

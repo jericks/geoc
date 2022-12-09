@@ -1,0 +1,1 @@
+geoc raster size -i src/test/resources/earth.tif

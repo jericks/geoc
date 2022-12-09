@@ -1,0 +1,10 @@
+|===
+| Short Name | Long Name | Description 
+
+| -f | --file | The GIF file
+| -o | --output-file | The output animated GIF file
+| -d | --delay | The delay between images
+| -r | --repeat | Whether to repeat the animation or not
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

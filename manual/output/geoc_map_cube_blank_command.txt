@@ -1,0 +1,1 @@
+geoc map cube -o -f target/cube_blank.png

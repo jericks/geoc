@@ -1,0 +1,12 @@
+|===
+| Short Name | Long Name | Description 
+
+| -t | --text | The text
+| -f | --format | The string format (CSV, GeoJSON, KML, GML)
+| -g | --geometry-type | The geometry type
+| -p | --format-options | A format options 'key=value'
+| -o | --output-workspace | The output workspace
+| -r | --output-layer | The output layer
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

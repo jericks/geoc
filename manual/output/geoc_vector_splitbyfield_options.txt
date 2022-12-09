@@ -1,0 +1,10 @@
+|===
+| Short Name | Long Name | Description 
+
+| -f | --field | The field name
+| -o | --output-workspace | The output workspace
+| -i | --input-workspace | The input workspace
+| -l | --input-layer | The input layer
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

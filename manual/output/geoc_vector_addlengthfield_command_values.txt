@@ -1,0 +1,9 @@
+|===
+| name|label|length 
+
+| Brahmaputra|Brahmaputra|25.21241966609205
+| Mekong|Mekong|34.97738061177052
+| Ob|Ob|48.39570358268261
+| Peace|Peace|44.84258394589285
+| Donau|Donau|26.67902946932429
+|===

@@ -1,0 +1,1 @@
+geoc tile stitch vector -l "type=vectortiles format=pbf file=target/vectortiles" -o "type=geopackage file=target/world.gpkg name=world" -z 1

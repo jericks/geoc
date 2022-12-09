@@ -1,0 +1,5 @@
+|===
+| the_geom|name|id 
+
+| POINT (-122.334758 47.578364)|Seattle|1
+|===

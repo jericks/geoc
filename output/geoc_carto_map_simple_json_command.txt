@@ -1,0 +1,1 @@
+geoc carto map -t json -c src/test/resources/carto/simple.json -o target/carto_simple_json.png

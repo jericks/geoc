@@ -1,0 +1,16 @@
+|===
+| Short Name | Long Name | Description 
+
+| -l | --tile-layer | The tile layer
+| -f | --field | A field
+| -d | --layer-fields | A List of sub fields for a layer
+| -m | --layer | The map layer
+| -s | --start-zoom | The start zoom level
+| -e | --end-zoom | The end zoom level
+| -b | --bounds | The bounds
+| -t | --metatile | The metatile width,height
+| -i | --missing | Whether to generate only missing tiles
+| -v | --verbose | The verbose flag
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

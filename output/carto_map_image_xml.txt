@@ -1,0 +1,8 @@
+<item>
+    <x>10</x>
+    <y>10</y>
+    <width>512</width>
+    <height>431</height>
+    <type>image</type>
+    <path>src/main/docs/static/images/geoc.png</path>
+</item>

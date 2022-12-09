@@ -1,0 +1,8 @@
+|===
+| Short Name | Long Name | Description 
+
+| -w | --database-workspace | The input workspace
+| -s | --sql | The input layer
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

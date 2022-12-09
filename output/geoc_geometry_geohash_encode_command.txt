@@ -1,0 +1,1 @@
+geoc geometry geohash encode -i "POINT(-122.386371 47.581154)"

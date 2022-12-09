@@ -1,0 +1,1 @@
+geoc tile get bounds -p mercator -z 3 -x 2 -y 1

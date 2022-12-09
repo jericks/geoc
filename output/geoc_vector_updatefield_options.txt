@@ -1,0 +1,12 @@
+|===
+| Short Name | Long Name | Description 
+
+| -d | --field | The Field name
+| -v | --value | The value
+| -f | --filter | The CQL Filter
+| -s | --script | Whether the value is a script or not
+| -i | --input-workspace | The input workspace
+| -l | --input-layer | The input layer
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

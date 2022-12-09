@@ -1,0 +1,16 @@
+|===
+| Short Name | Long Name | Description 
+
+| -r | --radius-pixels | The radius of the density kernel in pixels
+| -a | --weight-field | The name of the weight field
+| -p | --pixels-per-cell | The resolution of the computed grid
+| -b | --bounds | The output bounds
+| -w | --width | The output width
+| -h | --height | The output height
+| -i | --input-workspace | The input workspace
+| -l | --input-layer | The input layer
+| -o | --output-raster | The output raster
+| -f | --output-raster-format | The output raster format
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

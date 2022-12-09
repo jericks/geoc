@@ -1,0 +1,8 @@
+|===
+| Short Name | Long Name | Description 
+
+| -d | --decimaldegrees | The decimal degrees
+| -t | --type | The output type (xy, wkt, json)
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

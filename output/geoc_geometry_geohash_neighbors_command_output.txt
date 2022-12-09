@@ -1,0 +1,8 @@
+NORTH,uf8vk6wjx
+NORTHEAST,uf8vk6wm8
+EAST,uf8vk6wm2
+SOUTHEAST,uf8vk6wm0
+SOUTH,uf8vk6wjp
+SOUTHWEST,uf8vk6wjn
+WEST,uf8vk6wjq
+NORTHWEST,uf8vk6wjw

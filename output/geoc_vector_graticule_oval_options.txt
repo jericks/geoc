@@ -1,0 +1,10 @@
+|===
+| Short Name | Long Name | Description 
+
+| -g | --geometry | The geometry
+| -l | --length | The length
+| -o | --output-workspace | The output workspace
+| -r | --output-layer | The output layer
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

@@ -1,0 +1,1 @@
+geoc pipe -c vector randompoints -n 10 -g -180,-90,180,90 | vector buffer -d 10

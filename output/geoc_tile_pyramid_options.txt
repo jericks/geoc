@@ -1,0 +1,8 @@
+|===
+| Short Name | Long Name | Description 
+
+| -l | --tile-layer | The tile layer
+| -o | --output-type | The output type (text, xml, json)
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

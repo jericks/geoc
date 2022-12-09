@@ -1,0 +1,1 @@
+geoc vector minrect -i src/test/resources/data.gpkg -l places -o target/minrect.shp

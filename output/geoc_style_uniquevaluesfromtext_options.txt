@@ -1,0 +1,12 @@
+|===
+| Short Name | Long Name | Description 
+
+| -f | --field | The field
+| -g | --geometry-type | The geometry type (point, linestring, polygon)
+| -i | --input | The input file or url
+| -t | --type | The output type (sld or ysld)
+| -o | --output | The output file
+| -w | --writer-options | The StyleWriter options
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

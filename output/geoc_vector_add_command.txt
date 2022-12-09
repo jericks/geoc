@@ -1,0 +1,1 @@
+geoc vector add -i target/locations.shp -v id=1 -v name=Seattle -v "the_geom=POINT (-122.334758 47.578364)"

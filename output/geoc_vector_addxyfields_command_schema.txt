@@ -1,0 +1,8 @@
+|===
+| Name | Type 
+
+| the_geom | Point
+| NAME | String
+| x_coord | Double
+| y_coord | Double
+|===

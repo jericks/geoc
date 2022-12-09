@@ -1,0 +1,1 @@
+geoc vector addlengthfield -i src/test/resources/data.gpkg -l rivers -o target/rivers_length.shp -f length

@@ -1,0 +1,9 @@
+|===
+| Short Name | Long Name | Description 
+
+| -b | --bounds | The bounds
+| -s | --size | The size
+| -f | --file | The world file
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

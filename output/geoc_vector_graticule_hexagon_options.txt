@@ -1,0 +1,12 @@
+|===
+| Short Name | Long Name | Description 
+
+| -g | --geometry | The geometry
+| -l | --length | The length
+| -s | --spacing | The spacing (defaults to -1)
+| -t | --orientation | The orientation (flat or angled).
+| -o | --output-workspace | The output workspace
+| -r | --output-layer | The output layer
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

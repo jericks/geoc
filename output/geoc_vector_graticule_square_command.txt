@@ -1,0 +1,1 @@
+geoc vector graticule square -g -180,-90,180,90 -l 20 -o target/squares.shp

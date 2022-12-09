@@ -1,0 +1,1 @@
+geoc vector graticule line -g -180,-90,180,90 -l vertical,2,10 -l horizontal,1,2 -o target/lines.shp

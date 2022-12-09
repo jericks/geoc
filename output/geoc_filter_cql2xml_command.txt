@@ -1,0 +1,1 @@
+geoc filter cql2xml -c name=wa

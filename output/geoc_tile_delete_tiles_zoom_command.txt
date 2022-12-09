@@ -1,0 +1,1 @@
+geoc tile delete -l "type=mbtiles file=target/world.mbtiles" -z 2

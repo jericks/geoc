@@ -1,0 +1,1 @@
+geoc vector centroid -i src/test/resources/data.gpkg -l countries -o target/countries_centroids.shp

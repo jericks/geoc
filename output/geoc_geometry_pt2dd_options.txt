@@ -1,0 +1,8 @@
+|===
+| Short Name | Long Name | Description 
+
+| -p | --point | The Point
+| -t | --type | The output type (dms, dms_char, ddm, ddm_char)
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

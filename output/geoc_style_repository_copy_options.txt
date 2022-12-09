@@ -1,0 +1,10 @@
+|===
+| Short Name | Long Name | Description 
+
+| -t | --input-type | The type of style repository (directory, nested-directory, h2, sqlite, postgres)
+| -p | --input-options | The style repository options
+| -o | --output-type | The type of style repository (directory, nested-directory, h2, sqlite, postgres)
+| -r | --output-options | The style repository options
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

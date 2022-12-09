@@ -1,0 +1,9 @@
+|===
+| Short Name | Long Name | Description 
+
+| -w | --database-workspace | The input workspace
+| -l | --layer-name | The input workspace
+| -p | --pretty-print | Whether to pretty print the output
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

@@ -1,0 +1,20 @@
+<item>
+    <x>10</x>
+    <y>10</y>
+    <width>130</width>
+    <height>130</height>
+    <type>northarrow</type>
+    <style>NorthEastSouthWest</style>
+    <fillColor1>black</fillColor1>
+    <fillColor2>white</fillColor2>
+    <strokeColor1>black</strokeColor1>
+    <strokeColor2>black</strokeColor2>
+    <strokeWidth>1</strokeWidth>
+    <drawText>true</drawText>
+    <textColor>black</textColor>
+    <font>
+        <name>Arial</name>
+        <style>plain</style>
+        <size>24</size>
+    </font>
+</item>

@@ -1,0 +1,14 @@
+<item>
+    <x>10</x>
+    <y>10</y>
+    <width>240</width>
+    <height>140</height>
+    <type>paragraph</type>
+    <text>The Carto package contains classes for creating cartographic documents. All items are added to the document with x and y coordinates whose origin is the upper left and width and a height.t</text>
+    <color>black</color>
+    <font>
+        <name>Arial</name>
+        <style>plain</style>
+        <size>14</size>
+    </font>
+</item>

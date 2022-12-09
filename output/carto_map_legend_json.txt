@@ -1,0 +1,37 @@
+{
+  "x": 10,
+  "y": 10,
+  "width": 380,
+  "height": 190,
+  "type": "map",
+  "name": "mainMap",
+  "layers": [
+    {"layertype": "layer", "file": "src/test/resources/data.gpkg", "layername": "ocean", "style": "src/test/resources/ocean.sld"},
+    {"layertype": "layer", "file": "src/test/resources/data.gpkg", "layername": "countries", "style": "src/test/resources/countries.sld"}
+  ]
+}, {
+  "x": 10,
+  "y": 210,
+  "width": 380,
+  "height": 70,
+  "type": "legend",
+  "map": "mainMap",
+  "backgroundColor": "white",
+  "title": "Legend",
+  "titleFont":{
+    "name": "Arial",
+    "style": "bold",
+    "size": 18
+  },
+  "titleColor": "black",
+  "textColor": "black",
+  "textFont": {
+    "name": "Arial",
+    "style": "plain",
+    "size": 12
+  },
+  "numberFormat": "#.##",
+  "legendEntryWidth": "50",
+  "legendEntryHeight": "30",
+  "gapBetweenEntries": "10"
+}

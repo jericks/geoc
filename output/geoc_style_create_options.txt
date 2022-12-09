@@ -1,0 +1,10 @@
+|===
+| Short Name | Long Name | Description 
+
+| -s | --style-options | A style options
+| -t | --type | The output type (sld or ysld)
+| -w | --writer-options | The StyleWriter options
+| -o | --output | The output file
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

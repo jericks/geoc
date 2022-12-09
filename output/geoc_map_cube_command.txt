@@ -1,0 +1,1 @@
+geoc map cube -l "layertype=layer file=src/test/resources/data.gpkg layername=ocean style=src/test/resources/ocean.sld" -l "layertype=layer file=src/test/resources/data.gpkg layername=countries style=src/test/resources/countries.sld" -o -f target/cube.png

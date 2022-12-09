@@ -1,0 +1,1 @@
+geoc vector create -o target/locations.shp -f "the_geom=POINT EPSG:4326" -f id=integer -f name=string

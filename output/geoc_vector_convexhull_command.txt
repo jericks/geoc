@@ -1,0 +1,1 @@
+geoc vector convexhull -i src/test/resources/data.gpkg -l places -o target/convexhull.shp

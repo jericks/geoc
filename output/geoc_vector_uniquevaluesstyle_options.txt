@@ -1,0 +1,10 @@
+|===
+| Short Name | Long Name | Description 
+
+| -f | --field | The field name
+| -c | --colors | The color brewer palette name or a list of colors (space delimited)
+| -i | --input-workspace | The input workspace
+| -l | --input-layer | The input layer
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

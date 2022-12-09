@@ -1,0 +1,34 @@
+{
+  "x": 10,
+  "y": 10,
+  "width": 580,
+  "height": 240,
+  "type": "map",
+  "name": "mainMap",
+  "fixAspectRatio": false,
+  "bounds": {
+    "minX": -108.917446,
+    "minY": 43.519820,
+    "maxX": -89.229946,
+    "maxY": 50.137433
+  },
+  "layers": [
+    {"layertype": "layer", "file": "src/test/resources/data.gpkg", "layername": "ocean", "style": "src/test/resources/ocean.sld"},
+    {"layertype": "layer", "file": "src/test/resources/data.gpkg", "layername": "countries", "style": "src/test/resources/countries.sld"},
+    {"layertype": "layer", "file": "src/test/resources/data.gpkg", "layername": "states", "style": "src/test/resources/states.sld"}
+  ]
+},
+{
+  "x": 10,
+  "y": 260,
+  "width": 580,
+  "height": 240,
+  "type": "overViewMap",
+  "zoomIntoBounds": false,
+  "scaleFactor": 2.0,
+  "linkedMap": "mainMap", 
+  "layers": [
+    {"layertype": "layer", "file": "src/test/resources/data.gpkg", "layername": "ocean", "style": "src/test/resources/ocean.sld"},
+    {"layertype": "layer", "file": "src/test/resources/data.gpkg", "layername": "countries", "style": "src/test/resources/countries.sld"}
+  ]
+}

@@ -1,0 +1,12 @@
+|===
+| Short Name | Long Name | Description 
+
+| -s | --sort-field | The Field to sort the field
+| -g | --group-field | The Field used create separate Lines
+| -o | --output-workspace | The output workspace
+| -r | --output-layer | The output layer
+| -i | --input-workspace | The input workspace
+| -l | --input-layer | The input layer
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

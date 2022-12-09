@@ -1,0 +1,1 @@
+geoc style create -s stroke=navy -s stroke-width=0.5 -t sld -o target/boundaries.sld

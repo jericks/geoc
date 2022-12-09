@@ -1,0 +1,9 @@
+<item>
+    <x>10</x>
+    <y>10</y>
+    <width>180</width>
+    <height>0</height>
+    <type>line</type>
+    <strokeColor>black</strokeColor>
+    <strokeWidth>2</strokeWidth>
+</item>

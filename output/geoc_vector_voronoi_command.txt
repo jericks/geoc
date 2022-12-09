@@ -1,0 +1,1 @@
+geoc vector voronoi -i src/test/resources/data.gpkg -l places -o target/voronoi.shp

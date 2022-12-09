@@ -1,0 +1,11 @@
+|===
+| Short Name | Long Name | Description 
+
+| -g | --geometry-type | The geometry type
+| -c | --color | The base color
+| -o | --opacity | The opacity (defaults to 1.0)
+| -i | --input-workspace | The input workspace
+| -l | --input-layer | The input layer
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

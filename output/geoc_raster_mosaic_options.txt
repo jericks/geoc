@@ -1,0 +1,11 @@
+|===
+| Short Name | Long Name | Description 
+
+| -r | --raster | An input Raster
+| -b | --bounds | The bounds
+| -z | --size | The size
+| -o | --output-raster | The output raster
+| -f | --output-raster-format | The output raster format
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

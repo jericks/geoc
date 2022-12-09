@@ -1,0 +1,7 @@
+|===
+| Short Name | Long Name | Description 
+
+| -n | --name | The DataStore name
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

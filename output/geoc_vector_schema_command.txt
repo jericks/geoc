@@ -1,0 +1,1 @@
+geoc vector schema -i src/test/resources/data.gpkg -l countries -p

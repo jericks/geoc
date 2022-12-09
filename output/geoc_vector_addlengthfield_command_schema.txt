@@ -1,0 +1,8 @@
+|===
+| Name | Type 
+
+| the_geom | MultiLineString
+| name | String
+| label | String
+| length | Double
+|===

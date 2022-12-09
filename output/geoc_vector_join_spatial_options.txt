@@ -1,0 +1,15 @@
+|===
+| Short Name | Long Name | Description 
+
+| -f | --field | A Field name
+| -t | --spatial-type | The spatial type (intersects, contains). Defaults to intersects.
+| -m | --multiple-type | The multiple type (first, closest, largest). Defaults to first.
+| -k | --other-workspace | The other workspace
+| -y | --other-layer | The other layer
+| -o | --output-workspace | The output workspace
+| -r | --output-layer | The output layer
+| -i | --input-workspace | The input workspace
+| -l | --input-layer | The input layer
+|  | --help | Print the help message
+|  | --web-help | Open help in a browser
+|===

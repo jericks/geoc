@@ -1,0 +1,1 @@
+geoc style create -s fill=white -s stroke=black -s stroke-width=1.5 -t ysld -o target/boundaries.ysld

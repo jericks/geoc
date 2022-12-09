@@ -1,0 +1,10 @@
+carto map = Create a cartographic map
+filter cql2xml = Convert a CQL statement to an OCG XML Filter
+geometry convert = Convert a geometry from one format to another
+geometry dd2pt = Convert a decimal degrees formatted string into a Point
+geometry geohash bounds = Calculate the geohashes for the given bounds
+geometry geohash decode = Decode a GeoHash to a Geometry.
+geometry geohash encode = Encode a Geometry as a GeoHash
+geometry geohash neighbors = Get a geohash's neighbors
+geometry greatcirclearc = Create a great circle arc.
+geometry offset = Create a Geometry offset from the input Geometry

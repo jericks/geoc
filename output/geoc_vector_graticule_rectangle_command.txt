@@ -1,0 +1,1 @@
+geoc vector graticule rectangle -g -180,-90,180,90 -w 10 -h 20 -o target/rectangles.shp

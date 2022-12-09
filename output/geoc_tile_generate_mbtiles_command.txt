@@ -1,0 +1,1 @@
+geoc tile generate -l "type=mbtiles file=target/world.mbtiles" -m "layertype=layer file=src/test/resources/data.gpkg layername=ocean style=src/test/resources/ocean.sld" -m "layertype=layer file=src/test/resources/data.gpkg layername=countries style=src/test/resources/countries.sld" -s 0 -e 2 --verbose

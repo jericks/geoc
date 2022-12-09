@@ -42,3 +42,11 @@ jobs:
         BRANCH: gh-pages
         FOLDER: src/website/build/html
         CLEAN: false
+    - name: Deploy manual
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: target/generated-docs
+        TARGET-FOLDER: manual
+        CLEAN: false

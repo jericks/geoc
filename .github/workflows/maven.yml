@@ -48,5 +48,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
         FOLDER: target/generated-docs
-        TARGET-FOLDER: manual
+        TARGET_FOLDER: manual
         CLEAN: false

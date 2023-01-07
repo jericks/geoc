@@ -32,6 +32,21 @@ include::output/geoc_raster_info_command.txt[]
 include::output/geoc_raster_info_command_output.txt[]
 ----
 
+=== Get Projection
+
+Get the Raster Projection.
+
+include::output/geoc_raster_projection_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_getprojection_command.txt[]
+----
+
+----
+include::output/geoc_raster_getprojection_command_output.txt[]
+----
+
 === Get Size
 
 Get the Raster size (width,height).

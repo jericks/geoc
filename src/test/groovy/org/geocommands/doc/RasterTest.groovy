@@ -39,4 +39,12 @@ class RasterTest extends DocTest {
         writeTextFile("geoc_raster_getsize_command_output", result)
     }
 
+    @Test
+    void getProjection() {
+        String command = "geoc raster projection -i src/test/resources/earth.tif"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_getprojection_command", command)
+        writeTextFile("geoc_raster_getprojection_command_output", result)
+    }
+
 }

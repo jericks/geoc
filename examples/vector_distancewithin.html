@@ -100,21 +100,21 @@
 <h1>Select Features within a distance of other Features<a class="headerlink" href="#select-features-within-a-distance-of-other-features" title="Permalink to this headline"></a></h1>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
-geoc vector randompoints -g -180,-90,180,90 -n <span class="m">1000</span> -o points.shp
+geoc<span class="w"> </span>vector<span class="w"> </span>randompoints<span class="w"> </span>-g<span class="w"> </span>-180,-90,180,90<span class="w"> </span>-n<span class="w"> </span><span class="m">1000</span><span class="w"> </span>-o<span class="w"> </span>points.shp
 
-geoc vector randompoints -g -180,-90,180,90 -n <span class="m">10</span> -o otherPoints.shp
+geoc<span class="w"> </span>vector<span class="w"> </span>randompoints<span class="w"> </span>-g<span class="w"> </span>-180,-90,180,90<span class="w"> </span>-n<span class="w"> </span><span class="m">10</span><span class="w"> </span>-o<span class="w"> </span>otherPoints.shp
 
-geoc vector distancewithin -i points.shp -d <span class="m">12</span> -k otherPoints.shp &gt; pointsNearOthers.csv
+geoc<span class="w"> </span>vector<span class="w"> </span>distancewithin<span class="w"> </span>-i<span class="w"> </span>points.shp<span class="w"> </span>-d<span class="w"> </span><span class="m">12</span><span class="w"> </span>-k<span class="w"> </span>otherPoints.shp<span class="w"> </span>&gt;<span class="w"> </span>pointsNearOthers.csv
 
-geoc vector defaultstyle -g point --color yellow &gt; otherPoints.sld
+geoc<span class="w"> </span>vector<span class="w"> </span>defaultstyle<span class="w"> </span>-g<span class="w"> </span>point<span class="w"> </span>--color<span class="w"> </span>yellow<span class="w"> </span>&gt;<span class="w"> </span>otherPoints.sld
 
-cat pointsNearOthers.csv <span class="p">|</span> geoc vector defaultstyle --color red -o <span class="m">0</span>.75 &gt; pointsNearOthers.sld
+cat<span class="w"> </span>pointsNearOthers.csv<span class="w"> </span><span class="p">|</span><span class="w"> </span>geoc<span class="w"> </span>vector<span class="w"> </span>defaultstyle<span class="w"> </span>--color<span class="w"> </span>red<span class="w"> </span>-o<span class="w"> </span><span class="m">0</span>.75<span class="w"> </span>&gt;<span class="w"> </span>pointsNearOthers.sld
 
-geoc map draw -f vector_distancewithin.png -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=points.shp&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=otherPoints.shp&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=pointsNearOthers.csv style=pointsNearOthers.sld&quot;</span>
+geoc<span class="w"> </span>map<span class="w"> </span>draw<span class="w"> </span>-f<span class="w"> </span>vector_distancewithin.png<span class="w"> </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=points.shp&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=otherPoints.shp&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=pointsNearOthers.csv style=pointsNearOthers.sld&quot;</span>
 </pre></div>
 </div>
 <img alt="../_images/vector_distancewithin.png" src="../_images/vector_distancewithin.png" />

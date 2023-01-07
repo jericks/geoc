@@ -99,14 +99,14 @@
   <section id="create-a-delaunay-diagram-from-a-vector-layer">
 <h1>Create a Delaunay Diagram from a Vector Layer<a class="headerlink" href="#create-a-delaunay-diagram-from-a-vector-layer" title="Permalink to this headline"></a></h1>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-geoc vector centroid -i naturalearth.gpkg -l countries <span class="p">|</span> geoc vector delaunay -o countries_delaunay.pbf
+geoc<span class="w"> </span>vector<span class="w"> </span>centroid<span class="w"> </span>-i<span class="w"> </span>naturalearth.gpkg<span class="w"> </span>-l<span class="w"> </span>countries<span class="w"> </span><span class="p">|</span><span class="w"> </span>geoc<span class="w"> </span>vector<span class="w"> </span>delaunay<span class="w"> </span>-o<span class="w"> </span>countries_delaunay.pbf
 
-geoc vector defaultstyle --color navy -o <span class="m">0</span>.15 -g polygon &gt; countries_delaunay.sld
+geoc<span class="w"> </span>vector<span class="w"> </span>defaultstyle<span class="w"> </span>--color<span class="w"> </span>navy<span class="w"> </span>-o<span class="w"> </span><span class="m">0</span>.15<span class="w"> </span>-g<span class="w"> </span>polygon<span class="w"> </span>&gt;<span class="w"> </span>countries_delaunay.sld
 
-geoc map draw -f vector_delaunay.png -b <span class="s2">&quot;-180,-90,180,90&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=countries_delaunay.pbf layername=countries_delaunay style=countries_delaunay.sld&quot;</span>
+geoc<span class="w"> </span>map<span class="w"> </span>draw<span class="w"> </span>-f<span class="w"> </span>vector_delaunay.png<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;-180,-90,180,90&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=countries_delaunay.pbf layername=countries_delaunay style=countries_delaunay.sld&quot;</span>
 </pre></div>
 </div>
 <img alt="../_images/vector_delaunay.png" src="../_images/vector_delaunay.png" />

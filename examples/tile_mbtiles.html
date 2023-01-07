@@ -99,17 +99,17 @@
   <section id="generate-web-mercator-tiles-in-mbtiles">
 <h1>Generate Web Mercator Tiles in MBTiles<a class="headerlink" href="#generate-web-mercator-tiles-in-mbtiles" title="Permalink to this headline"></a></h1>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-rm countries.mbtiles
+rm<span class="w"> </span>countries.mbtiles
 
-geoc tile generate -l countries.mbtiles <span class="se">\</span>
--m <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span> <span class="se">\</span>
--m <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span> <span class="se">\</span>
--s <span class="m">0</span> <span class="se">\</span>
--e <span class="m">4</span>
+geoc<span class="w"> </span>tile<span class="w"> </span>generate<span class="w"> </span>-l<span class="w"> </span>countries.mbtiles<span class="w"> </span><span class="se">\</span>
+-m<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+-m<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+-s<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+-e<span class="w"> </span><span class="m">4</span>
 
-geoc tile pyramid -l countries.mbtiles -o text
+geoc<span class="w"> </span>tile<span class="w"> </span>pyramid<span class="w"> </span>-l<span class="w"> </span>countries.mbtiles<span class="w"> </span>-o<span class="w"> </span>text
 
-geoc tile stitch raster -l countries.mbtiles -o countries_1.png -z <span class="m">1</span>
+geoc<span class="w"> </span>tile<span class="w"> </span>stitch<span class="w"> </span>raster<span class="w"> </span>-l<span class="w"> </span>countries.mbtiles<span class="w"> </span>-o<span class="w"> </span>countries_1.png<span class="w"> </span>-z<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 <img alt="../_images/tile_mbtiles.png" src="../_images/tile_mbtiles.png" />

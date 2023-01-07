@@ -98,13 +98,13 @@
              
   <section id="create-centroids-from-a-vector-layer">
 <h1>Create Centroids from a Vector Layer<a class="headerlink" href="#create-centroids-from-a-vector-layer" title="Permalink to this headline"></a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>geoc vector centroid -i naturalearth.gpkg -l countries -o countries_centroids.shp
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>geoc<span class="w"> </span>vector<span class="w"> </span>centroid<span class="w"> </span>-i<span class="w"> </span>naturalearth.gpkg<span class="w"> </span>-l<span class="w"> </span>countries<span class="w"> </span>-o<span class="w"> </span>countries_centroids.shp
 
-geoc vector defaultstyle --color navy -o <span class="m">0</span>.75 -i countries_centroids.shp &gt; countries_centroids.sld
+geoc<span class="w"> </span>vector<span class="w"> </span>defaultstyle<span class="w"> </span>--color<span class="w"> </span>navy<span class="w"> </span>-o<span class="w"> </span><span class="m">0</span>.75<span class="w"> </span>-i<span class="w"> </span>countries_centroids.shp<span class="w"> </span>&gt;<span class="w"> </span>countries_centroids.sld
 
-geoc map draw -f vector_centroid.png -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=countries_centroids.shp style=countries_centroids.sld&quot;</span>
+geoc<span class="w"> </span>map<span class="w"> </span>draw<span class="w"> </span>-f<span class="w"> </span>vector_centroid.png<span class="w"> </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=countries_centroids.shp style=countries_centroids.sld&quot;</span>
 </pre></div>
 </div>
 <img alt="../_images/vector_centroid.png" src="../_images/vector_centroid.png" />

@@ -98,14 +98,14 @@
              
   <section id="create-a-voronoi-diagram-from-a-vector-layer">
 <h1>Create a Voronoi Diagram from a Vector Layer<a class="headerlink" href="#create-a-voronoi-diagram-from-a-vector-layer" title="Permalink to this headline"></a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>geoc vector centroid -i naturalearth.gpkg -l countries <span class="p">|</span> geoc vector voronoi -o countries_voronoi.shp
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>geoc<span class="w"> </span>vector<span class="w"> </span>centroid<span class="w"> </span>-i<span class="w"> </span>naturalearth.gpkg<span class="w"> </span>-l<span class="w"> </span>countries<span class="w"> </span><span class="p">|</span><span class="w"> </span>geoc<span class="w"> </span>vector<span class="w"> </span>voronoi<span class="w"> </span>-o<span class="w"> </span>countries_voronoi.shp
 
-geoc vector defaultstyle --color navy -o <span class="m">0</span>.15 -i countries_voronoi.shp &gt; countries_voronoi.sld
+geoc<span class="w"> </span>vector<span class="w"> </span>defaultstyle<span class="w"> </span>--color<span class="w"> </span>navy<span class="w"> </span>-o<span class="w"> </span><span class="m">0</span>.15<span class="w"> </span>-i<span class="w"> </span>countries_voronoi.shp<span class="w"> </span>&gt;<span class="w"> </span>countries_voronoi.sld
 
-geoc map draw -f vector_voronoi.png -b <span class="s2">&quot;-180,-90,180,90&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=countries_voronoi.shp layername=countries_voronoi style=countries_voronoi.sld&quot;</span>
+geoc<span class="w"> </span>map<span class="w"> </span>draw<span class="w"> </span>-f<span class="w"> </span>vector_voronoi.png<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;-180,-90,180,90&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=countries_voronoi.shp layername=countries_voronoi style=countries_voronoi.sld&quot;</span>
 </pre></div>
 </div>
 <img alt="../_images/vector_voronoi.png" src="../_images/vector_voronoi.png" />

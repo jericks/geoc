@@ -100,16 +100,16 @@
 <h1>Create Envelopes around a Vector Layer<a class="headerlink" href="#create-envelopes-around-a-vector-layer" title="Permalink to this headline"></a></h1>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
-rm envelope.db.*
+rm<span class="w"> </span>envelope.db.*
 
-geoc vector envelope -i naturalearth.gpkg -l places -o envelope.db -r envelope
-geoc vector envelopes -i naturalearth.gpkg -l countries -o envelope.db -r envelopes
+geoc<span class="w"> </span>vector<span class="w"> </span>envelope<span class="w"> </span>-i<span class="w"> </span>naturalearth.gpkg<span class="w"> </span>-l<span class="w"> </span>places<span class="w"> </span>-o<span class="w"> </span>envelope.db<span class="w"> </span>-r<span class="w"> </span>envelope
+geoc<span class="w"> </span>vector<span class="w"> </span>envelopes<span class="w"> </span>-i<span class="w"> </span>naturalearth.gpkg<span class="w"> </span>-l<span class="w"> </span>countries<span class="w"> </span>-o<span class="w"> </span>envelope.db<span class="w"> </span>-r<span class="w"> </span>envelopes
 
-geoc map draw -f vector_envelope.png -b <span class="s2">&quot;-180,-90,180,90&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer dbtype=h2 database=envelope.db layername=envelope style=&#39;stroke=#0066ff stroke-width=0.5 no-fill&#39;&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer dbtype=h2 database=envelope.db layername=envelopes style=&#39;stroke=#ab9b7d stroke-width=0.5 fill=#f5deb3 fill-opacity=0.15&#39;&quot;</span>
+geoc<span class="w"> </span>map<span class="w"> </span>draw<span class="w"> </span>-f<span class="w"> </span>vector_envelope.png<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;-180,-90,180,90&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer dbtype=h2 database=envelope.db layername=envelope style=&#39;stroke=#0066ff stroke-width=0.5 no-fill&#39;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer dbtype=h2 database=envelope.db layername=envelopes style=&#39;stroke=#ab9b7d stroke-width=0.5 fill=#f5deb3 fill-opacity=0.15&#39;&quot;</span>
 </pre></div>
 </div>
 <img alt="../_images/vector_envelope.png" src="../_images/vector_envelope.png" />

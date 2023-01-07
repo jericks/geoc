@@ -98,24 +98,24 @@
              
   <section id="create-supercirlces-for-each-feature-in-a-layer">
 <h1>Create supercirlces for each Feature in a Layer<a class="headerlink" href="#create-supercirlces-for-each-feature-in-a-layer" title="Permalink to this headline"></a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>geoc vector supercircle -i naturalearth.gpkg -l countries -e <span class="m">0</span>.45 -p <span class="m">20</span> &gt; supercircles.csv
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>geoc<span class="w"> </span>vector<span class="w"> </span>supercircle<span class="w"> </span>-i<span class="w"> </span>naturalearth.gpkg<span class="w"> </span>-l<span class="w"> </span>countries<span class="w"> </span>-e<span class="w"> </span><span class="m">0</span>.45<span class="w"> </span>-p<span class="w"> </span><span class="m">20</span><span class="w"> </span>&gt;<span class="w"> </span>supercircles.csv
 
-geoc vector supercircle -i naturalearth.gpkg -l countries -g <span class="s2">&quot;centroid(the_geom)&quot;</span> -w <span class="m">5</span> -h <span class="m">5</span> -e <span class="m">0</span>.65 -p <span class="m">40</span> &gt; supercircles2.csv
+geoc<span class="w"> </span>vector<span class="w"> </span>supercircle<span class="w"> </span>-i<span class="w"> </span>naturalearth.gpkg<span class="w"> </span>-l<span class="w"> </span>countries<span class="w"> </span>-g<span class="w"> </span><span class="s2">&quot;centroid(the_geom)&quot;</span><span class="w"> </span>-w<span class="w"> </span><span class="m">5</span><span class="w"> </span>-h<span class="w"> </span><span class="m">5</span><span class="w"> </span>-e<span class="w"> </span><span class="m">0</span>.65<span class="w"> </span>-p<span class="w"> </span><span class="m">40</span><span class="w"> </span>&gt;<span class="w"> </span>supercircles2.csv
 
-geoc vector envelopes -i naturalearth.gpkg -l countries &gt; envelopes.csv
+geoc<span class="w"> </span>vector<span class="w"> </span>envelopes<span class="w"> </span>-i<span class="w"> </span>naturalearth.gpkg<span class="w"> </span>-l<span class="w"> </span>countries<span class="w"> </span>&gt;<span class="w"> </span>envelopes.csv
 
-geoc vector defaultstyle --color navy -o <span class="m">0</span>.15 -g polygon &gt; supercircles.sld
+geoc<span class="w"> </span>vector<span class="w"> </span>defaultstyle<span class="w"> </span>--color<span class="w"> </span>navy<span class="w"> </span>-o<span class="w"> </span><span class="m">0</span>.15<span class="w"> </span>-g<span class="w"> </span>polygon<span class="w"> </span>&gt;<span class="w"> </span>supercircles.sld
 
-geoc vector defaultstyle --color red -o <span class="m">0</span>.15 -g polygon &gt; supercircles2.sld
+geoc<span class="w"> </span>vector<span class="w"> </span>defaultstyle<span class="w"> </span>--color<span class="w"> </span>red<span class="w"> </span>-o<span class="w"> </span><span class="m">0</span>.15<span class="w"> </span>-g<span class="w"> </span>polygon<span class="w"> </span>&gt;<span class="w"> </span>supercircles2.sld
 
-geoc vector defaultstyle --color wheat -o <span class="m">0</span>.15 -g polygon &gt; envelopes.sld
+geoc<span class="w"> </span>vector<span class="w"> </span>defaultstyle<span class="w"> </span>--color<span class="w"> </span>wheat<span class="w"> </span>-o<span class="w"> </span><span class="m">0</span>.15<span class="w"> </span>-g<span class="w"> </span>polygon<span class="w"> </span>&gt;<span class="w"> </span>envelopes.sld
 
-geoc map draw -f vector_supercircles.png -b <span class="s2">&quot;-180,-90,180,90&quot;</span> <span class="se">\</span>
-  -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span> <span class="se">\</span>
-  -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span> <span class="se">\</span>
-  -l <span class="s2">&quot;layertype=layer file=envelopes.csv style=envelopes.sld&quot;</span> <span class="se">\</span>
-  -l <span class="s2">&quot;layertype=layer file=supercircles.csv style=supercircles.sld&quot;</span> <span class="se">\</span>
-  -l <span class="s2">&quot;layertype=layer file=supercircles2.csv style=supercircles2.sld&quot;</span>
+geoc<span class="w"> </span>map<span class="w"> </span>draw<span class="w"> </span>-f<span class="w"> </span>vector_supercircles.png<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;-180,-90,180,90&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=envelopes.csv style=envelopes.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=supercircles.csv style=supercircles.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=supercircles2.csv style=supercircles2.sld&quot;</span>
 </pre></div>
 </div>
 <img alt="../_images/vector_supercircles.png" src="../_images/vector_supercircles.png" />

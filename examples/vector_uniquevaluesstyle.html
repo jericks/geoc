@@ -99,10 +99,10 @@
   <section id="create-a-unique-values-style-for-a-vector-layer">
 <h1>Create a unique values style for a vector layer<a class="headerlink" href="#create-a-unique-values-style-for-a-vector-layer" title="Permalink to this headline"></a></h1>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-geoc vector uniquevaluesstyle -i naturalearth.gpkg -l countries -f MAP_COLOR -c GreenToRedOrange &gt; countries_map_color.sld
+geoc<span class="w"> </span>vector<span class="w"> </span>uniquevaluesstyle<span class="w"> </span>-i<span class="w"> </span>naturalearth.gpkg<span class="w"> </span>-l<span class="w"> </span>countries<span class="w"> </span>-f<span class="w"> </span>MAP_COLOR<span class="w"> </span>-c<span class="w"> </span>GreenToRedOrange<span class="w"> </span>&gt;<span class="w"> </span>countries_map_color.sld
 
-geoc map draw -f vector_uniquevalues.png -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries_map_color.sld&quot;</span>
+geoc<span class="w"> </span>map<span class="w"> </span>draw<span class="w"> </span>-f<span class="w"> </span>vector_uniquevalues.png<span class="w"> </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries_map_color.sld&quot;</span>
 </pre></div>
 </div>
 <img alt="../_images/vector_uniquevalues.png" src="../_images/vector_uniquevalues.png" />

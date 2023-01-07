@@ -100,15 +100,15 @@
 <h1>Reclassify a Raster<a class="headerlink" href="#reclassify-a-raster" title="Permalink to this headline"></a></h1>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
 
-geoc raster reclassify -i pc.tif -o pc_reclass.tif <span class="se">\</span>
-    -r <span class="m">0</span>-0<span class="o">=</span><span class="m">1</span> -r <span class="m">0</span>-50<span class="o">=</span><span class="m">2</span> -r <span class="m">50</span>-200<span class="o">=</span><span class="m">3</span> <span class="se">\</span>
-    -r <span class="m">200</span>-1000<span class="o">=</span><span class="m">5</span> -r <span class="m">1000</span>-1500<span class="o">=</span><span class="m">4</span> -r <span class="m">1500</span>-4000<span class="o">=</span><span class="m">6</span>
+geoc<span class="w"> </span>raster<span class="w"> </span>reclassify<span class="w"> </span>-i<span class="w"> </span>pc.tif<span class="w"> </span>-o<span class="w"> </span>pc_reclass.tif<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-r<span class="w"> </span><span class="m">0</span>-0<span class="o">=</span><span class="m">1</span><span class="w"> </span>-r<span class="w"> </span><span class="m">0</span>-50<span class="o">=</span><span class="m">2</span><span class="w"> </span>-r<span class="w"> </span><span class="m">50</span>-200<span class="o">=</span><span class="m">3</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-r<span class="w"> </span><span class="m">200</span>-1000<span class="o">=</span><span class="m">5</span><span class="w"> </span>-r<span class="w"> </span><span class="m">1000</span>-1500<span class="o">=</span><span class="m">4</span><span class="w"> </span>-r<span class="w"> </span><span class="m">1500</span>-4000<span class="o">=</span><span class="m">6</span>
 
-geoc raster style colormap <span class="se">\</span>
-    -v <span class="nv">1</span><span class="o">=</span><span class="c1">#FFFACD -v 2=#F0E68C -v 3=#DAA520 \</span>
-    -v <span class="nv">4</span><span class="o">=</span><span class="c1">#FF4500 -v 5=#800000 -v 6=#F5FFFA &gt; pc_reclass.sld</span>
+geoc<span class="w"> </span>raster<span class="w"> </span>style<span class="w"> </span>colormap<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span><span class="nv">1</span><span class="o">=</span><span class="c1">#FFFACD -v 2=#F0E68C -v 3=#DAA520 \</span>
+<span class="w">    </span>-v<span class="w"> </span><span class="nv">4</span><span class="o">=</span><span class="c1">#FF4500 -v 5=#800000 -v 6=#F5FFFA &gt; pc_reclass.sld</span>
 
-geoc map draw -f pc_reclass.png -l <span class="s2">&quot;layertype=raster source=pc_reclass.tif style=pc_reclass.sld&quot;</span>
+geoc<span class="w"> </span>map<span class="w"> </span>draw<span class="w"> </span>-f<span class="w"> </span>pc_reclass.png<span class="w"> </span>-l<span class="w"> </span><span class="s2">&quot;layertype=raster source=pc_reclass.tif style=pc_reclass.sld&quot;</span>
 </pre></div>
 </div>
 <img alt="../_images/raster_reclassify.png" src="../_images/raster_reclassify.png" />

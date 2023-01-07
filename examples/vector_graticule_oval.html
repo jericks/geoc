@@ -98,12 +98,12 @@
              
   <section id="create-oval-graticule-layer">
 <h1>Create Oval Graticule Layer<a class="headerlink" href="#create-oval-graticule-layer" title="Permalink to this headline"></a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>geoc vector graticule oval -g -180,-90,180,90 -l <span class="m">20</span> -o ovals.shp
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>geoc<span class="w"> </span>vector<span class="w"> </span>graticule<span class="w"> </span>oval<span class="w"> </span>-g<span class="w"> </span>-180,-90,180,90<span class="w"> </span>-l<span class="w"> </span><span class="m">20</span><span class="w"> </span>-o<span class="w"> </span>ovals.shp
 
-geoc map draw -f vector_graticule_oval.png -b <span class="s2">&quot;-180,-90,180,90&quot;</span> <span class="se">\</span>
-     -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span> <span class="se">\</span>
-     -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span> <span class="se">\</span>
-     -l <span class="s2">&quot;layertype=layer file=ovals.shp style=&#39;stroke=#ab9b7d stroke-width=0.5 fill=#f5deb3 fill-opacity=0.15&#39;&quot;</span>
+geoc<span class="w"> </span>map<span class="w"> </span>draw<span class="w"> </span>-f<span class="w"> </span>vector_graticule_oval.png<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;-180,-90,180,90&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=ovals.shp style=&#39;stroke=#ab9b7d stroke-width=0.5 fill=#f5deb3 fill-opacity=0.15&#39;&quot;</span>
 </pre></div>
 </div>
 <img alt="../_images/vector_graticule_oval.png" src="../_images/vector_graticule_oval.png" />

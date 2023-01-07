@@ -99,19 +99,19 @@
   <section id="select-features-that-intersect-other-features">
 <h1>Select Features that intersect other Features<a class="headerlink" href="#select-features-that-intersect-other-features" title="Permalink to this headline"></a></h1>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-geoc vector randompoints -g -180,-90,180,90 -n <span class="m">100</span> <span class="p">|</span> geoc vector buffer -d <span class="m">4</span> -o polys1.shp
+geoc<span class="w"> </span>vector<span class="w"> </span>randompoints<span class="w"> </span>-g<span class="w"> </span>-180,-90,180,90<span class="w"> </span>-n<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>geoc<span class="w"> </span>vector<span class="w"> </span>buffer<span class="w"> </span>-d<span class="w"> </span><span class="m">4</span><span class="w"> </span>-o<span class="w"> </span>polys1.shp
 
-geoc vector randompoints -g -180,-90,180,90 -n <span class="m">10</span> <span class="p">|</span> geoc vector buffer -d <span class="m">8</span> -o polys2.shp
+geoc<span class="w"> </span>vector<span class="w"> </span>randompoints<span class="w"> </span>-g<span class="w"> </span>-180,-90,180,90<span class="w"> </span>-n<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>geoc<span class="w"> </span>vector<span class="w"> </span>buffer<span class="w"> </span>-d<span class="w"> </span><span class="m">8</span><span class="w"> </span>-o<span class="w"> </span>polys2.shp
 
-geoc vector intersects -i polys1.shp -k polys2.shp &gt; intersectingPolys.csv
+geoc<span class="w"> </span>vector<span class="w"> </span>intersects<span class="w"> </span>-i<span class="w"> </span>polys1.shp<span class="w"> </span>-k<span class="w"> </span>polys2.shp<span class="w"> </span>&gt;<span class="w"> </span>intersectingPolys.csv
 
-cat intersectingPolys.csv <span class="p">|</span> geoc vector defaultstyle --color red -o <span class="m">0</span>.75 &gt; intersectingPolys.sld
+cat<span class="w"> </span>intersectingPolys.csv<span class="w"> </span><span class="p">|</span><span class="w"> </span>geoc<span class="w"> </span>vector<span class="w"> </span>defaultstyle<span class="w"> </span>--color<span class="w"> </span>red<span class="w"> </span>-o<span class="w"> </span><span class="m">0</span>.75<span class="w"> </span>&gt;<span class="w"> </span>intersectingPolys.sld
 
-geoc map draw -f vector_intersects.png -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=polys1.shp&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=polys2.shp&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=intersectingPolys.csv style=intersectingPolys.sld&quot;</span>
+geoc<span class="w"> </span>map<span class="w"> </span>draw<span class="w"> </span>-f<span class="w"> </span>vector_intersects.png<span class="w"> </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=polys1.shp&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=polys2.shp&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=intersectingPolys.csv style=intersectingPolys.sld&quot;</span>
 </pre></div>
 </div>
 <img alt="../_images/vector_intersects.png" src="../_images/vector_intersects.png" />

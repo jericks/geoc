@@ -98,18 +98,18 @@
              
   <section id="buffer-a-vector-layer">
 <h1>Buffer a Vector Layer<a class="headerlink" href="#buffer-a-vector-layer" title="Permalink to this headline"></a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>geoc vector randompoints -g -180,-90,180,90 -n <span class="m">100</span> &gt; points.csv
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>geoc<span class="w"> </span>vector<span class="w"> </span>randompoints<span class="w"> </span>-g<span class="w"> </span>-180,-90,180,90<span class="w"> </span>-n<span class="w"> </span><span class="m">100</span><span class="w"> </span>&gt;<span class="w"> </span>points.csv
 
-cat points.csv <span class="p">|</span> geoc vector buffer -d <span class="m">10</span> &gt; polygons.csv
+cat<span class="w"> </span>points.csv<span class="w"> </span><span class="p">|</span><span class="w"> </span>geoc<span class="w"> </span>vector<span class="w"> </span>buffer<span class="w"> </span>-d<span class="w"> </span><span class="m">10</span><span class="w"> </span>&gt;<span class="w"> </span>polygons.csv
 
-cat points.csv <span class="p">|</span> geoc vector defaultstyle --color navy -o <span class="m">0</span>.75 &gt; points.sld
+cat<span class="w"> </span>points.csv<span class="w"> </span><span class="p">|</span><span class="w"> </span>geoc<span class="w"> </span>vector<span class="w"> </span>defaultstyle<span class="w"> </span>--color<span class="w"> </span>navy<span class="w"> </span>-o<span class="w"> </span><span class="m">0</span>.75<span class="w"> </span>&gt;<span class="w"> </span>points.sld
 
-cat polygons.csv <span class="p">|</span> geoc vector defaultstyle --color silver -o <span class="m">0</span>.5 &gt; polygons.sld
+cat<span class="w"> </span>polygons.csv<span class="w"> </span><span class="p">|</span><span class="w"> </span>geoc<span class="w"> </span>vector<span class="w"> </span>defaultstyle<span class="w"> </span>--color<span class="w"> </span>silver<span class="w"> </span>-o<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span>&gt;<span class="w"> </span>polygons.sld
 
-geoc map draw -f vector_buffer.png -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=polygons.csv style=polygons.sld&quot;</span> <span class="se">\</span>
-    -l <span class="s2">&quot;layertype=layer file=points.csv style=points.sld&quot;</span>
+geoc<span class="w"> </span>map<span class="w"> </span>draw<span class="w"> </span>-f<span class="w"> </span>vector_buffer.png<span class="w"> </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=ocean style=ocean.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=naturalearth.gpkg layername=countries style=countries.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=polygons.csv style=polygons.sld&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span><span class="s2">&quot;layertype=layer file=points.csv style=points.sld&quot;</span>
 </pre></div>
 </div>
 <img alt="../_images/vector_buffer.png" src="../_images/vector_buffer.png" />

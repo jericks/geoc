@@ -1,0 +1,1 @@
+geoc raster projection -i src/test/resources/earth.tif

@@ -12,9 +12,11 @@ geoc is very much under development (command names may change).  Originally is w
 
 geoc is built on the shoulders of giants: `GeoTools <http://geotools.org>`_ and the `Java Topology Suite <http://tsusiatsoftware.net/jts/main.html>`_.  geoc just provides a command line application that wraps the herculean effort that the developers of these two libraries have undertaken.
 
-`GEOC A GeoSpatial Command Line App Presentation<https://jericks.github.io/geoc-pres/slides.html>`_
-
 `Manual <manual/index.html>`_
+
+`Blog <https://jericks.github.io/tags/geoc/>`_
+
+`GEOC A GeoSpatial Command Line App Presentation <https://jericks.github.io/geoc-pres/slides.html>`_
 
 Contents:
 

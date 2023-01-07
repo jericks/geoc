@@ -535,6 +535,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <ul class="sectlevel1">
 <li><a href="#raster-commands">Raster Commands</a>
 <ul class="sectlevel2">
+<li><a href="#envelope">Envelope</a></li>
 <li><a href="#info">Info</a></li>
 <li><a href="#get-size">Get Size</a></li>
 </ul>
@@ -546,6 +547,73 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div class="sect1">
 <h2 id="raster-commands"><a class="anchor" href="#raster-commands"></a>Raster Commands</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="envelope"><a class="anchor" href="#envelope"></a>Envelope</h3>
+<div class="paragraph">
+<p>Get the Envelope of a Raster as a Vector Layer.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Short Name</th>
+<th class="tableblock halign-left valign-top">Long Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--output-workspace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The output workspace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-r</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--output-layer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The output layer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-raster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input raster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-l</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-raster-name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input raster name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-p</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-projection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input projection</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Print the help message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--web-help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open help in a browser</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">geoc raster envelope -i src/test/resources/earth.tif -o target/earth_envelope.shp</code></pre>
+</div>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<img src="./images/geoc_raster_envelope_command.png" alt="geoc raster envelope command">
+</div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="info"><a class="anchor" href="#info"></a>Info</h3>
 <div class="paragraph">
@@ -686,7 +754,7 @@ Bands:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-12-28 20:48:53 UTC
+Last updated 2023-01-07 00:29:05 UTC
 </div>
 </div>
 </body>

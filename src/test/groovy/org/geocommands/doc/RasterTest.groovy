@@ -1,8 +1,27 @@
 package org.geocommands.doc
 
+import geoscript.layer.GeoTIFF
+import geoscript.layer.Layer
+import geoscript.layer.Raster
+import geoscript.layer.Shapefile
+import geoscript.style.Stroke
+import geoscript.style.io.SimpleStyleReader
 import org.junit.jupiter.api.Test
 
 class RasterTest extends DocTest {
+
+    @Test
+    void envelope() {
+        String command = "geoc raster envelope -i src/test/resources/earth.tif -o target/earth_envelope.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_envelope_command", command)
+        writeTextFile("geoc_raster_envelope_command_output", result)
+
+        Raster raster = new GeoTIFF(new File("src/test/resources/earth.tif")).read()
+        Layer layer = new Shapefile("target/earth_envelope.shp")
+        layer.style = new Stroke("red", 2)
+        drawOnBasemap("geoc_raster_envelope_command", [raster, layer])
+    }
 
     @Test
     void info() {

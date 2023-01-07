@@ -3,6 +3,20 @@ ifndef::sourcedir[:sourcedir: ../../main/groovy]
 
 == Raster Commands
 
+=== Envelope
+
+Get the Envelope of a Raster as a Vector Layer.
+
+include::output/geoc_raster_envelope_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_envelope_command.txt[]
+----
+
+[.thumb]
+image::geoc_raster_envelope_command.png[]
+
 === Info
 
 Get information about a Raster.

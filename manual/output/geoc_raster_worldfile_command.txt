@@ -1,0 +1,1 @@
+geoc raster worldfile -b 10,11,20,21 -s 800,751

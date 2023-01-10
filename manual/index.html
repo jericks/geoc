@@ -615,6 +615,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#info">Info</a></li>
 <li><a href="#get-projection">Get Projection</a></li>
 <li><a href="#get-size">Get Size</a></li>
+<li><a href="#world-file">World File</a></li>
 </ul>
 </li>
 <li><a href="#style-commands">Style Commands</a>
@@ -884,7 +885,7 @@ geometry offset = Create a Geometry offset from the input Geometry
 <div class="listingblock bash">
 <div class="content">
 <pre class="CodeRay highlight"><code>&quot;id:Integer&quot;,&quot;the_geom:Polygon:EPSG:4326&quot;
-&quot;0&quot;,&quot;POLYGON ((160.26705029508082 26.802453417000734, 160.07490309911313 24.85155019683945, 159.5058456201937 22.975619093349835, 158.58174641810626 21.246751086804714, 157.3381181069463 19.73138560513526, 155.82275262527685 18.48775729397528, 154.09388461873172 17.563658091887866, 152.2179535152421 16.99460061296843, 150.26705029508082 16.802453417000734, 148.31614707491954 16.99460061296843, 146.44021597142992 17.563658091887866, 144.7113479648848 18.487757293975278, 143.19598248321535 19.73138560513526, 141.95235417205538 21.246751086804714, 141.02825496996795 22.975619093349835, 140.4591974910485 24.851550196839447, 140.26705029508082 26.802453417000734, 140.4591974910485 28.753356637162018, 141.02825496996795 30.62928774065163, 141.95235417205538 32.358155747196754, 143.19598248321535 33.87352122886621, 144.7113479648848 35.11714954002619, 146.44021597142992 36.041248742113595, 148.31614707491954 36.610306221033035, 150.26705029508082 36.802453417000734, 152.2179535152421 36.61030622103304, 154.09388461873172 36.0412487421136, 155.82275262527685 35.11714954002619, 157.3381181069463 33.87352122886621, 158.58174641810626 32.358155747196754, 159.5058456201937 30.629287740651638, 160.07490309911313 28.75335663716202, 160.26705029508082 26.802453417000734))&quot;
+&quot;0&quot;,&quot;POLYGON ((109.09876368978564 -83.63496580002437, 108.90661649381795 -85.58586902018565, 108.33755901489852 -87.46180012367527, 107.4134598128111 -89.1906681302204, 106.16983150165112 -90.70603361188985, 104.65446601998167 -91.94966192304983, 102.92559801343654 -92.87376112513724, 101.04966690994692 -93.44281860405668, 99.09876368978564 -93.63496580002437, 97.14786046962436 -93.44281860405668, 95.27192936613474 -92.87376112513724, 93.54306135958961 -91.94966192304983, 92.02769587792017 -90.70603361188985, 90.78406756676019 -89.1906681302204, 89.85996836467277 -87.46180012367527, 89.29091088575333 -85.58586902018565, 89.09876368978564 -83.63496580002437, 89.29091088575333 -81.6840625798631, 89.85996836467277 -79.80813147637348, 90.78406756676019 -78.07926346982836, 92.02769587792017 -76.5638979881589, 93.54306135958961 -75.32026967699892, 95.27192936613474 -74.39617047491151, 97.14786046962436 -73.82711299599207, 99.09876368978564 -73.63496580002437, 101.04966690994692 -73.82711299599207, 102.92559801343654 -74.39617047491151, 104.65446601998165 -75.32026967699892, 106.16983150165112 -76.5638979881589, 107.4134598128111 -78.07926346982835, 108.3375590148985 -79.80813147637348, 108.90661649381795 -81.68406257986308, 109.09876368978564 -83.63496580002437))&quot;
 ...</code></pre>
 </div>
 </div>
@@ -3656,6 +3657,68 @@ Bands:
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="world-file"><a class="anchor" href="#world-file"></a>World File</h3>
+<div class="paragraph">
+<p>Create a Raster world file</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Short Name</th>
+<th class="tableblock halign-left valign-top">Long Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--bounds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The bounds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-s</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The size</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The world file</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Print the help message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--web-help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open help in a browser</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">geoc raster worldfile -b 10,11,20,21 -s 800,751</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>0.0125
+0.0
+0.0
+-0.013315579227696404
+10.00625
+20.993342210386153</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -4764,7 +4827,7 @@ Aa2=#94474b</code></pre>
 <pre class="CodeRay highlight"><code data-lang="bash">Zoom Level 0
    0). Tile(x:0, y:0, z:0)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,2.003639514788131E7,2.003747120513706E7,EPSG:3857)
-   Generating 1 tile took 0.097325662 seconds
+   Generating 1 tile took 0.138958081 seconds
 Zoom Level 1
    0). Tile(x:0, y:0, z:1)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,0.0,-3.725290298461914E-9,EPSG:3857)
@@ -4774,7 +4837,7 @@ Zoom Level 1
           Bounds(-2.003639514788131E7,-3.725290298461914E-9,0.0,2.003747120513706E7,EPSG:3857)
    3). Tile(x:1, y:1, z:1)
           Bounds(0.0,-3.725290298461914E-9,2.003639514788131E7,2.003747120513706E7,EPSG:3857)
-   Generating 4 tiles took 0.398718272 seconds
+   Generating 4 tiles took 0.307867867 seconds
 Zoom Level 2
    0). Tile(x:0, y:0, z:2)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,-1.0018197573940655E7,-1.0018735602568535E7,EPSG:3857)
@@ -4808,7 +4871,7 @@ Zoom Level 2
           Bounds(0.0,1.001873560256853E7,1.0018197573940655E7,2.003747120513706E7,EPSG:3857)
    15). Tile(x:3, y:3, z:2)
           Bounds(1.0018197573940653E7,1.001873560256853E7,2.0036395147881307E7,2.003747120513706E7,EPSG:3857)
-   Generating 16 tiles took 1.282362336 seconds</code></pre>
+   Generating 16 tiles took 1.070688794 seconds</code></pre>
 </div>
 </div>
 <div class="imageblock thumb">
@@ -4831,7 +4894,7 @@ Zoom Level 2
           Bounds(-179.99,-89.99,0.0,89.99,EPSG:4326)
    1). Tile(x:1, y:0, z:0)
           Bounds(0.0,-89.99,179.99,89.99,EPSG:4326)
-   Generating 2 tiles took 0.142392853 seconds
+   Generating 2 tiles took 0.090895289 seconds
 Zoom Level 1
    0). Tile(x:0, y:0, z:1)
           Bounds(-179.99,0.0,-89.995,89.99,EPSG:4326)
@@ -4849,7 +4912,7 @@ Zoom Level 1
           Bounds(0.0,-89.99,89.995,0.0,EPSG:4326)
    7). Tile(x:3, y:1, z:1)
           Bounds(89.995,-89.99,179.99,0.0,EPSG:4326)
-   Generating 8 tiles took 0.322270494 seconds
+   Generating 8 tiles took 0.224983641 seconds
 Zoom Level 2
    0). Tile(x:0, y:0, z:2)
           Bounds(-179.99,44.995,-134.9925,89.99,EPSG:4326)
@@ -4915,7 +4978,7 @@ Zoom Level 2
           Bounds(89.995,-89.99,134.9925,-44.995,EPSG:4326)
    31). Tile(x:7, y:3, z:2)
           Bounds(134.9925,-89.99,179.99,-44.995,EPSG:4326)
-   Generating 32 tiles took 0.879499846 seconds</code></pre>
+   Generating 32 tiles took 0.683500135 seconds</code></pre>
 </div>
 </div>
 <div class="imageblock thumb">
@@ -4936,7 +4999,7 @@ Zoom Level 2
 <pre class="CodeRay highlight"><code data-lang="bash">Zoom Level 0
    0). Tile(x:0, y:0, z:0)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,2.003639514788131E7,2.003747120513706E7,EPSG:3857)
-   Generating 1 tile took 0.10871921 seconds
+   Generating 1 tile took 0.105741532 seconds
 Zoom Level 1
    0). Tile(x:0, y:0, z:1)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,0.0,-3.725290298461914E-9,EPSG:3857)
@@ -4946,7 +5009,7 @@ Zoom Level 1
           Bounds(-2.003639514788131E7,-3.725290298461914E-9,0.0,2.003747120513706E7,EPSG:3857)
    3). Tile(x:1, y:1, z:1)
           Bounds(0.0,-3.725290298461914E-9,2.003639514788131E7,2.003747120513706E7,EPSG:3857)
-   Generating 4 tiles took 0.29599134 seconds
+   Generating 4 tiles took 0.296827618 seconds
 Zoom Level 2
    0). Tile(x:0, y:0, z:2)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,-1.0018197573940655E7,-1.0018735602568535E7,EPSG:3857)
@@ -4980,7 +5043,7 @@ Zoom Level 2
           Bounds(0.0,1.001873560256853E7,1.0018197573940655E7,2.003747120513706E7,EPSG:3857)
    15). Tile(x:3, y:3, z:2)
           Bounds(1.0018197573940653E7,1.001873560256853E7,2.0036395147881307E7,2.003747120513706E7,EPSG:3857)
-   Generating 16 tiles took 1.156838007 seconds</code></pre>
+   Generating 16 tiles took 0.929179279 seconds</code></pre>
 </div>
 </div>
 <div class="imageblock thumb">
@@ -5001,7 +5064,7 @@ Zoom Level 2
 <pre class="CodeRay highlight"><code data-lang="bash">Zoom Level 0
    0). Tile(x:0, y:0, z:0)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,2.003639514788131E7,2.003747120513706E7,EPSG:3857)
-   Generating 1 tile took 0.6684755 seconds
+   Generating 1 tile took 0.573262494 seconds
 Zoom Level 1
    0). Tile(x:0, y:0, z:1)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,0.0,-3.725290298461914E-9,EPSG:3857)
@@ -5011,7 +5074,7 @@ Zoom Level 1
           Bounds(-2.003639514788131E7,-3.725290298461914E-9,0.0,2.003747120513706E7,EPSG:3857)
    3). Tile(x:1, y:1, z:1)
           Bounds(0.0,-3.725290298461914E-9,2.003639514788131E7,2.003747120513706E7,EPSG:3857)
-   Generating 4 tiles took 1.266325081 seconds
+   Generating 4 tiles took 1.009881702 seconds
 Zoom Level 2
    0). Tile(x:0, y:0, z:2)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,-1.0018197573940655E7,-1.0018735602568535E7,EPSG:3857)
@@ -5045,7 +5108,7 @@ Zoom Level 2
           Bounds(0.0,1.001873560256853E7,1.0018197573940655E7,2.003747120513706E7,EPSG:3857)
    15). Tile(x:3, y:3, z:2)
           Bounds(1.0018197573940653E7,1.001873560256853E7,2.0036395147881307E7,2.003747120513706E7,EPSG:3857)
-   Generating 16 tiles took 1.109601141 seconds</code></pre>
+   Generating 16 tiles took 0.940505595 seconds</code></pre>
 </div>
 </div>
 </div>
@@ -7355,7 +7418,7 @@ TOP_LEFT
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">FeatureCollection</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">features</span><span class="delimiter">&quot;</span></span>:[{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">4.2097</span>,<span class="float">84.6121</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">0</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.1</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-15.5358</span>,<span class="float">-18.2974</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">1</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.2</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-129.1464</span>,<span class="float">59.8655</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">2</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.3</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-172.885</span>,<span class="float">-85.4878</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">3</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.4</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-48.2161</span>,<span class="float">-82.0694</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">4</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.5</span><span class="delimiter">&quot;</span></span>}]}</code></pre>
+<pre class="CodeRay highlight"><code data-lang="json">{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">FeatureCollection</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">features</span><span class="delimiter">&quot;</span></span>:[{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-160.2301</span>,<span class="float">-44.4125</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">0</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.1</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">48.8454</span>,<span class="float">36.2349</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">1</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.2</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-126.1671</span>,<span class="float">52.4191</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">2</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.3</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-88.9518</span>,<span class="float">-27.4257</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">3</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.4</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">176.3728</span>,<span class="float">56.6195</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">4</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.5</span><span class="delimiter">&quot;</span></span>}]}</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -7377,11 +7440,11 @@ TOP_LEFT
 <div class="listingblock">
 <div class="content">
 <pre>"the_geom:Point:EPSG:4326","id:Integer"
-"POINT (87.71028397382543 86.00965996879899)","0"
-"POINT (151.66464464557663 4.828385405952531)","1"
-"POINT (-98.98570011266007 -23.372840307046857)","2"
-"POINT (49.88612684133042 64.81949979072309)","3"
-"POINT (-80.10446318818812 -32.0055287651564)","4"</pre>
+"POINT (98.37975110543368 -45.48543414803914)","0"
+"POINT (-132.2376694231565 -14.63109126425195)","1"
+"POINT (-29.028558936292484 11.865713426238884)","2"
+"POINT (-38.92584089499351 12.661327246265756)","3"
+"POINT (124.84370824367977 38.40970133170521)","4"</pre>
 </div>
 </div>
 <div class="listingblock">
@@ -8396,7 +8459,7 @@ states</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">FeatureCollection</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">features</span><span class="delimiter">&quot;</span></span>:[{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-130.7598</span>,<span class="float">-89.0641</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">0</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.1</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-79.2723</span>,<span class="float">15.6867</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">1</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.2</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-43.8035</span>,<span class="float">28.9652</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">2</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.3</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">167.1163</span>,<span class="float">-40.3753</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">3</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.4</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-20.8025</span>,<span class="float">7.3255</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">4</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.5</span><span class="delimiter">&quot;</span></span>}]}</code></pre>
+<pre class="CodeRay highlight"><code data-lang="json">{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">FeatureCollection</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">features</span><span class="delimiter">&quot;</span></span>:[{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">114.4315</span>,<span class="float">-33.1273</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">0</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.1</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-149.1284</span>,<span class="float">-38.6459</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">1</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.2</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">24.9233</span>,<span class="float">13.607</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">2</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.3</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">156.9047</span>,<span class="float">-3.5301</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">3</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.4</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-122.8237</span>,<span class="float">-64.3311</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">4</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.5</span><span class="delimiter">&quot;</span></span>}]}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -8410,11 +8473,11 @@ states</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json"><span class="string"><span class="delimiter">&quot;</span><span class="content">the_geom:Point:EPSG:4326</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">id:Integer</span><span class="delimiter">&quot;</span></span>
-<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (-148.36753616039957 39.96943005748551)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>
-<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (34.816976896193836 18.819176192164463)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">1</span><span class="delimiter">&quot;</span></span>
-<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (167.82714727195412 -15.268608845558859)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">2</span><span class="delimiter">&quot;</span></span>
-<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (155.31408808030574 -43.926145333023754)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">3</span><span class="delimiter">&quot;</span></span>
-<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (14.379287284515215 11.706004476396444)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">4</span><span class="delimiter">&quot;</span></span></code></pre>
+<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (44.68511650410818 41.28569064021568)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>
+<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (172.7303991665181 -21.164771619386727)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">1</span><span class="delimiter">&quot;</span></span>
+<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (-123.64988824017382 57.83924134493077)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">2</span><span class="delimiter">&quot;</span></span>
+<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (-1.2376477870026292 -70.55289709908027)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">3</span><span class="delimiter">&quot;</span></span>
+<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (-154.81372074938724 46.28034464305807)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">4</span><span class="delimiter">&quot;</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -8707,7 +8770,7 @@ states</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 0.12.0-SNAPSHOT<br>
-Last updated 2023-01-07 23:40:32 UTC
+Last updated 2023-01-10 01:05:51 UTC
 </div>
 </div>
 </body>

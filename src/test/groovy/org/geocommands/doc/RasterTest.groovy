@@ -47,4 +47,12 @@ class RasterTest extends DocTest {
         writeTextFile("geoc_raster_getprojection_command_output", result)
     }
 
+    @Test
+    void wordFile() {
+        String command = "geoc raster worldfile -b 10,11,20,21 -s 800,751"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_worldfile_command", command)
+        writeTextFile("geoc_raster_worldfile_command_output", result)
+    }
+
 }

@@ -61,3 +61,18 @@ include::output/geoc_raster_getsize_command.txt[]
 ----
 include::output/geoc_raster_getsize_command_output.txt[]
 ----
+
+=== World File
+
+Create a Raster world file
+
+include::output/geoc_raster_worldfile_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_worldfile_command.txt[]
+----
+
+----
+include::output/geoc_raster_worldfile_command_output.txt[]
+----

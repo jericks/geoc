@@ -3,6 +3,20 @@ ifndef::sourcedir[:sourcedir: ../../main/groovy]
 
 == Raster Commands
 
+=== Crop
+
+Crop a Raster.
+
+include::output/geoc_raster_crop_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_crop_command.txt[]
+----
+
+[.thumb]
+image::geoc_raster_crop_command.png[]
+
 === Envelope
 
 Get the Envelope of a Raster as a Vector Layer.

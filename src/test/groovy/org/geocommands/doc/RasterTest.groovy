@@ -5,10 +5,20 @@ import geoscript.layer.Layer
 import geoscript.layer.Raster
 import geoscript.layer.Shapefile
 import geoscript.style.Stroke
-import geoscript.style.io.SimpleStyleReader
 import org.junit.jupiter.api.Test
 
 class RasterTest extends DocTest {
+
+    @Test
+    void crop() {
+        String command = "geoc raster crop -i src/test/resources/earth.tif -b -160.927734,6.751896,-34.716797,57.279043 -o target/earth_cropped.tif"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_crop_command", command)
+        writeTextFile("geoc_raster_crop_command_output", result)
+
+        Raster raster = new GeoTIFF(new File("target/earth_cropped.tif")).read()
+        drawOnBasemap("geoc_raster_crop_command", [raster])
+    }
 
     @Test
     void envelope() {

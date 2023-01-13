@@ -4,6 +4,7 @@ import geoscript.layer.GeoTIFF
 import geoscript.layer.Layer
 import geoscript.layer.Raster
 import geoscript.layer.Shapefile
+import geoscript.style.ColorMap
 import geoscript.style.Stroke
 import org.junit.jupiter.api.Test
 
@@ -18,6 +19,26 @@ class RasterTest extends DocTest {
 
         Raster raster = new GeoTIFF(new File("target/earth_cropped.tif")).read()
         drawOnBasemap("geoc_raster_crop_command", [raster])
+    }
+
+    @Test
+    void contour() {
+        String command = "geoc raster contour -i src/test/resources/pc.tif -b 0 -v 300 -s -m -o target/contours.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_contour_command", command)
+        writeTextFile("geoc_raster_contour_command_output", result)
+
+        Raster raster = new GeoTIFF(new File("src/test/resources/pc.tif")).read()
+        raster.style = new ColorMap([
+                [color: "#9fd182", quantity:25],
+                [color: "#3e7f3c", quantity:470],
+                [color: "#133912", quantity:920],
+                [color: "#08306b", quantity:1370],
+                [color: "#fffff5", quantity:1820],
+        ])
+        Layer contours = new Shapefile("target/contours.shp")
+        contours.style = new Stroke("black", 0.5)
+        draw("geoc_raster_contour_command", [raster, contours], raster.bounds)
     }
 
     @Test

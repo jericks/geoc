@@ -3,6 +3,20 @@ ifndef::sourcedir[:sourcedir: ../../main/groovy]
 
 == Raster Commands
 
+=== Contour
+
+Create contours from a Raster.
+
+include::output/geoc_raster_contour_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_contour_command.txt[]
+----
+
+[.thumb]
+image::geoc_raster_contour_command.png[]
+
 === Crop
 
 Crop a Raster.

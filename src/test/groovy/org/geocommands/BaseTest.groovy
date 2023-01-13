@@ -190,4 +190,35 @@ class BaseTest {
         map.render(file)
     }
 
+    protected void draw(String name, List<Renderable> layers) {
+        Map map = new Map(
+                width: 500,
+                height: 300,
+                layers: layers
+        )
+        map.setAdvancedProjectionHandling(false)
+        map.setContinuousMapWrapping(false)
+        File file = new File("src/main/docs/images/${name}.png")
+        if(!file.parentFile.exists()) {
+            file.parentFile.mkdir()
+        }
+        map.render(file)
+    }
+
+    protected void draw(String name, List<Renderable> layers, Bounds bounds) {
+        Map map = new Map(
+                width: 500,
+                height: 300,
+                layers: layers,
+                bounds: bounds
+        )
+        map.setAdvancedProjectionHandling(false)
+        map.setContinuousMapWrapping(false)
+        File file = new File("src/main/docs/images/${name}.png")
+        if(!file.parentFile.exists()) {
+            file.parentFile.mkdir()
+        }
+        map.render(file)
+    }
+
 }

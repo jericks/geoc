@@ -79,6 +79,25 @@ class RasterTest extends DocTest {
     }
 
     @Test
+    void reclassify() {
+        String command = "geoc raster reclassify -i src/test/resources/pc.tif -o target/pc_reclass.tif -r 0-0=1 -r 0-50=2 -r 50-200=3 -r 200-1000=5 -r 1000-1500=4 -r 1500-4000=6"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_reclassify_command", command)
+        writeTextFile("geoc_raster_reclassify_command_output", result)
+
+        Raster raster = new GeoTIFF(new File("target/pc_reclass.tif")).read()
+        raster.style = new ColorMap([
+                [quantity: 1, color: "#FFFACD"],
+                [quantity: 2, color: "#F0E68C"],
+                [quantity: 3, color: "#DAA520"],
+                [quantity: 4, color: "#FF4500"],
+                [quantity: 5, color: "#800000"],
+                [quantity: 6, color: "#F5FFFA"]
+        ])
+        draw("geoc_raster_reclassify_command", [raster])
+    }
+
+    @Test
     void wordFile() {
         String command = "geoc raster worldfile -b 10,11,20,21 -s 800,751"
         String result = runApp(command, "")

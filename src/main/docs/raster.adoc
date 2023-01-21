@@ -90,6 +90,20 @@ include::output/geoc_raster_getsize_command.txt[]
 include::output/geoc_raster_getsize_command_output.txt[]
 ----
 
+=== Reclassify
+
+Reclassify a Raster.
+
+include::output/geoc_raster_reclassify_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_reclassify_command.txt[]
+----
+
+[.thumb]
+image::geoc_raster_reclassify_command.png[]
+
 === World File
 
 Create a Raster world file

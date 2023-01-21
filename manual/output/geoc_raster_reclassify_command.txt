@@ -1,0 +1,1 @@
+geoc raster reclassify -i src/test/resources/pc.tif -o target/pc_reclass.tif -r 0-0=1 -r 0-50=2 -r 50-200=3 -r 200-1000=5 -r 1000-1500=4 -r 1500-4000=6

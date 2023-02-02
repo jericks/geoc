@@ -137,7 +137,7 @@ include::output/geoc_geometry_offset_command_output.txt[]
 [.thumb]
 image::geoc_geometry_offset_command.png[]
 
-=== orthodromicDistance
+=== Orthodromic Distance
 
 Calculate the orthodromic distance between two points..
 

@@ -42,7 +42,7 @@ class DataStoreParametersCommand extends Command<DataStoreParametersOptions> {
         writer.write(builder.toString())
     }
 
-    private static class DataStoreParametersOptions extends Options {
+    static class DataStoreParametersOptions extends Options {
 
         @Option(name = "-n", aliases = "--name", usage = "The DataStore name", required = true)
         String name

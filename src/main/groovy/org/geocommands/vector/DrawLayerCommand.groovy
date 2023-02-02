@@ -2,8 +2,6 @@ package org.geocommands.vector
 
 import geoscript.geom.Bounds
 import geoscript.layer.Layer
-import geoscript.layer.OSM
-import geoscript.layer.Shapefile
 import geoscript.style.io.CSSReader
 import geoscript.style.io.SLDReader
 import org.kohsuke.args4j.Option
@@ -53,7 +51,7 @@ class DrawLayerCommand extends LayerCommand<DrawLayerOptions> {
         map.render(options.file ? options.file : new File("${['pdf', 'svg'].contains(options.type) ? "document" : "image"}.${options.type}"))
     }
 
-    private static class DrawLayerOptions extends LayerOptions {
+    static class DrawLayerOptions extends LayerOptions {
 
         @Option(name = "-f", aliases = "--file", usage = "The output file", required = false)
         File file

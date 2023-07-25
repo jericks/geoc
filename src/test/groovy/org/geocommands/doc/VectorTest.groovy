@@ -74,6 +74,17 @@ class VectorTest extends DocTest {
     }
 
     @Test
+    void addidfield() {
+        String command = "geoc vector addidfield -i src/test/resources/data.gpkg -l places -o target/places_id.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_addidfield_command", command)
+
+        Layer layer = new Shapefile("target/places_id.shp")
+        writeTextFile("geoc_vector_addidfield_command_schema", createSchemaTable(layer.schema, ["the_geom", "NAME", "ID"]))
+        writeTextFile("geoc_vector_addidfield_command_values", createFeatureTable(layer, ["NAME", "ID"], 5))
+    }
+
+    @Test
     void append() {
         runApp(["vector", "randompoints", "-o", "target/points1.shp", "-g", "-180,-90,180,90", "-n", "5"], "")
         runApp(["vector", "randompoints", "-o", "target/points2.shp", "-g", "-180,-90,180,90", "-n", "5"], "")

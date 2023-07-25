@@ -72,6 +72,25 @@ _Values_
 
 include::output/geoc_vector_addlengthfield_command_values.txt[]
 
+=== Add ID Field
+
+Add an ID Field.
+
+include::output/geoc_vector_addidfield_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_addidfield_command.txt[]
+----
+
+_Schema_
+
+include::output/geoc_vector_addidfield_command_schema.txt[]
+
+_Values_
+
+include::output/geoc_vector_addidfield_command_values.txt[]
+
 === Add XY Fields
 
 Add XY Fields.

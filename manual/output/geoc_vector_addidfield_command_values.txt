@@ -1,0 +1,9 @@
+|===
+| NAME|ID 
+
+| Vatican City|1
+| San Marino|2
+| Vaduz|3
+| Lobamba|4
+| Luxembourg|5
+|===

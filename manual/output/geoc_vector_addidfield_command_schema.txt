@@ -1,0 +1,7 @@
+|===
+| Name | Type 
+
+| the_geom | Point
+| NAME | String
+| ID | Integer
+|===

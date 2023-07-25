@@ -1,0 +1,1 @@
+geoc vector addidfield -i src/test/resources/data.gpkg -l places -o target/places_id.shp

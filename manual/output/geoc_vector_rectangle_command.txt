@@ -1,0 +1,1 @@
+geoc vector rectangle -i src/test/resources/data.gpkg -l countries -o target/rectangle.shp

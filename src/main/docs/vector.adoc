@@ -503,6 +503,20 @@ include::output/geoc_vector_randompoints_command.txt[]
 [.thumb]
 image::geoc_vector_randompoints_command.png[]
 
+=== Rectangle
+
+Create a rectangle shape around each feature of the input Layer.
+
+include::output/geoc_vector_rectangle_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_rectangle_command.txt[]
+----
+
+[.thumb]
+image::geoc_vector_rectangle_command.png[]
+
 === To
 
 Write a Layer to a String format (CSV, GeoJSON, KML, GML, GEORSS, GPX).

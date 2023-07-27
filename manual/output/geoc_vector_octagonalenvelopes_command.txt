@@ -1,0 +1,1 @@
+geoc vector octagonalenvelopes -i src/test/resources/data.gpkg -l countries -o target/octagonalenvelopes.shp

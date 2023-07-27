@@ -1,0 +1,1 @@
+geoc vector octagonalenvelope -i src/test/resources/data.gpkg -l places -o target/octagonalenvelope.shp

@@ -475,6 +475,34 @@ include::output/geoc_vector_minrects_command.txt[]
 [.thumb]
 image::geoc_vector_minrects_command.png[]
 
+=== Octangonal Envelope
+
+Calculate the octagonal envelope of the input Layer and save it to the output Layer.
+
+include::output/geoc_vector_octagonalenvelope_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_octagonalenvelope_command.txt[]
+----
+
+[.thumb]
+image::geoc_vector_octagonalenvelope_command.png[]
+
+=== Octangonal Envelopes
+
+Calculate the octagonal envelope for each Feature of the input Layer and save it to the output Layer.
+
+include::output/geoc_vector_octagonalenvelopes_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_octagonalenvelopes_command.txt[]
+----
+
+[.thumb]
+image::geoc_vector_octagonalenvelopes_command.png[]
+
 === Project
 
 Project the input Layer to another Projection and save it as the output Layer.

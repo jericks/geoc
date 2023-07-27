@@ -247,6 +247,38 @@ class VectorTest extends DocTest {
     }
 
     @Test
+    void octagonalenvelope() {
+        String command = "geoc vector octagonalenvelope -i src/test/resources/data.gpkg -l places -o target/octagonalenvelope.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_octagonalenvelope_command", command)
+        writeTextFile("geoc_vector_octagonalenvelope_command_output", result)
+
+        Workspace workspace = new GeoPackage("src/test/resources/data.gpkg")
+        Layer placesLayer = workspace.get("places")
+        placesLayer.style = new SimpleStyleReader().read("shape-type=circle shape-size=8 shape=#555555")
+
+        Layer layer = new Shapefile("target/octagonalenvelope.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_vector_octagonalenvelope_command", [layer, placesLayer])
+    }
+
+    @Test
+    void octagonalenvelopes() {
+        String command = "geoc vector octagonalenvelopes -i src/test/resources/data.gpkg -l countries -o target/octagonalenvelopes.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_octagonalenvelopes_command", command)
+        writeTextFile("geoc_vector_octagonalenvelopes_command_output", result)
+
+        Workspace workspace = new GeoPackage("src/test/resources/data.gpkg")
+        Layer placesLayer = workspace.get("places")
+        placesLayer.style = new SimpleStyleReader().read("shape-type=circle shape-size=8 shape=#555555")
+
+        Layer layer = new Shapefile("target/octagonalenvelopes.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_vector_octagonalenvelopes_command", [layer, placesLayer])
+    }
+
+    @Test
     void fromGeoJson() {
         runApp("geoc vector randompoints -n 5 -g -180,-90,180,90 -o target/randompoints.shp","")
         String str = runApp("geoc vector to -i target/randompoints.shp -f geojson","")

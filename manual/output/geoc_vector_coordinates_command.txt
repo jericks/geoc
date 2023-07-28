@@ -1,0 +1,1 @@
+geoc vector coordinates -i src/test/resources/data.gpkg -l states -o target/coordinates.shp

@@ -180,6 +180,20 @@ include::output/geoc_vector_convexhulls_command.txt[]
 [.thumb]
 image::geoc_vector_convexhulls_command.png[]
 
+=== Coordinates
+
+Extract coordinates from the input Layer and save them to the output Layer.
+
+include::output/geoc_vector_coordinates_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_coordinates_command.txt[]
+----
+
+[.thumb]
+image::geoc_vector_coordinates_command.png[]
+
 === Count
 
 Count the Features in a Layer.

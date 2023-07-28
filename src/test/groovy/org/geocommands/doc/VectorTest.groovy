@@ -160,6 +160,18 @@ class VectorTest extends DocTest {
     }
 
     @Test
+    void coordinates() {
+        String command = "geoc vector coordinates -i src/test/resources/data.gpkg -l states -o target/coordinates.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_coordinates_command", command)
+        writeTextFile("geoc_vector_coordinates_command_output", result)
+
+        Layer layer = new Shapefile("target/coordinates.shp")
+        layer.style = new SimpleStyleReader().read("shape-type=circle shape-size=8 shape=#555555")
+        drawOnBasemap("geoc_vector_coordinates_command", [layer], bounds: layer.bounds)
+    }
+
+    @Test
     void count() {
         String command = "geoc vector count -i src/test/resources/data.gpkg -l places"
         String result = runApp(command, "")

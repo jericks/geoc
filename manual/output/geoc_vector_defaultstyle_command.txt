@@ -1,0 +1,1 @@
+geoc vector defaultstyle -i src/test/resources/data.gpkg -l places -c cornflowerblue

@@ -222,6 +222,26 @@ include::output/geoc_vector_create_command.txt[]
 
 include::output/geoc_vector_create_command_schema.txt[]
 
+=== Default Style
+
+Get the default style for a Layer.
+
+include::output/geoc_vector_defaultstyle_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_defaultstyle_command.txt[]
+----
+
+[source,xml]
+----
+include::output/geoc_vector_defaultstyle_command_output.txt[]
+----
+
+[.thumb]
+image::geoc_vector_defaultstyle_command.png[]
+
+
 === Delaunay
 
 Calculate a delaunay diagram of all the features in a Layer.

@@ -7,6 +7,7 @@ import geoscript.layer.io.CsvReader
 import geoscript.layer.io.GeoJSONReader
 import geoscript.style.Fill
 import geoscript.style.Shape
+import geoscript.style.io.SLDReader
 import geoscript.style.io.SimpleStyleReader
 import geoscript.workspace.GeoPackage
 import geoscript.workspace.Workspace
@@ -188,6 +189,20 @@ class VectorTest extends DocTest {
         String result = runApp(commands, "")
         writeTextFile("geoc_vector_create_command", command)
         writeTextFile("geoc_vector_create_command_schema", createSchemaTable(new Shapefile("target/locations.shp").schema))
+    }
+
+    @Test
+    void defaultStyle() {
+        String command = "geoc vector defaultstyle -i src/test/resources/data.gpkg -l places -c cornflowerblue"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_defaultstyle_command", command)
+        writeTextFile("geoc_vector_defaultstyle_command_output", result)
+
+        Workspace workspace = new GeoPackage("src/test/resources/data.gpkg")
+        Layer placesLayer = workspace.get("places")
+        placesLayer.style = new SLDReader().read(result)
+
+        drawOnBasemap("geoc_vector_defaultstyle_command", [placesLayer])
     }
 
     @Test

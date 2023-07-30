@@ -1,0 +1,1 @@
+geoc vector geomw -i target/locations.shp

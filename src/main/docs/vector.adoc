@@ -256,6 +256,46 @@ include::output/geoc_vector_delaunay_command.txt[]
 [.thumb]
 image::geoc_vector_delaunay_command.png[]
 
+=== Geometry Reader
+
+Convert a text stream of WKT geometries to a Layer.
+
+include::output/geoc_vector_geomr_options.txt[]
+
+places.txt
+
+[source,text]
+----
+include::output/geoc_vector_geomr_command_input.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_vector_geomr_command.txt[]
+----
+
+[.thumb]
+image::geoc_vector_geomr_command.png[]
+
+=== Geometry Writer
+
+Convert the input layer to a text stream of WKT geometries that can be read by the https://github.com/jericks/geometrycommands[geom commands].
+
+include::output/geoc_vector_geomw_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_geomw_command.txt[]
+----
+
+[source,text]
+----
+include::output/geoc_vector_geomw_command_output.txt[]
+----
+
+[.thumb]
+image::geoc_vector_geomw_command.png[]
+
 === Ellipse
 
 Calculate the ellipse around each feature in a Layer.

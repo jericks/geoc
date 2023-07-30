@@ -234,6 +234,39 @@ class VectorTest extends DocTest {
     }
 
     @Test
+    void geometryRead() {
+        String text = """POINT (95.93096088300103 -21.052562876111054)
+POINT (108.68699242651462 31.906673138178704)
+POINT (67.21295358024213 37.71179581778536)
+POINT (134.80355671499728 -81.23567389016853)
+POINT (140.6972351264812 63.79594874701479)
+"""
+
+        String command = "geoc vector geomr -o target/places.shp"
+        String result = runApp(command, text)
+        writeTextFile("geoc_vector_geomr_command", "cat places.txt | ${command}")
+        writeTextFile("geoc_vector_geomr_command_output", result)
+        writeTextFile("geoc_vector_geomr_command_input", text)
+
+        Layer layer = new Shapefile("target/places.shp")
+        layer.style = new SimpleStyleReader().read("shape-type=circle shape-size=8 shape=#555555")
+        drawOnBasemap("geoc_vector_geomr_command", [layer])
+    }
+
+    @Test
+    void geometryWrite() {
+        runApp("geoc vector randompoints -n 5 -g -180,-90,180,90 -o target/locations.shp","")
+        String command = "geoc vector geomw -i target/locations.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_geomw_command", command)
+        writeTextFile("geoc_vector_geomw_command_output", result)
+
+        Layer layer = new Shapefile("target/locations.shp")
+        layer.style = new SimpleStyleReader().read("shape-type=circle shape-size=8 shape=#555555")
+        drawOnBasemap("geoc_vector_geomw_command", [layer])
+    }
+
+    @Test
     void rectangle() {
         String command = "geoc vector rectangle -i src/test/resources/data.gpkg -l countries -o target/rectangle.shp"
         String result = runApp(command, "")

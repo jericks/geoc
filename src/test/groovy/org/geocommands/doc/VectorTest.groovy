@@ -566,6 +566,14 @@ POINT (140.6972351264812 63.79594874701479)
     }
 
     @Test
+    void uniqueValues() {
+        String command = "geoc vector uniquevalues -i src/test/resources/data.gpkg -l countries -f ECONOMY"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_uniquevalues_command", command)
+        writeTextFile("geoc_vector_uniquevalues_command_output", result)
+    }
+
+    @Test
     void voronoi() {
         String command = "geoc vector voronoi -i src/test/resources/data.gpkg -l places -o target/voronoi.shp"
         String result = runApp(command, "")

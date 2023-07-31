@@ -665,6 +665,22 @@ include::output/geoc_vector_schema_command.txt[]
 include::output/geoc_vector_schema_command_output.txt[]
 ----
 
+=== Unique Values
+
+List the unique values in a Layer's Field.
+
+include::output/geoc_vector_uniquevalues_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_uniquevalues_command.txt[]
+----
+
+[source,text]
+----
+include::output/geoc_vector_uniquevalues_command_output.txt[]
+----
+
 === Voronoi
 
 Calculate a voronoi diagram of all the features in a Layer.

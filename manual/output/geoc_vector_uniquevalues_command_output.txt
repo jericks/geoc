@@ -1,0 +1,7 @@
+1. Developed region: G7
+2. Developed region: nonG7
+3. Emerging region: BRIC
+4. Emerging region: MIKT
+5. Emerging region: G20
+6. Developing region
+7. Least developed region

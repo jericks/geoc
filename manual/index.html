@@ -687,6 +687,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#to">To</a></li>
 <li><a href="#schema">Schema</a></li>
 <li><a href="#unique-values">Unique Values</a></li>
+<li><a href="#unique-values-style">Unique Values Style</a></li>
 <li><a href="#voronoi">Voronoi</a></li>
 </ul>
 </li>
@@ -897,7 +898,7 @@ geometry offset = Create a Geometry offset from the input Geometry
 <div class="listingblock bash">
 <div class="content">
 <pre class="CodeRay highlight"><code>&quot;id:Integer&quot;,&quot;the_geom:Polygon:EPSG:4326&quot;
-&quot;0&quot;,&quot;POLYGON ((20.45284576175473 -11.577825989842367, 20.260698565787035 -13.52872921000365, 19.691641086867598 -15.404660313493265, 18.767541884780183 -17.133528320038387, 17.523913573620206 -18.648893801707842, 16.008548091950754 -19.89252211286782, 14.279680085405628 -20.816621314955235, 12.403748981916014 -21.38567879387467, 10.45284576175473 -21.577825989842367, 8.501942541593449 -21.38567879387467, 6.626011438103833 -20.816621314955235, 4.89714343155871 -19.892522112867823, 3.3817779498892557 -18.648893801707842, 2.1381496387292778 -17.133528320038387, 1.2140504366418625 -15.404660313493267, 0.644992957722426 -13.528729210003654, 0.4528457617547303 -11.577825989842369, 0.644992957722426 -9.626922769681084, 1.2140504366418625 -7.750991666191471, 2.138149638729276 -6.022123659646347, 3.381777949889253 -4.506758177976892, 4.897143431558709 -3.2631298668169144, 6.626011438103827 -2.3390306647295027, 8.501942541593444 -1.7699731858100645, 10.452845761754729 -1.577825989842367, 12.403748981916014 -1.7699731858100627, 14.27968008540563 -2.339030664729501, 16.00854809195075 -3.2631298668169126, 17.523913573620206 -4.50675817797689, 18.767541884780183 -6.022123659646345, 19.691641086867595 -7.750991666191463, 20.26069856578703 -9.62692276968108, 20.45284576175473 -11.577825989842367))&quot;
+&quot;0&quot;,&quot;POLYGON ((-40.599234219041165 88.78238953816066, -40.79138141500886 86.83148631799938, -41.3604388939283 84.95555521450976, -42.28453809601571 83.22668720796463, -43.52816640717569 81.71132172629518, -45.043531888845145 80.4676934151352, -46.772399895390265 79.54359421304778, -48.648330998879885 78.97453673412835, -50.599234219041165 78.78238953816066, -52.550137439202445 78.97453673412835, -54.426068542692065 79.54359421304778, -56.154936549237185 80.4676934151352, -57.67030203090664 81.71132172629518, -58.91393034206662 83.22668720796463, -59.83802954415403 84.95555521450976, -60.40708702307347 86.83148631799938, -60.599234219041165 88.78238953816066, -60.40708702307347 90.73329275832194, -59.83802954415403 92.60922386181156, -58.91393034206662 94.33809186835668, -57.67030203090664 95.85345735002613, -56.154936549237185 97.09708566118611, -54.426068542692065 98.02118486327352, -52.55013743920245 98.59024234219297, -50.599234219041165 98.78238953816066, -48.648330998879885 98.59024234219297, -46.772399895390265 98.02118486327352, -45.043531888845145 97.09708566118611, -43.52816640717569 95.85345735002613, -42.28453809601571 94.33809186835668, -41.360438893928304 92.60922386181156, -40.791381415008864 90.73329275832195, -40.599234219041165 88.78238953816066))&quot;
 ...</code></pre>
 </div>
 </div>
@@ -5090,7 +5091,7 @@ Aa2=#94474b</code></pre>
 <pre class="CodeRay highlight"><code data-lang="bash">Zoom Level 0
    0). Tile(x:0, y:0, z:0)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,2.003639514788131E7,2.003747120513706E7,EPSG:3857)
-   Generating 1 tile took 0.108745009 seconds
+   Generating 1 tile took 0.101911153 seconds
 Zoom Level 1
    0). Tile(x:0, y:0, z:1)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,0.0,-3.725290298461914E-9,EPSG:3857)
@@ -5100,7 +5101,7 @@ Zoom Level 1
           Bounds(-2.003639514788131E7,-3.725290298461914E-9,0.0,2.003747120513706E7,EPSG:3857)
    3). Tile(x:1, y:1, z:1)
           Bounds(0.0,-3.725290298461914E-9,2.003639514788131E7,2.003747120513706E7,EPSG:3857)
-   Generating 4 tiles took 0.325512821 seconds
+   Generating 4 tiles took 0.393537757 seconds
 Zoom Level 2
    0). Tile(x:0, y:0, z:2)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,-1.0018197573940655E7,-1.0018735602568535E7,EPSG:3857)
@@ -5134,7 +5135,7 @@ Zoom Level 2
           Bounds(0.0,1.001873560256853E7,1.0018197573940655E7,2.003747120513706E7,EPSG:3857)
    15). Tile(x:3, y:3, z:2)
           Bounds(1.0018197573940653E7,1.001873560256853E7,2.0036395147881307E7,2.003747120513706E7,EPSG:3857)
-   Generating 16 tiles took 1.154174947 seconds</code></pre>
+   Generating 16 tiles took 1.513759511 seconds</code></pre>
 </div>
 </div>
 <div class="imageblock thumb">
@@ -5157,7 +5158,7 @@ Zoom Level 2
           Bounds(-179.99,-89.99,0.0,89.99,EPSG:4326)
    1). Tile(x:1, y:0, z:0)
           Bounds(0.0,-89.99,179.99,89.99,EPSG:4326)
-   Generating 2 tiles took 0.095041639 seconds
+   Generating 2 tiles took 0.118441756 seconds
 Zoom Level 1
    0). Tile(x:0, y:0, z:1)
           Bounds(-179.99,0.0,-89.995,89.99,EPSG:4326)
@@ -5175,7 +5176,7 @@ Zoom Level 1
           Bounds(0.0,-89.99,89.995,0.0,EPSG:4326)
    7). Tile(x:3, y:1, z:1)
           Bounds(89.995,-89.99,179.99,0.0,EPSG:4326)
-   Generating 8 tiles took 0.214293716 seconds
+   Generating 8 tiles took 0.349483597 seconds
 Zoom Level 2
    0). Tile(x:0, y:0, z:2)
           Bounds(-179.99,44.995,-134.9925,89.99,EPSG:4326)
@@ -5241,7 +5242,7 @@ Zoom Level 2
           Bounds(89.995,-89.99,134.9925,-44.995,EPSG:4326)
    31). Tile(x:7, y:3, z:2)
           Bounds(134.9925,-89.99,179.99,-44.995,EPSG:4326)
-   Generating 32 tiles took 0.757807998 seconds</code></pre>
+   Generating 32 tiles took 0.986418436 seconds</code></pre>
 </div>
 </div>
 <div class="imageblock thumb">
@@ -5262,7 +5263,7 @@ Zoom Level 2
 <pre class="CodeRay highlight"><code data-lang="bash">Zoom Level 0
    0). Tile(x:0, y:0, z:0)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,2.003639514788131E7,2.003747120513706E7,EPSG:3857)
-   Generating 1 tile took 0.081541481 seconds
+   Generating 1 tile took 0.096442399 seconds
 Zoom Level 1
    0). Tile(x:0, y:0, z:1)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,0.0,-3.725290298461914E-9,EPSG:3857)
@@ -5272,7 +5273,7 @@ Zoom Level 1
           Bounds(-2.003639514788131E7,-3.725290298461914E-9,0.0,2.003747120513706E7,EPSG:3857)
    3). Tile(x:1, y:1, z:1)
           Bounds(0.0,-3.725290298461914E-9,2.003639514788131E7,2.003747120513706E7,EPSG:3857)
-   Generating 4 tiles took 0.296217076 seconds
+   Generating 4 tiles took 0.36113665 seconds
 Zoom Level 2
    0). Tile(x:0, y:0, z:2)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,-1.0018197573940655E7,-1.0018735602568535E7,EPSG:3857)
@@ -5306,7 +5307,7 @@ Zoom Level 2
           Bounds(0.0,1.001873560256853E7,1.0018197573940655E7,2.003747120513706E7,EPSG:3857)
    15). Tile(x:3, y:3, z:2)
           Bounds(1.0018197573940653E7,1.001873560256853E7,2.0036395147881307E7,2.003747120513706E7,EPSG:3857)
-   Generating 16 tiles took 1.029766907 seconds</code></pre>
+   Generating 16 tiles took 1.210757721 seconds</code></pre>
 </div>
 </div>
 <div class="imageblock thumb">
@@ -5327,7 +5328,7 @@ Zoom Level 2
 <pre class="CodeRay highlight"><code data-lang="bash">Zoom Level 0
    0). Tile(x:0, y:0, z:0)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,2.003639514788131E7,2.003747120513706E7,EPSG:3857)
-   Generating 1 tile took 0.87271165 seconds
+   Generating 1 tile took 1.199685359 seconds
 Zoom Level 1
    0). Tile(x:0, y:0, z:1)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,0.0,-3.725290298461914E-9,EPSG:3857)
@@ -5337,7 +5338,7 @@ Zoom Level 1
           Bounds(-2.003639514788131E7,-3.725290298461914E-9,0.0,2.003747120513706E7,EPSG:3857)
    3). Tile(x:1, y:1, z:1)
           Bounds(0.0,-3.725290298461914E-9,2.003639514788131E7,2.003747120513706E7,EPSG:3857)
-   Generating 4 tiles took 1.051042161 seconds
+   Generating 4 tiles took 1.333836738 seconds
 Zoom Level 2
    0). Tile(x:0, y:0, z:2)
           Bounds(-2.003639514788131E7,-2.0037471205137067E7,-1.0018197573940655E7,-1.0018735602568535E7,EPSG:3857)
@@ -5371,7 +5372,7 @@ Zoom Level 2
           Bounds(0.0,1.001873560256853E7,1.0018197573940655E7,2.003747120513706E7,EPSG:3857)
    15). Tile(x:3, y:3, z:2)
           Bounds(1.0018197573940653E7,1.001873560256853E7,2.0036395147881307E7,2.003747120513706E7,EPSG:3857)
-   Generating 16 tiles took 0.914320504 seconds</code></pre>
+   Generating 16 tiles took 1.209103777 seconds</code></pre>
 </div>
 </div>
 </div>
@@ -7809,11 +7810,11 @@ POINT (140.6972351264812 63.79594874701479)</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="text">POINT (-142.21020841505805 18.015412949745865)
-POINT (-156.84039085850995 31.98585905939629)
-POINT (-61.88362597262915 -11.096625227932591)
-POINT (149.80390212518165 71.3448633149448)
-POINT (118.88747077485687 -12.01669822178495)</code></pre>
+<pre class="CodeRay highlight"><code data-lang="text">POINT (-122.60444487988946 -36.76567641260566)
+POINT (131.60402595472505 -55.60469333236706)
+POINT (-121.77938457943998 -77.45600758865834)
+POINT (-30.15662372886277 -26.293616303017046)
+POINT (173.61551816863715 13.721164827075171)</code></pre>
 </div>
 </div>
 <div class="imageblock thumb">
@@ -8107,7 +8108,7 @@ POINT (118.88747077485687 -12.01669822178495)</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">FeatureCollection</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">features</span><span class="delimiter">&quot;</span></span>:[{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">98.2142</span>,<span class="float">-41.9928</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">0</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.1</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-37.1735</span>,<span class="float">31.7612</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">1</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.2</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">108.8961</span>,<span class="float">-50.9683</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">2</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.3</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">114.1533</span>,<span class="float">-72.9904</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">3</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.4</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-101.8218</span>,<span class="float">-21.6326</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">4</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.5</span><span class="delimiter">&quot;</span></span>}]}</code></pre>
+<pre class="CodeRay highlight"><code data-lang="json">{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">FeatureCollection</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">features</span><span class="delimiter">&quot;</span></span>:[{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">153.4796</span>,<span class="float">-69.782</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">0</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.1</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">86.3839</span>,<span class="float">-51.8786</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">1</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.2</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">34.3494</span>,<span class="float">8.9678</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">2</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.3</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">161.9637</span>,<span class="float">-24.7533</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">3</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.4</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">77.0422</span>,<span class="float">55.9526</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">4</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.5</span><span class="delimiter">&quot;</span></span>}]}</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -8129,11 +8130,11 @@ POINT (118.88747077485687 -12.01669822178495)</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre>"the_geom:Point:EPSG:4326","id:Integer"
-"POINT (177.23020843848565 40.10038136004579)","0"
-"POINT (-164.9286781307433 68.28555776931577)","1"
-"POINT (-28.354251142574753 84.80887200658117)","2"
-"POINT (-163.02589341909044 84.01638665847156)","3"
-"POINT (21.160045031787263 76.99358476743743)","4"</pre>
+"POINT (29.226147987898344 8.32970550320212)","0"
+"POINT (-53.22585163062007 -37.862122696479936)","1"
+"POINT (-177.07266083568106 -4.572155261496377)","2"
+"POINT (136.81997422501644 71.72352557884014)","3"
+"POINT (-150.87633487348168 -28.073324002684622)","4"</pre>
 </div>
 </div>
 <div class="listingblock">
@@ -9364,7 +9365,7 @@ states</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">FeatureCollection</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">features</span><span class="delimiter">&quot;</span></span>:[{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">138.7235</span>,<span class="float">-69.2047</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">0</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.1</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">158.2577</span>,<span class="float">17.2175</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">1</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.2</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-74.3886</span>,<span class="float">-23.6486</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">2</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.3</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-106.4562</span>,<span class="float">21.3897</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">3</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.4</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-28.6329</span>,<span class="float">77.6741</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">4</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.5</span><span class="delimiter">&quot;</span></span>}]}</code></pre>
+<pre class="CodeRay highlight"><code data-lang="json">{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">FeatureCollection</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">features</span><span class="delimiter">&quot;</span></span>:[{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-71.0167</span>,<span class="float">-84.4398</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">0</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.1</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-12.1186</span>,<span class="float">10.9283</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">1</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.2</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">71.3356</span>,<span class="float">86.2814</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">2</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.3</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">126.5677</span>,<span class="float">79.5469</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">3</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.4</span><span class="delimiter">&quot;</span></span>},{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Feature</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">geometry</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Point</span><span class="delimiter">&quot;</span></span>,<span class="key"><span class="delimiter">&quot;</span><span class="content">coordinates</span><span class="delimiter">&quot;</span></span>:[<span class="float">-106.0785</span>,<span class="float">89.8907</span>]},<span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span>:{<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="integer">4</span>},<span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">randompoints.5</span><span class="delimiter">&quot;</span></span>}]}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -9378,11 +9379,11 @@ states</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json"><span class="string"><span class="delimiter">&quot;</span><span class="content">the_geom:Point:EPSG:4326</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">id:Integer</span><span class="delimiter">&quot;</span></span>
-<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (-134.9865090059322 -52.796849743604476)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>
-<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (-174.52324313623888 -6.57060279090976)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">1</span><span class="delimiter">&quot;</span></span>
-<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (-167.0559599422641 -76.98890424372082)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">2</span><span class="delimiter">&quot;</span></span>
-<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (120.13332080028522 -41.82443843585594)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">3</span><span class="delimiter">&quot;</span></span>
-<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (109.25668404711314 58.08377577112472)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">4</span><span class="delimiter">&quot;</span></span></code></pre>
+<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (-39.1086065179133 -59.091959346819934)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>
+<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (7.306488689832662 -55.89583691901456)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">1</span><span class="delimiter">&quot;</span></span>
+<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (81.0408111493108 62.3635292510412)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">2</span><span class="delimiter">&quot;</span></span>
+<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (-34.0895315493683 -37.853925489594225)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">3</span><span class="delimiter">&quot;</span></span>
+<span class="string"><span class="delimiter">&quot;</span><span class="content">POINT (-151.61331650316748 43.23364597276304)</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">4</span><span class="delimiter">&quot;</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -9671,6 +9672,225 @@ states</code></pre>
 </div>
 </div>
 <div class="sect2">
+<h3 id="unique-values-style"><a class="anchor" href="#unique-values-style"></a>Unique Values Style</h3>
+<div class="paragraph">
+<p>Create an SLD document where each unique value in the Layer is a rule.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Short Name</th>
+<th class="tableblock halign-left valign-top">Long Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The field name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-c</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--colors</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The color brewer palette name or a list of colors (space delimited)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-workspace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input workspace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-l</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-layer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input layer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Print the help message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--web-help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open help in a browser</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">geoc vector uniquevaluesstyle -i src/test/resources/data.gpkg -l countries -f ECONOMY -c GREENS</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><span class="tag">&lt;sld:StyledLayerDescriptor</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.opengis.net/sld</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">xmlns:sld</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.opengis.net/sld</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">xmlns:gml</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.opengis.net/gml</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">xmlns:ogc</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.opengis.net/ogc</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">1.0.0</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;sld:UserLayer&gt;</span>
+    <span class="tag">&lt;sld:LayerFeatureConstraints&gt;</span>
+      <span class="tag">&lt;sld:FeatureTypeConstraint</span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/sld:LayerFeatureConstraints&gt;</span>
+    <span class="tag">&lt;sld:UserStyle&gt;</span>
+      <span class="tag">&lt;sld:Name&gt;</span>Default Styler<span class="tag">&lt;/sld:Name&gt;</span>
+      <span class="tag">&lt;sld:FeatureTypeStyle&gt;</span>
+        <span class="tag">&lt;sld:Name&gt;</span>name<span class="tag">&lt;/sld:Name&gt;</span>
+        <span class="tag">&lt;sld:Rule&gt;</span>
+          <span class="tag">&lt;sld:Name&gt;</span>1. Developed region: G7<span class="tag">&lt;/sld:Name&gt;</span>
+          <span class="tag">&lt;ogc:Filter&gt;</span>
+            <span class="tag">&lt;ogc:PropertyIsEqualTo&gt;</span>
+              <span class="tag">&lt;ogc:PropertyName&gt;</span>ECONOMY<span class="tag">&lt;/ogc:PropertyName&gt;</span>
+              <span class="tag">&lt;ogc:Literal&gt;</span>1. Developed region: G7<span class="tag">&lt;/ogc:Literal&gt;</span>
+            <span class="tag">&lt;/ogc:PropertyIsEqualTo&gt;</span>
+          <span class="tag">&lt;/ogc:Filter&gt;</span>
+          <span class="tag">&lt;sld:PolygonSymbolizer&gt;</span>
+            <span class="tag">&lt;sld:Fill&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">fill</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#f7fcf5<span class="tag">&lt;/sld:CssParameter&gt;</span>
+            <span class="tag">&lt;/sld:Fill&gt;</span>
+          <span class="tag">&lt;/sld:PolygonSymbolizer&gt;</span>
+          <span class="tag">&lt;sld:LineSymbolizer&gt;</span>
+            <span class="tag">&lt;sld:Stroke&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stroke</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#acb0ab<span class="tag">&lt;/sld:CssParameter&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stroke-width</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>0.5<span class="tag">&lt;/sld:CssParameter&gt;</span>
+            <span class="tag">&lt;/sld:Stroke&gt;</span>
+          <span class="tag">&lt;/sld:LineSymbolizer&gt;</span>
+        <span class="tag">&lt;/sld:Rule&gt;</span>
+        <span class="tag">&lt;sld:Rule&gt;</span>
+          <span class="tag">&lt;sld:Name&gt;</span>2. Developed region: nonG7<span class="tag">&lt;/sld:Name&gt;</span>
+          <span class="tag">&lt;ogc:Filter&gt;</span>
+            <span class="tag">&lt;ogc:PropertyIsEqualTo&gt;</span>
+              <span class="tag">&lt;ogc:PropertyName&gt;</span>ECONOMY<span class="tag">&lt;/ogc:PropertyName&gt;</span>
+              <span class="tag">&lt;ogc:Literal&gt;</span>2. Developed region: nonG7<span class="tag">&lt;/ogc:Literal&gt;</span>
+            <span class="tag">&lt;/ogc:PropertyIsEqualTo&gt;</span>
+          <span class="tag">&lt;/ogc:Filter&gt;</span>
+          <span class="tag">&lt;sld:PolygonSymbolizer&gt;</span>
+            <span class="tag">&lt;sld:Fill&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">fill</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#e5f5e0<span class="tag">&lt;/sld:CssParameter&gt;</span>
+            <span class="tag">&lt;/sld:Fill&gt;</span>
+          <span class="tag">&lt;/sld:PolygonSymbolizer&gt;</span>
+          <span class="tag">&lt;sld:LineSymbolizer&gt;</span>
+            <span class="tag">&lt;sld:Stroke&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stroke</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#a0ab9c<span class="tag">&lt;/sld:CssParameter&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stroke-width</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>0.5<span class="tag">&lt;/sld:CssParameter&gt;</span>
+            <span class="tag">&lt;/sld:Stroke&gt;</span>
+          <span class="tag">&lt;/sld:LineSymbolizer&gt;</span>
+        <span class="tag">&lt;/sld:Rule&gt;</span>
+        <span class="tag">&lt;sld:Rule&gt;</span>
+          <span class="tag">&lt;sld:Name&gt;</span>3. Emerging region: BRIC<span class="tag">&lt;/sld:Name&gt;</span>
+          <span class="tag">&lt;ogc:Filter&gt;</span>
+            <span class="tag">&lt;ogc:PropertyIsEqualTo&gt;</span>
+              <span class="tag">&lt;ogc:PropertyName&gt;</span>ECONOMY<span class="tag">&lt;/ogc:PropertyName&gt;</span>
+              <span class="tag">&lt;ogc:Literal&gt;</span>3. Emerging region: BRIC<span class="tag">&lt;/ogc:Literal&gt;</span>
+            <span class="tag">&lt;/ogc:PropertyIsEqualTo&gt;</span>
+          <span class="tag">&lt;/ogc:Filter&gt;</span>
+          <span class="tag">&lt;sld:PolygonSymbolizer&gt;</span>
+            <span class="tag">&lt;sld:Fill&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">fill</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#c7e9c0<span class="tag">&lt;/sld:CssParameter&gt;</span>
+            <span class="tag">&lt;/sld:Fill&gt;</span>
+          <span class="tag">&lt;/sld:PolygonSymbolizer&gt;</span>
+          <span class="tag">&lt;sld:LineSymbolizer&gt;</span>
+            <span class="tag">&lt;sld:Stroke&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stroke</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#8ba386<span class="tag">&lt;/sld:CssParameter&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stroke-width</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>0.5<span class="tag">&lt;/sld:CssParameter&gt;</span>
+            <span class="tag">&lt;/sld:Stroke&gt;</span>
+          <span class="tag">&lt;/sld:LineSymbolizer&gt;</span>
+        <span class="tag">&lt;/sld:Rule&gt;</span>
+        <span class="tag">&lt;sld:Rule&gt;</span>
+          <span class="tag">&lt;sld:Name&gt;</span>4. Emerging region: MIKT<span class="tag">&lt;/sld:Name&gt;</span>
+          <span class="tag">&lt;ogc:Filter&gt;</span>
+            <span class="tag">&lt;ogc:PropertyIsEqualTo&gt;</span>
+              <span class="tag">&lt;ogc:PropertyName&gt;</span>ECONOMY<span class="tag">&lt;/ogc:PropertyName&gt;</span>
+              <span class="tag">&lt;ogc:Literal&gt;</span>4. Emerging region: MIKT<span class="tag">&lt;/ogc:Literal&gt;</span>
+            <span class="tag">&lt;/ogc:PropertyIsEqualTo&gt;</span>
+          <span class="tag">&lt;/ogc:Filter&gt;</span>
+          <span class="tag">&lt;sld:PolygonSymbolizer&gt;</span>
+            <span class="tag">&lt;sld:Fill&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">fill</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#a1d99b<span class="tag">&lt;/sld:CssParameter&gt;</span>
+            <span class="tag">&lt;/sld:Fill&gt;</span>
+          <span class="tag">&lt;/sld:PolygonSymbolizer&gt;</span>
+          <span class="tag">&lt;sld:LineSymbolizer&gt;</span>
+            <span class="tag">&lt;sld:Stroke&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stroke</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#70976c<span class="tag">&lt;/sld:CssParameter&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stroke-width</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>0.5<span class="tag">&lt;/sld:CssParameter&gt;</span>
+            <span class="tag">&lt;/sld:Stroke&gt;</span>
+          <span class="tag">&lt;/sld:LineSymbolizer&gt;</span>
+        <span class="tag">&lt;/sld:Rule&gt;</span>
+        <span class="tag">&lt;sld:Rule&gt;</span>
+          <span class="tag">&lt;sld:Name&gt;</span>5. Emerging region: G20<span class="tag">&lt;/sld:Name&gt;</span>
+          <span class="tag">&lt;ogc:Filter&gt;</span>
+            <span class="tag">&lt;ogc:PropertyIsEqualTo&gt;</span>
+              <span class="tag">&lt;ogc:PropertyName&gt;</span>ECONOMY<span class="tag">&lt;/ogc:PropertyName&gt;</span>
+              <span class="tag">&lt;ogc:Literal&gt;</span>5. Emerging region: G20<span class="tag">&lt;/ogc:Literal&gt;</span>
+            <span class="tag">&lt;/ogc:PropertyIsEqualTo&gt;</span>
+          <span class="tag">&lt;/ogc:Filter&gt;</span>
+          <span class="tag">&lt;sld:PolygonSymbolizer&gt;</span>
+            <span class="tag">&lt;sld:Fill&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">fill</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#74c476<span class="tag">&lt;/sld:CssParameter&gt;</span>
+            <span class="tag">&lt;/sld:Fill&gt;</span>
+          <span class="tag">&lt;/sld:PolygonSymbolizer&gt;</span>
+          <span class="tag">&lt;sld:LineSymbolizer&gt;</span>
+            <span class="tag">&lt;sld:Stroke&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stroke</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#518952<span class="tag">&lt;/sld:CssParameter&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stroke-width</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>0.5<span class="tag">&lt;/sld:CssParameter&gt;</span>
+            <span class="tag">&lt;/sld:Stroke&gt;</span>
+          <span class="tag">&lt;/sld:LineSymbolizer&gt;</span>
+        <span class="tag">&lt;/sld:Rule&gt;</span>
+        <span class="tag">&lt;sld:Rule&gt;</span>
+          <span class="tag">&lt;sld:Name&gt;</span>6. Developing region<span class="tag">&lt;/sld:Name&gt;</span>
+          <span class="tag">&lt;ogc:Filter&gt;</span>
+            <span class="tag">&lt;ogc:PropertyIsEqualTo&gt;</span>
+              <span class="tag">&lt;ogc:PropertyName&gt;</span>ECONOMY<span class="tag">&lt;/ogc:PropertyName&gt;</span>
+              <span class="tag">&lt;ogc:Literal&gt;</span>6. Developing region<span class="tag">&lt;/ogc:Literal&gt;</span>
+            <span class="tag">&lt;/ogc:PropertyIsEqualTo&gt;</span>
+          <span class="tag">&lt;/ogc:Filter&gt;</span>
+          <span class="tag">&lt;sld:PolygonSymbolizer&gt;</span>
+            <span class="tag">&lt;sld:Fill&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">fill</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#41ab5d<span class="tag">&lt;/sld:CssParameter&gt;</span>
+            <span class="tag">&lt;/sld:Fill&gt;</span>
+          <span class="tag">&lt;/sld:PolygonSymbolizer&gt;</span>
+          <span class="tag">&lt;sld:LineSymbolizer&gt;</span>
+            <span class="tag">&lt;sld:Stroke&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stroke</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#2d7741<span class="tag">&lt;/sld:CssParameter&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stroke-width</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>0.5<span class="tag">&lt;/sld:CssParameter&gt;</span>
+            <span class="tag">&lt;/sld:Stroke&gt;</span>
+          <span class="tag">&lt;/sld:LineSymbolizer&gt;</span>
+        <span class="tag">&lt;/sld:Rule&gt;</span>
+        <span class="tag">&lt;sld:Rule&gt;</span>
+          <span class="tag">&lt;sld:Name&gt;</span>7. Least developed region<span class="tag">&lt;/sld:Name&gt;</span>
+          <span class="tag">&lt;ogc:Filter&gt;</span>
+            <span class="tag">&lt;ogc:PropertyIsEqualTo&gt;</span>
+              <span class="tag">&lt;ogc:PropertyName&gt;</span>ECONOMY<span class="tag">&lt;/ogc:PropertyName&gt;</span>
+              <span class="tag">&lt;ogc:Literal&gt;</span>7. Least developed region<span class="tag">&lt;/ogc:Literal&gt;</span>
+            <span class="tag">&lt;/ogc:PropertyIsEqualTo&gt;</span>
+          <span class="tag">&lt;/ogc:Filter&gt;</span>
+          <span class="tag">&lt;sld:PolygonSymbolizer&gt;</span>
+            <span class="tag">&lt;sld:Fill&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">fill</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#238b45<span class="tag">&lt;/sld:CssParameter&gt;</span>
+            <span class="tag">&lt;/sld:Fill&gt;</span>
+          <span class="tag">&lt;/sld:PolygonSymbolizer&gt;</span>
+          <span class="tag">&lt;sld:LineSymbolizer&gt;</span>
+            <span class="tag">&lt;sld:Stroke&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stroke</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#186130<span class="tag">&lt;/sld:CssParameter&gt;</span>
+              <span class="tag">&lt;sld:CssParameter</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stroke-width</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>0.5<span class="tag">&lt;/sld:CssParameter&gt;</span>
+            <span class="tag">&lt;/sld:Stroke&gt;</span>
+          <span class="tag">&lt;/sld:LineSymbolizer&gt;</span>
+        <span class="tag">&lt;/sld:Rule&gt;</span>
+      <span class="tag">&lt;/sld:FeatureTypeStyle&gt;</span>
+    <span class="tag">&lt;/sld:UserStyle&gt;</span>
+  <span class="tag">&lt;/sld:UserLayer&gt;</span>
+<span class="tag">&lt;/sld:StyledLayerDescriptor&gt;</span></code></pre>
+</div>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<img src="./images/geoc_vector_uniquevaluesstyle_command.png" alt="geoc vector uniquevaluesstyle command">
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="voronoi"><a class="anchor" href="#voronoi"></a>Voronoi</h3>
 <div class="paragraph">
 <p>Calculate a voronoi diagram of all the features in a Layer.</p>
@@ -9738,7 +9958,7 @@ states</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 0.12.0-SNAPSHOT<br>
-Last updated 2023-07-31 17:34:05 UTC
+Last updated 2023-08-02 00:15:01 UTC
 </div>
 </div>
 </body>

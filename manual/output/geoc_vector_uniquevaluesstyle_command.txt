@@ -1,0 +1,1 @@
+geoc vector uniquevaluesstyle -i src/test/resources/data.gpkg -l countries -f ECONOMY -c GREENS

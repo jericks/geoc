@@ -574,6 +574,20 @@ POINT (140.6972351264812 63.79594874701479)
     }
 
     @Test
+    void uniqueValuesStyle() {
+        String command = "geoc vector uniquevaluesstyle -i src/test/resources/data.gpkg -l countries -f ECONOMY -c GREENS"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_uniquevaluesstyle_command", command)
+        writeTextFile("geoc_vector_uniquevaluesstyle_command_output", result)
+
+        Workspace workspace = new GeoPackage("src/test/resources/data.gpkg")
+        Layer layer = workspace.get("countries")
+        layer.style = new SLDReader().read(result)
+
+        drawOnBasemap("geoc_vector_uniquevaluesstyle_command", [layer])
+    }
+
+    @Test
     void voronoi() {
         String command = "geoc vector voronoi -i src/test/resources/data.gpkg -l places -o target/voronoi.shp"
         String result = runApp(command, "")

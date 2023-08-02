@@ -681,6 +681,25 @@ include::output/geoc_vector_uniquevalues_command.txt[]
 include::output/geoc_vector_uniquevalues_command_output.txt[]
 ----
 
+=== Unique Values Style
+
+Create an SLD document where each unique value in the Layer is a rule.
+
+include::output/geoc_vector_uniquevaluesstyle_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_uniquevaluesstyle_command.txt[]
+----
+
+[source,xml]
+----
+include::output/geoc_vector_uniquevaluesstyle_command_output.txt[]
+----
+
+[.thumb]
+image::geoc_vector_uniquevaluesstyle_command.png[]
+
 === Voronoi
 
 Calculate a voronoi diagram of all the features in a Layer.

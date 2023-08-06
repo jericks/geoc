@@ -1,0 +1,1 @@
+geoc style repository list -t sqlite -o file=target/layers.gpkg -l locations

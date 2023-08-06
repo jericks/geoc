@@ -1,0 +1,1 @@
+geoc style repository save -t sqlite -o file=target/layers.gpkg -l locations -s circles -f target/location_circles.sld

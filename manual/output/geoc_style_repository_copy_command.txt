@@ -1,0 +1,1 @@
+geoc style repository copy -t sqlite -p file=target/layers.gpkg -o directory -r file=target/layer_styles

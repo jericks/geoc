@@ -1,0 +1,1 @@
+geoc style repository delete -t sqlite -o file=target/layers.gpkg -l locations -s circles

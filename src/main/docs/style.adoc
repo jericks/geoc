@@ -148,3 +148,109 @@ _units.sld_
 ----
 include::output/geoc_style_uniquevaluesfromtext_command.sld[]
 ----
+
+== Style Repository Commands
+
+Style Repositories are useful for storing styles for layers in a directories or databases.
+
+Style Repository Types
+
+|===
+|Name |Type |Arguments
+
+|Flat Directory
+|-t directory
+|-p file=path/styles
+
+|Nested Directory
+|-t nested-directory
+|-p file=path/styles
+
+|SQLite Database (GeoPackage)
+|-t sqlite
+|-p file=path/data.gpkg
+
+|H2 Database
+|-t h2
+|-p file=path/data.db
+
+|PostGIS Database
+|-t postgres
+a|
+* -p server=localhost
+* -p database=naturalearth
+* -p port=5432
+* -p userName=uzer
+* -p password=secr3t
+|===
+
+
+=== Save a Style
+
+Save a Style to a Style Repository.
+
+include::output/geoc_style_repository_save_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_style_repository_save_command.txt[]
+----
+
+=== Delete a Style
+
+Delete a Style from a Style Repository.
+
+include::output/geoc_style_repository_delete_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_style_repository_delete_command.txt[]
+----
+
+=== Get a Style
+
+Get a Style in a Style Repository.
+
+include::output/geoc_style_repository_get_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_style_repository_get_command.txt[]
+----
+
+[source,xml]
+----
+include::output/geoc_style_repository_get_command_output.txt[]
+----
+
+=== List Styles
+
+List all Styles in a Style Repository.
+
+include::output/geoc_style_repository_list_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_style_repository_list_command.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_style_repository_list_command_output.txt[]
+----
+
+=== Copy a Style
+
+Copy styles from one repository to another/
+
+include::output/geoc_style_repository_copy_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_style_repository_copy_command.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_style_repository_copy_command_output.txt[]
+----

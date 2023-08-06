@@ -1,6 +1,9 @@
 package org.geocommands.doc
 
+import groovy.sql.Sql
 import org.junit.jupiter.api.Test
+
+import java.sql.ResultSet
 
 class StyleTest extends DocTest {
 
@@ -122,4 +125,100 @@ Aa2=#94474b
         copyFile(new File("target/units.txt"), new File("src/main/docs/output/geoc_style_uniquevaluesfromtext_command_units.txt"))
         copyFile(new File("target/units.sld"), new File("src/main/docs/output/geoc_style_uniquevaluesfromtext_command.sld"))
     }
+
+    // Repository
+
+    @Test void saveStyleRepository() {
+        File geopackageFile = new File("target/layers.gpkg")
+        geopackageFile.delete()
+        runApp("geoc vector randompoints -n 5 -g -180,-90,180,90 -o target/layers.gpkg -r locations","")
+        String sldText = runApp("geoc vector defaultstyle -i target/layers.gpkg -l locations -c cornflowerblue","")
+        File sldFile = new File("target/location_circles.sld")
+        sldFile.text = sldText
+
+        String command = "geoc style repository save -t sqlite -o file=target/layers.gpkg -l locations -s circles -f target/location_circles.sld"
+        String result = runApp(command, "")
+        writeTextFile("geoc_style_repository_save_command", command)
+        writeTextFile("geoc_style_repository_save_command_output", result)
+    }
+
+    @Test void deleteStyleRepository() {
+        File geopackageFile = new File("target/layers.gpkg")
+        geopackageFile.delete()
+        runApp("geoc vector randompoints -n 5 -g -180,-90,180,90 -o target/layers.gpkg -r locations","")
+        String sldText = runApp("geoc vector defaultstyle -i target/layers.gpkg -l locations -c cornflowerblue","")
+        File sldFile = new File("target/location_circles.sld")
+        sldFile.text = sldText
+        runApp("geoc style repository save -t sqlite -o file=target/layers.gpkg -l locations -s circles -f target/location_circles.sld")
+
+        String command = "geoc style repository delete -t sqlite -o file=target/layers.gpkg -l locations -s circles"
+        String result = runApp(command, "")
+        writeTextFile("geoc_style_repository_delete_command", command)
+        writeTextFile("geoc_style_repository_delete_command_output", result)
+    }
+
+    @Test void getStyleRepository() {
+        File geopackageFile = new File("target/layers.gpkg")
+        geopackageFile.delete()
+        runApp("geoc vector randompoints -n 5 -g -180,-90,180,90 -o target/layers.gpkg -r locations","")
+        String sldText = runApp("geoc vector defaultstyle -i target/layers.gpkg -l locations -c cornflowerblue","")
+        File sldFile = new File("target/location_circles.sld")
+        sldFile.text = sldText
+        runApp("geoc style repository save -t sqlite -o file=target/layers.gpkg -l locations -s circles -f target/location_circles.sld")
+
+        String command = "geoc style repository get -t sqlite -o file=target/layers.gpkg -l locations -s circles"
+        String result = runApp(command, "")
+        writeTextFile("geoc_style_repository_get_command", command)
+        writeTextFile("geoc_style_repository_get_command_output", result)
+    }
+
+    @Test void listStyleRepository() {
+        File geopackageFile = new File("target/layers.gpkg")
+        geopackageFile.delete()
+        runApp("geoc vector randompoints -n 5 -g -180,-90,180,90 -o target/layers.gpkg -r locations","")
+
+        String sldText1 = runApp("geoc vector defaultstyle -i target/layers.gpkg -l locations -c blue","")
+        File sldFile1 = new File("target/location_blue.sld")
+        sldFile1.text = sldText1
+        runApp("geoc style repository save -t sqlite -o file=target/layers.gpkg -l locations -s blue -f target/location_blue.sld")
+
+        String sldText2 = runApp("geoc vector defaultstyle -i target/layers.gpkg -l locations -c red","")
+        File sldFile2 = new File("target/location_red.sld")
+        sldFile2.text = sldText2
+        runApp("geoc style repository save -t sqlite -o file=target/layers.gpkg -l locations -s red -f target/location_red.sld")
+
+        String command = "geoc style repository list -t sqlite -o file=target/layers.gpkg -l locations"
+        String result = runApp(command, "")
+        writeTextFile("geoc_style_repository_list_command", command)
+        writeTextFile("geoc_style_repository_list_command_output", result)
+    }
+
+
+    @Test void copyStyleRepository() {
+        File directory = new File("target/layer_styles")
+        if (directory.exists()) {
+            directory.delete()
+        }
+        directory.mkdir()
+
+        File geopackageFile = new File("target/layers.gpkg")
+        geopackageFile.delete()
+        runApp("geoc vector randompoints -n 5 -g -180,-90,180,90 -o target/layers.gpkg -r locations","")
+
+        String sldText1 = runApp("geoc vector defaultstyle -i target/layers.gpkg -l locations -c blue","")
+        File sldFile1 = new File("target/location_blue.sld")
+        sldFile1.text = sldText1
+        runApp("geoc style repository save -t sqlite -o file=target/layers.gpkg -l locations -s blue -f target/location_blue.sld")
+
+        String sldText2 = runApp("geoc vector defaultstyle -i target/layers.gpkg -l locations -c red","")
+        File sldFile2 = new File("target/location_red.sld")
+        sldFile2.text = sldText2
+        runApp("geoc style repository save -t sqlite -o file=target/layers.gpkg -l locations -s red -f target/location_red.sld")
+
+        String command = "geoc style repository copy -t sqlite -p file=target/layers.gpkg -o directory -r file=target/layer_styles"
+        String result = runApp(command, "")
+        writeTextFile("geoc_style_repository_copy_command", command)
+        writeTextFile("geoc_style_repository_copy_command_output", directory.listFiles().collect{it.name}.join("\n"))
+    }
+
 }

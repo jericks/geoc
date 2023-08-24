@@ -16,6 +16,42 @@ import org.junit.jupiter.api.Test
 class VectorTest extends DocTest {
 
     @Test
+    void arc() {
+        String command = "geoc vector arc -i src/test/resources/data.gpkg -l countries -o target/country_arcs.shp -s 45 -e 90"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_arc_command", command)
+        writeTextFile("geoc_vector_arc_command_output", result)
+
+        Layer layer = new Shapefile("target/country_arcs.shp")
+        layer.style = new SimpleStyleReader().read("stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_vector_arc_command", [layer])
+    }
+
+    @Test
+    void arcPolygon() {
+        String command = "geoc vector arcpolygon -i src/test/resources/data.gpkg -l countries -o target/country_arcs.shp -s 45 -e 90"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_arcpolygon_command", command)
+        writeTextFile("geoc_vector_arcpolygon_command_output", result)
+
+        Layer layer = new Shapefile("target/country_arcs.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_vector_arcpolygon_command", [layer])
+    }
+
+    @Test
+    void sineStar() {
+        String command = "geoc vector sinestar -i src/test/resources/data.gpkg -l countries -o target/country_stars.shp -n 10 -e 2"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_sinestar_command", command)
+        writeTextFile("geoc_vector_sinestar_command_output", result)
+
+        Layer layer = new Shapefile("target/country_stars.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_vector_sinestar_command", [layer])
+    }
+
+    @Test
     void add() {
         runApp(["vector", "create", "-o", "target/locations.shp", "-f", "the_geom=POINT EPSG:4326", "-f", "id=integer", "-f", "name=string"], "")
         List commands = ["vector", "add", "-i", "target/locations.shp", "-v", "id=1", "-v", "name=Seattle", "-v", "the_geom=POINT (-122.334758 47.578364)"]

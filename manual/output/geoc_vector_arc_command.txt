@@ -1,0 +1,1 @@
+geoc vector arc -i src/test/resources/data.gpkg -l countries -o target/country_arcs.shp -s 45 -e 90

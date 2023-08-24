@@ -1,0 +1,1 @@
+geoc vector sinestar -i src/test/resources/data.gpkg -l countries -o target/country_stars.shp -n 10 -e 2

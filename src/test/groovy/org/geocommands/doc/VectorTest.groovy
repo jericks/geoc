@@ -52,6 +52,30 @@ class VectorTest extends DocTest {
     }
 
     @Test
+    void squircle() {
+        String command = "geoc vector squircle -i src/test/resources/data.gpkg -l countries -o target/country_squircles.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_squircle_command", command)
+        writeTextFile("geoc_vector_squircle_command_output", result)
+
+        Layer layer = new Shapefile("target/country_squircles.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_vector_squircle_command", [layer])
+    }
+
+    @Test
+    void superCircle() {
+        String command = "geoc vector supercircle -i src/test/resources/data.gpkg -l countries -o target/country_circles.shp -e 0.5"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_supercircle_command", command)
+        writeTextFile("geoc_vector_supercircle_command_output", result)
+
+        Layer layer = new Shapefile("target/country_circles.shp")
+        layer.style = new SimpleStyleReader().read("fill=silver fill-opacity=0.5 stroke=#555555 stroke-width=0.5")
+        drawOnBasemap("geoc_vector_supercircle_command", [layer])
+    }
+
+    @Test
     void add() {
         runApp(["vector", "create", "-o", "target/locations.shp", "-f", "the_geom=POINT EPSG:4326", "-f", "id=integer", "-f", "name=string"], "")
         List commands = ["vector", "add", "-i", "target/locations.shp", "-v", "id=1", "-v", "name=Seattle", "-v", "the_geom=POINT (-122.334758 47.578364)"]

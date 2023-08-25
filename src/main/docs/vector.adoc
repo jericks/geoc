@@ -296,20 +296,6 @@ include::output/geoc_vector_geomw_command_output.txt[]
 [.thumb]
 image::geoc_vector_geomw_command.png[]
 
-=== Ellipse
-
-Calculate the ellipse around each feature in a Layer.
-
-include::output/geoc_vector_ellipse_options.txt[]
-
-[source,bash]
-----
-include::output/geoc_vector_ellipse_command.txt[]
-----
-
-[.thumb]
-image::geoc_vector_ellipse_command.png[]
-
 === Envelope
 
 Calculate the envelope of all the features in a Layer.
@@ -377,7 +363,9 @@ include::output/geoc_vector_from_csv_command.txt[]
 [.thumb]
 image::geoc_vector_from_csv_command.png[]
 
-=== Graticule - Hexagon
+=== Graticule
+
+==== Hexagon
 
 Create hexagon graticules.
 
@@ -391,7 +379,7 @@ include::output/geoc_vector_graticule_hexagon_command.txt[]
 [.thumb]
 image::geoc_vector_graticule_hexagon_command.png[]
 
-=== Graticule - Line
+==== Line
 
 Create line graticules.
 
@@ -405,7 +393,7 @@ include::output/geoc_vector_graticule_line_command.txt[]
 [.thumb]
 image::geoc_vector_graticule_line_command.png[]
 
-=== Graticule - Oval
+==== Oval
 
 Create oval graticules.
 
@@ -419,7 +407,7 @@ include::output/geoc_vector_graticule_oval_command.txt[]
 [.thumb]
 image::geoc_vector_graticule_oval_command.png[]
 
-=== Graticule - Rectangle
+==== Rectangle
 
 Create rectangle graticules.
 
@@ -433,7 +421,7 @@ include::output/geoc_vector_graticule_rectangle_command.txt[]
 [.thumb]
 image::geoc_vector_graticule_rectangle_command.png[]
 
-=== Graticule - Square
+==== Square
 
 Create square graticules.
 
@@ -605,20 +593,6 @@ include::output/geoc_vector_randompoints_command.txt[]
 [.thumb]
 image::geoc_vector_randompoints_command.png[]
 
-=== Rectangle
-
-Create a rectangle shape around each feature of the input Layer.
-
-include::output/geoc_vector_rectangle_options.txt[]
-
-[source,bash]
-----
-include::output/geoc_vector_rectangle_command.txt[]
-----
-
-[.thumb]
-image::geoc_vector_rectangle_command.png[]
-
 === Shapes
 
 ==== Arc
@@ -649,6 +623,34 @@ include::output/geoc_vector_arcpolygon_command.txt[]
 [.thumb]
 image::geoc_vector_arcpolygon_command.png[]
 
+=== Ellipse
+
+Calculate the ellipse around each feature in a Layer.
+
+include::output/geoc_vector_ellipse_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_ellipse_command.txt[]
+----
+
+[.thumb]
+image::geoc_vector_ellipse_command.png[]
+
+=== Rectangle
+
+Create a rectangle shape around each feature of the input Layer.
+
+include::output/geoc_vector_rectangle_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_rectangle_command.txt[]
+----
+
+[.thumb]
+image::geoc_vector_rectangle_command.png[]
+
 ==== Sine Star
 
 Create a sinestar shape around each feature of the input Layer.
@@ -662,6 +664,34 @@ include::output/geoc_vector_sinestar_command.txt[]
 
 [.thumb]
 image::geoc_vector_sinestar_command.png[]
+
+==== Squircle
+
+Create a squircle shape around each feature of the input Layer.
+
+include::output/geoc_vector_squircle_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_squircle_command.txt[]
+----
+
+[.thumb]
+image::geoc_vector_squircle_command.png[]
+
+==== Super Circle
+
+Create a super circle shape around each feature of the input Layer.
+
+include::output/geoc_vector_supercircle_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_supercircle_command.txt[]
+----
+
+[.thumb]
+image::geoc_vector_supercircle_command.png[]
 
 === To
 

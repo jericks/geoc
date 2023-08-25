@@ -1,0 +1,1 @@
+geoc vector squircle -i src/test/resources/data.gpkg -l countries -o target/country_squircles.shp

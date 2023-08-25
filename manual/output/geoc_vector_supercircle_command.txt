@@ -1,0 +1,1 @@
+geoc vector supercircle -i src/test/resources/data.gpkg -l countries -o target/country_circles.shp -e 0.5

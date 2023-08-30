@@ -40,7 +40,7 @@ class PageCommand extends LayerInOutCommand<PageOptions> {
         @Option(name = "-m", aliases = "--max", usage = "The maximum number of Features to include", required = false)
         int max = -1
 
-        @Option(name = "-t", aliases = "--start", usage = "The index of the Feature to start at", required = false)
+        @Option(name = "-t", aliases = "--start", usage = "The 0 based index of the Feature to start at", required = false)
         int start = -1
 
     }

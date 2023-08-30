@@ -565,6 +565,25 @@ include::output/geoc_vector_octagonalenvelopes_command.txt[]
 [.thumb]
 image::geoc_vector_octagonalenvelopes_command.png[]
 
+=== Page
+
+Page through Feature in the input Layer.
+
+include::output/geoc_vector_page_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_vector_page_1_5_command.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_vector_page_6_10_command.txt[]
+----
+
+[.thumb]
+image::geoc_vector_page_command.png[]
+
 === Project
 
 Project the input Layer to another Projection and save it as the output Layer.
@@ -623,7 +642,7 @@ include::output/geoc_vector_arcpolygon_command.txt[]
 [.thumb]
 image::geoc_vector_arcpolygon_command.png[]
 
-=== Ellipse
+==== Ellipse
 
 Calculate the ellipse around each feature in a Layer.
 
@@ -637,7 +656,7 @@ include::output/geoc_vector_ellipse_command.txt[]
 [.thumb]
 image::geoc_vector_ellipse_command.png[]
 
-=== Rectangle
+==== Rectangle
 
 Create a rectangle shape around each feature of the input Layer.
 

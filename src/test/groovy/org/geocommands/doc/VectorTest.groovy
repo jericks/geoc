@@ -399,6 +399,32 @@ POINT (140.6972351264812 63.79594874701479)
     }
 
     @Test
+    void page() {
+        runApp("geoc vector randompoints -n 20 -g -180,-90,180,90 -o target/locations.shp","")
+        String command = "geoc vector page -i target/locations.shp -o target/locations_1_5.shp -t 0 -m 5"
+        String result = runApp(command, "")
+        writeTextFile("geoc_vector_page_1_5_command", command)
+        writeTextFile("geoc_vector_page_1_5_command_output", result)
+
+        command = "geoc vector page -i target/locations.shp -o target/locations_6_10.shp -t 5 -m 5"
+        result = runApp(command, "")
+        writeTextFile("geoc_vector_page_6_10_command", command)
+        writeTextFile("geoc_vector_page_6_10_command_output", result)
+
+        Layer layer1to5 = new Shapefile("target/locations_1_5.shp")
+        writeTextFile("geoc_vector_page_1_5_features", createFeatureTable(layer1to5))
+        layer1to5.style = new SimpleStyleReader().read("shape-type=circle shape-size=6 shape=red")
+
+        Layer layer6to10 = new Shapefile("target/locations_6_10.shp")
+        writeTextFile("geoc_vector_page_6_10_features", createFeatureTable(layer6to10))
+        layer6to10.style = new SimpleStyleReader().read("shape-type=circle shape-size=6 shape=yellow")
+
+        Layer layer = new Shapefile("target/locations.shp")
+        layer.style = new SimpleStyleReader().read("shape-type=circle shape-size=12 shape=blue")
+        drawOnBasemap("geoc_vector_page_command", [layer, layer, layer1to5, layer6to10])
+    }
+
+    @Test
     void fromGeoJson() {
         runApp("geoc vector randompoints -n 5 -g -180,-90,180,90 -o target/randompoints.shp","")
         String str = runApp("geoc vector to -i target/randompoints.shp -f geojson","")

@@ -13,7 +13,7 @@ Page through Feature in the input Layer
 
    * -m --max: The maximum number of Features to include
 
-   * -t --start: The index of the Feature to start at
+   * -t --start: The 0 based index of the Feature to start at
 
    * -o --output-workspace: The output workspace
 

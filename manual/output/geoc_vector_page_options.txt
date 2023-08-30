@@ -2,7 +2,7 @@
 | Short Name | Long Name | Description 
 
 | -m | --max | The maximum number of Features to include
-| -t | --start | The index of the Feature to start at
+| -t | --start | The 0 based index of the Feature to start at
 | -o | --output-workspace | The output workspace
 | -r | --output-layer | The output layer
 | -i | --input-workspace | The input workspace

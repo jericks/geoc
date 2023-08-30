@@ -1,0 +1,1 @@
+geoc vector page -i target/locations.shp -o target/locations_6_10.shp -t 5 -m 5

@@ -1,14 +1,41 @@
 package org.geocommands.doc
 
+import geoscript.layer.Format
 import geoscript.layer.GeoTIFF
 import geoscript.layer.Layer
 import geoscript.layer.Raster
 import geoscript.layer.Shapefile
 import geoscript.style.ColorMap
+import geoscript.style.Label
 import geoscript.style.Stroke
+import geoscript.style.Style
 import org.junit.jupiter.api.Test
 
 class RasterTest extends DocTest {
+
+    @Test
+    void absolute() {
+        String command = "geoc raster abs -i src/test/resources/absolute.tif -o target/absolute_abs.tif"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_abs_command", command)
+        writeTextFile("geoc_raster_abs_command_output", result)
+
+        Style rasterStyle = new ColorMap(-10, 10, "Reds", 10)
+        Style vectorStyle = new Stroke("black",1) + new Label("value")
+
+        Closure createLayer = { Raster raster, Style style ->
+            Layer layer = raster.polygonLayer
+            layer.style = style
+            layer
+        }
+
+        Raster raster = Format.getFormat(new File("src/test/resources/absolute.tif")).read("absolute")
+        Raster absolute = Format.getFormat(new File("target/absolute_abs.tif")).read("absolute_abs")
+        raster.style = rasterStyle
+        absolute.style = rasterStyle
+        draw("raster_absolute_1", [raster, createLayer(raster, vectorStyle)])
+        draw("raster_absolute_2", [absolute, createLayer(absolute, vectorStyle)])
+    }
 
     @Test
     void crop() {

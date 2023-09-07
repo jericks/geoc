@@ -3,6 +3,23 @@ ifndef::sourcedir[:sourcedir: ../../main/groovy]
 
 == Raster Commands
 
+=== Absolute
+
+Calculate the absolute value of the values of a Raster.
+
+include::output/geoc_raster_abs_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_abs_command.txt[]
+----
+
+[.thumb]
+image::raster_absolute_1.png[]
+
+[.thumb]
+image::raster_absolute_2.png[]
+
 === Contour
 
 Create contours from a Raster.

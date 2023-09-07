@@ -1,0 +1,1 @@
+geoc raster get value -i target/pc_add.tif -x -121.799927 -y 46.867703

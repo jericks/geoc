@@ -1,0 +1,1 @@
+geoc raster add -i src/test/resources/low.tif -k src/test/resources/high.tif -o target/lowPlusHigh.tif

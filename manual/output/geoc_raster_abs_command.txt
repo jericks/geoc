@@ -1,0 +1,1 @@
+geoc raster abs -i src/test/resources/absolute.tif -o target/absolute_abs.tif

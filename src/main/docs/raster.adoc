@@ -84,6 +84,54 @@ Low + High
 [.thumb]
 image::geoc_raster_add_command_add.png[]
 
+=== Animated GIF
+
+Create an animated GIF from a list of GIFs.
+
+include::output/geoc_raster_animatedgif_options.txt[]
+
+First, lets create individual maps of 3 states.
+
+*Washington*
+
+[source,bash]
+----
+include::output/geoc_animatedgif_washington_command.txt[]
+----
+
+[.thumb]
+image::geoc_animatedgif_washington.png[]
+
+*Oregon*
+
+[source,bash]
+----
+include::output/geoc_animatedgif_oregon_command.txt[]
+----
+
+[.thumb]
+image::geoc_animatedgif_oregon.png[]
+
+*California*
+
+[source,bash]
+----
+include::output/geoc_animatedgif_california_command.txt[]
+----
+
+[.thumb]
+image::geoc_animatedgif_california.png[]
+
+Now lets stitch them together into an animated GIF.
+
+[source,bash]
+----
+include::output/geoc_raster_animatedgif_command.txt[]
+----
+
+[.thumb]
+image::geoc_animatedgif.gif[]
+
 === Convolve
 
 Convolve the values of a Raster.

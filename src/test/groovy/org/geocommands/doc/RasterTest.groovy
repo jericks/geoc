@@ -1,5 +1,6 @@
 package org.geocommands.doc
 
+import geoscript.geom.Bounds
 import geoscript.layer.Format
 import geoscript.layer.GeoTIFF
 import geoscript.layer.Layer
@@ -92,6 +93,38 @@ class RasterTest extends DocTest {
         draw("geoc_raster_add_command_low",  [lowRaster, createLayer(lowRaster, vectorStyle)])
         draw("geoc_raster_add_command_high", [highRaster, createLayer(highRaster, vectorStyle)])
         draw("geoc_raster_add_command_add",  [lowPlusHighRaster, createLayer(lowPlusHighRaster, vectorStyle)])
+    }
+
+    @Test
+    void animatedGif() {
+        List states = [
+            [name: "Washington", bounds: new Bounds(-124.68721008300781,45.59199778907822,-116.90652787968992,49.000885321643864,"EPSG:4326")],
+            [name: "Oregon", bounds: new Bounds(-124.53283999999996,41.99260508886846,-116.45779557988342,46.2830694871044,"EPSG:4326")],
+            [name: "California", bounds: new Bounds(-124.39795772362243,32.535327053348965,-114.16597164595498,41.99947805436335,"EPSG:4326")]
+        ]
+        states.each { Map state ->
+            String name = state.name
+            Bounds bounds = state.bounds
+            List commands = ["map", "draw",
+                             "-l", "layertype=layer file=src/test/resources/data.gpkg layername=ocean style=src/test/resources/ocean.sld",
+                             "-l", "layertype=layer file=src/test/resources/data.gpkg layername=countries style=src/test/resources/countries.sld",
+                             "-l", "layertype=layer file=src/test/resources/data.gpkg layername=states style=src/test/resources/states.sld",
+                             "-b", "${bounds.minX},${bounds.minY},${bounds.maxX},${bounds.maxY}",
+                             "-f", "target/state_${name.toLowerCase()}.png"
+            ]
+            String command = "geoc " + commands.collect{
+                it.startsWith("layertype") ? '"' + it + '"' : it
+            }.join(" ")
+            String result = runApp(commands, "")
+            writeTextFile("geoc_animatedgif_${name.toLowerCase()}_command", command)
+            copyFile(new File("target/state_${name.toLowerCase()}.png"), new File("src/main/docs/images/geoc_animatedgif_${name.toLowerCase()}.png"))
+        }
+
+        String command = "geoc raster animatedgif -f target/state_washington.png -f target/state_oregon.png -f target/state_california.png -o target/states.gif"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_animatedgif_command", command)
+        writeTextFile("geoc_raster_animatedgif_command_output", result)
+        copyFile(new File("target/states.gif"), new File("src/main/docs/images/geoc_animatedgif.gif"))
     }
 
     @Test

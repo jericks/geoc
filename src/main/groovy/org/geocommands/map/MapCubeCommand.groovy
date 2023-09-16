@@ -1,19 +1,10 @@
 package org.geocommands.map
 
-import geoscript.geom.Bounds
-import geoscript.geom.Point
-import geoscript.layer.Raster
-import geoscript.proj.Projection
-import geoscript.render.Map
 import geoscript.render.MapCube
 import org.geocommands.Options
 import org.geocommands.Command
 import org.geocommands.Util
 import org.kohsuke.args4j.Option
-
-import javax.imageio.ImageIO
-import java.awt.*
-import java.awt.image.BufferedImage
 import java.util.List
 
 /**

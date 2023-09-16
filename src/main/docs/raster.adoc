@@ -84,6 +84,44 @@ Low + High
 [.thumb]
 image::geoc_raster_add_command_add.png[]
 
+=== Convolve
+
+Convolve the values of a Raster.
+
+include::output/geoc_raster_convolve_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_convolve_command.txt[]
+----
+
+[.thumb]
+image::geoc_raster_convolve_command.png[]
+
+Original
+
+[source,bash]
+----
+include::output/geoc_raster_convolve_command_orginal_cmd.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_raster_convolve_command_orginal_result.txt[]
+----
+
+Convolved
+
+[source,bash]
+----
+include::output/geoc_raster_convolve_command_convolved_cmd.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_raster_convolve_command_convolved_result.txt[]
+----
+
 === Contour
 
 Create contours from a Raster.

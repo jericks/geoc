@@ -126,6 +126,35 @@ class RasterTest extends DocTest {
     }
 
     @Test
+    void convolve() {
+        String command = "geoc raster convolve -i src/test/resources/pc.tif -o target/pc_convolve.tif -w 2 -h 2"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_convolve_command", command)
+        writeTextFile("geoc_raster_convolve_command_output", result)
+
+        [
+                [name: "orginal", file: "src/test/resources/pc.tif"],
+                [name: "convolved", file: "target/pc_convolve.tif"]
+        ].each { Map values ->
+            String cmd = "geoc raster info -i ${values.file}"
+            writeTextFile("geoc_raster_convolve_command_${values.name}_cmd", cmd)
+            writeTextFile("geoc_raster_convolve_command_${values.name}_result", runApp(cmd))
+
+        }
+
+        Raster convolvedRaster = Format.getFormat(new File("target/pc_convolve.tif")).read()
+        convolvedRaster.style = new ColorMap([
+                [color: "#9fd182", quantity: -32767.0],
+                [color: "#3e7f3c", quantity: -15000.0],
+                [color: "#133912", quantity: 0.3],
+                [color: "#08306b", quantity: 15000.0],
+                [color: "#fffff5", quantity: 32767.0],
+        ])
+        draw("geoc_raster_convolve_command", [convolvedRaster])
+    }
+
+
+    @Test
     void envelope() {
         String command = "geoc raster envelope -i src/test/resources/earth.tif -o target/earth_envelope.shp"
         String result = runApp(command, "")

@@ -1,0 +1,1 @@
+geoc raster info -i target/pc_convolve.tif

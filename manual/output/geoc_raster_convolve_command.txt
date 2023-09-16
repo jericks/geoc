@@ -1,0 +1,1 @@
+geoc raster convolve -i src/test/resources/pc.tif -o target/pc_convolve.tif -w 2 -h 2

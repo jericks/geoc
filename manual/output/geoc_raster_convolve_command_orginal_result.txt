@@ -1,0 +1,18 @@
+Format: GeoTIFF
+Size: 800, 400
+Projection ID: EPSG:4326
+Projection WKT: GEOGCS["WGS 84", 
+  DATUM["World Geodetic System 1984", 
+    SPHEROID["WGS 84", 6378137.0, 298.257223563, AUTHORITY["EPSG","7030"]], 
+    AUTHORITY["EPSG","6326"]], 
+  PRIMEM["Greenwich", 0.0, AUTHORITY["EPSG","8901"]], 
+  UNIT["degree", 0.017453292519943295], 
+  AXIS["Geodetic longitude", EAST], 
+  AXIS["Geodetic latitude", NORTH], 
+  AUTHORITY["EPSG","4326"]]
+Extent: -123.55291606131708, 46.25375026634816, -120.73958272798374, 47.522916933014834
+Pixel Size: 0.0035166666666666658, 0.0031729166666666763
+Block Size: 800, 5
+Bands:
+   GRAY_INDEX
+      Min Value: -23.0 Max Value: 4370.0

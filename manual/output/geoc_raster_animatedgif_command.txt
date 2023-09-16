@@ -1,0 +1,1 @@
+geoc raster animatedgif -f target/state_washington.png -f target/state_oregon.png -f target/state_california.png -o target/states.gif

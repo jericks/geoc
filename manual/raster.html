@@ -538,6 +538,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#absolute">Absolute</a></li>
 <li><a href="#add-constant">Add Constant</a></li>
 <li><a href="#add">Add</a></li>
+<li><a href="#animated-gif">Animated GIF</a></li>
 <li><a href="#convolve">Convolve</a></li>
 <li><a href="#contour">Contour</a></li>
 <li><a href="#crop">Crop</a></li>
@@ -827,6 +828,113 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div class="imageblock thumb">
 <div class="content">
 <img src="./images/geoc_raster_add_command_add.png" alt="geoc raster add command add">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="animated-gif"><a class="anchor" href="#animated-gif"></a>Animated GIF</h3>
+<div class="paragraph">
+<p>Create an animated GIF from a list of GIFs.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Short Name</th>
+<th class="tableblock halign-left valign-top">Long Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The GIF file</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--output-file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The output animated GIF file</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--delay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The delay between images</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-r</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--repeat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to repeat the animation or not</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Print the help message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--web-help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open help in a browser</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>First, lets create individual maps of 3 states.</p>
+</div>
+<div class="paragraph">
+<p><strong>Washington</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">geoc map draw -l &quot;layertype=layer file=src/test/resources/data.gpkg layername=ocean style=src/test/resources/ocean.sld&quot; -l &quot;layertype=layer file=src/test/resources/data.gpkg layername=countries style=src/test/resources/countries.sld&quot; -l &quot;layertype=layer file=src/test/resources/data.gpkg layername=states style=src/test/resources/states.sld&quot; -b -124.68721008300781,45.59199778907822,-116.90652787968992,49.000885321643864 -f target/state_washington.png</code></pre>
+</div>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<img src="./images/geoc_animatedgif_washington.png" alt="geoc animatedgif washington">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Oregon</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">geoc map draw -l &quot;layertype=layer file=src/test/resources/data.gpkg layername=ocean style=src/test/resources/ocean.sld&quot; -l &quot;layertype=layer file=src/test/resources/data.gpkg layername=countries style=src/test/resources/countries.sld&quot; -l &quot;layertype=layer file=src/test/resources/data.gpkg layername=states style=src/test/resources/states.sld&quot; -b -124.53283999999996,41.99260508886846,-116.45779557988342,46.2830694871044 -f target/state_oregon.png</code></pre>
+</div>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<img src="./images/geoc_animatedgif_oregon.png" alt="geoc animatedgif oregon">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>California</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">geoc map draw -l &quot;layertype=layer file=src/test/resources/data.gpkg layername=ocean style=src/test/resources/ocean.sld&quot; -l &quot;layertype=layer file=src/test/resources/data.gpkg layername=countries style=src/test/resources/countries.sld&quot; -l &quot;layertype=layer file=src/test/resources/data.gpkg layername=states style=src/test/resources/states.sld&quot; -b -124.39795772362243,32.535327053348965,-114.16597164595498,41.99947805436335 -f target/state_california.png</code></pre>
+</div>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<img src="./images/geoc_animatedgif_california.png" alt="geoc animatedgif california">
+</div>
+</div>
+<div class="paragraph">
+<p>Now lets stitch them together into an animated GIF.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">geoc raster animatedgif -f target/state_washington.png -f target/state_oregon.png -f target/state_california.png -o target/states.gif</code></pre>
+</div>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<img src="./images/geoc_animatedgif.gif" alt="geoc animatedgif">
 </div>
 </div>
 </div>
@@ -1549,7 +1657,7 @@ Bands:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-16 18:24:01 UTC
+Last updated 2023-09-16 20:09:10 UTC
 </div>
 </div>
 </body>

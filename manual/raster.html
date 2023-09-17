@@ -541,7 +541,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#animated-gif">Animated GIF</a></li>
 <li><a href="#convolve">Convolve</a></li>
 <li><a href="#contour">Contour</a></li>
-<li><a href="#crop">Crop</a></li>
+<li><a href="#crop-with-bounds">Crop with Bounds</a></li>
+<li><a href="#crop-with-geometry">Crop with Geometry</a></li>
 <li><a href="#envelope">Envelope</a></li>
 <li><a href="#info">Info</a></li>
 <li><a href="#get-projection">Get Projection</a></li>
@@ -1168,9 +1169,9 @@ Bands:
 </div>
 </div>
 <div class="sect2">
-<h3 id="crop"><a class="anchor" href="#crop"></a>Crop</h3>
+<h3 id="crop-with-bounds"><a class="anchor" href="#crop-with-bounds"></a>Crop with Bounds</h3>
 <div class="paragraph">
-<p>Crop a Raster.</p>
+<p>Crop a Raster with Bounds.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1238,9 +1239,76 @@ Bands:
 <pre class="CodeRay highlight"><code data-lang="bash">geoc raster crop -i src/test/resources/earth.tif -b -160.927734,6.751896,-34.716797,57.279043 -o target/earth_cropped.tif</code></pre>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="crop-with-geometry"><a class="anchor" href="#crop-with-geometry"></a>Crop with Geometry</h3>
+<div class="paragraph">
+<p>Crop a Raster with Geometry.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Short Name</th>
+<th class="tableblock halign-left valign-top">Long Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-g</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--geometry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Geometry</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--output-raster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The output raster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--output-raster-format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The output raster format</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-raster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input raster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-l</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-raster-name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input raster name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-p</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-projection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input projection</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Print the help message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--web-help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open help in a browser</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">geoc raster crop with geometry -i src/test/resources/earth.tif -g &quot;POLYGON ((-120.06886118446164 54.657570186377484, -131.4744345802818 40.88641840854305, -120.66873293244274 27.841500134049014, -91.23852896646747 22.376168381822453, -75.66538001484537 23.99772020337508, -54.66444615739175 45.994788780815526, -91.94198075352523 53.20175611636799, -120.06886118446164 54.657570186377484))&quot; -o target/earth_cropped.tif</code></pre>
+</div>
+</div>
 <div class="imageblock thumb">
 <div class="content">
-<img src="./images/geoc_raster_crop_command.png" alt="geoc raster crop command">
+<img src="./images/geoc_raster_crop_with_geometry_command.png" alt="geoc raster crop with geometry command">
 </div>
 </div>
 </div>
@@ -1657,7 +1725,7 @@ Bands:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-16 20:09:10 UTC
+Last updated 2023-09-17 23:02:24 UTC
 </div>
 </div>
 </body>

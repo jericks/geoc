@@ -128,7 +128,7 @@ class RasterTest extends DocTest {
     }
 
     @Test
-    void crop() {
+    void cropWithBounds() {
         String command = "geoc raster crop -i src/test/resources/earth.tif -b -160.927734,6.751896,-34.716797,57.279043 -o target/earth_cropped.tif"
         String result = runApp(command, "")
         writeTextFile("geoc_raster_crop_command", command)
@@ -136,6 +136,31 @@ class RasterTest extends DocTest {
 
         Raster raster = new GeoTIFF(new File("target/earth_cropped.tif")).read()
         drawOnBasemap("geoc_raster_crop_command", [raster])
+    }
+
+    @Test
+    void cropWithGeometry() {
+        List commands = [
+                "raster",
+                "crop",
+                "with",
+                "geometry",
+                "-i",
+                "src/test/resources/earth.tif",
+                "-g",
+                "POLYGON ((-120.06886118446164 54.657570186377484, -131.4744345802818 40.88641840854305, -120.66873293244274 27.841500134049014, -91.23852896646747 22.376168381822453, -75.66538001484537 23.99772020337508, -54.66444615739175 45.994788780815526, -91.94198075352523 53.20175611636799, -120.06886118446164 54.657570186377484))",
+                "-o",
+                "target/earth_cropped.tif"
+            ]
+        String command = "geoc " + commands.collect{
+            it.startsWith("POLYGON") ? '"' + it + '"' : it
+        }.join(" ")
+        String result = runApp(commands, "")
+        writeTextFile("geoc_raster_crop_with_geometry_command", command)
+        writeTextFile("geoc_raster_crop_with_geometry_command_output", result)
+
+        Raster raster = new GeoTIFF(new File("target/earth_cropped.tif")).read()
+        drawOnBasemap("geoc_raster_crop_with_geometry_command", [raster])
     }
 
     @Test

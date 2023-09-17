@@ -184,9 +184,9 @@ include::output/geoc_raster_contour_command.txt[]
 [.thumb]
 image::geoc_raster_contour_command.png[]
 
-=== Crop
+=== Crop with Bounds
 
-Crop a Raster.
+Crop a Raster with Bounds.
 
 include::output/geoc_raster_crop_options.txt[]
 
@@ -195,8 +195,19 @@ include::output/geoc_raster_crop_options.txt[]
 include::output/geoc_raster_crop_command.txt[]
 ----
 
+=== Crop with Geometry
+
+Crop a Raster with Geometry.
+
+include::output/geoc_raster_crop_with_geometry_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_crop_with_geometry_command.txt[]
+----
+
 [.thumb]
-image::geoc_raster_crop_command.png[]
+image::geoc_raster_crop_with_geometry_command.png[]
 
 === Envelope
 

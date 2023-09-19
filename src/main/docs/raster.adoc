@@ -209,6 +209,30 @@ include::output/geoc_raster_crop_with_geometry_command.txt[]
 [.thumb]
 image::geoc_raster_crop_with_geometry_command.png[]
 
+=== Crop with Layer
+
+Crop a Raster with a Layer.
+
+include::output/geoc_raster_crop_with_layer_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_crop_with_layer_random_points_command.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_raster_crop_with_layer_buffer_command.txt[]
+----
+
+[source,bash]
+----
+include::output/geoc_raster_crop_with_layer_command.txt[]
+----
+
+[.thumb]
+image::geoc_raster_crop_with_layer_command.png[]
+
 === Envelope
 
 Get the Envelope of a Raster as a Vector Layer.

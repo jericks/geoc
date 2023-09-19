@@ -10,6 +10,7 @@ import geoscript.style.ColorMap
 import geoscript.style.Label
 import geoscript.style.Stroke
 import geoscript.style.Style
+import geoscript.style.io.SimpleStyleReader
 import org.junit.jupiter.api.Test
 
 class RasterTest extends DocTest {
@@ -161,6 +162,34 @@ class RasterTest extends DocTest {
 
         Raster raster = new GeoTIFF(new File("target/earth_cropped.tif")).read()
         drawOnBasemap("geoc_raster_crop_with_geometry_command", [raster])
+    }
+
+    @Test
+    void cropWithLayer() {
+
+        // Random Points
+        String randomCommand = "geoc vector randompoints -n 10 -g -180,-90,180,90 -o target/locations.shp"
+        println runApp(randomCommand, "")
+        writeTextFile("geoc_raster_crop_with_layer_random_points_command", randomCommand)
+
+        // Buffer Points
+        String bufferCommand = "geoc vector buffer -d 10 -i target/locations.shp -o target/buffers.shp"
+        println runApp(bufferCommand, "")
+        writeTextFile("geoc_raster_crop_with_layer_buffer_command", bufferCommand)
+
+        // Crop
+        String command = "geoc raster crop with layer -i src/test/resources/earth.tif -o target/earth_cropped.tif -w target/buffers.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_crop_with_layer_command", command)
+        writeTextFile("geoc_raster_crop_with_layer_command_output", result)
+
+        // Create Map
+        Raster raster = new GeoTIFF(new File("target/earth_cropped.tif")).read()
+        Layer pointsLayer = new Shapefile("target/locations.shp")
+        pointsLayer.style = new SimpleStyleReader().read("shape-type=circle shape-size=6 shape=red")
+        Layer bufferLayer = new Shapefile("target/buffers.shp")
+        bufferLayer.style = new SimpleStyleReader().read("stroke=red stroke-width=2.5")
+        drawOnBasemap("geoc_raster_crop_with_layer_command", [bufferLayer, raster, pointsLayer])
     }
 
     @Test

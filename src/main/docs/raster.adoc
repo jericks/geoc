@@ -195,6 +195,9 @@ include::output/geoc_raster_crop_options.txt[]
 include::output/geoc_raster_crop_command.txt[]
 ----
 
+[.thumb]
+image::geoc_raster_crop_command.png[]
+
 === Crop with Geometry
 
 Crop a Raster with Geometry.

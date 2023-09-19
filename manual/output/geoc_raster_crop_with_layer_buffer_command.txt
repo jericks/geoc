@@ -1,0 +1,1 @@
+geoc vector buffer -d 10 -i target/locations.shp -o target/buffers.shp

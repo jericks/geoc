@@ -1,0 +1,1 @@
+geoc vector randompoints -n 10 -g -180,-90,180,90 -o target/locations.shp

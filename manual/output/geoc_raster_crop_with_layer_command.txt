@@ -1,0 +1,1 @@
+geoc raster crop with layer -i src/test/resources/earth.tif -o target/earth_cropped.tif -w target/buffers.shp

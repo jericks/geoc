@@ -242,6 +242,12 @@ class RasterTest extends DocTest {
 
 
     @Test
+    void display() {
+        String command = "geoc raster display -i src/test/resources/pc.tif"
+        writeTextFile("geoc_raster_display_command", command)
+    }
+
+    @Test
     void envelope() {
         String command = "geoc raster envelope -i src/test/resources/earth.tif -o target/earth_envelope.shp"
         String result = runApp(command, "")

@@ -236,6 +236,20 @@ include::output/geoc_raster_crop_with_layer_command.txt[]
 [.thumb]
 image::geoc_raster_crop_with_layer_command.png[]
 
+=== Display
+
+Display a Raster in a simple GUI Window.
+
+include::output/geoc_raster_display_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_display_command.txt[]
+----
+
+[.thumb]
+image::geoc_raster_display.png[]
+
 === Envelope
 
 Get the Envelope of a Raster as a Vector Layer.

@@ -1,0 +1,1 @@
+geoc raster display -i src/test/resources/pc.tif

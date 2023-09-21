@@ -1,5 +1,6 @@
 package org.geocommands.doc
 
+import geoscript.filter.Expression
 import geoscript.geom.Bounds
 import geoscript.layer.Format
 import geoscript.layer.GeoTIFF
@@ -245,6 +246,61 @@ class RasterTest extends DocTest {
     void display() {
         String command = "geoc raster display -i src/test/resources/pc.tif"
         writeTextFile("geoc_raster_display_command", command)
+    }
+
+    @Test
+    void divide() {
+        String command = "geoc raster divide -i src/test/resources/high.tif -k src/test/resources/low.tif -o target/divided.tif"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_divide_command", command)
+        writeTextFile("geoc_raster_divide_command_output", result)
+
+        Style rasterStyle = new ColorMap(1, 20, "MutedTerrain", 20)
+        Style vectorStyle = new Stroke("black",1) + new Label(Expression.fromCQL("numberFormat('0.00', value)"))
+
+        Raster lowRaster = Format.getFormat(new File("src/test/resources/low.tif")).read()
+        Raster highRaster = Format.getFormat(new File("src/test/resources/high.tif")).read()
+        Raster dividedRaster = Format.getFormat(new File("target/divided.tif")).read()
+
+        lowRaster.style = rasterStyle
+        highRaster.style = rasterStyle
+        dividedRaster.style = rasterStyle
+
+        Closure createLayer = { Raster raster, Style style ->
+            Layer layer = raster.polygonLayer
+            layer.style = style
+            layer
+        }
+
+        draw("geoc_raster_divide_command_low",  [lowRaster, createLayer(lowRaster, vectorStyle)])
+        draw("geoc_raster_divide_command_high", [highRaster, createLayer(highRaster, vectorStyle)])
+        draw("geoc_raster_divide_command_divided",  [dividedRaster, createLayer(dividedRaster, vectorStyle)])
+    }
+
+    @Test
+    void divideConstant() {
+        String command = "geoc raster divide constant -i src/test/resources/high.tif -v 2.1 -o target/divided.tif"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_divide_constant_command", command)
+        writeTextFile("geoc_raster_divide_constant_command_output", result)
+
+        Style rasterStyle = new ColorMap(1, 20, "MutedTerrain", 20)
+        Style vectorStyle = new Stroke("black",1) + new Label(Expression.fromCQL("numberFormat('0.00', value)"))
+
+        Raster highRaster = Format.getFormat(new File("src/test/resources/high.tif")).read()
+        Raster dividedRaster = Format.getFormat(new File("target/divided.tif")).read()
+
+        highRaster.style = rasterStyle
+        dividedRaster.style = rasterStyle
+
+        Closure createLayer = { Raster raster, Style style ->
+            Layer layer = raster.polygonLayer
+            layer.style = style
+            layer
+        }
+
+        draw("geoc_raster_divide_constant_command_high", [highRaster, createLayer(highRaster, vectorStyle)])
+        draw("geoc_raster_divide_constant_command_divided",  [dividedRaster, createLayer(dividedRaster, vectorStyle)])
     }
 
     @Test

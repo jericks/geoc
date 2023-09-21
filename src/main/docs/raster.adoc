@@ -250,6 +250,53 @@ include::output/geoc_raster_display_command.txt[]
 [.thumb]
 image::geoc_raster_display.png[]
 
+=== Divide
+
+Divide one Raster by another Raster.
+
+include::output/geoc_raster_divide_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_divide_command.txt[]
+----
+
+Low
+
+[.thumb]
+image::geoc_raster_divide_command_low.png[]
+
+High
+
+[.thumb]
+image::geoc_raster_divide_command_high.png[]
+
+High / Low
+
+[.thumb]
+image::geoc_raster_divide_command_divided.png[]
+
+=== Divide Constant
+
+Divide a Raster by a constant value.
+
+include::output/geoc_raster_divide_constant_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_divide_constant_command.txt[]
+----
+
+Raster
+
+[.thumb]
+image::geoc_raster_divide_constant_command_high.png[]
+
+Raster / 2.1
+
+[.thumb]
+image::geoc_raster_divide_constant_command_divided.png[]
+
 === Envelope
 
 Get the Envelope of a Raster as a Vector Layer.

@@ -547,6 +547,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#display">Display</a></li>
 <li><a href="#divide">Divide</a></li>
 <li><a href="#divide-constant">Divide Constant</a></li>
+<li><a href="#draw">Draw</a></li>
 <li><a href="#envelope">Envelope</a></li>
 <li><a href="#info">Info</a></li>
 <li><a href="#get-projection">Get Projection</a></li>
@@ -1680,6 +1681,98 @@ Bands:
 </div>
 </div>
 <div class="sect2">
+<h3 id="draw"><a class="anchor" href="#draw"></a>Draw</h3>
+<div class="paragraph">
+<p>Draw a Raster to an image.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Short Name</th>
+<th class="tableblock halign-left valign-top">Long Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The output file</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-t</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of document</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-w</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--width</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The width</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--height</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The height</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-s</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--sld-file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The sld file</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--bounds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The bounds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-m</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--layer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The map layer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-raster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input raster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-l</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-raster-name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input raster name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-p</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-projection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input projection</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Print the help message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--web-help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open help in a browser</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">geoc raster draw -i src/test/resources/earth.tif -f target/image.png</code></pre>
+</div>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<img src="./images/geoc_raster_draw_command.png" alt="geoc raster draw command">
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="envelope"><a class="anchor" href="#envelope"></a>Envelope</h3>
 <div class="paragraph">
 <p>Get the Envelope of a Raster as a Vector Layer.</p>
@@ -2092,7 +2185,7 @@ Bands:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-21 23:53:46 UTC
+Last updated 2023-09-22 23:46:24 UTC
 </div>
 </div>
 </body>

@@ -297,6 +297,20 @@ Raster / 2.1
 [.thumb]
 image::geoc_raster_divide_constant_command_divided.png[]
 
+=== Draw
+
+Draw a Raster to an image.
+
+include::output/geoc_raster_draw_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_draw_command.txt[]
+----
+
+[.thumb]
+image::geoc_raster_draw_command.png[]
+
 === Envelope
 
 Get the Envelope of a Raster as a Vector Layer.

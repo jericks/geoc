@@ -42,13 +42,14 @@ class DocTest extends BaseTest {
                     Option opt = annotation as Option
                     String name = opt.name()
                     List aliases = opt.aliases()
+                    boolean isRequired = opt.required()
                     String alias = aliases.isEmpty() ? "" : aliases.first()
                     String usage = opt.usage()
                     if (name.startsWith("--")) {
                         alias = name
                         name = ""
                     }
-                    options.add([name: name, alias: alias, usage: usage])
+                    options.add([name: name, alias: alias, usage: usage, required: isRequired])
                 }
             }
         }

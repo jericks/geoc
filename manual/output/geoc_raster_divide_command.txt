@@ -1,0 +1,1 @@
+geoc raster divide -i src/test/resources/high.tif -k src/test/resources/low.tif -o target/divided.tif

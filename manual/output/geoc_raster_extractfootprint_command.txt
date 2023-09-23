@@ -1,0 +1,1 @@
+geoc raster extractfootprint -i src/test/resources/earth.tif -o target/earth_footprint.shp

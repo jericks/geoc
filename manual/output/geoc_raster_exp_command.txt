@@ -1,0 +1,1 @@
+geoc raster exp -i src/test/resources/pc.tif -o target/pc_exp.tif

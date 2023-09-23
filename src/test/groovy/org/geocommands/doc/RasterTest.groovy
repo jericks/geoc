@@ -326,6 +326,37 @@ class RasterTest extends DocTest {
     }
 
     @Test
+    void extractFootprint() {
+        String command = "geoc raster extractfootprint -i src/test/resources/earth.tif -o target/earth_footprint.shp"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_extractfootprint_command", command)
+        writeTextFile("geoc_raster_extractfootprint_command_output", result)
+
+        Raster raster = new GeoTIFF(new File("src/test/resources/earth.tif")).read()
+        Layer layer = new Shapefile("target/earth_footprint.shp")
+        layer.style = new Stroke("red", 2)
+        drawOnBasemap("geoc_raster_extractfootprint_command", [raster, layer])
+    }
+
+    @Test
+    void exponent() {
+        String command = "geoc raster exp -i src/test/resources/pc.tif -o target/pc_exp.tif"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_exp_command", command)
+        writeTextFile("geoc_raster_exp_command_output", result)
+
+        Raster raster = new GeoTIFF(new File("target/pc_exp.tif")).read()
+        raster.style = new ColorMap([
+                [color: "#9fd182", quantity:Math.exp(0)],
+                [color: "#3e7f3c", quantity:Math.exp(50)],
+                [color: "#133912", quantity:Math.exp(100)],
+                [color: "#08306b", quantity:Math.exp(200)],
+                [color: "#fffff5", quantity:Math.exp(500)],
+        ])
+        draw("geoc_raster_exp_command", [raster])
+    }
+
+    @Test
     void info() {
         String command = "geoc raster info -i src/test/resources/earth.tif"
         String result = runApp(command, "")
@@ -334,6 +365,14 @@ class RasterTest extends DocTest {
     }
 
     @Test
+    void getValue() {
+        String command = "geoc raster get value -i src/test/resources/pc.tif -x -121.799927 -y 46.867703"
+        String result = runApp(command)
+        writeTextFile("geoc_raster_get_value_command", command)
+        writeTextFile("geoc_raster_get_value_command_output", result)
+    }
+
+        @Test
     void getSize() {
         String command = "geoc raster size -i src/test/resources/earth.tif"
         String result = runApp(command, "")

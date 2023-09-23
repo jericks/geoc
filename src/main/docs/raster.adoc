@@ -325,6 +325,34 @@ include::output/geoc_raster_envelope_command.txt[]
 [.thumb]
 image::geoc_raster_envelope_command.png[]
 
+=== Exponent
+
+Calculate the exponent for each cell..
+
+include::output/geoc_raster_exp_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_exp_command.txt[]
+----
+
+[.thumb]
+image::geoc_raster_exp_command.png[]
+
+=== Extract Footprint
+
+Extract the footprint of the Raster as a Vector Layer.
+
+include::output/geoc_raster_extractfootprint_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_extractfootprint_command.txt[]
+----
+
+[.thumb]
+image::geoc_raster_extractfootprint_command.png[]
+
 === Info
 
 Get information about a Raster.
@@ -369,6 +397,22 @@ include::output/geoc_raster_getsize_command.txt[]
 ----
 include::output/geoc_raster_getsize_command_output.txt[]
 ----
+
+=== Get Value
+
+Get a value from a Raster
+
+include::output/geoc_raster_get_value_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_get_value_command.txt[]
+----
+
+----
+include::output/geoc_raster_get_value_command_output.txt[]
+----
+
 
 === Reclassify
 

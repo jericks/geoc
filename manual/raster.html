@@ -557,6 +557,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#get-value">Get Value</a></li>
 <li><a href="#reclassify">Reclassify</a></li>
 <li><a href="#style-default">Style Default</a></li>
+<li><a href="#subtract-constant">Subtract Constant</a></li>
+<li><a href="#subtract">Subtract</a></li>
 <li><a href="#world-file">World File</a></li>
 </ul>
 </li>
@@ -2436,6 +2438,213 @@ Bands:
 </div>
 </div>
 <div class="sect2">
+<h3 id="subtract-constant"><a class="anchor" href="#subtract-constant"></a>Subtract Constant</h3>
+<div class="paragraph">
+<p>Subtract a constant value from a Raster.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Short Name</th>
+<th class="tableblock halign-left valign-top">Long Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-v</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-m</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to subtract the Raster from the constant or vice verse</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--output-raster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The output raster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--output-raster-format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The output raster format</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-raster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input raster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-l</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-raster-name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input raster name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-p</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-projection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input projection</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Print the help message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--web-help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open help in a browser</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Get original value</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">geoc raster get value -i src/test/resources/pc.tif -x -121.799927 -y 46.867703</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>3069.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Subtract 100 from all cells</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">geoc raster subtract constant -i src/test/resources/pc.tif -v 100 -o target/pc_subtract.tif</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Get new value</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">geoc raster get value -i target/pc_subtract.tif -x -121.799927 -y 46.867703</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>2969.0</pre>
+</div>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<img src="./images/geoc_raster_subtract_constant_command_raster.png" alt="geoc raster subtract constant command raster">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="subtract"><a class="anchor" href="#subtract"></a>Subtract</h3>
+<div class="paragraph">
+<p>Subtract one Raster from another.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Short Name</th>
+<th class="tableblock halign-left valign-top">Long Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-k</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--other-raster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The other raster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--other-raster-name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The other raster name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-j</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--other-projection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The other projection</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--output-raster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The output raster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--output-raster-format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The output raster format</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-raster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input raster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-l</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-raster-name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input raster name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-p</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input-projection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The input projection</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Print the help message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--web-help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open help in a browser</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">geoc raster subtract -i src/test/resources/high.tif -k src/test/resources/low.tif -o target/highMinusLow.tif</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>High</p>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<img src="./images/geoc_raster_subtract_command_high.png" alt="geoc raster subtract command high">
+</div>
+</div>
+<div class="paragraph">
+<p>Low</p>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<img src="./images/geoc_raster_subtract_command_low.png" alt="geoc raster subtract command low">
+</div>
+</div>
+<div class="paragraph">
+<p>High - Low</p>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<img src="./images/geoc_raster_subtract_command_subtract.png" alt="geoc raster subtract command subtract">
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="world-file"><a class="anchor" href="#world-file"></a>World File</h3>
 <div class="paragraph">
 <p>Create a Raster world file</p>
@@ -2502,7 +2711,7 @@ Bands:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-26 03:33:15 UTC
+Last updated 2023-09-26 23:35:13 UTC
 </div>
 </div>
 </body>

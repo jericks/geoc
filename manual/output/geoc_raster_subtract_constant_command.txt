@@ -1,0 +1,1 @@
+geoc raster subtract constant -i src/test/resources/pc.tif -v 100 -o target/pc_subtract.tif

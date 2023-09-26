@@ -1,0 +1,1 @@
+geoc raster subtract -i src/test/resources/high.tif -k src/test/resources/low.tif -o target/highMinusLow.tif

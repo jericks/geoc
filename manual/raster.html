@@ -556,6 +556,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#get-size">Get Size</a></li>
 <li><a href="#get-value">Get Value</a></li>
 <li><a href="#reclassify">Reclassify</a></li>
+<li><a href="#style-default">Style Default</a></li>
 <li><a href="#world-file">World File</a></li>
 </ul>
 </li>
@@ -2368,6 +2369,73 @@ Bands:
 </div>
 </div>
 <div class="sect2">
+<h3 id="style-default"><a class="anchor" href="#style-default"></a>Style Default</h3>
+<div class="paragraph">
+<p>Create a default Style for a Raster.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Short Name</th>
+<th class="tableblock halign-left valign-top">Long Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-o</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--opacity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The opacity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Print the help message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--web-help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open help in a browser</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">geoc raster style default</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><span class="tag">&lt;sld:StyledLayerDescriptor</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.opengis.net/sld</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">xmlns:sld</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.opengis.net/sld</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">xmlns:gml</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.opengis.net/gml</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">xmlns:ogc</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.opengis.net/ogc</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">1.0.0</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;sld:UserLayer&gt;</span>
+    <span class="tag">&lt;sld:LayerFeatureConstraints&gt;</span>
+      <span class="tag">&lt;sld:FeatureTypeConstraint</span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/sld:LayerFeatureConstraints&gt;</span>
+    <span class="tag">&lt;sld:UserStyle&gt;</span>
+      <span class="tag">&lt;sld:Name&gt;</span>Default Styler<span class="tag">&lt;/sld:Name&gt;</span>
+      <span class="tag">&lt;sld:FeatureTypeStyle&gt;</span>
+        <span class="tag">&lt;sld:Name&gt;</span>name<span class="tag">&lt;/sld:Name&gt;</span>
+        <span class="tag">&lt;sld:Rule&gt;</span>
+          <span class="tag">&lt;sld:RasterSymbolizer&gt;</span>
+            <span class="tag">&lt;sld:Geometry&gt;</span>
+              <span class="tag">&lt;ogc:Literal&gt;</span>grid<span class="tag">&lt;/ogc:Literal&gt;</span>
+            <span class="tag">&lt;/sld:Geometry&gt;</span>
+            <span class="tag">&lt;sld:ContrastEnhancement</span><span class="tag">/&gt;</span>
+          <span class="tag">&lt;/sld:RasterSymbolizer&gt;</span>
+        <span class="tag">&lt;/sld:Rule&gt;</span>
+      <span class="tag">&lt;/sld:FeatureTypeStyle&gt;</span>
+    <span class="tag">&lt;/sld:UserStyle&gt;</span>
+  <span class="tag">&lt;/sld:UserLayer&gt;</span>
+<span class="tag">&lt;/sld:StyledLayerDescriptor&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="world-file"><a class="anchor" href="#world-file"></a>World File</h3>
 <div class="paragraph">
 <p>Create a Raster world file</p>
@@ -2434,7 +2502,7 @@ Bands:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-23 20:50:08 UTC
+Last updated 2023-09-26 03:33:15 UTC
 </div>
 </div>
 </body>

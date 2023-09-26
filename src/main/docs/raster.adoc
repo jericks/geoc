@@ -444,6 +444,70 @@ include::output/geoc_raster_style_default_command.txt[]
 include::output/geoc_raster_style_default_command_output.txt[]
 ----
 
+=== Subtract Constant
+
+Subtract a constant value from a Raster.
+
+include::output/geoc_raster_subtract_constant_options.txt[]
+
+Get original value
+
+[source,bash]
+----
+include::output/geoc_raster_subtract_constant_value1_command.txt[]
+----
+
+----
+include::output/geoc_raster_subtract_constant_value1_result.txt[]
+----
+
+Subtract 100 from all cells
+
+[source,bash]
+----
+include::output/geoc_raster_subtract_constant_command.txt[]
+----
+
+Get new value
+
+[source,bash]
+----
+include::output/geoc_raster_subtract_constant_value2_command.txt[]
+----
+
+----
+include::output/geoc_raster_subtract_constant_value2_result.txt[]
+----
+
+[.thumb]
+image::geoc_raster_subtract_constant_command_raster.png[]
+
+=== Subtract
+
+Subtract one Raster from another.
+
+include::output/geoc_raster_subtract_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_subtract_command.txt[]
+----
+
+High
+
+[.thumb]
+image::geoc_raster_subtract_command_high.png[]
+
+Low
+
+[.thumb]
+image::geoc_raster_subtract_command_low.png[]
+
+High - Low
+
+[.thumb]
+image::geoc_raster_subtract_command_subtract.png[]
+
 === World File
 
 Create a Raster world file

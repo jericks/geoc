@@ -416,6 +416,64 @@ class RasterTest extends DocTest {
     }
 
     @Test
+    void subtractConstant() {
+        String getValue1Command = "geoc raster get value -i src/test/resources/pc.tif -x -121.799927 -y 46.867703"
+        String getValue1Result = runApp(getValue1Command)
+        writeTextFile("geoc_raster_subtract_constant_value1_command", getValue1Command)
+        writeTextFile("geoc_raster_subtract_constant_value1_result", getValue1Result)
+
+        String command = "geoc raster subtract constant -i src/test/resources/pc.tif -v 100 -o target/pc_subtract.tif"
+        String result = runApp(command, "")
+        println result
+        writeTextFile("geoc_raster_subtract_constant_command", command)
+        writeTextFile("geoc_raster_subtract_constant_command_output", result)
+
+        Raster raster = Format.getFormat(new File("target/pc_subtract.tif")).read()
+        raster.style = new ColorMap([
+                [color: "#9fd182", quantity:25],
+                [color: "#3e7f3c", quantity:470],
+                [color: "#133912", quantity:920],
+                [color: "#08306b", quantity:1370],
+                [color: "#fffff5", quantity:1820],
+        ])
+        draw("geoc_raster_subtract_constant_command_raster", [raster])
+
+        String getValue2Command = "geoc raster get value -i target/pc_subtract.tif -x -121.799927 -y 46.867703"
+        String getValue2Result = runApp(getValue2Command)
+        writeTextFile("geoc_raster_subtract_constant_value2_command", getValue2Command)
+        writeTextFile("geoc_raster_subtract_constant_value2_result", getValue2Result)
+    }
+
+    @Test
+    void subtract() {
+        String command = "geoc raster subtract -i src/test/resources/high.tif -k src/test/resources/low.tif -o target/highMinusLow.tif"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_subtract_command", command)
+        writeTextFile("geoc_raster_subtract_command_output", result)
+
+        Style rasterStyle = new ColorMap(1, 50, "MutedTerrain", 20)
+        Style vectorStyle = new Stroke("black",1) + new Label("value")
+
+        Raster lowRaster = Format.getFormat(new File("src/test/resources/low.tif")).read()
+        Raster highRaster = Format.getFormat(new File("src/test/resources/high.tif")).read()
+        Raster highMinusLowRaster = Format.getFormat(new File("target/highMinusLow.tif")).read()
+
+        lowRaster.style = rasterStyle
+        highRaster.style = rasterStyle
+        highMinusLowRaster.style = rasterStyle
+
+        Closure createLayer = { Raster raster, Style style ->
+            Layer layer = raster.polygonLayer
+            layer.style = style
+            layer
+        }
+
+        draw("geoc_raster_subtract_command_low",  [lowRaster, createLayer(lowRaster, vectorStyle)])
+        draw("geoc_raster_subtract_command_high", [highRaster, createLayer(highRaster, vectorStyle)])
+        draw("geoc_raster_subtract_command_subtract",  [highMinusLowRaster, createLayer(highMinusLowRaster, vectorStyle)])
+    }
+
+    @Test
     void wordFile() {
         String command = "geoc raster worldfile -b 10,11,20,21 -s 800,751"
         String result = runApp(command, "")

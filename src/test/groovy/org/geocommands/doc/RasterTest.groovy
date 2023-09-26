@@ -408,6 +408,14 @@ class RasterTest extends DocTest {
     }
 
     @Test
+    void styleDefault() {
+        String command = "geoc raster style default"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_style_default_command", command)
+        writeTextFile("geoc_raster_style_default_command_output", result)
+    }
+
+    @Test
     void wordFile() {
         String command = "geoc raster worldfile -b 10,11,20,21 -s 800,751"
         String result = runApp(command, "")

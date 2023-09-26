@@ -428,6 +428,22 @@ include::output/geoc_raster_reclassify_command.txt[]
 [.thumb]
 image::geoc_raster_reclassify_command.png[]
 
+=== Style Default
+
+Create a default Style for a Raster.
+
+include::output/geoc_raster_style_default_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_style_default_command.txt[]
+----
+
+[source,xml]
+----
+include::output/geoc_raster_style_default_command_output.txt[]
+----
+
 === World File
 
 Create a Raster world file

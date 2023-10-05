@@ -474,6 +474,16 @@ class RasterTest extends DocTest {
     }
 
     @Test
+    void to() {
+        String command = "geoc raster to -i src/test/resources/raster.tif -o target/raster.png -f worldimage"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_to_command", command)
+        writeTextFile("geoc_raster_to_command_output", result)
+        Raster raster = Format.getFormat(new File("target/raster.png")).read()
+        draw("geoc_raster_to_command",  [raster])
+    }
+
+    @Test
     void wordFile() {
         String command = "geoc raster worldfile -b 10,11,20,21 -s 800,751"
         String result = runApp(command, "")

@@ -508,6 +508,20 @@ High - Low
 [.thumb]
 image::geoc_raster_subtract_command_subtract.png[]
 
+=== To
+
+Convert a Raster from one format to another.
+
+include::output/geoc_raster_to_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_to_command.txt[]
+----
+
+[.thumb]
+image::geoc_raster_to_command.png[]
+
 === World File
 
 Create a Raster world file

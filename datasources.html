@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Sources &mdash; geoc 0.19.0 documentation</title>
@@ -11,10 +11,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=cbfb3150"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -27,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> geoc
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            geoc
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -65,8 +70,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Data Sources</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Data Sources</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/datasources.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -77,13 +82,13 @@
            <div itemprop="articleBody">
              
   <section id="data-sources">
-<h1>Data Sources<a class="headerlink" href="#data-sources" title="Permalink to this headline"></a></h1>
+<h1>Data Sources<a class="headerlink" href="#data-sources" title="Link to this heading"></a></h1>
 <p>By default, vector commands read and write CSV using WKT for geometry fields and raster commands read and write ASCII grids.
 But, geoc can read and write any supported GeoTools DataStore or CoverageStore by using Connection Strings. GeoTools uses
 connection maps to connect to DataStore’s.  geoc connection strings are these connection maps where the key/value pairs are
 separated by an ‘=’ sign and multiple key/value pairs are separated by a white space.  Values can be single quoted.</p>
 <section id="vector">
-<h2>Vector<a class="headerlink" href="#vector" title="Permalink to this headline"></a></h2>
+<h2>Vector<a class="headerlink" href="#vector" title="Link to this heading"></a></h2>
 <p><strong>PostGIS</strong></p>
 <blockquote>
 <div><p>dbtype=postgis database=postgres host=localhost port=5432 user=postgres passwd=postgres</p>
@@ -138,7 +143,7 @@ separated by an ‘=’ sign and multiple key/value pairs are separated by a whi
 </div></blockquote>
 </section>
 <section id="raster">
-<h2>Raster<a class="headerlink" href="#raster" title="Permalink to this headline"></a></h2>
+<h2>Raster<a class="headerlink" href="#raster" title="Link to this heading"></a></h2>
 <p>Raster sources are currently all file based.</p>
 <blockquote>
 <div><p>data/earth.tif</p>
@@ -146,7 +151,7 @@ separated by an ‘=’ sign and multiple key/value pairs are separated by a whi
 </div></blockquote>
 </section>
 <section id="tile">
-<h2>Tile<a class="headerlink" href="#tile" title="Permalink to this headline"></a></h2>
+<h2>Tile<a class="headerlink" href="#tile" title="Link to this heading"></a></h2>
 <p><strong>pyramid</strong></p>
 <blockquote>
 <div><p>Several tile layers can take a pyramid attribute.  You can use one of several well known pyramid names:</p>
@@ -191,7 +196,7 @@ separated by an ‘=’ sign and multiple key/value pairs are separated by a whi
 </div></blockquote>
 </section>
 <section id="map-layer">
-<h2>Map Layer<a class="headerlink" href="#map-layer" title="Permalink to this headline"></a></h2>
+<h2>Map Layer<a class="headerlink" href="#map-layer" title="Link to this heading"></a></h2>
 <p>Map layer strings contain a layertype, layername, layerprojection, and style properties.</p>
 <p><strong>layertype</strong></p>
 <blockquote>

@@ -1,0 +1,1 @@
+geoc raster to -i src/test/resources/raster.tif -o target/raster.png -f worldimage

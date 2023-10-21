@@ -7,11 +7,13 @@ import geoscript.layer.GeoTIFF
 import geoscript.layer.Layer
 import geoscript.layer.Raster
 import geoscript.layer.Shapefile
+import geoscript.layer.WorldImage
 import geoscript.style.ColorMap
 import geoscript.style.Label
 import geoscript.style.Stroke
 import geoscript.style.Style
 import geoscript.style.io.SimpleStyleReader
+import org.geotools.gce.image.WorldImageFormat
 import org.junit.jupiter.api.Test
 
 class RasterTest extends DocTest {
@@ -362,6 +364,25 @@ class RasterTest extends DocTest {
         String result = runApp(command, "")
         writeTextFile("geoc_raster_info_command", command)
         writeTextFile("geoc_raster_info_command_output", result)
+    }
+
+    @Test
+    void invert() {
+        String command = "geoc raster invert -i src/test/resources/raster.tif -o target/inverted.tif"
+        String result = runApp(command, "")
+        writeTextFile("geoc_raster_invert_command", command)
+        writeTextFile("geoc_raster_invert_command_output", result)
+
+        Raster invertedRaster = new GeoTIFF(new File("target/inverted.tif")).read("inverted")
+        println invertedRaster.extrema
+        invertedRaster.style = new ColorMap([
+                [color: "#9fd182", quantity:0.0],
+                [color: "#3e7f3c", quantity:50.0],
+                [color: "#133912", quantity:100.0],
+                [color: "#08306b", quantity:160.0],
+                [color: "#fffff5", quantity:210.0],
+        ])
+        draw("geoc_raster_invert_command", [invertedRaster])
     }
 
     @Test

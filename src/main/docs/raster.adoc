@@ -368,6 +368,20 @@ include::output/geoc_raster_info_command.txt[]
 include::output/geoc_raster_info_command_output.txt[]
 ----
 
+=== Invert
+
+Invert the values of a Raster.
+
+include::output/geoc_raster_invert_options.txt[]
+
+[source,bash]
+----
+include::output/geoc_raster_invert_command.txt[]
+----
+
+[.thumb]
+image::geoc_raster_invert_command.png[]
+
 === Get Projection
 
 Get the Raster Projection.

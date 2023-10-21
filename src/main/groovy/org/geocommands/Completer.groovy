@@ -45,7 +45,7 @@ class Completer {
             }
             return options
         }
-        // Otherwise, try to look the line up in a tree or command names
+        // Otherwise, try to look the line up in a tree of command names
         else {
             List<String> names = line.split(" ")
             Item item = this.tree.findItem(names)

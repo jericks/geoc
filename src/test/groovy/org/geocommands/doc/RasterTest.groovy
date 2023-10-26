@@ -172,12 +172,12 @@ class RasterTest extends DocTest {
 
         // Random Points
         String randomCommand = "geoc vector randompoints -n 10 -g -180,-90,180,90 -o target/locations.shp"
-        println runApp(randomCommand, "")
+        runApp(randomCommand, "")
         writeTextFile("geoc_raster_crop_with_layer_random_points_command", randomCommand)
 
         // Buffer Points
         String bufferCommand = "geoc vector buffer -d 10 -i target/locations.shp -o target/buffers.shp"
-        println runApp(bufferCommand, "")
+        runApp(bufferCommand, "")
         writeTextFile("geoc_raster_crop_with_layer_buffer_command", bufferCommand)
 
         // Crop

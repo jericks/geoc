@@ -2,7 +2,7 @@ package org.geocommands.vector
 
 import org.geocommands.Command
 import org.geocommands.Options
-import org.geotools.data.DataStoreFinder
+import org.geotools.api.data.DataStoreFinder
 
 /**
  * Get a list of available DataStores

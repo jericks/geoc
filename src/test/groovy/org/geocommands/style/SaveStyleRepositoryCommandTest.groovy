@@ -88,14 +88,13 @@ class SaveStyleRepositoryCommandTest extends BaseTest {
         File databaseFile = createTemporaryFile("states", "db")
         String sld = createStyle(new Color("blue"))
 
-        String result = runApp([
+        runApp([
                 "style repository save",
                 "-t", "h2",
                 "-o", "file=${databaseFile.absolutePath}",
                 "-l", "states",
                 "-s", "states-blue"
         ], sld)
-        println result
 
         Sql sql = Sql.newInstance("jdbc:h2:file:${databaseFile.absolutePath}", "org.h2.Driver")
         List results = sql.rows(

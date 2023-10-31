@@ -1,1 +1,1 @@
-geoc tile vector grid -l "type=geopackage file=src/main/resources/data.gpkg name=world" -o target/world_grid_1.shp -z 2
+geoc tile vector grid -l "type=geopackage file=src/test/resources/data.gpkg name=world" -o target/world_grid_1.shp -z 2

@@ -1,6 +1,6 @@
 = Geoc
 Jared Erickson
-v0.20.0
+v0.21.0
 :title-page:
 :title-logo-image: image:geoc.png[pdfwidth=5.5in,align=center]
 ifndef::imagesdir[:imagesdir: images]

@@ -227,15 +227,14 @@ class TileTest extends DocTest {
     @Test
     void vectorGrid() {
         List commands = ["tile", "vector", "grid",
-                         "-l", "type=geopackage file=src/main/resources/data.gpkg name=world",
+                         "-l", "type=geopackage file=src/test/resources/data.gpkg name=world",
                          "-o", "target/world_grid_1.shp",
                          "-z", "2"
         ]
         String command = "geoc " + commands.collect{
             it.startsWith("type") ? '"' + it + '"' : it
         }.join(" ")
-        String result = runApp(commands, "")
-        println result
+        runApp(commands, "")
         writeTextFile("geoc_tile_vector_grid_command", command)
         Layer layer = new Shapefile("target/world_grid_1.shp")
         layer.style = new Stroke("black", 1)

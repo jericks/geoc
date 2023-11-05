@@ -1,13 +1,5 @@
 #!/bin/bash
 
-geoc map cube -o -f map_cube_toner.png -l "layertype=tile type=osm name=stamen-toner"
-
-geoc map cube -o -f map_cube_toner_lite.png -l "layertype=tile type=osm name=stamen-toner-lite"
-
-geoc map cube -o -f map_cube_watercolor.png -l "layertype=tile type=osm name=stamen-watercolor"
-
-geoc map cube -o -f map_cube_terrain.png -l "layertype=tile type=osm name=stamen-terrain"
-
 geoc map cube -o -f map_cube_wikimedia.png -l "layertype=tile type=osm name=wikimedia"
 
 geoc map cube -o -f map_cube_osm.png -l "layertype=tile type=osm name=osm"

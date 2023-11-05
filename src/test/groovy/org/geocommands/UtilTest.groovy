@@ -25,41 +25,6 @@ class UtilTest extends BaseTest {
         assertTrue layers[0] instanceof OSM
         assertEquals "OSM", (layers[0] as OSM).name
 
-        // Stamen Toner
-        layers = []
-        Util.addBasemap("stamen-toner", layers)
-        assertEquals 1, layers.size()
-        assertTrue layers[0] instanceof OSM
-        assertEquals "Stamen Toner", (layers[0] as OSM).name
-
-        // Stamen Toner Lite
-        layers = []
-        Util.addBasemap("stamen-toner-lite", layers)
-        assertEquals 1, layers.size()
-        assertTrue layers[0] instanceof OSM
-        assertEquals "Stamen Toner Lite", (layers[0] as OSM).name
-
-        // Stamen Water Color
-        layers = []
-        Util.addBasemap("stamen-watercolor", layers)
-        assertEquals 1, layers.size()
-        assertTrue layers[0] instanceof OSM
-        assertEquals "Stamen Watercolor", (layers[0] as OSM).name
-
-        // MapQuest Street
-        layers = []
-        Util.addBasemap("mapquest-street", layers)
-        assertEquals 1, layers.size()
-        assertTrue layers[0] instanceof OSM
-        assertEquals "MapQuest Street Map", (layers[0] as OSM).name
-
-        // MapQuest Satellite
-        layers = []
-        Util.addBasemap("mapquest-satellite", layers)
-        assertEquals 1, layers.size()
-        assertTrue layers[0] instanceof OSM
-        assertEquals "MapQuest Satellite Map", (layers[0] as OSM).name
-
         // Shapefile
         File shpFile = getResource("crop_polys.shp")
         layers = []
